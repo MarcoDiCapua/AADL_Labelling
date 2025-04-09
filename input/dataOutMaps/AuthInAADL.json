@@ -1,9 +1,0 @@
-{
-  "isParsingSucceeded": false,
-  "extension": "aadl",
-  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AuthInAADL/LocalExamples/aadl-books/UserRoleAssignment.aadl",
-  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\",
-  "isSavedTheModel": false,
-  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AuthInAADL\\README.md"],
-  "errors": ["Questo modello: file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AuthInAADL/LocalExamples/aadl-books/UserRoleAssignment.aadl non è un AadlPackage"]
-}

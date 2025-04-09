@@ -1,9 +1,0 @@
-{
-  "isParsingSucceeded": false,
-  "extension": "aadl",
-  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/An-AADL-Model-of-Smart-Home-System/Plugin_Resources/Predeclared_Property_Sets/Programming_Properties.aadl",
-  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\",
-  "isSavedTheModel": false,
-  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\An-AADL-Model-of-Smart-Home-System\\README.md"],
-  "errors": ["Questo modello: file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/An-AADL-Model-of-Smart-Home-System/Plugin_Resources/Predeclared_Property_Sets/Programming_Properties.aadl non è un AadlPackage"]
-}
