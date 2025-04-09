@@ -1,0 +1,32 @@
+package Logging
+public
+--  with 
+--    Storage_Services;
+
+--brl:  the design document section 8 Logging Services does not
+--provide sufficient information to design the AADL
+
+  data Log_Message
+-- a time stamp via the system time
+-- an indicator of the source component ID that generated it
+-- a vendor defined message  
+  end Log_Message;
+
+	
+	process Logging_Process
+	
+	end Logging_Process;
+	
+	thread Security_Logger
+	
+	end Security_Logger;
+	
+	device Fault_Logger
+	
+	end Fault_Logger;
+	
+	thread Event_Logger
+	
+	end Event_Logger;
+	
+end Logging;

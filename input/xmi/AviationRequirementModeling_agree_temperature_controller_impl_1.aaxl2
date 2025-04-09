@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="controller_impl_Instance" category="system">
+  <featureInstance name="tempin">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/examples/temp-control.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+    <type href="../../github/AviationRequirementModeling/workspace/aadl/examples/instances/temp-control_controller_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="user_request">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/examples/temp-control.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+    <type href="../../github/AviationRequirementModeling/workspace/aadl/examples/instances/temp-control_controller_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="heater_on" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/examples/temp-control.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.2"/>
+    <type href="../../github/AviationRequirementModeling/workspace/aadl/examples/instances/temp-control_controller_impl_Instance.aaxl2#/2"/>
+  </featureInstance>
+  <featureInstance name="cooler_on" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/examples/temp-control.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.3"/>
+    <type href="../../github/AviationRequirementModeling/workspace/aadl/examples/instances/temp-control_controller_impl_Instance.aaxl2#/3"/>
+  </featureInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/workspace/aadl/examples/temp-control.aadl#agree_temperature.controller.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/workspace/aadl/examples/temp-control.aadl#agree_temperature.controller.impl"/>
+</instance:SystemInstance>

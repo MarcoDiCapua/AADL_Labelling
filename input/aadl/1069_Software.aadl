@@ -1,0 +1,253 @@
+package Software
+public
+	
+with Base_Types;
+with Hardware;
+	
+-- Main controller components
+process MainController
+	features
+		-- in ports
+		PayMethod: in data port Base_Types::Integer;--
+		NumDrink: in data port Base_Types::Integer;--
+		Paid: in event port;--
+		DrinkIngrStatus: in event port;--
+		DrinkPrice: in data port Base_Types::Integer;--
+		DrinkReady: in event port;--
+		
+		-- out ports
+		CheckDrink: out data port Base_Types::Integer;--
+		PayModMethod: out data port Base_Types::Integer;--
+		PayModAmount: out data port Base_Types::Integer;--
+		MakeDrink: out data port Base_Types::Integer;--
+		Finished: out event port;--
+
+end MainController;
+
+process implementation MainController.impl
+	subcomponents
+		PayThread: thread PaymentThread.impl;
+		DrinkThread: thread DrinkExecutorThread.impl;
+		DrinkVerifier: thread DrinkVerifierThread.impl;
+		
+	connections
+		NumDrink2DV: port NumDrink -> DrinkVerifier.NumDrink;
+		DV2CheckDrink: port DrinkVerifier.DrinkCheck -> CheckDrink;
+		DrinkPrice2DV: port DrinkPrice -> DrinkVerifier.DrinkPrice;
+		DrinkIngrStatus2DV: port DrinkIngrStatus -> DrinkVerifier.DrinkIngrStatus;
+		DrinkStatusOut: port DrinkVerifier.DrinkInfo -> PayThread.DrinkInfo;
+		P2Amout: port PayThread.Price -> PayModAmount;
+		PayMethod2P: port PayMethod -> PayThread.PanelMethod;
+		P2Method: port PayThread.Method -> PayModMethod;
+		Pait2P: port Paid -> PayThread.Paid;
+		P2D: port PayThread.PrepareDrink -> DrinkThread.Prepare;
+		DrinkStatusOutDrink: port DrinkVerifier.DrinkInfo -> DrinkThread.DrinkInfo;
+		D2Make: port DrinkThread.DrinkMake -> MakeDrink;
+		DrinkReady2D: port DrinkReady -> DrinkThread.DrinkFinished;
+		D2Finished: port DrinkThread.Finalize -> Finished;
+		
+end MainController.impl;
+
+thread PaymentThread
+	features
+		DrinkInfo: in data port Base_Types::Integer;
+		PanelMethod: in data port Base_Types::Integer;
+		Price: out data port Base_Types::Integer;
+		Method: out data port Base_Types::Integer;
+		Paid: in event port;
+		PrepareDrink: out event port;
+end PaymentThread;
+
+thread implementation PaymentThread.impl
+end PaymentThread.impl;
+
+thread DrinkExecutorThread
+	features
+		Prepare: in event port;
+		DrinkInfo: in data port Base_Types::Integer;
+		DrinkMake: out data port Base_Types::Integer;
+		DrinkFinished: in event port;
+		Finalize: out event port;
+end DrinkExecutorThread;
+
+thread implementation DrinkExecutorThread.impl
+end DrinkExecutorThread.impl;
+
+thread DrinkVerifierThread
+	features
+		NumDrink: in data port Base_Types::Integer;
+		DrinkIngrStatus: in event port;
+		DrinkPrice: in data port Base_Types::Integer;
+		DrinkCheck: out data port Base_Types::Integer;
+		DrinkInfo: out data port Base_Types::Integer;
+end DrinkVerifierThread;
+
+thread implementation DrinkVerifierThread.impl
+end DrinkVerifierThread.impl;
+
+-- Payment controller components
+
+process PayController
+	features
+		-- in ports
+		Method: in data port Base_Types::Integer;--
+		Amount: in data port Base_Types::Integer;--
+		CardData: in data port Base_Types::Integer; --
+		CashData: in data port Base_Types::Integer; --
+		
+		-- out ports
+		CardReq: out data port Hardware::Request;--
+		CashReq: out data port Hardware::Request;--
+		CashChange: out data port Base_Types::Integer; --
+		Finished: out event port;--
+end PayController;
+
+process implementation PayController.impl
+	subcomponents
+		PaymentProcessing: thread PaymentProcessingThread.impl;
+		Cash: thread CashThread.impl;
+		Card: thread CardThread.impl;
+		
+	connections
+		M2Method: port Method -> PaymentProcessing.Method;
+		M2Amount: port Amount -> PaymentProcessing.Amount;
+		PP2CashTread: port PaymentProcessing.AmountOut -> Cash.Amount;
+		PP2CardTread: port PaymentProcessing.AmountOut -> Card.Amount;
+		C2CashReq: port Cash.CashReq -> CashReq;
+		CashData2C: port CashData -> Cash.CashData;
+		C2CashChange: port Cash.CashChange -> CashChange;
+		C2PP: port Cash.Done -> PaymentProcessing.Done;
+		PP2Finished: port PaymentProcessing.DoneOut -> Finished;
+		C2CardReq: port Card.CardReq -> CardReq;
+		CardData2C: port CardData -> Card.CardData;
+		Card2PP: port Card.Done -> PaymentProcessing.Done;
+		
+end PayController.impl;
+
+thread PaymentProcessingThread
+	features
+		Method: in data port Base_Types::Integer;
+		Amount: in data port Base_Types::Integer;
+		AmountOut: out data port Base_Types::Integer;
+		Done: in event port;
+		DoneOut: out event port;
+end PaymentProcessingThread;
+
+thread implementation PaymentProcessingThread.impl
+end PaymentProcessingThread.impl;
+
+thread CashThread
+	features
+		Amount: in data port Base_Types::Integer;
+		CashReq: out data port Hardware::Request;
+		CashData: in data port Base_Types::Integer;
+		CashChange: out data port Base_Types::Integer;
+		Done: out event port;
+end CashThread;
+
+thread implementation CashThread.impl
+end CashThread.impl;
+
+thread CardThread
+	features
+		Amount: in data port Base_Types::Integer;
+		Done: out event port;
+		CardReq: out data port Hardware::Request;
+		CardData: in data port Base_Types::Integer;
+end CardThread;
+
+thread implementation CardThread.impl
+end CardThread.impl;
+
+-- Drink controller components
+process DrinkController
+	features
+		-- in ports
+		CheckDrink: in data port Base_Types::Integer;--
+		MakeDrink: in data port Base_Types::Integer;--
+		IngrStatus: in data port Base_Types::Integer;--
+		FeedStatus: in event port;--
+		ShakeStatus: in event port;--
+		GlassStatus: in event port;--
+		
+		-- out ports
+		DrinkIngrStatus: out event port;--
+		DrinkReady: out event port;--
+		DrinkPrice: out data port Base_Types::Integer;--
+		CheckIngrStatus: out data port Base_Types::Integer;--
+		FeedIngr: out data port Base_Types::Integer;--
+		ShakeIngr: out data port Base_Types::Integer;--
+		CheckGlass: out data port Base_Types::Integer;--
+		
+end DrinkController;
+
+process implementation DrinkController.impl
+	subcomponents
+		DrinkInfo: thread DrinkInfoThread.impl;
+		Drink: thread DrinkThread.impl;
+		Monitor: thread MonitorThread.impl;
+		
+	connections
+		CheckDrink2DI: port CheckDrink -> DrinkInfo.CheckDrink;
+		DI2Ingr: port DrinkInfo.CheckIngrOut -> CheckIngrStatus;
+		IngrStatus2DI: port IngrStatus -> DrinkInfo.CheckIngrIn;
+		DI2DrinkIngrStatus: port DrinkInfo.DrinkIngrStatus -> DrinkIngrStatus;
+		DI2DrinkPrice: port DrinkInfo.DrinkPrice -> DrinkPrice;
+		DI2D: port DrinkInfo.IngrListOut -> Drink.IngrListIn;
+		D2DI: port Drink.IngrListOut -> DrinkInfo.IngrListIn;
+		MakeDrink2D: port MakeDrink -> Drink.MakeDrink;
+		D2DrinkReady: port Drink.DrinkReady -> DrinkReady;
+		D2M: port Drink.DrinkData -> Monitor.DrinkData;
+		D2MReady: port Monitor.DrinkReady -> Drink.DrinkReadyIn;
+		Shake2M: port ShakeStatus -> Monitor.ShakeIngrIn;
+		Feed2M: port FeedStatus -> Monitor.FeedIngrIn;
+		Glass2M: port GlassStatus -> Monitor.CheckGlassIn;
+		M2Shake: port Monitor.ShakeIngr -> ShakeIngr;
+		M2Feed: port Monitor.FeedIngr -> FeedIngr;
+		M2Glass: port Monitor.CheckGlass -> CheckGlass;
+end DrinkController.impl;
+
+thread DrinkInfoThread
+	features
+		CheckDrink: in data port Base_Types::Integer;
+		CheckIngrOut: out data port Base_Types::Integer;
+		CheckIngrIn: in data port Base_Types::Integer;
+		DrinkIngrStatus: out event port;
+		IngrListOut: out data port Base_Types::Integer;
+		IngrListIn: in data port Base_Types::Integer;
+		DrinkPrice: out data port Base_Types::Integer;
+end DrinkInfoThread;
+
+thread implementation DrinkInfoThread.impl
+end DrinkInfoThread.impl;
+
+thread DrinkThread
+	features
+		IngrListOut: out data port Base_Types::Integer;
+		IngrListIn: in data port Base_Types::Integer;
+		MakeDrink: in data port Base_Types::Integer;
+		DrinkReady: out event port;
+		DrinkData: out data port Base_Types::Integer;
+		DrinkReadyIn: in data port Base_Types::Integer;
+end DrinkThread;
+
+thread implementation DrinkThread.impl
+end DrinkThread.impl;
+
+thread MonitorThread
+	features
+		DrinkData: in data port Base_Types::Integer;
+		DrinkReady: out data port Base_Types::Integer;
+		FeedIngr: out data port Base_Types::Integer;
+		CheckGlass: out data port Base_Types::Integer;
+		ShakeIngr: out data port Base_Types::Integer;
+		FeedIngrIn: in event port;
+		CheckGlassIn: in event port;
+		ShakeIngrIn: in event port;
+		
+end MonitorThread;
+
+thread implementation MonitorThread.impl
+end MonitorThread.impl;
+	
+end Software;

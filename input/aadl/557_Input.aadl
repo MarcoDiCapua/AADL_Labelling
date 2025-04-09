@@ -1,0 +1,12 @@
+package Input
+public		
+	with GpioBus;
+	device Input
+		features
+			DrinkSelection: in event data port;
+			DrinkSelectionHandler: out data port;
+			
+			GpioBusData: requires bus access GpioBus::Gpio;
+	end Input;
+	
+end Input;

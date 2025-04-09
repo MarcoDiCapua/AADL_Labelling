@@ -1,0 +1,10 @@
+input: C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/output-processing\average_sim.csv
+output_generic: output/average_sim\clusters.csv
+n_clusters: systematic
+validate_csv: validate/cluster_test_set_specific.csv
+Concordant pairs (a): 134
+Discordant pairs (b): 3350
+Discordant but correct in ground truth (c): 179
+Correct in clustering but discordant in ground truth (d): 78
+Rand Index: 0.9323710237904304
+Adjusted Rand Index: 0.4796319438679212

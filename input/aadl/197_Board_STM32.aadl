@@ -1,0 +1,67 @@
+package Board_STM32
+public
+	with Processor_STM32;
+	with Memory_RAM;
+	with Memory_Flash;
+	
+	with Mem_properties;
+	with Power_properties;
+	
+	with Buses_I2C;
+	with Buses_Serial;
+
+-- Memory
+
+memory Flash extends Memory_Flash::Generic_Flash
+end Flash;
+
+memory implementation Flash.impl
+	properties
+		Mem_properties::Size => 1 MByte;
+end Flash.impl;
+
+memory RAM extends Memory_RAM::Generic_RAM
+end RAM;
+
+memory implementation RAM.impl
+	properties
+		Mem_properties::Size => 128 KByte;
+end RAM.impl;
+
+-- Board
+
+system STM32L476_Discovery
+	features
+    	
+    	I2C_link_1 : provides bus access Buses_I2C::I2C.impl;
+    	I2C_link_2 : provides bus access Buses_I2C::I2C.impl;
+    	I2C_link_3 : provides bus access Buses_I2C::I2C.impl;
+    	
+    	Serial_link : provides bus access Buses_Serial::Serial;
+    	
+   	properties
+		Power_properties::Current => 5.0 mA;
+		Power_properties::Voltage => 5.0 V;
+end STM32L476_Discovery;
+	
+system implementation STM32L476_Discovery.impl
+	subcomponents
+		CPU 	: processor Processor_STM32::STM32L4.impl;
+		Flash 	: memory Flash.impl;
+		RAM 	: memory RAM.impl;
+		
+		I2C_1 	: bus Buses_I2C::I2C.impl;
+		I2C_2 	: bus Buses_I2C::I2C.impl;
+		I2C_3 	: bus Buses_I2C::I2C.impl;
+		
+		Serial : bus Buses_Serial::Serial.impl;
+	connections
+		bus_access_i2c_1 : bus access I2C_1 <-> I2C_link_1;
+		bus_access_i2c_2 : bus access I2C_2 <-> I2C_link_2;
+		bus_access_i2c_3 : bus access I2C_3 <-> I2C_link_3;
+		
+		bus_access_serial : bus access Serial <-> Serial_link;
+		
+end STM32L476_Discovery.impl;
+	
+end Board_STM32;

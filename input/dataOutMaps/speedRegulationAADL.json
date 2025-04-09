@@ -1,0 +1,24 @@
+{
+  "isParsingSucceeded": false,
+  "modelName": "speed_regulation::integration",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/speedRegulationAADL/model/integration.aadl",
+  "pathXMLFile": "",
+  "isSavedTheModel": false,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\speedRegulationAADL\\README.md"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to property definition 'Latency'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/speedRegulationAADL/model/integration.aadl line : 125 column : 5)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'ms'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/speedRegulationAADL/model/integration.aadl line : 125 column : 19)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'ms'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/speedRegulationAADL/model/integration.aadl line : 125 column : 28)",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Connection_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/speedRegulationAADL/model/integration.aadl line : 196 column : ...",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/speedRegulationAADL/model/integration.aadl line : 197 column : 4...",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/speedRegulationAADL/model/integration.aadl line : 199 column : 4...",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Connection_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/speedRegulationAADL/model/integration.aadl line : 216 column : ...",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Connection_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/speedRegulationAADL/model/integration.aadl line : 217 column : ...",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/speedRegulationAADL/model/integration.aadl line : 218 column : 4...",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/speedRegulationAADL/model/integration.aadl line : 220 column : 4...",
+    "Invalid file path",
+    "Invalid file path",
+    "Invalid file path"
+  ]
+}

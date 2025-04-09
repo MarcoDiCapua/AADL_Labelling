@@ -1,0 +1,16 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "model_V2",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/S18/packages/model_V2.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\S18_model_V2_model_V2_complete_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'EMV2'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/S18/packages/model_V2.aadl line : 12 column : 6)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'ARP4761'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/S18/packages/model_V2.aadl line : 12 column : 12)",
+    "ERROR:Couldn't resolve reference to property definition 'Allowed_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/S18/packages/model_V2.aadl line : 74 column : 3)",
+    "ERROR:Couldn't resolve reference to property definition 'Allowed_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/S18/packages/model_V2.aadl line : 77 column : 2)",
+    "ERROR:Couldn't resolve reference to property definition 'Allowed_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/S18/packages/model_V2.aadl line : 79 column : 2)"
+  ]
+}

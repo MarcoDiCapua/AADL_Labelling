@@ -1,0 +1,76 @@
+package CollisionAvoidance
+public
+	with Base_Types;
+	with Agree_Nodes;
+	
+	process CollisionAlgorithm
+		features
+      ownAlt: in data port Base_Types::float;
+      ownVertVel: in data port Base_Types::float;
+      ownVertAcc: in data port Base_Types::float;
+      intAlt: in data port Base_Types::float;
+      intVertVel: in data port Base_Types::float;
+      intVertAcc: in data port Base_Types::float;
+      ownLocation: in data port Base_Types::integer;
+      annex agree{**
+      		eq t: int; -- time
+      		eq nextOwnAlt: real; -- changed altitude
+      		eq ownVVel:real;
+      		eq ownVAcc:real;
+      		eq projectedAlt:real;
+      		eq goesUp: bool;
+      		eq goesDown:bool;
+      		eq locationInt:int;
+      		const east: int =1;
+      		const west: int =2;
+      		assume"start at 1000": ownAlt>1000.0;
+      		assume"positive intruder altitude": intAlt=1000.0;
+      		assume"positive time": t>=0;
+      		assume"own location": ownLocation = east or ownLocation = west;
+      		assume"location doesnt change": ownLocation = pre(ownLocation);
+      		assume"nextOwnAlt becomes ownAlt": ownAlt = pre(nextOwnAlt);
+      		assume"time monotonically increases": t = pre(t) + 1 ;
+--      		assume "own vert velocity doesn't change" : ownVertVel = pre(ownVertVel);
+			assume "ownVertVel is within bounds" : ownVertVel < 100.0 and ownVertVel > -100.0;
+			assume "save vertical velocity": ownVertVel = pre(ownVVel);
+--      		guarantee"safe no manuevers needed": true->(ownAlt-intAlt)>50.0 or (intAlt-ownAlt)>50.0 ;
+--      		guarantee"own flight at lower altitude goes down": true -> goesDown;
+--      		guarantee"own flight at higher altitude goes up": true-> goesUp;
+      		guarantee"always seeks saftey": true->((nextOwnAlt-intAlt)>50.0 or (intAlt-nextOwnAlt)>50.0) ;
+      		guarantee "next own altitude is positive": true->nextOwnAlt>=0.0;
+      		
+      		guarantee "above goes up": if ((nextOwnAlt-intAlt)>50.0) then goesUp else true;
+      		guarantee "below goes down": if (intAlt-nextOwnAlt>50.0) then goesDown else true;
+      		guarantee "can't go up and down" : not (goesUp and goesDown);
+      		
+      	
+      **};
+		
+	end CollisionAlgorithm;
+	
+	process implementation CollisionAlgorithm.CollisionAlgorithm_impl
+		annex agree{**
+				assign locationInt = if ownLocation = east then west else east;
+				-- accelaration change based on altitude and location
+				assign projectedAlt = ownAlt + ownVertVel;
+				
+				assign ownVAcc = if ((projectedAlt-intAlt)>0.0 and (projectedAlt-intAlt)<=50.0) then 50.0 -- Close to intruder and higher
+									else if ((intAlt-projectedAlt)>0.0 and (intAlt-projectedAlt)<=50.0) then -50.0 -- Close to intruder and lower
+									else if (intAlt=projectedAlt) and (ownLocation = east) then -50.0 -- Same alt as intruder
+									else if (intAlt=projectedAlt) and (ownLocation = west) then 50.0 -- Same alt as intruder
+									else 0.0;
+									
+				-- velocity change based on acceleration	
+				assign ownVVel = ownVAcc + ownVertVel;
+				
+				assign nextOwnAlt = ownVVel + ownAlt;
+				assign goesDown = if (ownAlt<intAlt) and nextOwnAlt<ownAlt then true 
+										else if (intAlt=ownAlt) and (ownLocation = east) and nextOwnAlt<ownAlt then true 
+										else false; 
+				assign goesUp = if (ownAlt>intAlt) and nextOwnAlt>ownAlt then true 
+										else if (intAlt=ownAlt) and (ownLocation = west) and nextOwnAlt>ownAlt then true 
+										else false;
+					
+		**};
+	end CollisionAlgorithm.CollisionAlgorithm_impl;
+end CollisionAvoidance;

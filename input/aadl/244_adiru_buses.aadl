@@ -1,0 +1,76 @@
+package adiru_buses
+public
+
+	with AFDX_Properties;
+
+	virtual bus VL
+		properties
+			AFDX_properties::Allowed_Message_Size => 512 bytes .. 12144 bytes;
+			AFDX_properties::Jitter_Max => 500 us;
+	end VL;
+
+	virtual bus implementation VL.vl1
+		properties
+			AFDX_properties::Bandwidth_Allocation_Gap => 32 ms;
+			AFDX_properties::Latency_Constraint => 1 ms;
+	end VL.vl1;
+
+	virtual bus implementation VL.vl2
+		properties
+			AFDX_properties::Bandwidth_Allocation_Gap => 8 ms;
+			AFDX_properties::Latency_Constraint => 1 ms;
+	end VL.vl2;
+
+	virtual bus implementation VL.vl3
+		properties
+			AFDX_properties::Bandwidth_Allocation_Gap => 16 ms;
+			AFDX_properties::Latency_Constraint => 1 ms;
+	end VL.vl3;
+
+	virtual bus implementation VL.vl4
+		properties
+			AFDX_properties::Bandwidth_Allocation_Gap => 64 ms;
+			AFDX_properties::Latency_Constraint => 1 ms;
+	end VL.vl4;
+
+	virtual bus implementation VL.vl5
+		properties
+			AFDX_properties::Bandwidth_Allocation_Gap => 32 ms;
+			AFDX_properties::Latency_Constraint => 1 ms;
+	end VL.vl5;
+
+	virtual bus implementation VL.vl6
+		properties
+			AFDX_properties::Bandwidth_Allocation_Gap => 32 ms;
+			AFDX_properties::Latency_Constraint => 1 ms;
+	end VL.vl6;
+
+    -- AFDX :: Avionics Full DupleX (AFDX) is a redundant Ethernet network developed to be used as support for the internal communications
+	-- The internal communications are primarily the data exchanged between the different components of the avionics.
+
+	bus physical_afdx_link
+		properties
+			AFDX_properties::Channel_Type => Full_Duplex;
+			AFDX_properties::Bandwidth => 100 MBytesps;
+	end physical_afdx_link;
+
+	bus implementation physical_afdx_link.impl
+		subcomponents
+			VL1: virtual bus VL.vl1;
+			VL2: virtual bus VL.vl2;
+			VL3: virtual bus VL.vl3;
+			VL4: virtual bus VL.vl4;
+			VL5: virtual bus VL.vl5;
+			VL6: virtual bus VL.vl6;
+	end physical_afdx_link.impl;
+
+	device afdx_switch
+		features
+			afdx_access: requires bus access physical_afdx_link;
+		properties
+			AFDX_properties::Switching_Delay => 140 us;
+			
+
+	end afdx_switch;
+
+end adiru_buses;

@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="SmartParkingSystem_impl_Instance" category="system">
+  <componentInstance name="parkmgmtsys" category="system">
+    <featureInstance name="vehicle_paymt_req" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="conn_vehicle_data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="parking_info" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      <type href="../../github/AadlProjects/smartpark/instances/smartparking_SmartParkingSystem_impl_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="park_mgmt_appl_info" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="driver_info" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+    </featureInstance>
+    <componentInstance name="parkmgmt" category="system">
+      <featureInstance name="occupancy" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+        <type href="../../github/AadlProjects/smartpark/instances/smartparking_SmartParkingSystem_impl_Instance.aaxl2#/4"/>
+      </featureInstance>
+      <featureInstance name="park_spaces" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+        <type href="../../github/AadlProjects/smartpark/instances/smartparking_SmartParkingSystem_impl_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <componentInstance name="dynparklot" category="process">
+        <featureInstance name="occupancy" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+          <type href="../../github/AadlProjects/smartpark/instances/smartparking_SmartParkingSystem_impl_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <componentInstance name="park_lot_occupancy" category="thread">
+          <featureInstance name="park_occupancy" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+            <type href="../../github/AadlProjects/smartpark/instances/smartparking_SmartParkingSystem_impl_Instance.aaxl2#/0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.park_lot_occupancy.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.dynparklot.impl"/>
+      </componentInstance>
+      <componentInstance name="detectveh" category="process">
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedProcessSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.detectveh.impl"/>
+      </componentInstance>
+      <componentInstance name="manageparkreserv" category="process">
+        <featureInstance name="park_spaces" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+          <type href="../../github/AadlProjects/smartpark/instances/smartparking_SmartParkingSystem_impl_Instance.aaxl2#/3"/>
+        </featureInstance>
+        <componentInstance name="park_lot_spaces" category="thread">
+          <featureInstance name="spaces" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+            <type href="../../github/AadlProjects/smartpark/instances/smartparking_SmartParkingSystem_impl_Instance.aaxl2#/2"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.park_lot_spaces.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedProcessSubcomponent.2"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.manageparkreserv.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.parkmgmt.impl"/>
+    </componentInstance>
+    <componentInstance name="parkelecpaymt" category="system">
+      <featureInstance name="pay_req" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="capacity_update" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.1"/>
+      </featureInstance>
+      <componentInstance name="billdriver" category="process">
+        <featureInstance name="pay_req" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+        </featureInstance>
+        <componentInstance name="parking_cost" category="thread">
+          <featureInstance name="pay_req" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.parking_cost.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.billdriver.impl"/>
+      </componentInstance>
+      <componentInstance name="updateparkdata" category="process">
+        <featureInstance name="capacity_update" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.0"/>
+        </featureInstance>
+        <componentInstance name="spaces" category="thread">
+          <featureInstance name="capacity_update" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.spaces.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedProcessSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.updateparkdata.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedSystemSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.parkelecpaymt.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.parkmgmtsys.impl"/>
+  </componentInstance>
+  <componentInstance name="roadsideequip" category="system">
+    <featureInstance name="personal_loca">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.98/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="vehicle_paymt_req">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.98/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="park_mgmt_appl_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.98/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="conn_vehicle_data" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.98/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="park_avail" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.98/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="veh_paymt_req" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.98/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="veh_paymt_update" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.98/@ownedDataPort.6"/>
+    </featureInstance>
+    <componentInstance name="RSEparkmgmt" category="system">
+      <featureInstance name="personal_loca">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.100/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="vehicle_paymt_req">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.100/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="conn_vehicle_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.100/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="park_avail" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.100/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="veh_paymt_req" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.100/@ownedDataPort.4"/>
+      </featureInstance>
+      <componentInstance name="vehdata" category="process">
+        <featureInstance name="personal_loca">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.102/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="vehicle_paymt_req">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.102/@ownedDataPort.1"/>
+        </featureInstance>
+        <featureInstance name="veh_paymt_req" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.102/@ownedDataPort.2"/>
+        </featureInstance>
+        <componentInstance name="loc_identity" category="thread">
+          <featureInstance name="personal_loca">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.104/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.103/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.loc_identity.impl"/>
+        </componentInstance>
+        <componentInstance name="veh_paymt" category="thread">
+          <featureInstance name="vehicle_paymt_req">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.106/@ownedDataPort.0"/>
+          </featureInstance>
+          <featureInstance name="veh_paymt_req" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.106/@ownedDataPort.1"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.103/@ownedThreadSubcomponent.1"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.veh_paymt.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.101/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.vehdata.impl"/>
+      </componentInstance>
+      <componentInstance name="Rsideparkcomm" category="process">
+        <featureInstance name="conn_vehicle_data" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.108/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="park_avail" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.108/@ownedDataPort.1"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.101/@ownedProcessSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.Rsideparkcomm.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.99/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.RSEparkmgmt.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.roadsideequip.impl"/>
+  </componentInstance>
+  <componentInstance name="transinfoctr" category="system">
+    <featureInstance name="traveler_req">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.80/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="traveler_src_update">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.80/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="parking_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.80/@ownedDataPort.2"/>
+      <type href="../../github/AadlProjects/smartpark/instances/smartparking_SmartParkingSystem_impl_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="interactv_travle_info" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.80/@ownedDataPort.3"/>
+    </featureInstance>
+    <componentInstance name="TICInteractvTravInfo" category="system">
+      <featureInstance name="traveler_req">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.82/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="interactv_travle_info" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.82/@ownedDataPort.1"/>
+      </featureInstance>
+      <componentInstance name="trav_profiles" category="process">
+        <featureInstance name="traveler_req">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.84/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="interactv_travle_info" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.84/@ownedDataPort.1"/>
+        </featureInstance>
+        <componentInstance name="trav_info" category="thread">
+          <featureInstance name="traveler_req">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.86/@ownedDataPort.0"/>
+          </featureInstance>
+          <featureInstance name="interactv_travle_info" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.86/@ownedDataPort.1"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.85/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.trav_info.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.83/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.trav_profiles.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.81/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.TICInteractvTravInfo.impl"/>
+    </componentInstance>
+    <componentInstance name="TICDataColl" category="system">
+      <featureInstance name="traveler_src_update">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.88/@ownedDataPort.0"/>
+      </featureInstance>
+      <componentInstance name="misctravinfo" category="process">
+        <featureInstance name="traveler_src_update">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.92/@ownedDataPort.0"/>
+        </featureInstance>
+        <componentInstance name="traff_data_trav" category="thread">
+          <featureInstance name="traveler_src_update">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.94/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.93/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.traff_data_trav.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.89/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.misctravinfo.impl"/>
+      </componentInstance>
+      <componentInstance name="trafficdata" category="process">
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.89/@ownedProcessSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.trafficdata.impl"/>
+      </componentInstance>
+      <componentInstance name="pricedata" category="process">
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.89/@ownedProcessSubcomponent.2"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.pricedata.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.81/@ownedSystemSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.TICDataColl.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.transinfoctr.impl"/>
+  </componentInstance>
+  <componentInstance name="vehicleobe" category="system">
+    <featureInstance name="traveler_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="driver_ip">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="park_avail">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="pers_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="vehicle_paymt_req">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="vehicle_paymt_update">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="vehicle_loca_motion" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedDataPort.6"/>
+    </featureInstance>
+    <componentInstance name="vehbasesafe" category="system">
+      <featureInstance name="to_veh">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="guide_req">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="guidance" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="loca_identity" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="pers_info">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.4"/>
+      </featureInstance>
+      <componentInstance name="communicationremote" category="process">
+        <featureInstance name="to_veh">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.32/@ownedDataPort.0"/>
+        </featureInstance>
+        <componentInstance name="deviceidentity" category="thread">
+          <featureInstance name="to_veh">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.34/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.deviceidentity.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.communicationremote.impl"/>
+      </componentInstance>
+      <componentInstance name="driverguidanceinterface" category="process">
+        <featureInstance name="guide_req">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="guidance" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedDataPort.1"/>
+        </featureInstance>
+        <componentInstance name="fromdriver" category="thread">
+          <featureInstance name="guide_req">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.fromdriver.impl"/>
+        </componentInstance>
+        <componentInstance name="confirmation" category="thread">
+          <featureInstance name="guidance" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.40/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedThreadSubcomponent.1"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.confirmation.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedProcessSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.driverguidanceinterface.impl"/>
+      </componentInstance>
+      <componentInstance name="vehiclelocationdata" category="process">
+        <featureInstance name="loca_identity" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.42/@ownedDataPort.0"/>
+        </featureInstance>
+        <componentInstance name="vehicleloc" category="thread">
+          <featureInstance name="loca_identity" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.44/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.vehicleloc.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedProcessSubcomponent.2"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.vehiclelocationdata.impl"/>
+      </componentInstance>
+      <componentInstance name="driverinformationinterface" category="process">
+        <featureInstance name="pers_info">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.0"/>
+        </featureInstance>
+        <componentInstance name="persidentity" category="thread">
+          <featureInstance name="pers_info">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.48/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.persidentity.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedProcessSubcomponent.3"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.driverinformationinterface.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.vehbasesafe.impl"/>
+    </componentInstance>
+    <componentInstance name="communicationsupport" category="system">
+      <componentInstance name="vehiclesecurecommunication" category="process">
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.51/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.vehiclesecurecommunication.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedSystemSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.communicationsupport.impl"/>
+    </componentInstance>
+    <componentInstance name="parkingsystem" category="system">
+      <componentInstance name="paymentdeviceinterface" category="process">
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.55/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.paymentdeviceinterface.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedSystemSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.parkingsystem.impl"/>
+    </componentInstance>
+    <componentInstance name="roadsideinforeception" category="system">
+      <componentInstance name="vehiclelocdata" category="process">
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.59/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.vehiclelocdata.impl"/>
+      </componentInstance>
+      <componentInstance name="vehiclenavmapdatabase" category="process">
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.59/@ownedProcessSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.vehiclenavmapdatabase.impl"/>
+      </componentInstance>
+      <componentInstance name="driverpersonalreq" category="process">
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.59/@ownedProcessSubcomponent.2"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.driverpersonalreq.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedSystemSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.roadsideinforeception.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.vehicleobe.impl"/>
+  </componentInstance>
+  <componentInstance name="driver" category="system">
+    <featureInstance name="driver_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="driver_ip" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="req_service" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="driver_up">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="paymt_txn_status">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.4"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.driver.impl"/>
+  </componentInstance>
+  <componentInstance name="persinfodev" category="system">
+    <featureInstance name="local_travlr_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.66/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="interactv_travle_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.66/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="personal_loca" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.66/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="transit_user_info" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.66/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="traveler_req" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.66/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="traveler_src_update" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.66/@ownedDataPort.5"/>
+    </featureInstance>
+    <componentInstance name="persInteractvTravInfo" category="system">
+      <featureInstance name="interactv_travle_info">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.68/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="traveler_req" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.68/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="traveler_src_update" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.68/@ownedDataPort.2"/>
+      </featureInstance>
+      <componentInstance name="personal_info" category="process">
+        <featureInstance name="interactv_travle_info">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.70/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="traveler_req" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.70/@ownedDataPort.1"/>
+        </featureInstance>
+        <featureInstance name="traveler_src_update" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.70/@ownedDataPort.2"/>
+        </featureInstance>
+        <componentInstance name="info_thread" category="thread">
+          <featureInstance name="interactv_travle_info">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.72/@ownedDataPort.0"/>
+          </featureInstance>
+          <featureInstance name="traveler_req" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.72/@ownedDataPort.1"/>
+          </featureInstance>
+          <featureInstance name="traveler_src_update" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.72/@ownedDataPort.2"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.71/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.info_thread.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.69/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.personal_info.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.67/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.persInteractvTravInfo.impl"/>
+    </componentInstance>
+    <componentInstance name="personallocmanagement" category="system">
+      <featureInstance name="personal_loca" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.74/@ownedDataPort.0"/>
+      </featureInstance>
+      <componentInstance name="travnavmapdatabase" category="process">
+        <featureInstance name="personal_loca" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.76/@ownedDataPort.0"/>
+        </featureInstance>
+        <componentInstance name="driverloc" category="thread">
+          <featureInstance name="personal_loca" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.78/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.77/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.driverloc.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.75/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.travnavmapdatabase.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.67/@ownedSystemSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.personallocmanagement.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.persinfodev.impl"/>
+  </componentInstance>
+  <connectionInstance name="parkmgmtsys.driver_info -> driver.driver_info" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.0/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.4" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="parkmgmtsys.parkmgmt.dynparklot.park_lot_occupancy.park_occupancy -> transinfoctr.parking_info" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.2" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="parkmgmtsys.parkmgmt.manageparkreserv.park_lot_spaces.spaces -> transinfoctr.parking_info" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.2" source="//@componentInstance.0/@componentInstance.0/@componentInstance.2/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.2" source="//@componentInstance.0/@componentInstance.0/@componentInstance.2/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="parkmgmtsys.parkelecpaymt.billdriver.parking_cost.pay_req -> roadsideequip.RSEparkmgmt.vehdata.veh_paymt.vehicle_paymt_req" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.1/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.0/@componentInstance.1/@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.99/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.101/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1/@componentInstance.0/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.103/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="parkmgmtsys.parkelecpaymt.updateparkdata.spaces.capacity_update -> roadsideequip.park_mgmt_appl_info" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.0/@componentInstance.1/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="roadsideequip.RSEparkmgmt.vehdata.veh_paymt.veh_paymt_req -> vehicleobe.vehicle_paymt_req" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.4" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.1/@featureInstance.1">
+    <connectionReference context="//@componentInstance.1/@componentInstance.0/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.103/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.101/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.1/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.99/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.5" destination="//@componentInstance.3/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="roadsideequip.RSEparkmgmt.Rsideparkcomm.conn_vehicle_data -> parkmgmtsys.conn_vehicle_data" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.1" source="//@componentInstance.1/@componentInstance.0/@componentInstance.1/@featureInstance.0">
+    <connectionReference context="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.101/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.99/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.3" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="roadsideequip.RSEparkmgmt.Rsideparkcomm.park_avail -> vehicleobe.park_avail" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.2" source="//@componentInstance.1/@componentInstance.0/@componentInstance.1/@featureInstance.1">
+    <connectionReference context="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.101/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.1/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.99/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.4" destination="//@componentInstance.3/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="transinfoctr.TICInteractvTravInfo.trav_profiles.trav_info.interactv_travle_info -> vehicleobe.vehbasesafe.communicationremote.deviceidentity.to_veh" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.2/@componentInstance.0/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.85/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.83/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.81/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.3" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3/@componentInstance.0" source="//@componentInstance.3/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3/@componentInstance.0/@componentInstance.0" source="//@componentInstance.3/@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="transinfoctr.TICInteractvTravInfo.trav_profiles.trav_info.interactv_travle_info -> persinfodev.persInteractvTravInfo.personal_info.info_thread.interactv_travle_info" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.2/@componentInstance.0/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.85/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.83/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.81/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.3" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.1" destination="//@componentInstance.5/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.67/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5/@componentInstance.0" source="//@componentInstance.5/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.69/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5/@componentInstance.0/@componentInstance.0" source="//@componentInstance.5/@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.71/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicleobe.vehbasesafe.vehiclelocationdata.vehicleloc.loca_identity -> roadsideequip.RSEparkmgmt.vehdata.loc_identity.personal_loca" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@componentInstance.3/@componentInstance.0/@componentInstance.2/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.3/@componentInstance.0/@componentInstance.2" source="//@componentInstance.3/@componentInstance.0/@componentInstance.2/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.0/@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3/@componentInstance.0" source="//@componentInstance.3/@componentInstance.0/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.3/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.6" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.99/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.101/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1/@componentInstance.0/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.103/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="driver.req_service -> vehicleobe.vehbasesafe.driverguidanceinterface.fromdriver.guide_req" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.0" source="//@componentInstance.4/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.2" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3/@componentInstance.0" source="//@componentInstance.3/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.3/@componentInstance.0/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3/@componentInstance.0/@componentInstance.1" source="//@componentInstance.3/@componentInstance.0/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="persinfodev.persInteractvTravInfo.personal_info.info_thread.traveler_req -> transinfoctr.TICInteractvTravInfo.trav_profiles.trav_info.traveler_req" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@componentInstance.5/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.5/@componentInstance.0/@componentInstance.0" source="//@componentInstance.5/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.5/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.71/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5/@componentInstance.0" source="//@componentInstance.5/@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.5/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.69/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.5/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.67/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.4" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.81/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.83/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.0/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.85/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="persinfodev.persInteractvTravInfo.personal_info.info_thread.traveler_src_update -> transinfoctr.TICDataColl.misctravinfo.traff_data_trav.traveler_src_update" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@componentInstance.5/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2">
+    <connectionReference context="//@componentInstance.5/@componentInstance.0/@componentInstance.0" source="//@componentInstance.5/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.5/@componentInstance.0/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.71/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5/@componentInstance.0" source="//@componentInstance.5/@componentInstance.0/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.5/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.69/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.5/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.67/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.5" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.81/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.89/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.93/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="persinfodev.personallocmanagement.travnavmapdatabase.driverloc.personal_loca -> vehicleobe.vehbasesafe.driverinformationinterface.persidentity.pers_info" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.0/@componentInstance.3/@componentInstance.0/@featureInstance.0" source="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.5/@componentInstance.1/@componentInstance.0" source="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.77/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5/@componentInstance.1" source="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.75/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.5/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.67/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.2" destination="//@componentInstance.3/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@featureInstance.3" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3/@componentInstance.0" source="//@componentInstance.3/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.0/@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3/@componentInstance.0/@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.0/@componentInstance.3/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.SmartParkingSystem.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.SmartParkingSystem.impl"/>
+</instance:SystemInstance>

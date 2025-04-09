@@ -1,0 +1,26 @@
+system FileSystem
+
+features
+root : requires data access Directory.hashed ;
+
+end FileSystem ;
+
+
+process Application
+
+features
+resualt : out data port result_type ;
+home : requires data access Directory.hash ;
+
+end Application ;
+
+thread Calculate
+
+prototypes
+datatype : out data port prototype  datatype;
+features
+input : in data port prototype datatype ;
+result : out data port prototype datatype ;
+
+end Calculate ;  
+

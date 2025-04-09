@@ -1,0 +1,6 @@
+property set mypropertyset is
+	RoleTypes: type enumeration (jobseeker, Server);
+
+	Role: mypropertyset::RoleTypes applies to (system, thread);
+end mypropertyset;
+

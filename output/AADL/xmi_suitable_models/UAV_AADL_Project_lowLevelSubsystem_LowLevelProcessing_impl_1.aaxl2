@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="LowLevelProcessing_impl_Instance" category="system">
+  <componentInstance name="thisI2C1" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#embeddedPlatform.I2C_1.impl"/>
+  </componentInstance>
+  <componentInstance name="thisI2C2" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#embeddedPlatform.I2C_2.impl"/>
+  </componentInstance>
+  <componentInstance name="thisRS2321" category="bus">
+    <featureInstance name="busAccess" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/UAV_AADL_Project/packages/instances/lowLevelSubsystem_LowLevelProcessing_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#embeddedPlatform.RS232_1.impl"/>
+  </componentInstance>
+  <componentInstance name="thisRS2322" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#embeddedPlatform.RS232_2.impl"/>
+  </componentInstance>
+  <componentInstance name="thisRS2323" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#embeddedPlatform.RS232_3.impl"/>
+  </componentInstance>
+  <componentInstance name="thisRS485" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#embeddedPlatform.RS485.impl"/>
+  </componentInstance>
+  <componentInstance name="di_RadioControl" category="device">
+    <featureInstance name="dp_RadioControlOut" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/UAV_AADL_Project/packages/devices.aadl#devices.d_RadioControl.impl"/>
+  </componentInstance>
+  <componentInstance name="di_Servo_R" category="device">
+    <featureInstance name="dp_Servo_RInOut" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="busAccess" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.0"/>
+      <type href="../../github/UAV_AADL_Project/packages/instances/lowLevelSubsystem_LowLevelProcessing_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/UAV_AADL_Project/packages/devices.aadl#devices.d_Servo_R.impl"/>
+  </componentInstance>
+  <componentInstance name="di_Servo_L" category="device">
+    <featureInstance name="dp_Servo_LInOut" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="busAccess" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.0"/>
+      <type href="../../github/UAV_AADL_Project/packages/instances/lowLevelSubsystem_LowLevelProcessing_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/UAV_AADL_Project/packages/devices.aadl#devices.d_Servo_L.impl"/>
+  </componentInstance>
+  <componentInstance name="di_Sonar" category="device">
+    <featureInstance name="dp_SonarOut" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="busAccess" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+      <type href="../../github/UAV_AADL_Project/packages/instances/lowLevelSubsystem_LowLevelProcessing_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/UAV_AADL_Project/packages/devices.aadl#devices.d_Sonar.impl"/>
+  </componentInstance>
+  <componentInstance name="di_ESC_R" category="device">
+    <featureInstance name="dp_ESC_RInOut" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="busAccess" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/UAV_AADL_Project/packages/instances/lowLevelSubsystem_LowLevelProcessing_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/UAV_AADL_Project/packages/devices.aadl#devices.d_ESC_R.impl"/>
+  </componentInstance>
+  <componentInstance name="di_ESC_L" category="device">
+    <featureInstance name="dp_ESC_LInOut" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="busAccess" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedBusAccess.0"/>
+      <type href="../../github/UAV_AADL_Project/packages/instances/lowLevelSubsystem_LowLevelProcessing_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/UAV_AADL_Project/packages/devices.aadl#devices.d_ESC_L.impl"/>
+  </componentInstance>
+  <componentInstance name="di_GPS" category="device">
+    <featureInstance name="dp_GPSInOut" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="busAccess" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/UAV_AADL_Project/packages/instances/lowLevelSubsystem_LowLevelProcessing_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <flowSpecification name="raw_data" destination="//@componentInstance.12/@featureInstance.0">
+      <flowSpecification href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/UAV_AADL_Project/packages/devices.aadl#devices.d_GPS.impl"/>
+  </componentInstance>
+  <componentInstance name="di_IMU" category="device">
+    <featureInstance name="dp_IMUInOut" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="busAccess" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedBusAccess.0"/>
+      <type href="../../github/UAV_AADL_Project/packages/instances/lowLevelSubsystem_LowLevelProcessing_impl_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <flowSpecification name="raw_data_IMU" destination="//@componentInstance.13/@featureInstance.0">
+      <flowSpecification href="../../github/UAV_AADL_Project/packages/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.7"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/UAV_AADL_Project/packages/devices.aadl#devices.d_IMU.impl"/>
+  </componentInstance>
+  <componentInstance name="pi_Communication_impl" category="process">
+    <featureInstance name="pg_ControlMessagesOut" category="featureGroup" direction="in out">
+      <featureInstance name="dp_Force_RIn" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="dp_Force_LIn" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="dp_Angle_RIn" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="dp_Angle_LIn" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.3"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <featureInstance name="pg_UAVRawData" category="featureGroup" direction="in out">
+      <featureInstance name="dp_SonarRawIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="dp_IMURawIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="dp_GPSRawIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.2"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFeatureGroup.1"/>
+    </featureInstance>
+    <featureInstance name="dp_AngularVelocityServoIn">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="dp_AngleServoIn">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="ti_CommBeaglebone" category="thread">
+      <featureInstance name="dp_AngularVelocityServoOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="dp_AngularVelocityServoIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="dp_AngleServoOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="dp_AngleServoIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="dp_SonarRawOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+      </featureInstance>
+      <featureInstance name="dp_ForceB_ROut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.5"/>
+      </featureInstance>
+      <featureInstance name="dp_ForceB_LOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.6"/>
+      </featureInstance>
+      <featureInstance name="dp_ServoB_ROut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.7"/>
+      </featureInstance>
+      <featureInstance name="dp_ServoB_LOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.8"/>
+      </featureInstance>
+      <featureInstance name="dp_SonarRawIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.9"/>
+      </featureInstance>
+      <featureInstance name="dp_ForceB_RIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.10"/>
+      </featureInstance>
+      <featureInstance name="dp_ForceB_LIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.11"/>
+      </featureInstance>
+      <featureInstance name="dp_ServoB_RIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.12"/>
+      </featureInstance>
+      <featureInstance name="dp_ServoB_LIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.13"/>
+      </featureInstance>
+      <featureInstance name="dp_GPSRawOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.14"/>
+      </featureInstance>
+      <featureInstance name="dp_IMURawOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.15"/>
+      </featureInstance>
+      <featureInstance name="dp_GPSRawIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.16"/>
+      </featureInstance>
+      <featureInstance name="dp_IMURawIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.17"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#systemThreads.t_CommBeaglebone.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#systemProcesses.p_Communication.impl"/>
+  </componentInstance>
+  <componentInstance name="pi_Control_impl" category="process">
+    <featureInstance name="pg_ControlMessagesIn" category="featureGroup" direction="in out">
+      <featureInstance name="dp_Force_RIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="dp_Force_LIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="dp_Angle_RIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="dp_Angle_LIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <featureInstance name="pg_UAVBehavior" category="featureGroup" direction="in out">
+      <featureInstance name="dp_AngularVelocityIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="dp_PositionIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="dp_VelocityIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="dp_AtitudeIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.3"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFeatureGroup.1"/>
+    </featureInstance>
+    <featureInstance name="dp_RadioControlSignalIn">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="dp_ESC_RInOut" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="dp_ESC_LInOut" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="dp_Servo_ROut" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="dp_Servo_LOut" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+    </featureInstance>
+    <componentInstance name="ti_RadioControl" category="thread">
+      <featureInstance name="dp_RadioControlSignalIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="dp_AngularVelocityIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="dp_PositionIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="dp_VelocityIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="dp_ForceB_RIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.4"/>
+      </featureInstance>
+      <featureInstance name="dp_ForceB_LIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.5"/>
+      </featureInstance>
+      <featureInstance name="dp_ServoB_RIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.6"/>
+      </featureInstance>
+      <featureInstance name="dp_ServoB_LIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.7"/>
+      </featureInstance>
+      <featureInstance name="dp_AtitudeIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.8"/>
+      </featureInstance>
+      <featureInstance name="dp_ForceROut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.9"/>
+      </featureInstance>
+      <featureInstance name="dp_ForceLOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.10"/>
+      </featureInstance>
+      <featureInstance name="dp_AngleROut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.11"/>
+      </featureInstance>
+      <featureInstance name="dp_AngleLOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.12"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#systemThreads.t_RadioControl.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#systemProcesses.p_Control.impl"/>
+  </componentInstance>
+  <componentInstance name="pi_Input_impl" category="process">
+    <featureInstance name="pg_UAVBehavior" category="featureGroup" direction="in out">
+      <featureInstance name="dp_AngularVelocityOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="dp_PositionOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="dp_VelocityOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="dp_AtitudeOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <featureInstance name="pg_UAVRawData" category="featureGroup" direction="in out">
+      <featureInstance name="dp_SonarRawOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="dp_IMURawOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="dp_GPSRawOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/featuresUAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.1"/>
+    </featureInstance>
+    <featureInstance name="dp_AngularVelocityServoOut" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="dp_RadioControlSignalOut" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="dp_RadioControlIn">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="dp_AngleServoOut" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="dp_Servo_RInOut" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="dp_Servo_LInOut" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="dp_IMUInOut" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+    </featureInstance>
+    <featureInstance name="dp_GPSInOut" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
+    </featureInstance>
+    <featureInstance name="dp_SonarIn">
+      <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.8"/>
+    </featureInstance>
+    <componentInstance name="ti_GPS" category="thread">
+      <featureInstance name="dp_GPSRawOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="dp_GPSInOut" direction="in out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#systemThreads.t_GPS.impl"/>
+    </componentInstance>
+    <componentInstance name="ti_ReadData" category="thread">
+      <featureInstance name="dp_AngularVelocityServoOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="dp_RadioControlSignalOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="dp_AngularVelocityOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="dp_RadioControlIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="dp_AngleServoOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+      </featureInstance>
+      <featureInstance name="dp_SonarRawOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.5"/>
+      </featureInstance>
+      <featureInstance name="dp_PositionOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.6"/>
+      </featureInstance>
+      <featureInstance name="dp_VelocityOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.7"/>
+      </featureInstance>
+      <featureInstance name="dp_AtitudeOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.8"/>
+      </featureInstance>
+      <featureInstance name="dp_Servo_RIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.9"/>
+      </featureInstance>
+      <featureInstance name="dp_Servo_LIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.10"/>
+      </featureInstance>
+      <featureInstance name="dp_IMURawOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.11"/>
+      </featureInstance>
+      <featureInstance name="dp_IMUInOut" direction="in out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.12"/>
+      </featureInstance>
+      <featureInstance name="dp_SonarIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.13"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/UAV_AADL_Project/packages/systemThreads.aadl#systemThreads.t_ReadData.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#systemProcesses.p_Input.impl"/>
+  </componentInstance>
+  <componentInstance name="DISCOVERY_ARM" category="processor">
+    <featureInstance name="BI2C1" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/UAV_AADL_Project/packages/instances/lowLevelSubsystem_LowLevelProcessing_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="BI2C2" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.1"/>
+      <type href="../../github/UAV_AADL_Project/packages/instances/lowLevelSubsystem_LowLevelProcessing_impl_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="BRS2321" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.2"/>
+      <type href="../../github/UAV_AADL_Project/packages/instances/lowLevelSubsystem_LowLevelProcessing_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="BRS2322" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.3"/>
+      <type href="../../github/UAV_AADL_Project/packages/instances/lowLevelSubsystem_LowLevelProcessing_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="BRS2323" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.4"/>
+      <type href="../../github/UAV_AADL_Project/packages/instances/lowLevelSubsystem_LowLevelProcessing_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <componentInstance name="thisRam" category="memory">
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#embeddedPlatform.ram.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/UAV_AADL_Project/packages/embeddedPlatform.aadl#embeddedPlatform.armCortexM4.impl"/>
+  </componentInstance>
+  <connectionInstance name="thisI2C1 -> DISCOVERY_ARM.BI2C1" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.17/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="thisI2C1 -> di_ESC_L.busAccess" complete="true" kind="accessConnection" destination="//@componentInstance.11/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.11/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="thisI2C1 -> di_ESC_R.busAccess" complete="true" kind="accessConnection" destination="//@componentInstance.10/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.10/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="thisI2C2 -> DISCOVERY_ARM.BI2C2" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.1" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.17/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="thisI2C2 -> di_IMU.busAccess" complete="true" kind="accessConnection" destination="//@componentInstance.13/@featureInstance.1" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.13/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="thisRS2321 -> DISCOVERY_ARM.BRS2321" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.2" source="//@componentInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2" destination="//@componentInstance.17/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="thisRS2322 -> DISCOVERY_ARM.BRS2322" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.3" source="//@componentInstance.3">
+    <connectionReference context="/" source="//@componentInstance.3" destination="//@componentInstance.17/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="thisRS2322 -> di_GPS.busAccess" complete="true" kind="accessConnection" destination="//@componentInstance.12/@featureInstance.1" source="//@componentInstance.3">
+    <connectionReference context="/" source="//@componentInstance.3" destination="//@componentInstance.12/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="thisRS2323 -> DISCOVERY_ARM.BRS2323" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.4" source="//@componentInstance.4">
+    <connectionReference context="/" source="//@componentInstance.4" destination="//@componentInstance.17/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="thisRS2323 -> di_Sonar.busAccess" complete="true" kind="accessConnection" destination="//@componentInstance.9/@featureInstance.1" source="//@componentInstance.4">
+    <connectionReference context="/" source="//@componentInstance.4" destination="//@componentInstance.9/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="thisRS485 -> thisRS2321.busAccess" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="thisRS485 -> di_Servo_R.busAccess" complete="true" kind="accessConnection" destination="//@componentInstance.7/@featureInstance.1" source="//@componentInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5" destination="//@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="thisRS485 -> di_Servo_L.busAccess" complete="true" kind="accessConnection" destination="//@componentInstance.8/@featureInstance.1" source="//@componentInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5" destination="//@componentInstance.8/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="di_RadioControl.dp_RadioControlOut -> pi_Input_impl.ti_ReadData.dp_RadioControlIn" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.3" source="//@componentInstance.6/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.16/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@featureInstance.4" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="di_Servo_R.dp_Servo_RInOut -> pi_Input_impl.ti_ReadData.dp_Servo_RIn" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.9" source="//@componentInstance.7/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.0" destination="//@componentInstance.16/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@featureInstance.6" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="di_Servo_L.dp_Servo_LInOut -> pi_Input_impl.ti_ReadData.dp_Servo_LIn" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.10" source="//@componentInstance.8/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0" destination="//@componentInstance.16/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@featureInstance.7" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="di_Sonar.dp_SonarOut -> pi_Input_impl.ti_ReadData.dp_SonarIn" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.13" source="//@componentInstance.9/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.0" destination="//@componentInstance.16/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@featureInstance.10" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.13">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="di_GPS.dp_GPSInOut -> pi_Input_impl.ti_GPS.dp_GPSInOut" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.0/@featureInstance.1" source="//@componentInstance.12/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.0" destination="//@componentInstance.16/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@featureInstance.9" destination="//@componentInstance.16/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="di_IMU.dp_IMUInOut -> pi_Input_impl.ti_ReadData.dp_IMUInOut" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.12" source="//@componentInstance.13/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.13/@featureInstance.0" destination="//@componentInstance.16/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@featureInstance.8" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.12">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Communication_impl.ti_CommBeaglebone.dp_ForceB_ROut -> pi_Control_impl.ti_RadioControl.dp_ForceB_RIn" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.4" source="//@componentInstance.14/@componentInstance.0/@featureInstance.5">
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.14/@featureInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.0/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroupConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.0/@featureInstance.0" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Communication_impl.ti_CommBeaglebone.dp_ForceB_LOut -> pi_Control_impl.ti_RadioControl.dp_ForceB_LIn" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.5" source="//@componentInstance.14/@componentInstance.0/@featureInstance.6">
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.14/@featureInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.0/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroupConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.0/@featureInstance.1" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Communication_impl.ti_CommBeaglebone.dp_ServoB_ROut -> pi_Control_impl.ti_RadioControl.dp_ServoB_RIn" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.6" source="//@componentInstance.14/@componentInstance.0/@featureInstance.7">
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@componentInstance.0/@featureInstance.7" destination="//@componentInstance.14/@featureInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.0/@featureInstance.2" destination="//@componentInstance.15/@featureInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroupConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.0/@featureInstance.2" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Communication_impl.ti_CommBeaglebone.dp_ServoB_LOut -> pi_Control_impl.ti_RadioControl.dp_ServoB_LIn" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.7" source="//@componentInstance.14/@componentInstance.0/@featureInstance.8">
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@componentInstance.0/@featureInstance.8" destination="//@componentInstance.14/@featureInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.0/@featureInstance.3" destination="//@componentInstance.15/@featureInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroupConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.0/@featureInstance.3" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Control_impl.ti_RadioControl.dp_ForceROut -> di_ESC_R.dp_ESC_RInOut" complete="true" kind="portConnection" destination="//@componentInstance.10/@featureInstance.0" source="//@componentInstance.15/@componentInstance.0/@featureInstance.9">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.0/@featureInstance.9" destination="//@componentInstance.15/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.3" destination="//@componentInstance.10/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Control_impl.ti_RadioControl.dp_ForceLOut -> di_ESC_L.dp_ESC_LInOut" complete="true" kind="portConnection" destination="//@componentInstance.11/@featureInstance.0" source="//@componentInstance.15/@componentInstance.0/@featureInstance.10">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.0/@featureInstance.10" destination="//@componentInstance.15/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.4" destination="//@componentInstance.11/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Control_impl.ti_RadioControl.dp_AngleROut -> di_Servo_R.dp_Servo_RInOut" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.0" source="//@componentInstance.15/@componentInstance.0/@featureInstance.11">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.0/@featureInstance.11" destination="//@componentInstance.15/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.5" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Control_impl.ti_RadioControl.dp_AngleLOut -> di_Servo_L.dp_Servo_LInOut" complete="true" kind="portConnection" destination="//@componentInstance.8/@featureInstance.0" source="//@componentInstance.15/@componentInstance.0/@featureInstance.12">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.0/@featureInstance.12" destination="//@componentInstance.15/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.6" destination="//@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Input_impl.dp_AngleServoOut -> pi_Communication_impl.ti_CommBeaglebone.dp_AngleServoIn" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.3" source="//@componentInstance.16/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.5" destination="//@componentInstance.14/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@featureInstance.3" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Input_impl.ti_GPS.dp_GPSRawOut -> pi_Communication_impl.ti_CommBeaglebone.dp_GPSRawIn" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.16" source="//@componentInstance.16/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.16/@featureInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.1/@featureInstance.2" destination="//@componentInstance.14/@featureInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroupConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@featureInstance.1/@featureInstance.2" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Input_impl.ti_ReadData.dp_AngularVelocityServoOut -> pi_Communication_impl.ti_CommBeaglebone.dp_AngularVelocityServoIn" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.1" source="//@componentInstance.16/@componentInstance.1/@featureInstance.0">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.16/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.14"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.2" destination="//@componentInstance.14/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@featureInstance.2" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Input_impl.ti_ReadData.dp_RadioControlSignalOut -> pi_Control_impl.ti_RadioControl.dp_RadioControlSignalIn" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.0" source="//@componentInstance.16/@componentInstance.1/@featureInstance.1">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.16/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.3" destination="//@componentInstance.15/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.2" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Input_impl.ti_ReadData.dp_AngularVelocityOut -> pi_Control_impl.ti_RadioControl.dp_AngularVelocityIn" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.1" source="//@componentInstance.16/@componentInstance.1/@featureInstance.2">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.16/@featureInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.0/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroupConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.1/@featureInstance.0" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Input_impl.ti_ReadData.dp_SonarRawOut -> pi_Communication_impl.ti_CommBeaglebone.dp_SonarRawIn" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.9" source="//@componentInstance.16/@componentInstance.1/@featureInstance.5">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.1/@featureInstance.5" destination="//@componentInstance.16/@featureInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.1/@featureInstance.0" destination="//@componentInstance.14/@featureInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroupConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@featureInstance.1/@featureInstance.0" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Input_impl.ti_ReadData.dp_PositionOut -> pi_Control_impl.ti_RadioControl.dp_PositionIn" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.2" source="//@componentInstance.16/@componentInstance.1/@featureInstance.6">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.1/@featureInstance.6" destination="//@componentInstance.16/@featureInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.0/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroupConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.1/@featureInstance.1" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Input_impl.ti_ReadData.dp_VelocityOut -> pi_Control_impl.ti_RadioControl.dp_VelocityIn" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.3" source="//@componentInstance.16/@componentInstance.1/@featureInstance.7">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.1/@featureInstance.7" destination="//@componentInstance.16/@featureInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.0/@featureInstance.2" destination="//@componentInstance.15/@featureInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroupConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.1/@featureInstance.2" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Input_impl.ti_ReadData.dp_AtitudeOut -> pi_Control_impl.ti_RadioControl.dp_AtitudeIn" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.8" source="//@componentInstance.16/@componentInstance.1/@featureInstance.8">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.1/@featureInstance.8" destination="//@componentInstance.16/@featureInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.0/@featureInstance.3" destination="//@componentInstance.15/@featureInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroupConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.1/@featureInstance.3" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pi_Input_impl.ti_ReadData.dp_IMURawOut -> pi_Communication_impl.ti_CommBeaglebone.dp_IMURawIn" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.17" source="//@componentInstance.16/@componentInstance.1/@featureInstance.11">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.1/@featureInstance.11" destination="//@componentInstance.16/@featureInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.1/@featureInstance.1" destination="//@componentInstance.14/@featureInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroupConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@featureInstance.1/@featureInstance.1" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/UAV_AADL_Project/packages/systemProcesses.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#lowLevelSubsystem.LowLevelProcessing.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl#lowLevelSubsystem.LowLevelProcessing.impl"/>
+</instance:SystemInstance>

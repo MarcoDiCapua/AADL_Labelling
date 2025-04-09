@@ -1,0 +1,112 @@
+
+-- This package models the core elements of the FORA Fog Computing Platform.
+
+package FORA::core
+public
+	
+------------------------------------------------------------------
+--- Core elements 
+------------------------------------------------------------------
+	
+	abstract Element
+	end Element;
+
+	abstract Node extends Element
+	end Node;
+
+	abstract Link extends Element
+	end Link;
+
+	abstract Application extends Element
+		
+	end Application;
+
+------------------------------------------------------------------
+--- Nodes 
+------------------------------------------------------------------
+
+	abstract EdgeNode extends Node
+		features
+			enet: requires bus access ;
+	end EdgeNode;
+
+	abstract FogNode extends Node
+	end FogNode;
+
+	abstract CloudNode extends Node
+		features
+			enet: requires bus access ;
+	end CloudNode;
+
+	abstract Switch extends Node
+		
+	end Switch;
+	
+	abstract EndDevice extends Node
+		
+	end EndDevice;
+	
+------------------------------------------------------------------
+--- Links 
+------------------------------------------------------------------
+	bus Ethernet extends link
+	end Ethernet;
+
+	bus Wire extends Ethernet
+	end Wire;
+
+	bus Wireless extends Ethernet
+	end Wireless;
+
+------------------------------------------------------------------
+--- Applications 
+------------------------------------------------------------------
+	process CriticalApp extends Application
+		
+	end CriticalApp;
+	
+	thread CriticalTask 
+		
+		
+	end CriticalTask;
+	
+	process NonCriticalApp extends Application
+		
+	end NonCriticalApp;
+	
+	
+------------------------------------------------------------------
+--- Errors and Error behaviors 
+------------------------------------------------------------------
+	
+annex EMV2 {**
+   error types
+      DataError : type;
+      ProtocolError: type;
+      TimeOut: type;
+      ConnectionError: type;
+      SecurityError: type;
+   end types;
+    
+   -- Simple error state machine
+   error behavior Operability 
+   states
+     Operational : initial state;
+     Failed : state;
+   end behavior;
+   
+   error behavior connectivity
+   states
+     connected: initial state; 
+     disconnected: state;
+   end behavior;
+
+   error behavior availability 
+   states
+     available: initial state; 
+     unavailable: state;
+   end behavior;
+**};
+	
+	
+end FORA::core;

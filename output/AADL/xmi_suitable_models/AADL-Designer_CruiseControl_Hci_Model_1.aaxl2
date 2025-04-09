@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Hci_Model_Instance" category="system">
+  <featureInstance name="Breakpedalpressed">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+    <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="Clutchpedalpressed">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+    <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="Autospd_Mph">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.2"/>
+    <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="Engspd_Rpm">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.3"/>
+    <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="Cruiseactive" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.4"/>
+    <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="Refspd_Mph" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.5"/>
+    <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <componentInstance name="P_Hci_Process" category="process">
+    <featureInstance name="Breakpedalpressed">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="Clutchpedalpressed">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.1"/>
+      <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="Autospd_Mph">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.2"/>
+      <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="Engspd_Rpm">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.3"/>
+      <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="Cruiseactive" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.4"/>
+      <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="Refspd_Mph" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.5"/>
+      <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <componentInstance name="T_Buttonpanel" category="thread">
+      <featureInstance name="Activate" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Cancel" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Onnotoff" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Incspeed" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Decspd" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#CruiseControl.Button_Panel.Gui"/>
+    </componentInstance>
+    <componentInstance name="T_Drivermodelogic" category="thread">
+      <featureInstance name="Breakpedalpressed">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Clutchpedalpressed">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Activate">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Cancel">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Onnotoff">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Cruiseactive" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.5"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#CruiseControl.Drivermodelogic.Simulink"/>
+    </componentInstance>
+    <componentInstance name="T_Refspd" category="thread">
+      <featureInstance name="Activate">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Cruiseactive">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Incspeed">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.2"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Decspd">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.3"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Refspd_Mph" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.4"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#CruiseControl.Refspd.Simulink"/>
+    </componentInstance>
+    <componentInstance name="T_Instrumentpanel" category="thread">
+      <featureInstance name="Autospd_Mph">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="Engspd_Rpm">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="Refspd_Mph">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.2"/>
+        <type href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/instances/cruise_control_Hci_Model_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#CruiseControl.Instrumentpanel.Gui"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#CruiseControl.Hci_Process.Model"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#CruiseControl.Hci.Model"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl#CruiseControl.Hci.Model"/>
+</instance:SystemInstance>

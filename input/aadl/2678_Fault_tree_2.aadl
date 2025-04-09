@@ -1,0 +1,55 @@
+--  In this example, a typed error is defined as causing the failure.
+
+package Fault_tree_2
+public
+with EMV2;
+
+device item
+	annex EMV2 {**
+		use types errorLibrary;
+		use behavior errorLibrary::FailStop;
+		component error behavior
+			events
+				Failure : error event {serviceOmission};
+			transitions
+				t1 : operational -[failure{serviceOmission}]-> failStop;
+		end component;
+	**};
+end item;
+
+device implementation item.i
+end item.i;
+
+system main
+end main;
+ 
+system implementation main.complete
+	subcomponents
+		left : device item.i;
+		right: device item.i;
+	annex EMV2 {**
+		use types errorLibrary;
+		-- override the errorlibary definition of fail stop with one specific to this package
+		use behavior Fault_tree_2::FailStop;
+		composite error behavior
+			states
+			[left.operational or right.operational]->operational;
+			-- system is failed if both channels , i.e. must have one operating channel
+			[left.failStop and right.failStop]->failStop;
+		end composite;
+	**};
+end main.complete;
+
+-- override the definition of the error library for fail stop
+annex EMV2 {**
+	error behavior FailStop
+events
+	Failure : error event ;
+states
+	Operational : initial state ;
+	FailStop : state ;
+
+end behavior ;
+**};
+
+end Fault_tree_2;

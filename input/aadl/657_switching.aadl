@@ -1,0 +1,78 @@
+-------------------------------------------------
+-- switching component block
+--
+-- Failure events: none
+-- Inputs: In1 (from voter) and In2 (from backup computer)
+-- Outputs: 
+--	Loss (true or false )
+--	Misleading (true or false)
+-- States: none
+-- Transfer function:
+--  If ln1 = 'data_ok'                                //\
+--	then Loss = false & misleading = false            //| system living on 'main' computing channel
+--  else if ln1 = 'err_data'                          //|
+--		then Loss = false & misleading = true         ///
+--		else if ln2 = 'data_ok'
+--			then loss = false & misleading = false    //\
+--			else if In2 = 'err_data'                  //| system living on backup channel
+--				then loss = true & misleading = true  //|
+--				else loss = true & misleading = false ///
+--------------------------------------------------
+package switching
+public
+
+with dataDictionary;
+with ARP4761, EMV2;
+
+system switching
+	features
+		In1 : in data port dataDictionary::FMS_StatusData;
+		In2 : in data port dataDictionary::FMS_StatusData;
+		StatusLoss : out data port dataDictionary::FMS_StatusData;
+		StatusMisleading : out data port dataDictionary::FMS_StatusData;
+	flows
+		fl1 : flow sink In1;
+		fl2 : flow sink In2;
+		fl3 : flow source StatusLoss;
+		fl4 : flow source StatusMisleading;
+	annex EMV2 {**
+		use types S18_ErrorLibrary;
+		use behavior S18_ErrorLibrary::threeState;
+		error propagations
+				In1 :  in propagation {err_data, no_data};
+				In2 :  in propagation {err_data, no_data};
+				statusLoss : out propagation {no_data};
+				statusMisleading : out propagation {err_data};
+			flows
+				es1: error sink In1{err_data, no_data};
+				es2: error sink In2{err_data, no_data};
+				es3: error source statusLoss{no_data} when failed;
+				es4: error source statusMisleading{err_data} when erroneous;
+		end propagations;
+		
+		component error behavior
+			transitions
+				t1 : operative -[(In1{err_data} and (In2{err_data} or In2{no_data})) or
+								 (In1{no_data} and In2{err_data})
+					]-> erroneous;
+				t2 : operative -[In1{no_data} and In2{no_data}]->failed;
+		end component;		
+		properties
+			EMV2::severity => ARP4761::Major applies to failed;
+			ARP4761::hazards => 
+			([
+				description => "Backup selection switch failure";
+				environment => "All";
+				failure => "Unable to select backup flight control computer";
+				failureEffect => "Loss flight control";
+				phases => ("Takeoff, Inflight, Landing");
+				comment => "Backup computer is not available in the event of primary flight control system failure";
+			])
+			applies to failed;
+	**};
+end switching;
+
+system implementation switching.item
+end switching.item;
+
+end switching;

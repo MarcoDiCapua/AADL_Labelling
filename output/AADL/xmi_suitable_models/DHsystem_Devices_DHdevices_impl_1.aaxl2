@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="DHdevices_impl_Instance" category="system">
+  <featureInstance name="device_se" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="pm_device">
+    <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="comm_device">
+    <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.2"/>
+  </featureInstance>
+  <componentInstance name="DeviceManager" category="system">
+    <featureInstance name="dm_hum" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="dm_pow" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="dm_sec" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="dm_thermo" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="dm_seOUT" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="gatewayOUT_dm">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="pmOUT_dm">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.6"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/DHsystem/Devices.aadl#Devices.deviceManager"/>
+  </componentInstance>
+  <componentInstance name="HumidityDevices" category="system">
+    <featureInstance name="dm_hum">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <componentInstance name="Humidifier" category="device">
+      <featureInstance name="hum_sensor" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDeviceSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.humidifier"/>
+    </componentInstance>
+    <componentInstance name="Dehumidifier" category="device">
+      <featureInstance name="dh_sensor" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDeviceSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.dehumidifier"/>
+    </componentInstance>
+    <componentInstance name="HumiditySensor" category="device">
+      <featureInstance name="hum_sensor">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="dh_sensor">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDeviceSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.humSensor"/>
+    </componentInstance>
+    <connectionInstance name="Humidifier.hum_sensor -> HumiditySensor.hum_sensor" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.2/@featureInstance.0" source="//@componentInstance.1/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Dehumidifier.dh_sensor -> HumiditySensor.dh_sensor" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.2/@featureInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/DHsystem/Devices.aadl#Devices.humidity.impl"/>
+  </componentInstance>
+  <componentInstance name="PowerDevices" category="system">
+    <featureInstance name="dm_pow">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+    </featureInstance>
+    <componentInstance name="Switch" category="device">
+      <featureInstance name="sw_app" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="sw_light" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDeviceSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.switch"/>
+    </componentInstance>
+    <componentInstance name="Appliances" category="device">
+      <featureInstance name="sw_app">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDeviceSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.appliances"/>
+    </componentInstance>
+    <componentInstance name="Lights" category="device">
+      <featureInstance name="sw_light">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDeviceSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.lights"/>
+    </componentInstance>
+    <connectionInstance name="Switch.sw_app -> Appliances.sw_app" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.0" source="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Switch.sw_light -> Lights.sw_light" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.0" source="//@componentInstance.2/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/DHsystem/Devices.aadl#Devices.power.impl"/>
+  </componentInstance>
+  <componentInstance name="SecurityDevices" category="system">
+    <featureInstance name="dm_sec">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+    </featureInstance>
+    <componentInstance name="Alarms" category="device">
+      <featureInstance name="al_door" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="al_win" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDeviceSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.alarms"/>
+    </componentInstance>
+    <componentInstance name="DoorSensor" category="device">
+      <featureInstance name="al_door">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDeviceSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.doorSensor"/>
+    </componentInstance>
+    <componentInstance name="WindowSensor" category="device">
+      <featureInstance name="al_win">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDeviceSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.windowSensor"/>
+    </componentInstance>
+    <connectionInstance name="Alarms.al_door -> DoorSensor.al_door" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.0" source="//@componentInstance.3/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Alarms.al_win -> WindowSensor.al_win" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.0" source="//@componentInstance.3/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedSystemSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/DHsystem/Devices.aadl#Devices.security.impl"/>
+  </componentInstance>
+  <componentInstance name="ThermostatDevices" category="system">
+    <featureInstance name="dm_thermo">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.0"/>
+    </featureInstance>
+    <componentInstance name="HVAC" category="device">
+      <featureInstance name="hvac_ts" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDeviceSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.hvac"/>
+    </componentInstance>
+    <componentInstance name="ThermostatSensort" category="device">
+      <featureInstance name="hvac_ts">
+        <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDeviceSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.thermoSensor"/>
+    </componentInstance>
+    <connectionInstance name="HVAC.hvac_ts -> ThermostatSensort.hvac_ts" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.1/@featureInstance.0" source="//@componentInstance.4/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedSystemSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/DHsystem/Devices.aadl#Devices.thermo.impl"/>
+  </componentInstance>
+  <connectionInstance name="pm_device -> DeviceManager.pmOUT_dm" kind="portConnection" destination="//@componentInstance.0/@featureInstance.6" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.0/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="comm_device -> DeviceManager.gatewayOUT_dm" kind="portConnection" destination="//@componentInstance.0/@featureInstance.5" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DeviceManager.dm_hum -> HumidityDevices.dm_hum" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DeviceManager.dm_pow -> PowerDevices.dm_pow" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DeviceManager.dm_sec -> SecurityDevices.dm_sec" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.0/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DeviceManager.dm_thermo -> ThermostatDevices.dm_thermo" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.0/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DeviceManager.dm_seOUT -> device_se" kind="portConnection" destination="//@featureInstance.0" source="//@componentInstance.0/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.4" destination="//@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/DHsystem/Devices.aadl#Devices.DHdevices.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/DHsystem/Devices.aadl#Devices.DHdevices.impl"/>
+</instance:SystemInstance>

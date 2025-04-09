@@ -1,0 +1,16 @@
+package Display
+public
+	with CoffeeMachineDataTypes;
+	with GpioBus;
+		
+	device Display
+		features
+			RefillmentNeededSignal: in data port CoffeeMachineDataTypes::RefillmentNeededData;
+			
+			Finished: out data port CoffeeMachineDataTypes::FinishedData;
+			RefillmentNeeded: out data port CoffeeMachineDataTypes::RefillmentNeededData;
+			
+			GpioBusData: requires bus access GpioBus::Gpio;
+	end Display;
+	
+end Display;

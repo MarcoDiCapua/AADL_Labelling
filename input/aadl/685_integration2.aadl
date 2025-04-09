@@ -1,0 +1,62 @@
+package SCADA::integration2
+public
+	
+with SCADA::icd;
+with SCADA::devices;
+with SCADA::platform;
+with SCADA::software;
+with SCADA::ControlCenter;
+
+system integration
+end integration;
+system implementation integration.i
+	subcomponents
+-- input devices
+
+Substation1    : system SCADA::devices::substation;
+Substation2    : system SCADA::devices::substation;
+CC : system SCADA::ControlCenter::cc.i;
+stations_to_CC : bus SCADA::icd::externalBUS;
+Connections
+    c00 : port Substation1.voltage   -> CC.voltage;
+    c01 : port Substation1.current   -> CC.current; 
+    c02 : port CC.breaker      -> Substation1.breaker;
+    c03 : port CC.transformer  -> Substation1.transformer;
+    c04 : port Substation2.voltage   -> CC.voltage;
+    c05 : port Substation2.current   -> CC.current; 
+    c06 : port CC.breaker      -> Substation2.breaker;
+    c07 : port CC.transformer  -> Substation2.transformer;
+    
+flows
+	substation1_to_HMI_current : end to end flow substation1.f0 -> c01 -> CC.substation_to_HMI_current;
+	substation1_to_HMI_voltage : end to end flow substation1.f1 -> c00 -> CC.substation_to_HMI_voltage;
+	substation1_to_DMS_current : end to end flow substation1.f0 -> c01 -> CC.substation_to_DMS_current;
+	substation1_to_DMS_voltage : end to end flow substation1.f1 -> c00 -> CC.substation_to_DMS_voltage;
+	substation1_to_DB_current : end to end flow substation1.f0 -> c01 -> CC.substation_to_DB_current;
+	substation1_to_DB_voltage : end to end flow substation1.f1 -> c00 -> CC.substation_to_DB_voltage;
+	HMI_to_substation1_breaker : end to end flow CC.HMI_to_substation_breaker -> c02 ->  substation1.f2;
+	HMI_to_substation1_transformer : end to end flow CC.HMI_to_substation_transformer -> c03 -> substation1.f3;
+	
+	substation2_to_HMI_current : end to end flow substation2.f0 -> c05 -> CC.substation_to_HMI_current;
+	substation2_to_HMI_voltage : end to end flow substation2.f1 -> c04 -> CC.substation_to_HMI_voltage;
+	substation2_to_DMS_current : end to end flow substation2.f0 -> c05 -> CC.substation_to_DMS_current;
+	substation2_to_DMS_voltage : end to end flow substation2.f1 -> c04 -> CC.substation_to_DMS_voltage;
+	substation2_to_DB_current : end to end flow substation2.f0 -> c05 -> CC.substation_to_DB_current;
+	substation2_to_DB_voltage : end to end flow substation2.f1 -> c04 -> CC.substation_to_DB_voltage;
+	HMI_to_substation2_breaker : end to end flow CC.HMI_to_substation_breaker -> c06 ->  substation2.f2;
+	HMI_to_substation2_transformer : end to end flow CC.HMI_to_substation_transformer -> c07 -> substation2.f3;
+	
+	properties
+	actual_connection_binding => (reference (stations_to_CC)) applies to c00;
+	actual_connection_binding => (reference (stations_to_CC)) applies to c01;
+	actual_connection_binding => (reference (stations_to_CC)) applies to c02;
+	actual_connection_binding => (reference (stations_to_CC)) applies to c03;
+	actual_connection_binding => (reference (stations_to_CC)) applies to c04;
+	actual_connection_binding => (reference (stations_to_CC)) applies to c05;
+	actual_connection_binding => (reference (stations_to_CC)) applies to c06;
+	actual_connection_binding => (reference (stations_to_CC)) applies to c07;
+	
+end integration.i;
+
+
+end SCADA::integration2;

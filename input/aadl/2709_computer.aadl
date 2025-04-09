@@ -1,0 +1,72 @@
+-------------------------------------------------
+-- Computer component block
+--
+-- Failure events: 
+-- 	Failure (lambdaComputer)
+--	Erroneous Computing (lambdaErroneous)
+-- Inputs: power supply component block: Pwr_In (true) 
+-- Outputs: no_data, data_ok, err_data                 {* status{err_data, no_data}  *}
+-- States: operative, failed, erroneous
+-- Transfer function:
+--  state (operative) -> state (failed)
+--  state (operative) -> state (erroneous) 
+--	state (failed)    out == no_data
+--  state (erroneous) out == err_data
+--  state (operative) out == data_ok
+--  state (operative)
+--		if Pwr_In == true
+--		then out == data_ok
+--		else out == no_data
+--  state (failed)
+--		then out = no_data
+--	state (erroneous)
+--		if Pwr_In == true
+--		then out == err_data
+--		else out == no_data
+--------------------------------------------------
+
+
+package computer
+public
+	
+with dataDictionary;
+with ARP4761, EMV2;	
+
+system computer
+	features
+		powerIn : in data port dataDictionary::DC28Volt;
+		statusOut : out data port dataDictionary::FMS_StatusData;
+	flows
+		fl1 : flow sink powerIn;
+		fl2 : flow source statusOut;
+	annex EMV2 {**
+		use types S18_ErrorLibrary;
+		use behavior S18_ErrorLibrary::threeState;
+		error propagations
+				powerIn :  in propagation {noPower};
+				statusOut : out propagation {err_data, no_data};
+			flows
+				-- error sinks
+				es1: error sink powerIn{noPower};
+				-- error sources
+				es2: error source statusOut{err_data} when erroneous;
+				es3: error source statusOut{no_data} when failed;
+			    -- error paths accross item
+			    ep1: error path powerIn{noPower} -> statusOut{no_data};
+		end propagations;
+		
+		component error behavior
+			events
+				cpuMad : error event {err_data};
+				cpuFault : error event {no_data};
+			transitions
+				cpuFailed : operative -[powerIn{noPower} or cpuFault{no_data} ]-> failed;
+				cpuErroneous : operative -[powerIn{noerror} and cpuMad{err_data}]-> erroneous;
+		end component;
+	**};
+end computer;
+
+system implementation computer.item
+end computer.item;
+
+end computer;

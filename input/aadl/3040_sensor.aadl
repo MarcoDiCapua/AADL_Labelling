@@ -1,0 +1,78 @@
+package sensor
+public
+	with EMV2;
+	with SEI;
+	
+abstract env_sensor
+		features
+			sensor_output: 	out data port;
+		flows
+			init_sensor : flow source sensor_output;  
+		properties
+			latency => 1 ms .. 3 ms applies to init_sensor;
+			SEI::PowerBudget=> 5.0W;		
+		
+		annex EMV2 {**
+			use types error_library; 
+		
+			error propagations
+				sensor_output : out propagation {NoValue};
+			flows
+				ef0 : error source sensor_output{NoValue};
+			end propagations;
+			properties
+				emv2::hazards => 
+					([	failure => "Error/No Data";	
+						description => "sensors failed to initialize";
+					])
+			applies to sensor_output.novalue;
+		**};	
+	end env_sensor;
+		
+	abstract implementation env_sensor.impl
+	end env_sensor.impl;
+	
+	abstract env_sensor_init
+		features
+			inputsensor: 	in data port;
+			sensor_output: 	out data port;
+			logdata: 		out data port;
+			
+		flows
+			sensor_self_path :   	   flow path inputsensor->sensor_output;
+			logdata_sensor :   flow path inputsensor->logdata;
+			logdata_sources : 	   flow source logdata;   
+		properties
+			latency => 1 ms .. 3 ms applies to sensor_self_path, logdata;
+		
+		annex EMV2 {**
+			use types error_library; 
+			use behavior error_library::stateMachine;
+		
+			error propagations
+				logdata		: out propagation {BadValue, LateValue};
+				inputsensor  : in propagation  {NoValue, BadValue};
+				sensor_output : out propagation {NoValue, BadValue,LateValue};
+			flows
+				ef0 : error source logdata{BadValue, LateValue};
+				ef1 : error source sensor_output{LateValue};
+				ef2 : error path inputsensor{NoValue, BadValue}->sensor_output{LateValue};
+			end propagations;
+			
+			component error behavior
+			events
+				BadRead    	: error event;
+				RecoverEvent: recover event;
+				
+			transitions
+				t0 : Operational -[inputsensor{NoValue, BadValue}]->   Failed;
+				t1 : Operational -[BadRead]-> Failed;
+				t2 : Failed      -[RecoverEvent]-> Operational;	
+			end component;
+		**};
+	end env_sensor_init;
+		
+	abstract implementation env_sensor_init.impl
+	end env_sensor_init.impl;
+
+end sensor;

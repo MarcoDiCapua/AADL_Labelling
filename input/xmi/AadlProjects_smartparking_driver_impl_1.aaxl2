@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="driver_impl_Instance" category="system">
+  <featureInstance name="driver_info">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="driver_ip" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="req_service" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.2"/>
+  </featureInstance>
+  <featureInstance name="driver_up">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.3"/>
+  </featureInstance>
+  <featureInstance name="paymt_txn_status">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.4"/>
+  </featureInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.driver.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.driver.impl"/>
+</instance:SystemInstance>

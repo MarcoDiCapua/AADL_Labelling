@@ -1,0 +1,16 @@
+
+Property Set UserRole is
+	with Role, Permissions;
+	role_test1: Role::role_type => 
+			[id => 001; name => "test role"; description => "none provided"; 
+				assigned_permissions => (permissions::permit_read_access_to_port, permissions::permit_write_access_to_thread);
+			] applies to (thread, port);
+			
+	role_test2: Role::role_type => 
+			[id => 002; name => "test role"; description => "none provided"; 
+				assigned_permissions => (permissions::permit_read_access_to_thread, permissions::permit_write_access_to_port);
+			] applies to (thread, port);
+	
+	role_hierarchy1: list of Role::role_type => 
+			(UserRole::role_test1, UserRole::role_test2) applies to (port, thread);
+end UserRole;

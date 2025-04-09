@@ -1,0 +1,44 @@
+package SCADA::icd
+public
+	
+with base_types;
+
+	
+data current extends Base_Types::Integer_16
+end current;
+
+data voltage extends Base_Types::Integer_16
+end voltage;
+
+data breaker extends Base_Types::boolean
+end breaker;
+
+data transformer extends Base_Types::boolean
+end transformer;
+
+data alarm_data
+end alarm_data;
+
+data implementation alarm_data.i
+subcomponents
+  c : data current;
+  v       : data voltage;
+end alarm_data.i;
+
+
+data boolean
+properties
+	data_size => 1 bits;
+end boolean;
+
+bus internalBUS
+end internalBUS;
+
+bus externalBUS
+end externalBUS;
+
+virtual bus virtualBUS
+end virtualBUS;
+
+
+end SCADA::icd;

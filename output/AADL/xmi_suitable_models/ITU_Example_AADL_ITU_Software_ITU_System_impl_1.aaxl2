@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="ITU_System_impl_Instance" category="system">
+  <componentInstance name="PC" category="process">
+    <featureInstance name="ParseCmd_BusInt">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="ParseCmd_Data" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="ParseCmd_DataFromCtu" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="ParseCmd_SGNCC" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="ParseCmd_ESLC" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="ParseCmd_EONOFF" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.3"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="ParseCmd_FreTime" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.4"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <flowSpecification name="flow0" destination="//@componentInstance.0/@featureInstance.3">
+      <flowSpecification href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="flow1" destination="//@componentInstance.0/@featureInstance.4">
+      <flowSpecification href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <flowSpecification name="flow2" destination="//@componentInstance.0/@featureInstance.5">
+      <flowSpecification href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.2"/>
+    </flowSpecification>
+    <flowSpecification name="flow3" destination="//@componentInstance.0/@featureInstance.6">
+      <flowSpecification href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.3"/>
+    </flowSpecification>
+    <flowSpecification name="flow4" destination="//@componentInstance.0/@featureInstance.1">
+      <flowSpecification href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.4"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#ITU_Software.ParseCmd"/>
+  </componentInstance>
+  <componentInstance name="SG" category="process">
+    <featureInstance name="ParseCmd_Data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="SGNCC_DataToGncc" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.1"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="FaultCheck_MF" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.2"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="ParseCmd_SGNCC" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.0"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <flowSpecification name="flow0" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.1">
+      <flowSpecification href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#ITU_Software.SGNCC"/>
+  </componentInstance>
+  <componentInstance name="ES" category="process">
+    <featureInstance name="ParseCmd_Data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="ESLC_SlcCmd" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <featureInstance name="ParseCmd_ESLC" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventDataPort.0"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <flowSpecification name="flow0" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.2/@featureInstance.1">
+      <flowSpecification href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#ITU_Software.ESLC"/>
+  </componentInstance>
+  <componentInstance name="EO" category="process">
+    <featureInstance name="ParseCmd_Data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.0"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="EONOFF_OnOffCmd" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.1"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <featureInstance name="ParseCmd_EONOFF" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventDataPort.0"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <flowSpecification name="flow0" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.3/@featureInstance.1">
+      <flowSpecification href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#ITU_Software.EONOFF"/>
+  </componentInstance>
+  <componentInstance name="FT" category="process">
+    <featureInstance name="ParseCmd_Data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="FreTime_LclTime" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.1"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/12"/>
+    </featureInstance>
+    <featureInstance name="FreTime_toGNCC" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="ParseCmd_FreTime" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventDataPort.0"/>
+      <type href="../../github/ITU_Example_AADL/ITU/instances/ITU_Software_ITU_System_impl_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#ITU_Software.FreTime"/>
+  </componentInstance>
+  <connectionInstance name="PC.ParseCmd_Data -> SG.ParseCmd_Data" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PC.ParseCmd_Data -> ES.ParseCmd_Data" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PC.ParseCmd_Data -> EO.ParseCmd_Data" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PC.ParseCmd_Data -> FT.ParseCmd_Data" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#ITU_Software.ITU_System.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/ITU_Example_AADL/ITU/ITU_Software.aadl#ITU_Software.ITU_System.impl"/>
+</instance:SystemInstance>

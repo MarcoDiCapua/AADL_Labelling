@@ -1,0 +1,109 @@
+--------------------------------------------------------------------------------
+-- Regulate.aadl (version 11) - 
+--
+-- Authors: Stephen C. Barrett (scbarrett@ksu.edu) &
+--          Brian R. Larson (brl@ksu.edu)
+--          Department of Computing & Information Sciences
+--
+-- Licensed Material - Property of Kansas State University
+--------------------------------------------------------------------------------
+-- 09: Software to deliver thermostat regulating control functionality.
+--
+-- 10: Process features to support operator interface interactions.
+--
+-- 11: Remaining threads to provide interface, mode, & failure functionality.
+--------------------------------------------------------------------------------
+package Regulate
+public
+with Base_Types, Iso_Types;  -- Basic & isolette specific data types
+with KSU_Isolette;
+
+
+process regulate_temperature
+  features
+    current_temp: in data port Iso_Types::sensed_temperature;
+    lower_desired_temp: in data port Iso_Types::lower_desired_temperature;
+    upper_desired_temp: in data port Iso_Types::upper_desired_temperature;
+    op_temp: out data port Iso_Types::sensed_temperature;
+    op_status: out data port Iso_Types::op_status;
+    on_heater: out event data port Iso_Types::on_off;
+end regulate_temperature;
+
+process implementation regulate_temperature.impl
+  subcomponents
+    manage_heat_source: thread manage_heat_source.impl;
+    manage_reg_interface: thread manage_reg_interface.impl;
+    manage_reg_mode: thread manage_reg_mode.impl;
+    detect_reg_failure: thread detect_reg_failure.impl;
+
+  connections
+    s1: port current_temp -> manage_heat_source.current_temp;
+    s2: port lower_desired_temp -> manage_heat_source.lower_desired_temp;
+    s3: port upper_desired_temp -> manage_heat_source.upper_desired_temp;
+    s4: port manage_reg_mode.op_mode -> manage_heat_source.op_mode;
+    s5: port manage_heat_source.on_heater -> on_heater;
+
+    i1: port current_temp -> manage_reg_interface.current_temp;
+    i2: port lower_desired_temp -> manage_reg_interface.lower_desired_temp;
+    i3: port upper_desired_temp -> manage_reg_interface.upper_desired_temp;
+    i4: port manage_reg_mode.op_mode -> manage_reg_interface.op_mode;
+    i5: port manage_reg_interface.op_temp -> op_temp;
+    i6: port manage_reg_interface.op_status -> op_status;
+
+    m1: port current_temp -> manage_reg_mode.current_temp;
+    m2: port detect_reg_failure.internal_fail -> manage_reg_mode.internal_fail;
+    m3: port manage_reg_interface.interface_fail ->
+        manage_reg_mode.interface_fail;        
+end regulate_temperature.impl;
+
+
+thread manage_heat_source
+  features
+    current_temp: in data port Iso_Types::sensed_temperature;
+    lower_desired_temp: in data port Iso_Types::lower_desired_temperature;
+    upper_desired_temp: in data port Iso_Types::upper_desired_temperature;
+    op_mode: in data port Iso_Types::op_mode;
+    on_heater: out event data port Iso_Types::on_off;
+end manage_heat_source;
+
+thread implementation manage_heat_source.impl
+end manage_heat_source.impl;
+
+
+thread manage_reg_interface
+  features
+    current_temp: in data port Iso_Types::sensed_temperature;
+    lower_desired_temp: in data port Iso_Types::lower_desired_temperature;
+    upper_desired_temp: in data port Iso_Types::upper_desired_temperature;
+    op_mode: in data port Iso_Types::op_mode;
+    op_temp: out data port Iso_Types::sensed_temperature;
+    interface_fail: out event data port Base_Types::Boolean;
+    op_status: out data port Iso_Types::op_status;
+end manage_reg_interface;
+
+thread implementation manage_reg_interface.impl
+end manage_reg_interface.impl;
+
+
+thread manage_reg_mode
+  features
+    current_temp: in data port Iso_Types::sensed_temperature;
+    internal_fail: in event data port Base_Types::Boolean;
+    interface_fail: in event data port Base_Types::Boolean;
+    op_mode: out data port Iso_Types::op_mode;
+end manage_reg_mode;
+
+thread implementation manage_reg_mode.impl
+end manage_reg_mode.impl;
+
+
+thread detect_reg_failure
+  features
+    internal_fail: out event data port Base_Types::Boolean;
+end detect_reg_failure;
+
+thread implementation detect_reg_failure.impl
+end detect_reg_failure.impl;
+
+
+end Regulate;

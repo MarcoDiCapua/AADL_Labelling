@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="ils_impl_Instance" category="system">
+  <featureInstance name="TP" category="featureGroup" direction="in out">
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedFeatureGroup.0"/>
+  </featureInstance>
+  <featureInstance name="MP" category="featureGroup" direction="in out">
+    <featureInstance name="tuneFuncTestInhibit">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="funcTestInput">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="freqFuncDataSourceSelect">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="airGroundLogic">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="audioDistributionSystem" category="featureGroup" direction="out">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <featureInstance name="locGsInterrupt" category="featureGroup" direction="in out">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroup.1"/>
+    </featureInstance>
+    <featureInstance name="A429_out_1" category="featureGroup" direction="out">
+      <featureInstance name="bus1" category="busAccess" direction="out">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.0"/>
+        <type href="../../github/aadl_ils_project/instances/ils_ils_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroup.2"/>
+    </featureInstance>
+    <featureInstance name="A429_in_1" category="featureGroup">
+      <featureInstance name="bus1" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.0"/>
+        <type href="../../github/aadl_ils_project/instances/ils_ils_impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroup.3"/>
+    </featureInstance>
+    <featureInstance name="A429_out_2" category="featureGroup" direction="out">
+      <featureInstance name="bus2" category="busAccess" direction="out">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedBusAccess.0"/>
+        <type href="../../github/aadl_ils_project/instances/ils_ils_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroup.4"/>
+    </featureInstance>
+    <featureInstance name="A429_in_2" category="featureGroup">
+      <featureInstance name="bus2" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.0"/>
+        <type href="../../github/aadl_ils_project/instances/ils_ils_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroup.5"/>
+    </featureInstance>
+    <featureInstance name="SDI" category="featureGroup" direction="in out">
+      <featureInstance name="sdi_in_1" category="featureGroup" direction="in out">
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFeatureGroup.0"/>
+      </featureInstance>
+      <featureInstance name="sdi_in_2" category="featureGroup" direction="in out">
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFeatureGroup.1"/>
+      </featureInstance>
+      <featureInstance name="sdi_in_common" category="featureGroup" direction="in out">
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFeatureGroup.2"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroup.6"/>
+    </featureInstance>
+    <featureInstance name="controlPanelSpare" category="featureGroup" direction="in out">
+      <featureInstance name="suggestedSpare_1" category="featureGroup" direction="in out">
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFeatureGroup.0"/>
+      </featureInstance>
+      <featureInstance name="suggestedSpare_2" category="featureGroup" direction="in out">
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFeatureGroup.1"/>
+      </featureInstance>
+      <featureInstance name="controlPanelPower" category="featureGroup" direction="out">
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFeatureGroup.2"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroup.7"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedFeatureGroup.1"/>
+  </featureInstance>
+  <featureInstance name="BP" category="featureGroup" direction="in out">
+    <featureInstance name="bp1" category="featureGroup">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <featureInstance name="bp2" category="featureGroup">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFeatureGroup.1"/>
+    </featureInstance>
+    <featureInstance name="bp3" category="featureGroup">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFeatureGroup.2"/>
+    </featureInstance>
+    <featureInstance name="bp4" category="featureGroup">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFeatureGroup.3"/>
+    </featureInstance>
+    <featureInstance name="bp5" category="featureGroup">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFeatureGroup.4"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedFeatureGroup.2"/>
+  </featureInstance>
+  <componentInstance name="ils_process" category="process">
+    <featureInstance name="frequency_data_input_portA" category="featureGroup">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <featureInstance name="frequency_data_input_portB" category="featureGroup">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedFeatureGroup.1"/>
+    </featureInstance>
+    <featureInstance name="loc_signal_input" category="featureGroup">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedFeatureGroup.2"/>
+    </featureInstance>
+    <featureInstance name="glide_signal_input" category="featureGroup">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedFeatureGroup.3"/>
+    </featureInstance>
+    <featureInstance name="frequency_data_output_port1" category="featureGroup" direction="out">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedFeatureGroup.4"/>
+    </featureInstance>
+    <featureInstance name="frequency_data_output_port2" category="featureGroup" direction="out">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedFeatureGroup.5"/>
+    </featureInstance>
+    <featureInstance name="loc_data_output" category="featureGroup" direction="out">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedFeatureGroup.6"/>
+    </featureInstance>
+    <featureInstance name="glide_data_output" category="featureGroup" direction="out">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedFeatureGroup.7"/>
+    </featureInstance>
+    <componentInstance name="frequency_selection" category="thread">
+      <featureInstance name="frequency_data_input" category="featureGroup">
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedFeatureGroup.0"/>
+      </featureInstance>
+      <featureInstance name="frequency_data_output" category="featureGroup" direction="out">
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedFeatureGroup.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl_ils_project/ils.aadl#ils.frequency_selection.impl"/>
+    </componentInstance>
+    <componentInstance name="providing_deviation_data" category="thread">
+      <featureInstance name="loc_signal_input" category="featureGroup">
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedFeatureGroup.0"/>
+      </featureInstance>
+      <featureInstance name="glide_signal_input" category="featureGroup">
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedFeatureGroup.1"/>
+      </featureInstance>
+      <featureInstance name="loc_data_output" category="featureGroup" direction="out">
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedFeatureGroup.2"/>
+      </featureInstance>
+      <featureInstance name="glide_data_output" category="featureGroup" direction="out">
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedFeatureGroup.3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl_ils_project/ils.aadl#ils.providing_deviation_data.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/aadl_ils_project/ils.aadl#ils.ils_process.impl"/>
+  </componentInstance>
+  <connectionInstance name="BP.bp1 -> ils_process.providing_deviation_data.loc_signal_input" kind="featureGroupConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0" source="//@featureInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.2/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedFeatureGroupConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedFeatureGroupConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="BP.bp5 -> ils_process.providing_deviation_data.glide_signal_input" kind="featureGroupConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.1" source="//@featureInstance.2/@featureInstance.4">
+    <connectionReference context="/" source="//@featureInstance.2/@featureInstance.4" destination="//@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedFeatureGroupConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedFeatureGroupConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ils_process.frequency_selection.frequency_data_output -> MP.A429_out_1.bus1" kind="featureGroupConnection" destination="//@featureInstance.1/@featureInstance.6/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedFeatureGroupConnection.2"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.4" destination="//@featureInstance.1/@featureInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedFeatureGroupConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ils_process.frequency_selection.frequency_data_output -> MP.A429_out_2.bus2" kind="featureGroupConnection" destination="//@featureInstance.1/@featureInstance.8/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedFeatureGroupConnection.3"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.5" destination="//@featureInstance.1/@featureInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedFeatureGroupConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ils_process.providing_deviation_data.loc_data_output -> MP.A429_out_1.bus1" kind="featureGroupConnection" destination="//@featureInstance.1/@featureInstance.6/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.2">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.0/@featureInstance.6">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedFeatureGroupConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.6" destination="//@featureInstance.1/@featureInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedFeatureGroupConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ils_process.providing_deviation_data.glide_data_output -> MP.A429_out_1.bus1" kind="featureGroupConnection" destination="//@featureInstance.1/@featureInstance.6/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.3">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.0/@featureInstance.7">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedFeatureGroupConnection.7"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.7" destination="//@featureInstance.1/@featureInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl_ils_project/ils.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedFeatureGroupConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl_ils_project/ils.aadl#ils.ils.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl_ils_project/ils.aadl#ils.ils.impl"/>
+</instance:SystemInstance>

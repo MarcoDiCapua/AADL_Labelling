@@ -1,0 +1,12 @@
+property set Power_properties is
+
+	int_Current : type aadlreal 0.0 A .. 350.0 A units 
+					(uA, mA => uA * 1000, A  => mA * 1000);
+	
+	int_Voltage : type aadlreal 0.0 V .. 350.0 V units 
+					(uV, mV => uV * 1000, V  => mV * 1000);
+								
+	Current : Power_properties::int_Current applies to (system, device, processor, port);
+	Voltage : Power_properties::int_Voltage applies to (system, device, processor, port);
+	
+end Power_properties;

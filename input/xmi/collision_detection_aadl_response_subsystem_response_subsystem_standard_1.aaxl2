@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="response_subsystem_standard_Instance" category="system">
+  <featureInstance name="external_message_unavoidable" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="external_message_avoidable" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="emergency_message" category="eventDataPort" direction="out">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.2"/>
+  </featureInstance>
+  <featureInstance name="driver_alert_message" category="eventDataPort" direction="out">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.3"/>
+  </featureInstance>
+  <componentInstance name="external_message_controller" category="process">
+    <featureInstance name="sensor_data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="vehicle_control_data" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="predictor_input" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="network_control_event" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="broad_fail" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="broad_success" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.3"/>
+    </featureInstance>
+    <componentInstance name="collision_event_handler" category="thread">
+      <featureInstance name="broad_test">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_unavoidable" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_avoidable" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="send_emergency_message" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="send_driver_alert" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.event_handler.singleton"/>
+    </componentInstance>
+    <componentInstance name="crash_data" category="thread">
+      <featureInstance name="read_vehicle_sensors">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.data_handler.singleton"/>
+    </componentInstance>
+    <componentInstance name="response_control" category="thread">
+      <featureInstance name="read_proc_data">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="send_driver_alert" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="send_emergency_message" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="predict_cmd" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.control_laws_unavoidable.singleton"/>
+    </componentInstance>
+    <componentInstance name="broadcast_tester" category="thread">
+      <featureInstance name="emergency_broad_test" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="emergency_broad_success" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="emergency_broad_fail" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.eval_broadcast_message.standard"/>
+    </componentInstance>
+    <connectionInstance name="collision_event_handler.send_emergency_message -> response_control.predict_cmd" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="collision_event_handler.send_driver_alert -> response_control.predict_cmd" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="crash_data.send_proc_data -> response_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.8"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="broadcast_tester.emergency_broad_test -> collision_event_handler.broad_test" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@componentInstance.3/@featureInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.collision_response_handler.singleton"/>
+  </componentInstance>
+  <componentInstance name="driver_controller" category="process">
+    <featureInstance name="sensor_data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="vehicle_control_data" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="predictor_input" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="network_control_event" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="broad_fail" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="broad_success" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.3"/>
+    </featureInstance>
+    <componentInstance name="collision_event_handler" category="thread">
+      <featureInstance name="broad_test">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_unavoidable" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_avoidable" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="send_emergency_message" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="send_driver_alert" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.event_handler.singleton"/>
+    </componentInstance>
+    <componentInstance name="crash_data" category="thread">
+      <featureInstance name="read_vehicle_sensors">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.data_handler.singleton"/>
+    </componentInstance>
+    <componentInstance name="response_control" category="thread">
+      <featureInstance name="read_proc_data">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="send_driver_alert" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="send_emergency_message" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="predict_cmd" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.control_laws_unavoidable.singleton"/>
+    </componentInstance>
+    <componentInstance name="broadcast_tester" category="thread">
+      <featureInstance name="emergency_broad_test" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="emergency_broad_success" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="emergency_broad_fail" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.eval_broadcast_message.standard"/>
+    </componentInstance>
+    <connectionInstance name="collision_event_handler.send_emergency_message -> response_control.predict_cmd" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.2/@featureInstance.3" source="//@componentInstance.1/@componentInstance.0/@featureInstance.3">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.1/@componentInstance.2/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="collision_event_handler.send_driver_alert -> response_control.predict_cmd" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.2/@featureInstance.3" source="//@componentInstance.1/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.1/@componentInstance.2/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="crash_data.send_proc_data -> response_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.2/@featureInstance.0" source="//@componentInstance.1/@componentInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.1/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.8"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="broadcast_tester.emergency_broad_test -> collision_event_handler.broad_test" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.0" source="//@componentInstance.1/@componentInstance.3/@featureInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.collision_response_handler.singleton"/>
+  </componentInstance>
+  <componentInstance name="emergency_controller" category="process">
+    <featureInstance name="sensor_data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="vehicle_control_data" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="predictor_input" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="network_control_event" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="broad_fail" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="broad_success" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.3"/>
+    </featureInstance>
+    <componentInstance name="collision_event_handler" category="thread">
+      <featureInstance name="broad_test">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_unavoidable" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_avoidable" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="send_emergency_message" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="send_driver_alert" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.event_handler.singleton"/>
+    </componentInstance>
+    <componentInstance name="crash_data" category="thread">
+      <featureInstance name="read_vehicle_sensors">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.data_handler.singleton"/>
+    </componentInstance>
+    <componentInstance name="response_control" category="thread">
+      <featureInstance name="read_proc_data">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="send_driver_alert" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="send_emergency_message" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="predict_cmd" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.control_laws_unavoidable.singleton"/>
+    </componentInstance>
+    <componentInstance name="broadcast_tester" category="thread">
+      <featureInstance name="emergency_broad_test" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="emergency_broad_success" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="emergency_broad_fail" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.eval_broadcast_message.standard"/>
+    </componentInstance>
+    <connectionInstance name="collision_event_handler.send_emergency_message -> response_control.predict_cmd" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.3" source="//@componentInstance.2/@componentInstance.0/@featureInstance.3">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="collision_event_handler.send_driver_alert -> response_control.predict_cmd" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.3" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="crash_data.send_proc_data -> response_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.8"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="broadcast_tester.emergency_broad_test -> collision_event_handler.broad_test" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@componentInstance.3/@featureInstance.0">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.collision_response_handler.singleton"/>
+  </componentInstance>
+  <connectionInstance name="external_message_unavoidable -> external_message_controller.collision_event_handler.read_unavoidable" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="external_message_unavoidable -> external_message_controller.collision_event_handler.read_avoidable" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="external_message_avoidable -> external_message_controller.collision_event_handler.read_unavoidable" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="external_message_avoidable -> external_message_controller.collision_event_handler.read_avoidable" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="driver_controller.response_control.send_driver_alert -> driver_alert_message" kind="portConnection" destination="//@featureInstance.3" source="//@componentInstance.1/@componentInstance.2/@featureInstance.1">
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="emergency_controller.response_control.send_emergency_message -> emergency_message" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.2/@componentInstance.2/@featureInstance.2">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.2/@featureInstance.2" destination="//@componentInstance.2/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.3" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.response_subsystem.standard"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Response%20Subsystem/response_subsystem.aadl#response_subsystem.response_subsystem.standard"/>
+</instance:SystemInstance>

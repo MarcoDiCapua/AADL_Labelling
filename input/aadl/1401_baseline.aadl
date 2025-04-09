@@ -1,0 +1,303 @@
+package baseline
+public
+	
+	
+	---------------------------------
+	------- All abstracts
+	--------------------------------
+	
+	abstract Hardware
+	end Hardware;
+	
+	abstract Software
+	end Software;
+	
+	process RealTimeOS	
+	end RealTimeOS;
+	
+	bus PROFINET end PROFINET;
+	bus PCIBUS end PCIBUS;
+	bus IO end IO;
+	
+	bus PowerSupply end PowerSupply;
+
+	bus implementation PowerSupply.V24
+	end PowerSupply.V24;
+	
+	bus RJ45 end RJ45;
+	
+	-----------------------
+	-----Main
+	-----------------------
+	
+	system Drive
+		features
+			Command: requires bus access PROFINET;	
+			SourcePower: requires bus access PowerSupply;
+			SinkPower: provides bus access PowerSupply;
+			HMI: provides bus access PROFINET;		
+	end Drive;
+	
+	system implementation Drive.i
+		subcomponents
+			PCIBus: bus PCIBUS;
+			Communication: system CommunicationModlue.i;
+			Operation: system OperationModule.i;
+			Control: system ControlModule.i;
+			Power: device PowerModule;
+		connections
+			busconnection1: bus access PCIBUS <-> Communication.pci;
+			busconnection2: bus access PCIBUS <-> Operation.pci;
+			busconnection3: bus access PCIBUS <-> Control.pci;
+			busconnection4: bus access  Control.IO <-> Power.IO;
+			busconnection5: bus access  SourcePower -> Communication.power;
+			busconnection6: bus access  SourcePower -> Operation.power;
+			busconnection7: bus access  SourcePower -> Control.power;
+			busconnection8: bus access  SourcePower -> Power.power;
+			busconnection9: bus access  Command -> Communication.ProfiBus;
+			busconnection10: bus access  HMI <-> Operation.hmi;
+			busconnection11: bus access  Power.SinkPower -> SinkPower;	
+	end Drive.i;
+	
+	
+
+	
+	
+	----------------------------
+	------- Sub Components
+	----------------------------
+	
+	--------------------------------------------
+	-----Operation
+	-------------------------------------------
+	
+	
+	system OperationModule
+		features
+		pci: requires bus access PCIBUS;
+		hmi: provides bus access PROFINET;
+		power: requires bus access PowerSupply;
+	end OperationModule;
+	
+	system implementation OperationModule.i
+		subcomponents
+			Hardware: abstract Hardware.operation;
+			Software: abstract Software.operation;
+			--RAM: memory RAM;
+			--SingleCoreProc: processor SingleCore;
+			--PCIBus: bus PCIBUS;
+			--terminal: device busAccess;
+		--connections
+			--OperationModule_i_new_connection: bus access  PCIBus <-> terminal.Inpci;
+			--OperationModule_i_new_connection1: bus access SingleCoreProc.pci <-> PCIBus;
+			--OperationModule_i_new_connection2: bus access RAM.pci <-> PCIBus;
+			--OperationModule_i_new_connection3: bus access pci -> terminal.Expci;
+			--OperationModule_i_new_connection4: bus access pci -> terminal.pciIn;
+	end OperationModule.i;
+	
+		abstract implementation Hardware.operation
+		subcomponents
+			RAM: memory RAM;
+			Storage: memory Storage;
+			CPU: processor SingleCore;
+			PCIBus: bus PCIBUS;
+			terminal: device busAccess;
+		connections
+			connection1: bus access  PCIBus <-> terminal.Inpci;
+			connection2: bus access CPU.pci <-> PCIBus;
+			connection3: bus access RAM.pci <-> PCIBus;
+			connection4: bus access Storage.pci <-> PCIBus;
+			
+			--OperationModule_i_new_connection3: bus access pci -> terminal.Expci;	
+		end Hardware.operation;
+	
+	
+	abstract implementation Software.operation
+		subcomponents
+			OS: process RealTimeOS.operation;
+	end Software.operation;
+	
+	
+	process implementation RealTimeOS.operation
+		subcomponents
+			ModeControlApp: thread;
+			ManagementApp: thread;
+			MonitoringApp: thread;
+	end RealTimeOS.operation;
+	
+	--------------------------------------------
+	-----Communication
+	-------------------------------------------
+	
+	system CommunicationModule
+		features
+			ProfiBus: requires bus access PROFINET;
+			pci:  requires bus access PCIBUS;
+			power: requires bus access PowerSupply;
+	end CommunicationModlue;
+	
+	system implementation CommunicationModule.i
+		subcomponents
+			Hardware: abstract Hardware.communication;
+			Software: abstract Software.communication;
+			--RAM: memory RAM;
+			--SingleCoreProc: processor SingleCore;
+			--PCIBus: bus PCIBUS;
+			--terminal: device busAccess;
+		--connections
+			--OperationModule_i_new_connection: bus access  PCIBus <-> terminal.Inpci;
+			--OperationModule_i_new_connection1: bus access SingleCoreProc.pci <-> PCIBus;
+			--OperationModule_i_new_connection2: bus access RAM.pci <-> PCIBus;
+			--OperationModule_i_new_connection3: bus access pci -> terminal.Expci;
+			--OperationModule_i_new_connection4: bus access pci -> terminal.pciIn;
+	end CommunicationModlue.i;
+	
+	abstract implementation Hardware.communication
+		subcomponents
+			SWTITCH: device Switch;
+			RAM: memory RAM;
+			CPU: processor SingleCore;
+			PCIBus: bus PCIBUS;
+			terminal: device busAccess;
+		connections
+			--connection1: bus access ProfiBus <-> SWTITCH.RJ45;
+			connection2: bus access SWTITCH.pci <-> PCIBus;
+			connection3: bus access RAM.pci <-> PCIBus;
+			connection4: bus access CPU.pci <-> PCIBus;
+			connection5: bus access PCIBus <-> terminal.Inpci;
+			--connection6: bus access pci -> terminal.Expci;
+			--OperationModule_i_new_connection3: bus access pci -> terminal.Expci;	
+		end Hardware.communication;
+	
+	abstract implementation Software.communication
+		subcomponents
+			OS: process RealTimeOS.communication;
+	end Software.communication;
+	
+	
+	process implementation RealTimeOS.communication
+		subcomponents
+			CommunicationApp: thread;
+	end RealTimeOS.communication;
+	
+	--------------------------------------------
+	-----Control
+	-------------------------------------------
+	
+		system ControlModule
+		features
+			pci: requires bus access PCIBUS;
+			IO: provides bus access IO;
+			power: requires bus access PowerSupply;
+	end ControlModule;
+	
+	system implementation ControlModule.i
+		subcomponents
+			Hardware: abstract Hardware.control;
+			Software: abstract Software.control;
+			--RAM: memory RAM;
+			--SingleCoreProc: processor SingleCore;
+			--PCIBus: bus PCIBUS;
+			--terminal: device busAccess;
+		--connections
+			--OperationModule_i_new_connection: bus access  PCIBus <-> terminal.Inpci;
+			--OperationModule_i_new_connection1: bus access SingleCoreProc.pci <-> PCIBus;
+			--OperationModule_i_new_connection2: bus access RAM.pci <-> PCIBus;
+			--OperationModule_i_new_connection3: bus access pci -> terminal.Expci;
+			--OperationModule_i_new_connection4: bus access pci -> terminal.pciIn;
+	end ControlModule.i;
+	
+	abstract implementation Hardware.control
+		subcomponents
+			RAM: memory RAM;
+			A2D: device A2D;
+			PCIBus: bus PCIBUS;
+			CPU: processor SingleCore;
+			terminal: device busAccess;
+		connections
+			connection1: bus access terminal.Inpci <-> PCIBus;
+			connection2: bus access CPU.pci <-> PCIBus;
+			connection3: bus access RAM.pci <-> PCIBus;
+			connection4: bus access A2D.pci -> PCIBus;
+			--connection5: bus access A2D.IO <-> IO;
+			--connection6: bus access terminal.Expci -> pci;
+		end Hardware.control;
+	
+	abstract implementation Software.control
+		subcomponents
+			OS: process RealTimeOS.control;
+	end Software.control;
+	
+	
+	process implementation RealTimeOS.control
+		subcomponents
+			ControlApp: thread;
+	end RealTimeOS.control;
+	
+	--------------------------------------------
+	-----PowerModule
+	-------------------------------------------
+	
+	device PowerModule
+		features
+		IO: requires bus access IO;
+		power: requires bus access PowerSupply;
+		SinkPower: provides bus access PowerSupply;
+	end PowerModule;
+	
+	
+	
+	
+
+------------------------------------------------------------------
+--- Memory devices
+------------------------------------------------------------------		
+
+	
+
+	device Switch 
+		features
+			RJ45: requires bus access PROFINET ;
+			pci: requires bus access PCIBUS;
+			
+	end Switch;
+	
+	device HMI 
+		features
+			RJ45: requires bus access PROFINET ;
+	end HMI;
+	
+	memory RAM
+		features
+			pci: requires bus access PCIBUS;
+	end RAM;
+	
+	device A2D
+		features
+			pci: requires bus access PCIBUS;
+			IO: provides bus access IO;
+	end A2D;
+	
+	device busAccess
+		features
+			Expci: requires bus access PCIBUS;	
+			--pciIn: requires bus access PCIBUS;
+			--pciOut: provides bus access PCIBUS;
+			Inpci: requires bus access PCIBUS;
+	end busAccess;
+	
+	memory Storage
+		features
+			pci: requires bus access PCIBUS;
+	end Storage;
+
+------------------------------------------------------------------
+--- Processors
+------------------------------------------------------------------		
+
+  processor SingleCore
+    features
+      pci : requires bus access PCIBUS;
+  end SingleCore;
+	
+end baseline;

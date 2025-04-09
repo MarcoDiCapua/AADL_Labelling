@@ -1,0 +1,51 @@
+package MyComponents
+public
+ thread controller
+  features
+	switch_to_flight: in event port;
+	switch_to_ground: in event port;
+	status_data: in data port;
+	aircraft_data: in data port;
+	command: out data port;
+  requires modes
+      ground: initial mode;
+      robust: mode;
+ end controller;
+ thread implementation controller.modal
+  properties
+   Compute_Execution_Time =>  2 ms .. 5 ms in modes (ground),3 ms .. 7 ms in modes (robust);
+ end controller.modal;
+ thread controller1
+  features
+	switch_to_flight: in event port;
+	switch_to_ground: in event port;
+	status_data: in data port;
+	aircraft_data: in data port;
+	command: out data port;
+  requires modes
+      ground: initial mode;
+      failsafe: mode;
+ end controller1;
+ thread implementation controller1.modal
+  properties
+   Compute_Execution_Time => 3 ms..6ms in modes (ground), 4 ms..8ms in modes (failsafe);
+ end controller1.modal;
+ process autopilot
+   features
+	switch_to_flight: in event port;
+	switch_to_ground: in event port;
+	status_data: in data port;
+	aircraft_data: in data port;
+	command: out data port;
+   modes
+   	ground: initial mode;
+   	flight: mode;
+   	ground -[switch_to_flight]-> flight;
+   	flight -[switch_to_ground]-> ground;
+ end autopilot;
+ process implementation autopilot.modal_proc
+  subcomponents
+    control: thread controller.modal in modes (ground => ground, flight => robust);
+    control1: thread controller1.modal in modes (ground => ground, flight => failsafe);
+ end autopilot.modal_proc;
+end MyComponents;

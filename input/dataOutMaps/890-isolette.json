@@ -1,0 +1,28 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "KSU_Isolette",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/890-isolette/isolette-ksu-05/packages/Isolette.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\890-isolette_KSU_Isolette_thermostat_single_sensor_impl_8.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\890-isolette\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\890-isolette\\isolette-ksu-01\\_type_&_implementation",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\890-isolette\\isolette-ksu-02\\_thermostat_subcomponent",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\890-isolette\\isolette-ksu-03\\_physical_device_subcomponents",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\890-isolette\\isolette-ksu-04\\_untyped_interfaces",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\890-isolette\\isolette-ksu-05\\_typed_interfaces",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\890-isolette\\isolette-ksu-06\\_intra-system_connections",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\890-isolette\\isolette-ksu-07\\_enumerated_&_range_types",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\890-isolette\\isolette-ksu-08\\_abstract_air_component",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\890-isolette\\isolette-ksu-09\\_regulating_&_monitoring_control",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\890-isolette\\isolette-ksu-10\\_operator_interface",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\890-isolette\\isolette-ksu-11\\_regulating_&_monitoring_interface_mode_fail"
+  ],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'Base_Types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/890-isolette/isolette-ksu-05/packages/Isolette.aadl line : 23 column : 6)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/890-isolette/isolette-ksu-05/packages/Isolette.aadl line : 54 column : 36)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/890-isolette/isolette-ksu-05/packages/Isolette.aadl line : 55 column : 35)",
+    "ERROR:Package KSU_Isolette has duplicates /Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/890-isolette/isolette-ksu-01/packages/Isolette.aadl, /Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/890-isolette/isolette-ksu-02/pac..."
+  ]
+}

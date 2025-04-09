@@ -1,0 +1,12 @@
+{
+  "isParsingSucceeded": false,
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/uavAADL/V3/scenario.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\",
+  "isSavedTheModel": false,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\uavAADL\\README.md"],
+  "errors": [
+    "ERROR:missing EOF at 'SYSTEM' ( line : 1 column : 1)",
+    "Questo modello: file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/uavAADL/V3/scenario.aadl non può essere caricato, potrebbe essere corrotto"
+  ]
+}

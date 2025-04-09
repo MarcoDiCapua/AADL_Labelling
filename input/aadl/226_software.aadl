@@ -1,0 +1,204 @@
+package SCADA::software
+public
+	
+with SCADA::icd; 
+
+
+process FEP
+	features
+	voltagefromsubstation : in data port SCADA::icd::voltage;
+	currentfromsubstation : in data port SCADA::icd::current;
+	breakertosubstation     : out data port SCADA::icd::breaker;
+	transformertosubstation     : out data port SCADA::icd::transformer;
+	voltagetoSCADAP : out data port SCADA::icd::voltage;
+	currenttoSCADAP : out data port SCADA::icd::current;
+	breakerfromSCADAP : in data port SCADA::icd::breaker;
+	transformerfromSCADAP : in data port SCADA::icd::transformer;	
+flows
+	f00 : flow path voltagefromsubstation -> voltagetoSCADAP;
+	f01 : flow path currentfromsubstation -> currenttoSCADAP;
+	f02 : flow path breakerfromSCADAP -> breakertosubstation;
+	f03 : flow path transformerfromSCADAP -> transformertosubstation;
+
+end FEP;
+
+process implementation FEP.i
+	subcomponents
+	sub_thr : thread FEP_send_to_substation;
+	scada_thr : thread FEP_send_to_SCADA;
+connections
+	c00 : port voltagefromsubstation -> scada_thr.voltagein;
+	c01 : port currentfromsubstation -> scada_thr.currentin;
+	c02 : port scada_thr.voltageout -> voltagetoSCADAP;
+	c03 : port scada_thr.currentout  -> currenttoSCADAP;
+
+	c10 : port breakerfromSCADAP -> sub_thr.breakerin;
+	c11 : port transformerfromSCADAP -> sub_thr.transformerin;
+	c12 : port sub_thr.breakerout -> breakertosubstation;
+	c13 : port sub_thr.transformerout -> transformertosubstation;
+	
+flows
+	f00 : flow path voltagefromsubstation -> c00 -> scada_thr.f0 -> c02 -> voltagetoSCADAP;
+	f01 : flow path currentfromsubstation -> c01 -> scada_thr.f1 -> c03 -> currenttoSCADAP;
+	f02 : flow path breakerfromSCADAP -> c10 -> sub_thr.f0 -> c12 -> breakertosubstation;
+	f03 : flow path transformerfromSCADAP -> c11 -> sub_thr.f1 -> c13 -> transformertosubstation;
+	
+end FEP.i;
+
+
+process SCADAP
+features
+	voltagefromFEP : in data port SCADA::icd::voltage;
+	currentfromFEP : in data port SCADA::icd::current;
+	breakertoFEP   : out data port SCADA::icd::breaker;
+	transformertoFEP : out data port SCADA::icd::transformer;
+	voltagetoHMI : out data port SCADA::icd::voltage;
+	currenttoHMI : out data port SCADA::icd::current;
+	breakerfromHMI : in data port SCADA::icd::breaker;
+	transformerfromHMI : in data port SCADA::icd::transformer;
+	alarmtoAlarm: out data port SCADA::icd::alarm_data;
+	voltagetoDMS : out data port SCADA::icd::voltage;
+	currenttoDMS : out data port SCADA::icd::current;
+	voltagetoDB : out data port SCADA::icd::voltage;
+	currenttoDB : out data port SCADA::icd::current;
+	
+flows
+	f00 : flow path voltagefromFEP -> voltagetoHMI;
+	f01 : flow path currentfromFEP -> currenttoHMI;
+	f02 : flow path breakerfromHMI -> breakertoFEP;
+	f03 : flow path transformerfromHMI -> transformertoFEP;
+	f04 : flow path voltagefromFEP -> voltagetoDMS;
+	f05 : flow path currentfromFEP -> currenttoDMS;
+	f06 : flow source alarmtoAlarm;
+	f07 : flow path voltagefromFEP -> voltagetoDB;
+	f08 : flow path currentfromFEP -> currenttoDB;
+
+end SCADAP;
+
+process implementation SCADAP.i
+subcomponents
+	FEP_thr : thread SCADAP_send_to_FEP;
+	HMI_thr : thread SCADAP_send_to_HMI;
+	DMS_thr : thread SCADAP_send_to_DMS;
+	Alarm_thr : thread SCADAP_send_to_Alarm;
+	DB_thr : thread SCADAP_send_to_DMS;
+connections
+	c00 : port voltagefromFEP -> HMI_thr.voltagein;
+	c01 : port currentfromFEP -> HMI_thr.currentin;
+	c02 : port HMI_thr.voltageout -> voltagetoHMI;
+	c03 : port HMI_thr.currentout  -> currenttoHMI;
+
+	c10 : port breakerfromHMI -> FEP_thr.breakerin;
+	c11 : port transformerfromHMI -> FEP_thr.transformerin;
+	c12 : port FEP_thr.breakerout -> breakertoFEP;
+	c13 : port FEP_thr.transformerout -> transformertoFEP;
+	
+	c20 : port voltagefromFEP -> DMS_thr.voltagein;
+	c21 : port currentfromFEP -> DMS_thr.currentin;
+	c22 : port DMS_thr.voltageout -> voltagetoDMS;
+	c23 : port DMS_thr.currentout -> currenttoDMS;
+	
+	c30 : port Alarm_thr.alarmout -> alarmtoAlarm;
+	
+	c40 : port voltagefromFEP -> DB_thr.voltagein;
+	c41 : port currentfromFEP -> DB_thr.currentin;
+	c42 : port DB_thr.voltageout -> voltagetoDB;
+	c43 : port DB_thr.currentout -> currenttoDB;
+	
+flows
+	f00 : flow path voltagefromFEP -> c00 -> HMI_thr.f0 -> c02 -> voltagetoHMI;
+	f01 : flow path currentfromFEP -> c01 -> HMI_thr.f1 -> c03 -> currenttoHMI;
+	f02 : flow path breakerfromHMI -> c10 -> FEP_thr.f0 -> c12 -> breakertoFEP;
+	f03 : flow path transformerfromHMI -> c11 -> FEP_thr.f1 -> c13 -> transformertoFEP;
+	f04 : flow path voltagefromFEP -> c20 -> DMS_thr.f0 -> c22 -> voltagetoDMS;
+	f05 : flow path currentfromFEP -> c21 -> DMS_thr.f1 -> c23 -> currenttoDMS;
+	f06 : flow source Alarm_thr.f0 -> c30 -> alarmtoAlarm;
+	f07 : flow path voltagefromFEP -> c40 -> DB_thr.f0 -> c42 -> voltagetoDB;
+	f08 : flow path currentfromFEP -> c41 -> DB_thr.f1 -> c43 -> currenttoDB;
+	
+end SCADAP.i;
+
+
+
+
+thread FEP_send_to_SCADA
+features
+	voltagein : in data port SCADA::icd::voltage;
+	currentin : in data port SCADA::icd::current;
+	voltageout : out data port SCADA::icd::voltage;
+	currentout : out data port SCADA::icd::current;
+flows
+	f0 : flow path voltagein -> voltageout;
+	f1 : flow path currentin -> currentout;
+
+end FEP_send_to_SCADA;
+
+thread FEP_send_to_substation
+features
+	breakerin : in data port SCADA::icd::breaker;
+	transformerin : in data port SCADA::icd::transformer;
+	breakerout : out data port SCADA::icd::breaker;
+	transformerout : out data port SCADA::icd::transformer;
+flows
+	f0 : flow path breakerin -> breakerout;
+	f1 : flow path transformerin -> transformerout;
+
+end FEP_send_to_substation;
+
+thread SCADAP_send_to_HMI
+features
+	voltagein : in data port SCADA::icd::voltage;
+	currentin : in data port SCADA::icd::current;
+	voltageout : out data port SCADA::icd::voltage;
+	currentout : out data port SCADA::icd::current;
+flows
+	f0 : flow path voltagein -> voltageout;
+	f1 : flow path currentin -> currentout;
+
+end SCADAP_send_to_HMI;
+
+thread SCADAP_send_to_FEP
+features
+	breakerin : in data port SCADA::icd::breaker;
+	transformerin : in data port SCADA::icd::transformer;
+	breakerout : out data port SCADA::icd::breaker;
+	transformerout : out data port SCADA::icd::transformer;
+flows
+	f0 : flow path breakerin -> breakerout;
+	f1 : flow path transformerin -> transformerout;
+
+end SCADAP_send_to_FEP;
+
+thread SCADAP_send_to_DMS
+features
+	voltagein : in data port SCADA::icd::voltage;
+	currentin : in data port SCADA::icd::current;
+	voltageout : out data port SCADA::icd::voltage;
+	currentout : out data port SCADA::icd::current;
+flows
+	f0 : flow path voltagein -> voltageout;
+	f1 : flow path currentin -> currentout;
+
+end SCADAP_send_to_DMS;
+
+thread SCADAP_send_to_DB
+features
+	voltagein : in data port SCADA::icd::voltage;
+	currentin : in data port SCADA::icd::current;
+	voltageout : out data port SCADA::icd::voltage;
+	currentout : out data port SCADA::icd::current;
+flows
+	f0 : flow path voltagein -> voltageout;
+	f1 : flow path currentin -> currentout;
+
+end SCADAP_send_to_DB;
+
+
+thread SCADAP_send_to_Alarm
+features
+	alarmout : out data port SCADA::icd::alarm_data;
+flows
+	f0 : flow source alarmout;
+end SCADAP_send_to_Alarm;
+
+end SCADA::software;

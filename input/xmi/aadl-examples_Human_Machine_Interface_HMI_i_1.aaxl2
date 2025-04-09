@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="HMI_i_Instance" category="system">
+  <featureInstance name="system_bus" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/2"/>
+  </featureInstance>
+  <featureInstance name="power_supply" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.1"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/5"/>
+  </featureInstance>
+  <featureInstance name="dc_clock" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.2"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/4"/>
+  </featureInstance>
+  <featureInstance name="sc_clock" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.3"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/4"/>
+  </featureInstance>
+  <featureInstance name="mtm_bus" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.4"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/6"/>
+  </featureInstance>
+  <featureInstance name="hdmi_bus" category="busAccess" direction="out">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.5"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/7"/>
+  </featureInstance>
+  <featureInstance name="vga_bus" category="busAccess" direction="out">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.6"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/8"/>
+  </featureInstance>
+  <featureInstance name="ui_image" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="ui_sound" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/10"/>
+  </featureInstance>
+  <featureInstance name="ui_touch">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <componentInstance name="ts" category="device">
+    <featureInstance name="ui_image" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="image">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="ui_touch">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="finger_location" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#Human_Machine_Interface.Touch_Screen.i"/>
+  </componentInstance>
+  <componentInstance name="dc" category="device">
+    <featureInstance name="system_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="video_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="dc_clock" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="power_supply" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="mtm_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.4"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="hdmi_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.5"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="vga_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.6"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#Human_Machine_Interface.Display_Controller.i"/>
+  </componentInstance>
+  <componentInstance name="sp" category="device">
+    <featureInstance name="audio_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="sound" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#Human_Machine_Interface.Speaker.i"/>
+  </componentInstance>
+  <componentInstance name="sc" category="device">
+    <featureInstance name="system_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="audio_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="power_supply" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="sc_clock" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="mtm_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.4"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Human_Machine_Interface_HMI_i_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#Human_Machine_Interface.Sound_Controller.i"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#Human_Machine_Interface.HMI.i"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#Human_Machine_Interface.HMI.i"/>
+</instance:SystemInstance>

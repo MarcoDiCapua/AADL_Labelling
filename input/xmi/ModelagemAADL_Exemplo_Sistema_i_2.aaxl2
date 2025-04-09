@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Sistema_i_Instance" category="system">
+  <componentInstance name="barramento" category="bus">
+    <featureInstance name="potencia" category="abstractFeature">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedAbstractFeature.0"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusType" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.CANbus"/>
+  </componentInstance>
+  <componentInstance name="Bateria" category="system">
+    <featureInstance name="Fornecedor" category="abstractFeature" direction="out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAbstractFeature.0"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.FornecedorEnergia"/>
+  </componentInstance>
+  <componentInstance name="Grid1" category="system">
+    <featureInstance name="Fornecedor" category="abstractFeature">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedAbstractFeature.0"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="Consumidor" category="abstractFeature" direction="out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedAbstractFeature.1"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.GridEnergia"/>
+  </componentInstance>
+  <componentInstance name="scs1" category="system">
+    <featureInstance name="potencia" category="abstractFeature">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedAbstractFeature.0"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="out1" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.0"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="in1">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.1"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <componentInstance name="sensor1" category="device">
+      <featureInstance name="potencia" category="abstractFeature">
+        <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedAbstractFeature.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="sensorout" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="canbusaccess" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDeviceSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.sensor"/>
+    </componentInstance>
+    <componentInstance name="atuador" category="device">
+      <featureInstance name="potencia" category="abstractFeature">
+        <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedAbstractFeature.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="actuatorin">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="canbusaccess" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusAccess.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDeviceSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.atuador"/>
+    </componentInstance>
+    <componentInstance name="dcs" category="system">
+      <featureInstance name="potencia" category="abstractFeature">
+        <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAbstractFeature.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="canbusaccess" category="busAccess" direction="out">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedBusAccess.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="sensorin">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="actuatorOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <componentInstance name="dca" category="system">
+        <featureInstance name="potencia" category="abstractFeature">
+          <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAbstractFeature.0"/>
+          <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+        </featureInstance>
+        <featureInstance name="canbusaccess" category="busAccess" direction="out">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+          <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/2"/>
+        </featureInstance>
+        <featureInstance name="sensorin">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.0"/>
+          <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="actuatorOut" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.1"/>
+          <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/3"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedSystemSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:SystemType" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.DCA"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.DCS.i"/>
+    </componentInstance>
+    <connectionInstance name="sensor1.sensorout -> dcs.dca.sensorin" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.2" source="//@componentInstance.3/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.2">
+        <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedFeatureConnection.3"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.3/@componentInstance.2" source="//@componentInstance.3/@componentInstance.2/@featureInstance.2" destination="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="sensor1.canbusaccess -> dcs.dca.canbusaccess" complete="true" kind="accessConnection" destination="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.1" source="//@componentInstance.3/@componentInstance.0/@featureInstance.2">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.1" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedAccessConnection.0"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.3/@componentInstance.2" source="//@componentInstance.3/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.1" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedAccessConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="atuador.canbusaccess -> dcs.dca.canbusaccess" complete="true" kind="accessConnection" destination="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.1" source="//@componentInstance.3/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.1" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedAccessConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.3/@componentInstance.2" source="//@componentInstance.3/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.1" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedAccessConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="dcs.dca.canbusaccess -> sensor1.canbusaccess" complete="true" kind="accessConnection" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.2" source="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.3/@componentInstance.2" source="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedAccessConnection.0"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedAccessConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="dcs.dca.canbusaccess -> atuador.canbusaccess" complete="true" kind="accessConnection" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.2" source="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.3/@componentInstance.2" source="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedAccessConnection.0"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.2">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedAccessConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="dcs.dca.actuatorOut -> atuador.actuatorin" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.1" source="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.3">
+      <connectionReference context="//@componentInstance.3/@componentInstance.2" source="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedPortConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.2/@featureInstance.3" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.1">
+        <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedFeatureConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.SCS.i"/>
+  </componentInstance>
+  <componentInstance name="Grid2" category="system">
+    <featureInstance name="Fornecedor" category="abstractFeature">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedAbstractFeature.0"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="Consumidor" category="abstractFeature" direction="out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedAbstractFeature.1"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedSystemSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.GridEnergia"/>
+  </componentInstance>
+  <componentInstance name="scs2" category="system">
+    <featureInstance name="potencia" category="abstractFeature">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedAbstractFeature.0"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="out1" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.0"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="in1">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.1"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <componentInstance name="sensor1" category="device">
+      <featureInstance name="potencia" category="abstractFeature">
+        <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedAbstractFeature.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="sensorout" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="canbusaccess" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDeviceSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.sensor"/>
+    </componentInstance>
+    <componentInstance name="atuador" category="device">
+      <featureInstance name="potencia" category="abstractFeature">
+        <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedAbstractFeature.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="actuatorin">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="canbusaccess" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusAccess.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDeviceSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.atuador"/>
+    </componentInstance>
+    <componentInstance name="dcs" category="system">
+      <featureInstance name="potencia" category="abstractFeature">
+        <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAbstractFeature.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="canbusaccess" category="busAccess" direction="out">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedBusAccess.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="sensorin">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="actuatorOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+        <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <componentInstance name="dca" category="system">
+        <featureInstance name="potencia" category="abstractFeature">
+          <feature xsi:type="aadl2:AbstractFeature" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAbstractFeature.0"/>
+          <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/0"/>
+        </featureInstance>
+        <featureInstance name="canbusaccess" category="busAccess" direction="out">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+          <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/2"/>
+        </featureInstance>
+        <featureInstance name="sensorin">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.0"/>
+          <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="actuatorOut" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.1"/>
+          <type href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/instances/TesteBudgetPower_Sistema_i_Instance.aaxl2#/3"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedSystemSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:SystemType" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.DCA"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.DCS.i"/>
+    </componentInstance>
+    <connectionInstance name="sensor1.sensorout -> dcs.dca.sensorin" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.2" source="//@componentInstance.5/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.5/@componentInstance.2/@featureInstance.2">
+        <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedFeatureConnection.3"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.5/@componentInstance.2" source="//@componentInstance.5/@componentInstance.2/@featureInstance.2" destination="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="sensor1.canbusaccess -> dcs.dca.canbusaccess" complete="true" kind="accessConnection" destination="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.1" source="//@componentInstance.5/@componentInstance.0/@featureInstance.2">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.5/@componentInstance.2/@featureInstance.1" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedAccessConnection.0"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.5/@componentInstance.2" source="//@componentInstance.5/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.1" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedAccessConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="atuador.canbusaccess -> dcs.dca.canbusaccess" complete="true" kind="accessConnection" destination="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.1" source="//@componentInstance.5/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.5/@componentInstance.2/@featureInstance.1" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedAccessConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.5/@componentInstance.2" source="//@componentInstance.5/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.1" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedAccessConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="dcs.dca.canbusaccess -> sensor1.canbusaccess" complete="true" kind="accessConnection" destination="//@componentInstance.5/@componentInstance.0/@featureInstance.2" source="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.5/@componentInstance.2" source="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.5/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedAccessConnection.0"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.5/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedAccessConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="dcs.dca.canbusaccess -> atuador.canbusaccess" complete="true" kind="accessConnection" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.2" source="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.5/@componentInstance.2" source="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.5/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedAccessConnection.0"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.2">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedAccessConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="dcs.dca.actuatorOut -> atuador.actuatorin" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.1" source="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.3">
+      <connectionReference context="//@componentInstance.5/@componentInstance.2" source="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.5/@componentInstance.2/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedPortConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.2/@featureInstance.3" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.1">
+        <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedFeatureConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedSystemSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.SCS.i"/>
+  </componentInstance>
+  <connectionInstance name="Bateria.Fornecedor -> Grid1.Fornecedor" complete="true" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedFeatureConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Bateria.Fornecedor -> Grid2.Fornecedor" complete="true" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedFeatureConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Grid1.Consumidor -> scs1.dcs.dca.potencia" complete="true" destination="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedFeatureConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedFeatureConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3/@componentInstance.2" source="//@componentInstance.3/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.2/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedFeatureConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Grid1.Consumidor -> scs1.sensor1.potencia" complete="true" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedFeatureConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedFeatureConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Grid1.Consumidor -> scs1.atuador.potencia" complete="true" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.0" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedFeatureConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedFeatureConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="scs1.out1 -> scs2.in1" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.2" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.5/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Grid2.Consumidor -> scs2.dcs.dca.potencia" complete="true" destination="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.0" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedFeatureConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedFeatureConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5/@componentInstance.2" source="//@componentInstance.5/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.2/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedFeatureConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Grid2.Consumidor -> scs2.sensor1.potencia" complete="true" destination="//@componentInstance.5/@componentInstance.0/@featureInstance.0" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedFeatureConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedFeatureConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Grid2.Consumidor -> scs2.atuador.potencia" complete="true" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.0" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedFeatureConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedFeatureConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="scs2.out1 -> scs1.in1" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.2" source="//@componentInstance.5/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.Sistema.i"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/ModelagemAADL/ArquiteturaKart/Test/packages/Integration/TesteBudgetPower.aadl#Exemplo.Sistema.i"/>
+</instance:SystemInstance>

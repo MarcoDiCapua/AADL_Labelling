@@ -1,0 +1,83 @@
+package applications
+public
+	
+with data_model;
+with arinc653;
+WITH FORA::core;
+
+data real
+properties
+	Data_Size => 4 bytes;
+	data_model::data_representation => Float ;
+	Type_Source_Name => "double";
+end real;
+
+data int
+properties
+	Data_Size => 4 bytes;
+	data_model::data_representation => Float ;
+	Type_Source_Name => "int";
+end int;
+
+data bool
+properties
+	Data_Size => 1 bytes;
+	data_model::data_representation => Integer ;
+	Type_Source_Name => "unsigned char";
+end bool;
+
+data altitude extends int
+end altitude;
+	
+-- Define a critical application	
+process App1 extends FORA::core::CriticalApp
+features
+	altitude_in : in data port altitude {arinc653::sampling_refresh_period => 10 ms;};
+	altitude : out data port altitude {arinc653::sampling_refresh_period => 10 ms;};
+end App1;
+
+process implementation App1.i
+subcomponents
+	thr : thread T1.i;
+connections
+	c0 : port altitude_in -> thr.altitude_in;
+	c2 : port thr.altitude -> altitude;
+end App1.i;
+
+-- Define a critical task
+thread T1 extends FORA::core::CriticalTask
+features
+	altitude_in : in data port altitude;
+	altitude : out data port altitude;
+end T1;
+
+thread implementation T1.i
+calls 
+   call1 : { pspg : subprogram filtering_spg;};
+connections
+	c0 : parameter altitude_in -> pspg.altitude_in;
+	c2 : parameter pspg.altitude -> altitude;
+properties
+   Priority => 1;
+   dispatch_protocol => periodic;
+   period            => 1000ms; 
+   deadline          => 500ms;
+   compute_execution_time => 0ms .. 1ms;
+   Code_Size  => 4 Kbyte;
+   Stack_Size => 30 Kbyte;
+   Data_Size  => 4 Kbyte;	
+end T1.i;
+
+subprogram filtering_spg
+features
+	altitude_in : in parameter altitude;
+	altitude : out parameter altitude;
+properties
+   source_name => "filtering_spg";
+   source_language => (C);
+   Source_Text => ("filtering.c");
+   Code_Size  => 2 Kbyte;
+   Data_Size  => 2 Kbyte;	
+end filtering_spg;
+	
+end applications;

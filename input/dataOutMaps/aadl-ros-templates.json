@@ -1,0 +1,9 @@
+{
+  "isParsingSucceeded": false,
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-ros-templates/templates/topic_properties.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\",
+  "isSavedTheModel": false,
+  "docFiles": [],
+  "errors": ["Questo modello: file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-ros-templates/templates/topic_properties.aadl non è un AadlPackage"]
+}

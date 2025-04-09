@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Sensors_Actuators_i_Instance" category="system">
+  <featureInstance name="sense" category="featureGroup" direction="in out">
+    <featureInstance name="ui_touch">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Peripherals_Sensors_Actuators_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.0"/>
+  </featureInstance>
+  <featureInstance name="act" category="featureGroup" direction="in out">
+    <featureInstance name="ui_image" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Peripherals_Sensors_Actuators_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="ui_sound" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Peripherals_Sensors_Actuators_i_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.1"/>
+  </featureInstance>
+  <featureInstance name="from_safety" category="featureGroup" direction="in out">
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.2"/>
+  </featureInstance>
+  <featureInstance name="from_operation" category="featureGroup" direction="in out">
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.3"/>
+  </featureInstance>
+  <featureInstance name="gpio" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Peripherals_Sensors_Actuators_i_Instance.aaxl2#/3"/>
+  </featureInstance>
+  <featureInstance name="power_supply" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.1"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Peripherals_Sensors_Actuators_i_Instance.aaxl2#/4"/>
+  </featureInstance>
+  <featureInstance name="mtm_bus" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.2"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Peripherals_Sensors_Actuators_i_Instance.aaxl2#/5"/>
+  </featureInstance>
+  <featureInstance name="halt" category="eventPort">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+  </featureInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#Peripherals.Sensors_Actuators.i"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#Peripherals.Sensors_Actuators.i"/>
+</instance:SystemInstance>

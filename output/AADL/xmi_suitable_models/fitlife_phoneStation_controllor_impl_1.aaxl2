@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="controllor_impl_Instance" category="system">
+  <featureInstance name="screenOut" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+  </featureInstance>
+  <featureInstance name="screenIn" category="eventPort">
+    <feature xsi:type="aadl2:EventPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.1"/>
+  </featureInstance>
+  <featureInstance name="bluetoothPortOut" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.2"/>
+  </featureInstance>
+  <featureInstance name="bluetoothPortIn" category="eventPort">
+    <feature xsi:type="aadl2:EventPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.3"/>
+  </featureInstance>
+  <componentInstance name="CPU" category="device">
+    <featureInstance name="memorydataOut" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="memorydataIn">
+      <feature xsi:type="aadl2:DataPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="screendataOut" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="screenkeyboardIn" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="bluetoothOut" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="bluetoothIn" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.3"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/fitlife/phoneStation.aadl#phoneStation.CPU"/>
+  </componentInstance>
+  <componentInstance name="bluetooth" category="device">
+    <featureInstance name="btdataIn" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="btdataOut" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="btportIn" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="btportOut" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedEventPort.3"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/fitlife/phoneStation.aadl#phoneStation.Bluetooth"/>
+  </componentInstance>
+  <componentInstance name="Memo" category="memory">
+    <featureInstance name="dataIn">
+      <feature xsi:type="aadl2:DataPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="dataOut" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedMemorySubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryType" href="../../github/fitlife/phoneStation.aadl#phoneStation.Memo"/>
+  </componentInstance>
+  <modeInstance name="normal" initial="true">
+    <mode href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedMode.0"/>
+  </modeInstance>
+  <modeInstance name="alart">
+    <mode href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedMode.1"/>
+  </modeInstance>
+  <connectionInstance name="screenIn -> CPU.screenkeyboardIn" kind="portConnection" destination="//@componentInstance.0/@featureInstance.3" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="bluetoothPortIn -> bluetooth.btportIn" kind="portConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@featureInstance.3">
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="CPU.memorydataOut -> Memo.dataIn" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="CPU.screendataOut -> screenOut" kind="portConnection" destination="//@featureInstance.0" source="//@componentInstance.0/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.2" destination="//@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="CPU.bluetoothOut -> bluetooth.btdataIn" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.0/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.4" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="bluetooth.btdataOut -> CPU.bluetoothIn" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.5" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="bluetooth.btportOut -> bluetoothPortOut" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.1/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.3" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Memo.dataOut -> CPU.memorydataIn" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.1" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/fitlife/phoneStation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/fitlife/phoneStation.aadl#phoneStation.controllor.impl"/>
+  <systemOperationMode name="som_1" currentMode="//@modeInstance.0"/>
+  <systemOperationMode name="som_2" currentMode="//@modeInstance.1"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/fitlife/phoneStation.aadl#phoneStation.controllor.impl"/>
+</instance:SystemInstance>

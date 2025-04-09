@@ -1,0 +1,10 @@
+
+----------------------------
+input: C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/output-processing\average_sim.csv
+Rand Index: 0.9323710237904304
+Adjusted Rand Index: 0.4796319438679212
+
+----------------------------
+input: C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/output-processing\max_sim_struct.csv
+Rand Index: 0.9085805934242182
+Adjusted Rand Index: 0.36505993961374233

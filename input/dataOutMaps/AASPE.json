@@ -1,0 +1,26 @@
+{
+  "isParsingSucceeded": false,
+  "modelName": "savi::afe62s2::eicas",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AASPE/edu.cmu.aaspe.examples/SAVI/eicas.aadl",
+  "pathXMLFile": "",
+  "isSavedTheModel": false,
+  "docFiles": [
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.sei.aaspe\\ExtensionPointsDoc.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.sei.aaspe\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.aaspe.examples\\drone-case-study\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.aaspe.help\\resources\\markdown\\attack-impact.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.aaspe.help\\resources\\markdown\\attack-tree.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.aaspe.help\\resources\\markdown\\contact.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.aaspe.help\\resources\\markdown\\license.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.aaspe.help\\resources\\markdown\\overview.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.aaspe.help\\resources\\markdown\\aadl\\attack-impact-generation.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.aaspe.help\\resources\\markdown\\aadl\\engine-rules.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.aaspe.help\\resources\\markdown\\aadl\\extending-engine.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.aaspe.help\\resources\\markdown\\code-generator\\overview.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.aaspe.help\\resources\\markdown\\code-generator\\patterns.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AASPE\\edu.cmu.aaspe.help\\resources\\markdown\\code-generator\\usage.md"
+  ],
+  "errors": ["Invalid file path"]
+}

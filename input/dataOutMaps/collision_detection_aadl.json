@@ -1,0 +1,21 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "avoidance_subsystem",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\collision_detection_aadl_avoidance_subsystem_avoidance_subsystem_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\collision_detection_aadl\\README.md"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to property definition 'Allowed_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsy...",
+    "ERROR:Couldn't resolve reference to property definition 'Allowed_Memory_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsyste...",
+    "ERROR:Couldn't resolve reference to property definition 'Allowed_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsy...",
+    "ERROR:Couldn't resolve reference to property definition 'Allowed_Memory_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsyste...",
+    "ERROR:Couldn't resolve reference to property definition 'Allowed_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsy...",
+    "ERROR:Couldn't resolve reference to property definition 'Allowed_Memory_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsyste...",
+    "ERROR:Couldn't resolve reference to property definition 'Communication_Properties::Latency'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.a...",
+    "ERROR:Couldn't resolve reference to property definition 'Communication_Properties::Latency'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.a...",
+    "ERROR:Couldn't resolve reference to property definition 'Communication_Properties::Latency'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.a...",
+    "ERROR:Couldn't resolve reference to property definition 'Communication_Properties::Latency'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.a..."
+  ]
+}

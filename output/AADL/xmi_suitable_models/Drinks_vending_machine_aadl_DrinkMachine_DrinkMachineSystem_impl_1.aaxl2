@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="DrinkMachineSystem_impl_Instance" category="system">
+  <componentInstance name="MainBus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.MainBus.impl"/>
+  </componentInstance>
+  <componentInstance name="PayBus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.PayBus.impl"/>
+  </componentInstance>
+  <componentInstance name="DrinkBus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.DrinkBus.impl"/>
+  </componentInstance>
+  <componentInstance name="Panel" category="device">
+    <featureInstance name="PayMethod" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="NumDrink" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.1"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="DrinkReady" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="BAM" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.Panel.impl"/>
+  </componentInstance>
+  <componentInstance name="CashIn" category="device">
+    <featureInstance name="CashReq">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="CashAmount" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.1"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="BAP" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.CashIn.impl"/>
+  </componentInstance>
+  <componentInstance name="CashOut" category="device">
+    <featureInstance name="CashOut">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="BAP" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.CashOut.impl"/>
+  </componentInstance>
+  <componentInstance name="Card" category="device">
+    <featureInstance name="CardReq">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="CashAmount" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.1"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="BAP" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.CardReader.impl"/>
+  </componentInstance>
+  <componentInstance name="GlassSens" category="device">
+    <featureInstance name="GlassCheck">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedDataPort.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="GlassStatus" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="BAD" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.GlassSensor.impl"/>
+  </componentInstance>
+  <componentInstance name="IngredientSens" category="device">
+    <featureInstance name="CheckStatus">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedDataPort.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <featureInstance name="IngrStatus" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedDataPort.1"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <featureInstance name="BAD" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.IngredientSensor.impl"/>
+  </componentInstance>
+  <componentInstance name="ShakerDev" category="device">
+    <featureInstance name="ShakeIngr">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedDataPort.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/12"/>
+    </featureInstance>
+    <featureInstance name="ShakeStatus" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="BAD" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.Shaker.impl"/>
+  </componentInstance>
+  <componentInstance name="FeederDev" category="device">
+    <featureInstance name="FeedIngr">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedDataPort.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/13"/>
+    </featureInstance>
+    <featureInstance name="FeedStatus" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="BAD" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.7"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.Feeder.impl"/>
+  </componentInstance>
+  <componentInstance name="MainMem" category="memory">
+    <featureInstance name="BAM" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.MainProcMemory.impl"/>
+  </componentInstance>
+  <componentInstance name="PayMem" category="memory">
+    <featureInstance name="BAP" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.PayProcMemory.impl"/>
+  </componentInstance>
+  <componentInstance name="DrinkMem" category="memory">
+    <featureInstance name="BAD" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.DrinkProcMemory.impl"/>
+  </componentInstance>
+  <componentInstance name="MainController" category="process">
+    <featureInstance name="PayMethod">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/24"/>
+    </featureInstance>
+    <featureInstance name="NumDrink">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/25"/>
+    </featureInstance>
+    <featureInstance name="DrinkPrice">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/26"/>
+    </featureInstance>
+    <featureInstance name="CheckDrink" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/27"/>
+    </featureInstance>
+    <featureInstance name="PayModMethod" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/28"/>
+    </featureInstance>
+    <featureInstance name="PayModAmount" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/29"/>
+    </featureInstance>
+    <featureInstance name="MakeDrink" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/30"/>
+    </featureInstance>
+    <featureInstance name="Paid" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="DrinkIngrStatus" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="DrinkReady" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="Finished" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.3"/>
+    </featureInstance>
+    <componentInstance name="PayThread" category="thread">
+      <featureInstance name="DrinkInfo">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/14"/>
+      </featureInstance>
+      <featureInstance name="PanelMethod">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/15"/>
+      </featureInstance>
+      <featureInstance name="Price" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/16"/>
+      </featureInstance>
+      <featureInstance name="Method" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/17"/>
+      </featureInstance>
+      <featureInstance name="Paid" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="PrepareDrink" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#Software.PaymentThread.impl"/>
+    </componentInstance>
+    <componentInstance name="DrinkThread" category="thread">
+      <featureInstance name="DrinkInfo">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/18"/>
+      </featureInstance>
+      <featureInstance name="DrinkMake" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/19"/>
+      </featureInstance>
+      <featureInstance name="Prepare" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="DrinkFinished" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.1"/>
+      </featureInstance>
+      <featureInstance name="Finalize" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#Software.DrinkExecutorThread.impl"/>
+    </componentInstance>
+    <componentInstance name="DrinkVerifier" category="thread">
+      <featureInstance name="NumDrink">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/20"/>
+      </featureInstance>
+      <featureInstance name="DrinkPrice">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/21"/>
+      </featureInstance>
+      <featureInstance name="DrinkCheck" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.2"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/22"/>
+      </featureInstance>
+      <featureInstance name="DrinkInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.3"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/23"/>
+      </featureInstance>
+      <featureInstance name="DrinkIngrStatus" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#Software.DrinkVerifierThread.impl"/>
+    </componentInstance>
+    <connectionInstance name="PayThread.PrepareDrink -> DrinkThread.Prepare" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.1/@featureInstance.2" source="//@componentInstance.14/@componentInstance.0/@featureInstance.5">
+      <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.14/@componentInstance.1/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="DrinkVerifier.DrinkInfo -> PayThread.DrinkInfo" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.0" source="//@componentInstance.14/@componentInstance.2/@featureInstance.3">
+      <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@componentInstance.2/@featureInstance.3" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="DrinkVerifier.DrinkInfo -> DrinkThread.DrinkInfo" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.1/@featureInstance.0" source="//@componentInstance.14/@componentInstance.2/@featureInstance.3">
+      <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@componentInstance.2/@featureInstance.3" destination="//@componentInstance.14/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#Software.MainController.impl"/>
+  </componentInstance>
+  <componentInstance name="PayController" category="process">
+    <featureInstance name="Method">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/39"/>
+    </featureInstance>
+    <featureInstance name="Amount">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/40"/>
+    </featureInstance>
+    <featureInstance name="CardData">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.2"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/41"/>
+    </featureInstance>
+    <featureInstance name="CashData">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.3"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/42"/>
+    </featureInstance>
+    <featureInstance name="CardReq" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.4"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="CashReq" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.5"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="CashChange" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.6"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/43"/>
+    </featureInstance>
+    <featureInstance name="Finished" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+    </featureInstance>
+    <componentInstance name="PaymentProcessing" category="thread">
+      <featureInstance name="Method">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/31"/>
+      </featureInstance>
+      <featureInstance name="Amount">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.1"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/32"/>
+      </featureInstance>
+      <featureInstance name="AmountOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.2"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/33"/>
+      </featureInstance>
+      <featureInstance name="Done" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="DoneOut" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#Software.PaymentProcessingThread.impl"/>
+    </componentInstance>
+    <componentInstance name="Cash" category="thread">
+      <featureInstance name="Amount">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/34"/>
+      </featureInstance>
+      <featureInstance name="CashReq" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="CashData">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.2"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/35"/>
+      </featureInstance>
+      <featureInstance name="CashChange" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.3"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/36"/>
+      </featureInstance>
+      <featureInstance name="Done" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#Software.CashThread.impl"/>
+    </componentInstance>
+    <componentInstance name="Card" category="thread">
+      <featureInstance name="Amount">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/37"/>
+      </featureInstance>
+      <featureInstance name="CardReq" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.1"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="CardData">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.2"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/38"/>
+      </featureInstance>
+      <featureInstance name="Done" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#Software.CardThread.impl"/>
+    </componentInstance>
+    <connectionInstance name="PaymentProcessing.AmountOut -> Cash.Amount" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.1/@featureInstance.0" source="//@componentInstance.15/@componentInstance.0/@featureInstance.2">
+      <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.15/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="PaymentProcessing.AmountOut -> Card.Amount" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.2/@featureInstance.0" source="//@componentInstance.15/@componentInstance.0/@featureInstance.2">
+      <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.15/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Cash.Done -> PaymentProcessing.Done" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.3" source="//@componentInstance.15/@componentInstance.1/@featureInstance.4">
+      <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.7"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Card.Done -> PaymentProcessing.Done" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.3" source="//@componentInstance.15/@componentInstance.2/@featureInstance.3">
+      <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.2/@featureInstance.3" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.11"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#Software.PayController.impl"/>
+  </componentInstance>
+  <componentInstance name="DrinkController" category="process">
+    <featureInstance name="CheckDrink">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/60"/>
+    </featureInstance>
+    <featureInstance name="MakeDrink">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.1"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/61"/>
+    </featureInstance>
+    <featureInstance name="IngrStatus">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.2"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/62"/>
+    </featureInstance>
+    <featureInstance name="DrinkPrice" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.3"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/63"/>
+    </featureInstance>
+    <featureInstance name="CheckIngrStatus" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.4"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/64"/>
+    </featureInstance>
+    <featureInstance name="FeedIngr" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.5"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/65"/>
+    </featureInstance>
+    <featureInstance name="ShakeIngr" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.6"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/66"/>
+    </featureInstance>
+    <featureInstance name="CheckGlass" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.7"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/67"/>
+    </featureInstance>
+    <featureInstance name="FeedStatus" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="ShakeStatus" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="GlassStatus" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="DrinkIngrStatus" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventPort.3"/>
+    </featureInstance>
+    <featureInstance name="DrinkReady" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventPort.4"/>
+    </featureInstance>
+    <componentInstance name="DrinkInfo" category="thread">
+      <featureInstance name="CheckDrink">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/44"/>
+      </featureInstance>
+      <featureInstance name="CheckIngrOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.1"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/45"/>
+      </featureInstance>
+      <featureInstance name="CheckIngrIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.2"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/46"/>
+      </featureInstance>
+      <featureInstance name="IngrListOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.3"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/47"/>
+      </featureInstance>
+      <featureInstance name="IngrListIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.4"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/48"/>
+      </featureInstance>
+      <featureInstance name="DrinkPrice" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.5"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/49"/>
+      </featureInstance>
+      <featureInstance name="DrinkIngrStatus" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#Software.DrinkInfoThread.impl"/>
+    </componentInstance>
+    <componentInstance name="Drink" category="thread">
+      <featureInstance name="IngrListOut" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.0"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/50"/>
+      </featureInstance>
+      <featureInstance name="IngrListIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.1"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/51"/>
+      </featureInstance>
+      <featureInstance name="MakeDrink">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.2"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/52"/>
+      </featureInstance>
+      <featureInstance name="DrinkData" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.3"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/53"/>
+      </featureInstance>
+      <featureInstance name="DrinkReadyIn">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.4"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/54"/>
+      </featureInstance>
+      <featureInstance name="DrinkReady" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#Software.DrinkThread.impl"/>
+    </componentInstance>
+    <componentInstance name="Monitor" category="thread">
+      <featureInstance name="DrinkData">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.0"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/55"/>
+      </featureInstance>
+      <featureInstance name="DrinkReady" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.1"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/56"/>
+      </featureInstance>
+      <featureInstance name="FeedIngr" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.2"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/57"/>
+      </featureInstance>
+      <featureInstance name="CheckGlass" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.3"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/58"/>
+      </featureInstance>
+      <featureInstance name="ShakeIngr" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.4"/>
+        <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/59"/>
+      </featureInstance>
+      <featureInstance name="FeedIngrIn" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="CheckGlassIn" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedEventPort.1"/>
+      </featureInstance>
+      <featureInstance name="ShakeIngrIn" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedEventPort.2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#Software.MonitorThread.impl"/>
+    </componentInstance>
+    <connectionInstance name="DrinkInfo.IngrListOut -> Drink.IngrListIn" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.1" source="//@componentInstance.16/@componentInstance.0/@featureInstance.3">
+      <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.5"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Drink.IngrListOut -> DrinkInfo.IngrListIn" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.0/@featureInstance.4" source="//@componentInstance.16/@componentInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.16/@componentInstance.0/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.6"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Drink.DrinkData -> Monitor.DrinkData" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.2/@featureInstance.0" source="//@componentInstance.16/@componentInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.16/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.9"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Monitor.DrinkReady -> Drink.DrinkReadyIn" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.4" source="//@componentInstance.16/@componentInstance.2/@featureInstance.1">
+      <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.10"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#Software.DrinkController.impl"/>
+  </componentInstance>
+  <componentInstance name="MainProc" category="processor">
+    <featureInstance name="BAM" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="BAP" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.1"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="BAD" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.2"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.MainProc.impl"/>
+  </componentInstance>
+  <componentInstance name="PayProc" category="processor">
+    <featureInstance name="BAP" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.PayProc.impl"/>
+  </componentInstance>
+  <componentInstance name="DrinkProc" category="processor">
+    <featureInstance name="BAD" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.25/@ownedBusAccess.0"/>
+      <type href="../../github/Drinks_vending_machine_aadl/DrinkMachine/instances/DrinkMachine_DrinkMachineSystem_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/hardware/Hardware.aadl#Hardware.DrinkProc.impl"/>
+  </componentInstance>
+  <connectionInstance name="MainBus -> MainMem.BAM" complete="true" kind="accessConnection" destination="//@componentInstance.11/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.11/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MainBus -> MainProc.BAM" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.17/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MainBus -> Panel.BAM" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.3" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.3/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PayBus -> PayMem.BAP" complete="true" kind="accessConnection" destination="//@componentInstance.12/@featureInstance.0" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.12/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PayBus -> PayProc.BAP" complete="true" kind="accessConnection" destination="//@componentInstance.18/@featureInstance.0" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.18/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PayBus -> CashIn.BAP" complete="true" kind="accessConnection" destination="//@componentInstance.4/@featureInstance.2" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PayBus -> CashOut.BAP" complete="true" kind="accessConnection" destination="//@componentInstance.5/@featureInstance.1" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PayBus -> Card.BAP" complete="true" kind="accessConnection" destination="//@componentInstance.6/@featureInstance.2" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.6/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PayBus -> MainProc.BAP" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.1" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.17/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkBus -> DrinkMem.BAD" complete="true" kind="accessConnection" destination="//@componentInstance.13/@featureInstance.0" source="//@componentInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2" destination="//@componentInstance.13/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkBus -> DrinkProc.BAD" complete="true" kind="accessConnection" destination="//@componentInstance.19/@featureInstance.0" source="//@componentInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2" destination="//@componentInstance.19/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkBus -> GlassSens.BAD" complete="true" kind="accessConnection" destination="//@componentInstance.7/@featureInstance.2" source="//@componentInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2" destination="//@componentInstance.7/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkBus -> IngredientSens.BAD" complete="true" kind="accessConnection" destination="//@componentInstance.8/@featureInstance.2" source="//@componentInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2" destination="//@componentInstance.8/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkBus -> ShakerDev.BAD" complete="true" kind="accessConnection" destination="//@componentInstance.9/@featureInstance.2" source="//@componentInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2" destination="//@componentInstance.9/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkBus -> FeederDev.BAD" complete="true" kind="accessConnection" destination="//@componentInstance.10/@featureInstance.2" source="//@componentInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2" destination="//@componentInstance.10/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkBus -> MainProc.BAD" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.2" source="//@componentInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2" destination="//@componentInstance.17/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Panel.PayMethod -> MainController.PayThread.PanelMethod" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.1" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.14/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@featureInstance.0" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Panel.NumDrink -> MainController.DrinkVerifier.NumDrink" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.2/@featureInstance.0" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.14/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@featureInstance.1" destination="//@componentInstance.14/@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="CashIn.CashAmount -> PayController.Cash.CashData" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.1/@featureInstance.2" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.3" destination="//@componentInstance.15/@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Card.CashAmount -> PayController.Card.CardData" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.2/@featureInstance.2" source="//@componentInstance.6/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.2" destination="//@componentInstance.15/@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="GlassSens.GlassStatus -> DrinkController.Monitor.CheckGlassIn" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.2/@featureInstance.6" source="//@componentInstance.7/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.1" destination="//@componentInstance.16/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.19"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@featureInstance.10" destination="//@componentInstance.16/@componentInstance.2/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="IngredientSens.IngrStatus -> DrinkController.DrinkInfo.CheckIngrIn" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.0/@featureInstance.2" source="//@componentInstance.8/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.1" destination="//@componentInstance.16/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.17"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@featureInstance.2" destination="//@componentInstance.16/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ShakerDev.ShakeStatus -> DrinkController.Monitor.ShakeIngrIn" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.2/@featureInstance.7" source="//@componentInstance.9/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.1" destination="//@componentInstance.16/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.23"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@featureInstance.9" destination="//@componentInstance.16/@componentInstance.2/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="FeederDev.FeedStatus -> DrinkController.Monitor.FeedIngrIn" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.2/@featureInstance.5" source="//@componentInstance.10/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.10/@featureInstance.1" destination="//@componentInstance.16/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.21"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@featureInstance.8" destination="//@componentInstance.16/@componentInstance.2/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MainController.PayThread.Price -> PayController.PaymentProcessing.Amount" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.1" source="//@componentInstance.14/@componentInstance.0/@featureInstance.2">
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.14/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.5" destination="//@componentInstance.15/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.1" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MainController.PayThread.Method -> PayController.PaymentProcessing.Method" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.0" source="//@componentInstance.14/@componentInstance.0/@featureInstance.3">
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.14/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.4" destination="//@componentInstance.15/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.0" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MainController.DrinkThread.DrinkMake -> DrinkController.Drink.MakeDrink" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.2" source="//@componentInstance.14/@componentInstance.1/@featureInstance.1">
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.14/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.6" destination="//@componentInstance.16/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@featureInstance.1" destination="//@componentInstance.16/@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MainController.DrinkThread.Finalize -> Panel.DrinkReady" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.2" source="//@componentInstance.14/@componentInstance.1/@featureInstance.4">
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.14/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.10" destination="//@componentInstance.3/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MainController.DrinkVerifier.DrinkCheck -> DrinkController.DrinkInfo.CheckDrink" complete="true" kind="portConnection" destination="//@componentInstance.16/@componentInstance.0/@featureInstance.0" source="//@componentInstance.14/@componentInstance.2/@featureInstance.2">
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@componentInstance.2/@featureInstance.2" destination="//@componentInstance.14/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.3" destination="//@componentInstance.16/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@featureInstance.0" destination="//@componentInstance.16/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PayController.PaymentProcessing.DoneOut -> MainController.PayThread.Paid" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.4" source="//@componentInstance.15/@componentInstance.0/@featureInstance.4">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.15/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.7" destination="//@componentInstance.14/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@featureInstance.7" destination="//@componentInstance.14/@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PayController.Cash.CashReq -> CashIn.CashReq" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.15/@componentInstance.1/@featureInstance.1">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.5" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PayController.Cash.CashChange -> CashOut.CashOut" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.15/@componentInstance.1/@featureInstance.3">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.15/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.6" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PayController.Card.CardReq -> Card.CardReq" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.15/@componentInstance.2/@featureInstance.1">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.4" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkController.DrinkInfo.CheckIngrOut -> IngredientSens.CheckStatus" complete="true" kind="portConnection" destination="//@componentInstance.8/@featureInstance.0" source="//@componentInstance.16/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.16/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.4" destination="//@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkController.DrinkInfo.DrinkPrice -> MainController.DrinkVerifier.DrinkPrice" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.2/@featureInstance.1" source="//@componentInstance.16/@componentInstance.0/@featureInstance.5">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.16/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.3" destination="//@componentInstance.14/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@featureInstance.2" destination="//@componentInstance.14/@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkController.DrinkInfo.DrinkIngrStatus -> MainController.DrinkVerifier.DrinkIngrStatus" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.2/@featureInstance.4" source="//@componentInstance.16/@componentInstance.0/@featureInstance.6">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.16/@featureInstance.11">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.11" destination="//@componentInstance.14/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.14"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@featureInstance.8" destination="//@componentInstance.14/@componentInstance.2/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkController.Drink.DrinkReady -> MainController.DrinkThread.DrinkFinished" complete="true" kind="portConnection" destination="//@componentInstance.14/@componentInstance.1/@featureInstance.3" source="//@componentInstance.16/@componentInstance.1/@featureInstance.5">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.1/@featureInstance.5" destination="//@componentInstance.16/@featureInstance.12">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.12" destination="//@componentInstance.14/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.15"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.14" source="//@componentInstance.14/@featureInstance.9" destination="//@componentInstance.14/@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkController.Monitor.FeedIngr -> FeederDev.FeedIngr" complete="true" kind="portConnection" destination="//@componentInstance.10/@featureInstance.0" source="//@componentInstance.16/@componentInstance.2/@featureInstance.2">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.2/@featureInstance.2" destination="//@componentInstance.16/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.15"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.5" destination="//@componentInstance.10/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.20"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkController.Monitor.CheckGlass -> GlassSens.GlassCheck" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.0" source="//@componentInstance.16/@componentInstance.2/@featureInstance.3">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.2/@featureInstance.3" destination="//@componentInstance.16/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.16"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.7" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.18"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DrinkController.Monitor.ShakeIngr -> ShakerDev.ShakeIngr" complete="true" kind="portConnection" destination="//@componentInstance.9/@featureInstance.0" source="//@componentInstance.16/@componentInstance.2/@featureInstance.4">
+    <connectionReference context="//@componentInstance.16" source="//@componentInstance.16/@componentInstance.2/@featureInstance.4" destination="//@componentInstance.16/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/software/Software.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.14"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.6" destination="//@componentInstance.9/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.22"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#DrinkMachine.DrinkMachineSystem.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/Drinks_vending_machine_aadl/DrinkMachine/DrinkMachine.aadl#DrinkMachine.DrinkMachineSystem.impl"/>
+</instance:SystemInstance>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Supervisor_impl_Instance" category="system">
+  <featureInstance name="gcas_timeToFailure">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AutoModelCheckerGeneration/src/test/resources/big.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+    <type href="../../github/AutoModelCheckerGeneration/src/test/resources/instances/big_Supervisor_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="tcas_timeToFailure">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AutoModelCheckerGeneration/src/test/resources/big.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+    <type href="../../github/AutoModelCheckerGeneration/src/test/resources/instances/big_Supervisor_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="geof_timeToFailure">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AutoModelCheckerGeneration/src/test/resources/big.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.2"/>
+    <type href="../../github/AutoModelCheckerGeneration/src/test/resources/instances/big_Supervisor_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="timeToFailure" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AutoModelCheckerGeneration/src/test/resources/big.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.3"/>
+    <type href="../../github/AutoModelCheckerGeneration/src/test/resources/instances/big_Supervisor_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="gcas_timeToRecovery">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AutoModelCheckerGeneration/src/test/resources/big.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.4"/>
+    <type href="../../github/AutoModelCheckerGeneration/src/test/resources/instances/big_Supervisor_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="tcas_timeToRecovery">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AutoModelCheckerGeneration/src/test/resources/big.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.5"/>
+    <type href="../../github/AutoModelCheckerGeneration/src/test/resources/instances/big_Supervisor_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="geof_timeToRecovery">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AutoModelCheckerGeneration/src/test/resources/big.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.6"/>
+    <type href="../../github/AutoModelCheckerGeneration/src/test/resources/instances/big_Supervisor_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="timeToRecovery" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AutoModelCheckerGeneration/src/test/resources/big.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.7"/>
+    <type href="../../github/AutoModelCheckerGeneration/src/test/resources/instances/big_Supervisor_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="p1" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AutoModelCheckerGeneration/src/test/resources/big.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.8"/>
+    <type href="../../github/AutoModelCheckerGeneration/src/test/resources/instances/big_Supervisor_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="p2" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AutoModelCheckerGeneration/src/test/resources/big.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.9"/>
+    <type href="../../github/AutoModelCheckerGeneration/src/test/resources/instances/big_Supervisor_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="p3" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AutoModelCheckerGeneration/src/test/resources/big.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.10"/>
+    <type href="../../github/AutoModelCheckerGeneration/src/test/resources/instances/big_Supervisor_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AutoModelCheckerGeneration/src/test/resources/big.aadl#aviation.Supervisor.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AutoModelCheckerGeneration/src/test/resources/big.aadl#aviation.Supervisor.impl"/>
+</instance:SystemInstance>

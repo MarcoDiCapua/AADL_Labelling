@@ -1,0 +1,190 @@
+--iPCA_Drug_Library.aadl
+
+--holds drug library contain in the PCA pump
+
+package iPCA_Drug_Library
+  public
+  with
+    iPCA_Types, iPCA_Properties,
+    EMV2, BLESS;
+
+annex Assertion
+{**  
+	--no drug found
+<<NDF:n: not (exists j:integer --there is NO entry 
+         in 0 .. n-1  --in the array of drug library
+         that (DRUG_LIBRARY[j].code = DRUG_CODE) )>>      
+**};
+
+--THE DRUG LIBRARY PROCESS IS NOT USED AS THE DRUG LIBRARY THREAD IS
+--USED IN Operation_Threads::Operation_Process
+ 
+----this represents the process that holds the drug Library
+--process Drug_Library_Process
+--  features
+--   --pharmacy loads drug library
+--    load_drug_library : in event data port iPCA_Types::Drug_Library
+--      {BLESS::Assertion=>"<<:=DRUG_LIBRARY>>";};
+--    --ask for record for a drug code
+--    get_drug_record : in event data port iPCA_Types::Drug_Code
+--      {BLESS::Assertion=>"<<:=DRUG_CODE>>";};
+--    --fetched drug record, if given drug code is in drug library
+--    the_drug_record : out event data port iPCA_Types::Drug_Record
+--      {BLESS::Assertion=>"<<exists k:integer --there is some entry 
+--         in 0 .. (iPCA_Properties::Drug_Library_Size-1)  --in the array of drug library
+--         that DRUG_LIBRARY[k].code=DRUG_CODE  --having the given drug code
+--         and the_drug_record=DRUG_LIBRARY[k]>>";};  --which is also the event data payload
+--    --no library entry for given drug code
+--    no_drug_found : out event port  --no drug found having the given drug code
+--      {BLESS::Assertion=>"<<NDF(iPCA_Properties::Drug_Library_Size)>>";};  
+--end Drug_Library_Process;
+--
+----this represents the process implementation that holds the drug Library
+--process implementation Drug_Library_Process.i
+--  subcomponents
+--    dlt : thread Drug_Library_Thread.i;
+--  connections
+--    ldl : port load_drug_library->dlt.load_drug_library;
+--    gdr : port get_drug_record->dlt.get_drug_record;
+--    dr : port dlt.the_drug_record->the_drug_record;  
+--    ndf : port dlt.no_drug_found->no_drug_found;  
+----the drug library process is working if the drug library thread is working
+----annex EMV2
+----  {**
+----  --the drug library process is working when the drug library thread is
+----  use types ErrorLibrary, PCA_Error_Model;
+----  --when the drug library thread fails, it stops
+----  use behavior PCA_Error_Model::CompositeFailStop; 	
+----  --same error propagations as drug library thread
+----  error propagations
+----  --loading the drug library is priviledged and presumed error-free
+----    load_drug_library: not in propagation {CommonErrors};
+----  -- *not* expecting any errors in the command to get a drug record
+----    get_drug_record: not in propagation {CommonErrors};
+----  -- fetched drug record could not be returned at all 
+----    the_drug_record: out propagation {EarlyServiceTermination,ValueError};
+----  -- may fail to indicate when the drug was not found, but this could be checked by looking at the drug record returned
+----    no_drug_found: out propagation {ItemOmission};  
+----  end propagations;
+----  composite error behavior
+----    states 
+----     [dlt.failed]->failed;
+----     [dlt.working]->working;
+----  end composite;  	
+----  **};  --end of EMV2
+--end Drug_Library_Process.i;
+
+--this represents the thread that stores & retrieves drug Library
+thread Drug_Library_Thread
+  features
+    --pharmacy loads drug library
+    load_drug_library : in event data port iPCA_Types::Drug_Library
+      {BLESS::Assertion=>"<<:=DRUG_LIBRARY>>";};
+    --ask for record for a drug code
+    get_drug_record : in event data port iPCA_Types::Drug_Code
+      {BLESS::Assertion=>"<<:=DRUG_CODE>>";};
+    --fetched drug record, if given drug code is in drug library
+    the_drug_record : out event data port iPCA_Types::Drug_Record
+      {BLESS::Assertion=>"<<exists k:integer --there is some entry 
+         in 0 .. (iPCA_Properties::Drug_Library_Size-1)  --in the array of drug library
+         that DRUG_LIBRARY[k].code=DRUG_CODE  --having the given drug code
+         and the_drug_record=DRUG_LIBRARY[k]>>";};  --which is also the event data payload
+    --no library entry for given drug code
+    no_drug_found : out event port  --no drug found having the given drug code
+      {BLESS::Assertion=>"<<NDF(iPCA_Properties::Drug_Library_Size)>>";};  
+  properties
+    Dispatch_Protocol=>Aperiodic;    
+annex EMV2 
+  {** 
+  use types iPCA_Error_Model,ErrorLibrary;
+  --drug library stops upon failure
+  use behavior iPCA_Error_Model::FailStop;
+  error propagations
+  --loading the drug library is priviledged and presumed error-free
+    load_drug_library: not in propagation {CommonErrors};
+  -- *not* expecting any errors in the command to get a drug record
+    get_drug_record: not in propagation {CommonErrors};
+  -- fetched drug record could not be returned at all 
+    the_drug_record: out propagation {EarlyServiceTermination,ValueError};
+  -- may fail to indicate when the drug was not found, but this could be checked by looking at the drug record returned
+    no_drug_found: out propagation {ItemOmission};  
+  flows  --three different log fault behaviors:  complete failure, corruption, and truncation
+  --nothing returned from library when failed
+    no_record_returned: error source the_drug_record{EarlyServiceTermination} when failed;
+  --no no drug found
+    no_confirm: error source the_drug_record{EarlyServiceTermination} when failed;
+  end propagations;
+  properties
+  --how often does the drug library fail completely?
+    EMV2::OccurrenceDistribution => iPCA_Properties::DrugLibraryFailureRate 
+      applies to fail;
+  **};  --end of EMV2
+end Drug_Library_Thread;
+
+--this represents the thread implementation that stores & retreives drug Library
+thread implementation Drug_Library_Thread.i
+  annex BLESS
+  {**
+  assert <<INVW : : (dc=DRUG_CODE) and DL() and NDF(k)>>  --while loop invariant
+  invariant <<DL() or (dl=null)>>
+  variables
+    dl : iPCA_Types::Drug_Library :=null;
+  states
+    start : initial state  
+      <<dl=null>>;
+    wait : complete state  --wait until first drug library is loaded
+      <<dl=null>>;
+    run : complete state  --fetch record when asked
+      <<DL : :dl=DRUG_LIBRARY>>;
+    done : final state;
+  transitions
+  	dlt0 : start-[ ]->wait{};  --wait until first drug library is loaded	
+  	dlt1 : wait-[ on dispatch load_drug_library ]-> run  
+  	  {load_drug_library?(dl)};  --load first drug library in dl
+  	dlt2 : run-[on dispatch load_drug_library]->run 
+  	  {load_drug_library?(dl)};  --put new drug library in dl
+  	dlt3 : run-[on dispatch get_drug_record]->run  --service drug look-up
+  	  {  --fetch drug record
+  	    <<DL()>>
+  	  declare  --existential lattice quantification=local variable introduction
+        dc : iPCA_Types::Drug_Code;
+        k : integer := 0;
+    	  { <<DL() and (k=0)>>
+--read drug code from in port queue
+    	  get_drug_record?(dc)  --put drug code in "dc"
+    	    <<(dc=DRUG_CODE) and DL() and (k=0)>>
+    	  ; 
+--look through all records in the drug library  
+        while	((dc <> dl[k].code) and ((iPCA_Properties::Drug_Library_Size-k)>0))  
+          invariant <<INVW()>>
+          bound (iPCA_Properties::Drug_Library_Size-k)
+          {
+          <<((iPCA_Properties::Drug_Library_Size-k)>0) and INVW()>>
+          k:=k+1
+          <<(0<(iPCA_Properties::Drug_Library_Size-(k-1))) and INVW()>>
+          }
+        <<INVW() and not	
+           ((dc<>dl[k].code) and ((iPCA_Properties::Drug_Library_Size-k)>0))>>
+        ;
+--check whether drug code found
+        if  --found drug with requested code
+          (dl[k].code=dc)~> 
+            <<(dl[k].code=DRUG_CODE) and DL()>>
+            the_drug_record!(dl[k])  --return drug record
+            <<DL()>>
+        []  --drug with code not found
+          ((iPCA_Properties::Drug_Library_Size-k)<=0)~> 
+            <<INVW() and (iPCA_Properties::Drug_Library_Size=k)>>
+            no_drug_found!   --indicate drug code not found
+            <<DL()>>
+        fi 
+        <<DL()>>  
+    	  }  --end of declare
+    	<<DL()>>  
+  	  };  --end of dlt3
+  	dlt4: run-[on dispatch stop]->done{};  --stop thread
+  **};
+end Drug_Library_Thread.i;
+
+
+end iPCA_Drug_Library;

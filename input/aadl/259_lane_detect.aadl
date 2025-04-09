@@ -1,0 +1,61 @@
+
+   
+--
+--  Model for the AADL book.
+--
+--  More details on the book on
+--  http://aadl-book.com/ and https://www.amazon.com/dp/B071WHRJY3
+--
+--
+--  Copyright © 2016-2017 Julien Delange <julien@gunnm.org>
+--  This work is free. You can redistribute it and/or modify it under the 
+--  terms of the Do What The Fuck You Want To Public License, Version 2,
+--  as published by Sam Hocevar. See the COPYING file for more details.
+--
+
+
+package Lab2::software::lane_detection
+
+public
+
+with Lab2::icd; 
+with sei;
+
+--------------------------
+--  Obstacle Detection  --
+--------------------------
+
+process lane_detection
+features
+	camera : in data port Lab2::icd::lane_position.i;
+	steering_wheel_cmd : out data port Lab2::icd::steering_wheel_cmd;
+flows
+	f0 : flow path camera -> steering_wheel_cmd;
+end lane_detection;
+
+process implementation lane_detection.i
+subcomponents
+	thr : thread lane_detection_thr;
+connections
+	c0 : port camera -> thr.camera;
+	c1 : port thr.lane_detected -> steering_wheel_cmd;
+flows
+	f0 : flow path camera -> c0 -> thr.f0 -> c1 -> steering_wheel_cmd;
+end lane_detection.i;
+
+thread lane_detection_thr
+features
+	camera : in data port Lab2::icd::lane_position.i;
+	lane_detected : out data port Lab2::icd::lane_position.i;
+flows
+	f0 : flow path camera -> lane_detected;
+properties
+	Dispatch_Protocol => Periodic;
+	Period            => 100ms;
+	Compute_Execution_Time => 20 ms .. 50 ms; 
+	sei::mipsbudget   => 10.0 MIPS; 
+	sei::instructionsperdispatch => 0.9 kipd .. 0.98 mipd; 
+end lane_detection_thr;
+
+
+end Lab2::software::lane_detection;

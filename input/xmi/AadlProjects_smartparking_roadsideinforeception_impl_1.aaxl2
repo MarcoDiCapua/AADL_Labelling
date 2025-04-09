@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="roadsideinforeception_impl_Instance" category="system">
+  <componentInstance name="vehiclelocdata" category="process">
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.59/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.vehiclelocdata.impl"/>
+  </componentInstance>
+  <componentInstance name="vehiclenavmapdatabase" category="process">
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.59/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.vehiclenavmapdatabase.impl"/>
+  </componentInstance>
+  <componentInstance name="driverpersonalreq" category="process">
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.59/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.driverpersonalreq.impl"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.roadsideinforeception.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.roadsideinforeception.impl"/>
+</instance:SystemInstance>

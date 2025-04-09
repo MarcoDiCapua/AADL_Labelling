@@ -1,0 +1,28 @@
+package Devices
+public
+	with variables;
+	
+bus ethernet
+	features
+		incomingA : in data port;
+		outgoingA : out data port;
+		incomingB : in data port;
+		outgoingB : out data port;
+end ethernet;
+	
+device Alarm
+	features
+		alarm_control : in data port variables::on_off;	--input from AlarmProcess
+end Alarm;
+
+device Fan
+	features
+		fan_control : in data port variables::on_off; -- input from FanProcess
+end Fan;
+
+device TempSensor
+	features
+		sensor_data : out data port variables::display_temperature_range;	--output to TempSensorProcess
+end TempSensor;
+	
+end Devices;

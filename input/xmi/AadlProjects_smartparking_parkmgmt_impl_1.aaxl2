@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="parkmgmt_impl_Instance" category="system">
+  <featureInstance name="occupancy" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+    <type href="../../github/AadlProjects/smartpark/instances/smartparking_parkmgmt_impl_Instance.aaxl2#/4"/>
+  </featureInstance>
+  <featureInstance name="park_spaces" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+    <type href="../../github/AadlProjects/smartpark/instances/smartparking_parkmgmt_impl_Instance.aaxl2#/5"/>
+  </featureInstance>
+  <componentInstance name="dynparklot" category="process">
+    <featureInstance name="occupancy" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      <type href="../../github/AadlProjects/smartpark/instances/smartparking_parkmgmt_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <componentInstance name="park_lot_occupancy" category="thread">
+      <featureInstance name="park_occupancy" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+        <type href="../../github/AadlProjects/smartpark/instances/smartparking_parkmgmt_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.park_lot_occupancy.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.dynparklot.impl"/>
+  </componentInstance>
+  <componentInstance name="detectveh" category="process">
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.detectveh.impl"/>
+  </componentInstance>
+  <componentInstance name="manageparkreserv" category="process">
+    <featureInstance name="park_spaces" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+      <type href="../../github/AadlProjects/smartpark/instances/smartparking_parkmgmt_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <componentInstance name="park_lot_spaces" category="thread">
+      <featureInstance name="spaces" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+        <type href="../../github/AadlProjects/smartpark/instances/smartparking_parkmgmt_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.park_lot_spaces.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.manageparkreserv.impl"/>
+  </componentInstance>
+  <connectionInstance name="dynparklot.park_lot_occupancy.park_occupancy -> occupancy" kind="portConnection" destination="//@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="manageparkreserv.park_lot_spaces.spaces -> park_spaces" kind="portConnection" destination="//@featureInstance.1" source="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.parkmgmt.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.parkmgmt.impl"/>
+</instance:SystemInstance>

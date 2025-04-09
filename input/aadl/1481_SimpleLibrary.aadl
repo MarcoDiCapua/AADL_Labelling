@@ -1,0 +1,24 @@
+package SimpleLibrary
+public
+	with EMV2;
+	annex EMV2{**
+		error types
+			NoValue : type;
+			BadValue : type;
+			LateValue : type;
+			NoService : type;
+		end types;
+		
+		error behavior SimpleEMV2
+		states
+			Operational: initial state;
+			Working: state;
+			FailStop: state;
+		properties
+			EMV2::StateKind => Working applies to Operational, 
+			Working;
+			EMV2::StateKind => NonWorking applies to FailStop;
+		end behavior;
+		
+	**};
+end SimpleLibrary;

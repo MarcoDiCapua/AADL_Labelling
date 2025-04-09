@@ -1,0 +1,9 @@
+property set Security_Attributes is
+	with Security_Types;
+	Class: inherit Security_Types::Classifications => Security_Types::Default_Classification
+			applies to (data, subprogram, thread, thread group, process, memory, processor, 
+				bus, device, system, port, subprogram);
+	Category: inherit list of Security_Types::Categories => () 
+			applies to (data, subprogram, thread, thread group, process, memory, processor, bus, device,
+						system, port, subprogram);
+end Security_Attributes;

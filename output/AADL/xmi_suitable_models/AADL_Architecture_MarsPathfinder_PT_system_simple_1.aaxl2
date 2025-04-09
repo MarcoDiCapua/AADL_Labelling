@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="PT_system_simple_Instance" category="system">
+  <componentInstance name="main" category="process">
+    <componentInstance name="a_data" category="data">
+      <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DataImplementation" href="../../github/AADL_Architecture/MarsControler.aadl#MarsPathfinder.shared_var.impl"/>
+    </componentInstance>
+    <componentInstance name="ORDO_BUS" category="thread">
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADL_Architecture/MarsControler.aadl#MarsPathfinder.ORDO_BUS.impl"/>
+    </componentInstance>
+    <componentInstance name="DONNEES" category="thread">
+      <featureInstance name="share" category="dataAccess">
+        <feature xsi:type="aadl2:DataAccess" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataAccess.0"/>
+        <type href="../../github/AADL_Architecture/instances/MarsControler_PT_system_simple_Instance.aaxl2#/"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADL_Architecture/MarsControler.aadl#MarsPathfinder.DONNEES.impl"/>
+    </componentInstance>
+    <componentInstance name="PILOTAGE" category="thread">
+      <featureInstance name="share" category="dataAccess">
+        <feature xsi:type="aadl2:DataAccess" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataAccess.0"/>
+        <type href="../../github/AADL_Architecture/instances/MarsControler_PT_system_simple_Instance.aaxl2#/"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADL_Architecture/MarsControler.aadl#MarsPathfinder.PILOTAGE.impl"/>
+    </componentInstance>
+    <componentInstance name="Radio" category="thread">
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADL_Architecture/MarsControler.aadl#MarsPathfinder.Radio.impl"/>
+    </componentInstance>
+    <componentInstance name="Camera" category="thread">
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADL_Architecture/MarsControler.aadl#MarsPathfinder.Camera.impl"/>
+    </componentInstance>
+    <componentInstance name="Mesure" category="thread">
+      <featureInstance name="share" category="dataAccess">
+        <feature xsi:type="aadl2:DataAccess" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataAccess.0"/>
+        <type href="../../github/AADL_Architecture/instances/MarsControler_PT_system_simple_Instance.aaxl2#/"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.5"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADL_Architecture/MarsControler.aadl#MarsPathfinder.Mesure.impl"/>
+    </componentInstance>
+    <componentInstance name="Meteo" category="thread">
+      <featureInstance name="share" category="dataAccess">
+        <feature xsi:type="aadl2:DataAccess" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataAccess.0"/>
+        <type href="../../github/AADL_Architecture/instances/MarsControler_PT_system_simple_Instance.aaxl2#/"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.6"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADL_Architecture/MarsControler.aadl#MarsPathfinder.Meteo.impl"/>
+    </componentInstance>
+    <connectionInstance name="a_data -> Meteo.share" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.7/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0" destination="//@componentInstance.0/@componentInstance.7/@featureInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedAccessConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="a_data -> DONNEES.share" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedAccessConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="a_data -> PILOTAGE.share" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.3/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0" destination="//@componentInstance.0/@componentInstance.3/@featureInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedAccessConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="a_data -> Mesure.share" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.6/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0" destination="//@componentInstance.0/@componentInstance.6/@featureInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedAccessConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AADL_Architecture/MarsControler.aadl#MarsPathfinder.processing.others"/>
+  </componentInstance>
+  <componentInstance name="cpu" category="processor">
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/AADL_Architecture/MarsControler.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../../github/AADL_Architecture/MarsControler.aadl#MarsPathfinder.Leon0"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AADL_Architecture/MarsControler.aadl#MarsPathfinder.PT_system.simple"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AADL_Architecture/MarsControler.aadl#MarsPathfinder.PT_system.simple"/>
+</instance:SystemInstance>

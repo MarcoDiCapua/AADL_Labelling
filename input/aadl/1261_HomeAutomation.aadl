@@ -1,0 +1,243 @@
+package HomeAutomation
+public
+	with Base_Types, Data_Model;
+
+	with SEI;
+
+	system HA
+		features
+			TargetTemp: in data port SensorValue;
+			TargetHumid: in data port SensorValue; 
+	end HA;
+
+	system implementation HA.impl
+		subcomponents
+			humid_sensor: process Sensor.HumidSensorStep;
+			temp_sensor: process Sensor.TemperatureSensorStep;
+			window: process Actuator.WindowStep;
+			termostat: process Actuator.HeaterStep;
+			HA_control: process hostController.PeriodicOp;
+			cpu1: processor cpu_1MHz;
+			cpu2: processor cpu_1MHz;
+			cpu3: processor cpu_1MHz;
+			cpu4: processor cpu_1MHz;
+			cpu5: processor cpu_1MHz;
+		connections
+			DC1: port temp_sensor.Value -> HA_control.tempValue;
+			DC2: port humid_sensor.Value -> HA_control.humidValue;
+			DC3: port HA_control.windowCmd -> window.cmd;
+			DC4: port HA_control.termostatCMD -> termostat.cmd;
+			DC5: port TargetTemp -> HA_control.Set_TargetTemp;
+			DC6: port TargetHumid -> HA_control.Set_TargetHumid;
+				--DC5: port window.cmd -> envir.windowAct;
+				--DC6: port termostat.cmd -> envir.TermostatAct;
+				--DC7: port envir.humidity -> humid_sensor.inHumidValue ;
+				--DC8: port envir.temperatur -> temp_sensor.inTempValue ;
+		properties
+				-- Bind Process to CPUs
+			Actual_Processor_Binding => (reference (cpu1))
+    		applies to HA_control;
+					-- Bind Process to CPUs
+			Actual_Processor_Binding => (reference (cpu2))
+    		applies to humid_sensor;
+					-- Bind Process to CPUs
+			Actual_Processor_Binding => (reference (cpu3))
+    		applies to temp_sensor;
+					-- Bind Process to CPUs
+			Actual_Processor_Binding => (reference (cpu4))
+    		applies to termostat;
+					-- Bind Process to CPUs
+			Actual_Processor_Binding => (reference (cpu5))
+    		applies to window;
+	end HA.impl;
+
+		-- Now, declare the virtual processors that model
+		-- partition runtime.
+		-- Freq: 1 * 10^6 and First Come First Serve (Round Robin)
+	processor cpu_1MHz
+		properties
+			Clock_Period => 1000ns;
+			Scheduling_Protocol => (Round_Robin_Protocol);
+			Thread_Swap_Execution_Time => 5us .. 10us; -- Dont know
+			Clock_Jitter => 5ps; -- Dont know
+			SEI::MIPSCapacity => 1.0 mips;
+	end cpu_1MHz;
+
+		-- 5 CPUs with same specs
+	processor implementation cpu_1MHz.cpu1
+	end cpu_1MHz.cpu1;
+
+		-- Process
+	process hostController
+		features
+			set_TargetTemp: in data port SensorValue;
+			set_TargetHumid: in data port SensorValue;
+			tempValue: in data port SensorValue;
+			humidValue: in data port SensorValue;
+			windowCmd: out event data port CMD;
+			termostatCMD: out event data port CMD;
+	end hostController;
+
+	process implementation hostController.PeriodicOp
+		subcomponents
+			algorithm: thread algorithm.ex;
+		connections
+			c1: port tempValue -> algorithm.Temp;
+			c2: port humidValue -> algorithm.Humid;
+			c3: port algorithm.windowCMD -> windowCmd;
+			c4: port algorithm.termostatCDM -> termostatCMD;		
+	end hostController.PeriodicOp;
+
+	process Envir
+		features
+			windowAct: in feature; --abstract
+			TermostatAct: in feature; --abstract
+			humidity: out feature; --abstract
+			temperatur: out feature; --abstract
+	end Envir;
+
+	process implementation Envir.impl
+		subcomponents
+			algorithm: thread Environment.impl;
+	end Envir.impl;
+
+		-- Processes - sensors
+	process Sensor
+		features
+			Value: out data port SensorValue;
+			inValue: in feature;
+	end Sensor;
+
+	process implementation Sensor.TemperatureSensorStep
+		subcomponents
+			update: thread SensorThread.Temp;
+		connections
+			c1: port update.Value_out -> Value ;
+			--c2: port inValue -> update.Value_in; 	
+	end Sensor.TemperatureSensorStep;
+
+	process implementation Sensor.HumidSensorStep
+		subcomponents
+			update: thread SensorThread.Humid;
+		connections
+			c1: port update.Value_out -> Value ;
+	end Sensor.HumidSensorStep;
+
+	-- Processes - actuators
+	process Actuator
+		features
+			cmd: in event data port CMD;
+			tempValue: out feature;
+	end Actuator;
+
+	process implementation Actuator.HeaterStep
+		subcomponents
+			update: thread ActuatorThread.Thermostat;
+		connections
+			c1: port cmd -> update.Cmd;
+	end Actuator.HeaterStep;
+
+
+	process implementation Actuator.WindowStep
+		subcomponents
+			update: thread ActuatorThread.Window;
+		connections
+			c1: port cmd -> update.Cmd;
+	end Actuator.WindowStep;
+
+		-- Threads
+	thread algorithm
+		features
+			windowCMD: out data port CMD;
+			termostatCDM: out data port CMD;
+			Temp: in event data port SensorValue;
+			Humid: in event data port SensorValue;
+		properties
+			Priority => 10;
+			Period => 1000ms;
+			Compute_Execution_Time => 8ms .. 10ms;
+			Deadline => 1000ms;
+			Dispatch_Protocol => Periodic;
+			Reference_Processor => classifier (cpu_1MHz);
+	end algorithm;
+
+	thread implementation algorithm.ex
+	end algorithm.ex;
+
+		-- 1*10^3 Cycles 
+		-- Period 1000 * 10^6
+		-- Deadline same as Period
+	thread SensorThread
+		features
+			Value_out: out event data port SensorValue;
+			Value_in: in event data port SensorValue; --abstract port
+		properties
+			Priority => 10;
+			Period => 1000ms;
+			Compute_Execution_Time => 1ms .. 1ms;
+			Deadline => 1000ms;
+			Dispatch_Protocol => Periodic;
+			Reference_Processor => classifier (cpu_1MHz);
+	end SensorThread;
+
+	thread implementation SensorThread.Temp
+	end SensorThread.Temp;
+
+	thread implementation SensorThread.Humid
+	end SensorThread.Humid;
+
+		-- 1*10^3 Cycles 
+		-- Period 1000 * 10^6
+		-- Deadline same as Period
+	thread ActuatorThread
+		features
+			Cmd: in event data port CMD;
+			Act: out event data port; --abstract
+		properties
+			Priority => 10;
+			Compute_Execution_Time => 1ms .. 1ms;
+			Deadline => 1000ms;
+			Dispatch_Protocol => Sporadic;
+			Reference_Processor => classifier (cpu_1MHz);
+	end ActuatorThread;
+
+	thread implementation ActuatorThread.Window
+	end ActuatorThread.Window;
+
+	thread implementation ActuatorThread.Thermostat
+	end ActuatorThread.Thermostat;
+
+		-- No duration
+		-- Period 1000 * 10^6
+		-- Deadline same as Period
+	thread Environment
+		features
+			windowAct: in feature; --abstract
+			TermostatAct: in feature; --abstract
+			humidity: out feature; --abstract
+			temperatur: out feature; --abstract
+		properties
+			Priority => 10;
+			Compute_Execution_Time => 0ns .. 1ns;
+			Deadline => 1000ms;
+			Dispatch_Protocol => Sporadic;
+			Reference_Processor => classifier (cpu_1MHz);
+	end Environment;
+
+	thread implementation Environment.impl
+	end Environment.impl;
+
+--data
+
+	data CMD
+		properties
+			Data_Model::Data_Representation => Enum;
+			Data_Model::Enumerators => ("Start", "Stop");
+	end CMD;
+
+	data SensorValue
+		properties
+			Data_Model::Base_Type => (classifier (Base_Types::Integer));
+	end SensorValue;
+
+end HomeAutomation;

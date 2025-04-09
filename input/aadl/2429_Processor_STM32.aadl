@@ -1,0 +1,23 @@
+package Processor_STM32
+public 
+	with Processor_properties;
+	with Power_properties;
+	
+processor STM32
+	properties 
+		Processor_properties::Family 			=> ARM;
+    	Processor_properties::Bits				=> 32 bits;
+end STM32;
+
+processor STM32L4 extends STM32
+	properties
+		Processor_properties::Frequency 		=> 200 MHz;
+		Processor_properties::Working_frequency	=> 200 MHz;
+    	Power_properties::Current				=> 16.0 uA;
+    	Power_properties::Voltage				=> 1.0 V;
+end STM32L4;
+
+processor implementation STM32L4.impl 		
+end STM32L4.impl;
+
+end Processor_STM32;

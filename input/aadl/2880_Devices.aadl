@@ -1,0 +1,37 @@
+--------------------------------------------------------------------------------
+-- Devices.aadl (version 03) - 
+--
+-- Authors: Stephen C. Barrett (scbarrett@ksu.edu) &
+--          Brian R. Larson (brl@ksu.edu)
+--          Department of Computing & Information Sciences
+--
+-- Licensed Material - Property of Kansas State University
+--------------------------------------------------------------------------------
+-- 03: Minimally defined physical devices of isolette system.
+--------------------------------------------------------------------------------
+package Devices
+public
+with Base_Types;  -- Basic data types
+
+
+--------------------------------------------------------------------------------
+-- Device for producing heat.
+--------------------------------------------------------------------------------
+device heat_source
+end heat_source;
+
+device implementation heat_source.impl
+end heat_source.impl;
+
+
+--------------------------------------------------------------------------------
+-- Device for measuring the quantity of heat production.
+--------------------------------------------------------------------------------
+device temperature_sensor
+end temperature_sensor;
+
+device implementation temperature_sensor.impl
+end temperature_sensor.impl;
+
+
+end Devices;

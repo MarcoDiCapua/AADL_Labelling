@@ -1,0 +1,21 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "TempControlSoftwareSystem",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-gumbo/org.sireum.aadl.gumbo.tests/models/temp_control_simple_temp_aadl/aadl/packages/TempControlSoftwareSystem.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\aadl-gumbo_TempControlSoftwareSystem_TempControlSoftwareSystem_isoControl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\aadl-gumbo\\osate-annex-dev-readme.md"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'Data_Model'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-gumbo/org.sireum.aadl.gumbo.tests/models/temp_control_simple_temp_aadl/aadl/packages/TempControlSoftwareSystem.aadl l...",
+    "ERROR:Couldn't resolve reference to property definition 'Dispatch_Protocol'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-gumbo/org.sireum.aadl.gumbo.tests/models/temp_control_simple_temp_...",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'Sporadic'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-gumbo/org....",
+    "ERROR:Couldn't resolve reference to property definition 'Period'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-gumbo/org.sireum.aadl.gumbo.tests/models/temp_control_simple_temp_aadl/aadl/p...",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'sec'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-gumbo/org.sireum.aadl.gumbo.tests/models/temp_control_simple_temp_aadl/aadl/packages/TempControlSoftwareSystem.aadl line :...",
+    "ERROR:Couldn't resolve reference to property definition 'Dispatch_Protocol'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-gumbo/org.sireum.aadl.gumbo.tests/models/temp_control_simple_temp_...",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'Periodic'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-gumbo/org....",
+    "ERROR:Couldn't resolve reference to property definition 'Period'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-gumbo/org.sireum.aadl.gumbo.tests/models/temp_control_simple_temp_aadl/aadl/p...",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'sec'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-gumbo/org.sireum.aadl.gumbo.tests/models/temp_control_simple_temp_aadl/aadl/packages/TempControlSoftwareSystem.aadl line :...",
+    "ERROR:Couldn't resolve reference to property definition 'Data_Model::Data_Representation'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-gumbo/org.sireum.aadl.gumbo.tests/models/temp_control_simple_temp_aadl/aadl/packages/T..."
+  ]
+}

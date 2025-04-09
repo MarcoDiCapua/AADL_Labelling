@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Temp_sensor_impl_Instance" category="system">
+  <featureInstance name="Bus_Access" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/SmartThermostatSystem/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedBusAccess.0"/>
+    <type href="../../github/SmartThermostatSystem/instances/main_Temp_sensor_impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="air">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/SmartThermostatSystem/securityProperties.aadl#securityProperties.entryExitPointPrivileges"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:RealLiteral" value="1.0"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/SmartThermostatSystem/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/SmartThermostatSystem/securityProperties.aadl#securityProperties.entryExitPointAccessRights"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:RealLiteral" value="5.0"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/SmartThermostatSystem/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.0/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:DataPort" href="../../github/SmartThermostatSystem/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="curr_temp" direction="out">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/SmartThermostatSystem/securityProperties.aadl#securityProperties.entryExitPointPrivileges"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:RealLiteral" value="3.0"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/SmartThermostatSystem/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/SmartThermostatSystem/securityProperties.aadl#securityProperties.entryExitPointAccessRights"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:RealLiteral" value="6.0"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/SmartThermostatSystem/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.1/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:DataPort" href="../../github/SmartThermostatSystem/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.1"/>
+  </featureInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/SmartThermostatSystem/main.aadl#thermostat_arch.Temp_sensor.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/SmartThermostatSystem/main.aadl#thermostat_arch.Temp_sensor.impl"/>
+</instance:SystemInstance>

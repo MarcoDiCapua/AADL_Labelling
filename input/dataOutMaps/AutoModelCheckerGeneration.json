@@ -1,0 +1,24 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "aviation",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AutoModelCheckerGeneration/src/test/resources/big.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\AutoModelCheckerGeneration_aviation_Supervisor_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AutoModelCheckerGeneration\\gradlew",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AutoModelCheckerGeneration\\README.md"
+  ],
+  "errors": [
+    "ERROR:missing EOF at 'package' ( line : 269 column : 1)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'base_types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AutoModelCheckerGeneration/src/test/resources/big.aadl line : 3 column : 7)",
+    "ERROR:Couldn't resolve reference to property definition 'Communication_Properties::Timing'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AutoModelCheckerGeneration/src/test/resources/big.aadl line : 35 column : 74)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'immediate'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AutoModelCheck...",
+    "ERROR:Couldn't resolve reference to property definition 'Communication_Properties::Timing'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AutoModelCheckerGeneration/src/test/resources/big.aadl line : 36 column : 74)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'immediate'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AutoModelCheck...",
+    "ERROR:Couldn't resolve reference to property definition 'Communication_Properties::Timing'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AutoModelCheckerGeneration/src/test/resources/big.aadl line : 37 column : 74)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'immediate'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AutoModelCheck...",
+    "ERROR:Couldn't resolve reference to property definition 'Communication_Properties::Timing'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AutoModelCheckerGeneration/src/test/resources/big.aadl line : 39 column : 72)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'immediate'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AutoModelCheck..."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "HomeAutomation",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/HomeAutomationAADL/packages/HomeAutomation.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\HomeAutomationAADL_HomeAutomation_HA_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\HomeAutomationAADL\\LICENSE"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'Base_Types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/HomeAutomationAADL/packages/HomeAutomation.aadl line : 3 column : 7)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'Data_Model'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/HomeAutomationAADL/packages/HomeAutomation.aadl line : 3 column : 19)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'SEI'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/HomeAutomationAADL/packages/HomeAutomation.aadl line : 5 column : 7)",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/HomeAutomationAADL/packages/HomeAutomation.aadl line : 38 column...",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/HomeAutomationAADL/packages/HomeAutomation.aadl line : 41 column...",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/HomeAutomationAADL/packages/HomeAutomation.aadl line : 44 column...",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/HomeAutomationAADL/packages/HomeAutomation.aadl line : 47 column...",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/HomeAutomationAADL/packages/HomeAutomation.aadl line : 50 column...",
+    "ERROR:Couldn't resolve reference to property definition 'Clock_Period'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/HomeAutomationAADL/packages/HomeAutomation.aadl line : 59 column : 4)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'ns'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/HomeAutomationAADL/packages/HomeAutomation.aadl line : 59 column : 24)"
+  ]
+}

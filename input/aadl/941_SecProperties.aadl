@@ -1,0 +1,50 @@
+--SecProperties.aadl
+--these properties are used by HSS.aadl
+
+property set SecProperties is
+  with HSS,     --AADL components that use the properties herein
+    Physical_Properties,  --AADL property types  
+    EMV2,  --error modeling annex V2 predeclared properties
+    Timing_Properties;
+   
+ 
+  --Table A-9. The Manage Regulator Mode Function Constant
+  Initialization_Timeout : Timing_Properties::Time => 1 sec
+    applies to (all);
+
+--rate at which user interface fails
+  InterfaceFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-7; Distribution => Fixed;];
+--error rate of detection of interface failure   
+  DetectionInterfaceFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-10; Distribution => Fixed;];
+    
+Magnetic_Sensor_failure : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-8; Distribution => Fixed;];
+
+--likelihood that the Fire Alarm will fail 
+  Fire_alarm_failure : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-8; Distribution => Fixed;];
+    
+  --likelihood that the Fire Alarm will fail 
+ Intruder_alarm_failure : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-8; Distribution => Fixed;];
+    
+    --likelihood that the Fire Alarm will fail 
+Motion_Detector_failure : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-8; Distribution => Fixed;];
+    
+--likelihood that the Fire Alarm will fail 
+  Smoke_Detector_failure : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-8; Distribution => Fixed;];
+    
+  --likelihood that the Fire Alarm will fail 
+Mobile_Device_failure : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-8; Distribution => Fixed;];
+    
+Controller_failure : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-8; Distribution => Fixed;];
+  
+end SecProperties;  
+
+

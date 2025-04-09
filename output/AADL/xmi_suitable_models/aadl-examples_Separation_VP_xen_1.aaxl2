@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="VP_xen_Instance" category="system">
+  <componentInstance name="xenbr0" category="virtual bus">
+    <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedVirtualBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualBusType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.vb"/>
+  </componentInstance>
+  <componentInstance name="xenbr1" category="virtual bus">
+    <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedVirtualBusSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualBusType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.vb"/>
+  </componentInstance>
+  <componentInstance name="xenbr2" category="virtual bus">
+    <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedVirtualBusSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualBusType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.vb"/>
+  </componentInstance>
+  <componentInstance name="xenbr3" category="virtual bus">
+    <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedVirtualBusSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualBusType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.vb"/>
+  </componentInstance>
+  <componentInstance name="xenbr4" category="virtual bus">
+    <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedVirtualBusSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualBusType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.vb"/>
+  </componentInstance>
+  <componentInstance name="xenbr5" category="virtual bus">
+    <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedVirtualBusSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualBusType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.vb"/>
+  </componentInstance>
+  <componentInstance name="dom0" category="virtual processor">
+    <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedVirtualProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.hypervisor.i"/>
+  </componentInstance>
+  <componentInstance name="control_vm" category="virtual processor">
+    <featureInstance name="eth0" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="eth1" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="eth2" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="xenbr5" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedVirtualProcessorSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.x.i"/>
+  </componentInstance>
+  <componentInstance name="cpal_vm" category="virtual processor">
+    <featureInstance name="eth0" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="eth1" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="eth2" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="xenbr5" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedVirtualProcessorSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.x.i"/>
+  </componentInstance>
+  <componentInstance name="firewall_vm" category="virtual processor">
+    <featureInstance name="eth0" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="eth1" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="eth2" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="xenbr5" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedVirtualProcessorSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.x.i"/>
+  </componentInstance>
+  <componentInstance name="operation_vm" category="virtual processor">
+    <featureInstance name="eth0" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="eth1" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="eth2" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="xenbr5" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedVirtualProcessorSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.x.i"/>
+  </componentInstance>
+  <componentInstance name="safety_vm" category="virtual processor">
+    <featureInstance name="eth0" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="eth1" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="eth2" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="xenbr5" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Separation_VP_xen_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedVirtualProcessorSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.x.i"/>
+  </componentInstance>
+  <connectionInstance name="xenbr0 -> firewall_vm.eth0" complete="true" kind="accessConnection" destination="//@componentInstance.9/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.9/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="xenbr1 -> firewall_vm.eth1" complete="true" kind="accessConnection" destination="//@componentInstance.9/@featureInstance.1" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.9/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="xenbr1 -> safety_vm.eth0" complete="true" kind="accessConnection" destination="//@componentInstance.11/@featureInstance.0" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.11/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="xenbr2 -> cpal_vm.eth0" complete="true" kind="accessConnection" destination="//@componentInstance.8/@featureInstance.0" source="//@componentInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2" destination="//@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="xenbr2 -> safety_vm.eth1" complete="true" kind="accessConnection" destination="//@componentInstance.11/@featureInstance.1" source="//@componentInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2" destination="//@componentInstance.11/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="xenbr3 -> operation_vm.eth0" complete="true" kind="accessConnection" destination="//@componentInstance.10/@featureInstance.0" source="//@componentInstance.3">
+    <connectionReference context="/" source="//@componentInstance.3" destination="//@componentInstance.10/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="xenbr3 -> safety_vm.eth2" complete="true" kind="accessConnection" destination="//@componentInstance.11/@featureInstance.2" source="//@componentInstance.3">
+    <connectionReference context="/" source="//@componentInstance.3" destination="//@componentInstance.11/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="xenbr4 -> cpal_vm.eth1" complete="true" kind="accessConnection" destination="//@componentInstance.8/@featureInstance.1" source="//@componentInstance.4">
+    <connectionReference context="/" source="//@componentInstance.4" destination="//@componentInstance.8/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="xenbr4 -> operation_vm.eth1" complete="true" kind="accessConnection" destination="//@componentInstance.10/@featureInstance.1" source="//@componentInstance.4">
+    <connectionReference context="/" source="//@componentInstance.4" destination="//@componentInstance.10/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="xenbr4 -> operation_vm.eth2" complete="true" kind="accessConnection" destination="//@componentInstance.10/@featureInstance.2" source="//@componentInstance.4">
+    <connectionReference context="/" source="//@componentInstance.4" destination="//@componentInstance.10/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="xenbr5 -> control_vm.xenbr5" complete="true" kind="accessConnection" destination="//@componentInstance.7/@featureInstance.3" source="//@componentInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5" destination="//@componentInstance.7/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="control_vm.xenbr5 -> xenbr5" complete="true" kind="accessConnection" destination="//@componentInstance.5" source="//@componentInstance.7/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.3" destination="//@componentInstance.5" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cpal_vm.eth0 -> xenbr2" complete="true" kind="accessConnection" destination="//@componentInstance.2" source="//@componentInstance.8/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0" destination="//@componentInstance.2" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cpal_vm.eth1 -> xenbr4" complete="true" kind="accessConnection" destination="//@componentInstance.4" source="//@componentInstance.8/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.1" destination="//@componentInstance.4" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="firewall_vm.eth0 -> xenbr0" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.9/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.0" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="firewall_vm.eth1 -> xenbr1" complete="true" kind="accessConnection" destination="//@componentInstance.1" source="//@componentInstance.9/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.1" destination="//@componentInstance.1" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="operation_vm.eth0 -> xenbr3" complete="true" kind="accessConnection" destination="//@componentInstance.3" source="//@componentInstance.10/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.10/@featureInstance.0" destination="//@componentInstance.3" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="operation_vm.eth1 -> xenbr4" complete="true" kind="accessConnection" destination="//@componentInstance.4" source="//@componentInstance.10/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.10/@featureInstance.1" destination="//@componentInstance.4" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="operation_vm.eth2 -> xenbr4" complete="true" kind="accessConnection" destination="//@componentInstance.4" source="//@componentInstance.10/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.10/@featureInstance.2" destination="//@componentInstance.4" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="safety_vm.eth0 -> xenbr1" complete="true" kind="accessConnection" destination="//@componentInstance.1" source="//@componentInstance.11/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.0" destination="//@componentInstance.1" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="safety_vm.eth1 -> xenbr2" complete="true" kind="accessConnection" destination="//@componentInstance.2" source="//@componentInstance.11/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.1" destination="//@componentInstance.2" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="safety_vm.eth2 -> xenbr3" complete="true" kind="accessConnection" destination="//@componentInstance.3" source="//@componentInstance.11/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.2" destination="//@componentInstance.3" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.VP.xen"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Separation.aadl#Separation.VP.xen"/>
+</instance:SystemInstance>

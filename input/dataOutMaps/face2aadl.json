@@ -1,0 +1,25 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "viewSink_integration_model",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/viewSink/viewSink_integration_model.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\face2aadl_viewSink_integration_model_IntegrationModel1_impl_2.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\org.osate.face2aadl\\license.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\org.osate.face2aadl.feature\\license.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\org.osate.face2aadl.help\\license.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\org.osate.face30\\license.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\org.osate.face30.edit\\license.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\org.osate.face30.editor\\license.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\org.osate.face31\\license.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\org.osate.face31.edit\\license.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\org.osate.face31.editor\\license.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\org.osate.simpleidl\\license.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\org.osate.simpleidl.ide\\license.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\org.osate.simpleidl.ui\\license.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\face2aadl\\org.osate.face2aadl.help\\markdown\\Translator.md"
+  ],
+  "errors": ["ERROR:Package viewSink_integration_model has duplicates /Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/viewSink/viewSink_integration_model.aadl (file:/C:/Users/mdica/Deskt..."]
+}

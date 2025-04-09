@@ -1,0 +1,332 @@
+package BottleFilling
+public
+	with sei;
+	with Base_Types;
+	with Data_Model;
+
+	system BottleFillingSystem
+	end BottleFillingSystem;
+
+	data WaterFlow
+		properties
+			Data_Model::Data_Representation => Float;
+	end WaterFlow;
+	
+	data implementation WaterFlow.LitersPerSecond
+	end WaterFlow.LitersPerSecond;
+	
+	data WaterQuality
+		properties
+			Data_Model::Data_Representation => Integer;
+	end WaterQuality;
+	
+	data implementation WaterQuality.ParticlesPerCm3
+	end WaterQuality.ParticlesPerCm3;
+	
+	data WaterInfo
+		properties
+			Data_Model::Data_Representation => Integer;
+	end WaterInfo;
+	
+	data implementation WaterInfo.impl
+		subcomponents
+			WaterFlow : data WaterFlow;
+			WaterQuality: data WaterQuality;
+	end WaterInfo.impl;
+	
+	data Speed
+		properties
+			Data_Model::Data_Representation => Float;
+	end Speed;
+	
+	data implementation Speed.mps
+	end Speed.mps;
+	
+	data ControlCommands
+	end ControlCommands;
+	
+	data implementation ControlCommands.impl
+	end ControlCommands.impl;
+	
+	system implementation BottleFillingSystem.impl
+		subcomponents
+			water_pipe: device WaterPipe;
+			filter: device Filter;
+			quality_sensor: device QualitySensor;
+			filling_valve: device FillingValve;
+			bottle_sensor: device BottleSensor;
+			bottle_conveyor: device BottleConveyor;
+			control_system: process ControlSystem.impl;
+			operator_interface: abstract OperatorInterface;
+			main_bus: bus MainBus.impl;
+			main_processor: processor MainProcessor.impl;
+			main_ram: memory Ram.impl;
+
+		connections
+			conn1: port water_pipe.water_flow -> control_system.water_flow;
+			conn2: port filter.filter_needs_changing -> control_system.change_filter_in;
+			conn3: port quality_sensor.water_quality -> control_system.water_quality;
+			conn4: port control_system.valve_operate <-> filling_valve.valve_operate;
+			conn5: port bottle_sensor.bottle_in_place -> control_system.bottle_in_place;
+			conn6: port bottle_sensor.bottle_full -> control_system.bottle_full;
+			conn7: port control_system.set_conveyor_speed -> bottle_conveyor.set_conveyor_speed;
+			conn8: port control_system.conveyor_on -> bottle_conveyor.start_stop_conveyor;
+			conn9: port bottle_conveyor.conveyor_speed -> control_system.current_conveyor_speed;
+			conn10: port operator_interface.control_commands -> control_system.control_commands;
+--		BUS CONNECTIONS
+			water_pipe_bus: bus access main_bus -> water_pipe.bus_access;
+			filter_bus: bus access main_bus -> filter.bus_access;
+			quality_sensor_bus: bus access main_bus -> quality_sensor.bus_access;
+			filling_valve_bus: bus access main_bus -> filling_valve.bus_access;
+			bottle_sensor_bus: bus access main_bus -> bottle_sensor.bus_access;
+			bottle_conveyor_bus: bus access main_bus -> bottle_conveyor.bus_access;
+			bus_processor: bus access main_bus -> main_processor.bus_access;
+			bus_ram: bus access main_bus <-> main_ram.bus_access;
+		properties
+			Actual_Memory_Binding => (reference (main_ram)) applies to water_pipe;
+			Actual_Memory_Binding => (reference (main_ram)) applies to quality_sensor;
+			Actual_Memory_Binding => (reference (main_ram)) applies to bottle_sensor;
+			Actual_Memory_Binding => (reference (main_ram)) applies to bottle_conveyor;
+			Actual_Memory_Binding => (reference (main_ram)) applies to operator_interface;
+			Actual_Memory_Binding => (reference (main_ram)) applies to main_processor;
+			
+			
+			Actual_Processor_Binding => (reference (main_processor)) applies to water_pipe;
+			Actual_Processor_Binding => (reference (main_processor)) applies to quality_sensor;
+			Actual_Processor_Binding => (reference (main_processor)) applies to bottle_sensor;
+			Actual_Processor_Binding => (reference (main_processor)) applies to bottle_conveyor;
+			Actual_Processor_Binding => (reference (main_processor)) applies to operator_interface;
+			
+			Actual_Connection_Binding => (reference (main_bus)) applies to conn1;
+			Actual_Connection_Binding => (reference (main_bus)) applies to conn2;
+			Actual_Connection_Binding => (reference (main_bus)) applies to conn3;
+			Actual_Connection_Binding => (reference (main_bus)) applies to conn4;
+			Actual_Connection_Binding => (reference (main_bus)) applies to conn5;
+			Actual_Connection_Binding => (reference (main_bus)) applies to conn6;
+			Actual_Connection_Binding => (reference (main_bus)) applies to conn7;
+			Actual_Connection_Binding => (reference (main_bus)) applies to conn8;
+			Actual_Connection_Binding => (reference (main_bus)) applies to conn9;
+			Actual_Connection_Binding => (reference (main_bus)) applies to conn10;
+			
+
+	end BottleFillingSystem.impl;
+
+-- MARK: - PROCESSOR, BUS
+	processor MainProcessor
+		features
+			bus_access: requires bus access MainBus;
+	end MainProcessor;
+
+	processor implementation MainProcessor.impl
+		subcomponents
+			ram: memory Ram;
+	end MainProcessor.impl;
+
+	memory Ram
+		features
+			bus_access: requires bus access MainBus;
+	end Ram;
+
+	bus MainBus
+		properties
+			SEI::BandWidthCapacity => 200.0 MBytesps;
+			SEI::BandWidthBudget => 950.0 KBytesps;
+	end MainBus;
+
+	bus implementation MainBus.impl
+	end MainBus.impl;
+
+	memory implementation Ram.impl
+	end Ram.impl;
+
+-- MARK: - THREADS
+	thread WaterInputThread
+		features
+			water_flow_in: in data port WaterFlow.LitersPerSecond;
+			quality_in: in data port WaterQuality.ParticlesPerCm3;
+			water_info_out: out data port WaterInfo.impl;
+			filter_in: in event port;
+		properties
+			Dispatch_Protocol => Periodic;
+			Dispatch_Offset => 2ms;
+			Deadline => 15ms;
+			Period => 20ms;
+			Compute_Execution_Time => 0ms .. 2ms;
+	end WaterInputThread;
+
+	thread implementation WaterInputThread.impl
+	end WaterInputThread.impl;
+
+	thread FillingThread
+		features
+			water_info_in: in data port WaterInfo.impl;
+
+			valve_out: out event port;
+			bottle_in_place_in: in event port;
+			bottle_full_in: in event port;
+	end FillingThread;
+
+	thread implementation FillingThread.impl
+	end FillingThread.impl;
+
+	thread ConveyorThread
+		features
+			set_conveyor_speed_out: out data port Speed.mps;
+			current_conveyor_speed_in: in data port Speed.mps;
+			conveyor_on_out: out event port;
+	end ConveyorThread;
+
+	thread implementation ConveyorThread.impl
+	end ConveyorThread.impl;
+
+	thread ControlThread
+		features
+			control_commands_in: in data port ControlCommands;
+			valve_in: in event port;
+			valve_out: out event port;
+
+			conveyor_in: in event port;
+			conveyor_out: out event port;
+	end ControlThread;
+
+	thread implementation ControlThread.impl
+	end ControlThread.impl;
+
+	thread OperatorInputThread
+		features
+			control_commands_in: in data port ControlCommands;
+			control_commands_out: out data port ControlCommands;
+	end OperatorInputThread;
+
+	thread implementation OperatorInputThread.impl
+	end OperatorInputThread.impl;
+
+-- MARK: - DEVICES
+	process ControlSystem
+		features
+			control_commands: in data port ControlCommands;
+			water_flow: in data port WaterFlow.LitersPerSecond;
+			water_quality: in data port WaterQuality.ParticlesPerCm3;
+			set_conveyor_speed: out data port Speed.mps;
+			current_conveyor_speed: in data port Speed.mps;
+			change_filter_in: in event port;
+			valve_operate: out event port;
+			bottle_in_place: in event port;
+			bottle_full: in event port;
+			conveyor_on: out event port;
+		properties
+			SEI::MIPSBudget => 650.0 mips;
+	end ControlSystem;
+
+	process implementation ControlSystem.impl
+		subcomponents
+			water_input_thread: thread WaterInputThread.impl;
+			filling_thread: thread FillingThread.impl;
+			conveyor_thread: thread ConveyorThread.impl;
+			control_thread: thread ControlThread.impl;
+			operator_input_thread: thread OperatorInputThread.impl;
+		connections
+			water_input_thread_conn: port water_flow -> water_input_thread.water_flow_in;
+			water_input_thread_conn_1: port change_filter_in -> water_input_thread.filter_in;
+			water_input_thread_conn_2: port water_quality -> water_input_thread.quality_in;
+
+			filling_thread_conn: port control_thread.valve_out -> valve_operate;
+			filling_thread_conn_1: port bottle_in_place -> filling_thread.bottle_in_place_in;
+			filling_thread_conn_2: port bottle_full -> filling_thread.bottle_full_in;
+
+			conveyor_thread_conn: port control_thread.conveyor_out -> conveyor_on;
+			conveyor_thread_conn_1: port conveyor_thread.set_conveyor_speed_out -> set_conveyor_speed;
+			conveyor_thread_conn_2: port current_conveyor_speed -> conveyor_thread.current_conveyor_speed_in;
+
+			control_thread_conn: port filling_thread.valve_out -> control_thread.valve_in;
+			control_thread_conn_1: port conveyor_thread.conveyor_on_out -> control_thread.conveyor_in;
+			control_thread_conn_2: port operator_input_thread.control_commands_out -> control_thread.control_commands_in;
+
+			operator_input_thread_conn: port control_commands -> operator_input_thread.control_commands_in;
+
+			water_input_conveyor_conn: port water_input_thread.water_info_out -> filling_thread.water_info_in;
+
+	end ControlSystem.impl;
+
+-- Water pipe 
+	device WaterPipe
+		features
+			water_flow: out data port WaterFlow.LitersPerSecond;
+			bus_access: requires bus access MainBus;
+		properties
+			SEI::GrossWeight => 200.0kg;
+	end WaterPipe;
+
+	device implementation WaterPipe.impl
+	end WaterPipe.impl;
+
+	device Filter
+		features
+			filter_needs_changing: out event port;
+			bus_access: requires bus access MainBus;
+		properties
+			SEI::GrossWeight => 20.0kg;
+	end Filter;
+
+	device implementation Filter.impl
+	end Filter.impl;
+
+	device QualitySensor
+		features
+			water_quality: out data port WaterQuality.ParticlesPerCm3;
+			bus_access: requires bus access MainBus;
+		properties
+			SEI::GrossWeight => 0.3kg;
+	end QualitySensor;
+
+	device implementation QualitySensor.impl
+	end QualitySensor.impl;
+
+	device FillingValve
+		features
+			valve_operate: in event port;
+			bus_access: requires bus access MainBus;
+		properties
+			SEI::GrossWeight => 10.0kg;
+	end FillingValve;
+
+	device implementation FillingValve.impl
+	end FillingValve.impl;
+
+	device BottleSensor
+		features
+			bottle_in_place: out event port;
+			bottle_full: out event port;
+			bus_access: requires bus access MainBus;
+		properties
+			SEI::GrossWeight => 1.0kg;
+	end BottleSensor;
+
+	device implementation BottleSensor.impl
+	end BottleSensor.impl;
+
+	device BottleConveyor
+		features
+			set_conveyor_speed: in data port Speed.mps;
+			conveyor_speed: out data port Speed.mps;
+			bus_access: requires bus access MainBus;
+			start_stop_conveyor: in event port;
+		properties
+			SEI::GrossWeight => 800.0kg;
+	end BottleConveyor;
+
+	device implementation BottleConveyor.impl
+	end BottleConveyor.impl;
+
+	abstract OperatorInterface
+		features
+			control_commands: out data port ControlCommands;
+	end OperatorInterface;
+
+	abstract implementation OperatorInterface.impl
+	end OperatorInterface.impl;
+
+
+
+
+end BottleFilling;

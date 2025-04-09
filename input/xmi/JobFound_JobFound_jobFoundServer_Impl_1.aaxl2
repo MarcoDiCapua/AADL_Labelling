@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="jobFoundServer_Impl_Instance" category="system">
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/JobFound/propset.aadl#mypropertyset.Role"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:NamedValue">
+        <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/JobFound/propset.aadl#/0/@ownedPropertyType.0/@ownedLiteral.1"/>
+      </ownedValue>
+    </ownedValue>
+    <propertyAssociation href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.0"/>
+  </ownedPropertyAssociation>
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/JobFound/propset2.aadl#mypropertyset2.Role"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:NamedValue">
+        <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/JobFound/propset2.aadl#/0/@ownedPropertyType.0/@ownedLiteral.1"/>
+      </ownedValue>
+    </ownedValue>
+    <propertyAssociation href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.1"/>
+  </ownedPropertyAssociation>
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/JobFound/propset3.aadl#mypropertyset3.Role"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:NamedValue">
+        <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/JobFound/propset3.aadl#/0/@ownedPropertyType.0/@ownedLiteral.1"/>
+      </ownedValue>
+    </ownedValue>
+    <propertyAssociation href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.2"/>
+  </ownedPropertyAssociation>
+  <featureInstance name="register" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="login" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="edit_profile" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+  </featureInstance>
+  <featureInstance name="get_req">
+    <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="send_info" direction="in out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="get_list" direction="in out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.2"/>
+  </featureInstance>
+  <featureInstance name="send_feedback">
+    <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.3"/>
+  </featureInstance>
+  <featureInstance name="exchange_knowledge" direction="in out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.4"/>
+  </featureInstance>
+  <featureInstance name="exchange_experiences" direction="in out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.5"/>
+  </featureInstance>
+  <componentInstance name="jobseeker1" category="system">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/JobFound/propset.aadl#mypropertyset.Role"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/JobFound/propset.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="send_req" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="get_jobinfo">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="edit_profile">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="apply_job" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="contact_details" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="anonymous_knowledge">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/JobFound/JobFound.aadl#JobFound.jobseeker"/>
+  </componentInstance>
+  <componentInstance name="server1" category="system">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/JobFound/propset.aadl#mypropertyset.Role"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/JobFound/propset.aadl#/0/@ownedPropertyType.0/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/JobFound/propset2.aadl#mypropertyset2.Role"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/JobFound/propset2.aadl#/0/@ownedPropertyType.0/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/JobFound/propset3.aadl#mypropertyset3.Role"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/JobFound/propset3.aadl#/0/@ownedPropertyType.0/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.2"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="register" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="login" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="edit_profile" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="get_req">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="send_info" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="get_list" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="send_feedback">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="exchange_knowledge" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="exchange_experiences" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/JobFound/JobFound.aadl#JobFound.JobFoundServer"/>
+  </componentInstance>
+  <componentInstance name="employer1" category="system">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/JobFound/propset2.aadl#mypropertyset2.Role"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/JobFound/propset2.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="create_list" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="get_feedback" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="edit_profile">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="share_position" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="exchange_knowledge" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="exchange_experiences" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/JobFound/JobFound.aadl#JobFound.employer"/>
+  </componentInstance>
+  <componentInstance name="userManagement1" category="system">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/JobFound/propset3.aadl#mypropertyset3.Role"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/JobFound/propset3.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="register" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="login" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="edit_profile" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedSystemSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/JobFound/JobFound.aadl#JobFound.UserManagement"/>
+  </componentInstance>
+  <componentInstance name="backupServer1" category="system">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/JobFound/propset.aadl#mypropertyset.Role"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/JobFound/propset.aadl#/0/@ownedPropertyType.0/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/JobFound/propset2.aadl#mypropertyset2.Role"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/JobFound/propset2.aadl#/0/@ownedPropertyType.0/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="get_req" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="send_info" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="get_list" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="send_feedback" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="exchange_knowledge" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="exchange_experiences" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedSystemSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/JobFound/JobFound.aadl#JobFound.Backup_Server"/>
+  </componentInstance>
+  <connectionInstance name="jobseeker1.send_req -> server1.get_req" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.3" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="jobseeker1.apply_job -> server1.get_req" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.3" source="//@componentInstance.0/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="jobseeker1.contact_details -> server1.get_req" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.3" source="//@componentInstance.0/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.4" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="server1.send_info -> jobseeker1.get_jobinfo" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.1" source="//@componentInstance.1/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.4" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="server1.get_list -> employer1.get_feedback" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@componentInstance.1/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.5" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="employer1.create_list -> server1.get_list" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.5" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="employer1.get_feedback -> server1.send_feedback" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.6" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="employer1.share_position -> server1.get_list" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.5" source="//@componentInstance.2/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.3" destination="//@componentInstance.1/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="employer1.exchange_knowledge -> jobseeker1.anonymous_knowledge" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.5" source="//@componentInstance.2/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.4" destination="//@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="employer1.exchange_experiences -> jobseeker1.anonymous_knowledge" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.5" source="//@componentInstance.2/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.5" destination="//@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="userManagement1.register -> server1.get_req" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.3" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="userManagement1.login -> server1.get_req" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.3" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="userManagement1.edit_profile -> jobseeker1.edit_profile" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.2" source="//@componentInstance.3/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.2" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="userManagement1.edit_profile -> employer1.edit_profile" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.2" source="//@componentInstance.3/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.2" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="backupServer1.get_req -> server1.get_req" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.3" source="//@componentInstance.4/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="backupServer1.send_info -> server1.send_info" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.4" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="backupServer1.get_list -> server1.get_list" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.5" source="//@componentInstance.4/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.2" destination="//@componentInstance.1/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="backupServer1.send_feedback -> server1.send_feedback" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.6" source="//@componentInstance.4/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.3" destination="//@componentInstance.1/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.17"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="backupServer1.exchange_knowledge -> employer1.exchange_knowledge" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.4" source="//@componentInstance.4/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.4" destination="//@componentInstance.2/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.18"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="backupServer1.exchange_experiences -> employer1.exchange_experiences" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.5" source="//@componentInstance.4/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.5" destination="//@componentInstance.2/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/JobFound/JobFound.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.19"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/JobFound/JobFound.aadl#JobFound.jobFoundServer.Impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/JobFound/JobFound.aadl#JobFound.jobFoundServer.Impl"/>
+</instance:SystemInstance>

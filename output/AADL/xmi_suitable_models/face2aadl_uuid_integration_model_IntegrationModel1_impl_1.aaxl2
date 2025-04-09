@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="IntegrationModel1_impl_Instance" category="system">
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:StringLiteral" value="_sDn7UK2MEe26NcS3vZp1iQ"/>
+    </ownedValue>
+    <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+  </ownedPropertyAssociation>
+  <componentInstance name="ViewSource1">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="__UKX4K2MEe26NcS3vZp1iQ"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Segment"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="output" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="_A-ImYK2NEe26NcS3vZp1iQ"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/instances/uuid_integration_model_IntegrationModel1_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#uuid_integration_model.ViewSource1"/>
+  </componentInstance>
+  <componentInstance name="ViewSink1">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="_DMjlwK2NEe26NcS3vZp1iQ"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Segment"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="input0">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="_Eu9zsK2NEe26NcS3vZp1iQ"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/instances/uuid_integration_model_IntegrationModel1_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#uuid_integration_model.ViewSink1"/>
+  </componentInstance>
+  <componentInstance name="PortableComponentInstance" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="_vog-YK2MEe26NcS3vZp1iQ"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="Input">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="_Gf6u0GRREeiJQvh_fVqImg"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/instances/uuid_integration_model_IntegrationModel1_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="Output" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="_K594QGRREeiJQvh_fVqImg"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/instances/uuid_integration_model_IntegrationModel1_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <componentInstance name="PortableComponent1" category="thread group">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="_AluBQGRREeiJQvh_fVqImg"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Segment"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Profile"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.3"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Design_Assurance_Level"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="Input">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:StringLiteral" value="_Gf6u0GRREeiJQvh_fVqImg"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0/@ownedPropertyAssociation.1"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+        <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/instances/uuid_integration_model_IntegrationModel1_impl_Instance.aaxl2#/"/>
+      </featureInstance>
+      <featureInstance name="Output" direction="out">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:StringLiteral" value="_K594QGRREeiJQvh_fVqImg"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1/@ownedPropertyAssociation.1"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+        <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/instances/uuid_integration_model_IntegrationModel1_impl_Instance.aaxl2#/"/>
+      </featureInstance>
+      <componentInstance name="thread0" category="thread">
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ThreadGroupSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadGroupSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadGroupImplementation" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#uuid_PCS.PortableComponent1.impl"/>
+    </componentInstance>
+    <flowSpecification name="Input_sink" source="//@componentInstance.2/@featureInstance.0">
+      <flowSpecification href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="Output_source" destination="//@componentInstance.2/@featureInstance.1">
+      <flowSpecification href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#uuid_PCS.PortableComponent1_process.impl"/>
+  </componentInstance>
+  <componentInstance name="Channel1" category="virtual bus">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="_48FbgK2MEe26NcS3vZp1iQ"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedVirtualBusSubcomponent.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedVirtualBusSubcomponent.0"/>
+    <index>0</index>
+  </componentInstance>
+  <connectionInstance name="ViewSource1.output -> PortableComponentInstance.PortableComponent1.Input" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="_Pu2osK2NEe26NcS3vZp1iQ"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PortableComponentInstance.PortableComponent1.Output -> ViewSink1.input0" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.2/@componentInstance.0/@featureInstance.1">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.UUID"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="_SNqNcK2NEe26NcS3vZp1iQ"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/uuid/uuid_PCS.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#uuid_integration_model.IntegrationModel1.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/uuid/uuid_integration_model.aadl#uuid_integration_model.IntegrationModel1.impl"/>
+</instance:SystemInstance>

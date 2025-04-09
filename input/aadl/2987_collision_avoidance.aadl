@@ -1,0 +1,51 @@
+package Lab2::Software::collision_avoidance
+
+public
+
+with Lab2::icd; --<-- Access to custom variables: radar_distance_variable, brake_cmd
+
+process collision_avoidance
+	features
+	radar_object_distance     	: in data port Lab2::icd::obstacle_position.i;
+	brake_cmd  					: out data port Lab2::icd::brake_cmd;
+	steering_wheel_cmd			: out data port Lab2::icd::steering_wheel_cmd;
+	speaker_cmd                   : out data port Lab2::icd::speaker_cmd;
+flows
+	f0 : flow path radar_object_distance -> steering_wheel_cmd;
+	f1 : flow path radar_object_distance 	-> brake_cmd;
+	f2 : flow path radar_object_distance -> speaker_cmd;
+end collision_avoidance;
+
+
+process implementation collision_avoidance.i
+subcomponents
+	collision_avoidance_thr : thread collision_avoidance_thread;
+connections
+	c0 : port radar_object_distance  					     -> collision_avoidance_thr.obstacle_position;
+	c1 : port collision_avoidance_thr.brake_cmd   	         -> brake_cmd;
+	c2 : port collision_avoidance_thr.steering_wheel_cmd     -> steering_wheel_cmd; 
+	c3 : port collision_avoidance_thr.speaker_cmd            -> speaker_cmd;
+flows	
+	f0 : flow path radar_object_distance  -> c0 -> collision_avoidance_thr.f2 -> c2 -> steering_wheel_cmd;
+	f1 : flow path radar_object_distance  -> c0 -> collision_avoidance_thr.f1 -> c1 -> brake_cmd;
+	f2 : flow path radar_object_distance  -> c0 -> collision_avoidance_thr.f0 -> c3 -> speaker_cmd;
+end collision_avoidance.i;
+
+
+thread collision_avoidance_thread
+features
+	obstacle_position     	: in data port Lab2::icd::obstacle_position.i;
+	brake_cmd 							: out data port Lab2::icd::brake_cmd;
+	steering_wheel_cmd 					: out data port Lab2::icd::steering_wheel_cmd;
+	speaker_cmd                         : out data port Lab2::icd::speaker_cmd;
+flows
+	f0 : flow path obstacle_position   	-> speaker_cmd;
+	f1 : flow path obstacle_position 	-> brake_cmd;
+	f2 : flow path obstacle_position 	-> steering_wheel_cmd;
+properties
+	Dispatch_Protocol => Periodic;
+	Period            => 5ms;
+end collision_avoidance_thread;
+
+
+end Lab2::Software::collision_avoidance;

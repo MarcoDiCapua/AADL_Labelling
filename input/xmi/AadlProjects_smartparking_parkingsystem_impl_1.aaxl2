@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="parkingsystem_impl_Instance" category="system">
+  <componentInstance name="paymentdeviceinterface" category="process">
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/smartpark/smartparking.aadl#/0/@ownedPublicSection/@ownedClassifier.55/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.paymentdeviceinterface.impl"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.parkingsystem.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.parkingsystem.impl"/>
+</instance:SystemInstance>

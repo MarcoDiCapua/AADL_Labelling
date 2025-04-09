@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="integration_functional_Instance" category="system">
+  <componentInstance name="camera" category="device">
+    <featureInstance name="picture" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <flowSpecification name="f0" destination="//@componentInstance.0/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#devices.camera"/>
+  </componentInstance>
+  <componentInstance name="radar1" category="device">
+    <featureInstance name="distance" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <flowSpecification name="f0" destination="//@componentInstance.1/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#devices.radar1"/>
+  </componentInstance>
+  <componentInstance name="radar2" category="device">
+    <featureInstance name="distance" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <flowSpecification name="f0" destination="//@componentInstance.2/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#devices.radar2"/>
+  </componentInstance>
+  <componentInstance name="traffic_lane_sensor" category="device">
+    <featureInstance name="lane_crossed" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <flowSpecification name="f0" destination="//@componentInstance.3/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#devices.traffic_lane_sensor"/>
+  </componentInstance>
+  <componentInstance name="induction_speed_sensor" category="device">
+    <featureInstance name="speed" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <flowSpecification name="f0" destination="//@componentInstance.4/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#devices.induction_speed_sensor"/>
+  </componentInstance>
+  <componentInstance name="optical_speed_sensor" category="device">
+    <featureInstance name="speed" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <flowSpecification name="f0" destination="//@componentInstance.5/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#devices.optical_speed_sensor"/>
+  </componentInstance>
+  <componentInstance name="acceleration_pedal" category="device">
+    <featureInstance name="speed" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <flowSpecification name="f0" destination="//@componentInstance.6/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#devices.acceleration_pedal"/>
+  </componentInstance>
+  <componentInstance name="brake" category="device">
+    <featureInstance name="brake_cmd">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <flowSpecification name="f0" source="//@componentInstance.7/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.7"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#devices.brake"/>
+  </componentInstance>
+  <componentInstance name="accelerator" category="device">
+    <featureInstance name="accelerate_cmd">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <flowSpecification name="f0" source="//@componentInstance.8/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.8"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#devices.accelerator"/>
+  </componentInstance>
+  <componentInstance name="panel" category="device">
+    <featureInstance name="current_speed">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="desired_speed">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.1"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <flowSpecification name="f0" source="//@componentInstance.9/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="f1" source="//@componentInstance.9/@featureInstance.1">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.9"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/devices.aadl#devices.panel"/>
+  </componentInstance>
+  <componentInstance name="image_analysis" category="process">
+    <featureInstance name="picture">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/image_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="obstacle_detected" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/image_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <flowSpecification name="f0" source="//@componentInstance.10/@featureInstance.0" destination="//@componentInstance.10/@featureInstance.1">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/image_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/image_processing.aadl#image_processing.image_analysis.i"/>
+  </componentInstance>
+  <componentInstance name="distance_voter" category="process">
+    <featureInstance name="distance1">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/distance_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="distance2">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/distance_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="distance_result" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/distance_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <flowSpecification name="f0" source="//@componentInstance.11/@featureInstance.0" destination="//@componentInstance.11/@featureInstance.2">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/distance_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="f1" source="//@componentInstance.11/@featureInstance.1" destination="//@componentInstance.11/@featureInstance.2">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/distance_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/distance_processing.aadl#distance_processing.distance_voter.i"/>
+  </componentInstance>
+  <componentInstance name="overtaking_detection" category="process">
+    <featureInstance name="lane_change">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/overtaking_detection_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="overtaking_active" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/overtaking_detection_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <flowSpecification name="f0" source="//@componentInstance.12/@featureInstance.0" destination="//@componentInstance.12/@featureInstance.1">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/overtaking_detection_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/overtaking_detection_processing.aadl#overtaking_detection_processing.overtaking_detection.i"/>
+  </componentInstance>
+  <componentInstance name="speed_voter" category="process">
+    <featureInstance name="speed1">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/speed_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="speed2">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/speed_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="speed_result" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/speed_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <flowSpecification name="f0" source="//@componentInstance.13/@featureInstance.0" destination="//@componentInstance.13/@featureInstance.2">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/speed_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="f1" source="//@componentInstance.13/@featureInstance.1" destination="//@componentInstance.13/@featureInstance.2">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/speed_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/speed_processing.aadl#speed_processing.speed_voter.i"/>
+  </componentInstance>
+  <componentInstance name="panel_controller" category="process">
+    <featureInstance name="current_speed">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/panel_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="desired_speed">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/panel_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="current_speed_result" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/panel_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="desired_speed_result" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/panel_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <flowSpecification name="f0" source="//@componentInstance.14/@featureInstance.0" destination="//@componentInstance.14/@featureInstance.2">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/panel_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="f1" source="//@componentInstance.14/@featureInstance.1" destination="//@componentInstance.14/@featureInstance.3">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/panel_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/panel_processing.aadl#panel_processing.panel_controller.i"/>
+  </componentInstance>
+  <componentInstance name="speed_controller" category="process">
+    <featureInstance name="obstacle_detected">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="current_distance">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="overtaking_active">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="current_speed">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="desired_speed">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="brake_cmd" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="accelerate_cmd" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+      <type href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/instances/integration_integration_functional_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <flowSpecification name="f00" source="//@componentInstance.15/@featureInstance.3" destination="//@componentInstance.15/@featureInstance.5">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="f01" source="//@componentInstance.15/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.5">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <flowSpecification name="f02" source="//@componentInstance.15/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.5">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.2"/>
+    </flowSpecification>
+    <flowSpecification name="f03" source="//@componentInstance.15/@featureInstance.2" destination="//@componentInstance.15/@featureInstance.5">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.3"/>
+    </flowSpecification>
+    <flowSpecification name="f04" source="//@componentInstance.15/@featureInstance.4" destination="//@componentInstance.15/@featureInstance.5">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.4"/>
+    </flowSpecification>
+    <flowSpecification name="f10" source="//@componentInstance.15/@featureInstance.3" destination="//@componentInstance.15/@featureInstance.6">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.5"/>
+    </flowSpecification>
+    <flowSpecification name="f11" source="//@componentInstance.15/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.6">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.6"/>
+    </flowSpecification>
+    <flowSpecification name="f12" source="//@componentInstance.15/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.6">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.7"/>
+    </flowSpecification>
+    <flowSpecification name="f13" source="//@componentInstance.15/@featureInstance.2" destination="//@componentInstance.15/@featureInstance.6">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.8"/>
+    </flowSpecification>
+    <flowSpecification name="f14" source="//@componentInstance.15/@featureInstance.4" destination="//@componentInstance.15/@featureInstance.6">
+      <flowSpecification href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.9"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/software/brake_acceleration_processing.aadl#brake_acceleration_processing.speed_controller.i"/>
+  </componentInstance>
+  <connectionInstance name="camera.picture -> image_analysis.picture" complete="true" kind="portConnection" destination="//@componentInstance.10/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.10/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="radar1.distance -> distance_voter.distance1" complete="true" kind="portConnection" destination="//@componentInstance.11/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.11/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="radar2.distance -> distance_voter.distance2" complete="true" kind="portConnection" destination="//@componentInstance.11/@featureInstance.1" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.11/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="traffic_lane_sensor.lane_crossed -> overtaking_detection.lane_change" complete="true" kind="portConnection" destination="//@componentInstance.12/@featureInstance.0" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.12/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="induction_speed_sensor.speed -> speed_voter.speed1" complete="true" kind="portConnection" destination="//@componentInstance.13/@featureInstance.0" source="//@componentInstance.4/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.0" destination="//@componentInstance.13/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="optical_speed_sensor.speed -> speed_voter.speed2" complete="true" kind="portConnection" destination="//@componentInstance.13/@featureInstance.1" source="//@componentInstance.5/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.13/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="acceleration_pedal.speed -> panel_controller.desired_speed" complete="true" kind="portConnection" destination="//@componentInstance.14/@featureInstance.1" source="//@componentInstance.6/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.14/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="acceleration_pedal.speed -> speed_controller.desired_speed" complete="true" kind="portConnection" destination="//@componentInstance.15/@featureInstance.4" source="//@componentInstance.6/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="image_analysis.obstacle_detected -> speed_controller.obstacle_detected" complete="true" kind="portConnection" destination="//@componentInstance.15/@featureInstance.0" source="//@componentInstance.10/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.10/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="distance_voter.distance_result -> speed_controller.current_distance" complete="true" kind="portConnection" destination="//@componentInstance.15/@featureInstance.1" source="//@componentInstance.11/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.2" destination="//@componentInstance.15/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="overtaking_detection.overtaking_active -> speed_controller.overtaking_active" complete="true" kind="portConnection" destination="//@componentInstance.15/@featureInstance.2" source="//@componentInstance.12/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speed_voter.speed_result -> speed_controller.current_speed" complete="true" kind="portConnection" destination="//@componentInstance.15/@featureInstance.3" source="//@componentInstance.13/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.13/@featureInstance.2" destination="//@componentInstance.15/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speed_voter.speed_result -> panel_controller.current_speed" complete="true" kind="portConnection" destination="//@componentInstance.14/@featureInstance.0" source="//@componentInstance.13/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.13/@featureInstance.2" destination="//@componentInstance.14/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="panel_controller.current_speed_result -> panel.current_speed" complete="true" kind="portConnection" destination="//@componentInstance.9/@featureInstance.0" source="//@componentInstance.14/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.2" destination="//@componentInstance.9/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="panel_controller.desired_speed_result -> panel.desired_speed" complete="true" kind="portConnection" destination="//@componentInstance.9/@featureInstance.1" source="//@componentInstance.14/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.3" destination="//@componentInstance.9/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speed_controller.brake_cmd -> brake.brake_cmd" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.0" source="//@componentInstance.15/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.5" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speed_controller.accelerate_cmd -> accelerator.accelerate_cmd" complete="true" kind="portConnection" destination="//@componentInstance.8/@featureInstance.0" source="//@componentInstance.15/@featureInstance.6">
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.6" destination="//@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#integration.integration.functional"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AADL-Self-driving-car/self-driving-car-osate/self-driving-car/case-study/integration.aadl#integration.integration.functional"/>
+</instance:SystemInstance>

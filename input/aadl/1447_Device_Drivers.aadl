@@ -1,0 +1,58 @@
+--Device_Drivers.aadl
+
+--holds all platform device drivers
+
+--probably implemented in Genode if seL4 or in dom0 if Xen
+
+package Device_Drivers
+public
+  with
+    Storage_Services;
+	
+--generic storage driver for any media	
+subprogram Write_Storage_Device_Driver
+	features
+	  location : in parameter Storage_Services::Track;
+	  value : in parameter Storage_Services::Block;
+	  confirmation : out parameter Storage_Services::Confirmation;  --indication of success or failure
+end Write_Storage_Device_Driver;
+
+subprogram Fetch_Storage_Device_Driver
+	features
+	  location : in parameter Storage_Services::Track;
+	  value : out parameter Storage_Services::Block;
+	  confirmation : out parameter Storage_Services::Confirmation;  --indication of success or failure
+end Fetch_Storage_Device_Driver;
+
+--storage drivers for specific kinds of storage
+
+--eMMC embedded multi-media card	
+subprogram Write_Multi_Media_Card_Driver extends Write_Storage_Device_Driver
+end Write_Multi_Media_Card_Driver;
+
+subprogram Fetch_Multi_Media_Card_Driver extends Fetch_Storage_Device_Driver
+end Fetch_Multi_Media_Card_Driver;
+
+--Secure Digital card	 storage
+subprogram Write_SD_Card_Driver extends Write_Storage_Device_Driver
+end Write_SD_Card_Driver;
+
+subprogram Fetch_SD_Card_Driver extends Fetch_Storage_Device_Driver
+end Fetch_SD_Card_Driver;
+	
+--Universal Serial Bus storage
+subprogram Write_USB_Storage_Driver extends Write_Storage_Device_Driver
+end Write_USB_Storage_Driver;
+
+subprogram Fetch_USB_Storage_Driver extends Fetch_Storage_Device_Driver
+end Fetch_USB_Storage_Driver;
+	
+--Serial AT Atachment	 storage
+subprogram Write_SATA_Storage_Driver extends Write_Storage_Device_Driver
+end Write_SATA_Storage_Driver;
+
+subprogram Fetch_SATA_Storage_Driver extends Fetch_Storage_Device_Driver
+end Fetch_SATA_Storage_Driver;
+		
+	
+end Device_Drivers;

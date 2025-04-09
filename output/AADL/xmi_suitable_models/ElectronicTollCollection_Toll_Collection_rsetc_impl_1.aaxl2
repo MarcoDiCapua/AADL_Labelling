@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="rsetc_impl_Instance" category="system">
+  <componentInstance name="bill_driver" category="process">
+    <featureInstance name="curr_toll_trans_from_roadside">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="toll_paymnt_cnfrmtn">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="toll_paymnt_debited" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="toll_paymnt_rqst" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.3"/>
+    </featureInstance>
+    <componentInstance name="toll_cost1" category="thread">
+      <featureInstance name="toll_price">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.32/@ownedDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.toll_cost1.impl"/>
+    </componentInstance>
+    <componentInstance name="veh_identity1" category="thread">
+      <featureInstance name="veh_nmbr">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.34/@ownedDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.veh_identity1.impl"/>
+    </componentInstance>
+    <componentInstance name="paymnt_cnfrmtn1" category="thread">
+      <featureInstance name="payment_successful">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="payment_fail">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.paymnt_cnfrmtn1.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.bill_driver.impl"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.rsetc.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.rsetc.impl"/>
+</instance:SystemInstance>

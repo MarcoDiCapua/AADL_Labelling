@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Subsystem_Notional_Instance" category="system">
+  <featureInstance name="O" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-models/error-modelv1/errormodeltest.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="A">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-models/error-modelv1/errormodeltest.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="B">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-models/error-modelv1/errormodeltest.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+  </featureInstance>
+  <featureInstance name="C">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-models/error-modelv1/errormodeltest.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+  </featureInstance>
+  <featureInstance name="A_Failure_Detected" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-models/error-modelv1/errormodeltest.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+  </featureInstance>
+  <featureInstance name="B_Failure_Detected" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-models/error-modelv1/errormodeltest.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.1"/>
+  </featureInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-models/error-modelv1/errormodeltest.aadl#emtest.Subsystem.Notional"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-models/error-modelv1/errormodeltest.aadl#emtest.Subsystem.Notional"/>
+</instance:SystemInstance>

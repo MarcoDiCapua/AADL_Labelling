@@ -1,0 +1,44 @@
+--------------------------------------------------------------------------------
+-- Monitor.aadl (version 09) - 
+--
+-- Authors: Stephen C. Barrett (scbarrett@ksu.edu) &
+--          Brian R. Larson (brl@ksu.edu)
+--          Department of Computing & Information Sciences
+--
+-- Licensed Material - Property of Kansas State University
+--------------------------------------------------------------------------------
+-- 09: Software to deliver thermostat monitoring control functionality.
+--------------------------------------------------------------------------------
+package Monitor
+public
+with Base_Types, Iso_Types;  -- Basic & isolette specific data types
+with KSU_Isolette;
+
+
+process monitor_temperature
+  features
+    current_temp: in data port Iso_Types::sensed_temperature;
+    on_alarm: out event data port Iso_Types::on_off;
+end monitor_temperature;
+
+process implementation monitor_temperature.impl
+  subcomponents
+    manage_alarm: thread manage_alarm.impl;
+    
+  connections
+    a1: port current_temp -> manage_alarm.current_temp;
+    a2: port manage_alarm.on_alarm -> on_alarm;
+end monitor_temperature.impl;
+
+
+thread manage_alarm
+  features
+    current_temp: in data port Iso_Types::sensed_temperature;
+    on_alarm: out event data port Iso_Types::on_off;
+end manage_alarm;
+
+thread implementation manage_alarm.impl
+end manage_alarm.impl;
+
+
+end Monitor;

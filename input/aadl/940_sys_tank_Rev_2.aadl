@@ -1,0 +1,133 @@
+package sys_tank_Rev_2
+public
+
+
+with EMV2;
+
+abstract functional	
+	features
+		signalIn : in data port;
+		signalOut : out data port;
+		xfr_startUp: in out event data port;
+		xfr_Active : in out event data port;
+		xfr_Ready : in out event data port;
+		xfr_emergencyShutdown : in out event data port;
+	modes
+		dormant : initial mode;
+		startUp : mode;
+		active : mode;
+		pumpingActive : mode;
+		pumpingReady : mode;
+		emergencyShutdown : mode;
+		
+	annex EMV2 {**
+		use types errorLibrary;
+		use behavior errorLibrary::FailStop;
+		component error behavior
+			events
+				Failure : error event {serviceOmission};
+			transitions
+				t1 : operational -[failure{serviceOmission}]-> failStop;
+		end component;
+	**};
+end functional;
+
+
+device relayNormallyOpen extends functional
+	flows
+		signalFlowPath : flow path signalIn -> signalOut {latency => 1 ms .. 2 ms;} in modes (active);
+end relayNormallyOpen;
+
+device implementation relayNormallyOpen.i
+end relayNormallyOpen.i;
+
+device relayNormallyClosed extends functional
+	flows
+		signalFlowPath : flow path signalIn -> signalOut {latency => 1 ms .. 2 ms;} in modes (dormant);
+end relayNormallyClosed;
+
+device implementation relayNormallyClosed.i
+end relayNormallyClosed.i;
+
+device switchNormallyOpen extends functional
+	flows
+		signalFlowPath : flow path signalIn -> signalOut {latency => 1 ms .. 2 ms;} in modes (startUp);
+end switchNormallyOpen;
+
+device implementation switchNormallyOpen.i
+end switchNormallyOpen.i;
+
+device battery extends functional
+	flows
+	signalFlowPath : flow path signalIn -> signalOut;
+end battery;
+
+device implementation battery.i
+end battery.i;
+
+device motor extends functional
+	flows
+		signalFlowPath : flow path signalIn -> signalOut {latency => 1 ms .. 2 ms;} in modes (pumpingActive);
+end motor;
+
+device implementation motor.i
+end motor.i;
+
+device tank extends functional
+end tank;
+
+device implementation tank.i
+end tank.i;
+
+device valve extends functional
+	flows
+		signalFlowPath : flow path signalIn -> signalOut {latency => 1 ms .. 2 ms;} in modes (emergencyShutdown);
+end valve;
+
+device implementation valve.i 
+end valve.i;
+
+device switchPressure extends functional
+	flows
+		signalFlowPath : flow path signalIn -> signalOut {latency => 1 ms .. 2 ms;} in modes (emergencyShutdown);
+end switchPressure;
+
+device implementation switchPressure.i
+end switchPressure.i;
+
+system sys_tank_pressurized extends functional
+end sys_tank_pressurized;
+
+system implementation sys_tank_pressurized.complete
+	subcomponents
+		switch1 : device switchNormallyOpen.i;
+		relayK1 : device relayNormallyOpen.i;
+		relayK2 : device relayNormallyOpen.i;
+		relayTimer : device relayNormallyClosed.i;
+		pressureSwitch: device switchPressure.i;
+		pressureTank: device tank.i;
+		valveOutlet : device valve.i;
+		batteryLowVoltage : device battery.i;
+		batteryHighVoltage : device battery.i;
+		pumpMotor : device motor.i;
+		
+connections
+		new_connection: port batteryLowVoltage.signalOut -> switch1.signalIn;
+new_connection2: port switch1.signalOut -> relayK2.xfr_Active;
+
+new_connection3: port batteryHighVoltage.signalOut -> relayK2.signalIn;
+
+new_connection5: port relayK2.signalOut -> pumpMotor.xfr_Active;
+new_connection4: port switch1.signalOut -> relayK1.xfr_Active;
+new_connection6: port batteryLowVoltage.signalOut -> relayK1.signalIn;
+
+new_connection7: port relayK1.signalOut -> relayTimer.signalIn;
+new_connection8: port relayTimer.signalOut -> relayK1.xfr_Active;
+
+new_connection9: port pressureTank.signalOut -> pressureSwitch.xfr_Active;
+new_connection10: port pressureSwitch.signalOut -> relayK2.xfr_Active;
+new_connection11: port relayTimer.xfr_emergencyShutdown -> relayK2.xfr_emergencyShutdown;
+end sys_tank_pressurized.complete;
+
+
+end sys_tank_Rev_2;

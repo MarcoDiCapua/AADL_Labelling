@@ -1,0 +1,104 @@
+--Functional.java
+
+--logical (functional) architecture
+
+package Functional
+public
+
+with
+  Base_Types,   --AADL data model
+  FG,           --feature group definitions
+  Operation,    --operation subsystem
+--  Comm,         --communication subsystem
+--  Services,     --platform services
+  Peripherals,
+  Abstract_Devices,
+--  Buses,
+  Safety            --safety subsystem
+  ;
+
+flag renames data Base_Types::Boolean;
+
+--functional architecture for a generic medical device using the Platform platform
+system Generic_Medical_Function
+	features
+	  --external connection to Ethernet, WiFi, etc.
+--    ethernet : requires bus access Buses::CAT5;
+    --physical jack to connect to maintenance controller
+--	jack : requires bus access  Buses::Maintenance_Bus;  
+	sense: feature group FG::Sensing;  --physical input to device
+	act : feature group FG::Actuation;  --what the device does
+	alarm : feature group FG::Alarm_Indication;	 --alarm to announce 
+	alarm_inactivation : in data port flag;  --user suspends alarms
+  to_user : feature group FG::Operation_GUI;  --user interface
+  to_comm : feature group FG::Operation_Comm;  --communicate with communications subsystem
+  from_maintenance: feature group inverse of FG::Maintenance;    --only uses a subset of maintenance signals
+  crypto_control : feature group inverse of FG::Crypto_Control; 	
+end Generic_Medical_Function;
+
+system implementation Generic_Medical_Function.i 
+	subcomponents
+		sensors_actuators: system Peripherals::Sensors_Actuators.i;
+		safety_subsystem: system Safety::Safety.i;
+		power_subsystem: system Power; -- {Actual_Function_Binding => (classifier(Hardware::PCB.power));};
+		operation_subsystem: system Operation::Operation.i;
+	connections
+		--alarm sent to services, displayed on user interface
+		ua: feature group safety_subsystem.alarm <-> alarm;
+		--alarm used to change operation
+		oa: feature group safety_subsystem.alarm <-> operation_subsystem.alarm;
+		--safety architecture stop function
+		ha: port safety_subsystem.halt -> sensors_actuators.halt;
+		--report self-detected malfunction
+--			mal: port sensors_actuators.malfunction -> safety_subsystem.peripheral_malfunction;
+		--  safety-peripherals
+		s_p: feature group safety_subsystem.to_peripherals <-> sensors_actuators.from_safety;
+		--  operation-peripherals
+		o_p: feature group operation_subsystem.to_peripherals <-> sensors_actuators.from_operation;
+		-- operation-safety
+		o_s: feature group operation_subsystem.to_safety <-> safety_subsystem.from_operation;
+		-- operation-GUI
+		o_u: feature group operation_subsystem.to_user <-> to_user;
+		--  power-safety
+		p_s: feature group power_subsystem.to_safety <-> safety_subsystem.from_power;
+		--  power-operation
+		p_o: feature group power_subsystem.to_operation <-> operation_subsystem.from_power;
+		-- operation-network
+		o_n: feature group operation_subsystem.to_comm <-> to_comm;
+		--actuators control enviornment
+		ac: feature group sensors_actuators.act <-> act;
+		--sensors perceive environment
+		sn: feature group sensors_actuators.sense <-> sense;
+		--maintenance functions
+		m_o: feature group from_maintenance <-> operation_subsystem.from_maintenance;
+		m_s: feature group from_maintenance <-> safety_subsystem.from_maintenance;
+--	  -- network connection
+--	  nc : bus access ethernet <-> network_controller.external;
+--	  -- maintenance jack
+--	  mj : bus access jack <-> maintenance_controller.jack;
+		si: feature group operation_subsystem.crypto_control <-> crypto_control;
+		inac: port alarm_inactivation -> safety_subsystem.alarm_inactivation;
+--		m_j: bus access jack -> communication_subsystem.jack;
+end Generic_Medical_Function.i;
+
+
+--added peripherals to perform medical function 
+--this is where the sensors and actuators go
+--system Peripherals
+--	features
+--	  halt : in event port;  --halt medical device operation on safety command 
+--    malfunction : out data port flag;  --hardware detected malfunction, such as pump overheating
+--    from_safety : feature group inverse of FG::Safety_Peripherals;
+--    from_operation : feature group inverse of FG::Operation_Peripherals;
+--end Peripherals;
+
+--power subsystem
+	system Power extends Abstract_Devices::Abstract_Power
+	features
+	  to_safety: feature group FG::Power_Safety;        --signals to safety subsystem
+	  to_operation: feature group FG::Power_Operation;  --signals to operation subsystem
+	end Power;
+
+
+
+end Functional;

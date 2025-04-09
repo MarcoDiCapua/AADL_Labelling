@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="aircraft_functional_model_Instance" category="system">
+  <featureInstance name="isFailing" category="abstractFeature" direction="in out">
+    <feature xsi:type="aadl2:AbstractFeature" href="../../github/Aircraft/aircraft_functional.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedAbstractFeature.0"/>
+  </featureInstance>
+  <componentInstance name="sys_stability_pitch" category="system">
+    <featureInstance name="isFailing" category="abstractFeature" direction="in out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/Aircraft/packages/functional/generic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedAbstractFeature.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Aircraft/aircraft_functional.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Aircraft/packages/functional/control_pitch.aadl#functional.control_pitch.pitch_controller.i"/>
+  </componentInstance>
+  <componentInstance name="sys_spoilers" category="system">
+    <featureInstance name="isFailing" category="abstractFeature" direction="in out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/Aircraft/packages/functional/generic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedAbstractFeature.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Aircraft/aircraft_functional.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Aircraft/packages/functional/control_drag_spoilers.aadl#functional.control_drag_spoilers.spoiler_controller.i"/>
+  </componentInstance>
+  <componentInstance name="sys_thrust_management" category="system">
+    <featureInstance name="isFailing" category="abstractFeature" direction="in out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/Aircraft/packages/functional/generic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedAbstractFeature.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Aircraft/aircraft_functional.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Aircraft/packages/functional/control_thrust.aadl#functional.control_thrust.thrust_controller.i"/>
+  </componentInstance>
+  <componentInstance name="sys_forward_thrust" category="system">
+    <featureInstance name="isFailing" category="abstractFeature" direction="in out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/Aircraft/packages/functional/generic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedAbstractFeature.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Aircraft/aircraft_functional.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Aircraft/packages/functional/provide_thrust.aadl#functional.provide_thrust.provide_thrust.i"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Aircraft/aircraft_functional.aadl#aircraft_functional.aircraft_functional.model"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/Aircraft/aircraft_functional.aadl#aircraft_functional.aircraft_functional.model"/>
+</instance:SystemInstance>

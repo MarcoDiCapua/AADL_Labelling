@@ -1,0 +1,21 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "ITU_Software",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ITU_Example_AADL/ITU/ITU_Software.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\ITU_Example_AADL_ITU_Software_ITU_System_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\ITU_Example_AADL\\README.md"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to property definition 'Load_Time'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ITU_Example_AADL/ITU/ITU_Software.aadl line : 191 column : 4)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'ms'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ITU_Example_AADL/ITU/ITU_Software.aadl line : 191 column : 19)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'ms'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ITU_Example_AADL/ITU/ITU_Software.aadl line : 191 column : 28)",
+    "ERROR:Couldn't resolve reference to property definition 'Timing_Properties::Startup_Execution_Time'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ITU_Example_AADL/ITU/ITU_Software.aadl line : 221 column : 4)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'us'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ITU_Example_AADL/ITU/ITU_Software.aadl line : 221 column : 51)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'us'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ITU_Example_AADL/ITU/ITU_Software.aadl line : 221 column : 61)",
+    "ERROR:Couldn't resolve reference to property definition 'Period'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ITU_Example_AADL/ITU/ITU_Software.aadl line : 262 column : 4)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'ms'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ITU_Example_AADL/ITU/ITU_Software.aadl line : 262 column : 17)",
+    "ERROR:Couldn't resolve reference to property definition 'Dispatch_Protocol'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ITU_Example_AADL/ITU/ITU_Software.aadl line : 263 column : 4)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'Periodic'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ITU_Example_AAD..."
+  ]
+}

@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Scooter_Controller_i_Instance" category="system">
+  <componentInstance name="accel_handle_dev" category="device">
+    <featureInstance name="accel_toggle_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="main_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedBusAccess.0"/>
+      <type href="../../github/ElectricScooter-AADL/instances/Controller_Scooter_Controller_i_Instance.aaxl2#/"/>
+    </featureInstance>
+    <flowSpecification name="accel_toggle_source" destination="//@componentInstance.0/@featureInstance.0">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ElectricScooter-AADL/Controller.aadl#Controller.accel_handle"/>
+  </componentInstance>
+  <componentInstance name="brake_handle_dev" category="device">
+    <featureInstance name="brake_toggle_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="main_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.0"/>
+      <type href="../../github/ElectricScooter-AADL/instances/Controller_Scooter_Controller_i_Instance.aaxl2#/"/>
+    </featureInstance>
+    <flowSpecification name="brake_toggle_source" destination="//@componentInstance.1/@featureInstance.0">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ElectricScooter-AADL/Controller.aadl#Controller.brake_handle"/>
+  </componentInstance>
+  <componentInstance name="battery_dev" category="device">
+    <featureInstance name="target_voltage_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="voltage_output_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="main_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusAccess.0"/>
+      <type href="../../github/ElectricScooter-AADL/instances/Controller_Scooter_Controller_i_Instance.aaxl2#/"/>
+    </featureInstance>
+    <flowSpecification name="target_voltage_sink" source="//@componentInstance.2/@featureInstance.0">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="voltage_output_source" destination="//@componentInstance.2/@featureInstance.1">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ElectricScooter-AADL/Controller.aadl#Controller.battery"/>
+  </componentInstance>
+  <componentInstance name="brake_dev" category="device">
+    <featureInstance name="brake_state_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="is_braking_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="main_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/ElectricScooter-AADL/instances/Controller_Scooter_Controller_i_Instance.aaxl2#/"/>
+    </featureInstance>
+    <flowSpecification name="brake_state_sink" source="//@componentInstance.3/@featureInstance.0">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="is_braking_source" destination="//@componentInstance.3/@featureInstance.1">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ElectricScooter-AADL/Controller.aadl#Controller.brake"/>
+  </componentInstance>
+  <componentInstance name="speedo_dev" category="device">
+    <featureInstance name="scooter_speed_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="measured_speed_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="main_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/ElectricScooter-AADL/instances/Controller_Scooter_Controller_i_Instance.aaxl2#/"/>
+    </featureInstance>
+    <flowSpecification name="scooter_speed_sink" source="//@componentInstance.4/@featureInstance.0">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="measured_speed_source" destination="//@componentInstance.4/@featureInstance.1">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ElectricScooter-AADL/Controller.aadl#Controller.speedometer"/>
+  </componentInstance>
+  <componentInstance name="batt_sensor_dev" category="device">
+    <featureInstance name="battery_pct_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="measured_batt_pct_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="main_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedBusAccess.0"/>
+      <type href="../../github/ElectricScooter-AADL/instances/Controller_Scooter_Controller_i_Instance.aaxl2#/"/>
+    </featureInstance>
+    <flowSpecification name="battery_pct_sink" source="//@componentInstance.5/@featureInstance.0">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="battery_pct_source" destination="//@componentInstance.5/@featureInstance.1">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ElectricScooter-AADL/Controller.aadl#Controller.battery_sensor"/>
+  </componentInstance>
+  <componentInstance name="speed_ctrl" category="process">
+    <featureInstance name="measured_speed_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="accel_toggle_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="brake_toggle_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="power_output_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="brake_state_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+    </featureInstance>
+    <componentInstance name="regulate_th" category="thread">
+      <featureInstance name="speed_data_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="accel_level_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="brake_level_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="power_adjust" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="brake_ctrl" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+      </featureInstance>
+      <flowSpecification name="speed_data_sink" source="//@componentInstance.6/@componentInstance.0/@featureInstance.0">
+        <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <flowSpecification name="accel_level_sink" source="//@componentInstance.6/@componentInstance.0/@featureInstance.1">
+        <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.1"/>
+      </flowSpecification>
+      <flowSpecification name="brake_level_sink" source="//@componentInstance.6/@componentInstance.0/@featureInstance.2">
+        <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.2"/>
+      </flowSpecification>
+      <flowSpecification name="brake_ctrl_source" destination="//@componentInstance.6/@componentInstance.0/@featureInstance.4">
+        <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.3"/>
+      </flowSpecification>
+      <flowSpecification name="power_adjust_source" destination="//@componentInstance.6/@componentInstance.0/@featureInstance.3">
+        <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.4"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/ElectricScooter-AADL/Controller.aadl#Controller.regulate_speed_th"/>
+    </componentInstance>
+    <componentInstance name="power_th" category="thread">
+      <featureInstance name="power_adjust_in" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="watt_adjust_out" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedEventDataPort.1"/>
+      </featureInstance>
+      <flowSpecification name="power_watt_path" source="//@componentInstance.6/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.1">
+        <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/ElectricScooter-AADL/Controller.aadl#Controller.adjust_power_th"/>
+    </componentInstance>
+    <flowSpecification name="speed_sink" source="//@componentInstance.6/@featureInstance.0">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="accel_level_sink" source="//@componentInstance.6/@featureInstance.1">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <flowSpecification name="brake_level_sink" source="//@componentInstance.6/@featureInstance.2">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.2"/>
+    </flowSpecification>
+    <flowSpecification name="brake_source" destination="//@componentInstance.6/@featureInstance.4">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.3"/>
+    </flowSpecification>
+    <flowSpecification name="battery_ctrl_source" destination="//@componentInstance.6/@featureInstance.3">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.4"/>
+    </flowSpecification>
+    <connectionInstance name="regulate_th.power_adjust -> power_th.power_adjust_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.0" source="//@componentInstance.6/@componentInstance.0/@featureInstance.3">
+      <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/ElectricScooter-AADL/Controller.aadl#Controller.speed_controller_pr.i"/>
+  </componentInstance>
+  <componentInstance name="power_mgr" category="process">
+    <featureInstance name="power_output_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="battery_pct_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="target_voltage_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.2"/>
+    </featureInstance>
+    <componentInstance name="batt_ctrl_th" category="thread">
+      <featureInstance name="battery_pct_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="power_output_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="target_voltage_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.2"/>
+      </featureInstance>
+      <flowSpecification name="battery_pct_sink" source="//@componentInstance.7/@componentInstance.0/@featureInstance.0">
+        <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <flowSpecification name="power_output_sink" source="//@componentInstance.7/@componentInstance.0/@featureInstance.1">
+        <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedFlowSpecification.1"/>
+      </flowSpecification>
+      <flowSpecification name="target_voltage_source" destination="//@componentInstance.7/@componentInstance.0/@featureInstance.2">
+        <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedFlowSpecification.2"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/ElectricScooter-AADL/Controller.aadl#Controller.battery_ctrl_th"/>
+    </componentInstance>
+    <flowSpecification name="power_output_sink" source="//@componentInstance.7/@featureInstance.0">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="battery_pct_sink" source="//@componentInstance.7/@featureInstance.1">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <flowSpecification name="target_voltage_source" destination="//@componentInstance.7/@featureInstance.2">
+      <flowSpecification href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedFlowSpecification.2"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/ElectricScooter-AADL/Controller.aadl#Controller.power_manager_pr.i"/>
+  </componentInstance>
+  <endToEndFlow name="speedo_sc_speed" flowElement="//@componentInstance.4/@flowSpecification.1 //@connectionInstance.2 //@componentInstance.6/@componentInstance.0/@flowSpecification.0">
+    <endToEndFlow href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.0"/>
+  </endToEndFlow>
+  <endToEndFlow name="accel_sc_acclevel" flowElement="//@componentInstance.0/@flowSpecification.0 //@connectionInstance.0 //@componentInstance.6/@componentInstance.0/@flowSpecification.1">
+    <endToEndFlow href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.1"/>
+  </endToEndFlow>
+  <endToEndFlow name="brake_sc_brakelevel" flowElement="//@componentInstance.1/@flowSpecification.0 //@connectionInstance.1 //@componentInstance.6/@componentInstance.0/@flowSpecification.2">
+    <endToEndFlow href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.2"/>
+  </endToEndFlow>
+  <endToEndFlow name="batt_bc_battlevel" flowElement="//@componentInstance.5/@flowSpecification.1 //@connectionInstance.3 //@componentInstance.7/@componentInstance.0/@flowSpecification.0">
+    <endToEndFlow href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.3"/>
+  </endToEndFlow>
+  <endToEndFlow name="speed_power_output" flowElement="//@componentInstance.6/@componentInstance.0/@flowSpecification.4 //@componentInstance.6/@connectionInstance.0 //@componentInstance.6/@componentInstance.1/@flowSpecification.0 //@connectionInstance.5 //@componentInstance.7/@componentInstance.0/@flowSpecification.1">
+    <endToEndFlow href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.4"/>
+  </endToEndFlow>
+  <endToEndFlow name="power_batt_targetvolt" flowElement="//@componentInstance.7/@componentInstance.0/@flowSpecification.2 //@connectionInstance.6 //@componentInstance.2/@flowSpecification.0">
+    <endToEndFlow href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.5"/>
+  </endToEndFlow>
+  <endToEndFlow name="speed_brake_ctrl" flowElement="//@componentInstance.6/@componentInstance.0/@flowSpecification.3 //@connectionInstance.4 //@componentInstance.3/@flowSpecification.0">
+    <endToEndFlow href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.6"/>
+  </endToEndFlow>
+  <connectionInstance name="accel_handle_dev.accel_toggle_out -> speed_ctrl.regulate_th.accel_level_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.0/@featureInstance.1" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@featureInstance.1" destination="//@componentInstance.6/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="brake_handle_dev.brake_toggle_out -> speed_ctrl.regulate_th.brake_level_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.0/@featureInstance.2" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.6/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@featureInstance.2" destination="//@componentInstance.6/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speedo_dev.measured_speed_out -> speed_ctrl.regulate_th.speed_data_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.0/@featureInstance.0" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.6/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="batt_sensor_dev.measured_batt_pct_out -> power_mgr.batt_ctrl_th.battery_pct_in" complete="true" kind="portConnection" destination="//@componentInstance.7/@componentInstance.0/@featureInstance.0" source="//@componentInstance.5/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@featureInstance.1" destination="//@componentInstance.7/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speed_ctrl.regulate_th.brake_ctrl -> brake_dev.brake_state_in" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.6/@componentInstance.0/@featureInstance.4">
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.6/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.4" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speed_ctrl.power_th.watt_adjust_out -> power_mgr.batt_ctrl_th.power_output_in" complete="true" kind="portConnection" destination="//@componentInstance.7/@componentInstance.0/@featureInstance.1" source="//@componentInstance.6/@componentInstance.1/@featureInstance.1">
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.6/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.3" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@featureInstance.0" destination="//@componentInstance.7/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="power_mgr.batt_ctrl_th.target_voltage_out -> battery_dev.target_voltage_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.7/@componentInstance.0/@featureInstance.2">
+    <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.7/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.2" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectricScooter-AADL/Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectricScooter-AADL/Controller.aadl#Controller.Scooter_Controller.i"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/ElectricScooter-AADL/Controller.aadl#Controller.Scooter_Controller.i"/>
+</instance:SystemInstance>

@@ -1,0 +1,10 @@
+input: C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/output-processing\max_sim_struct.csv
+output_generic: output/max_sim_struct\clusters.csv
+n_clusters: systematic
+validate_csv: validate/cluster_test_set_specific.csv
+Concordant pairs (a): 119
+Discordant pairs (b): 3276
+Discordant but correct in ground truth (c): 253
+Correct in clustering but discordant in ground truth (d): 93
+Rand Index: 0.9085805934242182
+Adjusted Rand Index: 0.36505993961374233

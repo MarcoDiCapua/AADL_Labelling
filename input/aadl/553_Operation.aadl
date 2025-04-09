@@ -1,0 +1,29 @@
+--Operation.aadl
+
+
+--operation contains most of the functionality of the device
+--the user interface and security subsystem are part of operation
+
+package Operation
+public
+  with
+    FG;
+
+--operation subsystem
+system Operation
+  --operation subsystem
+	features
+	  to_safety : feature group FG::Operation_Safety;  --communicate with safety subsystem
+	  to_peripherals : feature group FG::Operation_Peripherals;  --command sensors/actuators
+	  from_power :  feature group inverse of FG::Power_Operation;  --communicate with power subsystem
+	  to_user : feature group FG::Operation_GUI;  --expose user interface
+    from_maintenance: feature group inverse of FG::Maintenance;    --only uses a subset of maintenance signals
+    to_comm : feature group FG::Operation_Comm;  --communicate with communications subsystem
+    alarm : feature group inverse of FG::Alarm_Indication;  --alarm and waring signals 
+    crypto_control : feature group inverse of FG::Crypto_Control; 	
+end Operation;
+
+system implementation Operation.i
+end Operation.i;
+	
+end Operation;

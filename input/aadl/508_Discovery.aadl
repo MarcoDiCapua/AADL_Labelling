@@ -1,0 +1,17 @@
+property set FORA_Discovery is
+
+	-- Properties to support node discovery (ESR6)
+	
+	
+	-- The size of a group of nodes
+	GroupSize : aadlinteger applies to (abstract);
+
+	-- Specify the algorithm used for node discovery
+	-- HPA Hierarchical Proximity-Agnostic
+	-- HPI Hierarchical Proximity-Integrated
+	-- FPA Flat Proximity-Agnostic
+	-- FPI Flat Proximity-Integrated
+	DiscoveryAlgorithm : enumeration (HPA, HPI, FPA, FPI) applies to (abstract);
+
+end FORA_Discovery;
+	

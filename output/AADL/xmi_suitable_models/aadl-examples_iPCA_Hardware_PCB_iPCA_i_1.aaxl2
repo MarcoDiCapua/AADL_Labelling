@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="PCB_iPCA_i_Instance" category="system">
+  <featureInstance name="connectors" category="featureGroup" direction="in out">
+    <featureInstance name="serial_bus" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="usb_bus" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="lvds_bus" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="hdmi_bus" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <featureInstance name="vga_bus" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.4"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureGroup.2"/>
+  </featureInstance>
+  <featureInstance name="ethernet" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusAccess.0"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/6"/>
+  </featureInstance>
+  <featureInstance name="maintenance_bus" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusAccess.1"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="sense" category="featureGroup" direction="in out">
+    <featureInstance name="ui_touch">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/14"/>
+    </featureInstance>
+    <featureInstance name="barcode_signal">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="patient_button_press" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.0"/>
+  </featureInstance>
+  <featureInstance name="act" category="featureGroup" direction="in out">
+    <featureInstance name="ui_image" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/12"/>
+    </featureInstance>
+    <featureInstance name="ui_sound" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/13"/>
+    </featureInstance>
+    <featureInstance name="drug_outlet" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <featureInstance name="barcode_illumination" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="fill_reservoir">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/17"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.1"/>
+  </featureInstance>
+  <componentInstance name="maintenance" category="device">
+    <featureInstance name="maintenance_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="provision_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="system_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="power_supply" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="mp_clock" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.4"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="mtm_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.5"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#Hardware.Maintenance_Processor"/>
+  </componentInstance>
+  <componentInstance name="nic" category="device">
+    <featureInstance name="system_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="ethernet" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="power_supply" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="nic_clock" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="mtm_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.4"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#Hardware.NIC"/>
+  </componentInstance>
+  <componentInstance name="timers" category="device">
+    <featureInstance name="system_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="peripheral_power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#Hardware.Timers"/>
+  </componentInstance>
+  <componentInstance name="ebc" category="device">
+    <featureInstance name="system_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="serial_bus" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="usb_bus" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="lvds_bus" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="power_supply" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.4"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#Hardware.External_Bus_Controller"/>
+  </componentInstance>
+  <componentInstance name="hmi" category="system">
+    <featureInstance name="system_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="power_supply" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="dc_clock" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="sc_clock" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="mtm_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.4"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="hdmi_bus" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.5"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <featureInstance name="vga_bus" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.6"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <featureInstance name="ui_image" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/12"/>
+    </featureInstance>
+    <featureInstance name="ui_sound" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/13"/>
+    </featureInstance>
+    <featureInstance name="ui_touch">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/14"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Human_Machine_Interface.aadl#Human_Machine_Interface.HMI"/>
+  </componentInstance>
+  <componentInstance name="power_bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Buses.aadl#Buses.Power_Supply"/>
+  </componentInstance>
+  <componentInstance name="power" category="system">
+    <featureInstance name="power_supply" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="system_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="peripheral_power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="mtm_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#Hardware.Power"/>
+  </componentInstance>
+  <componentInstance name="internal_maintenance_bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Buses.aadl#Buses.MTM_Bus"/>
+  </componentInstance>
+  <componentInstance name="clock_controller" category="device">
+    <featureInstance name="cpu_clock" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="nic_clock" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="mp_clock" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="dc_clock" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="sc_clock" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedBusAccess.4"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="clk_pwr" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedBusAccess.5"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#Hardware.Clock_Controller"/>
+  </componentInstance>
+  <componentInstance name="perpheral_power_bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Buses.aadl#Buses.Power_Supply"/>
+  </componentInstance>
+  <componentInstance name="main_bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusType" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Buses.aadl#iPCA_Buses.iPCA_System_Bus"/>
+  </componentInstance>
+  <componentInstance name="button" category="device">
+    <featureInstance name="gpio" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/15"/>
+    </featureInstance>
+    <featureInstance name="power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#iPCA_Hardware.Patient_Button.i"/>
+  </componentInstance>
+  <componentInstance name="drug_reservoir" category="device">
+    <featureInstance name="gpio" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/15"/>
+    </featureInstance>
+    <featureInstance name="power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="drug_outlet" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <featureInstance name="fill_reservoir">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/17"/>
+    </featureInstance>
+    <flowSpecification name="fill" source="//@componentInstance.12/@featureInstance.3">
+      <flowSpecification href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="d_r_flow" source="//@componentInstance.12/@featureInstance.3" destination="//@componentInstance.12/@featureInstance.2">
+      <flowSpecification href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#iPCA_Hardware.Drug_Reservoir.i"/>
+  </componentInstance>
+  <componentInstance name="upstream_monitor" category="device">
+    <featureInstance name="gpio" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/15"/>
+    </featureInstance>
+    <featureInstance name="power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="drug_outlet" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <featureInstance name="drug_intake">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <flowSpecification name="u_m_flow" source="//@componentInstance.13/@featureInstance.3" destination="//@componentInstance.13/@featureInstance.2">
+      <flowSpecification href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#iPCA_Hardware.Upstream_Monitor.i"/>
+  </componentInstance>
+  <componentInstance name="pump" category="device">
+    <featureInstance name="gpio" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/15"/>
+    </featureInstance>
+    <featureInstance name="power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="drug_outlet" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <featureInstance name="drug_intake">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <flowSpecification name="m_p_flow" source="//@componentInstance.14/@featureInstance.3" destination="//@componentInstance.14/@featureInstance.2">
+      <flowSpecification href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#iPCA_Hardware.Mechanical_Pump.i"/>
+  </componentInstance>
+  <componentInstance name="downstream_monitor" category="device">
+    <featureInstance name="gpio" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/15"/>
+    </featureInstance>
+    <featureInstance name="power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="drug_outlet" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <featureInstance name="drug_intake">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <flowSpecification name="d_m_flow" source="//@componentInstance.15/@featureInstance.3" destination="//@componentInstance.15/@featureInstance.2">
+      <flowSpecification href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#iPCA_Hardware.Downstream_Monitor.i"/>
+  </componentInstance>
+  <componentInstance name="tube_connector" category="device">
+    <featureInstance name="drug_outlet" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <featureInstance name="drug_intake">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <flowSpecification name="isc_flow" source="//@componentInstance.16/@featureInstance.1" destination="//@componentInstance.16/@featureInstance.0">
+      <flowSpecification href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#iPCA_Hardware.Infusion_Set_Connector.i"/>
+  </componentInstance>
+  <componentInstance name="cpu" category="processor">
+    <featureInstance name="system_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="mtm_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="gpio" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/15"/>
+    </featureInstance>
+    <featureInstance name="cpu_clock" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="power_supply" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedBusAccess.4"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <componentInstance name="ram" category="memory">
+      <featureInstance name="system_bus" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.0"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="power_supply" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.1"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="mtm_bus" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.2"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#Hardware.RAM"/>
+    </componentInstance>
+    <componentInstance name="rom" category="memory">
+      <featureInstance name="system_bus" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusAccess.0"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="power_supply" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusAccess.1"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="mtm_bus" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusAccess.2"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Hardware_PCB_iPCA_i_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedMemorySubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#Hardware.FLASH"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#iPCA_Hardware.iPCA_CPU.i"/>
+  </componentInstance>
+  <flowSpecification name="drug_in" source="//@featureInstance.4/@featureInstance.4">
+    <flowSpecification href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+  </flowSpecification>
+  <flowSpecification name="drug_out" destination="//@featureInstance.4/@featureInstance.2">
+    <flowSpecification href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.1"/>
+  </flowSpecification>
+  <flowSpecification name="drug_flow" source="//@featureInstance.4/@featureInstance.4" destination="//@featureInstance.4/@featureInstance.2">
+    <flowSpecification href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.2"/>
+  </flowSpecification>
+  <connectionInstance name="ethernet -> nic.ethernet" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="maintenance_bus -> maintenance.maintenance_bus" kind="accessConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sense.ui_touch -> hmi.ui_touch" kind="portConnection" destination="//@componentInstance.4/@featureInstance.9" source="//@featureInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.3/@featureInstance.0" destination="//@componentInstance.4/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="act.fill_reservoir -> drug_reservoir.fill_reservoir" kind="portConnection" destination="//@componentInstance.12/@featureInstance.3" source="//@featureInstance.4/@featureInstance.4">
+    <connectionReference context="/" source="//@featureInstance.4/@featureInstance.4" destination="//@componentInstance.12/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="maintenance.mtm_bus -> internal_maintenance_bus" complete="true" kind="accessConnection" destination="//@componentInstance.7" source="//@componentInstance.0/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.5" destination="//@componentInstance.7">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="nic.ethernet -> ethernet" kind="accessConnection" destination="//@featureInstance.1" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@featureInstance.1" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="timers.system_bus -> main_bus" complete="true" kind="accessConnection" destination="//@componentInstance.10" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.10">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ebc.serial_bus -> connectors.serial_bus" kind="accessConnection" destination="//@featureInstance.0/@featureInstance.0" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@featureInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ebc.usb_bus -> connectors.usb_bus" kind="accessConnection" destination="//@featureInstance.0/@featureInstance.1" source="//@componentInstance.3/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.2" destination="//@featureInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ebc.lvds_bus -> connectors.lvds_bus" kind="accessConnection" destination="//@featureInstance.0/@featureInstance.2" source="//@componentInstance.3/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.3" destination="//@featureInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="hmi.hdmi_bus -> connectors.hdmi_bus" kind="accessConnection" destination="//@featureInstance.0/@featureInstance.3" source="//@componentInstance.4/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.5" destination="//@featureInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="hmi.vga_bus -> connectors.vga_bus" kind="accessConnection" destination="//@featureInstance.0/@featureInstance.4" source="//@componentInstance.4/@featureInstance.6">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.6" destination="//@featureInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="hmi.ui_image -> act.ui_image" kind="portConnection" destination="//@featureInstance.4/@featureInstance.0" source="//@componentInstance.4/@featureInstance.7">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.7" destination="//@featureInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="hmi.ui_sound -> act.ui_sound" kind="portConnection" destination="//@featureInstance.4/@featureInstance.1" source="//@componentInstance.4/@featureInstance.8">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.8" destination="//@featureInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="power_bus -> cpu.ram.power_supply" complete="true" kind="accessConnection" destination="//@componentInstance.17/@componentInstance.0/@featureInstance.1" source="//@componentInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5" destination="//@componentInstance.17/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedAccessConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.17" source="//@componentInstance.17/@featureInstance.4" destination="//@componentInstance.17/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="power_bus -> cpu.rom.power_supply" complete="true" kind="accessConnection" destination="//@componentInstance.17/@componentInstance.1/@featureInstance.1" source="//@componentInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5" destination="//@componentInstance.17/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedAccessConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.17" source="//@componentInstance.17/@featureInstance.4" destination="//@componentInstance.17/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="power_bus -> maintenance.power_supply" complete="true" kind="accessConnection" destination="//@componentInstance.0/@featureInstance.3" source="//@componentInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5" destination="//@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="power_bus -> nic.power_supply" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@componentInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="power_bus -> ebc.power_supply" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.4" source="//@componentInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5" destination="//@componentInstance.3/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="power_bus -> hmi.power_supply" complete="true" kind="accessConnection" destination="//@componentInstance.4/@featureInstance.1" source="//@componentInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="power.power_supply -> power_bus" complete="true" kind="accessConnection" destination="//@componentInstance.5" source="//@componentInstance.6/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.5">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="power.peripheral_power -> perpheral_power_bus" complete="true" kind="accessConnection" destination="//@componentInstance.9" source="//@componentInstance.6/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.2" destination="//@componentInstance.9">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="power.mtm_bus -> internal_maintenance_bus" complete="true" kind="accessConnection" destination="//@componentInstance.7" source="//@componentInstance.6/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.3" destination="//@componentInstance.7">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="internal_maintenance_bus -> cpu.ram.mtm_bus" complete="true" kind="accessConnection" destination="//@componentInstance.17/@componentInstance.0/@featureInstance.2" source="//@componentInstance.7">
+    <connectionReference context="/" source="//@componentInstance.7" destination="//@componentInstance.17/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.17" source="//@componentInstance.17/@featureInstance.1" destination="//@componentInstance.17/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="internal_maintenance_bus -> cpu.rom.mtm_bus" complete="true" kind="accessConnection" destination="//@componentInstance.17/@componentInstance.1/@featureInstance.2" source="//@componentInstance.7">
+    <connectionReference context="/" source="//@componentInstance.7" destination="//@componentInstance.17/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.17" source="//@componentInstance.17/@featureInstance.1" destination="//@componentInstance.17/@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="internal_maintenance_bus -> nic.mtm_bus" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.4" source="//@componentInstance.7">
+    <connectionReference context="/" source="//@componentInstance.7" destination="//@componentInstance.1/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="internal_maintenance_bus -> hmi.mtm_bus" complete="true" kind="accessConnection" destination="//@componentInstance.4/@featureInstance.4" source="//@componentInstance.7">
+    <connectionReference context="/" source="//@componentInstance.7" destination="//@componentInstance.4/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="clock_controller.cpu_clock -> cpu.cpu_clock" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.3" source="//@componentInstance.8/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0" destination="//@componentInstance.17/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="clock_controller.nic_clock -> nic.nic_clock" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.3" source="//@componentInstance.8/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="clock_controller.mp_clock -> maintenance.mp_clock" complete="true" kind="accessConnection" destination="//@componentInstance.0/@featureInstance.4" source="//@componentInstance.8/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.2" destination="//@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="clock_controller.dc_clock -> hmi.dc_clock" complete="true" kind="accessConnection" destination="//@componentInstance.4/@featureInstance.2" source="//@componentInstance.8/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.3" destination="//@componentInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="clock_controller.sc_clock -> hmi.sc_clock" complete="true" kind="accessConnection" destination="//@componentInstance.4/@featureInstance.3" source="//@componentInstance.8/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.4" destination="//@componentInstance.4/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="perpheral_power_bus -> button.power" complete="true" kind="accessConnection" destination="//@componentInstance.11/@featureInstance.1" source="//@componentInstance.9">
+    <connectionReference context="/" source="//@componentInstance.9" destination="//@componentInstance.11/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="perpheral_power_bus -> drug_reservoir.power" complete="true" kind="accessConnection" destination="//@componentInstance.12/@featureInstance.1" source="//@componentInstance.9">
+    <connectionReference context="/" source="//@componentInstance.9" destination="//@componentInstance.12/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="perpheral_power_bus -> upstream_monitor.power" complete="true" kind="accessConnection" destination="//@componentInstance.13/@featureInstance.1" source="//@componentInstance.9">
+    <connectionReference context="/" source="//@componentInstance.9" destination="//@componentInstance.13/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="perpheral_power_bus -> pump.power" complete="true" kind="accessConnection" destination="//@componentInstance.14/@featureInstance.1" source="//@componentInstance.9">
+    <connectionReference context="/" source="//@componentInstance.9" destination="//@componentInstance.14/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="perpheral_power_bus -> downstream_monitor.power" complete="true" kind="accessConnection" destination="//@componentInstance.15/@featureInstance.1" source="//@componentInstance.9">
+    <connectionReference context="/" source="//@componentInstance.9" destination="//@componentInstance.15/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="perpheral_power_bus -> timers.peripheral_power" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@componentInstance.9">
+    <connectionReference context="/" source="//@componentInstance.9" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main_bus -> cpu.ram.system_bus" complete="true" kind="accessConnection" destination="//@componentInstance.17/@componentInstance.0/@featureInstance.0" source="//@componentInstance.10">
+    <connectionReference context="/" source="//@componentInstance.10" destination="//@componentInstance.17/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.17" source="//@componentInstance.17/@featureInstance.0" destination="//@componentInstance.17/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main_bus -> cpu.rom.system_bus" complete="true" kind="accessConnection" destination="//@componentInstance.17/@componentInstance.1/@featureInstance.0" source="//@componentInstance.10">
+    <connectionReference context="/" source="//@componentInstance.10" destination="//@componentInstance.17/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.17" source="//@componentInstance.17/@featureInstance.0" destination="//@componentInstance.17/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main_bus -> ebc.system_bus" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.10">
+    <connectionReference context="/" source="//@componentInstance.10" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main_bus -> nic.system_bus" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.10">
+    <connectionReference context="/" source="//@componentInstance.10" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main_bus -> hmi.system_bus" complete="true" kind="accessConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.10">
+    <connectionReference context="/" source="//@componentInstance.10" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main_bus -> maintenance.system_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0/@featureInstance.2" source="//@componentInstance.10">
+    <connectionReference context="/" source="//@componentInstance.10" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main_bus -> power.system_bus" complete="true" kind="accessConnection" destination="//@componentInstance.6/@featureInstance.1" source="//@componentInstance.10">
+    <connectionReference context="/" source="//@componentInstance.10" destination="//@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="button.gpio -> cpu.gpio" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.2" source="//@componentInstance.11/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.0" destination="//@componentInstance.17/@featureInstance.2" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="drug_reservoir.gpio -> cpu.gpio" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.2" source="//@componentInstance.12/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.0" destination="//@componentInstance.17/@featureInstance.2" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="drug_reservoir.drug_outlet -> upstream_monitor.drug_intake" complete="true" kind="portConnection" destination="//@componentInstance.13/@featureInstance.3" source="//@componentInstance.12/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.2" destination="//@componentInstance.13/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="upstream_monitor.gpio -> cpu.gpio" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.2" source="//@componentInstance.13/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.13/@featureInstance.0" destination="//@componentInstance.17/@featureInstance.2" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="upstream_monitor.drug_outlet -> pump.drug_intake" complete="true" kind="portConnection" destination="//@componentInstance.14/@featureInstance.3" source="//@componentInstance.13/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.13/@featureInstance.2" destination="//@componentInstance.14/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pump.gpio -> cpu.gpio" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.2" source="//@componentInstance.14/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.0" destination="//@componentInstance.17/@featureInstance.2" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pump.drug_outlet -> downstream_monitor.drug_intake" complete="true" kind="portConnection" destination="//@componentInstance.15/@featureInstance.3" source="//@componentInstance.14/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.2" destination="//@componentInstance.15/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="downstream_monitor.gpio -> cpu.gpio" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.2" source="//@componentInstance.15/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.0" destination="//@componentInstance.17/@featureInstance.2" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="downstream_monitor.drug_outlet -> tube_connector.drug_intake" complete="true" kind="portConnection" destination="//@componentInstance.16/@featureInstance.1" source="//@componentInstance.15/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.2" destination="//@componentInstance.16/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tube_connector.drug_outlet -> act.drug_outlet" kind="portConnection" destination="//@featureInstance.4/@featureInstance.2" source="//@componentInstance.16/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.0" destination="//@featureInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cpu.gpio -> button.gpio" complete="true" kind="accessConnection" destination="//@componentInstance.11/@featureInstance.0" source="//@componentInstance.17/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.17/@featureInstance.2" destination="//@componentInstance.11/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cpu.gpio -> drug_reservoir.gpio" complete="true" kind="accessConnection" destination="//@componentInstance.12/@featureInstance.0" source="//@componentInstance.17/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.17/@featureInstance.2" destination="//@componentInstance.12/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cpu.gpio -> upstream_monitor.gpio" complete="true" kind="accessConnection" destination="//@componentInstance.13/@featureInstance.0" source="//@componentInstance.17/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.17/@featureInstance.2" destination="//@componentInstance.13/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cpu.gpio -> pump.gpio" complete="true" kind="accessConnection" destination="//@componentInstance.14/@featureInstance.0" source="//@componentInstance.17/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.17/@featureInstance.2" destination="//@componentInstance.14/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cpu.gpio -> downstream_monitor.gpio" complete="true" kind="accessConnection" destination="//@componentInstance.15/@featureInstance.0" source="//@componentInstance.17/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.17/@featureInstance.2" destination="//@componentInstance.15/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#iPCA_Hardware.PCB_iPCA.i"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#iPCA_Hardware.PCB_iPCA.i"/>
+</instance:SystemInstance>

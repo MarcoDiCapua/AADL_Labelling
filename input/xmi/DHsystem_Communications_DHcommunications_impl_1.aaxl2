@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="DHcommunications_impl_Instance" category="system">
+  <featureInstance name="comm_device" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="pm_comm">
+    <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="config_comm">
+    <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.2"/>
+  </featureInstance>
+  <componentInstance name="Acquisitor" category="device">
+    <featureInstance name="cm_aq">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Communications.aadl#Communications.Acquisitor"/>
+  </componentInstance>
+  <componentInstance name="CommunicationManager" category="device">
+    <featureInstance name="config_cm">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="pmOUT_cm">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="cm_aq" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="cm_gateway" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.3"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Communications.aadl#Communications.CommunicationManager"/>
+  </componentInstance>
+  <componentInstance name="DHgateway" category="system">
+    <featureInstance name="cm_gateway">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="gateway_device" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="tempController" category="device">
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Communications.aadl#Communications.tempController"/>
+    </componentInstance>
+    <componentInstance name="humController" category="device">
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Communications.aadl#Communications.humController"/>
+    </componentInstance>
+    <componentInstance name="powerController" category="device">
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Communications.aadl#Communications.powerController"/>
+    </componentInstance>
+    <componentInstance name="applController" category="device">
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Communications.aadl#Communications.applController"/>
+    </componentInstance>
+    <componentInstance name="secController" category="device">
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Communications.aadl#Communications.secController"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/DHsystem/Communications.aadl#Communications.DHgateway.impl"/>
+  </componentInstance>
+  <connectionInstance name="pm_comm -> CommunicationManager.pmOUT_cm" kind="portConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="config_comm -> CommunicationManager.config_cm" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="CommunicationManager.cm_aq -> Acquisitor.cm_aq" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.1/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.2" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="CommunicationManager.cm_gateway -> DHgateway.cm_gateway" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.1/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.3" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DHgateway.gateway_device -> comm_device" kind="portConnection" destination="//@featureInstance.0" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Communications.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/DHsystem/Communications.aadl#Communications.DHcommunications.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/DHsystem/Communications.aadl#Communications.DHcommunications.impl"/>
+</instance:SystemInstance>

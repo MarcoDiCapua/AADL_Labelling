@@ -1,0 +1,106 @@
+--------------------------------------------------------------------------------
+-- Monitor.aadl (version 11) - 
+--
+-- Authors: Stephen C. Barrett (scbarrett@ksu.edu) &
+--          Brian R. Larson (brl@ksu.edu)
+--          Department of Computing & Information Sciences
+--
+-- Licensed Material - Property of Kansas State University
+--------------------------------------------------------------------------------
+-- 09: Software to deliver thermostat monitoring control functionality.
+--
+-- 10: Process features to support operator interface interactions.
+--
+-- 11: Remaining threads to provide interface, mode, & failure functionality.
+--------------------------------------------------------------------------------
+package Monitor
+public
+with Base_Types, Iso_Types;  -- Basic & isolette specific data types
+with KSU_Isolette;
+
+
+process monitor_temperature
+  features
+    current_temp: in data port Iso_Types::sensed_temperature;
+    lower_alarm_temp: in data port Iso_Types::lower_alarm_temperature;
+    upper_alarm_temp: in data port Iso_Types::upper_alarm_temperature;
+    op_status: out event data port Iso_Types::op_status;
+    on_alarm: out event data port Iso_Types::on_off;
+end monitor_temperature;
+
+process implementation monitor_temperature.impl
+  subcomponents
+    manage_alarm: thread manage_alarm.impl;
+    manage_mon_interface: thread manage_mon_interface.impl;
+    manage_mon_mode: thread manage_mon_mode.impl;
+    detect_mon_fail: thread detect_mon_failure.impl;
+    
+  connections
+    a1: port current_temp -> manage_alarm.current_temp;
+    a2: port lower_alarm_temp -> manage_alarm.lower_alarm_temp;
+    a3: port upper_alarm_temp -> manage_alarm.upper_alarm_temp;
+    a4: port manage_mon_mode.op_mode -> manage_alarm.op_mode;
+    a5: port manage_alarm.on_alarm -> on_alarm;
+
+    i1: port current_temp -> manage_mon_interface.current_temp;
+    i2: port lower_alarm_temp -> manage_mon_interface.lower_alarm_temp;
+    i3: port upper_alarm_temp -> manage_mon_interface.upper_alarm_temp;
+    i4: port manage_mon_mode.op_mode -> manage_mon_interface.op_mode;
+    i6: port manage_mon_interface.op_status -> op_status;
+
+    m1: port current_temp -> manage_mon_mode.current_temp;
+    m2: port detect_mon_fail.internal_fail -> manage_mon_mode.internal_fail;
+    m3: port manage_mon_interface.interface_fail ->
+        manage_mon_mode.interface_fail;        
+end monitor_temperature.impl;
+
+
+thread manage_alarm
+  features
+    current_temp: in data port Iso_Types::sensed_temperature;
+    lower_alarm_temp: in data port Iso_Types::lower_alarm_temperature;
+    upper_alarm_temp: in data port Iso_Types::upper_alarm_temperature;
+    op_mode: in data port Iso_Types::op_mode;
+    on_alarm: out event data port Iso_Types::on_off;
+end manage_alarm;
+
+thread implementation manage_alarm.impl
+end manage_alarm.impl;
+
+
+thread manage_mon_interface
+  features
+    current_temp: in data port Iso_Types::sensed_temperature;
+    lower_alarm_temp: in data port Iso_Types::lower_alarm_temperature;
+    upper_alarm_temp: in data port Iso_Types::upper_alarm_temperature;
+    op_mode: in data port Iso_Types::op_mode;
+    interface_fail: out event data port Base_Types::Boolean;
+    op_status: out data port Iso_Types::op_status;
+end manage_mon_interface;
+
+thread implementation manage_mon_interface.impl
+end manage_mon_interface.impl;
+
+
+thread manage_mon_mode
+  features
+    current_temp: in data port Iso_Types::sensed_temperature;
+    internal_fail: in event data port Base_Types::Boolean;
+    interface_fail: in event data port Base_Types::Boolean;
+    op_mode: out data port Iso_Types::op_mode;
+end manage_mon_mode;
+
+thread implementation manage_mon_mode.impl
+end manage_mon_mode.impl;
+
+
+thread detect_mon_failure
+  features
+    internal_fail: out event data port Base_Types::Boolean;
+end detect_mon_failure;
+
+thread implementation detect_mon_failure.impl
+end detect_mon_failure.impl;
+
+
+end Monitor;

@@ -1,0 +1,1080 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Security_System_cp_Instance" category="system">
+  <featureInstance name="crypto_control" category="featureGroup" direction="in out">
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFeatureGroup.0"/>
+  </featureInstance>
+  <componentInstance name="security_process" category="process">
+    <featureInstance name="crypto_control" category="featureGroup" direction="in out">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <componentInstance name="controller" category="thread">
+      <featureInstance name="crypto_control" category="featureGroup" direction="in out">
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedFeatureGroup.0"/>
+      </featureInstance>
+      <featureInstance name="security_interface" category="featureGroup" direction="in out">
+        <featureInstance name="key_label" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/0"/>
+        </featureInstance>
+        <featureInstance name="algorithm" direction="out">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="enumeration (Clinician,Pharmacy,Private,Hospital)"/>
+            </ownedValue>
+            <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="tag" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/2"/>
+        </featureInstance>
+        <featureInstance name="source_text" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.3"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/3"/>
+        </featureInstance>
+        <featureInstance name="nonce_in" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.4"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/4"/>
+        </featureInstance>
+        <featureInstance name="nonce_out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.5"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/5"/>
+        </featureInstance>
+        <featureInstance name="result_text" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/6"/>
+        </featureInstance>
+        <featureInstance name="okay" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/7"/>
+        </featureInstance>
+        <featureInstance name="sign_message" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="mac_message" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.1"/>
+        </featureInstance>
+        <featureInstance name="verify_signature" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.2"/>
+        </featureInstance>
+        <featureInstance name="verify_mac" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.3"/>
+        </featureInstance>
+        <featureInstance name="generate_key" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.4"/>
+        </featureInstance>
+        <featureInstance name="generate_random_number" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.5"/>
+        </featureInstance>
+        <featureInstance name="encrypt" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.6"/>
+        </featureInstance>
+        <featureInstance name="decrypt" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.7"/>
+        </featureInstance>
+        <featureInstance name="operation_failed" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.8"/>
+        </featureInstance>
+        <featureInstance name="bad_format" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.9"/>
+        </featureInstance>
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedFeatureGroup.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Security_Controller.i"/>
+    </componentInstance>
+    <componentInstance name="algorithms" category="thread group">
+      <featureInstance name="security_interface" category="featureGroup" direction="in out">
+        <featureInstance name="key_label">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/44"/>
+        </featureInstance>
+        <featureInstance name="algorithm">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="enumeration (Clinician,Pharmacy,Private,Hospital)"/>
+            </ownedValue>
+            <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="tag">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/45"/>
+        </featureInstance>
+        <featureInstance name="source_text">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.3"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/46"/>
+        </featureInstance>
+        <featureInstance name="nonce_in">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.4"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/47"/>
+        </featureInstance>
+        <featureInstance name="nonce_out" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.5"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/48"/>
+        </featureInstance>
+        <featureInstance name="result_text" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/49"/>
+        </featureInstance>
+        <featureInstance name="okay" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/50"/>
+        </featureInstance>
+        <featureInstance name="sign_message" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="mac_message" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.1"/>
+        </featureInstance>
+        <featureInstance name="verify_signature" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.2"/>
+        </featureInstance>
+        <featureInstance name="verify_mac" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.3"/>
+        </featureInstance>
+        <featureInstance name="generate_key" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.4"/>
+        </featureInstance>
+        <featureInstance name="generate_random_number" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.5"/>
+        </featureInstance>
+        <featureInstance name="encrypt" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.6"/>
+        </featureInstance>
+        <featureInstance name="decrypt" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.7"/>
+        </featureInstance>
+        <featureInstance name="operation_failed" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.8"/>
+        </featureInstance>
+        <featureInstance name="bad_format" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.9"/>
+        </featureInstance>
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedFeatureGroup.0"/>
+      </featureInstance>
+      <componentInstance name="signer" category="thread">
+        <featureInstance name="algorithm">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="enumeration (Clinician,Pharmacy,Private,Hospital)"/>
+            </ownedValue>
+            <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="source_text">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/8"/>
+        </featureInstance>
+        <featureInstance name="nonce_in">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/9"/>
+        </featureInstance>
+        <featureInstance name="key_label">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.3"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/10"/>
+        </featureInstance>
+        <featureInstance name="result_text" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/11"/>
+        </featureInstance>
+        <featureInstance name="fetch_key" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/12"/>
+        </featureInstance>
+        <featureInstance name="retreived_key" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/13"/>
+        </featureInstance>
+        <featureInstance name="sign_message" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="operation_failed" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventPort.1"/>
+        </featureInstance>
+        <featureInstance name="bad_format" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventPort.2"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Sign_Message"/>
+      </componentInstance>
+      <componentInstance name="mac" category="thread">
+        <featureInstance name="algorithm">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="enumeration (Clinician,Pharmacy,Private,Hospital)"/>
+            </ownedValue>
+            <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="source_text">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/14"/>
+        </featureInstance>
+        <featureInstance name="nonce_in">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/15"/>
+        </featureInstance>
+        <featureInstance name="key_label">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.3"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/16"/>
+        </featureInstance>
+        <featureInstance name="result_text" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/17"/>
+        </featureInstance>
+        <featureInstance name="fetch_key" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/18"/>
+        </featureInstance>
+        <featureInstance name="retreived_key" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/13"/>
+        </featureInstance>
+        <featureInstance name="mac_message" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="operation_failed" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventPort.1"/>
+        </featureInstance>
+        <featureInstance name="bad_format" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventPort.2"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedThreadSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.MAC_Message"/>
+      </componentInstance>
+      <componentInstance name="verifier" category="thread">
+        <featureInstance name="algorithm">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="enumeration (Clinician,Pharmacy,Private,Hospital)"/>
+            </ownedValue>
+            <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="source_text">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/19"/>
+        </featureInstance>
+        <featureInstance name="tag">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/20"/>
+        </featureInstance>
+        <featureInstance name="nonce_in">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.3"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/21"/>
+        </featureInstance>
+        <featureInstance name="key_label">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.4"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/22"/>
+        </featureInstance>
+        <featureInstance name="okay" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/23"/>
+        </featureInstance>
+        <featureInstance name="fetch_key" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/24"/>
+        </featureInstance>
+        <featureInstance name="retreived_key" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/13"/>
+        </featureInstance>
+        <featureInstance name="verify_signature" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="operation_failed" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventPort.1"/>
+        </featureInstance>
+        <featureInstance name="bad_format" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventPort.2"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedThreadSubcomponent.2"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Verify_Signature"/>
+      </componentInstance>
+      <componentInstance name="mac_verifier" category="thread">
+        <featureInstance name="algorithm">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="enumeration (Clinician,Pharmacy,Private,Hospital)"/>
+            </ownedValue>
+            <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="source_text">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/25"/>
+        </featureInstance>
+        <featureInstance name="tag">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/26"/>
+        </featureInstance>
+        <featureInstance name="nonce_in">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.3"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/27"/>
+        </featureInstance>
+        <featureInstance name="key_label">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.4"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/28"/>
+        </featureInstance>
+        <featureInstance name="okay" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/29"/>
+        </featureInstance>
+        <featureInstance name="fetch_key" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/30"/>
+        </featureInstance>
+        <featureInstance name="retreived_key" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/13"/>
+        </featureInstance>
+        <featureInstance name="verify_mac" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="operation_failed" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventPort.1"/>
+        </featureInstance>
+        <featureInstance name="bad_format" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventPort.2"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedThreadSubcomponent.3"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Verify_MAC"/>
+      </componentInstance>
+      <componentInstance name="encryptor" category="thread">
+        <featureInstance name="algorithm">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="enumeration (Clinician,Pharmacy,Private,Hospital)"/>
+            </ownedValue>
+            <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="source_text">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/31"/>
+        </featureInstance>
+        <featureInstance name="nonce_in">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/32"/>
+        </featureInstance>
+        <featureInstance name="key_label">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.3"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/33"/>
+        </featureInstance>
+        <featureInstance name="result_text" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/34"/>
+        </featureInstance>
+        <featureInstance name="fetch_key" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/35"/>
+        </featureInstance>
+        <featureInstance name="retreived_key" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/13"/>
+        </featureInstance>
+        <featureInstance name="encrypt" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="operation_failed" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventPort.1"/>
+        </featureInstance>
+        <featureInstance name="bad_format" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventPort.2"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedThreadSubcomponent.4"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Encrypt.i"/>
+      </componentInstance>
+      <componentInstance name="decryptor" category="thread">
+        <featureInstance name="algorithm">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="enumeration (Clinician,Pharmacy,Private,Hospital)"/>
+            </ownedValue>
+            <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="source_text">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/36"/>
+        </featureInstance>
+        <featureInstance name="key_label">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/37"/>
+        </featureInstance>
+        <featureInstance name="result_text" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/38"/>
+        </featureInstance>
+        <featureInstance name="fetch_key" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/39"/>
+        </featureInstance>
+        <featureInstance name="retreived_key" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/13"/>
+        </featureInstance>
+        <featureInstance name="decrypt" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="operation_failed" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventPort.1"/>
+        </featureInstance>
+        <featureInstance name="bad_format" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventPort.2"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedThreadSubcomponent.5"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Decrypt.i"/>
+      </componentInstance>
+      <componentInstance name="key_gen" category="thread">
+        <featureInstance name="algorithm">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="enumeration (Clinician,Pharmacy,Private,Hospital)"/>
+            </ownedValue>
+            <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="requested_key_label">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/40"/>
+        </featureInstance>
+        <featureInstance name="key_label" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/41"/>
+        </featureInstance>
+        <featureInstance name="store_key" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/13"/>
+        </featureInstance>
+        <featureInstance name="generate_key" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="operation_failed" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventPort.1"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedThreadSubcomponent.6"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Generate_Key"/>
+      </componentInstance>
+      <componentInstance name="random" category="thread">
+        <featureInstance name="result_text" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/42"/>
+        </featureInstance>
+        <featureInstance name="generate_random_number" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="operation_failed" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedEventPort.1"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedThreadSubcomponent.7"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Generate_Random_Number"/>
+      </componentInstance>
+      <componentInstance name="key_store" category="thread">
+        <featureInstance name="fetch_key" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/43"/>
+        </featureInstance>
+        <featureInstance name="retreived_key" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/13"/>
+        </featureInstance>
+        <featureInstance name="store_key" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Security_Security_System_cp_Instance.aaxl2#/13"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedThreadSubcomponent.8"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Key_Store"/>
+      </componentInstance>
+      <connectionInstance name="signer.fetch_key -> key_store.fetch_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.5">
+        <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.0">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.8"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="mac.fetch_key -> key_store.fetch_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.5">
+        <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.5" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.0">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.18"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="verifier.fetch_key -> key_store.fetch_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.6">
+        <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.0">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.29"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="mac_verifier.fetch_key -> key_store.fetch_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.6">
+        <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.0">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.40"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="encryptor.fetch_key -> key_store.fetch_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.5">
+        <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.5" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.0">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.50"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="decryptor.fetch_key -> key_store.fetch_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.4">
+        <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.0">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.59"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="key_gen.store_key -> key_store.store_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.2" source="//@componentInstance.0/@componentInstance.1/@componentInstance.6/@featureInstance.3">
+        <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.6/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.2">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.66"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="key_store.retreived_key -> signer.retreived_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.6" source="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.1">
+        <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.6">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.9"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="key_store.retreived_key -> mac.retreived_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.6" source="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.1">
+        <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.6">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.19"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="key_store.retreived_key -> verifier.retreived_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.7" source="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.1">
+        <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.7">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.30"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="key_store.retreived_key -> mac_verifier.retreived_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.7" source="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.1">
+        <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.7">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.41"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="key_store.retreived_key -> encryptor.retreived_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.6" source="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.1">
+        <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.6">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.51"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="key_store.retreived_key -> decryptor.retreived_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.5" source="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.1">
+        <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.8/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.5">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.60"/>
+        </connectionReference>
+      </connectionInstance>
+      <subcomponent xsi:type="aadl2:ThreadGroupSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedThreadGroupSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadGroupImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Security_Threads.i"/>
+    </componentInstance>
+    <connectionInstance name="controller.security_interface.sign_message -> algorithms.signer.sign_message" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.7" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.8">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.8" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.8">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.8" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.7">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.algorithm -> algorithms.signer.algorithm" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.source_text -> algorithms.signer.source_text" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.1" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.nonce_in -> algorithms.signer.nonce_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.2" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.4">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.key_label -> algorithms.signer.key_label" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.mac_message -> algorithms.mac.mac_message" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.7" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.9">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.9" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.9">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.9" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.7">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.10"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.algorithm -> algorithms.mac.algorithm" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.11"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.source_text -> algorithms.mac.source_text" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.1" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.12"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.nonce_in -> algorithms.mac.nonce_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.2" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.4">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.13"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.key_label -> algorithms.mac.key_label" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.14"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.verify_signature -> algorithms.verifier.verify_signature" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.8" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.10">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.10" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.10">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.10" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.8">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.20"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.algorithm -> algorithms.verifier.algorithm" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.21"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.source_text -> algorithms.verifier.source_text" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.1" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.22"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.nonce_in -> algorithms.verifier.nonce_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.4">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.23"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.key_label -> algorithms.verifier.key_label" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.4" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.24"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.tag -> algorithms.verifier.tag" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.2" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.25"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.verify_mac -> algorithms.mac_verifier.verify_mac" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.8" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.11">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.11" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.11">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.11" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.8">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.31"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.algorithm -> algorithms.mac_verifier.algorithm" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.32"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.source_text -> algorithms.mac_verifier.source_text" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.1" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.33"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.nonce_in -> algorithms.mac_verifier.nonce_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.4">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.34"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.key_label -> algorithms.mac_verifier.key_label" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.4" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.35"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.tag -> algorithms.mac_verifier.tag" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.2" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.36"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.encrypt -> algorithms.encryptor.encrypt" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.7" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.14">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.14" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.14">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.14" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.7">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.42"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.algorithm -> algorithms.encryptor.algorithm" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.43"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.source_text -> algorithms.encryptor.source_text" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.1" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.44"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.nonce_in -> algorithms.encryptor.nonce_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.2" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.4">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.45"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.key_label -> algorithms.encryptor.key_label" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.46"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.decrypt -> algorithms.decryptor.decrypt" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.6" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.15">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.15" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.15">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.15" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.52"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.algorithm -> algorithms.decryptor.algorithm" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.53"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.source_text -> algorithms.decryptor.source_text" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.1" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.54"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.key_label -> algorithms.decryptor.key_label" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.2" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.55"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.generate_key -> algorithms.key_gen.generate_key" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.6/@featureInstance.4" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.12">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.12" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.12">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.12" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.6/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.61"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.algorithm -> algorithms.key_gen.algorithm" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.6/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.6/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.62"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.key_label -> algorithms.key_gen.requested_key_label" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.6/@featureInstance.1" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.6/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.63"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.security_interface.generate_random_number -> algorithms.random.generate_random_number" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.7/@featureInstance.1" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.13">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.13" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.13">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.13" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.7/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.67"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.signer.result_text -> controller.security_interface.result_text" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.6" source="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.5"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.6" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.signer.operation_failed -> controller.security_interface.operation_failed" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" source="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.8">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.8" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.6"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.signer.bad_format -> controller.security_interface.bad_format" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.17" source="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.9">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.9" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.17">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.7"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.17" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.17" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.mac.result_text -> controller.security_interface.result_text" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.6" source="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.15"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.6" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.mac.operation_failed -> controller.security_interface.operation_failed" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" source="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.8">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.8" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.16"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.mac.bad_format -> controller.security_interface.bad_format" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.17" source="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.9">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.9" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.17">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.17"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.17" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.17" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.verifier.okay -> controller.security_interface.okay" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.7" source="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.5">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.5" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.7">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.26"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.7" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.7" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.verifier.operation_failed -> controller.security_interface.operation_failed" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" source="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.9">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.9" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.27"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.verifier.bad_format -> controller.security_interface.bad_format" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.17" source="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.10">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.2/@featureInstance.10" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.17">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.28"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.17" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.17" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.mac_verifier.okay -> controller.security_interface.okay" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.7" source="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.5">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.5" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.7">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.37"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.7" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.7" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.mac_verifier.operation_failed -> controller.security_interface.operation_failed" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" source="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.9">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.9" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.38"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.mac_verifier.bad_format -> controller.security_interface.bad_format" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.17" source="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.10">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.3/@featureInstance.10" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.17">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.39"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.17" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.17" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.encryptor.result_text -> controller.security_interface.result_text" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.6" source="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.47"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.6" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.encryptor.operation_failed -> controller.security_interface.operation_failed" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" source="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.8">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.8" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.48"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.encryptor.bad_format -> controller.security_interface.bad_format" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.17" source="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.9">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.4/@featureInstance.9" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.17">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.49"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.17" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.17" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.decryptor.result_text -> controller.security_interface.result_text" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.6" source="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.56"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.6" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.decryptor.operation_failed -> controller.security_interface.operation_failed" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" source="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.7">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.7" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.57"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.decryptor.bad_format -> controller.security_interface.bad_format" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.17" source="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.8">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.5/@featureInstance.8" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.17">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.58"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.17" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.17" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.key_gen.key_label -> controller.security_interface.result_text" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.6" source="//@componentInstance.0/@componentInstance.1/@componentInstance.6/@featureInstance.2">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.6/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.64"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.6" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.key_gen.operation_failed -> controller.security_interface.operation_failed" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" source="//@componentInstance.0/@componentInstance.1/@componentInstance.6/@featureInstance.5">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.6/@featureInstance.5" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.65"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.random.result_text -> controller.security_interface.result_text" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.6" source="//@componentInstance.0/@componentInstance.1/@componentInstance.7/@featureInstance.0">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.7/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.68"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.6" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="algorithms.random.operation_failed -> controller.security_interface.operation_failed" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" source="//@componentInstance.0/@componentInstance.1/@componentInstance.7/@featureInstance.2">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.7/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.69"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0/@featureInstance.16" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1/@featureInstance.16" reverse="true">
+        <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Security_Process.i"/>
+  </componentInstance>
+  <componentInstance name="security_processor" category="processor">
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Crypto_Processor"/>
+  </componentInstance>
+  <connectionInstance name="crypto_control -> security_process.controller.crypto_control" kind="featureGroupConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFeatureGroupConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="security_process.controller.crypto_control -> crypto_control" kind="featureGroupConnection" destination="//@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFeatureGroupConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:FeatureGroupConnection" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFeatureGroupConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Security_System.cp"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Security.aadl#Security.Security_System.cp"/>
+</instance:SystemInstance>

@@ -1,0 +1,135 @@
+package FORA::platform
+public
+	WITH FORA::software;
+	WITH FORA::hardware;
+	WITH ARINC653;
+	WITH Hypervisor_Properties;
+	FogNode renames abstract FORA::hardware::FogNode;
+	Hypervisor renames abstract FORA::software::Hypervisor;
+	Containerization renames abstract FORA::software::Containerization;
+	FogNodeConfiguration renames abstract FORA::software::FogNodeConfiguration;
+
+	abstract implementation Containerization.i
+		subcomponents
+			Firmware: abstract FORA::software::firmware;
+			OS: abstract FORA::software::FogOS.lightweight;
+			Container1: abstract FORA::software::Container.i;
+			Container2: abstract FORA::software::Container.i;
+			Container3: abstract FORA::software::Container.i;
+		connections
+			xcn_1: bus access Firmware.Interface <-> Interface;
+	end Containerization.i;
+
+------------------------------------------------------------------
+--- An example Hypervisor with 4 partitions
+------------------------------------------------------------------	
+	abstract implementation Hypervisor.type1
+		subcomponents
+			--Firmware: abstract FORA::software::firmware;
+			Partition0: virtual processor FORA::software::PrivilegedPartition.i;
+			Partition1: virtual processor FORA::software::Partition.i;
+			Partition2: virtual processor FORA::software::Partition.i;
+			Partition3: virtual processor FORA::software::Partition.i;
+			Virtual_Interface: abstract FORA::software::CommunicationServices;
+		connections
+			xcn_1: bus access Partition0.Interface <-> Interface;
+			xcn_2: virtual bus access Partition0.Link <-> Virtual_Interface.Link_0;
+			xcn_3: virtual bus access Partition1.Link <-> Virtual_Interface.Link_1;
+			xcn_4: virtual bus access Partition2.Link <-> Virtual_Interface.Link_2;
+			xcn_5: virtual bus access Partition3.Link <-> Virtual_Interface.Link_3;
+
+		properties
+			arinc653::module_major_frame => 200ms;
+			arinc653::module_schedule => ([Partition => reference (Partition1); Duration => 50ms;
+					Periodic_Processing_Start => true;],
+				[Partition => reference (Partition1); Duration => 50ms; Periodic_Processing_Start => true;],
+				[Partition => reference (Partition1); Duration => 50ms; Periodic_Processing_Start => true;],
+				[Partition => reference (Partition1); Duration => 50ms; Periodic_Processing_Start => true;]);
+			Hypervisor_Properties::Partition_Context_Switch_Latency => 5us;
+			Hypervisor_Properties::Clock_Sync_Precision => 1us;
+	end Hypervisor.type1;
+
+------------------------------------------------------------------
+--- Fog Software Manager
+------------------------------------------------------------------
+	abstract FogSoftwarePlatform
+		features
+			Interface: requires bus access;
+			--IO: requires bus access FORA::core::Wire;
+	end FogSoftwarePlatform;
+
+	abstract implementation FogSoftwarePlatform.HypervisorSupport
+		subcomponents
+			Hypervisor: abstract Hypervisor.type1;
+		connections
+			--xcn_ioaccess: bus access Hypervisor.IO <-> IO;
+			xcn_eten: bus access Hypervisor.Interface <-> Interface;
+	end FogSoftwarePlatform.HypervisorSupport;
+
+	abstract implementation FogSoftwarePlatform.ContainerizationSupport
+		subcomponents
+			Containerizationer: abstract Containerization.i;
+		connections
+			--xcn_ioaccess: bus access Containerizationer.IO <-> IO;
+			xcn_eten: bus access Containerizationer.Interface <-> Interface;
+	end FogSoftwarePlatform.ContainerizationSupport;
+ --Main Node to Visualize
+	abstract implementation FogNode.HypervisorBased
+		subcomponents
+			FogSoftwarePlatform: abstract FogSoftwarePlatform.HypervisorSupport;
+			--FogHardwarePlatform: abstract FORA::hardware::FogNode.HardwarePlatform;
+			FogHardwarePlatform: abstract FORA::hardware::HardwarePlatform.i;
+		connections
+			--FogNode_HypervisorBased_new_connection: bus access FogHardwarePlatform.IO <-> FogSoftwarePlatform.IO;
+			FogNode_HypervisorBased_new_connection: bus access  FogHardwarePlatform.Power <-> Power;
+			FogNode_HypervisorBased_new_connection2: bus access FogHardwarePlatform.Interface <-> FogSoftwarePlatform.Interface;
+			FogNode_HypervisorBased_new_connection3: bus access  FogHardwarePlatform.TSN_0 <-> TSN_0;
+			FogNode_HypervisorBased_new_connection4: bus access  FogHardwarePlatform.TSN_1 <-> TSN_1;
+			FogNode_HypervisorBased_new_connection5: bus access  FogHardwarePlatform.TSN_2 <-> TSN_2;
+			FogNode_HypervisorBased_new_connection6: bus access  FogHardwarePlatform.TSN_3 <-> TSN_3;
+			FogNode_HypervisorBased_new_connection7: bus access  FogHardwarePlatform.WiFi <-> WiFi;
+			FogNode_HypervisorBased_new_connection8: bus access  FogHardwarePlatform.Display <-> Display;
+			FogNode_HypervisorBased_new_connection9: bus access  FogHardwarePlatform.IO <-> IO;
+	end FogNode.HypervisorBased;
+
+	abstract implementation FogNode.ContainerBased
+		subcomponents
+			FogSoftwarePlatform: abstract FogSoftwarePlatform.ContainerizationSupport;
+			--FogHardwarePlatform: abstract FORA::hardware::FogNode.HardwarePlatform;
+			FogHardwarePlatform: abstract FORA::hardware::HardwarePlatform.i;
+		connections
+			--FogNode_ContainerBased_new_connection: bus access FogHardwarePlatform.Network <-> FogSoftwarePlatform.network;
+			FogNode_HypervisorBased_new_connection: bus access  FogHardwarePlatform.Power <-> Power;
+			FogNode_HypervisorBased_new_connection2: bus access FogHardwarePlatform.Interface <-> FogSoftwarePlatform.Interface;
+			FogNode_HypervisorBased_new_connection3: bus access  FogHardwarePlatform.TSN_0 <-> TSN_0;
+			FogNode_HypervisorBased_new_connection4: bus access  FogHardwarePlatform.TSN_1 <-> TSN_1;
+			FogNode_HypervisorBased_new_connection5: bus access  FogHardwarePlatform.TSN_2 <-> TSN_2;
+			FogNode_HypervisorBased_new_connection6: bus access  FogHardwarePlatform.TSN_3 <-> TSN_3;
+			FogNode_HypervisorBased_new_connection7: bus access  FogHardwarePlatform.WiFi <-> WiFi;
+			FogNode_HypervisorBased_new_connection8: bus access  FogHardwarePlatform.Display <-> Display;
+			FogNode_HypervisorBased_new_connection9: bus access  FogHardwarePlatform.IO <-> IO;
+			
+	end FogNode.ContainerBased;
+
+	abstract implementation Hypervisor.i
+		subcomponents
+			Firmware: abstract FORA::software::firmware;
+			Partition0: virtual processor FORA::software::PrivilegedPartition.i;
+		--connections
+			--xcn_ioaccess: bus access Partition0.io <-> IO;
+		properties
+			Hypervisor_Properties::Partition_Context_Switch_Latency => 5us;
+			Hypervisor_Properties::Clock_Sync_Precision => 1us;
+	end Hypervisor.i;
+
+	abstract implementation FogSoftwarePlatform.i
+		prototypes
+			HypervisorConfig: abstract Hypervisor;
+		subcomponents
+			Hypervisor: abstract HypervisorConfig;
+		connections
+			--xcn_ioaccess: bus access Hypervisor.IO <-> IO;
+			xcn_eten: bus access Hypervisor.Interface <-> Interface;
+	end FogSoftwarePlatform.i;
+
+end FORA::platform;

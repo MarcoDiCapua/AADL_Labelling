@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Hci_Model_Instance" category="system">
+  <featureInstance name="Breakpedalpressed" category="dataAccess">
+    <feature xsi:type="aadl2:DataAccess" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataAccess.0"/>
+    <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="Clutchpedalpressed">
+    <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+    <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="Autospd_Mph">
+    <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.1"/>
+    <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="Cruiseactive" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.2"/>
+    <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="Engspd_Rpm" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventDataPort.0"/>
+    <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="Refspd_Mph" category="eventDataPort" direction="out">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventDataPort.1"/>
+    <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <componentInstance name="P_Hci_Process" category="process">
+    <featureInstance name="Clutchpedalpressed">
+      <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+      <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="Autospd_Mph">
+      <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.1"/>
+      <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="Cruiseactive" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.2"/>
+      <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="Engspd_Rpm" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventDataPort.0"/>
+      <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="Refspd_Mph" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventDataPort.1"/>
+      <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="Breakpedalpressed" category="dataAccess">
+      <feature xsi:type="aadl2:DataAccess" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataAccess.0"/>
+      <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <componentInstance name="Button_Panel" category="thread">
+      <featureInstance name="Onnotoff" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Decspd" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Engspd_Rpm" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="Incspeed" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Activate" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="Cancel" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.1"/>
+      </featureInstance>
+      <flowSpecification name="fpb" source="//@componentInstance.0/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.3">
+        <flowSpecification href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/kAADL/tests/intergrate/Test.aadl#cruise_control.Button_Panel.Gui"/>
+    </componentInstance>
+    <componentInstance name="Drivermodelogic" category="thread">
+      <featureInstance name="Clutchpedalpressed">
+        <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Onnotoff">
+        <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Cruiseactive" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.2"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Activate" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="Cancel" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.1"/>
+      </featureInstance>
+      <featureInstance name="Breakpedalpressed" category="dataAccess">
+        <feature xsi:type="aadl2:DataAccess" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataAccess.0"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/kAADL/tests/intergrate/Test.aadl#cruise_control.Drivermodelogic.Simulink"/>
+    </componentInstance>
+    <componentInstance name="Refspd" category="thread">
+      <featureInstance name="Cruiseactive">
+        <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Decspd">
+        <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Incspeed" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventDataPort.0"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Refspd_Mph" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventDataPort.1"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="Activate" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventPort.0"/>
+      </featureInstance>
+      <flowSpecification name="fpr" source="//@componentInstance.0/@componentInstance.2/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.3">
+        <flowSpecification href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/kAADL/tests/intergrate/Test.aadl#cruise_control.Refspd.Simulink"/>
+    </componentInstance>
+    <componentInstance name="Instrumentpanel" category="thread">
+      <featureInstance name="Autospd_Mph">
+        <feature xsi:type="aadl2:DataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="Refspd_Mph" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventDataPort.0"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="call_server" category="subprogramAccess">
+        <feature xsi:type="aadl2:SubprogramAccess" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedSubprogramAccess.0"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/kAADL/tests/intergrate/Test.aadl#cruise_control.Instrumentpanel.Gui"/>
+    </componentInstance>
+    <flowSpecification name="fppf" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.0/@featureInstance.4">
+      <flowSpecification href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <connectionInstance name="Button_Panel.Onnotoff -> Drivermodelogic.Onnotoff" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.1" source="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.8"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Button_Panel.Decspd -> Refspd.Decspd" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.1" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.11"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Button_Panel.Incspeed -> Refspd.Incspeed" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.2" source="//@componentInstance.0/@componentInstance.0/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.10"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Button_Panel.Activate -> Drivermodelogic.Activate" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.6"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Button_Panel.Activate -> Refspd.Activate" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.4" source="//@componentInstance.0/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.9"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Button_Panel.Cancel -> Drivermodelogic.Cancel" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.4" source="//@componentInstance.0/@componentInstance.0/@featureInstance.5">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.7"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Drivermodelogic.Cruiseactive -> Refspd.Cruiseactive" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.5"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Refspd.Refspd_Mph -> Instrumentpanel.Refspd_Mph" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.3/@featureInstance.1" source="//@componentInstance.0/@componentInstance.2/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.2/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.3/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.12"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/kAADL/tests/intergrate/Test.aadl#cruise_control.Hci_Process.Model"/>
+  </componentInstance>
+  <componentInstance name="server_process" category="process">
+    <featureInstance name="service" category="subprogramAccess" direction="out">
+      <feature xsi:type="aadl2:SubprogramAccess" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedSubprogramAccess.0"/>
+      <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <componentInstance name="server_thread" category="thread">
+      <featureInstance name="service" category="subprogramAccess" direction="out">
+        <feature xsi:type="aadl2:SubprogramAccess" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedSubprogramAccess.0"/>
+        <type href="../../github/kAADL/tests/intergrate/instances/Test_Hci_Model_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/kAADL/tests/intergrate/Test.aadl#cruise_control.server_thread.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/kAADL/tests/intergrate/Test.aadl#cruise_control.server_process.impl"/>
+  </componentInstance>
+  <flowSpecification name="fpsf" source="//@featureInstance.4" destination="//@featureInstance.5">
+    <flowSpecification href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedFlowSpecification.0"/>
+  </flowSpecification>
+  <connectionInstance name="Breakpedalpressed -> P_Hci_Process.Drivermodelogic.Breakpedalpressed" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.5" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedAccessConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.5" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.5">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Clutchpedalpressed -> P_Hci_Process.Drivermodelogic.Clutchpedalpressed" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Autospd_Mph -> P_Hci_Process.Instrumentpanel.Autospd_Mph" kind="portConnection" destination="//@componentInstance.0/@componentInstance.3/@featureInstance.0" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Engspd_Rpm -> P_Hci_Process.Button_Panel.Engspd_Rpm" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2" source="//@featureInstance.4">
+    <connectionReference context="/" source="//@featureInstance.4" destination="//@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P_Hci_Process.Drivermodelogic.Cruiseactive -> Cruiseactive" kind="portConnection" destination="//@featureInstance.3" source="//@componentInstance.0/@componentInstance.1/@featureInstance.2">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.2" destination="//@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P_Hci_Process.Refspd.Refspd_Mph -> Refspd_Mph" kind="portConnection" destination="//@featureInstance.5" source="//@componentInstance.0/@componentInstance.2/@featureInstance.3">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.2/@featureInstance.3" destination="//@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.4" destination="//@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/kAADL/tests/intergrate/Test.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/kAADL/tests/intergrate/Test.aadl#cruise_control.Hci.Model"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/kAADL/tests/intergrate/Test.aadl#cruise_control.Hci.Model"/>
+</instance:SystemInstance>

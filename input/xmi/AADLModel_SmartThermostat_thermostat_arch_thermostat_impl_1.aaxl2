@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="thermostat_impl_Instance" category="system">
+  <componentInstance name="this_Bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/AADLModel_SmartThermostat/main.aadl#thermostat_arch.HWConnection.impl"/>
+  </componentInstance>
+  <componentInstance name="LCD_DISPLAY" category="device">
+    <featureInstance name="desired_temp" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="curr_temp" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="set_echo" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="update_temp" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventPort.3"/>
+    </featureInstance>
+    <featureInstance name="lower_desired_auto" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventPort.4"/>
+    </featureInstance>
+    <featureInstance name="upper_desired_auto" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventPort.5"/>
+    </featureInstance>
+    <featureInstance name="alarm" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventPort.6"/>
+    </featureInstance>
+    <featureInstance name="status_out" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventPort.7"/>
+    </featureInstance>
+    <featureInstance name="Bus_Access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedBusAccess.0"/>
+      <type href="../../github/AADLModel_SmartThermostat/instances/main_thermostat_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADLModel_SmartThermostat/main.aadl#thermostat_arch.LCD_Display"/>
+  </componentInstance>
+  <componentInstance name="MOBILE_DISPLAY" category="device">
+    <featureInstance name="desired_temp" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="curr_temp" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="set_echo" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="update_temp" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.3"/>
+    </featureInstance>
+    <featureInstance name="lower_desired_auto" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.4"/>
+    </featureInstance>
+    <featureInstance name="upper_desired_auto" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.5"/>
+    </featureInstance>
+    <featureInstance name="Location" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.6"/>
+    </featureInstance>
+    <featureInstance name="Bus_Access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedBusAccess.0"/>
+      <type href="../../github/AADLModel_SmartThermostat/instances/main_thermostat_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADLModel_SmartThermostat/main.aadl#thermostat_arch.Mobile_Display"/>
+  </componentInstance>
+  <componentInstance name="BATTERY" category="device">
+    <featureInstance name="status_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.25/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADLModel_SmartThermostat/main.aadl#thermostat_arch.Battery"/>
+  </componentInstance>
+  <componentInstance name="this_processor" category="processor">
+    <featureInstance name="curr_temp" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="Bus_Access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+      <type href="../../github/AADLModel_SmartThermostat/instances/main_thermostat_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <componentInstance name="this_ram" category="memory">
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryType" href="../../github/AADLModel_SmartThermostat/main.aadl#thermostat_arch.Ram"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/AADLModel_SmartThermostat/main.aadl#thermostat_arch.MainProcessor.impl"/>
+  </componentInstance>
+  <componentInstance name="THERMOSTAT_CONTROLLER" category="system">
+    <featureInstance name="Bus_Access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.0"/>
+      <type href="../../github/AADLModel_SmartThermostat/instances/main_thermostat_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="curr_temp" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="desired_temp" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="control_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="control_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.3"/>
+    </featureInstance>
+    <featureInstance name="display_temp" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.4"/>
+    </featureInstance>
+    <featureInstance name="lower_desired_auto" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.5"/>
+    </featureInstance>
+    <featureInstance name="upper_desired_auto" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.6"/>
+    </featureInstance>
+    <featureInstance name="echo_mode" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.7"/>
+    </featureInstance>
+    <featureInstance name="alarm" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.8"/>
+    </featureInstance>
+    <featureInstance name="Location_controller" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.9"/>
+    </featureInstance>
+    <featureInstance name="status_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.10"/>
+    </featureInstance>
+    <featureInstance name="status_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.11"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/AADLModel_SmartThermostat/main.aadl#thermostat_arch.Thermostat_Controller"/>
+  </componentInstance>
+  <componentInstance name="TEMP_SENSOR" category="system">
+    <featureInstance name="Bus_Access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedBusAccess.0"/>
+      <type href="../../github/AADLModel_SmartThermostat/instances/main_thermostat_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="air">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/AADLModel_SmartThermostat/securityProperties.aadl#securityProperties.entryExitPointPrivileges"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="1.0"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/AADLModel_SmartThermostat/securityProperties.aadl#securityProperties.entryExitPointAccessRights"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="5.0"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.0/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="curr_temp" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/AADLModel_SmartThermostat/securityProperties.aadl#securityProperties.entryExitPointPrivileges"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="3.0"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.1/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/AADLModel_SmartThermostat/securityProperties.aadl#securityProperties.entryExitPointAccessRights"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="6.0"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.1/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/AADLModel_SmartThermostat/main.aadl#thermostat_arch.Temp_sensor"/>
+  </componentInstance>
+  <componentInstance name="GENERATOR" category="system">
+    <featureInstance name="control_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="control_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/AADLModel_SmartThermostat/main.aadl#thermostat_arch.Generator"/>
+  </componentInstance>
+  <connectionInstance name="this_Bus -> TEMP_SENSOR.Bus_Access" complete="true" kind="accessConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_Bus -> LCD_DISPLAY.Bus_Access" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.8" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.1/@featureInstance.8">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_Bus -> THERMOSTAT_CONTROLLER.Bus_Access" complete="true" kind="accessConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_Bus -> MOBILE_DISPLAY.Bus_Access" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.7" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.2/@featureInstance.7">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="LCD_DISPLAY.desired_temp -> THERMOSTAT_CONTROLLER.desired_temp" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.2" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.5/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="LCD_DISPLAY.set_echo -> THERMOSTAT_CONTROLLER.echo_mode" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.8" source="//@componentInstance.1/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.2" destination="//@componentInstance.5/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="LCD_DISPLAY.lower_desired_auto -> THERMOSTAT_CONTROLLER.lower_desired_auto" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.6" source="//@componentInstance.1/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.4" destination="//@componentInstance.5/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="LCD_DISPLAY.upper_desired_auto -> THERMOSTAT_CONTROLLER.upper_desired_auto" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.7" source="//@componentInstance.1/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.5" destination="//@componentInstance.5/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MOBILE_DISPLAY.desired_temp -> THERMOSTAT_CONTROLLER.desired_temp" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.2" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.5/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MOBILE_DISPLAY.set_echo -> THERMOSTAT_CONTROLLER.echo_mode" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.8" source="//@componentInstance.2/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.2" destination="//@componentInstance.5/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MOBILE_DISPLAY.lower_desired_auto -> THERMOSTAT_CONTROLLER.lower_desired_auto" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.6" source="//@componentInstance.2/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.4" destination="//@componentInstance.5/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MOBILE_DISPLAY.lower_desired_auto -> THERMOSTAT_CONTROLLER.lower_desired_auto" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.6" source="//@componentInstance.2/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.4" destination="//@componentInstance.5/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MOBILE_DISPLAY.upper_desired_auto -> THERMOSTAT_CONTROLLER.upper_desired_auto" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.7" source="//@componentInstance.2/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.5" destination="//@componentInstance.5/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MOBILE_DISPLAY.upper_desired_auto -> THERMOSTAT_CONTROLLER.upper_desired_auto" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.7" source="//@componentInstance.2/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.5" destination="//@componentInstance.5/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="MOBILE_DISPLAY.Location -> THERMOSTAT_CONTROLLER.Location_controller" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.10" source="//@componentInstance.2/@featureInstance.6">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.6" destination="//@componentInstance.5/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="BATTERY.status_out -> THERMOSTAT_CONTROLLER.status_in" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.11" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.5/@featureInstance.11">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.17"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="THERMOSTAT_CONTROLLER.control_out -> GENERATOR.control_in" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.0" source="//@componentInstance.5/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.3" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="THERMOSTAT_CONTROLLER.display_temp -> LCD_DISPLAY.update_temp" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.3" source="//@componentInstance.5/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.5" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="THERMOSTAT_CONTROLLER.display_temp -> MOBILE_DISPLAY.update_temp" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.3" source="//@componentInstance.5/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.5" destination="//@componentInstance.2/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="THERMOSTAT_CONTROLLER.display_temp -> MOBILE_DISPLAY.update_temp" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.3" source="//@componentInstance.5/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.5" destination="//@componentInstance.2/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="THERMOSTAT_CONTROLLER.alarm -> LCD_DISPLAY.alarm" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.6" source="//@componentInstance.5/@featureInstance.9">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.9" destination="//@componentInstance.1/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="THERMOSTAT_CONTROLLER.status_out -> LCD_DISPLAY.status_out" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.7" source="//@componentInstance.5/@featureInstance.12">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.12" destination="//@componentInstance.1/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.18"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="GENERATOR.control_out -> THERMOSTAT_CONTROLLER.control_in" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.4" source="//@componentInstance.7/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.1" destination="//@componentInstance.5/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLModel_SmartThermostat/main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AADLModel_SmartThermostat/main.aadl#thermostat_arch.thermostat.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AADLModel_SmartThermostat/main.aadl#thermostat_arch.thermostat.impl"/>
+</instance:SystemInstance>

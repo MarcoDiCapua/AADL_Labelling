@@ -1,0 +1,39 @@
+{
+  "isParsingSucceeded": false,
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLib/src/property_set/milstd882.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\",
+  "isSavedTheModel": false,
+  "docFiles": [
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\AUTHORS",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\INSTALL",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\LICENSE",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\NEWS",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\examples\\README",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\support\\install-sh",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\support\\missing",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\support\\reconfig",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\examples\\adiru\\notes.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\examples\\ahrs_discovery\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\examples\\air\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\examples\\ping_spark\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\examples\\tetris\\Makefile",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\share\\emacs\\README",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\share\\vim\\README",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLib\\examples\\rosace\\common\\README"
+  ],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'EMV2'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLib/src/property_set/milstd882.aadl line : 5 column : 8)",
+    "ERROR:Couldn't resolve reference to property type 'EMV2::ProbabilityRange'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLib/src/property_set/milstd882.aadl line : 43 column : 29)",
+    "ERROR:Couldn't resolve reference to property type 'EMV2::SeverityRange'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLib/src/property_set/milstd882.aadl line : 7 column : 27)",
+    "ERROR:Couldn't resolve reference to property type 'EMV2::SeverityRange'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLib/src/property_set/milstd882.aadl line : 8 column : 23)",
+    "ERROR:Couldn't resolve reference to property type 'EMV2::SeverityRange'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLib/src/property_set/milstd882.aadl line : 9 column : 23)",
+    "ERROR:Couldn't resolve reference to property type 'EMV2::SeverityRange'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLib/src/property_set/milstd882.aadl line : 10 column : 23)",
+    "ERROR:Couldn't resolve reference to property type 'EMV2::LikelihoodLabels'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLib/src/property_set/milstd882.aadl line : 13 column : 24)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'A'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLib/src/property_se...",
+    "ERROR:Couldn't resolve reference to property type 'EMV2::LikelihoodLabels'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLib/src/property_set/milstd882.aadl line : 14 column : 24)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'B'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLib/src/property_se...",
+    "Questo modello: file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLib/src/property_set/milstd882.aadl non è un AadlPackage"
+  ]
+}

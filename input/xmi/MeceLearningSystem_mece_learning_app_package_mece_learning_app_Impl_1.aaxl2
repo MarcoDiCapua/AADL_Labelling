@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="mece_learning_app_Impl_Instance" category="system">
+  <featureInstance name="get_req">
+    <feature xsi:type="aadl2:DataPort" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="send_reply" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+  </featureInstance>
+  <componentInstance name="userManagement" category="system">
+    <featureInstance name="get_user_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="send_user_info" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/MeceLearningSystem/mece_learning_app.aadl#mece_learning_app_package.UserManagement"/>
+  </componentInstance>
+  <componentInstance name="courseManagement" category="system">
+    <featureInstance name="get_course_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="send_course_info" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/MeceLearningSystem/mece_learning_app.aadl#mece_learning_app_package.CourseManagement"/>
+  </componentInstance>
+  <componentInstance name="communicationManagement" category="system">
+    <featureInstance name="get_comm_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="send_comm_info" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/MeceLearningSystem/mece_learning_app.aadl#mece_learning_app_package.CommunicationManagement"/>
+  </componentInstance>
+  <componentInstance name="assessmentFeedback" category="system">
+    <featureInstance name="get_assesment_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="send_assesment_info" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedSystemSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/MeceLearningSystem/mece_learning_app.aadl#mece_learning_app_package.AssessmentFeedback"/>
+  </componentInstance>
+  <componentInstance name="securityPrivacy" category="system">
+    <featureInstance name="get_security_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="send_security_info" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedSystemSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/MeceLearningSystem/mece_learning_app.aadl#mece_learning_app_package.SecurityPrivacy"/>
+  </componentInstance>
+  <connectionInstance name="userManagement.send_user_info -> courseManagement.get_course_info" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="userManagement.send_user_info -> communicationManagement.get_comm_info" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="courseManagement.send_course_info -> userManagement.get_user_info" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="courseManagement.send_course_info -> communicationManagement.get_comm_info" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="courseManagement.send_course_info -> assessmentFeedback.get_assesment_info" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="communicationManagement.send_comm_info -> userManagement.get_user_info" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="communicationManagement.send_comm_info -> courseManagement.get_course_info" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="assessmentFeedback.send_assesment_info -> courseManagement.get_course_info" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="securityPrivacy.send_security_info -> userManagement.get_user_info" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="securityPrivacy.send_security_info -> courseManagement.get_course_info" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="securityPrivacy.send_security_info -> communicationManagement.get_comm_info" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="securityPrivacy.send_security_info -> assessmentFeedback.get_assesment_info" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/MeceLearningSystem/mece_learning_app.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/MeceLearningSystem/mece_learning_app.aadl#mece_learning_app_package.mece_learning_app.Impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/MeceLearningSystem/mece_learning_app.aadl#mece_learning_app_package.mece_learning_app.Impl"/>
+</instance:SystemInstance>

@@ -1,0 +1,31 @@
+package motor_pump
+public
+
+with base_types;
+with EMV2;
+
+system motor_pump
+	features
+		powerIn : in data port Base_Types::Boolean;
+		ground: requires bus access;
+		fluidIn : in data port Base_Types::Boolean;
+		fluidOut : out data port Base_Types::Boolean;
+	flows
+		powerOnFlowPath  : flow sink powerIn;
+		fluidFlowPath : flow path fluidIn -> fluidOut;	
+	annex EMV2 {**
+		use types errorLibrary;
+		use behavior errorLibrary::FailStop;
+		component error behavior
+			events
+				Failure : error event {serviceOmission};
+			transitions
+				t1 : operational -[failure{serviceOmission}]-> failStop;
+		end component;
+	**};
+end motor_pump;
+
+system implementation motor_pump.i
+end motor_pump.i;
+
+end motor_pump;

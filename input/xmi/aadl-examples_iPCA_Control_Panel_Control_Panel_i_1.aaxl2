@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Control_Panel_i_Instance" category="system">
+  <featureInstance name="i_bus" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedBusAccess.0"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/5"/>
+  </featureInstance>
+  <featureInstance name="ui_image" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="ui_sound" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/6"/>
+  </featureInstance>
+  <featureInstance name="ui_touch">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="alarm_inactivation" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/24"/>
+  </featureInstance>
+  <featureInstance name="remaining_battery_time">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="time"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/packages/BLESS_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/8"/>
+  </featureInstance>
+  <featureInstance name="using_battery_power">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.5"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/25"/>
+  </featureInstance>
+  <featureInstance name="prescription">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="prescription"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.6"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/10"/>
+  </featureInstance>
+  <featureInstance name="clinician_name">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.7"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/26"/>
+  </featureInstance>
+  <featureInstance name="patient_name">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.8"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/27"/>
+  </featureInstance>
+  <featureInstance name="cp_reset_alarm" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+  </featureInstance>
+  <featureInstance name="over_max_drug_per_hour" category="eventPort">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.1"/>
+  </featureInstance>
+  <featureInstance name="hard_limit_violated" category="eventPort">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.2"/>
+  </featureInstance>
+  <featureInstance name="soft_limit_warning" category="eventPort">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.3"/>
+  </featureInstance>
+  <featureInstance name="low_battery_warning" category="eventPort">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.4"/>
+  </featureInstance>
+  <featureInstance name="confirm_soft_limit_exception" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.5"/>
+  </featureInstance>
+  <featureInstance name="reject_soft_limit_exception" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.6"/>
+  </featureInstance>
+  <featureInstance name="stop_button_pressed" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.7"/>
+  </featureInstance>
+  <featureInstance name="start_button_pressed" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.8"/>
+  </featureInstance>
+  <featureInstance name="turn_off" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.9"/>
+  </featureInstance>
+  <featureInstance name="clinician_request_bolus" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.10"/>
+  </featureInstance>
+  <featureInstance name="pause_infusion" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.11"/>
+  </featureInstance>
+  <featureInstance name="resume_infusion" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.12"/>
+  </featureInstance>
+  <featureInstance name="patient_request_not_too_soon" category="eventPort">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Assertion"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="&lt;&lt;PATIENT_REQUEST_NOT_TOO_SOON(now)>>"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.13/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.13"/>
+  </featureInstance>
+  <featureInstance name="patient_request_too_soon" category="eventPort">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Assertion"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="&lt;&lt;PATIENT_REQUEST_TOO_SOON(now)>>"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.14/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.14"/>
+  </featureInstance>
+  <featureInstance name="alarm" category="eventDataPort">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="alarms"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.0"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/13"/>
+  </featureInstance>
+  <featureInstance name="warning" category="eventDataPort">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="warnings"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.1"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/14"/>
+  </featureInstance>
+  <featureInstance name="system_status" category="eventDataPort">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="status"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.2"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/15"/>
+  </featureInstance>
+  <featureInstance name="display_message" category="eventDataPort">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="message"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.3"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/16"/>
+  </featureInstance>
+  <featureInstance name="sound_type" category="eventDataPort">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:StringLiteral" value="enumeration(Silence,Beep)"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.4"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/17"/>
+  </featureInstance>
+  <featureInstance name="bolus_duration" category="eventDataPort" direction="out">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.5"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/28"/>
+  </featureInstance>
+  <componentInstance name="display" category="device">
+    <featureInstance name="ui_image" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="image">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="ui_touch">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="finger_location" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Abstract_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="video_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="power_supply" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="mtm_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="i_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#iPCA_Hardware.PCA_Screen.i"/>
+  </componentInstance>
+  <componentInstance name="audible" category="device">
+    <featureInstance name="audio_signal">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="sound" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="i_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Hardware.aadl#iPCA_Hardware.PCA_Speaker.i"/>
+  </componentInstance>
+  <componentInstance name="ui_process" category="process">
+    <featureInstance name="Image" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="audio_signal" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="alarm_inactivation" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/19"/>
+    </featureInstance>
+    <featureInstance name="remaining_battery_time">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="time"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/packages/BLESS_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="using_battery_power">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/20"/>
+    </featureInstance>
+    <featureInstance name="prescription">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="prescription"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.5"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <featureInstance name="clinician_name">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.6"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/21"/>
+    </featureInstance>
+    <featureInstance name="patient_name">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.7"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/22"/>
+    </featureInstance>
+    <featureInstance name="finger_location" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="alarm" category="eventDataPort">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="alarms"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/13"/>
+    </featureInstance>
+    <featureInstance name="warning" category="eventDataPort">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="warnings"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/14"/>
+    </featureInstance>
+    <featureInstance name="system_status" category="eventDataPort">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="status"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.3"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/15"/>
+    </featureInstance>
+    <featureInstance name="display_message" category="eventDataPort">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="message"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.4"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <featureInstance name="sound_type" category="eventDataPort">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="enumeration(Silence,Beep)"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.5"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/17"/>
+    </featureInstance>
+    <featureInstance name="Bolus_Duration" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.6"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/23"/>
+    </featureInstance>
+    <featureInstance name="cp_reset_alarm" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="low_battery_warning" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="hard_limit_violated" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="soft_limit_warning" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.3"/>
+    </featureInstance>
+    <featureInstance name="confirm_soft_limit_exception" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.4"/>
+    </featureInstance>
+    <featureInstance name="reject_soft_limit_exception" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.5"/>
+    </featureInstance>
+    <featureInstance name="stop_button_pressed" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.6"/>
+    </featureInstance>
+    <featureInstance name="start_button_pressed" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.7"/>
+    </featureInstance>
+    <featureInstance name="clinician_request_bolus" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.8"/>
+    </featureInstance>
+    <featureInstance name="pause_infusion" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.9"/>
+    </featureInstance>
+    <featureInstance name="resume_infusion" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.10"/>
+    </featureInstance>
+    <featureInstance name="turn_off" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.11"/>
+    </featureInstance>
+    <featureInstance name="patient_request_not_too_soon" category="eventPort">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Assertion"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="&lt;&lt;PATIENT_REQUEST_NOT_TOO_SOON(now)>>"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.12/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.12"/>
+    </featureInstance>
+    <featureInstance name="patient_request_too_soon" category="eventPort">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Assertion"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="&lt;&lt;PATIENT_REQUEST_TOO_SOON(now)>>"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.13/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.13"/>
+    </featureInstance>
+    <componentInstance name="ui_thread" category="thread">
+      <featureInstance name="Image" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="audio_signal" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="alarm_inactivation" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/7"/>
+      </featureInstance>
+      <featureInstance name="remaining_battery_time">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:StringLiteral" value="time"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/packages/BLESS_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/8"/>
+      </featureInstance>
+      <featureInstance name="using_battery_power">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/9"/>
+      </featureInstance>
+      <featureInstance name="prescription">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:StringLiteral" value="prescription"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/10"/>
+      </featureInstance>
+      <featureInstance name="clinician_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/11"/>
+      </featureInstance>
+      <featureInstance name="patient_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/12"/>
+      </featureInstance>
+      <featureInstance name="finger_location" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="Alarm" category="eventDataPort">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:StringLiteral" value="alarms"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/13"/>
+      </featureInstance>
+      <featureInstance name="Warning" category="eventDataPort">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:StringLiteral" value="warnings"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.2"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/14"/>
+      </featureInstance>
+      <featureInstance name="system_status" category="eventDataPort">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:StringLiteral" value="status"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.3"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/15"/>
+      </featureInstance>
+      <featureInstance name="display_message" category="eventDataPort">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:StringLiteral" value="message"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.4"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/16"/>
+      </featureInstance>
+      <featureInstance name="sound_type" category="eventDataPort">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:StringLiteral" value="enumeration(Silence,Beep)"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.5"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/17"/>
+      </featureInstance>
+      <featureInstance name="Bolus_Duration" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.6"/>
+        <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Control_Panel_Control_Panel_i_Instance.aaxl2#/18"/>
+      </featureInstance>
+      <featureInstance name="cp_reset_alarm" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="low_battery_warning" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.1"/>
+      </featureInstance>
+      <featureInstance name="hard_limit_violated" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.2"/>
+      </featureInstance>
+      <featureInstance name="soft_limit_warning" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.3"/>
+      </featureInstance>
+      <featureInstance name="confirm_soft_limit_exception" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.4"/>
+      </featureInstance>
+      <featureInstance name="reject_soft_limit_exception" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.5"/>
+      </featureInstance>
+      <featureInstance name="stop_button_pressed" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.6"/>
+      </featureInstance>
+      <featureInstance name="start_button_pressed" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.7"/>
+      </featureInstance>
+      <featureInstance name="clinician_request_bolus" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.8"/>
+      </featureInstance>
+      <featureInstance name="pause_infusion" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.9"/>
+      </featureInstance>
+      <featureInstance name="resume_infusion" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.10"/>
+      </featureInstance>
+      <featureInstance name="turn_off" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.11"/>
+      </featureInstance>
+      <featureInstance name="patient_request_not_too_soon" category="eventPort">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Assertion"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:StringLiteral" value="&lt;&lt;PATIENT_REQUEST_NOT_TOO_SOON(now)>>"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.12/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.12"/>
+      </featureInstance>
+      <featureInstance name="patient_request_too_soon" category="eventPort">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Assertion"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:StringLiteral" value="&lt;&lt;PATIENT_REQUEST_TOO_SOON(now)>>"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.13/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.13"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#iPCA_Control_Panel.UI_Thread.i"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#iPCA_Control_Panel.UI_Process.i"/>
+  </componentInstance>
+  <connectionInstance name="i_bus -> display.i_bus" kind="accessConnection" destination="//@componentInstance.0/@featureInstance.7" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.0/@featureInstance.7">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="i_bus -> audible.i_bus" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ui_touch -> display.ui_touch" kind="portConnection" destination="//@componentInstance.0/@featureInstance.2" source="//@featureInstance.3">
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="remaining_battery_time -> ui_process.ui_thread.remaining_battery_time" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.3" source="//@featureInstance.5">
+    <connectionReference context="/" source="//@featureInstance.5" destination="//@componentInstance.2/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="using_battery_power -> ui_process.ui_thread.using_battery_power" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.4" source="//@featureInstance.6">
+    <connectionReference context="/" source="//@featureInstance.6" destination="//@componentInstance.2/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.11"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="prescription -> ui_process.ui_thread.prescription" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.5" source="//@featureInstance.7">
+    <connectionReference context="/" source="//@featureInstance.7" destination="//@componentInstance.2/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.15"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.5" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="clinician_name -> ui_process.ui_thread.clinician_name" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.6" source="//@featureInstance.8">
+    <connectionReference context="/" source="//@featureInstance.8" destination="//@componentInstance.2/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.29"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.6" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.26"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="patient_name -> ui_process.ui_thread.patient_name" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.7" source="//@featureInstance.9">
+    <connectionReference context="/" source="//@featureInstance.9" destination="//@componentInstance.2/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.28"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.7" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.25"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="hard_limit_violated -> ui_process.ui_thread.hard_limit_violated" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.17" source="//@featureInstance.12">
+    <connectionReference context="/" source="//@featureInstance.12" destination="//@componentInstance.2/@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.13"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.17" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="soft_limit_warning -> ui_process.ui_thread.soft_limit_warning" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.18" source="//@featureInstance.13">
+    <connectionReference context="/" source="//@featureInstance.13" destination="//@componentInstance.2/@featureInstance.18">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.14"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.18" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.18">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="low_battery_warning -> ui_process.ui_thread.low_battery_warning" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.16" source="//@featureInstance.14">
+    <connectionReference context="/" source="//@featureInstance.14" destination="//@componentInstance.2/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.12"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.16" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="patient_request_not_too_soon -> ui_process.ui_thread.patient_request_not_too_soon" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.27" source="//@featureInstance.23">
+    <connectionReference context="/" source="//@featureInstance.23" destination="//@componentInstance.2/@featureInstance.27">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.24"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.27" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.27">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.21"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="patient_request_too_soon -> ui_process.ui_thread.patient_request_too_soon" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.28" source="//@featureInstance.24">
+    <connectionReference context="/" source="//@featureInstance.24" destination="//@componentInstance.2/@featureInstance.28">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.25"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.28" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.28">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.22"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="alarm -> ui_process.ui_thread.Alarm" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.9" source="//@featureInstance.25">
+    <connectionReference context="/" source="//@featureInstance.25" destination="//@componentInstance.2/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.9" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="warning -> ui_process.ui_thread.Warning" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.10" source="//@featureInstance.26">
+    <connectionReference context="/" source="//@featureInstance.26" destination="//@componentInstance.2/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.10" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="system_status -> ui_process.ui_thread.system_status" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.11" source="//@featureInstance.27">
+    <connectionReference context="/" source="//@featureInstance.27" destination="//@componentInstance.2/@featureInstance.11">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.11" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.11">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="display_message -> ui_process.ui_thread.display_message" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.12" source="//@featureInstance.28">
+    <connectionReference context="/" source="//@featureInstance.28" destination="//@componentInstance.2/@featureInstance.12">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.26"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.12" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.12">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.23"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sound_type -> ui_process.ui_thread.sound_type" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.13" source="//@featureInstance.29">
+    <connectionReference context="/" source="//@featureInstance.29" destination="//@componentInstance.2/@featureInstance.13">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.27"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.13" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.13">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.24"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="display.ui_image -> ui_image" kind="portConnection" destination="//@featureInstance.1" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="display.finger_location -> ui_process.ui_thread.finger_location" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.8" source="//@componentInstance.0/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.2/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.8" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="display.i_bus -> i_bus" kind="accessConnection" destination="//@featureInstance.0" source="//@componentInstance.0/@featureInstance.7">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.7" destination="//@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="audible.sound -> ui_sound" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ui_process.ui_thread.Image -> display.image" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.1" source="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ui_process.ui_thread.audio_signal -> audible.audio_signal" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.2/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ui_process.ui_thread.cp_reset_alarm -> cp_reset_alarm" kind="portConnection" destination="//@featureInstance.10" source="//@componentInstance.2/@componentInstance.0/@featureInstance.15">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.15" destination="//@componentInstance.2/@featureInstance.15">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.15" destination="//@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ui_process.ui_thread.confirm_soft_limit_exception -> confirm_soft_limit_exception" kind="portConnection" destination="//@featureInstance.15" source="//@componentInstance.2/@componentInstance.0/@featureInstance.19">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.19" destination="//@componentInstance.2/@featureInstance.19">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.13"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.19" destination="//@featureInstance.15">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ui_process.ui_thread.reject_soft_limit_exception -> reject_soft_limit_exception" kind="portConnection" destination="//@featureInstance.16" source="//@componentInstance.2/@componentInstance.0/@featureInstance.20">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.20" destination="//@componentInstance.2/@featureInstance.20">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.14"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.20" destination="//@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.17"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ui_process.ui_thread.stop_button_pressed -> stop_button_pressed" kind="portConnection" destination="//@featureInstance.17" source="//@componentInstance.2/@componentInstance.0/@featureInstance.21">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.21" destination="//@componentInstance.2/@featureInstance.21">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.15"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.21" destination="//@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.18"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ui_process.ui_thread.start_button_pressed -> start_button_pressed" kind="portConnection" destination="//@featureInstance.18" source="//@componentInstance.2/@componentInstance.0/@featureInstance.22">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.22" destination="//@componentInstance.2/@featureInstance.22">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.16"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.22" destination="//@featureInstance.18">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.19"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ui_process.ui_thread.clinician_request_bolus -> clinician_request_bolus" kind="portConnection" destination="//@featureInstance.20" source="//@componentInstance.2/@componentInstance.0/@featureInstance.23">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.23" destination="//@componentInstance.2/@featureInstance.23">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.17"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.23" destination="//@featureInstance.20">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.20"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ui_process.ui_thread.pause_infusion -> pause_infusion" kind="portConnection" destination="//@featureInstance.21" source="//@componentInstance.2/@componentInstance.0/@featureInstance.24">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.24" destination="//@componentInstance.2/@featureInstance.24">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.18"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.24" destination="//@featureInstance.21">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.21"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ui_process.ui_thread.resume_infusion -> resume_infusion" kind="portConnection" destination="//@featureInstance.22" source="//@componentInstance.2/@componentInstance.0/@featureInstance.25">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.25" destination="//@componentInstance.2/@featureInstance.25">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.19"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.25" destination="//@featureInstance.22">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.22"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ui_process.ui_thread.turn_off -> turn_off" kind="portConnection" destination="//@featureInstance.19" source="//@componentInstance.2/@componentInstance.0/@featureInstance.26">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.26" destination="//@componentInstance.2/@featureInstance.26">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.20"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.26" destination="//@featureInstance.19">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.23"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#iPCA_Control_Panel.Control_Panel.i"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Control_Panel.aadl#iPCA_Control_Panel.Control_Panel.i"/>
+</instance:SystemInstance>

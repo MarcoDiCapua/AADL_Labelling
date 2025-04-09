@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Parent_impl_Instance" category="system">
+  <featureInstance name="FG1" category="featureGroup" direction="in out">
+    <featureInstance name="FG2" category="featureGroup" direction="in out">
+      <featureInstance name="F3" category="abstractFeature" direction="out">
+        <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAbstractFeature.0"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <featureInstance name="F2" category="abstractFeature" direction="out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAbstractFeature.0"/>
+    </featureInstance>
+    <featureInstance name="F3" category="abstractFeature">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAbstractFeature.1"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.0"/>
+  </featureInstance>
+  <componentInstance name="Child" category="system">
+    <featureInstance name="FG1" category="featureGroup" direction="in out">
+      <featureInstance name="FG2" category="featureGroup" direction="in out">
+        <featureInstance name="F3" category="abstractFeature" direction="out">
+          <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAbstractFeature.0"/>
+        </featureInstance>
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFeatureGroup.0"/>
+      </featureInstance>
+      <featureInstance name="F2" category="abstractFeature" direction="out">
+        <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAbstractFeature.0"/>
+      </featureInstance>
+      <featureInstance name="F3" category="abstractFeature">
+        <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAbstractFeature.1"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <featureInstance name="F1" category="abstractFeature" direction="out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAbstractFeature.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadlv2/issues/issue_16.aadl#issue_16.Child.impl"/>
+  </componentInstance>
+  <componentInstance name="Child2" category="system">
+    <featureInstance name="FG1" category="featureGroup" direction="in out">
+      <featureInstance name="FG2" category="featureGroup" direction="in out">
+        <featureInstance name="F3" category="abstractFeature" direction="out">
+          <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAbstractFeature.0"/>
+        </featureInstance>
+        <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFeatureGroup.0"/>
+      </featureInstance>
+      <featureInstance name="F2" category="abstractFeature" direction="out">
+        <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAbstractFeature.0"/>
+      </featureInstance>
+      <featureInstance name="F3" category="abstractFeature">
+        <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAbstractFeature.1"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <featureInstance name="F1" category="abstractFeature" direction="out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAbstractFeature.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadlv2/issues/issue_16.aadl#issue_16.Child.impl"/>
+  </componentInstance>
+  <connectionInstance name="Child.FG1.F2 -> Child2.FG1.F3" complete="true" destination="//@componentInstance.1/@featureInstance.0/@featureInstance.2" source="//@componentInstance.0/@featureInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Child.F1 -> FG1.FG2" kind="featureGroupConnection" destination="//@featureInstance.0/@featureInstance.0" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@featureInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadlv2/issues/issue_16.aadl#issue_16.Parent.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadlv2/issues/issue_16.aadl#issue_16.Parent.impl"/>
+</instance:SystemInstance>

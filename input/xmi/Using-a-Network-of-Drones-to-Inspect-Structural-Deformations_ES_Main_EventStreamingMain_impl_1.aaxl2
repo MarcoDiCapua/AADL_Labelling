@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="EventStreamingMain_impl_Instance" category="system">
+  <componentInstance name="this_soft" category="process">
+    <featureInstance name="inPort">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/Software_V3.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="outPort" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/Software_V3.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/ES_Main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/Software_V3.aadl#Software_V3.SoftSys"/>
+  </componentInstance>
+  <componentInstance name="this_comm" category="process">
+    <featureInstance name="inPort" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/CommInterface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="outPort" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/CommInterface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/ES_Main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/CommInterface.aadl#CommInterface.CommunicationInterface"/>
+  </componentInstance>
+  <componentInstance name="this_UAVNetwork" category="system">
+    <featureInstance name="outPort" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/UAVNetwork_V3.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/ES_Main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/UAVNetwork_V3.aadl#UAVNetwork_V3.UAVNetworkC"/>
+  </componentInstance>
+  <connectionInstance name="this_soft.outPort -> this_comm.inPort" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/ES_Main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_UAVNetwork.outPort -> this_soft.inPort" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/ES_Main.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/ES_Main.aadl#ES_Main.EventStreamingMain.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_eventStreaming/ES_Main.aadl#ES_Main.EventStreamingMain.impl"/>
+</instance:SystemInstance>

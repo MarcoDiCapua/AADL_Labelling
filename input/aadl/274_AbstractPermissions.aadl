@@ -1,0 +1,15 @@
+-- Permission is a pair of action and resource. 
+-- actions are read and write for now
+-- resources are aadl components and need to be defined
+-- example permission: (read, resource)
+property set Permission is
+	permission_type: type record (
+		id		:	aadlinteger;
+		action	:	enumeration (zero, read, write, writeonly);
+		object	:	aadlstring; --reference (port, system, thread); -- not sure about reference here!
+		);
+--	Default_Permission:
+--		constant Permission::permission_type => ([id => 1, action => read, object => "anystem"]);
+	permission_set: list of Permission::permission_type applies to (all);
+end Permission;
+

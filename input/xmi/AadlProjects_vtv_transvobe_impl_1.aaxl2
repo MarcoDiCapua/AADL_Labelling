@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="transvobe_impl_Instance" category="system">
+  <featureInstance name="bus_access" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedBusAccess.0"/>
+    <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/4"/>
+  </featureInstance>
+  <featureInstance name="host_status">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="coll_inf" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="op_disp" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.2"/>
+    <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="op_in">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.3"/>
+    <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/2"/>
+  </featureInstance>
+  <featureInstance name="rvloc">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.4"/>
+    <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/3"/>
+  </featureInstance>
+  <featureInstance name="vloc" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.5"/>
+    <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/3"/>
+  </featureInstance>
+  <featureInstance name="alarm" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.6"/>
+    <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="pla_ctrl" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.7"/>
+  </featureInstance>
+  <featureInstance name="chg_ctrl" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.8"/>
+  </featureInstance>
+  <featureInstance name="p" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.0"/>
+  </featureInstance>
+  <featureInstance name="l" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.1"/>
+  </featureInstance>
+  <componentInstance name="transv2vsafety" category="process">
+    <featureInstance name="host_status">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="coll_inf" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="op_disp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.2"/>
+      <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="op_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.3"/>
+      <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="rvloc">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.4"/>
+      <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="vloc" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.5"/>
+      <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="alarm" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.6"/>
+      <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="pla_ctrl" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.7"/>
+    </featureInstance>
+    <featureInstance name="chg_ctrl" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.8"/>
+    </featureInstance>
+    <featureInstance name="p" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="l" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.1"/>
+    </featureInstance>
+    <componentInstance name="status" category="thread">
+      <featureInstance name="host_status">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="coll_inf" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="alarm" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.2"/>
+        <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="p" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="l" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#vtv.status.impl"/>
+    </componentInstance>
+    <componentInstance name="op_ctrl" category="thread">
+      <featureInstance name="op_disp" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+        <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="op_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.1"/>
+        <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="dp" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="dl" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#vtv.op_ctrl.impl"/>
+    </componentInstance>
+    <componentInstance name="loc_ctrl" category="thread">
+      <featureInstance name="rvloc">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+        <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="vloc" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.1"/>
+        <type href="../../github/AadlProjects/VTV%20final%202/instances/vtv_transvobe_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#vtv.loc_ctrl.impl"/>
+    </componentInstance>
+    <componentInstance name="thp" category="thread" inMode="//@componentInstance.0/@modeInstance.1">
+      <featureInstance name="datin">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="datout" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#vtv.thp.impl"/>
+    </componentInstance>
+    <componentInstance name="thl" category="thread" inMode="//@componentInstance.0/@modeInstance.2">
+      <featureInstance name="datin">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="datout" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#vtv.thl.impl"/>
+    </componentInstance>
+    <modeInstance name="initialize" initial="true">
+      <mode href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedMode.0"/>
+    </modeInstance>
+    <modeInstance name="platoon">
+      <mode href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedMode.1"/>
+    </modeInstance>
+    <modeInstance name="lane_change">
+      <mode href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedMode.2"/>
+    </modeInstance>
+    <modeTransitionInstance name="initialize_status_p_platoon" destination="//@componentInstance.0/@modeInstance.1" trigger="//@componentInstance.0/@componentInstance.0/@featureInstance.3" source="//@componentInstance.0/@modeInstance.0">
+      <modeTransition href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedModeTransition.0"/>
+    </modeTransitionInstance>
+    <modeTransitionInstance name="platoon_status_l_lane_change" destination="//@componentInstance.0/@modeInstance.2" trigger="//@componentInstance.0/@componentInstance.0/@featureInstance.4" source="//@componentInstance.0/@modeInstance.1">
+      <modeTransition href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedModeTransition.1"/>
+    </modeTransitionInstance>
+    <modeTransitionInstance name="lane_change_status_p_platoon" destination="//@componentInstance.0/@modeInstance.1" trigger="//@componentInstance.0/@componentInstance.0/@featureInstance.3" source="//@componentInstance.0/@modeInstance.2">
+      <modeTransition href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedModeTransition.2"/>
+    </modeTransitionInstance>
+    <connectionInstance name="op_ctrl.dp -> thp.datin" inSystemOperationMode="//@systemOperationMode.1" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.3/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.3/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.7"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="op_ctrl.dl -> thl.datin" inSystemOperationMode="//@systemOperationMode.2" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.4/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.4/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.8"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#vtv.transv2vsafety.impl"/>
+  </componentInstance>
+  <connectionInstance name="host_status -> transv2vsafety.status.host_status" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="op_in -> transv2vsafety.op_ctrl.op_in" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.1" source="//@featureInstance.4">
+    <connectionReference context="/" source="//@featureInstance.4" destination="//@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="rvloc -> transv2vsafety.loc_ctrl.rvloc" kind="portConnection" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.0" source="//@featureInstance.5">
+    <connectionReference context="/" source="//@featureInstance.5" destination="//@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="transv2vsafety.status.coll_inf -> coll_inf" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="transv2vsafety.status.alarm -> alarm" kind="portConnection" destination="//@featureInstance.7" source="//@componentInstance.0/@componentInstance.0/@featureInstance.2">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.0/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.6" destination="//@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="transv2vsafety.status.p -> p" inSystemOperationMode="//@systemOperationMode.1" kind="portConnection" destination="//@featureInstance.10" source="//@componentInstance.0/@componentInstance.0/@featureInstance.3">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.0/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.11"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.9" destination="//@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="transv2vsafety.status.l -> l" inSystemOperationMode="//@systemOperationMode.2" kind="portConnection" destination="//@featureInstance.11" source="//@componentInstance.0/@componentInstance.0/@featureInstance.4">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.0/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.12"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.10" destination="//@featureInstance.11">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="transv2vsafety.op_ctrl.op_disp -> op_disp" kind="portConnection" destination="//@featureInstance.3" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.2" destination="//@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="transv2vsafety.loc_ctrl.vloc -> vloc" kind="portConnection" destination="//@featureInstance.6" source="//@componentInstance.0/@componentInstance.2/@featureInstance.1">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.5" destination="//@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="transv2vsafety.thp.datout -> pla_ctrl" inSystemOperationMode="//@systemOperationMode.1" kind="portConnection" destination="//@featureInstance.8" source="//@componentInstance.0/@componentInstance.3/@featureInstance.1">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.3/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.7" destination="//@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="transv2vsafety.thl.datout -> chg_ctrl" inSystemOperationMode="//@systemOperationMode.2" kind="portConnection" destination="//@featureInstance.9" source="//@componentInstance.0/@componentInstance.4/@featureInstance.1">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.4/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.8" destination="//@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#vtv.transvobe.impl"/>
+  <systemOperationMode name="som_1" currentMode="//@componentInstance.0/@modeInstance.0"/>
+  <systemOperationMode name="som_2" currentMode="//@componentInstance.0/@modeInstance.1"/>
+  <systemOperationMode name="som_3" currentMode="//@componentInstance.0/@modeInstance.2"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/VTV%20final%202/vtv.aadl#vtv.transvobe.impl"/>
+</instance:SystemInstance>

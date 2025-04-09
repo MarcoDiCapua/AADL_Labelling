@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="SLICEM_imp_Instance" category="system">
+  <featureInstance name="A1">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="A2">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="A3">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.2"/>
+  </featureInstance>
+  <featureInstance name="A4">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.3"/>
+  </featureInstance>
+  <featureInstance name="A5">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.4"/>
+  </featureInstance>
+  <featureInstance name="A6">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.5"/>
+  </featureInstance>
+  <featureInstance name="AX">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.6"/>
+  </featureInstance>
+  <featureInstance name="B1">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.7"/>
+  </featureInstance>
+  <featureInstance name="B2">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.8"/>
+  </featureInstance>
+  <featureInstance name="B3">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.9"/>
+  </featureInstance>
+  <featureInstance name="B4">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.10"/>
+  </featureInstance>
+  <featureInstance name="B5">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.11"/>
+  </featureInstance>
+  <featureInstance name="B6">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.12"/>
+  </featureInstance>
+  <featureInstance name="BX">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.13"/>
+  </featureInstance>
+  <featureInstance name="C1">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.14"/>
+  </featureInstance>
+  <featureInstance name="C2">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.15"/>
+  </featureInstance>
+  <featureInstance name="C3">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.16"/>
+  </featureInstance>
+  <featureInstance name="C4">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.17"/>
+  </featureInstance>
+  <featureInstance name="C5">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.18"/>
+  </featureInstance>
+  <featureInstance name="C6">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.19"/>
+  </featureInstance>
+  <featureInstance name="CX">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.20"/>
+  </featureInstance>
+  <featureInstance name="D1">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.21"/>
+  </featureInstance>
+  <featureInstance name="D2">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.22"/>
+  </featureInstance>
+  <featureInstance name="D3">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.23"/>
+  </featureInstance>
+  <featureInstance name="D4">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.24"/>
+  </featureInstance>
+  <featureInstance name="D5">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.25"/>
+  </featureInstance>
+  <featureInstance name="D6">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.26"/>
+  </featureInstance>
+  <featureInstance name="DX">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.27"/>
+  </featureInstance>
+  <featureInstance name="CLK">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.28"/>
+  </featureInstance>
+  <featureInstance name="CE">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.29"/>
+  </featureInstance>
+  <featureInstance name="SR">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.30"/>
+  </featureInstance>
+  <featureInstance name="CIN">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.31"/>
+  </featureInstance>
+  <featureInstance name="COUT" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.32"/>
+  </featureInstance>
+  <featureInstance name="A" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.33"/>
+  </featureInstance>
+  <featureInstance name="AMUX" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.34"/>
+  </featureInstance>
+  <featureInstance name="AQ" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.35"/>
+  </featureInstance>
+  <featureInstance name="B" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.36"/>
+  </featureInstance>
+  <featureInstance name="BMUX" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.37"/>
+  </featureInstance>
+  <featureInstance name="BQ" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.38"/>
+  </featureInstance>
+  <featureInstance name="C" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.39"/>
+  </featureInstance>
+  <featureInstance name="CMUX" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.40"/>
+  </featureInstance>
+  <featureInstance name="CQ" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.41"/>
+  </featureInstance>
+  <featureInstance name="D" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.42"/>
+  </featureInstance>
+  <featureInstance name="DMUX" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.43"/>
+  </featureInstance>
+  <featureInstance name="DQ" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.44"/>
+  </featureInstance>
+  <featureInstance name="WE">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.45"/>
+  </featureInstance>
+  <featureInstance name="AI">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.46"/>
+  </featureInstance>
+  <featureInstance name="BI">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.47"/>
+  </featureInstance>
+  <featureInstance name="CI">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.48"/>
+  </featureInstance>
+  <featureInstance name="DI">
+    <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedDataPort.49"/>
+  </featureInstance>
+  <componentInstance name="LUT_A" category="system">
+    <featureInstance name="I1">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="I2">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="I3">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="I4">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="I5">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="I6">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="O" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#FPGA_Library.LUT_6"/>
+  </componentInstance>
+  <componentInstance name="LUT_B" category="system">
+    <featureInstance name="I1">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="I2">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="I3">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="I4">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="I5">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="I6">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="O" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#FPGA_Library.LUT_6"/>
+  </componentInstance>
+  <componentInstance name="LUT_C" category="system">
+    <featureInstance name="I1">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="I2">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="I3">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="I4">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="I5">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="I6">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="O" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#FPGA_Library.LUT_6"/>
+  </componentInstance>
+  <componentInstance name="LUT_D" category="system">
+    <featureInstance name="I1">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="I2">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="I3">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="I4">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="I5">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="I6">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="O" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedSystemSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#FPGA_Library.LUT_6"/>
+  </componentInstance>
+  <componentInstance name="FF_A" category="system">
+    <featureInstance name="I">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="O" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedSystemSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#FPGA_Library.FF"/>
+  </componentInstance>
+  <componentInstance name="FF_B" category="system">
+    <featureInstance name="I">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="O" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedSystemSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#FPGA_Library.FF"/>
+  </componentInstance>
+  <componentInstance name="FF_C" category="system">
+    <featureInstance name="I">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="O" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedSystemSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#FPGA_Library.FF"/>
+  </componentInstance>
+  <componentInstance name="FF_D" category="system">
+    <featureInstance name="I">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="O" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedSystemSubcomponent.7"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#FPGA_Library.FF"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#FPGA_Library.SLICEM.imp"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/XDL-to-AADL-Open-Tool/LibGen/FPGA_Library.aadl#FPGA_Library.SLICEM.imp"/>
+</instance:SystemInstance>

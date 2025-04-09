@@ -1,0 +1,13 @@
+package TSL2561
+public
+	with Buses_I2C;
+
+device TSL2561   
+	features
+    	I2C : requires bus access Buses_I2C::I2C.impl;
+end  TSL2561;
+
+device implementation TSL2561.impl
+end TSL2561.impl;
+
+end TSL2561;

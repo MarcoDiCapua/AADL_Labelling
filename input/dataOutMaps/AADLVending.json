@@ -1,0 +1,21 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "Sterownik",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLVending/MJ/VendingMachine/Sterownik.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\AADLVending_Sterownik_VendingMachineSterownik_with_Devices_2.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLVending\\readme.txt"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'base_types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLVending/MJ/VendingMachine/Sterownik.aadl line : 3 column : 7)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer_16'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLVending/MJ/VendingMachine/Sterownik.aadl line : 41 column : 34)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer_16'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLVending/MJ/VendingMachine/Sterownik.aadl line : 42 column : 29)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::String'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLVending/MJ/VendingMachine/Sterownik.aadl line : 43 column : 32)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer_8'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLVending/MJ/VendingMachine/Sterownik.aadl line : 44 column : 36)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer_8'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLVending/MJ/VendingMachine/Sterownik.aadl line : 45 column : 30)",
+    "ERROR:Couldn't resolve reference to property definition 'Source_Language'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLVending/MJ/VendingMachine/Sterownik.aadl line : 84 column : 4)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'C'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLVending/MJ/Vending...",
+    "ERROR:Couldn't resolve reference to property definition 'Source_Name'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLVending/MJ/VendingMachine/Sterownik.aadl line : 85 column : 4)",
+    "ERROR:Couldn't resolve reference to property definition 'source_text'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLVending/MJ/VendingMachine/Sterownik.aadl line : 86 column : 4)"
+  ]
+}

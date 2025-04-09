@@ -1,0 +1,21 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "BottleFilling",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-bottle-filling/BottleFilling.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\aadl-bottle-filling_BottleFilling_BottleFillingSystem_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\aadl-bottle-filling\\README.md"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'sei'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-bottle-filling/BottleFilling.aadl line : 3 column : 7)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'Base_Types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-bottle-filling/BottleFilling.aadl line : 4 column : 7)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'Data_Model'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-bottle-filling/BottleFilling.aadl line : 5 column : 7)",
+    "ERROR:Couldn't resolve reference to property definition 'Data_Model::Data_Representation'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-bottle-filling/BottleFilling.aadl line : 12 column : 4)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'Float'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-bottle-fillin...",
+    "ERROR:Couldn't resolve reference to property definition 'Data_Model::Data_Representation'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-bottle-filling/BottleFilling.aadl line : 20 column : 4)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'Integer'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-bottle-fill...",
+    "ERROR:Couldn't resolve reference to property definition 'Data_Model::Data_Representation'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-bottle-filling/BottleFilling.aadl line : 28 column : 4)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'Integer'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-bottle-fill...",
+    "ERROR:Couldn't resolve reference to property definition 'Data_Model::Data_Representation'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-bottle-filling/BottleFilling.aadl line : 39 column : 4)"
+  ]
+}

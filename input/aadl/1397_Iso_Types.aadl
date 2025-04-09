@@ -1,0 +1,72 @@
+--------------------------------------------------------------------------------
+-- Iso_Types.aadl (version 07) - 
+--
+-- Authors: Stephen C. Barrett (scbarrett@ksu.edu) &
+--          Brian R. Larson (brl@ksu.edu)
+--          Department of Computing & Information Sciences
+--
+-- Licensed Material - Property of Kansas State University
+--------------------------------------------------------------------------------
+-- 05: Initial simple units of measure.
+--
+-- 07: New enumerated type for control & range composite type of temperature.
+--------------------------------------------------------------------------------
+package Iso_Types
+public
+with Base_Types, Data_Model;
+
+
+data heat
+  properties
+    Data_Model::Data_Representation => Float;
+    Data_Model::Measurement_Unit => "KJoule";
+end heat;
+
+
+--------------------------------------------------------------------------------
+-- Basic building blocks of following data types.
+--------------------------------------------------------------------------------
+
+-- Enumerated type for invalidating & validating signal content.
+data valid_flag
+  properties
+    Data_Model::Data_Representation => Enum;
+    Data_Model::Enumerators => ("Invalid","Valid");
+end valid_flag;
+
+
+--------------------------------------------------------------------------------
+-- Table A-3: Thermostat monitored variables for Temperature Sensor.
+--------------------------------------------------------------------------------
+
+-- Range of air temperatures that can be sensed & measured.
+data sensed_temperature_range
+  properties
+    Data_Model::Real_Range => 68.0 .. 105.0;
+    Data_Model::Measurement_Unit => "Fahrenheit";
+end sensed_temperature_range;
+
+
+-- Composite for communicating & validating measured temperature.
+data sensed_temperature
+  properties
+  Data_Model::Data_Representation => Struct;
+  Data_Model::Element_Names => ("temp","valid");
+  Data_Model::Base_Type => (classifier (sensed_temperature_range),
+    classifier (valid_flag));
+end sensed_temperature;
+
+
+--------------------------------------------------------------------------------
+-- Table A-4: Thermostat controlled variables for Heat Source (& Alarm). 
+--------------------------------------------------------------------------------
+
+-- Enumerated type for deactivating & activating physical entities.
+data on_off
+  properties
+    Data_Model::Data_Representation => Enum;
+    Data_Model::Enumerators => ("Off","On");
+end on_off;
+
+
+end Iso_Types;

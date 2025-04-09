@@ -1,0 +1,21 @@
+package FEES
+public
+	with Board_STM32;
+	with TSL2561;
+
+	
+system FEES
+end FEES;
+	
+system implementation FEES.impl
+	subcomponents
+		Board 		: system Board_STM32::STM32L476_Discovery.impl;
+		LightSensor : device TSL2561::TSL2561.impl;
+		
+	connections
+		-- Sensore di luce TSL2561
+		lightSensor_I2C_1 : bus access Board.I2C_Link_1 <-> LightSensor.I2C;
+		
+end FEES.impl;
+	
+end FEES;

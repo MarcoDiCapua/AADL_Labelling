@@ -1,0 +1,10 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "InformationServiceProvider",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-SmartParkingApplication/InformationServiceProvider.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\AADL-SmartParkingApplication_InformationServiceProvider_ISP_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADL-SmartParkingApplication\\README.md"],
+  "errors": []
+}

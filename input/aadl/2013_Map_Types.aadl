@@ -1,0 +1,20 @@
+package Map_Types
+public
+	with Map_Properties; 
+
+	memory Location
+		features
+			edge: in out data port;
+	end Location;
+	
+	memory LocationWithoutCharge extends Location
+		properties
+			Map_Properties::hasChargingSt => false;
+	end LocationWithoutCharge;
+	
+	memory LocationWithCharge extends Location
+		properties
+			Map_Properties::hasChargingSt => true;
+	end LocationWithCharge;
+	
+end Map_Types;

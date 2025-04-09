@@ -1,0 +1,24 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "smacz",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_RASPBERRY/projekt/smacz/smacz.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\AADL_RASPBERRY_smacz_HumanActivityMonitoringSystem_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADL_RASPBERRY\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADL_RASPBERRY\\projekt\\.metadata\\.plugins\\org.eclipse.jdt.core\\javaLikeNames.txt"
+  ],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'data_model'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_RASPBERRY/projekt/smacz/smacz.aadl line : 7 column : 7)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'Base_Types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_RASPBERRY/projekt/smacz/smacz.aadl line : 8 column : 7)",
+    "ERROR:Couldn't resolve reference to property definition 'Data_Model::Data_Representation'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_RASPBERRY/projekt/smacz/smacz.aadl line : 12 column : 4)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'Float'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_RASPBERRY/pro...",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_RASPBERRY/projekt/smacz/smacz.aadl line : 70 column : 30)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_RASPBERRY/projekt/smacz/smacz.aadl line : 76 column : 25)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_RASPBERRY/projekt/smacz/smacz.aadl line : 82 column : 25)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_RASPBERRY/projekt/smacz/smacz.aadl line : 91 column : 16)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_RASPBERRY/projekt/smacz/smacz.aadl line : 92 column : 16)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_RASPBERRY/projekt/smacz/smacz.aadl line : 93 column : 16)"
+  ]
+}

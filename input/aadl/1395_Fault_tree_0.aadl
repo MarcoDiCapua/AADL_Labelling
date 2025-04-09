@@ -1,0 +1,39 @@
+-- The following fault tree uses a dedicated error model.
+--    That error model defines two states, failed and operational.
+--    The error model and the classifier do not define a transition
+--    between operational and failed
+
+package Fault_tree_0
+public
+
+with EMV2;
+
+device item
+	annex EMV2 {**
+		use types Fault_tree_0_ErrorModels;
+		use behavior Fault_tree_0_ErrorModels::twoState;			
+	**};
+end item;
+
+device implementation item.i
+end item.i;
+
+system main
+end main;
+
+system implementation main.complete
+	subcomponents
+		left : device item.i;
+		right: device item.i;
+	annex EMV2 {**
+		use types Fault_tree_0_ErrorModels;
+		use behavior Fault_tree_0_ErrorModels::twoState;
+		composite error behavior
+			states
+			[left.operational or right.operational]->operational;
+			-- system is failed if both channels , i.e. must have one operating channel
+			[left.failed and right.failed]->failed;
+		end composite;
+	**};
+end main.complete;
+end Fault_tree_0;

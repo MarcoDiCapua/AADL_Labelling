@@ -1,0 +1,19 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "Crazyflie_Final",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Crazyflie/models/crazyflie_final.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\Crazyflie_Crazyflie_Final_Crazyflie_Final_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\Crazyflie\\Makefile",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\Crazyflie\\README.md"
+  ],
+  "errors": [
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Function_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Crazyflie/models/crazyflie_final.aadl line : 16 column : 5)",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Function_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Crazyflie/models/crazyflie_final.aadl line : 17 column : 5)",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Function_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Crazyflie/models/crazyflie_final.aadl line : 18 column : 5)",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Function_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Crazyflie/models/crazyflie_final.aadl line : 19 column : 5)",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Function_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Crazyflie/models/crazyflie_final.aadl line : 20 column : 5)"
+  ]
+}

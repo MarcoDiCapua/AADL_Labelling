@@ -1,0 +1,28 @@
+property set TSN is
+	Stream: type record(
+		id: aadlstring;
+		src: reference (abstract, system, device);
+		dest: reference (abstract, system, device);
+		priority: aadlinteger;
+		size: aadlinteger;
+		period: aadlinteger;
+		deadline: aadlinteger;
+		routing: list of reference (abstract, system, device);
+	);
+	Streams: list of TSN::Stream applies to (abstract, system);
+	
+	Port_Window: type record(
+		QID: aadlinteger;
+		Open: aadlinteger;
+		Close:aadlinteger;
+	);
+	Port_Schedule: type record(
+		p: reference (abstract, system, device, bus access);
+		Schedule: list of TSN::Port_Window;	
+	); 
+	
+	GCL: list of TSN::Port_Schedule applies to (abstract, system);
+	
+	 
+	
+end TSN;

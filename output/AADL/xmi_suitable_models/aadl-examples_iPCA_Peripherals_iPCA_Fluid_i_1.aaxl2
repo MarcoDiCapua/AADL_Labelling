@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="iPCA_Fluid_i_Instance" category="system">
+  <featureInstance name="gpio" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/2"/>
+  </featureInstance>
+  <featureInstance name="power_supply" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.1"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/3"/>
+  </featureInstance>
+  <featureInstance name="mtm_bus" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.2"/>
+    <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/4"/>
+  </featureInstance>
+  <featureInstance name="halt" category="eventPort">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+  </featureInstance>
+  <featureInstance name="sense" category="featureGroup" direction="in out">
+    <featureInstance name="ui_touch">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="barcode_signal">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="patient_button_press" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.0"/>
+  </featureInstance>
+  <featureInstance name="act" category="featureGroup" direction="in out">
+    <featureInstance name="ui_image" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="ui_sound" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="drug_outlet" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="barcode_illumination" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="fill_reservoir">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="real"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/physical/aadl/packages/Physical_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.1"/>
+  </featureInstance>
+  <featureInstance name="from_safety" category="featureGroup" direction="in out">
+    <featureInstance name="upstream_flow_rate" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="flow_rate"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="downstream_flow_rate" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="flow_rate"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="door_open" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Assertion"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="&lt;&lt;DOOR_OPEN>>"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.2/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.2"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <featureInstance name="empty_reservoir" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="low_reservoir" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="bubble" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="pump_too_hot" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.3"/>
+    </featureInstance>
+    <featureInstance name="downstream_occlusion" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.4"/>
+    </featureInstance>
+    <featureInstance name="upstream_occlusion" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.5"/>
+    </featureInstance>
+    <featureInstance name="halt" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.6"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.2"/>
+  </featureInstance>
+  <featureInstance name="from_operation" category="featureGroup" direction="in out">
+    <featureInstance name="infusion_flow_rate">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="flow_rate"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="door_open" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <featureInstance name="door_closed" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="request_bolus" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="do_scan" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="scan_done" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.3"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.3"/>
+  </featureInstance>
+  <componentInstance name="button">
+    <featureInstance name="button_press" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="request_bolus" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#iPCA_Peripherals.Patient_Button_func"/>
+  </componentInstance>
+  <componentInstance name="reservoir">
+    <featureInstance name="door_open" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="low_reservoir" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="empty_reservoir" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="door_closed" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventPort.2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#iPCA_Peripherals.Drug_Reservoir_func"/>
+  </componentInstance>
+  <componentInstance name="pump">
+    <featureInstance name="rate">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="flow_rate"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Assertion"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="&lt;&lt;:=INFUSION_RATE>>"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="halt" category="eventPort">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Assertion"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="&lt;&lt;INFUSION_RATE=0>>"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="pump_too_hot" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#iPCA_Peripherals.Mechanical_Pump_func"/>
+  </componentInstance>
+  <componentInstance name="upstream">
+    <featureInstance name="upstream_flow_rate" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="flow_rate"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="upstream_occlusion" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#iPCA_Peripherals.Upstream_Monitor_func"/>
+  </componentInstance>
+  <componentInstance name="downstream">
+    <featureInstance name="downstream_flow_rate" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Typed"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="flow_rate"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-examples/awas-examples/open-pca/bless-props/aadl/properties/BLESS.aadl#BLESS.Assertion"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="&lt;&lt;:=MEASURED_FLOW_RATE>>"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/instances/iPCA_Peripherals_iPCA_Fluid_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="downstream_occlusion" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="bubble_detected" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#iPCA_Peripherals.Downstream_Monitor_func"/>
+  </componentInstance>
+  <flowSpecification name="drug_to_patient" destination="//@featureInstance.5/@featureInstance.2">
+    <flowSpecification href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+  </flowSpecification>
+  <connectionInstance name="halt -> pump.halt" kind="portConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@featureInstance.3">
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sense.patient_button_press -> button.button_press" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@featureInstance.4/@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.4/@featureInstance.2" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="from_operation.infusion_flow_rate -> pump.rate" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@featureInstance.7/@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.7/@featureInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="button.request_bolus -> from_operation.request_bolus" kind="portConnection" destination="//@featureInstance.7/@featureInstance.3" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@featureInstance.7/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="reservoir.door_open -> from_operation.door_open" kind="portConnection" destination="//@featureInstance.7/@featureInstance.1" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@featureInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="reservoir.low_reservoir -> from_safety.low_reservoir" kind="portConnection" destination="//@featureInstance.6/@featureInstance.4" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@featureInstance.6/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="reservoir.empty_reservoir -> from_safety.empty_reservoir" kind="portConnection" destination="//@featureInstance.6/@featureInstance.3" source="//@componentInstance.1/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.2" destination="//@featureInstance.6/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="reservoir.door_closed -> from_operation.door_closed" kind="portConnection" destination="//@featureInstance.7/@featureInstance.2" source="//@componentInstance.1/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.3" destination="//@featureInstance.7/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pump.pump_too_hot -> from_safety.pump_too_hot" kind="portConnection" destination="//@featureInstance.6/@featureInstance.6" source="//@componentInstance.2/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.2" destination="//@featureInstance.6/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="upstream.upstream_flow_rate -> from_safety.upstream_flow_rate" kind="portConnection" destination="//@featureInstance.6/@featureInstance.0" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@featureInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="upstream.upstream_occlusion -> from_safety.upstream_occlusion" kind="portConnection" destination="//@featureInstance.6/@featureInstance.8" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@featureInstance.6/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="downstream.downstream_flow_rate -> from_safety.downstream_flow_rate" kind="portConnection" destination="//@featureInstance.6/@featureInstance.1" source="//@componentInstance.4/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.0" destination="//@featureInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="downstream.downstream_occlusion -> from_safety.downstream_occlusion" kind="portConnection" destination="//@featureInstance.6/@featureInstance.7" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@featureInstance.6/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="downstream.bubble_detected -> from_safety.bubble" kind="portConnection" destination="//@featureInstance.6/@featureInstance.5" source="//@componentInstance.4/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.2" destination="//@featureInstance.6/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#iPCA_Peripherals.iPCA_Fluid.i"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Functional_PCA/packages/iPCA_Peripherals.aadl#iPCA_Peripherals.iPCA_Fluid.i"/>
+</instance:SystemInstance>

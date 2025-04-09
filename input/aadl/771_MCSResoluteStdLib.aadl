@@ -1,0 +1,82 @@
+package MCS_Resolute_Stdlib
+public
+annex mcs {**
+
+------------
+-- Binding
+------------
+functions
+	bound(logical : T_Instance, physical : I_Component) : bool =
+  		memory_bound(logical, physical) or
+  		connection_bound(logical, physical) or
+  		processor_bound(logical, physical)
+  
+	memory_bound(logical : T_Instance, physical : I_Component) : bool =
+  		has_property(logical, "Deployment_Properties::Actual_Memory_Binding") and
+  		has_member(property(logical, "Deployment_Properties::Actual_Memory_Binding",physical))
+  		
+ -- same function using method syntax:
+ 
+	memory_bound_method_syntax(logical : T_Instance, physical : I_Component) : bool =
+  		logical.has_property("Deployment_Properties::Actual_Memory_Binding") and
+  		logical.property("Deployment_Properties::Actual_Memory_Binding").has_member(physical)
+
+
+connection_bound(logical : T_Instance, physical : I_Component) : bool =
+  		has_property(logical, "Deployment_Properties::Actual_Connection_Binding") and
+  		has_member(property(logical, "Deployment_Properties::Actual_Connection_Binding",physical))
+
+processor_bound(logical : T_Instance, physical : I_Component) : bool =
+  		has_property(logical, "Deployment_Properties::Actual_Processor_Binding") and
+  		has_member(property(logical, "Deployment_Properties::Actual_Processor_Binding",physical))
+----------------
+-- Connections
+----------------
+connected(a : I_Component, conn : I_Connection, b : I_Component) : bool =
+  parent(source(conn)) = a and parent(destination(conn)) = b
+
+source_component(c : I_Connection) : I_Component =
+  containing_component(source(c))
+
+destination_component(c : I_Connection) : I_Component =
+  containing_component(destination(c))
+
+is_port_connection(c : I_Connection) : bool =
+  is_data_port_connection(c) or
+  is_event_port_connection(c) or
+  is_event_data_port_connection(c)
+
+is_data_port_connection(c : I_Connection) : bool =
+  source(c) instanceof data_port or destination(c) instanceof data_port
+
+is_event_port_connection(c : I_Connection) : bool =
+  source(c) instanceof event_port or destination(c) instanceof event_port
+
+is_event_data_port_connection(c : I_Connection) : bool =
+  source(c) instanceof event_data_port or destination(c) instanceof event_data_port
+
+is_data_access_connection(c : I_Connection) : bool =
+  (source(c) instanceof data) or (destination(c) instanceof data)
+
+-------------
+-- Features
+-------------
+flatten_features(feats : {I_Feature}) : {I_Feature} =
+  {f2 for (f1 : feats) (f2 in flatten_feature(f1))}
+   
+flatten_feature(f : I_Feature) : {I_Feature} =
+  if f instanceof feature_group
+  then flatten_features(features(f))
+  else {f} 
+
+----------------
+-- Containment
+----------------
+contained_in(a : T_Instance, b : I_Component) : bool =
+  has_parent(a) and (parent(a) = b or contained(parent(a), b))
+
+containing_component(a : T_Instance) : I_Component =
+  if a instanceof I_Component then  a <I_Component> else containing_component(parent(a))
+
+**};
+end MCS_Resolute_Stdlib;

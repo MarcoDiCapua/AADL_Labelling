@@ -1,0 +1,44 @@
+package other_system
+public
+	with adiru_data;
+	
+
+	-----------------------------------------------------------------
+	-------------------------Other systems that communicate with ADIRU ---------------------------------
+	-----------------------------------------------------------------
+	
+
+	system fmc_system
+		features
+			------------------------------------------------------------------------------
+			-- inputs data from ADIRU
+			------------------------------------------------------------------------------
+		    
+			
+			present_pos_lat_in: in data port adiru_data::present_pos_lat_010;
+			--present position long 
+			present_pos_long_in: in data port adiru_data::present_pos_long_011;
+			
+			ground_speed_in: in data port adiru_data::ground_speed_D_012;
+			
+			track_angle_true_D: in data port adiru_data::track_angle_true_D_013;
+			
+			wind_speed_D: in data port adiru_data::wind_speed_D_015;
+
+			------------------------------------------------------------------------------
+			-- outputs
+			------------------------------------------------------------------------------
+		    
+		    
+			
+			
+	end fmc_system;
+
+	system implementation fmc_system.impl
+
+		
+	end fmc_system.impl;
+
+	
+
+end other_system;

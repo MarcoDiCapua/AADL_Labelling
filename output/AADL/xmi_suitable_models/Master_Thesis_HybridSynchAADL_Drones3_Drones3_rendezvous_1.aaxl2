@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Drones3_rendezvous_Instance" category="system">
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Max_Clock_Deviation"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+        <unit href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#|::0.5.9.1.4.16.7.0.6::2::/1"/>
+      </ownedValue>
+    </ownedValue>
+    <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.16"/>
+  </ownedPropertyAssociation>
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+    </ownedValue>
+    <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+  </ownedPropertyAssociation>
+  <componentInstance name="drone1" category="system">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Max_Clock_Deviation"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+          <unit href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#|::0.5.9.1.4.16.7.0.6::2::/1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.16"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="inX">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/28"/>
+    </featureInstance>
+    <featureInstance name="inY">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/29"/>
+    </featureInstance>
+    <featureInstance name="outX" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/30"/>
+    </featureInstance>
+    <featureInstance name="outY" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+      <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/31"/>
+    </featureInstance>
+    <componentInstance name="drone" category="system">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Max_Clock_Deviation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+            <unit href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#|::0.5.9.1.4.16.7.0.6::2::/1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.16"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="currX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/16"/>
+      </featureInstance>
+      <featureInstance name="currY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/17"/>
+      </featureInstance>
+      <featureInstance name="inX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/18"/>
+      </featureInstance>
+      <featureInstance name="inY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/19"/>
+      </featureInstance>
+      <featureInstance name="outX" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/20"/>
+      </featureInstance>
+      <featureInstance name="outY" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/21"/>
+      </featureInstance>
+      <featureInstance name="velX" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/22"/>
+      </featureInstance>
+      <featureInstance name="velY" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/23"/>
+      </featureInstance>
+      <componentInstance name="droneProc" category="process">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <featureInstance name="currX">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/8"/>
+        </featureInstance>
+        <featureInstance name="currY">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/9"/>
+        </featureInstance>
+        <featureInstance name="inX">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/10"/>
+        </featureInstance>
+        <featureInstance name="inY">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/11"/>
+        </featureInstance>
+        <featureInstance name="outX" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/12"/>
+        </featureInstance>
+        <featureInstance name="outY" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.5"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/13"/>
+        </featureInstance>
+        <featureInstance name="velX" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.6"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/14"/>
+        </featureInstance>
+        <featureInstance name="velY" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.7"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/15"/>
+        </featureInstance>
+        <componentInstance name="droneThread" category="thread">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+            </ownedValue>
+            <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <featureInstance name="currX">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/0"/>
+          </featureInstance>
+          <featureInstance name="currY">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/1"/>
+          </featureInstance>
+          <featureInstance name="inX">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/2"/>
+          </featureInstance>
+          <featureInstance name="inY">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/3"/>
+          </featureInstance>
+          <featureInstance name="outX" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/4"/>
+          </featureInstance>
+          <featureInstance name="outY" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.5"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/5"/>
+          </featureInstance>
+          <featureInstance name="velX" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.6"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/6"/>
+          </featureInstance>
+          <featureInstance name="velY" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.7"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/7"/>
+          </featureInstance>
+          <componentInstance name="refX" category="data">
+            <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataSubcomponent.0"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#|::0.5.9.5.49.0::18::/6"/>
+          </componentInstance>
+          <componentInstance name="refY" category="data">
+            <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataSubcomponent.1"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#|::0.5.9.5.49.1::18::/6"/>
+          </componentInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#DroneControl.DroneControlThread.rendezvous"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#DroneControl.DroneControlProc.rendezvous"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#DroneControl.DroneControl.rendezvous"/>
+    </componentInstance>
+    <componentInstance name="environment" category="system">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Max_Clock_Deviation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+            <unit href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#|::0.5.9.1.4.16.7.0.6::2::/1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.16"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.ContinuousDynamics"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="x(t) = ((0.01) * dotx * t) + x(0); y(t) = ((0.01) * doty * t) + y(0);"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.isEnvironment"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="currX" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/24"/>
+      </featureInstance>
+      <featureInstance name="currY" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/25"/>
+      </featureInstance>
+      <featureInstance name="velX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/26"/>
+      </featureInstance>
+      <featureInstance name="velY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/27"/>
+      </featureInstance>
+      <componentInstance name="x" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#|::0.5.9.1.46.0::18::/6"/>
+      </componentInstance>
+      <componentInstance name="y" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#|::0.5.9.1.46.1::18::/6"/>
+      </componentInstance>
+      <componentInstance name="dotx" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.2"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#|::0.5.9.1.46.2::18::/6"/>
+      </componentInstance>
+      <componentInstance name="doty" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.3"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#|::0.5.9.1.46.3::18::/6"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#Environment.Environment.rendezvous"/>
+    </componentInstance>
+    <connectionInstance name="drone.droneProc.droneThread.velX -> environment.dotx" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.6">
+      <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="drone.droneProc.droneThread.velY -> environment.doty" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.7">
+      <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.7" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.7">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.7" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.7">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.7" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@componentInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="environment.x -> drone.droneProc.droneThread.currX" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@componentInstance.0">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="environment.y -> drone.droneProc.droneThread.currY" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.1">
+      <connectionReference context="//@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.1/@componentInstance.1" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#DroneSystem.DroneSystem.rendezvous"/>
+  </componentInstance>
+  <componentInstance name="drone2" category="system">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Max_Clock_Deviation"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+          <unit href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#|::0.5.9.1.4.16.7.0.6::2::/1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.16"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="inX">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/60"/>
+    </featureInstance>
+    <featureInstance name="inY">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/61"/>
+    </featureInstance>
+    <featureInstance name="outX" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/62"/>
+    </featureInstance>
+    <featureInstance name="outY" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+      <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/63"/>
+    </featureInstance>
+    <componentInstance name="drone" category="system">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Max_Clock_Deviation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+            <unit href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#|::0.5.9.1.4.16.7.0.6::2::/1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.16"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="currX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/48"/>
+      </featureInstance>
+      <featureInstance name="currY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/49"/>
+      </featureInstance>
+      <featureInstance name="inX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/50"/>
+      </featureInstance>
+      <featureInstance name="inY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/51"/>
+      </featureInstance>
+      <featureInstance name="outX" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/52"/>
+      </featureInstance>
+      <featureInstance name="outY" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/53"/>
+      </featureInstance>
+      <featureInstance name="velX" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/54"/>
+      </featureInstance>
+      <featureInstance name="velY" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/55"/>
+      </featureInstance>
+      <componentInstance name="droneProc" category="process">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <featureInstance name="currX">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/40"/>
+        </featureInstance>
+        <featureInstance name="currY">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/41"/>
+        </featureInstance>
+        <featureInstance name="inX">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/42"/>
+        </featureInstance>
+        <featureInstance name="inY">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/43"/>
+        </featureInstance>
+        <featureInstance name="outX" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/44"/>
+        </featureInstance>
+        <featureInstance name="outY" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.5"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/45"/>
+        </featureInstance>
+        <featureInstance name="velX" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.6"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/46"/>
+        </featureInstance>
+        <featureInstance name="velY" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.7"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/47"/>
+        </featureInstance>
+        <componentInstance name="droneThread" category="thread">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+            </ownedValue>
+            <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <featureInstance name="currX">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/32"/>
+          </featureInstance>
+          <featureInstance name="currY">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/33"/>
+          </featureInstance>
+          <featureInstance name="inX">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/34"/>
+          </featureInstance>
+          <featureInstance name="inY">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/35"/>
+          </featureInstance>
+          <featureInstance name="outX" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/36"/>
+          </featureInstance>
+          <featureInstance name="outY" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.5"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/37"/>
+          </featureInstance>
+          <featureInstance name="velX" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.6"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/38"/>
+          </featureInstance>
+          <featureInstance name="velY" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.7"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/39"/>
+          </featureInstance>
+          <componentInstance name="refX" category="data">
+            <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataSubcomponent.0"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#|::0.5.9.5.49.0::18::/6"/>
+          </componentInstance>
+          <componentInstance name="refY" category="data">
+            <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataSubcomponent.1"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#|::0.5.9.5.49.1::18::/6"/>
+          </componentInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#DroneControl.DroneControlThread.rendezvous"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#DroneControl.DroneControlProc.rendezvous"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#DroneControl.DroneControl.rendezvous"/>
+    </componentInstance>
+    <componentInstance name="environment" category="system">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Max_Clock_Deviation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+            <unit href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#|::0.5.9.1.4.16.7.0.6::2::/1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.16"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.ContinuousDynamics"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="x(t) = ((0.01) * dotx * t) + x(0); y(t) = ((0.01) * doty * t) + y(0);"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.isEnvironment"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="currX" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/56"/>
+      </featureInstance>
+      <featureInstance name="currY" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/57"/>
+      </featureInstance>
+      <featureInstance name="velX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/58"/>
+      </featureInstance>
+      <featureInstance name="velY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/59"/>
+      </featureInstance>
+      <componentInstance name="x" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#|::0.5.9.1.46.0::18::/6"/>
+      </componentInstance>
+      <componentInstance name="y" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#|::0.5.9.1.46.1::18::/6"/>
+      </componentInstance>
+      <componentInstance name="dotx" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.2"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#|::0.5.9.1.46.2::18::/6"/>
+      </componentInstance>
+      <componentInstance name="doty" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.3"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#|::0.5.9.1.46.3::18::/6"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#Environment.Environment.rendezvous"/>
+    </componentInstance>
+    <connectionInstance name="drone.droneProc.droneThread.velX -> environment.dotx" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.1/@componentInstance.2" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.6">
+      <connectionReference context="//@componentInstance.1/@componentInstance.0/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.1/@componentInstance.1/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1/@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.1/@componentInstance.1/@componentInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="drone.droneProc.droneThread.velY -> environment.doty" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.1/@componentInstance.3" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.7">
+      <connectionReference context="//@componentInstance.1/@componentInstance.0/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.7" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.7">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.7" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.7">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0/@featureInstance.7" destination="//@componentInstance.1/@componentInstance.1/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1/@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.1/@componentInstance.1/@componentInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="environment.x -> drone.droneProc.droneThread.currX" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@componentInstance.1/@componentInstance.1/@componentInstance.0">
+      <connectionReference context="//@componentInstance.1/@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@componentInstance.0" destination="//@componentInstance.1/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1/@componentInstance.0/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="environment.y -> drone.droneProc.droneThread.currY" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1" source="//@componentInstance.1/@componentInstance.1/@componentInstance.1">
+      <connectionReference context="//@componentInstance.1/@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@componentInstance.1" destination="//@componentInstance.1/@componentInstance.1/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1/@componentInstance.0/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#DroneSystem.DroneSystem.rendezvous"/>
+  </componentInstance>
+  <componentInstance name="drone3" category="system">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Max_Clock_Deviation"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+          <unit href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#|::0.5.9.1.4.16.7.0.6::2::/1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.16"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="inX">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/92"/>
+    </featureInstance>
+    <featureInstance name="inY">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/93"/>
+    </featureInstance>
+    <featureInstance name="outX" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/94"/>
+    </featureInstance>
+    <featureInstance name="outY" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+      <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/95"/>
+    </featureInstance>
+    <componentInstance name="drone" category="system">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Max_Clock_Deviation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+            <unit href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#|::0.5.9.1.4.16.7.0.6::2::/1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.16"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="currX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/80"/>
+      </featureInstance>
+      <featureInstance name="currY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/81"/>
+      </featureInstance>
+      <featureInstance name="inX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/82"/>
+      </featureInstance>
+      <featureInstance name="inY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/83"/>
+      </featureInstance>
+      <featureInstance name="outX" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/84"/>
+      </featureInstance>
+      <featureInstance name="outY" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/85"/>
+      </featureInstance>
+      <featureInstance name="velX" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/86"/>
+      </featureInstance>
+      <featureInstance name="velY" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/87"/>
+      </featureInstance>
+      <componentInstance name="droneProc" category="process">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <featureInstance name="currX">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/72"/>
+        </featureInstance>
+        <featureInstance name="currY">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/73"/>
+        </featureInstance>
+        <featureInstance name="inX">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/74"/>
+        </featureInstance>
+        <featureInstance name="inY">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/75"/>
+        </featureInstance>
+        <featureInstance name="outX" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/76"/>
+        </featureInstance>
+        <featureInstance name="outY" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.5"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/77"/>
+        </featureInstance>
+        <featureInstance name="velX" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.6"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/78"/>
+        </featureInstance>
+        <featureInstance name="velY" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.7"/>
+          <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/79"/>
+        </featureInstance>
+        <componentInstance name="droneThread" category="thread">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+            </ownedValue>
+            <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <featureInstance name="currX">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/64"/>
+          </featureInstance>
+          <featureInstance name="currY">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/65"/>
+          </featureInstance>
+          <featureInstance name="inX">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/66"/>
+          </featureInstance>
+          <featureInstance name="inY">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/67"/>
+          </featureInstance>
+          <featureInstance name="outX" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/68"/>
+          </featureInstance>
+          <featureInstance name="outY" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.5"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/69"/>
+          </featureInstance>
+          <featureInstance name="velX" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.6"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/70"/>
+          </featureInstance>
+          <featureInstance name="velY" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.7"/>
+            <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/71"/>
+          </featureInstance>
+          <componentInstance name="refX" category="data">
+            <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataSubcomponent.0"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#|::0.5.9.5.49.0::18::/6"/>
+          </componentInstance>
+          <componentInstance name="refY" category="data">
+            <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataSubcomponent.1"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#|::0.5.9.5.49.1::18::/6"/>
+          </componentInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#DroneControl.DroneControlThread.rendezvous"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#DroneControl.DroneControlProc.rendezvous"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#DroneControl.DroneControl.rendezvous"/>
+    </componentInstance>
+    <componentInstance name="environment" category="system">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Max_Clock_Deviation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+            <unit href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#|::0.5.9.1.4.16.7.0.6::2::/1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.16"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.Synchronous"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.ContinuousDynamics"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="x(t) = ((0.01) * dotx * t) + x(0); y(t) = ((0.01) * doty * t) + y(0);"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/propertysets/HybridMRSynch.aadl#Hybrid_SynchAADL.isEnvironment"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="currX" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/88"/>
+      </featureInstance>
+      <featureInstance name="currY" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/89"/>
+      </featureInstance>
+      <featureInstance name="velX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/90"/>
+      </featureInstance>
+      <featureInstance name="velY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+        <type href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/instances/Drones3_Drones3_rendezvous_Instance.aaxl2#/91"/>
+      </featureInstance>
+      <componentInstance name="x" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#|::0.5.9.1.46.0::18::/6"/>
+      </componentInstance>
+      <componentInstance name="y" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#|::0.5.9.1.46.1::18::/6"/>
+      </componentInstance>
+      <componentInstance name="dotx" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.2"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#|::0.5.9.1.46.2::18::/6"/>
+      </componentInstance>
+      <componentInstance name="doty" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.3"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#|::0.5.9.1.46.3::18::/6"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#Environment.Environment.rendezvous"/>
+    </componentInstance>
+    <connectionInstance name="drone.droneProc.droneThread.velX -> environment.dotx" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.6">
+      <connectionReference context="//@componentInstance.2/@componentInstance.0/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="drone.droneProc.droneThread.velY -> environment.doty" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.3" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.7">
+      <connectionReference context="//@componentInstance.2/@componentInstance.0/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.7" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.7">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.7" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.7">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.7" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="environment.x -> drone.droneProc.droneThread.currX" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.0">
+      <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.0" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2/@componentInstance.0/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="environment.y -> drone.droneProc.droneThread.currY" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.1">
+      <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.1" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2/@componentInstance.0/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#DroneSystem.DroneSystem.rendezvous"/>
+  </componentInstance>
+  <connectionInstance name="drone1.drone.droneProc.droneThread.outX -> drone2.drone.droneProc.droneThread.inX" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.4">
+    <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1/@componentInstance.0/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="drone1.drone.droneProc.droneThread.outY -> drone2.drone.droneProc.droneThread.inY" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.5">
+    <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1/@componentInstance.0/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="drone2.drone.droneProc.droneThread.outX -> drone3.drone.droneProc.droneThread.inX" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.4">
+    <connectionReference context="//@componentInstance.1/@componentInstance.0/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.0/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="drone2.drone.droneProc.droneThread.outY -> drone3.drone.droneProc.droneThread.inY" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.3" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.5">
+    <connectionReference context="//@componentInstance.1/@componentInstance.0/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.3" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.0/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="drone3.drone.droneProc.droneThread.outX -> drone1.drone.droneProc.droneThread.inX" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.4">
+    <connectionReference context="//@componentInstance.2/@componentInstance.0/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.2" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="drone3.drone.droneProc.droneThread.outY -> drone1.drone.droneProc.droneThread.inY" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.3" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.5">
+    <connectionReference context="//@componentInstance.2/@componentInstance.0/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.0" source="//@componentInstance.2/@componentInstance.0/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.2/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.3" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Master_Thesis_HybridSynchAADL/aadl/2Drones_single_rendezvous3/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#Drones3.Drones3.rendezvous"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/Master_Thesis_HybridSynchAADL/aadl/3Drones_single_rendezvous3/package/Drones3.aadl#Drones3.Drones3.rendezvous"/>
+</instance:SystemInstance>

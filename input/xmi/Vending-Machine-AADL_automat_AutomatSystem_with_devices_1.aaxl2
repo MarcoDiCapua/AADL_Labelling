@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="AutomatSystem_with_devices_Instance" category="system">
+  <componentInstance name="this_bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/Vending-Machine-AADL/automat.aadl#automat.HWConnection.impl"/>
+  </componentInstance>
+  <componentInstance name="this_panel_zewnetrzny" category="device">
+    <featureInstance name="numerek" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedDataPort.0"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedBusAccess.0"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/Vending-Machine-AADL/automat.aadl#automat.panel_zewnetrzny"/>
+  </componentInstance>
+  <componentInstance name="this_silownik_spirali" category="device">
+    <featureInstance name="ruch" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedBusAccess.0"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/Vending-Machine-AADL/automat.aadl#automat.silownik_spirali"/>
+  </componentInstance>
+  <componentInstance name="this_oswietlenie" category="device">
+    <featureInstance name="light_on" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.41/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.41/@ownedBusAccess.0"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/Vending-Machine-AADL/automat.aadl#automat.oswietlenie"/>
+  </componentInstance>
+  <componentInstance name="this_licznik_monet" category="device">
+    <featureInstance name="wartosc_monet" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedDataPort.0"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="reszta_out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedDataPort.1"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedBusAccess.0"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/Vending-Machine-AADL/automat.aadl#automat.licznik_monet"/>
+  </componentInstance>
+  <componentInstance name="this_chlodziarka" category="device">
+    <featureInstance name="chlodz" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.45/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.45/@ownedBusAccess.0"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/Vending-Machine-AADL/automat.aadl#automat.chlodziarka"/>
+  </componentInstance>
+  <componentInstance name="this_wyswietlacz" category="device">
+    <featureInstance name="wyswietl">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedDataPort.0"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedBusAccess.0"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/Vending-Machine-AADL/automat.aadl#automat.wyswietlacz"/>
+  </componentInstance>
+  <componentInstance name="this_controller" category="process">
+    <featureInstance name="numerek_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="numerek_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="reszta_in" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="wartosc_monet">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="wyswietl_on" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="ruch_spirala" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="chlodzenie_on" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/Vending-Machine-AADL/automat.aadl#automat.Controller"/>
+  </componentInstance>
+  <componentInstance name="this_processor" category="processor">
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.32/@ownedBusAccess.0"/>
+      <type href="../../github/Vending-Machine-AADL/instances/automat_AutomatSystem_with_devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <componentInstance name="this_RAM" category="memory">
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryType" href="../../github/Vending-Machine-AADL/automat.aadl#automat.RAM"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/Vending-Machine-AADL/automat.aadl#automat.MainProcessor.impl"/>
+  </componentInstance>
+  <connectionInstance name="this_bus -> this_panel_zewnetrzny.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_silownik_spirali.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_oswietlenie.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_licznik_monet.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.4/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_chlodziarka.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.5/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_wyswietlacz.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.6/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_processor.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.8/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_panel_zewnetrzny.numerek -> this_controller.numerek_in" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_licznik_monet.wartosc_monet -> this_controller.wartosc_monet" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.3" source="//@componentInstance.4/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.0" destination="//@componentInstance.7/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.numerek_out -> this_wyswietlacz.wyswietl" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.7/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.1" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.reszta_in -> this_licznik_monet.reszta_out" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.1" source="//@componentInstance.7/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.2" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.wyswietl_on -> this_wyswietlacz.wyswietl" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.7/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.4" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.ruch_spirala -> this_silownik_spirali.ruch" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.7/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.5" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.chlodzenie_on -> this_chlodziarka.chlodz" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.7/@featureInstance.6">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.6" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/Vending-Machine-AADL/automat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/Vending-Machine-AADL/automat.aadl#automat.AutomatSystem.with_devices"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/Vending-Machine-AADL/automat.aadl#automat.AutomatSystem.with_devices"/>
+</instance:SystemInstance>

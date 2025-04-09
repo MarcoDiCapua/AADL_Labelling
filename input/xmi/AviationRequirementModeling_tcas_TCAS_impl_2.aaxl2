@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="TCAS_impl_Instance" category="system">
+  <featureInstance name="nearestIntruderAltitude">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/13"/>
+  </featureInstance>
+  <featureInstance name="nearestIntruderGroundDistance">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="nearestIntruderLongitude">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+    <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="ownAltitude">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.3"/>
+    <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/14"/>
+  </featureInstance>
+  <featureInstance name="ownHeading">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.4"/>
+    <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="ownVerticalVelocity">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.5"/>
+    <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="ownLatitude">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.6"/>
+    <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="ownLongitude">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.7"/>
+    <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="requiredVerticalVelocity" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.8"/>
+    <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <componentInstance name="surveillance" category="system">
+    <featureInstance name="nearestIntruderAltitude_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="nearestIntruderGroundDistance_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="nearestIntruderLongitude_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.2"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="nearestIntruderAltitude" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.3"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="nearestIntruderGroundDistance" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.4"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="nearestIntruderLongitude" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.5"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#tcas.Surveillance.impl"/>
+  </componentInstance>
+  <componentInstance name="instrumentation" category="system">
+    <featureInstance name="altitude_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="heading_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="verticalVelocity_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.2"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="ownLatitude_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.3"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="ownLongitude_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.4"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="altitude" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.5"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="heading" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.6"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="verticalVelocity" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.7"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="ownLatitude" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.8"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="ownLongitude" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.9"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#tcas.Instrumentation.impl"/>
+  </componentInstance>
+  <componentInstance name="trajectoryExtrapolation" category="system">
+    <featureInstance name="nearestIntruderAltitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="projectedIntruderAltitude" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#tcas.TrajectoryExtrapolation.impl"/>
+  </componentInstance>
+  <componentInstance name="threatDetection" category="system">
+    <featureInstance name="altitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="heading">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="verticalVelocity">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.2"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="nearestIntruderAltitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.3"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="nearestIntruderGroundDistance">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.4"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="threatDetected" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.5"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#tcas.ThreatDetection.impl"/>
+  </componentInstance>
+  <componentInstance name="maneuverTemplates" category="system">
+    <featureInstance name="sameAltitudeGoUp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="sameAltitudeGoDown" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="bottomIntrusion" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.2"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="topIntrusion" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.3"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#tcas.ManeuverTemplates.impl"/>
+  </componentInstance>
+  <componentInstance name="responseSelection" category="system">
+    <featureInstance name="threatDetected">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <featureInstance name="threatAltitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <featureInstance name="ownAltitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.2"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/12"/>
+    </featureInstance>
+    <featureInstance name="ownLongitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.3"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="threatLongitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.4"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="requiredVerticalVelocity" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.5"/>
+      <type href="../../github/AviationRequirementModeling/workspace/aadl/tcas/instances/tcas_full_TCAS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#tcas.ResponseSelection.impl"/>
+  </componentInstance>
+  <connectionInstance name="nearestIntruderAltitude -> surveillance.nearestIntruderAltitude_in" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="nearestIntruderGroundDistance -> surveillance.nearestIntruderGroundDistance_in" kind="portConnection" destination="//@componentInstance.0/@featureInstance.1" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="nearestIntruderLongitude -> surveillance.nearestIntruderLongitude_in" kind="portConnection" destination="//@componentInstance.0/@featureInstance.2" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ownAltitude -> instrumentation.altitude_in" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@featureInstance.3">
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ownHeading -> instrumentation.heading_in" kind="portConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@featureInstance.4">
+    <connectionReference context="/" source="//@featureInstance.4" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ownVerticalVelocity -> instrumentation.verticalVelocity_in" kind="portConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@featureInstance.5">
+    <connectionReference context="/" source="//@featureInstance.5" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ownLatitude -> instrumentation.ownLatitude_in" kind="portConnection" destination="//@componentInstance.1/@featureInstance.3" source="//@featureInstance.6">
+    <connectionReference context="/" source="//@featureInstance.6" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ownLongitude -> instrumentation.ownLongitude_in" kind="portConnection" destination="//@componentInstance.1/@featureInstance.4" source="//@featureInstance.7">
+    <connectionReference context="/" source="//@featureInstance.7" destination="//@componentInstance.1/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="surveillance.nearestIntruderAltitude -> threatDetection.nearestIntruderAltitude" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.3" source="//@componentInstance.0/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.3/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="surveillance.nearestIntruderAltitude -> responseSelection.threatAltitude" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.1" source="//@componentInstance.0/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="surveillance.nearestIntruderGroundDistance -> threatDetection.nearestIntruderGroundDistance" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.4" source="//@componentInstance.0/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.4" destination="//@componentInstance.3/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="surveillance.nearestIntruderLongitude -> responseSelection.threatLongitude" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.4" source="//@componentInstance.0/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.5" destination="//@componentInstance.5/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.17"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="instrumentation.altitude -> threatDetection.altitude" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.1/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.5" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="instrumentation.altitude -> responseSelection.ownAltitude" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.2" source="//@componentInstance.1/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.5" destination="//@componentInstance.5/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="instrumentation.heading -> threatDetection.heading" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.1/@featureInstance.6">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.6" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="instrumentation.verticalVelocity -> threatDetection.verticalVelocity" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.2" source="//@componentInstance.1/@featureInstance.7">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.7" destination="//@componentInstance.3/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="instrumentation.ownLongitude -> responseSelection.ownLongitude" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.3" source="//@componentInstance.1/@featureInstance.9">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.9" destination="//@componentInstance.5/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="threatDetection.threatDetected -> responseSelection.threatDetected" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.3/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.5" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="responseSelection.requiredVerticalVelocity -> requiredVerticalVelocity" kind="portConnection" destination="//@featureInstance.8" source="//@componentInstance.5/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.5" destination="//@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.18"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#tcas.TCAS.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/workspace/aadl/tcas/tcas_full.aadl#tcas.TCAS.impl"/>
+</instance:SystemInstance>

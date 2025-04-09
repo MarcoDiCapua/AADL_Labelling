@@ -1,0 +1,30 @@
+package switch
+public
+
+with EMV2;
+
+system switch
+	features
+		signalIn : in data port;
+		signalOut : out data port;
+		closeCommand : in event port;
+	flows
+		signalFlowPath  : flow path signalIn -> signalOut;	
+
+	annex EMV2 {**
+		use types errorLibrary;
+		use behavior errorLibrary::FailStop;
+		component error behavior
+			events
+				Failure : error event {serviceOmission};
+			transitions
+				t1 : operational -[failure{serviceOmission}]-> failStop;
+		end component;
+	**};
+
+end switch;
+
+system implementation switch.i
+end switch.i;
+
+end switch;

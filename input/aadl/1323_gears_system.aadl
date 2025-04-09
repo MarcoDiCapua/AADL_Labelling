@@ -1,0 +1,490 @@
+package gears_system
+public
+	-- Data types
+	with Base_Types;
+	with Data_Model;
+	Boolean renames data Base_Types::Boolean;
+	Integer renames data Base_Types::Integer;
+
+	-- Custom data types
+	data shock_absorber
+	end shock_absorber;
+
+	data implementation shock_absorber.imp
+		properties
+			Data_Model::Data_Representation => enum;
+			Data_Model::Enumerators => ("vol", "sol");
+	end shock_absorber.imp;
+
+	data handle
+	end handle;
+
+	data implementation handle.imp
+		properties
+			Data_Model::Data_Representation => enum;
+			Data_Model::Enumerators => ("up", "down");
+	end handle.imp;
+
+	data switch_value
+	end switch_value;
+
+	data implementation switch_value.imp
+		properties
+			Data_Model::Data_Representation => enum;
+			Data_Model::Enumerators => ("closed", "open");
+	end switch_value.imp;
+
+	-- Buses
+	bus mem_bus end mem_bus;
+	bus hydrolic_bus end hydrolic_bus;
+	bus dp_to_ev_bus end dp_to_ev_bus;
+
+	-- Machine device
+	memory dp_RAM
+		features
+			mbus: requires bus access mem_bus;
+	end dp_RAM;
+	processor dp_processor
+		features
+			mbus: requires bus access mem_bus;
+	end dp_processor;
+
+	-- Global Digital part system
+	system digital_part
+		features
+			general_EV: out data port Boolean;
+			open_EV: out data port Boolean;
+			close_EV: out data port Boolean;
+			rectract_EV: out data port Boolean;
+			extend_EV: out data port Boolean;
+			maneuvring: out data port Boolean;
+			locked_down: out data port Boolean;
+			error: out data port Boolean;
+			handle: in event data port handle;
+			switch_value: in event data port switch_value;
+			door_closed: in event data port Boolean;
+			hydrolic_presurized: in event data port Boolean;
+			door_openned: in event data port Boolean;
+			gear_extended: in event data port Boolean;
+			gear_retracted: in event data port Boolean;
+			gear_shock_absorb: in event data port shock_absorber;
+	end digital_part;
+
+	system implementation digital_part.dp1
+		subcomponents
+			dp_mem: memory dp_RAM;
+			dp_proc: processor dp_processor;
+			dps: process dp_software.dps;
+			mbdp: bus mem_bus;
+		connections
+			digital_part_dp1_new_connection: bus access dp_proc.mbus <-> mbdp;
+			digital_part_dp1_new_connection2: bus access dp_mem.mbus <-> mbdp;
+	end digital_part.dp1;
+
+	process dp_software
+		features
+			general_EV: out data port Boolean;
+			open_EV: out data port Boolean;
+			close_EV: out data port Boolean;
+			rectract_EV: out data port Boolean;
+			extend_EV: out data port Boolean;
+			maneuvring: out data port Boolean;
+			locked_down: out data port Boolean;
+			error: out data port Boolean;
+			handle: in event data port handle;
+			switch_value: in event data port switch_value;
+			door_closed: in event data port Boolean;
+			hydrolic_presurized: in event data port Boolean;
+			door_openned: in event data port Boolean;
+			gear_extended: in event data port Boolean;
+			gear_retracted: in event data port Boolean;
+			gear_shock_absorb: in event data port shock_absorber;
+	end dp_software;
+
+	process implementation dp_software.dps
+		subcomponents
+			pit: thread pilote_interface_thread;
+			gmt: thread gears_manager_thread;
+			adt: thread group anomaly_detetion_group;
+		connections
+			c00: port pit.maneuvring -> maneuvring;
+			c01: port pit.locked_down -> locked_down;
+			c02: port pit.error -> error;
+			c03: port door_closed -> pit.door_closed;
+			c04: port door_openned -> pit.door_openned;
+			c05: port gear_extended -> pit.gear_extended;
+			c06: port gear_retracted -> pit.gear_retracted;
+			c07: port gear_shock_absorb -> pit.gear_shock_absorb;
+			-- gears manager
+			c08: port gmt.general_EV -> general_EV;
+			c09: port gmt.open_EV -> open_EV;
+			c10: port gmt.close_EV -> close_EV;
+			c11: port gmt.rectract_EV -> rectract_EV;
+			c12: port gmt.extend_EV -> extend_EV;
+			-- sensors
+			c13: port switch_value -> gmt.switch_value;
+			c14: port handle -> gmt.handle;
+			-- EV
+			c15: port hydrolic_presurized -> gmt.hydrolic_presurized;
+			c16: port door_closed -> gmt.door_closed;
+			c17: port door_openned -> gmt.door_openned;
+			c18: port gear_extended -> gmt.gear_extended;
+			c19: port gear_retracted -> gmt.gear_retracted;
+			c20: port gear_shock_absorb -> gmt.gear_shock_absorb;
+	end dp_software.dps;
+
+	
+	--------------------------------------------------------------------------------------------------
+	-- Thread pilote interface
+	thread pilote_interface_thread
+		features
+			maneuvring: out event data port Boolean;
+			locked_down: out event data port Boolean;
+			error: out event data port Boolean;
+			door_closed: in event data port Boolean;
+			door_openned: in event data port Boolean;
+			gear_extended: in event data port Boolean;
+			gear_retracted: in event data port Boolean;
+			gear_shock_absorb: in event data port shock_absorber.imp;
+		properties
+			Dispatch_protocol => sporadic;
+			period => 10ms;
+	end pilote_interface_thread;
+
+	thread implementation pilote_interface_thread.imp
+		subcomponents
+			v: data Boolean {Data_Model::Initial_Value => ("false");};
+			dc: data Boolean {Data_Model::Initial_Value => ("false");};
+			ge: data Boolean {Data_Model::Initial_Value => ("false");};
+			gr: data Boolean {Data_Model::Initial_Value => ("false");};
+		annex behavior_specification {**
+          states
+            s0 : initial complete state;
+          transitions
+            s0 -[on dispatch gear_extended]-> s0 {
+              gear_extended ? (v);
+              locked_down ! (v);
+              if (v)
+                {
+                  maneuvring ! (false);
+                  error ! (false)
+                }
+              end if
+            };
+            s0 -[on dispatch door_closed or gear_extended or gear_retracted]-> s0 {
+              door_closed ? (dc);
+              gear_extended ? (ge);
+              gear_retracted ? (gr);
+              maneuvring ! (not dc and not ge and not gr);
+              if (not dc and not ge and not gr)
+                {
+                  locked_down ! (false);
+                  error ! (false)
+                }
+              end if
+            };
+            s0 -[on dispatch door_closed or gear_retracted]-> s0 {
+              door_closed ? (dc);
+              gear_retracted ? (gr);
+              if (dc and gr)
+                {
+                  locked_down ! (false);
+                  maneuvring ! (false);
+                  error ! (false)
+                }
+              end if
+            };
+        **};
+	end pilote_interface_thread.imp;
+
+	
+	--------------------------------------------------------------------------------------------------
+	-- Thread Gears Manager
+	thread gears_manager_thread
+		features
+			general_EV: out data port Boolean;
+			open_EV: out data port Boolean;
+			close_EV: out data port Boolean;
+			rectract_EV: out data port Boolean;
+			extend_EV: out data port Boolean;
+			-- sensors
+			switch_value: in event data port switch_value;
+			handle: in event data port handle;
+			-- EV
+			hydrolic_presurized: in event data port Boolean;
+			door_closed: in event data port Boolean;
+			door_openned: in event data port Boolean;
+			gear_extended: in event data port Boolean;
+			gear_retracted: in event data port Boolean;
+			gear_shock_absorb: in event data port shock_absorber;
+		properties
+			Dispatch_Protocol => Sporadic;
+			Period => 10ms;
+	end gears_manager_thread;
+
+	thread implementation gears_manager_thread.imp
+		annex behavior_specification {**
+          variables
+            h : gears_system::handle.imp;
+            s : gears_system::switch_value.imp;
+            shock_abs : gears_system::shock_absorber.imp;
+          states
+            wait_handle : initial complete state;
+            locked_down_ground : complete state;
+            wait_switch : complete state;
+            wait_presurized : complete state;
+            gear_moving : complete state;
+            door_openning : complete state;
+            door_closing : complete state;
+            error : state;
+          transitions
+            wait_handle -[on dispatch handle]-> wait_switch {
+              h := handle
+            };
+            wait_switch -[on dispatch switch_value]-> wait_presurized {
+              general_EV ! (true)
+            };
+            wait_presurized -[on dispatch hydrolic_presurized]-> door_openning {
+              open_EV ! (true)
+            };
+            door_openning -[on dispatch door_openned]-> gear_moving {
+              if (h = "up")
+                extend_EV ! (true)
+              else
+                rectract_EV ! (true)
+              end if
+            };
+            gear_moving -[on dispatch gear_extended or gear_retracted]-> door_closing {
+              close_EV ! (true)
+            };
+            door_closing -[on dispatch door_closed]-> wait_handle {
+              if (h = "up")
+                extend_EV ! (false)
+              else
+                rectract_EV ! (false)
+              end if;
+              close_EV ! (false);
+              general_EV ! (false)
+            };
+        **};
+	end gears_manager_thread.imp;
+
+	--------------------------------------------------------------------------------------------------
+	-- ANOMALY DETECTION Threads
+	thread group anomaly_detetion_group
+		features
+			error: out data port Boolean;
+			general_EV: in event data port;
+			maneuvring: in event data port;
+			gear_extended: in event data port;
+			gear_retracted: in event data port;
+			door_openned: in event data port;
+			door_closed: in event data port;
+	end anomaly_detetion_group;
+	
+	-- Threads types
+	thread anomaly_EV
+		features
+			error: out data port Boolean;
+			general_EV: in event data port;
+			maneuvring: in event data port;
+		properties
+			Dispatch_Protocol => Timed;
+			Period => 200ms;
+	end anomaly_EV;
+	
+	thread anomaly_EV_stop
+		features
+			error: out data port Boolean;
+			general_EV: in event data port;
+			maneuvring: in event data port;
+		properties
+			Dispatch_Protocol => Timed;
+			Period => 1000ms;
+	end anomaly_EV_stop;
+
+	thread anomaly_move_gear
+		features
+			error: out data port Boolean;
+			gear_extended: in event data port;
+			gear_retracted: in event data port;
+		properties
+			Dispatch_Protocol => Timed;
+			Period => 100ms;
+	end anomaly_move_gear;
+
+	thread anomaly_move_door
+		features
+			error: out data port Base_Types::Boolean;
+			door_openned: in event data port;
+			door_closed: in event data port;
+		properties
+			Dispatch_Protocol => Timed;
+			Period => 100ms;
+	end anomaly_move_door;
+
+	-- Threads implementation
+	thread group implementation anomaly_detetion_group.imp
+		subcomponents
+			anomaly_EV: thread anomaly_EV;
+			anomaly_move_door: thread anomaly_move_door;
+			anomaly_move_gear: thread anomaly_move_gear;
+			anomaly_EV_stop: thread anomaly_EV_stop; 
+		connections
+			CE0: port anomaly_EV.error -> error;
+			CE1: port anomaly_move_door.error -> error;
+			CE2: port anomaly_move_gear.error -> error;
+			CE3: port anomaly_EV_stop.error -> error;
+			
+			C0: port general_EV -> anomaly_EV.general_EV;
+			C1: port maneuvring -> anomaly_EV.maneuvring;
+			C2: port maneuvring -> anomaly_EV_stop.maneuvring;
+			C3: port general_EV -> anomaly_EV_stop.general_EV;
+			
+			
+			C4: port general_EV -> anomaly_move_door.door_openned;
+			C5: port general_EV -> anomaly_move_door.door_closed;
+			C6: port gear_extended -> anomaly_move_gear.gear_extended;
+			C7: port gear_retracted -> anomaly_move_gear.gear_retracted;
+	end anomaly_detetion_group.imp;
+
+	thread implementation anomaly_EV.impl
+		annex behavior_specification {**
+          states
+            init : initial complete state;
+            wait : complete state;
+            error_state : state;
+          transitions
+            init -[on dispatch general_EV]-> wait;
+            wait -[on dispatch maneuvring]-> init {
+              error ! (false)
+            };
+            wait -[on dispatch timeout ]-> error_state {
+              error ! (true)
+            };
+            error_state -[]-> init;
+        **};
+	end anomaly_EV.impl;
+
+
+	thread implementation anomaly_EV_stop.impl
+		annex behavior_specification {**
+          states
+            init : initial complete state;
+            wait : complete state;
+            error_state : state;
+          transitions
+            init -[on dispatch general_EV]-> wait;
+            wait -[on dispatch maneuvring]-> init {
+              if (general_EV ? = false and maneuvring ? = false)
+                error ! (true)
+              else
+                error ! (false)
+              end if
+            };
+            wait -[on dispatch timeout ]-> error_state {
+              error ! (true)
+            };
+            error_state -[]-> init;
+        **};
+	end anomaly_EV_stop.impl;
+
+	thread implementation anomaly_move_door.impl
+		annex behavior_specification {**
+          states
+            init : initial complete state;
+            wait : complete state;
+            error_state : state;
+          transitions
+            init -[on dispatch door_openned]-> wait;
+            wait -[on dispatch door_closed]-> init {
+              error ! (false)
+            };
+            wait -[on dispatch timeout ]-> error_state {
+              error ! (true)
+            };
+            error_state -[]-> init;
+        **};
+	end anomaly_move_door.impl;
+
+	thread implementation anomaly_move_gear.impl
+		annex behavior_specification {**
+          states
+            init : initial complete state;
+            wait : complete state;
+            error_state : state;
+          transitions
+            init -[on dispatch gear_extended]-> wait;
+            wait -[on dispatch gear_retracted]-> init {
+              error ! (false)
+            };
+            wait -[on dispatch timeout ]-> error_state {
+              error ! (true)
+            };
+            error_state -[]-> init;
+        **};
+	end anomaly_move_gear.impl;
+
+	--------------------------------------------------------------------------------------------------
+	-- Devices
+	device pilote_interface
+		features
+			maneuvring: in data port Boolean;
+			locked_down: in data port Boolean;
+			error: in data port Boolean;
+	end pilote_interface;
+
+	device pilot_command
+		features
+			handle: out event data port handle.imp;
+	end pilot_command;
+
+	device analogical_switch
+	end analogical_switch;
+
+	device descret_sensor
+		features
+			value: out event data port;
+	end descret_sensor;
+
+	device implementation descret_sensor.door_close_sensor
+	end descret_sensor.door_close_sensor;
+
+	device implementation descret_sensor.door_open_sensor
+	end descret_sensor.door_open_sensor;
+
+	device implementation descret_sensor.gears_extend_sensor
+	end descret_sensor.gears_extend_sensor;
+
+	device implementation descret_sensor.gears_retract_sensor
+	end descret_sensor.gears_retract_sensor;
+
+	device implementation descret_sensor.gear_shock_sensor
+	end descret_sensor.gear_shock_sensor;
+
+	-- Electro valves
+	device electro_valve
+		features
+			hydrolic_in: requires bus access hydrolic_bus;
+			hydrolic_out: requires bus access hydrolic_bus;
+			dp_orders: in data port;
+	end electro_valve;
+
+	device implementation electro_valve.general_EV
+	end electro_valve.general_EV;
+
+	device implementation electro_valve.close_EV
+	end electro_valve.close_EV;
+
+	device implementation electro_valve.retract_EV
+	end electro_valve.retract_EV;
+
+	device implementation electro_valve.extend_EV
+	end electro_valve.extend_EV;
+
+	device implementation electro_valve.open_EV
+	end electro_valve.open_EV;
+
+	
+	
+end gears_system;

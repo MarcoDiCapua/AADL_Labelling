@@ -1,0 +1,436 @@
+package vtv
+public
+	with
+	 Base_Types, EMV2, vtv_properties, vtv_variables
+     
+     --, BLESS, BLESS_Types
+     ;  --import packages and property sets
+     
+-- top-level component enclosing the vehicle transit system
+annex behavior_annex {**
+states
+	off:initial state;
+	on:state;
+	on_engaged: state;
+	on_engaged_steady: state;
+	on_engaged_deactivating: state;
+	on_engaged_activating: state;
+transitions
+	off->[]->on;
+	on-[]->off;
+	on-[]->on_engaged;
+	on_engaged-[]->on;
+	on_engaged-[]->on_engaged_steady;
+	on_engaged_steady-[]->on_engaged_deactivating;
+	on_engaged_steady-[]->on_engaged_activating;
+	on_engaged_activating-[]->on_engaged_steady;
+	on_engaged_deactivating-[]->on_engaged_steady;
+**};
+
+-- top-level component enclosing the car system
+annex EMV2
+{**
+	error types
+	  RadarError: type;  --radar responding inappropriately
+	  SensorError : type;		--the class of sensor errors
+	  FaultySensor : type extends SensorError;  --sensor unable to process correctly
+	  ProcessAlarm : type extends RadarError;  --radar faulty detection   
+	  StatusError : type;  --mode and status errors
+	  MonitorError : type extends StatusError;  --indicated monitor status error
+	  EmergencyRequestError : type extends StatusError;  --monitor mode wrong
+	  InfoRequestError: type extends StatusError; ---- Information request error
+	  ThreadFault renames type ErrorLibrary::EarlyServiceTermination;  --thread fault halts thread
+	  InternalError : type;  --an internal error was detected
+	end types;
+	error behavior FailStop
+	  use types vtv;
+	  events fail: error event;
+	  states 
+	    working: initial state; 
+	    failed : state;
+	  transitions
+	    working -[fail]-> failed;
+	end behavior;
+**};
+
+
+system VehicleTransitSystem		
+end VehicleTransitSystem;
+
+
+
+system implementation VehicleTransitSystem.impl
+	subcomponents
+		transvobe:system transvobe.impl;
+		remoteVehicleOBE:system remoteVehicleOBE.impl;
+		RoadsideEquip:device RoadsideEquip.impl;
+		transitVehicleDatabus:bus transitVehicleDatabus.impl;
+		transOperator:system transOperator.impl;
+		itsroadequip:device itsroadequip.impl;
+		
+	connections
+		vlme: port remoteVehicleOBE.vloc_e->RoadsideEquip.vloc_e;
+		bus_conn:bus access transitVehicleDatabus->transvobe.bus_access;
+		hs:port transitVehicleDatabus.host_status->transvobe.host_status;
+		ci:port transvobe.coll_inf->transitVehicleDatabus.coll_inf;
+		od:port transvobe.op_disp->transOperator.op_disp;
+		oi:port transOperator.op_in->transvobe.op_in;
+		di:port itsroadequip.dvr_inf->transOperator.dvr_inf;
+		rv:port remoteVehicleOBE.rvloc->transvobe.rvloc;
+		vlm:port transvobe.vloc->remoteVehicleOBE.vloc;	
+		aop: port transvobe.alarm -> transOperator.alarm;	
+		ptn:port transvobe.pla_ctrl->transitVehicleDatabus.pla_ctrl;
+		lch:port transvobe.chg_ctrl->transitVehicleDatabus.chg_ctrl;
+		
+end VehicleTransitSystem.impl;
+
+system transOperator
+	features
+		dvr_inf:in data port;
+		op_disp:in data port vtv_variables::status;
+		op_in:out data port vtv_variables::input_mode;
+		alarm:in data port vtv_variables::alarm_message;
+		
+annex EMV2 
+  
+  {** 
+    use types ErrorLibrary,vtv;
+    use behavior vtv::FailStop;
+    
+  error propagations
+  
+  dvr_inf: in propagation {InfoRequestError};
+  op_disp: in propagation {SubtleValueError};
+
+	
+  end propagations;
+ 
+ component error behavior
+ events
+ BadRead : error event;
+ RecoverEvent: recover event;
+ 
+ transitions
+ t0 : working-[dvr_inf{InfoRequestError}]-> failed;
+ t1 : working-[BadRead]->failed;
+ t2 : Failed -[RecoverEvent]->working;
+ 
+
+ end component;
+   **};
+  
+end transOperator;
+system implementation transOperator.impl	
+end transOperator.impl;
+
+device itsroadequip
+	features
+		dvr_inf:out data port;	
+end itsroadequip;
+
+device implementation itsroadequip.impl	
+end itsroadequip.impl;
+
+system transvobe
+	features
+		host_status:in data port;
+		coll_inf:out data port;
+		bus_access: requires bus access transitVehicleDatabus;
+		op_disp:out data port vtv_variables::status;
+		op_in:in data port vtv_variables::input_mode;
+		rvloc:in data port vtv_variables::locm;
+		vloc:out data port vtv_variables::locm;
+		alarm:out data port vtv_variables::alarm_message;	
+		pla_ctrl: out data port;
+		chg_ctrl: out data port;
+		p:out event port;
+		l:out event port;
+		
+annex EMV2 
+  {** 
+    use types ErrorLibrary, vtv;
+    use behavior vtv::Failstop;
+  error propagations
+  host_status: in propagation {OutOfRange,SubtleValueError};
+  coll_inf: in propagation {InfoRequestError};
+  op_disp: out propagation {SubtleValueError};
+  
+  flows
+	ef0 : error source op_disp{SubtleValueError};
+	ef2 : error path host_status{OutOfRange,SubtleValueError}->op_disp{SubtleValueError};
+	  
+  end propagations;
+ 
+ component error behavior
+ events
+ BadRead : error event;
+ RecoverEvent: recover event;
+ 
+ transitions
+ t0 : working-[host_status{OutofRange,SubtleValueError}]-> failed;
+ t1 : working-[BadRead]->failed;
+ t2 : Failed -[RecoverEvent]->working;
+ 
+ end component;  
+  **};
+end transvobe;
+
+system implementation transvobe.impl
+	subcomponents
+		transv2vsafety:process transv2vsafety.impl;
+	connections
+		hs:port host_status->transv2vsafety.host_status;
+		ci:port transv2vsafety.coll_inf->coll_inf;
+		od:port transv2vsafety.op_disp->op_disp;
+		oi:port op_in->transv2vsafety.op_in;
+		rv:port rvloc->transv2vsafety.rvloc;
+		vlm:port transv2vsafety.vloc-> vloc;	
+		aob: port transv2vsafety.alarm -> alarm;
+		ptn:port transv2vsafety.pla_ctrl->pla_ctrl;
+		lch:port transv2vsafety.chg_ctrl->chg_ctrl;
+		e1: port transv2vsafety.p->p;
+		e2: port transv2vsafety.l->l;
+end transvobe.impl;
+
+process transv2vsafety
+	features
+		host_status:in data port;
+		coll_inf:out data port;
+		op_disp:out data port vtv_variables::status;
+		op_in:in data port vtv_variables::input_mode;
+		rvloc:in data port vtv_variables::locm;
+		vloc:out data port vtv_variables::locm;
+		alarm:out data port vtv_variables::alarm_message;
+		pla_ctrl: out data port;
+		chg_ctrl: out data port;
+		p:out event port;
+		l:out event port;
+				
+annex EMV2
+	{**
+	use types ErrorLibrary, vtv;
+	use behavior vtv::Failstop;
+	error propagations
+	host_status: in propagation {OutOfRange,SubtleValueError};
+    op_disp: out propagation {MonitorError,SubtleValueError};
+    coll_inf: out propagation {InfoRequestError};
+    op_in: in propagation {SubtleValueError};
+    
+    flows
+	ef1 : error source coll_inf{InfoRequestError};
+	ef2 : error source op_disp{MonitorError,SubtleValueError};
+	ef3 : error path host_status{OutOfRange,SubtleValueError}->op_disp{SubtleValueError};
+	    
+    end propagations;	
+   
+    component error behavior
+    
+    
+    
+ events
+ BadRead : error event;
+ RecoverEvent: recover event;
+ 
+ transitions
+ t0 : working-[host_status{OutOfRange,SubtleValueError}]-> failed;
+ t1 : working-[BadRead]->failed;
+ t2 : Failed -[RecoverEvent]->working;
+ 
+ end component;
+  
+	**};
+		end transv2vsafety;
+
+process implementation transv2vsafety.impl
+	subcomponents
+		status : thread status.impl;
+		op_ctrl: thread op_ctrl.impl;
+		loc_ctrl: thread loc_ctrl.impl;	
+		thp: thread thp.impl in modes (platoon);
+		thl : thread thl.impl in modes (lane_change);
+	connections
+		hs:port host_status->status.host_status;
+		ci:port status.coll_inf->coll_inf;
+		od:port op_ctrl.op_disp->op_disp;
+		oi:port op_in->op_ctrl.op_in;
+		rv:port rvloc->loc_ctrl.rvloc;
+		vlm:port loc_ctrl.vloc-> vloc;	
+		ap: port status.alarm -> alarm;
+		c1:port op_ctrl.dp-> thp.datin in modes (platoon);
+		c2: port op_ctrl.dl-> thl.datin in modes (lane_change);
+		c3: port thp.datout->pla_ctrl in modes (platoon);
+		c3: port thl.datout->chg_ctrl in modes (lane_change);
+		e1: port status.p->p in modes (platoon);
+		e2: port status.l->l in modes (lane_change);
+	modes
+		initialize:initial mode;
+		platoon:mode;
+		lane_change:mode;
+		initialize -[status.p]-> platoon;
+		platoon -[status .l]-> lane_change;
+		lane_change -[status.p]-> platoon;
+end transv2vsafety.impl;
+
+thread thp
+	features
+		datin : in data port;
+		datout: out data port;
+end thp;
+
+thread implementation thp.impl
+	
+end thp.impl;
+
+thread thl
+	features
+		datin : in data port;
+		datout: out data port;
+end thl;
+thread implementation thl.impl
+	
+end thl.impl;
+
+thread status
+	features
+		host_status:in data port;
+		coll_inf:out data port;	
+		alarm:out data port vtv_variables::alarm_message;
+		p:out event port;
+		l:out event port;
+		
+annex EMV2 
+  {** 
+    use types ErrorLibrary,vtv;
+    use behavior vtv::FailStop;
+  error propagations
+  host_status: in propagation {MonitorError};
+  end propagations;
+  
+     properties  --"fail" is the internal event that cause
+    	EMV2::OccurrenceDistribution => vtv_properties::InterfaceFailureRate 
+      applies to fail;
+    
+**};
+end status;
+thread implementation status.impl	
+end status.impl;
+
+thread op_ctrl
+	features
+		op_disp:out data port vtv_variables::status;
+		op_in:in data port vtv_variables::input_mode;
+		dp: out data port;
+		dl :out data port;
+		
+
+annex EMV2 
+  {** 
+    use types ErrorLibrary,vtv;
+    use behavior vtv::FailStop;
+  error propagations
+  op_disp: in propagation {MonitorError};
+  end propagations;
+  
+     properties  --"fail" is the internal event that cause
+     EMV2::OccurrenceDistribution => vtv_properties::SensorFailureRate 
+      applies to op_disp.MonitorError;
+**};
+		
+end op_ctrl;
+thread implementation op_ctrl.impl
+end op_ctrl.impl;
+
+thread loc_ctrl
+	features
+		rvloc:in data port vtv_variables::locm;
+		vloc:out data port vtv_variables::locm;
+		
+annex EMV2 
+  {** 
+    use types ErrorLibrary,vtv;
+    use behavior vtv::FailStop;
+  error propagations
+  rvloc: in propagation {MonitorError};
+  end propagations;
+  
+**};
+		
+			
+end loc_ctrl;
+thread implementation loc_ctrl.impl	
+end loc_ctrl.impl;
+	
+
+system remoteVehicleOBE
+	features
+		rvloc:out data port vtv_variables::locm;
+		vloc:in data port vtv_variables::locm;
+		vloc_e:out data port vtv_variables::locm;	
+annex EMV2 
+  {** 
+    use types ErrorLibrary,vtv;
+    use behavior vtv::FailStop;
+  error propagations
+  rvloc: in propagation {InfoRequestError};
+  end propagations;
+    
+**};		
+
+end remoteVehicleOBE;
+
+system implementation remoteVehicleOBE.impl	
+end remoteVehicleOBE.impl;
+
+device RoadsideEquip
+	features
+		vloc_e:in data port vtv_variables::locm;	
+		
+annex EMV2 
+  {** 
+    use types ErrorLibrary,vtv;
+    use behavior vtv::FailStop;
+  error propagations
+  vloc_e: in propagation {InfoRequestError};
+  end propagations;
+    
+**};
+
+end RoadsideEquip;
+
+device implementation RoadsideEquip.impl	
+end RoadsideEquip.impl;
+	
+
+bus transitVehicleDatabus
+	features
+		host_status:out data port;
+		coll_inf:in data port;	
+		pla_ctrl: in data port;
+		chg_ctrl: in data port;
+
+annex EMV2 
+  {** 
+    use types ErrorLibrary,vtv;
+    use behavior vtv::FailStop;
+  error propagations
+  coll_inf: in propagation {InfoRequestError};
+  host_status: out propagation{OutOfRange,SubtleValueError};
+  flows
+	ef1 : error sink coll_inf{InfoRequestError};
+	ef2 : error source host_status{OutOfRange,SubtleValueError};
+  end propagations;
+   
+**};		
+
+end transitVehicleDatabus;
+	
+
+bus implementation transitVehicleDatabus.impl	
+end transitVehicleDatabus.impl;
+	
+
+
+
+	
+
+end vtv;

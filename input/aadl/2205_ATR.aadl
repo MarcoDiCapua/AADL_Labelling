@@ -1,0 +1,310 @@
+---ATR.aadl
+--atrial tachycardia response
+package ATR
+public
+	with BLESS, BLESS_Types, PACE_Data;
+	flag renames data BLESS_Types::flag;
+	time renames data BLESS_Types::Time;
+
+	annex Assertion {**
+	ghost variables
+	def DUR~quantity whole  --When in ATR Duration, the PG shall delay a programmed number of cardiac 
+--   cycles before entering Fallback.
+
+		
+	**};
+
+	thread group AtrialTachyResponse
+		features
+			atr_enable: in data port flag --is ATR prescribed?
+        {BLESS::Value=>"<<returns boolean :=ATR_ENABLE>>";};
+	 		dur: in data port PACE_Data::CCcount; --number of cci in duration before fallback
+			fb: out data port flag --fall-back to LRL, ignore A-channel
+			{BLESS::Assertion => "<<FB>>";};
+			as: in event port --non-refractory atrial sense
+			  {BLESS::Assertion=>"<<AS>>";};
+			at: in event port --non-refractory atrial sense above URL
+			  {BLESS::Assertion=>"<<AT>>";};
+			atr_detect: out event port  --ATR detection met
+			{BLESS::Assertion => "<<ATR_DETECT(now)>>";};
+			atr_fallback: out event port --start fall-back to VVI; marker ATR-FB
+			{BLESS::Assertion => "<<FB_START>>";};
+			atr_end: out event port  --resume DDD; marker ATR-End
+			{BLESS::Assertion => "<<ATR_END(now)>>";};
+
+	end AtrialTachyResponse;
+
+	thread group implementation AtrialTachyResponse.imp
+		subcomponents
+			atcounter: thread AtCounter.imp;
+			atrcontrol: thread ATRcontrol.imp;
+		connections
+			atren: port atr_enable -> atrcontrol.atr_enable; --enamble ATR
+			durc: port dur -> atrcontrol.dur; --CCI after detection before fall-back (duration)
+			fbo: port atrcontrol.fb -> fb; --fall-back, stays on until end
+			atrd: port atcounter.atr_detect -> atrcontrol.atr_detect; --A-tachy detected
+			atrdo : port atcounter.atr_detect -> atr_detect;
+			atrf: port atrcontrol.atr_fallback -> atr_fallback; --fall-back start
+			atre:  port atcounter.atr_end -> atrcontrol.atr_end;
+			atreo: port atcounter.atr_end -> atr_end; --A-tachy ended
+			asatr: port as -> atrcontrol.as;
+			asatc: port as -> atcounter.as;
+			atiac: port at -> atcounter.at; --atrial tachycardia
+	end AtrialTachyResponse.imp;
+
+	thread AtCounter
+		features
+			enable: in data port flag {BLESS::Assertion => "<<ATR_ENABLE>>";};
+			as: in event port {BLESS::Assertion => "<<AS>>";};
+			at: in event port {BLESS::Assertion => "<<AT>>";};
+			atr_detect: out event port {BLESS::Assertion => "<<ATR_DETECT(now)>>";};
+			atr_end: out event port {BLESS::Assertion => "<<ATR_END(now)>>";};
+		properties
+			Dispatch_Protocol => Sporadic;
+--    BLESS::Invariant => "<<AS_COUNT(now)>>"; 
+	end AtCounter;
+
+--this behavior adapted from project PO-SA (pulse oximeter smart alarm) SPA::SpO2AverageThread.imp
+	thread implementation AtCounter.imp
+		annex BLESS 
+{**
+	assert
+	  <<AXIOM_LB1: :lb<(lb+1)>>  --used to contract universal quantification
+  invariant 
+    <<INV_ATC: :AS_TIMESTAMP() and AT_HISTORY() and AT_COUNT() >>
+  variables
+    --use circular buffer, actual loactions lb mod 7 to ub mod 7
+    ub~quantity whole :=0;  --location of most recent AS timestamp and AT history
+    lb~quantity whole :=0;  --location of oldest sample in window
+    -- timestamps for the previous 7 AS (#1 is oldest; #7 is newest)
+    asTimestamp ~ array [0 .. 6] of time := 0.0 ms
+      <<AS_TIMESTAMP: : all i ~ quantity whole in lb .. (ub - 1) are AS@asTimestamp[i mod 7] >>
+    --history whether the previous 7 atrial senses was faster than upper rate limit
+    atHistory ~ array [0 .. 6] of boolean := false
+      <<AT_HISTORY: : all i ~ quantity whole in lb .. (ub - 1) are atHistory[i mod 7] iff AT@asTimestamp[i mod 7] >>
+    --count of how many of the previous seven AS were also AT
+    c ~ quantity whole:=0  --count of AT for last seven AS
+      <<AT_COUNT: : c = (numberof j ~ quantity whole
+      	in lb .. (ub - 1) that atHistory[j mod 7]) >>;
+    numSamplesInWindow~quantity whole := 0;
+    oldestSample~quantity whole := 0;
+  states
+    start: initial state 
+      <<(numSamplesInWindow=0) and (ub=0) and (oldestSample=0) and (lb=0) and (c=0) and (0<7)>>;
+    --fill the arrays with 7 samples
+    fill : complete state 
+      << INV_ATC() and (ub-lb)<7 >>
+    check_fill : state
+      << INV_ATC() >>
+    run : complete state 
+      << (ub-lb)=7 and INV_ATC() >>
+     err : final state  --error occurred
+  transitions
+    atc_init: start -[ ]-> fill
+    atc_fill: fill -[on dispatch as]-> check_fill
+      {  << (ub-lb)<7 and INV_ATC() and as@now >>
+     	  --store current timestamp of as
+      	asTimestamp[ub mod 7] := now
+      	  << asTimestamp[ub mod 7]=now and AS@asTimestamp[ub mod 7] and INV_ATC() and as@now >>
+      	; --store whether AT happened
+      	atHistory[ub mod 7] := at
+      	  << (atHistory[ub mod 7] iff AT@asTimestamp[ub mod 7]) and 
+             asTimestamp[ub mod 7]=now and AS@asTimestamp[ub mod 7] and INV_ATC() and as@now >>
+      	;  --update total number of AT in window
+      	c := c + (if atHistory[ub mod 7] then 1 else 0)
+      	  << c = (if atHistory[ub mod 7] then 1 else 0) + 
+      	     (numberof j ~ quantity whole in lb .. (ub - 1) that atHistory[j mod 7]) and 
+      	     (atHistory[ub mod 7] iff AT@asTimestamp[ub mod 7]) and 
+             asTimestamp[ub mod 7]=now and AS@asTimestamp[ub mod 7] and 
+             AS_TIMESTAMP() and AT_HISTORY() and as@now >>
+        ; skip
+				<< (all i ~ quantity whole in lb .. ub are AS@asTimestamp[i mod 7]) and
+				   (all i ~ quantity whole in lb .. ub are atHistory[i mod 7] iff AT@asTimestamp[i mod 7]) and
+				   (c = (numberof j ~ quantity whole in lb .. ub that atHistory[j mod 7]))	>>
+				;  --increment upper bound
+				ub := ub+1
+				<< (all i ~ quantity whole in lb .. (ub - 1) are AS@asTimestamp[i mod 7]) and
+				   (all i ~ quantity whole in lb .. (ub - 1) are atHistory[i mod 7] iff AT@asTimestamp[i mod 7]) and
+				   (c = (numberof j ~ quantity whole in lb .. (ub - 1) that atHistory[j mod 7]))	>>
+				
+      }
+    atc_full: check_fill -[ (ub-lb)=7 ]-> run
+    atc_serb: check_fill -[ (ub-lb)>7 ]-> err  --for Serban's Theorem (should never occur)
+    atc_filling: check_fill -[ (ub-lb)<7 ]-> fill  --still filling
+    atc_run: run -[ on dispatch as ]-> run
+      {  
+      	<<as@now and (ub-lb)=7 and --get ready to remove element "lb"
+      	 (all i ~ quantity whole in (lb+1) .. (ub - 1) are AS@asTimestamp[i mod 7]) and AS@asTimestamp[lb mod 7] and
+      	 (all i ~ quantity whole in (lb+1) .. (ub - 1) are atHistory[i mod 7] iff AT@asTimestamp[i mod 7]) and
+      	 (atHistory[lb mod 7] iff AT@asTimestamp[lb mod 7]) and
+      	 (c = (if atHistory[lb mod 7] then 1 else 0) + (numberof j ~ quantity whole in (lb+1) .. (ub - 1) that atHistory[j mod 7]))
+      	 >>
+      	 --subtract oldest AT from count
+      	 c := c - (if atHistory[lb mod 7] then 1 else 0)
+        ;	<<LB: : as@now and (ub-lb)=7 and  --remove element "lb"
+      	  (all i ~ quantity whole in (lb+1) .. (ub - 1) are AS@asTimestamp[i mod 7]) and
+      	  (all i ~ quantity whole in (lb+1) .. (ub - 1) are atHistory[i mod 7] iff AT@asTimestamp[i mod 7]) and
+      	  (c = (numberof j ~ quantity whole in (lb+1) .. (ub - 1) that atHistory[j mod 7]))
+      	  >>
+    	  --store current timestamp of as
+      	asTimestamp[ub mod 7] := now
+      	; << LB() and asTimestamp[ub mod 7]=now and AS@asTimestamp[ub mod 7] >>    
+        --store whether AT happened
+      	atHistory[ub mod 7] := at
+      	; << LB() and asTimestamp[ub mod 7]=now and AS@asTimestamp[ub mod 7] and
+      	     (atHistory[ub mod 7] iff AT@asTimestamp[ub mod 7]) >> 
+        -- add newest AT to count
+      	c := c + (if atHistory[ub mod 7] then 1 else 0)
+				  << (all i ~ quantity whole in (lb+1) .. ub are AS@asTimestamp[i mod 7]) and  (ub-lb)=7 and
+				   (all i ~ quantity whole in (lb+1) .. ub are atHistory[i mod 7] iff AT@asTimestamp[i mod 7]) and
+				   (c = (numberof j ~ quantity whole in (lb+1) .. ub that atHistory[j mod 7]))	>>
+				;  --increment upper bound, and lower bound
+				| ub, lb := ub+1, lb+1 |
+				<< (all i ~ quantity whole in lb .. (ub - 1) are AS@asTimestamp[i mod 7]) and  (ub-lb)=7 and
+				   (all i ~ quantity whole in lb .. (ub - 1) are atHistory[i mod 7] iff AT@asTimestamp[i mod 7]) and
+				   (c = (numberof j ~ quantity whole in lb .. (ub - 1) that atHistory[j mod 7]))	>>
+				
+      }
+**};
+	end AtCounter.imp;
+
+	thread ATRcontrol
+		features
+			atr_enable: in data port flag 
+			  {BLESS::Assertion => "<<ATR_ENABLE>>";};
+			dur: in data port PACE_Data::CCcount --number of cci in duration before fallback
+			  {BLESS::Value => "<<returns quantity whole := DUR >>";}; 
+			fb: out data port flag --fall-back to LRL, ignore A-channel
+			  {BLESS::Assertion => "<<FB>>";};
+			atr_detect: in event port --ATR detection met
+			  {BLESS::Assertion => "<<ATR_DETECT(now)>>";};
+			atr_end : in event port 
+			  {BLESS::Assertion => "<<ATR_END(now)>>";};
+			atr_fallback: out event port --start fall-back to VVI; marker ATR-FB
+			  {BLESS::Assertion => "<<FB_START>>";};
+			as: in event port  --atrial sense for counting AS for determining whether "Duration" has been met 5.6.2
+			  {BLESS::Assertion => "<<AS>>";};
+		properties
+			Dispatch_Protocol => Sporadic;
+	end ATRcontrol;
+
+	thread implementation ATRcontrol.imp
+		annex BLESS {**
+
+assert
+--
+--<<AXIOM_ATR_DETECT:x~time: 5<=(numberof j~quantity whole in 1 .. 7 that atr_detect^(-j)) iff ATR_DETECT(x)>>
+--<<AXIOM_ATR_END:x~time: 3>=(numberof j~quantity whole in 1 .. 7 that at^(-j)) iff ATR_END(x)>>
+  <<NOT_ATR_END:x~time: (all t2~time in detection_time..x are not ATR_END(t2))>>
+  <<AXIOM_DUR_POSITIVE: : DUR > 1>>
+--<<AXIOM_FB: : FB iff FB(d:detection_time, x:now)>>
+  <<AXIOM_FB_START: n~time : 
+    DUR <= duration_count
+    and ATR_ENABLE
+    and not ATR_END(n)
+    and AS@n
+    and duration_count = DC(n)
+    and ATR_DETECT(detection_time)
+    and not ATR_END(n) 
+    implies FB_START and FB>>	 
+  <<AXIOM_FB_END: n~time :  ATR_END(n) or not ATR_ENABLE implies not FB >> 
+
+  	
+invariant <<true>>
+
+variables
+  duration_count ~ quantity whole := 0 --number of cardiac cycles since detection
+    <<DC: x~time returns quantity whole := (numberof t~time in detection_time .. x that AS@t ) >>
+  detection_time ~ time := 0.0 ms
+    <<DETECT_TIME: : detection_time = DT >>
+  
+states
+  start : initial state 
+    << duration_count = 0 and detection_time=0.0 ms >>;  
+  normal : complete state  --normal pacing
+    << duration_count = 0 and detection_time=0.0 ms >>;
+  check_normal: state 
+    << as@now and duration_count = 0 and detection_time=0.0 ms >>
+  atr_duration: complete state  -- wait for duration count to not mode switch on brief AT
+    << ATR_DETECT(detection_time) --detection criteria met,
+       and duration_count = DC(now)  --duration_count is number of as since detection_time
+       and duration_count<dur  --too few CCI since detection for mode switch
+       and not ATR_END(now) --not ended or fallback
+       and not FB(d:detection_time,x:now)>>;  
+  check_duration: state
+    << as@now 
+       and ATR_DETECT(detection_time)
+       and duration_count = DC(now)  --duration_count is number of as since detection_time
+--       and duration_count<dur  --too few CCI since detection for mode switch
+--       and not FB(d:detection_time,x:now)
+       and not ATR_END(now) >> 
+  fallback: complete state  --switch to ventricle-only pacing at LRL
+    << ATR_DETECT(detection_time)
+       and FB(d:detection_time,x:now)
+       and not ATR_END(now) >> 
+  check_fallback: state
+    << as@now and ATR_DETECT(detection_time)
+       and FB(d:detection_time,x:now)
+       and not ATR_END(now) >> 
+  done : final state;
+  err : final state;
+
+transitions
+  atrd_go: --transition out of initial state
+    start -[ ]-> normal { fb!(false) }
+
+  norm_as: --check each atrial sense
+    normal -[on dispatch as]-> check_normal
+        
+  norm_few: --too few AT for detection
+    check_normal -[not atr_detect or atr_end]-> normal  
+    
+  norm_detect: --detection criteria met
+    check_normal -[atr_detect and not atr_end]-> atr_duration  
+      {  
+      	| duration_count, detection_time := 1, now | 
+      	<< duration_count = 1 and detection_time = now and as@now 
+      	   and 1 = DC(now) and ATR_DETECT(detection_time) 
+      	   and not ATR_END(now) and AXIOM_DUR_POSITIVE() >>
+      }
+    
+  norm_dis:  --enable lost
+    check_normal -[not atr_enable]-> normal
+      
+  dur_as:  --check sense while waiting for duration to be met
+    atr_duration -[on dispatch as]-> check_duration
+    
+  dur_norm: -- too few AT to stay in duration
+    check_duration -[atr_end or not atr_enable]-> normal  
+      { | detection_time, duration_count := 0.0 ms, 0 | }
+    
+  dur_fb: -- duration condition met, commense fallback
+    check_duration -[not atr_end and dur <= duration_count and atr_enable]-> fallback  
+      { << as@now and ATR_DETECT(detection_time) and duration_count = DC(now) 
+      	   and not atr_end and dur <= duration_count and atr_enable 
+      	   and AXIOM_FB_START(now)>>
+      	atr_fallback! & fb!(true)
+      }
+    
+  dur_dur: --duration condition not met
+    check_duration -[not atr_end  and dur > duration_count and atr_enable]-> atr_duration 
+      { duration_count := duration_count + 1 } 
+    
+  fall_as: --check sense while in fallback
+    fallback -[on dispatch as]-> check_fallback
+    
+  fall_end: --too few AT to remain in ATR fallback or enable lost
+    check_fallback -[atr_end or not atr_enable]-> normal
+      { << ATR_END(now) and not ATR_ENABLE and AXIOM_FB_END(now) >>
+      	fb!(false)
+      	&
+      	| detection_time, duration_count := 0.0 ms, 0 |
+      }
+      
+  fall_nc:  --remain in fallback
+    check_fallback -[not atr_end and atr_enable]-> fallback
+    
+**};
+	end ATRcontrol.imp;
+
+end ATR;

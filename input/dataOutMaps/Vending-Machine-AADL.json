@@ -1,0 +1,21 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "automat",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Vending-Machine-AADL/automat.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\Vending-Machine-AADL_automat_AutomatSystem_with_devices_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\Vending-Machine-AADL\\README.md"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'base_types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Vending-Machine-AADL/automat.aadl line : 4 column : 7)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer_16'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Vending-Machine-AADL/automat.aadl line : 45 column : 29)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer_16'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Vending-Machine-AADL/automat.aadl line : 46 column : 31)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer_16'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Vending-Machine-AADL/automat.aadl line : 48 column : 29)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer_16'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Vending-Machine-AADL/automat.aadl line : 49 column : 32)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer_16'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Vending-Machine-AADL/automat.aadl line : 51 column : 31)",
+    "ERROR:Couldn't resolve reference to property definition 'Source_language'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Vending-Machine-AADL/automat.aadl line : 86 column : 4)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'C'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Vending-Machine-AADL/a...",
+    "ERROR:Couldn't resolve reference to property definition 'Source_name'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Vending-Machine-AADL/automat.aadl line : 87 column : 4)",
+    "ERROR:Couldn't resolve reference to property definition 'source_text'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Vending-Machine-AADL/automat.aadl line : 88 column : 4)"
+  ]
+}

@@ -1,0 +1,189 @@
+package Processes
+public
+	with variables;
+	with ACM;
+	
+---------------------------------------
+-- network infrastructure server process --
+---------------------------------------
+process NetServer
+	features
+		in_socket : in event data port;
+		out_socket : out event data port;
+		incoming : in data port;
+		outgoing : out data port;
+end NetServer;
+
+process implementation NetServer.imp
+	properties
+		ACM::id => 106;
+end NetServer.imp;
+
+---------------------------------------
+-- temperature sensor driver process --
+---------------------------------------
+process TempSensorProcess
+	features
+		sensor_input : in data port variables::display_temperature_range;	--input from sensor device
+		current_temp : out data port variables::display_temperature_range;	--output to TempControlProcess
+end TempSensorProcess;
+
+process implementation TempSensorProcess.imp
+	properties
+		ACM::id => 100;
+end TempSensorProcess.imp;
+
+---------------------------------------
+-- temperature sensor proxy --
+---------------------------------------
+process TempSensorProxy
+	features
+		current_temp_forward : in data port variables::display_temperature_range;
+		current_temp : out data port variables::display_temperature_range;
+end TempSensorProxy;
+
+process implementation tempSensorProxy.imp
+	properties
+		ACM::id => 100;
+end tempSensorProxy.imp;
+
+---------------------------------------
+-- temperature control process --
+---------------------------------------
+process TempControlProcess
+	features
+		current_temp : in data port variables::display_temperature_range;	--input from TempSensorProcess
+		desired_temp : in data port;
+		desired_temp_ack : out data port;
+		fan_cmd : out data port variables::on_off;		-- command to FanProcess
+		fan_ack : in data port variables::on_off;		-- acknowledge from FanProcess
+		alarm_cmd : out data port variables::on_off;	-- command to AlarmProcess
+		alarm_ack : in data port variables::on_off;		-- acknowledge from FanProcess
+		status : out data port variables::status;	-- output to thermostat device and WebInterface (log file)
+end TempControlProcess;
+
+process implementation TempControlProcess.imp
+	properties
+		ACM::id => 101;
+end TempControlProcess.imp;
+
+---------------------------------------
+-- temperature control proxy on Controller B--
+---------------------------------------
+process TempControlProxy_A
+	features
+		desired_temp_forward : in data port;
+		desired_temp : out data port;
+		desired_temp_ack_foward: in data port;
+		desired_temp_ack : out data port;
+		status_forward : in data port variables::status;
+		status : out data port variables::status;
+end TempControlProxy_A;
+
+process implementation TempControlProxy_A.imp
+	properties
+		ACM::id => 101;	
+end TempControlProxy_A.imp;
+
+---------------------------------------
+-- temperature control proxy on Controller B--
+---------------------------------------
+process TempControlProxy_B
+	features
+		current_temp_forward : in data port variables::display_temperature_range;
+		current_temp : out data port variables::display_temperature_range;
+		fan_cmd_forward : in data port variables::on_off;
+		fan_cmd : out data port variables::on_off;
+		fan_ack_forward : in data port variables::on_off;
+		fan_ack : out data port variables::on_off;
+		alarm_cmd_forward : in data port variables::on_off;
+		alarm_cmd : out data port variables::on_off;
+		alarm_ack_forward : in data port variables::on_off;
+		alarm_ack : out data port variables::on_off;
+end TempControlProxy_B;
+
+process implementation TempControlProxy_B.imp
+	properties
+		ACM::id => 101;	
+end TempControlProxy.imp_B;
+	
+---------------------------------------
+-- alarm actuator process --
+---------------------------------------
+process AlarmProcess
+	features
+		alarm_cmd : in data port variables::on_off;		--input from TempControlProcess
+		alarm_ack : out data port variables::on_off;	--output to tempControlProcess
+		alarm_out : out data port variables::on_off;	--output to alarm device
+end AlarmProcess;
+
+process implementation AlarmProcess.imp
+	properties
+		ACM::id => 102;
+end AlarmProcess.imp;
+
+---------------------------------------
+-- alarm actuator proxy --
+---------------------------------------
+process AlarmProxy
+	features
+		alarm_cmd_forward : in data port variables::on_off;
+		alarm_cmd : out data port variables::on_off;
+		alarm_ack_forward : in data port variables::on_off;
+		alarm_ack : out data port variables::on_off;
+end AlarmProxy;
+
+process implementation AlarmProxy.imp
+	properties
+		ACM::id => 102;
+end AlarmProxy.imp;
+
+---------------------------------------
+-- fan actuator process --
+---------------------------------------
+process FanProcess
+	features
+		fan_cmd: in data port variables::on_off;
+		fan_ack: out data port variables::on_off;
+		fan_out: out data port variables::on_off;
+end FanProcess;
+
+process implementation FanProcess.imp
+	properties
+		ACM::id => 103;
+end FanProcess.imp;
+
+---------------------------------------
+-- fan actuator proxy --
+---------------------------------------
+process FanProxy
+	features
+		fan_cmd_forward : in data port variables::on_off;
+		fan_cmd : out data port variables::on_off;
+		fan_ack_forward: in data port variables::on_off;
+		fan_ack: out data port variables::on_off;
+end FanProxy;
+
+process implementation FanProxy.imp
+	properties
+		ACM::id => 103;
+end FanProxy.imp;
+
+---------------------------------------
+-- web interface process --
+---------------------------------------
+process WebInterface
+	features
+		desired_temp : out data port;
+		desired_temp_ack : in data port;
+		request : in event port;			-- input from network
+		response : out event data port;		-- output to network
+		status : in data port variables::status;
+	end WebInterface;
+
+process implementation WebInterface.imp
+	properties
+		ACM::id => 105;
+end WebInterface.imp;
+
+end Processes;

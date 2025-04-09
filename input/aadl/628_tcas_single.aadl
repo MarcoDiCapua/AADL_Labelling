@@ -1,0 +1,80 @@
+package tcas_single
+public
+	with base_types;
+
+	with tcas_nodes;
+
+	system TCAS_singleton
+		features
+			nearestIntruderAltitude: in data port int;
+			nearestIntruderGroundDistance: in data port int;
+			nearestIntruderLongitude: in data port int;
+			ownAltitude_in: in data port int;
+			ownHeading: in data port int; -- degrees from North
+			ownVerticalVelocity: in data port int;
+			ownLatitude: in data port int;
+			ownLongitude: in data port int;
+			
+			requiredVerticalVelocity: out data port int;
+			timeToRecovery: out data port real;
+		annex agree {**
+				
+			eq t: real = 0.0 -> pre(t) + 1.0;
+			eq ownAltitude: int = ownAltitude_in -> pre(ownAltitude) + pre(requiredVerticalVelocity);
+				
+			
+			eq intrusionSurfaceTop: bool = True;
+			eq ownAircraftGoesUpOnTie: bool;
+			eq threatDetected: bool;
+			eq altitude_diff: int = tcas_nodes.abs_diff(ownAltitude, nearestIntruderAltitude);
+			
+			const sameAltitudeGoUp: int = 50;
+			const sameAltitudeGoDown: int = -50;
+			const intrustionFromAbove: int = -10;
+			const intrustionFromBelow: int = 10;
+			const safeAltitudeDifference: int = 100;
+			
+			assume"constant intruder altitude": True -> nearestIntruderAltitude = pre(nearestIntruderAltitude);
+			
+			
+			assume"intruder aircraft above ground (in)": nearestIntruderAltitude > 0;
+			assume"intruder aircraft above ground": nearestIntruderAltitude > 0;
+			assume"intruder distance above zero": nearestIntruderGroundDistance > 0; -- Distance using lat/long values
+			assume"Own aircraft above ground": ownAltitude > 0;
+			assume"heading is in normalized degrees": ownHeading >= 0 and ownHeading < 360;
+			assume"own latitude is sensible": ownLatitude >= 0 and ownLatitude <= 90;
+			assume"own longitude is sensible": ownLongitude >= -180 and ownLongitude <= 180;
+			
+			guarantee"more eastern aircraft has priority": ownAircraftGoesUpOnTie = (ownLongitude > nearestIntruderLongitude);
+			guarantee"there is exists a non-zero requiredVerticalVelocity": True -> threatDetected => requiredVerticalVelocity != 0;
+			guarantee"higher aircraft goes up": threatDetected and ownAltitude < nearestIntruderAltitude => requiredVerticalVelocity < 0;
+			guarantee"lower aircraft goes down": threatDetected and ownAltitude > nearestIntruderAltitude => requiredVerticalVelocity > 0;
+			
+			guarantee"Recovery Time from intrusion below thresehold": t >= timeToRecovery => altitude_diff >= safeAltitudeDifference;
+		**};
+	end TCAS_singleton;
+
+	system implementation TCAS_singleton.impl
+		annex agree {**
+				
+			assign timeToRecovery = 9.1;
+			
+			assign ownAircraftGoesUpOnTie = (ownLongitude > nearestIntruderLongitude);
+			
+			assign requiredVerticalVelocity = 
+				if (ownAltitude = nearestIntruderAltitude) 
+					then if (ownAircraftGoesUpOnTie) 
+						then sameAltitudeGoUp
+						else sameAltitudeGoDown
+				else if(ownAltitude < nearestIntruderAltitude)
+					then intrustionFromAbove
+					else intrustionFromBelow;
+		**};
+	end TCAS_singleton.impl;
+
+	data int extends base_types::Integer
+	end int;
+
+	data real extends base_types::Float
+	end float;
+end tcas_single;

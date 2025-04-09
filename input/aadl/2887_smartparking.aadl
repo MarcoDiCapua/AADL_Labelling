@@ -1,0 +1,694 @@
+package smartparking
+public
+	with smartparking_properties, EMV2, smartparking_variables;
+
+annex behavior_annex {**
+states
+	off:initial state;
+	on:state;
+	on_engaged: state;
+	on_engaged_deactivating: state;
+	on_engaged_activating: state;
+transitions
+	off->[]->on;
+	on-[]->off;
+	on-[]->on_engaged_activating;
+	on_engaged_activating-[]->on_engaged;
+	on_engaged-[]->on_engaged_deactivating;
+	on_engaged_deactivating-[]->on;
+**};
+
+annex EMV2
+{**
+	error types
+	  RadarError: type;  --radar responding inappropriately
+	  StatusError : type;  --mode and status errors
+	  MonitorError : type extends StatusError;  --indicated monitor status error
+	  InfoRequestError: type extends StatusError; ---- Information request error
+	  ThreadFault renames type ErrorLibrary::EarlyServiceTermination;  --thread fault halts thread
+	  InternalError : type;  --an internal error was detected
+	end types;
+	error behavior FailStop
+	  use types smartparking;
+	  events fail: error event;
+	  states 
+	    working: initial state; 
+	    failed : state;
+	  transitions
+	    working -[fail]-> failed;
+	end behavior;
+**};
+
+
+system SmartParkingSystem		
+end SmartParkingSystem;
+
+
+
+system implementation SmartParkingSystem.impl
+	subcomponents
+		parkmgmtsys: system parkmgmtsys.impl;
+		roadsideequip: system roadsideequip.impl;
+		transinfoctr: system transinfoctr.impl;
+		vehicleobe: system vehicleobe.impl;
+		driver: system driver.impl;
+		persinfodev: system persinfodev.impl;	
+	connections
+		vehicle_paymt_req:port parkmgmtsys.vehicle_paymt_req->roadsideequip.vehicle_paymt_req;
+		veh_paymt_req:port roadsideequip.veh_paymt_req->vehicleobe.vehicle_paymt_req;
+		driver_info:port parkmgmtsys.driver_info->driver.driver_info;
+		conn_vehicle_data:port roadsideequip.conn_vehicle_data->parkmgmtsys.conn_vehicle_data;
+		req_service: port driver.req_service -> vehicleobe.driver_ip;
+		vehicle_loca_motion: port vehicleobe.vehicle_loca_motion -> roadsideequip.personal_loca;
+		interactv_travle_info: port transinfoctr.interactv_travle_info -> vehicleobe.traveler_info;
+		personal_loca: port persinfodev.personal_loca -> vehicleobe.pers_info;
+		interactv_trav_info: port transinfoctr.interactv_travle_info -> persinfodev.interactv_travle_info;
+		traveler_src_update: port persinfodev.traveler_src_update -> transinfoctr.traveler_src_update;
+		traveler_req: port persinfodev.traveler_req -> transinfoctr.traveler_req;
+		park_avail: port roadsideequip.park_avail -> vehicleobe.park_avail;
+		park_mgmt_appl_info: port parkmgmtsys.park_mgmt_appl_info -> roadsideequip.park_mgmt_appl_info;
+		parking_info: port parkmgmtsys.parking_info -> transinfoctr.parking_info;
+end SmartParkingSystem.impl;
+
+system parkmgmtsys
+	features
+		vehicle_paymt_req:out data port;
+		conn_vehicle_data:in data port;
+		
+		parking_info:out data port smartparking_variables::occupiedSpaces;
+		park_mgmt_appl_info:out data port;
+		driver_info:out data port;
+		
+	annex EMV2 
+  {** 
+    use types ErrorLibrary,smartparking;
+    use behavior smartparking::FailStop;
+    
+  error propagations
+  
+  driver_info: in propagation {InfoRequestError};
+  parking_info: in propagation {SubtleValueError};
+
+	
+  end propagations;
+ 
+   **};
+end parkmgmtsys;
+
+system implementation parkmgmtsys.impl
+	subcomponents
+		parkmgmt: system parkmgmt.impl;
+		parkelecpaymt:system parkelecpaymt.impl;
+		
+	connections
+		pay_req: port parkelecpaymt.pay_req -> vehicle_paymt_req;
+		capacity_update: port parkelecpaymt.capacity_update -> park_mgmt_appl_info;
+		park_spaces: port parkmgmt.park_spaces -> parking_info;
+		occupancy: port parkmgmt.occupancy -> parking_info;
+		
+end parkmgmtsys.impl;
+
+system parkmgmt	
+	features
+		occupancy: out data port smartparking_variables::occupiedSpaces;
+		park_spaces:out data port smartparking_variables::occupiedSpaces;
+end parkmgmt;
+
+system implementation parkmgmt.impl	
+	subcomponents
+		dynparklot:process dynparklot.impl;
+		detectveh:process detectveh.impl;
+		manageparkreserv:process manageparkreserv.impl;
+	connections
+		occupancy1: port dynparklot.occupancy -> occupancy;
+		park_spaces1: port manageparkreserv.park_spaces -> park_spaces;
+end parkmgmt.impl;
+
+process dynparklot
+	features
+		occupancy: out data port smartparking_variables::occupiedSpaces;
+end dynparklot;
+
+process implementation dynparklot.impl
+	subcomponents
+		park_lot_occupancy:thread park_lot_occupancy.impl;
+	connections
+		occupancy2:port park_lot_occupancy.park_occupancy -> occupancy;
+end dynparklot.impl;
+
+thread park_lot_occupancy
+	features
+		park_occupancy: out data port smartparking_variables::occupiedSpaces;
+end park_lot_occupancy;
+thread implementation park_lot_occupancy.impl
+end park_lot_occupancy.impl;
+
+process detectveh
+end detectveh;
+process implementation detectveh.impl
+end detectveh.impl;
+
+process manageparkreserv
+	features
+		park_spaces:out data port smartparking_variables::occupiedSpaces;
+end manageparkreserv;
+
+process implementation manageparkreserv.impl
+	subcomponents
+		park_lot_spaces:thread park_lot_spaces.impl;
+	connections
+		spaces: port park_lot_spaces.spaces -> park_spaces;
+end manageparkreserv.impl;
+
+thread park_lot_spaces
+	features
+		spaces:out data port smartparking_variables::occupiedSpaces;
+end park_lot_spaces;
+thread implementation park_lot_spaces.impl
+end park_lot_spaces.impl;
+
+system parkelecpaymt
+	features
+		pay_req:out data port;
+		capacity_update:out data port;
+end parkelecpaymt;
+
+system implementation parkelecpaymt.impl
+	subcomponents
+		billdriver:process billdriver.impl;
+		updateparkdata:process updateparkdata.impl;
+	connections
+		pay_req1: port billdriver.pay_req -> pay_req;
+		capacity_update1: port updateparkdata.capacity_update -> capacity_update;
+end parkelecpaymt.impl;
+
+process billdriver
+	features
+		pay_req:out data port;
+end billdriver;
+process implementation billdriver.impl
+	subcomponents
+		parking_cost:thread parking_cost.impl;
+connections
+		pay_req2: port parking_cost.pay_req -> pay_req;
+end billdriver.impl;
+
+thread parking_cost
+	features
+		pay_req:out data port;
+end parking_cost;
+thread implementation parking_cost.impl
+end parking_cost.impl;
+
+process updateparkdata
+	features
+		capacity_update:out data port;
+end updateparkdata;
+process implementation updateparkdata.impl
+	subcomponents
+		spaces:thread spaces.impl;
+connections
+		capacity_update2: port spaces.capacity_update -> capacity_update;
+end updateparkdata.impl;
+
+thread spaces
+	features
+		capacity_update:out data port;
+end spaces;
+thread implementation spaces.impl
+end spaces.impl;
+
+-----------------------------------------------------------------------------------------------------------------------
+system driver
+	features
+		driver_info:in data port;
+		driver_ip: out data port;
+		req_service:out data port;
+		driver_up:in data port;
+		paymt_txn_status:in data port;
+end driver;
+
+system implementation driver.impl
+end driver.impl;
+
+-----------------------------------------------------------------------------------------------------------------------
+system vehicleobe
+	features
+		traveler_info:in data port;
+		driver_ip:in data port;
+		park_avail:in data port;
+		pers_info:in data port;
+		vehicle_paymt_req:in data port;
+		vehicle_paymt_update:in data port;	
+		vehicle_loca_motion:out data port;
+end vehicleobe;
+
+system implementation vehicleobe.impl
+	subcomponents
+		vehbasesafe:system vehbasesafe.impl;
+		communicationsupport:system communicationsupport.impl;
+		parkingsystem:system parkingsystem.impl;
+		roadsideinforeception:system roadsideinforeception.impl;
+connections
+		trav_info: port traveler_info -> vehbasesafe.to_veh;
+		loca_identity: port vehbasesafe.loca_identity -> vehicle_loca_motion;
+		guide_req: port driver_ip -> vehbasesafe.guide_req;
+		pers_info1: port pers_info -> vehbasesafe.pers_info;
+end vehicleobe.impl;
+
+system vehbasesafe	
+	features
+		to_veh:in data port;
+		guide_req:in data port;
+		guidance:out data port;
+		loca_identity:out data port;
+		pers_info:in data port;
+end vehbasesafe;
+
+system implementation vehbasesafe.impl
+	subcomponents
+		communicationremote:process communicationremote.impl;
+		driverguidanceinterface:process driverguidanceinterface.impl;
+		vehiclelocationdata:process vehiclelocationdata.impl;
+		driverinformationinterface:process driverinformationinterface.impl;	
+	connections
+		to_veh_info: port to_veh -> communicationremote.to_veh;
+		guide_req1: port guide_req -> driverguidanceinterface.guide_req;
+		guidance1: port driverguidanceinterface.guidance -> guidance;
+		loca_identity1: port vehiclelocationdata.loca_identity -> loca_identity;
+		pers_info2: port pers_info -> driverinformationinterface.pers_info;
+end vehbasesafe.impl;
+
+process communicationremote
+	features
+		to_veh:in data port;
+end communicationremote;
+process implementation communicationremote.impl	
+	subcomponents
+		deviceidentity:thread deviceidentity.impl;
+	connections
+		to_veh_info1: port to_veh -> deviceidentity.to_veh;
+end communicationremote.impl;
+
+thread deviceidentity	
+	features
+		to_veh:in data port;
+end deviceidentity;
+thread implementation deviceidentity.impl	
+end deviceidentity.impl;
+
+process driverguidanceinterface
+	features
+		guide_req:in data port;
+		guidance:out data port;
+end driverguidanceinterface;
+process implementation driverguidanceinterface.impl
+	subcomponents
+		fromdriver:thread fromdriver.impl;
+		confirmation:thread confirmation.impl;	
+	connections
+		guide_req1: port guide_req -> fromdriver.guide_req;
+		guidance1: port confirmation.guidance -> guidance;
+end driverguidanceinterface.impl;
+
+thread fromdriver
+	features
+		guide_req:in data port;
+end fromdriver;
+thread implementation fromdriver.impl
+end fromdriver.impl;
+
+thread confirmation
+	features
+		guidance:out data port;
+end confirmation;
+thread implementation confirmation.impl
+end confirmation.impl;
+
+process vehiclelocationdata
+	features
+		loca_identity:out data port;
+end vehiclelocationdata;
+process implementation vehiclelocationdata.impl
+	subcomponents
+		vehicleloc:thread vehicleloc.impl;
+connections
+		loca_identity2: port vehicleloc.loca_identity -> loca_identity;
+end vehiclelocationdata.impl;
+
+thread vehicleloc
+	features
+		loca_identity:out data port;
+end vehicleloc;
+thread implementation vehicleloc.impl
+end vehicleloc.impl;
+
+process driverinformationinterface
+	features
+		pers_info:in data port;
+end driverinformationinterface;
+process implementation driverinformationinterface.impl
+	subcomponents
+		persidentity:thread persidentity.impl;
+connections
+		pers_info2: port pers_info -> persidentity.pers_info;
+end driverinformationinterface.impl;
+
+thread persidentity
+	features
+		pers_info:in data port;
+end persidentity;
+thread implementation persidentity.impl
+end persidentity.impl;
+
+system communicationsupport	
+end communicationsupport;
+
+system implementation communicationsupport.impl
+	subcomponents 
+		vehiclesecurecommunication:process vehiclesecurecommunication.impl;
+end communicationsupport.impl;
+
+process vehiclesecurecommunication	
+end vehiclesecurecommunication;
+process implementation vehiclesecurecommunication.impl	
+end vehiclesecurecommunication.impl;
+
+system parkingsystem
+end parkingsystem;
+
+system implementation parkingsystem.impl
+	subcomponents
+		paymentdeviceinterface:process paymentdeviceinterface.impl;		
+end parkingsystem.impl;
+
+process paymentdeviceinterface	
+end paymentdeviceinterface;
+process implementation paymentdeviceinterface.impl	
+end paymentdeviceinterface.impl;
+
+system roadsideinforeception
+end roadsideinforeception;
+
+system implementation roadsideinforeception.impl
+	subcomponents
+		vehiclelocdata:process vehiclelocdata.impl;		
+		vehiclenavmapdatabase:process vehiclenavmapdatabase.impl;
+		driverpersonalreq:process driverpersonalreq.impl;
+end roadsideinforeception.impl;
+
+process vehiclelocdata	
+end vehiclelocdata;
+process implementation vehiclelocdata.impl	
+end vehiclelocdata.impl;
+
+process vehiclenavmapdatabase	
+end vehiclenavmapdatabase;
+process implementation vehiclenavmapdatabase.impl	
+end vehiclenavmapdatabase.impl;
+
+process driverpersonalreq	
+end driverpersonalreq;
+process implementation driverpersonalreq.impl	
+end driverpersonalreq.impl;
+-----------------------------------------------------------------------------------------------------------------------
+system persinfodev
+	features
+		local_travlr_info:in data port;
+		interactv_travle_info:in data port;
+		
+		personal_loca:out data port;
+		transit_user_info:out data port;
+		traveler_req:out data port;
+		traveler_src_update:out data port;	
+end persinfodev;
+
+system implementation persinfodev.impl
+	subcomponents
+		persInteractvTravInfo:system persInteractvTravInfo.impl;
+		personallocmanagement:system personallocmanagement.impl;
+	connections
+		interactv_travle_inf1: port interactv_travle_info -> persInteractvTravInfo.interactv_travle_info;
+		trav_req1: port persInteractvTravInfo.traveler_req -> traveler_req;
+		traveler_src_update1: port persInteractvTravInfo.traveler_src_update -> traveler_src_update;
+		personal_loca1: port personallocmanagement.personal_loca -> personal_loca;
+end persinfodev.impl;
+
+system persInteractvTravInfo
+	features
+		interactv_travle_info:in data port;
+		traveler_req:out data port;
+		traveler_src_update:out data port;
+end persInteractvTravInfo;
+system implementation persInteractvTravInfo.impl
+	subcomponents
+		personal_info:process personal_info.impl;
+	connections
+		traveler_req2: port personal_info.traveler_req -> traveler_req;
+		interactv_travle_info2: port interactv_travle_info -> personal_info.interactv_travle_info;
+		traveler_src_update2: port personal_info.traveler_src_update -> traveler_src_update;
+end persInteractvTravInfo.impl;	
+
+process personal_info
+	features
+		interactv_travle_info:in data port;
+		traveler_req:out data port;
+		traveler_src_update:out data port;
+end personal_info;
+process implementation personal_info.impl
+	subcomponents
+		info_thread:thread info_thread.impl;
+	connections
+		interactv_travle_info3: port interactv_travle_info -> info_thread.interactv_travle_info;
+		traveler_req3: port info_thread.traveler_req -> traveler_req;
+		traveler_src_update3: port info_thread.traveler_src_update -> traveler_src_update;
+end personal_info.impl;
+
+thread info_thread
+	features
+		interactv_travle_info:in data port;
+		traveler_req:out data port;
+		traveler_src_update:out data port;
+end info_thread;
+thread implementation info_thread.impl
+end info_thread.impl;
+
+system personallocmanagement
+	features
+		personal_loca:out data port;
+end personallocmanagement;
+system implementation personallocmanagement.impl
+	subcomponents
+		travnavmapdatabase:process travnavmapdatabase.impl;
+connections
+		personal_loca2: port travnavmapdatabase.personal_loca -> personal_loca;
+end personallocmanagement.impl;
+
+process travnavmapdatabase
+	features
+		personal_loca:out data port;
+end travnavmapdatabase;
+process implementation travnavmapdatabase.impl
+	subcomponents
+		driverloc:thread driverloc.impl;	
+connections
+		personal_loca3: port driverloc.personal_loca -> personal_loca;
+end travnavmapdatabase.impl;
+
+thread driverloc
+	features
+		personal_loca:out data port;
+end driverloc;
+thread implementation driverloc.impl
+end driverloc.impl;
+-----------------------------------------------------------------------------------------------------------------
+system transinfoctr
+	features
+		traveler_req:in data port;
+		traveler_src_update:in data port;
+		parking_info:in data port smartparking_variables::occupiedSpaces;
+		
+		interactv_travle_info:out data port;
+end transinfoctr;
+
+system implementation transinfoctr.impl
+	subcomponents
+		TICInteractvTravInfo:system TICInteractvTravInfo.impl;
+		TICDataColl:system TICDataColl.impl;
+	connections
+		traveler_req1: port traveler_req -> TICInteractvTravInfo.traveler_req;
+		interactv_travle_inf1: port TICInteractvTravInfo.interactv_travle_info -> interactv_travle_info;
+		traveler_src_update1: port traveler_src_update -> TICDataColl.traveler_src_update;
+end transinfoctr.impl;
+
+system TICInteractvTravInfo
+	features
+		traveler_req:in data port;
+		interactv_travle_info:out data port;
+end TICInteractvTravInfo;
+
+system implementation TICInteractvTravInfo.impl
+	subcomponents
+		trav_profiles:process trav_profiles.impl;
+	connections
+		traveler_req2: port traveler_req -> trav_profiles.traveler_req;
+		interactv_travle_info2: port trav_profiles.interactv_travle_info -> interactv_travle_info;
+end TICInteractvTravInfo.impl;
+
+process trav_profiles
+	features
+		traveler_req:in data port;
+		interactv_travle_info:out data port;
+end trav_profiles;
+process implementation trav_profiles.impl
+	subcomponents
+		trav_info:thread trav_info.impl;
+	connections
+		traveler_req3: port traveler_req -> trav_info.traveler_req;
+		interactv_travle_info3: port trav_info.interactv_travle_info -> interactv_travle_info;
+end trav_profiles.impl;
+
+thread trav_info
+	features
+		traveler_req:in data port;
+		interactv_travle_info:out data port;
+end trav_info;
+thread implementation trav_info.impl
+end trav_info.impl;
+
+system TICDataColl	
+	features
+		traveler_src_update:in data port;
+end TICDataColl;
+
+system implementation TICDataColl.impl
+	subcomponents
+		misctravinfo:process misctravinfo.impl;
+		trafficdata:process trafficdata.impl;
+		pricedata:process pricedata.impl;
+	connections
+		traveler_src_update2: port traveler_src_update -> misctravinfo.traveler_src_update;
+end TICDataColl.impl;
+
+process trafficdata
+end trafficdata;
+
+process implementation trafficdata.impl
+end trafficdata.impl;
+
+process misctravinfo
+	features
+		traveler_src_update:in data port;
+end misctravinfo;
+
+process implementation misctravinfo.impl
+	subcomponents
+		traff_data_trav:thread traff_data_trav.impl;
+	connections
+		traveler_src_update3: port traveler_src_update -> traff_data_trav.traveler_src_update;
+end misctravinfo.impl;
+
+thread traff_data_trav
+	features
+		traveler_src_update:in data port;
+end traff_data_trav;
+thread implementation traff_data_trav.impl
+end traff_data_trav.impl;
+
+process pricedata
+end pricedata;
+
+process implementation pricedata.impl
+end pricedata.impl;
+
+-----------------------------------------------------------------------------------------------------------------------
+system roadsideequip
+	features
+		personal_loca:in data port;
+		vehicle_paymt_req:in data port;
+		park_mgmt_appl_info:in data port;
+		
+		conn_vehicle_data:out data port;
+		park_avail:out data port;
+		veh_paymt_req:out data port;
+		veh_paymt_update:out data port;
+end roadsideequip;
+
+system implementation roadsideequip.impl
+	subcomponents
+		RSEparkmgmt:system RSEparkmgmt.impl;
+	connections
+		vehicle_paymt_req1: port vehicle_paymt_req -> RSEparkmgmt.vehicle_paymt_req;
+		personal_loca1: port personal_loca -> RSEparkmgmt.personal_loca;
+		veh_paymt_req1: port RSEparkmgmt.veh_paymt_req -> veh_paymt_req;
+		park_avail1: port RSEparkmgmt.park_avail -> park_avail;
+		conn_vehicle_data1: port RSEparkmgmt.conn_vehicle_data -> conn_vehicle_data;
+end roadsideequip.impl;
+
+system RSEparkmgmt
+	features
+		personal_loca:in data port;
+		vehicle_paymt_req:in data port;
+		conn_vehicle_data:out data port;
+		park_avail:out data port;
+		veh_paymt_req:out data port;
+end RSEparkmgmt;
+system implementation RSEparkmgmt.impl
+	subcomponents
+		vehdata:process vehdata.impl;
+		Rsideparkcomm:process Rsideparkcomm.impl;
+	connections
+		personal_loca2: port personal_loca -> vehdata.personal_loca;
+		vehicle_paymt_req2: port vehicle_paymt_req -> vehdata.vehicle_paymt_req;
+		veh_paymt_req2: port vehdata.veh_paymt_req -> veh_paymt_req;
+		park_avail2: port Rsideparkcomm.park_avail -> park_avail;
+		conn_vehicle_data2: port Rsideparkcomm.conn_vehicle_data -> conn_vehicle_data;
+end RSEparkmgmt.impl;
+
+process vehdata
+	features
+		personal_loca:in data port;
+		vehicle_paymt_req:in data port;
+		veh_paymt_req:out data port;
+end vehdata;
+
+process implementation vehdata.impl
+	subcomponents
+		loc_identity:thread loc_identity.impl;
+		veh_paymt:thread veh_paymt.impl;
+	connections
+		vehicle_paymt_req3: port vehicle_paymt_req -> veh_paymt.vehicle_paymt_req;
+		veh_paymt_req3: port veh_paymt.veh_paymt_req -> veh_paymt_req;
+		personal_loca3:port personal_loca->loc_identity.personal_loca;
+end vehdata.impl;
+
+thread loc_identity
+	features
+		personal_loca:in data port;
+end loc_identity;
+thread implementation loc_identity.impl
+end loc_identity.impl;
+
+thread veh_paymt
+	features
+		vehicle_paymt_req:in data port;
+		veh_paymt_req:out data port;
+end veh_paymt;
+thread implementation veh_paymt.impl
+end veh_paymt.impl;
+
+
+process Rsideparkcomm
+	features
+		conn_vehicle_data:out data port;
+		park_avail:out data port;
+end Rsideparkcomm;
+
+process implementation Rsideparkcomm.impl
+end Rsideparkcomm.impl;
+
+
+
+
+
+end smartparking;

@@ -1,0 +1,5 @@
+property set requirement_params is
+
+	expected_response_time : constant Time => 100 ms;
+	
+end requirement_params;   

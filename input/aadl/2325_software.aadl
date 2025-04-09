@@ -1,0 +1,529 @@
+--
+--  This model is part of the Speed Regulation model
+--  that is a case-study that uses AADL for making
+--  analysis of different architecture variations.
+--
+--  A full description of this case study can be found
+--  on https://wiki.sei.cmu.edu/aadl/index.php/SpeedRegulation
+--
+--  Copyright Carnegie Mellon Software Engineering Institute, 2014.
+--
+
+package speed_regulation::software
+
+public
+
+
+with speed_regulation::icd; 
+with sei;
+with speed_regulation::platform;
+
+-------------------------
+--  Image Acquisition  --
+-------------------------
+
+process image_acquisition
+features
+	picture           : in data port speed_regulation::icd::picture;
+	fatigue_detected_image : out data port speed_regulation::icd::boolean;
+	pedestrian_detected_image : out data port speed_regulation::icd::boolean;
+flows
+	f0 : flow path picture -> fatigue_detected_image;
+	f1 : flow path picture -> pedestrian_detected_image;
+annex EMV2 {**
+	use types 		speed_regulation::error_library;
+	use behavior  	speed_regulation::error_library::simple;
+
+	error propagations
+		picture : in propagation {NoValue};
+		fatigue_detected_image : out propagation {NoValue,InvalidValue};
+		pedestrian_detected_image : out propagation {NoValue,InvalidValue};
+		processor : in propagation {SoftwareFailure, HardwareFailure};
+	flows
+		ef0 : error path picture{NoValue} -> fatigue_detected_image{NoValue};
+		ef1 : error path picture{NoValue} -> fatigue_detected_image{InvalidValue};
+		ef2 : error path picture{NoValue} -> pedestrian_detected_image{NoValue};
+        ef3 : error path picture{NoValue} -> pedestrian_detected_image{InvalidValue};
+		ef4 : error path processor{HardwareFailure,SoftwareFailure} -> fatigue_detected_image{NoValue};
+		ef5 : error path processor{HardwareFailure,SoftwareFailure} -> pedestrian_detected_image{NoValue};
+	end propagations;
+
+	component error behavior
+	transitions
+		t0 : Operational -[processor{SoftwareFailure}]-> Failed;
+		t1 : Operational -[processor{HardwareFailure}]-> Failed;
+		t2 : Failed -[processor{NoError}]-> Operational;
+	propagations
+	   	p1 : Failed -[]-> fatigue_detected_image{NoValue};
+	   	p2 : Failed -[]-> pedestrian_detected_image{NoValue};
+	end component;
+**};
+end image_acquisition;
+
+process implementation image_acquisition.i
+subcomponents
+	thr_acq : thread image_acquisition_thr.i;
+connections
+	c0 : port picture -> thr_acq.picture;
+	c1 : port thr_acq.fatigue_detected -> fatigue_detected_image;
+	c2 : port thr_acq.pedestrian_detected -> pedestrian_detected_image;
+flows
+	f0 : flow path picture -> c0 -> thr_acq.f0 -> c1 -> fatigue_detected_image;
+	f1 : flow path picture -> c0 -> thr_acq.f0 -> c2 -> pedestrian_detected_image;
+end image_acquisition.i;
+
+thread image_acquisition_thr
+features
+	picture           : in data port speed_regulation::icd::picture;
+	fatigue_detected : out data port speed_regulation::icd::boolean;
+	pedestrian_detected : out data port speed_regulation::icd::boolean;
+flows
+	f0 : flow path picture -> fatigue_detected;
+	f1 : flow path picture -> pedestrian_detected;
+	
+	--TODO: change image aquisition properties
+properties
+	sei::mipsbudget   => 25.0 MIPS;
+	Dispatch_Protocol => Periodic;
+	Period            => 50ms;
+	compute_execution_time => 10 ms .. 40 ms;
+	reference_processor => classifier (speed_regulation::platform::ecu);
+	sei::instructionsperdispatch => 1.24 kipd .. 1.25 mipd; 
+end image_acquisition_thr;
+
+thread implementation image_acquisition_thr.i
+end image_acquisition_thr.i;
+
+----------------------
+--  Speed Estimate  --
+----------------------
+
+process speed_estimate
+features
+	wheel_sensor : in data port speed_regulation::icd::speed;
+	laser_sensor : in data port speed_regulation::icd::speed;
+	speed        : out data port speed_regulation::icd::speed;
+	vehicle_moving : out data port speed_regulation::icd::boolean;
+flows
+	f0 : flow path wheel_sensor -> speed;
+	f1 : flow path laser_sensor -> speed;
+	f3 : flow path wheel_sensor -> vehicle_moving;
+	f4 : flow path laser_sensor -> vehicle_moving;
+annex EMV2 {**
+	use types 		speed_regulation::error_library;
+	use behavior  	speed_regulation::error_library::simple;
+
+	error propagations
+		wheel_sensor : in propagation {NoValue,InvalidValue};
+		laser_sensor : in propagation {NoValue,InvalidValue};
+		speed : out propagation {NoValue,InvalidValue};
+		processor : in propagation {SoftwareFailure, HardwareFailure};
+	flows
+		ef0 : error path wheel_sensor{NoValue} -> speed{NoValue};
+		ef1 : error path wheel_sensor{InvalidValue} -> speed{InvalidValue};
+		ef2 : error path laser_sensor{NoValue} -> speed{NoValue};
+		ef3 : error path laser_sensor{InvalidValue} -> speed{InvalidValue};
+		ef4 : error path processor{HardwareFailure,SoftwareFailure} -> speed{NoValue};
+	end propagations;
+
+	component error behavior
+	transitions
+		t0 : Operational -[processor{SoftwareFailure}]-> Failed;
+		t1 : Operational -[processor{HardwareFailure}]-> Failed;
+		t2 : Failed -[processor{NoError}]-> Operational;
+	propagations
+	   	p1 : Failed -[]-> speed{NoValue};
+	end component;
+**};
+end speed_estimate;
+
+process implementation speed_estimate.i
+subcomponents
+	thr : thread speed_estimate_thr.i;
+connections
+	c0 : port wheel_sensor -> thr.wheel_sensor;
+	c1 : port laser_sensor -> thr.laser_sensor;
+	c2 : port thr.speed -> speed;
+flows
+	f0 : flow path wheel_sensor -> c0 -> thr.f0 -> c2 -> speed;
+	f1 : flow path laser_sensor -> c1 -> thr.f1 -> c2 -> speed;
+end speed_estimate.i;
+
+thread speed_estimate_thr
+features
+	wheel_sensor : in data port speed_regulation::icd::speed;
+	laser_sensor : in data port speed_regulation::icd::speed;
+	speed        : out data port speed_regulation::icd::speed;
+flows
+	f0 : flow path wheel_sensor -> speed;
+	f1 : flow path laser_sensor -> speed;
+properties
+	Dispatch_Protocol => Periodic;
+	Period            => 8ms;
+	sei::mipsbudget   => 8.0 MIPS;
+end speed_estimate_thr;
+
+thread implementation speed_estimate_thr.i
+end speed_estimate_thr.i;
+
+--------------------------
+--  Fatigue Detection  --
+--------------------------
+
+process fatigue_detection
+features
+	camera : in data port speed_regulation::icd::boolean;
+	fatigue_detected : out data port speed_regulation::icd::boolean;
+	blink_rate_per_minute : out data port speed_regulation::icd::blink_rate_per_minute;
+flows
+	f0 : flow path camera -> fatigue_detected;
+	f1 : flow path camera -> blink_rate_per_minute;
+annex EMV2 {**
+	use types 		speed_regulation::error_library;
+	use behavior  	speed_regulation::error_library::simple;
+
+	error propagations
+		camera : in propagation {NoValue,InvalidValue};
+		fatigue_detected : out propagation {NoValue,InvalidValue};
+		blink_rate_per_minute : out propagation {NoValue,InvalidValue};
+		processor : in propagation {SoftwareFailure, HardwareFailure};
+	flows
+		ef0 : error path camera{NoValue} -> fatigue_detected{NoValue};
+		ef1 : error path camera{InvalidValue} -> fatigue_detected{InvalidValue};
+		ef2 : error path camera{NoValue} -> blink_rate_per_minute{NoValue};
+        ef3 : error path camera{InvalidValue} -> blink_rate_per_minute{InvalidValue};
+		ef4 : error path processor{HardwareFailure} -> fatigue_detected{NoValue};
+		ef5 : error path processor{SoftwareFailure} -> fatigue_detected{NoValue};
+
+	end propagations;
+
+	component error behavior
+	transitions
+		t0 : Operational -[processor{SoftwareFailure}]-> Failed;
+		t1 : Operational -[processor{HardwareFailure}]-> Failed;
+		t2 : Failed -[processor{NoError}]-> Operational;
+	propagations
+	   	p1 : Failed -[]-> fatigue_detected{NoValue};
+	end component;
+**};
+end fatigue_detection;
+
+process implementation fatigue_detection.i
+subcomponents
+	thr : thread fatigue_detection_thr;
+connections
+	c0 : port camera -> thr.camera;
+	c1 : port thr.fatigue_detected -> fatigue_detected;
+flows
+	f0 : flow path camera -> c0 -> thr.f0 -> c1 -> fatigue_detected;
+end fatigue_detection.i;
+
+thread fatigue_detection_thr
+features
+	camera : in data port speed_regulation::icd::boolean;
+	fatigue_detected : out data port speed_regulation::icd::boolean;
+flows
+	f0 : flow path camera -> fatigue_detected;
+properties
+	Dispatch_Protocol => Periodic;
+	Period            => 100ms;
+	Compute_Execution_Time => 20 ms .. 50 ms; 
+	sei::mipsbudget   => 10.0 MIPS; 
+	sei::instructionsperdispatch => 0.9 kipd .. 0.98 mipd; 
+	reference_processor => classifier (speed_regulation::platform::ecu);
+end fatigue_detection_thr;
+
+--------------------------
+--  Pedestrian Detection  --
+--------------------------
+
+process pedestrian_detection
+features
+    camera : in data port speed_regulation::icd::boolean;
+    pedestrian_detected : out data port speed_regulation::icd::boolean;
+    total_proximate_pedestrians : out data port speed_regulation::icd::total_proximate_pedestrians;
+flows
+    f0 : flow path camera -> pedestrian_detected;
+    f1 : flow path camera -> total_proximate_pedestrians;
+annex EMV2 {**
+    use types       speed_regulation::error_library;
+    use behavior    speed_regulation::error_library::simple;
+
+    error propagations
+        camera : in propagation {NoValue,InvalidValue};
+        pedestrian_detected : out propagation {NoValue,InvalidValue};
+        total_proximate_pedestrians : out propagation {NoValue,InvalidValue};
+        processor : in propagation {SoftwareFailure, HardwareFailure};
+    flows
+        ef0 : error path camera{NoValue} -> pedestrian_detected{NoValue};
+        ef1 : error path camera{InvalidValue} -> pedestrian_detected{InvalidValue};
+        ef2 : error path camera{NoValue} -> total_proximate_pedestrians{NoValue};
+        ef3 : error path camera{InvalidValue} -> total_proximate_pedestrians{InvalidValue};
+        ef4 : error path processor{HardwareFailure} -> pedestrian_detected{NoValue};
+        ef5 : error path processor{SoftwareFailure} -> pedestrian_detected{NoValue};
+
+    end propagations;
+
+    component error behavior
+    transitions
+        t0 : Operational -[processor{SoftwareFailure}]-> Failed;
+        t1 : Operational -[processor{HardwareFailure}]-> Failed;
+        t2 : Failed -[processor{NoError}]-> Operational;
+    propagations
+        p1 : Failed -[]-> pedestrian_detected{NoValue};
+    end component;
+**};
+end pedestrian_detection;
+
+process implementation pedestrian_detection.i
+subcomponents
+    thr : thread pedestrian_detection_thr;
+connections
+    c0 : port camera -> thr.camera;
+    c1 : port thr.pedestrian_detected -> pedestrian_detected;
+flows
+    f0 : flow path camera -> c0 -> thr.f0 -> c1 -> pedestrian_detected;
+end pedestrian_detection.i;
+
+thread pedestrian_detection_thr
+features
+    camera : in data port speed_regulation::icd::boolean;
+    pedestrian_detected : out data port speed_regulation::icd::boolean;
+flows
+    f0 : flow path camera -> pedestrian_detected;
+properties
+    Dispatch_Protocol => Periodic;
+    Period            => 100ms;
+    Compute_Execution_Time => 20 ms .. 50 ms; 
+    sei::mipsbudget   => 10.0 MIPS; 
+    sei::instructionsperdispatch => 0.9 kipd .. 0.98 mipd; 
+    reference_processor => classifier (speed_regulation::platform::ecu);
+end pedestrian_detection_thr;
+
+---------------------------
+--  Emergency Detection  --
+---------------------------
+
+process emergency_detection
+features
+	current_speed : in data port speed_regulation::icd::speed;
+	vehicle_moving : in data port speed_regulation::icd::boolean;
+	proximate_pedestrian : in data port speed_regulation::icd::boolean;
+	emergency_detected : out data port speed_regulation::icd::boolean;
+flows
+	f0 : flow path current_speed -> emergency_detected;
+	f1 : flow path proximate_pedestrian -> emergency_detected;
+	f2 : flow path vehicle_moving -> emergency_detected;
+annex EMV2 {**
+	use types 		speed_regulation::error_library;
+	use behavior  	speed_regulation::error_library::simple;
+
+	error propagations
+		current_speed : in propagation {NoValue,InvalidValue};
+		proximate_pedestrian : in propagation {NoValue,InvalidValue};
+		emergency_detected : out propagation {NoValue,InvalidValue};
+		processor : in propagation {SoftwareFailure, HardwareFailure};
+	flows
+		ef0 : error path current_speed{NoValue} -> emergency_detected{NoValue};
+		ef1 : error path proximate_pedestrian{NoValue} -> emergency_detected{NoValue};
+		ef2 : error path current_speed{NoValue} -> emergency_detected{InvalidValue};
+		ef3 : error path proximate_pedestrian{NoValue} -> emergency_detected{InvalidValue};
+		ef4 : error path processor{HardwareFailure,SoftwareFailure} -> emergency_detected{NoValue};
+		ef5 : error path current_speed{InvalidValue} -> emergency_detected{InvalidValue};
+		ef6 : error path proximate_pedestrian{InvalidValue} -> emergency_detected{InvalidValue};
+	end propagations;
+
+	component error behavior
+	transitions
+		t0 : Operational -[processor{SoftwareFailure}]-> Failed;
+		t1 : Operational -[processor{HardwareFailure}]-> Failed;
+		t2 : Failed -[processor{NoError}]-> Operational;
+	propagations
+	   	p1 : Failed -[]-> emergency_detected{NoValue};
+	end component;
+**};
+end emergency_detection;
+
+process implementation emergency_detection.i
+subcomponents
+	thr : thread emergency_detection_thr;
+connections
+	c0 : port current_speed -> thr.current_speed;
+	c1 : port proximate_pedestrian -> thr.proximate_pedestrian;
+	c2 : port thr.emergency_detected -> emergency_detected;
+flows 
+	f0 : flow path current_speed -> c0 -> thr.f0 -> c2 -> emergency_detected;
+	f1 : flow path proximate_pedestrian -> c1 -> thr.f1 -> c2 -> emergency_detected;
+end emergency_detection.i;
+
+thread emergency_detection_thr
+features
+	current_speed : in data port speed_regulation::icd::speed;
+	proximate_pedestrian : in data port speed_regulation::icd::boolean;
+	emergency_detected : out data port speed_regulation::icd::boolean;
+flows
+	f0 : flow path current_speed -> emergency_detected;
+	f1 : flow path proximate_pedestrian -> emergency_detected;
+properties
+	Dispatch_Protocol => Periodic;
+	Period            => 4ms;
+	sei::mipsbudget   => 5.0 MIPS;
+end emergency_detection_thr;
+
+--------------------------
+--  Warning Activation  --
+--------------------------
+
+process warning_activation
+features
+	emergency_detected : in data port speed_regulation::icd::boolean;
+	activate_warning   : out data port speed_regulation::icd::boolean;
+flows
+	f0 : flow path emergency_detected -> activate_warning;
+annex EMV2 {**
+	use types 		speed_regulation::error_library;
+	use behavior  	speed_regulation::error_library::simple;
+
+	error propagations
+		emergency_detected : in propagation {NoValue,InvalidValue};
+		activate_warning : out propagation {NoValue,InvalidValue};
+		processor : in propagation {SoftwareFailure, HardwareFailure};
+	flows
+		ef0 : error path emergency_detected{NoValue} -> activate_warning{NoValue};
+		ef1 : error path emergency_detected{InvalidValue} -> activate_warning{InvalidValue};
+		ef4 : error path processor{HardwareFailure} -> activate_warning{NoValue};
+		ef5 : error path processor{SoftwareFailure} -> activate_warning{NoValue};
+	end propagations;
+
+	component error behavior
+	transitions
+		t0 : Operational -[processor{SoftwareFailure}]-> Failed;
+		t1 : Operational -[processor{HardwareFailure}]-> Failed;
+		t2 : Failed -[processor{NoError}]-> Operational;
+	propagations
+	   	p1 : Failed -[]-> activate_warning{NoValue};
+	end component;
+**};
+end warning_activation;
+
+process implementation warning_activation.i
+subcomponents
+	thr : thread warning_activation_thr;
+connections
+	c0 : port emergency_detected -> thr.emergency_detected;
+	c1 : port thr.activate_warning -> activate_warning;
+flows
+	f0 : flow path emergency_detected -> c0 -> thr.f0 -> c1 -> activate_warning;
+end warning_activation.i;
+
+thread warning_activation_thr
+features
+	emergency_detected : in data port speed_regulation::icd::boolean;
+	activate_warning   : out data port speed_regulation::icd::boolean;
+flows
+	f0 : flow path emergency_detected -> activate_warning;
+properties
+	Dispatch_Protocol => Periodic;
+	Period            => 2ms;
+	sei::mipsbudget   => 5.0 MIPS;
+end warning_activation_thr;
+
+----------------------
+--  Logger Module  --
+----------------------
+
+process logger
+features
+	position1 : in data port speed_regulation::icd::gps_position;
+	position  : out data port speed_regulation::icd::gps_position;
+	speed : in data port speed_regulation::icd::speed;
+	speed_logged : out data port speed_regulation::icd::speed;  
+	blink_rate_per_minute : in data port speed_regulation::icd::blink_rate_per_minute;
+	blink_rate_logged : out data port speed_regulation::icd::blink_rate_per_minute;
+	total_proximate_pedestrians : in data port speed_regulation::icd::total_proximate_pedestrians;
+	total_pedestrians_logged : out data port speed_regulation::icd::total_proximate_pedestrians;
+flows
+	f0 : flow path position1 -> position;
+	f2 : flow path blink_rate_per_minute -> blink_rate_logged;
+	f3 : flow path total_proximate_pedestrians -> total_pedestrians_logged;
+	f4 : flow path speed -> speed_logged;
+annex EMV2 {**
+	use types 		speed_regulation::error_library;
+	use behavior  	speed_regulation::error_library::simple;
+
+	error propagations
+		position1 : in propagation {NoValue,InvalidValue};
+		position : out propagation {NoValue,InvalidValue};
+		blink_rate_per_minute : in propagation {NoValue,InvalidValue};
+		blink_rate_logged : out propagation {NoValue,InvalidValue};
+		total_proximate_pedestrians : in propagation {NoValue,InvalidValue};
+        total_pedestrians_logged : out propagation {NoValue,InvalidValue};
+        speed : in propagation {NoValue,InvalidValue};
+        speed_logged : out propagation {NoValue,InvalidValue};
+		processor : in propagation {SoftwareFailure, HardwareFailure};
+	flows
+		ef000 : error path position1{novalue} -> position{novalue};
+		ef001 : error path position1{invalidvalue} -> position{invalidvalue};
+		ef002 : error path processor{HardwareFailure,SoftwareFailure} -> position{NoValue};
+		ef003 : error path blink_rate_per_minute{novalue} -> blink_rate_logged{novalue};
+		ef004 : error path blink_rate_per_minute{invalidvalue} -> blink_rate_logged{invalidvalue};
+		ef005 : error path total_proximate_pedestrians{novalue} -> total_pedestrians_logged{novalue};
+        ef006 : error path total_proximate_pedestrians{invalidvalue} -> total_pedestrians_logged{invalidvalue};
+        ef007 : error path speed{novalue} -> speed_logged{novalue};
+        ef008 : error path speed{invalidvalue} -> speed_logged{invalidvalue};
+	end propagations;
+
+	component error behavior
+	transitions
+		t0 : Operational -[processor{SoftwareFailure}]-> Failed;
+		t1 : Operational -[processor{HardwareFailure}]-> Failed;
+		t2 : Failed -[processor{NoError}]-> Operational;
+	propagations
+	   	p1 : Failed -[]-> position{NoValue};
+	end component;
+**};
+end logger;
+
+process implementation logger.i
+subcomponents
+	thr : thread logger_thr;
+connections
+	c0 : port position1 -> thr.position1;
+	c2 : port thr.position -> position;
+	c3 : port blink_rate_per_minute -> thr.blink_rate_per_minute;
+	c4 : port thr.blink_rate_logged -> blink_rate_logged;
+	c5 : port speed -> thr.speed;
+	c6 : port thr.speed_logged -> speed_logged;
+	c7 : port total_proximate_pedestrians -> thr.total_proximate_pedestrians;
+    c8 : port thr.total_pedestrians_logged -> total_pedestrians_logged;
+flows
+	f0 : flow path position1 -> c0 -> thr.f0 -> c2 -> position;
+	f2 : flow path blink_rate_per_minute -> c3 -> thr.f2 -> c4 -> blink_rate_logged;
+	f3 : flow path total_proximate_pedestrians -> c7 -> thr.f3 -> c8 -> total_pedestrians_logged; 
+	f4 : flow path speed -> c5 -> thr.f4 -> c6 -> speed_logged; 
+end position_voter.i;
+
+thread logger_thr
+features
+	position1 : in data port speed_regulation::icd::gps_position;
+	position  : out data port speed_regulation::icd::gps_position;
+	blink_rate_per_minute : in data port speed_regulation::icd::blink_rate_per_minute;
+    blink_rate_logged : out data port speed_regulation::icd::blink_rate_per_minute;
+    speed : in data port speed_regulation::icd::speed;
+    speed_logged : out data port speed_regulation::icd::speed;
+    total_proximate_pedestrians : in data port speed_regulation::icd::total_proximate_pedestrians;
+    total_pedestrians_logged : out data port speed_regulation::icd::total_proximate_pedestrians;
+flows
+	f0 : flow path position1 -> position;
+	f2 : flow path blink_rate_per_minute -> blink_rate_logged;
+	f3 : flow path total_proximate_pedestrians -> total_pedestrians_logged;
+	f4 : flow path speed -> speed_logged;
+properties
+	Dispatch_Protocol => Periodic;
+	Period            => 12ms;
+	sei::mipsbudget   => 8.0 MIPS;
+end logger_thr;
+
+
+end speed_regulation::software;
+  

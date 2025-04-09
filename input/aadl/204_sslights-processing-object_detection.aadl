@@ -1,0 +1,43 @@
+package sslights::processing::object_detection
+public
+	with sslights::datatypes;
+	
+	process object_detection
+		features 
+			raw_image : in data port sslights::datatypes::picture;
+			object_position : in data port sslights::datatypes::object_position.i;
+			distance_estimate : out data port sslights::datatypes::distance;
+			
+		flows
+			f0 : flow path raw_image -> distance_estimate; 
+			f1 : flow path object_position -> distance_estimate; 
+	end object_detection;
+	
+	process implementation object_detection.i 
+		subcomponents 
+			thr : thread object_detection_thr;
+		connections 
+			c0 : port raw_image -> thr.raw_image;
+			c1 : port object_position -> thr.object_position;
+			c2 : port thr.distance_estimate -> distance_estimate;  
+		flows 
+			f0 : flow path raw_image -> c0 -> thr.f0 -> c2 -> distance_estimate;
+			f1 : flow path object_position -> c1 -> thr.f1 -> c2 -> distance_estimate; 
+	end object_detection.i;
+	
+	thread object_detection_thr 
+		features
+			raw_image : in data port sslights::datatypes::picture;
+			object_position : in data port sslights::datatypes::object_position.i;
+			distance_estimate : out data port sslights::datatypes::distance;
+			
+		flows 
+			f0 : flow path raw_image -> distance_estimate; 
+			f1 : flow path object_position -> distance_estimate; 
+		properties
+			Dispatch_Protocol => Periodic;
+			Period => 100ms;
+			--- compute_execution_time => 20ms .. 50ms;
+	end object_detection_thr;
+	
+end sslights::processing::object_detection;

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="powerplants_impl_Instance" category="system">
+  <featureInstance name="engine1_generatorDC" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/S18/packages/powerplants.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    <type href="../../github/S18/packages/instances/powerplants_powerplants_impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="engine2_generatorDC_1" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/S18/packages/powerplants.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    <type href="../../github/S18/packages/instances/powerplants_powerplants_impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="engine2_generatorDC_2" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/S18/packages/powerplants.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    <type href="../../github/S18/packages/instances/powerplants_powerplants_impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="engine3_generatorDC" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/S18/packages/powerplants.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+    <type href="../../github/S18/packages/instances/powerplants_powerplants_impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <componentInstance name="engine1" category="system">
+    <featureInstance name="generatorDC" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/S18/packages/engine.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/S18/packages/instances/powerplants_powerplants_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <flowSpecification name="fl1" destination="//@componentInstance.0/@featureInstance.0">
+      <flowSpecification href="../../github/S18/packages/engine.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/S18/packages/powerplants.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/S18/packages/engine.aadl#engine.engine.item"/>
+  </componentInstance>
+  <componentInstance name="engine2" category="system">
+    <featureInstance name="generatorDC" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/S18/packages/engine.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/S18/packages/instances/powerplants_powerplants_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <flowSpecification name="fl1" destination="//@componentInstance.1/@featureInstance.0">
+      <flowSpecification href="../../github/S18/packages/engine.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/S18/packages/powerplants.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/S18/packages/engine.aadl#engine.engine.item"/>
+  </componentInstance>
+  <componentInstance name="engine3" category="system">
+    <featureInstance name="generatorDC" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/S18/packages/engine.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/S18/packages/instances/powerplants_powerplants_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <flowSpecification name="fl1" destination="//@componentInstance.2/@featureInstance.0">
+      <flowSpecification href="../../github/S18/packages/engine.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/S18/packages/powerplants.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/S18/packages/engine.aadl#engine.engine.item"/>
+  </componentInstance>
+  <connectionInstance name="engine1.generatorDC -> engine1_generatorDC" kind="portConnection" destination="//@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/S18/packages/powerplants.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="engine2.generatorDC -> engine2_generatorDC_1" kind="portConnection" destination="//@featureInstance.1" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/S18/packages/powerplants.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="engine2.generatorDC -> engine2_generatorDC_2" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/S18/packages/powerplants.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="engine3.generatorDC -> engine3_generatorDC" kind="portConnection" destination="//@featureInstance.3" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/S18/packages/powerplants.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/S18/packages/powerplants.aadl#powerplants.powerplants.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/S18/packages/powerplants.aadl#powerplants.powerplants.impl"/>
+</instance:SystemInstance>

@@ -1,0 +1,41 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "vvi_mode",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/BLESS-models/VVI/aadl/packages/VVI.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\BLESS-models_vvi_mode_Implant_i_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\LICENSE",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\Stepper\\Stepper-README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\CTCS\\proof\\dump302.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\CTCS\\proof\\dump306.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\CTCS\\proof\\proof of CTCS",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\CTCS-3\\proof\\dump.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\CTCS-3\\proof\\proof.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\DDD\\proof\\proof.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\DDDRwE\\proof\\proof.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\IoMT\\proof\\proof.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\Isolette-classic\\proof\\dump.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\Isolette-classic\\proof\\proof.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\PO-SA\\proof\\proof.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\Stepper\\proof\\dump.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\Stepper\\proof\\proof.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\Stepper\\proof\\script.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\Timeout\\proof\\proof.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\BLESS-models\\VVI\\proof\\proof.txt"
+  ],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'BLESS_Types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/BLESS-models/VVI/aadl/packages/VVI.aadl line : 5 column : 7)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'Data_Model'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/BLESS-models/VVI/aadl/packages/VVI.aadl line : 6 column : 4)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'BLESS'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/BLESS-models/VVI/aadl/packages/VVI.aadl line : 7 column : 4)",
+    "ERROR:Couldn't resolve reference to property definition 'Thread_Properties::Dispatch_Protocol'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/BLESS-models/VVI/aadl/packages/VVI.aadl line : 25 column : 4)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'Sporadic'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/BLESS-models/VV...",
+    "ERROR:Couldn't resolve reference to property definition 'BLESS::Invariant'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/BLESS-models/VVI/aadl/packages/VVI.aadl line : 26 column : 4)",
+    "ERROR:Couldn't resolve reference to property definition 'BLESS::Assertion'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/BLESS-models/VVI/aadl/packages/VVI.aadl line : 20 column : 5)",
+    "ERROR:Couldn't resolve reference to property definition 'BLESS::Assertion'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/BLESS-models/VVI/aadl/packages/VVI.aadl line : 22 column : 5)",
+    "ERROR:Couldn't resolve reference to property definition 'Dispatch_Protocol'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/BLESS-models/VVI/aadl/packages/VVI.aadl line : 165 column : 4)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'Periodic'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/BLESS-models/VV..."
+  ]
+}

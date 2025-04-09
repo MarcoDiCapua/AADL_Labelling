@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="VendingMachineSterownik_with_Devices_Instance" category="system">
+  <componentInstance name="sys_bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.HWConnection.impl"/>
+  </componentInstance>
+  <componentInstance name="sys_fotokomorka" category="device">
+    <featureInstance name="motion_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedBusAccess.0"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.Fotokomorka"/>
+  </componentInstance>
+  <componentInstance name="sys_przyciski" category="device">
+    <featureInstance name="wcisnieto_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedDataPort.0"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedBusAccess.0"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.Panel_przyciski"/>
+  </componentInstance>
+  <componentInstance name="sys_wyswietlacz" category="device">
+    <featureInstance name="wiadomosc_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.41/@ownedDataPort.0"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.41/@ownedBusAccess.0"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.Panel_wyswietlacz"/>
+  </componentInstance>
+  <componentInstance name="sys_liczydlo" category="device">
+    <featureInstance name="sum_of_money_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedDataPort.0"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="reszta_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedDataPort.1"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedBusAccess.0"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.Liczydlo"/>
+  </componentInstance>
+  <componentInstance name="sys_podajnik" category="device">
+    <featureInstance name="wysun_produkt_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.35/@ownedDataPort.0"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.35/@ownedBusAccess.0"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.Podajnik"/>
+  </componentInstance>
+  <componentInstance name="sys_controller" category="process">
+    <featureInstance name="sum_of_money_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/21"/>
+    </featureInstance>
+    <featureInstance name="reszta_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/22"/>
+    </featureInstance>
+    <featureInstance name="wiadomosc_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/23"/>
+    </featureInstance>
+    <featureInstance name="wysun_produkt_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/24"/>
+    </featureInstance>
+    <featureInstance name="wcisnieto_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/25"/>
+    </featureInstance>
+    <featureInstance name="motion_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+    </featureInstance>
+    <componentInstance name="this_thread_motion" category="thread">
+      <featureInstance name="motion_in" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="motion_out" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.MotionThread.impl"/>
+    </componentInstance>
+    <componentInstance name="this_thread_deal" category="thread">
+      <featureInstance name="button_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.0"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/6"/>
+      </featureInstance>
+      <featureInstance name="message_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.1"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/7"/>
+      </featureInstance>
+      <featureInstance name="wysun_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.2"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/8"/>
+      </featureInstance>
+      <featureInstance name="reszta_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.3"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/9"/>
+      </featureInstance>
+      <featureInstance name="sum_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.4"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/10"/>
+      </featureInstance>
+      <featureInstance name="motion_in" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.PayThread.impl"/>
+    </componentInstance>
+    <componentInstance name="this_thread_give" category="thread">
+      <featureInstance name="wysun_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.0"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/11"/>
+      </featureInstance>
+      <featureInstance name="reszta_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.1"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/12"/>
+      </featureInstance>
+      <featureInstance name="wysun_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.2"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/13"/>
+      </featureInstance>
+      <featureInstance name="reszta_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.3"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/14"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.GiveAwayThread.impl"/>
+    </componentInstance>
+    <componentInstance name="this_thread_view" category="thread">
+      <featureInstance name="message_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.0"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/15"/>
+      </featureInstance>
+      <featureInstance name="message_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.1"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/16"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.ViewThread.impl"/>
+    </componentInstance>
+    <componentInstance name="this_thread_money" category="thread">
+      <featureInstance name="sum_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedDataPort.0"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/17"/>
+      </featureInstance>
+      <featureInstance name="sum_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedDataPort.1"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/18"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.MoneyThread.impl"/>
+    </componentInstance>
+    <componentInstance name="this_thread_buttons" category="thread">
+      <featureInstance name="button_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedDataPort.0"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/19"/>
+      </featureInstance>
+      <featureInstance name="button_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedDataPort.1"/>
+        <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/20"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.5"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.ButtonsThread.impl"/>
+    </componentInstance>
+    <connectionInstance name="this_thread_motion.motion_out -> this_thread_deal.motion_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.5" source="//@componentInstance.6/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.5">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_thread_deal.message_out -> this_thread_view.message_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.3/@featureInstance.0" source="//@componentInstance.6/@componentInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.6/@componentInstance.3/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_thread_deal.wysun_out -> this_thread_give.wysun_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.2/@featureInstance.0" source="//@componentInstance.6/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.6/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.7"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_thread_deal.reszta_out -> this_thread_give.reszta_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.2/@featureInstance.1" source="//@componentInstance.6/@componentInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.6/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_thread_money.sum_out -> this_thread_deal.sum_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.4" source="//@componentInstance.6/@componentInstance.4/@featureInstance.1">
+      <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.4/@featureInstance.1" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.9"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_thread_buttons.button_out -> this_thread_deal.button_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.0" source="//@componentInstance.6/@componentInstance.5/@featureInstance.1">
+      <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.5/@featureInstance.1" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.11"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.Controller.with_threads"/>
+  </componentInstance>
+  <componentInstance name="sys_main_proccesor" category="processor">
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedBusAccess.0"/>
+      <type href="../../github/AADLVending/MJ/instances/Sterownik_VendingMachineSterownik_with_Devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <componentInstance name="main_processor_ram" category="memory">
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryType" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.Ram"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.MainProcessor.impl"/>
+  </componentInstance>
+  <connectionInstance name="sys_bus -> sys_fotokomorka.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sys_bus -> sys_przyciski.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sys_bus -> sys_wyswietlacz.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sys_bus -> sys_liczydlo.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.4/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sys_bus -> sys_podajnik.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.5/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sys_bus -> sys_main_proccesor.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.7/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sys_fotokomorka.motion_out -> sys_controller.this_thread_motion.motion_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.0/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.6/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@featureInstance.5" destination="//@componentInstance.6/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sys_przyciski.wcisnieto_out -> sys_controller.this_thread_buttons.button_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.5/@featureInstance.0" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.6/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@featureInstance.4" destination="//@componentInstance.6/@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sys_liczydlo.sum_of_money_out -> sys_controller.this_thread_money.sum_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.4/@featureInstance.0" source="//@componentInstance.4/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.0" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.6/@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sys_controller.this_thread_give.wysun_out -> sys_podajnik.wysun_produkt_in" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.6/@componentInstance.2/@featureInstance.2">
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.2/@featureInstance.2" destination="//@componentInstance.6/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.3" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sys_controller.this_thread_give.reszta_out -> sys_liczydlo.reszta_in" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.1" source="//@componentInstance.6/@componentInstance.2/@featureInstance.3">
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.2/@featureInstance.3" destination="//@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.1" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sys_controller.this_thread_view.message_out -> sys_wyswietlacz.wiadomosc_in" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.6/@componentInstance.3/@featureInstance.1">
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.3/@featureInstance.1" destination="//@componentInstance.6/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.2" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADLVending/MJ/Sterownik.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.VendingMachineSterownik.with_Devices"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AADLVending/MJ/Sterownik.aadl#Sterownik.VendingMachineSterownik.with_Devices"/>
+</instance:SystemInstance>

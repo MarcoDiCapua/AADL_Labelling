@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="PCA_Pump_impl_Instance" category="system">
+  <featureInstance name="infused_drug" category="abstractFeature" direction="out">
+    <feature xsi:type="aadl2:AbstractFeature" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAbstractFeature.0"/>
+    <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="network_connection" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+    <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/10"/>
+  </featureInstance>
+  <featureInstance name="bolus_request" category="eventPort">
+    <feature xsi:type="aadl2:EventPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+  </featureInstance>
+  <featureInstance name="pause_infusion" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+    <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/11"/>
+  </featureInstance>
+  <featureInstance name="pause_infusion_echo" category="eventDataPort" direction="out">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1"/>
+    <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/12"/>
+  </featureInstance>
+  <componentInstance name="rsv" category="device">
+    <featureInstance name="drug_source" category="abstractFeature" direction="out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedAbstractFeature.0"/>
+      <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#IoMTwin.Drug_Reservoir"/>
+  </componentInstance>
+  <componentInstance name="pmp" category="device">
+    <featureInstance name="infused_drug" category="abstractFeature" direction="out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedAbstractFeature.0"/>
+      <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="drug_from_reservoir" category="abstractFeature">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedAbstractFeature.1"/>
+      <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="pump_rate">
+      <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#IoMTwin.Mechanical_Pump"/>
+  </componentInstance>
+  <componentInstance name="pcp" category="process">
+    <featureInstance name="pump_rate" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="pause_infusion" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.0"/>
+      <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="pause_infusion_echo" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.1"/>
+      <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="bolus_request" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+    </featureInstance>
+    <componentInstance name="pct" category="thread">
+      <featureInstance name="pump_rate" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="pause_infusion" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventDataPort.0"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="pause_infusion_echo" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventDataPort.1"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="bolus_request" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.0"/>
+      </featureInstance>
+      <flowSpecification name="pi_flow_ppt" source="//@componentInstance.2/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.2">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#IoMTwin.PCA_Pump_Thread"/>
+    </componentInstance>
+    <componentInstance name="pcc" category="thread">
+      <featureInstance name="pi" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.0"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/4"/>
+      </featureInstance>
+      <featureInstance name="pause_infusion" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.1"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <featureInstance name="pie" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.2"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/6"/>
+      </featureInstance>
+      <featureInstance name="pause_infusion_echo" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.3"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_PCA_Pump_impl_Instance.aaxl2#/7"/>
+      </featureInstance>
+      <flowSpecification name="pi_flow_ppct" source="//@componentInstance.2/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.1">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <flowSpecification name="pi_echo_flow_ppct" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.3">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedFlowSpecification.1"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#IoMTwin.PCA_Pump_Communication_Thread"/>
+    </componentInstance>
+    <connectionInstance name="pct.pause_infusion_echo -> pcc.pie" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.2">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="pcc.pause_infusion -> pct.pause_infusion" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.1" source="//@componentInstance.2/@componentInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#IoMTwin.PCA_Pump_Process.impl"/>
+  </componentInstance>
+  <connectionInstance name="bolus_request -> pcp.pct.bolus_request" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.3" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.2/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pause_infusion -> pcp.pcc.pi" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.0" source="//@featureInstance.3">
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="rsv.drug_source -> pmp.drug_from_reservoir" complete="true" destination="//@componentInstance.1/@featureInstance.1" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFeatureConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pmp.infused_drug -> infused_drug" destination="//@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFeatureConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pcp.pct.pump_rate -> pmp.pump_rate" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pcp.pcc.pause_infusion_echo -> pause_infusion_echo" kind="portConnection" destination="//@featureInstance.4" source="//@componentInstance.2/@componentInstance.1/@featureInstance.3">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.2" destination="//@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#IoMTwin.PCA_Pump.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#IoMTwin.PCA_Pump.impl"/>
+</instance:SystemInstance>

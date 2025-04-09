@@ -1,0 +1,14 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "UAV_ModelConstruction",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_modelConstruction/UAV_ModelConstruction.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\Using-a-Network-of-Drones-to-Inspect-Structural-Deformations_UAV_ModelConstruction_UAV_ModelConstructionSystem_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [],
+  "errors": [
+    "ERROR:Couldn't resolve reference to property definition 'latency'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_Sy...",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'ms'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_modelConstruction/UAV_ModelC...",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'ms'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/Using-a-Network-of-Drones-to-Inspect-Structural-Deformations/Networked_UAV/UAV_SysArch/aadl/product_modelConstruction/UAV_ModelC..."
+  ]
+}

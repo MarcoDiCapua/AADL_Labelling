@@ -1,0 +1,14 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "Scenario",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/TempControlAADL/packages/Scenario.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\TempControlAADL_Scenario_ControllerB_imp_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\TempControlAADL\\README.md"],
+  "errors": [
+    "WARNING:Expected feature 'out_socket' to have classifier 'variables::display_temperature_range' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/TempControlAADL/packages/Scenario.aadl line : 52 column : 16)",
+    "WARNING:Expected feature 'in_socket' to have classifier 'variables::on_off' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/TempControlAADL/packages/Scenario.aadl line : 53 column : 45)",
+    "WARNING:Expected feature 'out_socket' to have classifier 'variables::on_off' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/TempControlAADL/packages/Scenario.aadl line : 54 column : 15)"
+  ]
+}

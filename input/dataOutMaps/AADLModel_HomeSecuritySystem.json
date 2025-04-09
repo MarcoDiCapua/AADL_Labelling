@@ -1,0 +1,21 @@
+{
+  "isParsingSucceeded": false,
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLModel_HomeSecuritySystem/SecuritySystem/SecProperties.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\",
+  "isSavedTheModel": false,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADLModel_HomeSecuritySystem\\README.md"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'Physical_Properties'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLModel_HomeSecuritySystem/SecuritySystem/SecProperties.aadl line : 6 column : 5)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'EMV2'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLModel_HomeSecuritySystem/SecuritySystem/SecProperties.aadl line : 7 column : 5)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'Timing_Properties'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLModel_HomeSecuritySystem/SecuritySystem/SecProperties.aadl line : 8 column : 5)",
+    "ERROR:Couldn't resolve reference to property type 'Timing_Properties::Time'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLModel_HomeSecuritySystem/SecuritySystem/SecProperties.aadl line : 12 column : 28)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'sec'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLModel_HomeSecuritySystem/SecuritySystem/SecProperties.aadl line : 12 column : 57)",
+    "ERROR:Couldn't resolve reference to property type 'EMV2::DistributionSpecification'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLModel_HomeSecuritySystem/SecuritySystem/SecProperties.aadl line : 16 column : 35)",
+    "ERROR:Couldn't resolve reference to BasicProperty 'ProbabilityValue'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLModel_HomeSecuritySystem/SecuritySystem/SecProperties.aadl line : 17 column : 6)",
+    "ERROR:Couldn't resolve reference to BasicProperty 'Distribution'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLModel_HomeSecuritySystem/SecuritySystem/SecProperties.aadl line : 17 column : 34)",
+    "ERROR:Couldn't resolve reference to Property Constant, Property Definition, Enumeration or Unit literal 'Fixed'. For classifier references use classifier( <ref> ). (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLModel_HomeSecu...",
+    "ERROR:Couldn't resolve reference to property type 'EMV2::DistributionSpecification'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLModel_HomeSecuritySystem/SecuritySystem/SecProperties.aadl line : 19 column : 44)",
+    "Questo modello: file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADLModel_HomeSecuritySystem/SecuritySystem/SecProperties.aadl non è un AadlPackage"
+  ]
+}

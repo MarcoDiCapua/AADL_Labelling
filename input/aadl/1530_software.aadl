@@ -1,0 +1,84 @@
+package software_pkg
+public
+	
+	with data_pkg;
+	
+	thread periodic_thread
+		properties			
+			Dispatch_Protocol => Periodic;	
+	end periodic_thread;
+	
+	thread obstacle_detection extends periodic_thread
+		features
+			dist: in data port data_pkg::distance;
+			obst: out data port data_pkg::obstacle_detected;
+		-- flows (before properties)
+		flows
+			fl_obst: flow path dist -> obst;
+		-- properties
+		properties
+			Period => 100 ms;
+			Deadline => 100 ms;
+			Compute_execution_time => 15 ms .. 25 ms;
+	end obstacle_detection;
+	
+	thread speed_computation extends periodic_thread
+		features
+			pos: in data port data_pkg::position;
+			spd: out data port data_pkg::speed;
+		flows
+			fl_spd: flow path pos -> spd;
+		properties
+			Period => 50 ms;
+			Deadline => 50 ms;
+			Compute_execution_time => 10 ms .. 15 ms;
+	end speed_computation;
+	
+	thread command_computation extends periodic_thread
+		features
+			spd: in data port data_pkg::speed;
+			cmd: out data port data_pkg::acceleration;
+		flows
+			fl_cmd: flow path spd -> cmd;
+		properties
+			Period => 200 ms;
+			Deadline => 200 ms;
+			Compute_execution_time => 85 ms .. 135 ms;
+	end command_computation;
+	
+	process control_application
+		features
+			dist: in data port  data_pkg::distance;
+			pos : in data port  data_pkg::position;
+			obst: out data port data_pkg::obstacle_detected;
+			cmd : out data port data_pkg::acceleration;
+		flows
+			fl_cmd: flow path pos -> cmd;
+			fl_obst: flow path dist -> obst;
+	end control_application;
+	
+	process implementation control_application.impl
+		subcomponents
+			obst_detection: thread obstacle_detection;
+			spd_computation: thread speed_computation;
+			cmd_computation: thread command_computation;
+		connections
+			cnx1: port dist -> obst_detection.dist;
+			cnx2: port obst_detection.obst -> obst;
+			cnx3: port pos -> spd_computation.pos;
+			cnx4: port spd_computation.spd -> cmd_computation.spd;
+			cnx5: port cmd_computation.cmd -> cmd;
+		flows
+			fl_obst: flow path dist -> cnx1 -> obst_detection.fl_obst -> cnx2 -> obst;
+			fl_cmd : flow path pos -> cnx3 -> spd_computation.fl_spd -> cnx4 -> cmd_computation.fl_cmd -> cnx5 -> cmd;
+		properties
+			latency => 20 ms .. 350 ms applies to fl_obst;
+			latency => 120 ms .. 450 ms applies to fl_cmd;
+			Timing => immediate applies to cnx1;
+			Timing => immediate applies to cnx2;
+			Timing => immediate applies to cnx3;
+			Timing => immediate applies to cnx4;
+			Timing => immediate applies to cnx5;
+	end control_application.impl;
+	
+end software_pkg;

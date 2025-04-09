@@ -1,0 +1,170 @@
+package ROSACE::Software
+
+--  This package models the software elements of the ROSACE case
+--  study, and reflects elements from the app_aadl.c, app2_aadl.c and
+--  app3_aadl.c
+
+public
+
+  with FMI;
+
+  ---------------
+  -- Va_Filter --
+  ---------------
+
+  subprogram Va_Filter
+  features
+    Va     : in  parameter FMI::fmi2Real;
+    Output : out parameter FMI::fmi2Real;
+  properties
+    Source_Language => (C);
+    Source_Name => "va_filter_aadl";
+    Source_Text => ("app2_aadl.c");
+
+    Compute_Execution_Time => 0 us .. 100 us;
+  end Va_Filter;
+
+  --------------
+  -- H_Filter --
+  --------------
+
+  subprogram H_Filter
+  features
+    H      : in  parameter FMI::fmi2Real;
+    Output : out parameter FMI::fmi2Real;
+  properties
+    Source_Language => (C);
+    Source_Name => "h_filter_aadl";
+    Source_Text => ("app2_aadl.c");
+
+    Compute_Execution_Time => 0 us .. 100 us;
+  end H_Filter;
+
+  ---------------
+  -- Az_Filter --
+  ---------------
+
+  subprogram Az_Filter
+  features
+    Az     : in  parameter FMI::fmi2Real;
+    Output : out parameter FMI::fmi2Real;
+  properties
+    Source_Language => (C);
+    Source_Name => "az_filter_aadl";
+    Source_Text => ("app2_aadl.c");
+
+    Compute_Execution_Time => 0 us .. 100 us;
+  end Az_Filter;
+
+  ---------------
+  -- Vz_Filter --
+  ---------------
+
+  subprogram Vz_Filter
+  features
+    Vz     : in  parameter FMI::fmi2Real;
+    Output : out parameter FMI::fmi2Real;
+  properties
+    Source_Language => (C);
+    Source_Name => "vz_filter_aadl";
+    Source_Text => ("app2_aadl.c");
+
+    Compute_Execution_Time => 0 us .. 100 us;
+  end Vz_Filter;
+
+  --------------
+  -- Q_Filter --
+  --------------
+
+  subprogram Q_Filter
+  features
+    Q      : in  parameter FMI::fmi2Real;
+    Output : out parameter FMI::fmi2Real;
+  properties
+    Source_Language => (C);
+    Source_Name => "q_filter_aadl";
+    Source_Text => ("app2_aadl.c");
+
+    Compute_Execution_Time => 0 us .. 100 us;
+  end Q_Filter;
+
+  -------------------
+  -- Altitude_Hold --
+  -------------------
+
+  subprogram Altitude_Hold
+  features
+    H_f    : in  parameter FMI::fmi2Real;
+    H_c    : in  parameter FMI::fmi2Real;
+    Output : out parameter FMI::fmi2Real;
+  properties
+    Source_Language => (C);
+    Source_Name => "altitude_hold_aadl";
+    Source_Text => ("app3_aadl.c");
+
+    Compute_Execution_Time => 0 us .. 100 us;
+  end Altitude_Hold;
+
+  ----------------
+  -- Vz_control --
+  ----------------
+
+  subprogram Vz_control
+  features
+    Vz_f   : in  parameter FMI::fmi2Real;
+    Vz_c   : in  parameter FMI::fmi2Real;
+    Q_f    : in  parameter FMI::fmi2Real;
+    Az_f   : in  parameter FMI::fmi2Real;
+    Output : out parameter FMI::fmi2Real;
+  properties
+    Source_Language => (C);
+    Source_Name => "vz_control_aadl";
+    Source_Text => ("app3_aadl.c");
+
+    Compute_Execution_Time => 0 us .. 100 us;
+  end Vz_control;
+
+  ----------------
+  -- Va_control --
+  ----------------
+
+  subprogram Va_control
+  features
+    Va_f   : in  parameter FMI::fmi2Real;
+    Vz_f   : in  parameter FMI::fmi2Real;
+    Q_f    : in  parameter FMI::fmi2Real;
+    Va_c   : in  parameter FMI::fmi2Real;
+    Output : out parameter FMI::fmi2Real;
+  properties
+    Source_Language => (C);
+    Source_Name => "va_control_aadl";
+    Source_Text => ("app3_aadl.c");
+
+    Compute_Execution_Time => 0 us .. 100 us;
+  end Va_control;
+
+  ----------------
+  -- ROSACE_Log --
+  ----------------
+
+  subprogram ROSACE_Log
+    --  Note: the current spec is to generate the same CSV as for the
+    --  regular ROSACE case study
+
+  features
+    T          : in parameter FMI::fmi2Real;
+    Va         : in parameter FMI::fmi2Real;
+    Az         : in parameter FMI::fmi2Real;
+    Q          : in parameter FMI::fmi2Real;
+    Vz         : in parameter FMI::fmi2Real;
+    H          : in parameter FMI::fmi2Real;
+    Delta_th_c : in parameter FMI::fmi2Real;
+    Delta_E_C  : in parameter FMI::fmi2Real;
+
+  properties
+    Source_Language => (C);
+    Source_Name => "rosace_log";
+    Source_Text => ("log.c");
+  end ROSACE_Log;
+
+end ROSACE::Software;

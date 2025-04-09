@@ -1,0 +1,26 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "resourcebudgets",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example/resource-budget/resource-budgets.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\arch-models-example_resourcebudgets_MySystem_Tier2_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\arch-models-example\\LICENSE",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\arch-models-example\\notes.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\arch-models-example\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\arch-models-example\\resource-budget\\doc\\markdown\\README.md"
+  ],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'sei'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example/resource-budget/resource-budgets.aadl line : 5 column : 7)",
+    "ERROR:Couldn't resolve reference to property definition 'Data_Size'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example/resource-budget/resource-budgets.aadl line : 9 column : 4)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'KByte'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example/resource-budget/resource-budgets.aadl line : 9 column : 19)",
+    "ERROR:Couldn't resolve reference to property definition 'Data_Size'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example/resource-budget/resource-budgets.aadl line : 14 column : 4)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'Bytes'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example/resource-budget/resource-budgets.aadl line : 14 column : 21)",
+    "ERROR:Couldn't resolve reference to property definition 'Stack_Size'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example/resource-budget/resource-budgets.aadl line : 23 column : 4...",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'Kbyte'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example/resource-budget/resource-budgets.aadl line : 23 column : 21)",
+    "ERROR:Couldn't resolve reference to property definition 'Period'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example/resource-budget/resource-budgets.aadl line : 24 column : 4)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'ms'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example/resource-budget/resource-budgets.aadl line : 24 column : 16)",
+    "ERROR:Couldn't resolve reference to property definition 'Compute_Execution_Time'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example/resource-budget/resource-budgets.aadl line : 2..."
+  ]
+}

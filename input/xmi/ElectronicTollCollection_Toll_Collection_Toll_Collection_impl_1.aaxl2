@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Toll_Collection_impl_Instance" category="system">
+  <componentInstance name="driver" category="system">
+    <featureInstance name="driver_updates">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="request_for_service" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="driver_input" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="payment_trans_status">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.driver.impl"/>
+  </componentInstance>
+  <componentInstance name="vehicle_obe" category="system">
+    <featureInstance name="drvr_ip">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="driver_updates" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="vehicle_payment_request">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="vehicle_payment_update">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="payment">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="paymnt_device_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="payment_request_update">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.6"/>
+    </featureInstance>
+    <featureInstance name="vehicle_paymnt_info" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.7"/>
+    </featureInstance>
+    <featureInstance name="paymnt_device_updt" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.8"/>
+    </featureInstance>
+    <featureInstance name="reqst_for_payment" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.9"/>
+    </featureInstance>
+    <featureInstance name="request_for_service">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.10"/>
+    </featureInstance>
+    <componentInstance name="veh_toll_paymnt" category="system">
+      <componentInstance name="paymnt_dev_interface" category="process">
+        <featureInstance name="driver_toll_paymnt_credit_identity">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="fpd_confirm_paymnt_at_toll_plaza">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+        </featureInstance>
+        <featureInstance name="fpd_toll_vehicle_paymnt_data">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.2"/>
+        </featureInstance>
+        <featureInstance name="toll_paymnt_cnfrmtn" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.3"/>
+        </featureInstance>
+        <featureInstance name="toll_paymnt_debited">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.4"/>
+        </featureInstance>
+        <featureInstance name="toll_paymnt_rqst">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.5"/>
+        </featureInstance>
+        <featureInstance name="toll_veh_paymnt_data_clr">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.6"/>
+        </featureInstance>
+        <featureInstance name="toll_veh_paymnt_data_collect" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.7"/>
+        </featureInstance>
+        <featureInstance name="toll_veh_paymnt_data_rqst">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.8"/>
+        </featureInstance>
+        <featureInstance name="toll_veh_paymnt_data_store" direction="in out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.9"/>
+        </featureInstance>
+        <featureInstance name="toll_veh_paymnt_data_updt">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.10"/>
+        </featureInstance>
+        <featureInstance name="toll_veh_paymnt_nmbr" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.11"/>
+        </featureInstance>
+        <featureInstance name="tpd_debited_paymnt_at_toll_plaza" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.12"/>
+        </featureInstance>
+        <featureInstance name="tpd_rqst_paymnt_at_toll_plaza" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.13"/>
+        </featureInstance>
+        <componentInstance name="credit_identity" category="thread">
+          <featureInstance name="card_type">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+          </featureInstance>
+          <featureInstance name="card_number">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.1"/>
+          </featureInstance>
+          <featureInstance name="name_on_card">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.2"/>
+          </featureInstance>
+          <featureInstance name="card_expiry">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.3"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.credit_identity.impl"/>
+        </componentInstance>
+        <componentInstance name="paymnt_cnfrmtn" category="thread">
+          <featureInstance name="payment_successful">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+          </featureInstance>
+          <featureInstance name="payment_fail">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.1"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.paymnt_cnfrmtn.impl"/>
+        </componentInstance>
+        <componentInstance name="toll_cost" category="thread">
+          <featureInstance name="toll_price">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.2"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.toll_cost.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.paymnt_dev_interface.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.veh_toll_paymnt.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.vehicle_obe.impl"/>
+  </componentInstance>
+  <componentInstance name="payment_device" category="system">
+    <featureInstance name="payment" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="paymnt_device_info" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="reqst_for_payment">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="paymnt_device_updt">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.3"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.payment_device.impl"/>
+  </componentInstance>
+  <componentInstance name="its_roadway_paymnt_equipment" category="system">
+    <featureInstance name="payment_trans_status" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="payment_transactn" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="payment_instr" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="vehicle_entry_exit" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.3"/>
+    </featureInstance>
+    <componentInstance name="roadway_toll_collectn_support" category="system">
+      <componentInstance name="produce_roadside_displays" category="process">
+        <featureInstance name="td_toll_paymnt_cnfrm" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="td_toll_paymnt_invalid" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.1"/>
+        </featureInstance>
+        <featureInstance name="toll_paymnt_pull_in_msg">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.2"/>
+        </featureInstance>
+        <featureInstance name="toll_veh_paymnt_prb_msg">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDataPort.3"/>
+        </featureInstance>
+        <componentInstance name="veh_identity" category="thread">
+          <featureInstance name="veh_nmbr">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.veh_identity.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.produce_roadside_displays.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.roadway_toll_collectn_support.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.its_roadway_paymnt_equipment.impl"/>
+  </componentInstance>
+  <componentInstance name="roadside_equipment" category="system">
+    <featureInstance name="vehicle_entry_exit">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="payment_instr">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="vehicle_paymnt_rqst" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="payment_transactn" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="roaduse_history" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="vehicle_paymnt_info" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="vehicle_payment_update" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.26/@ownedDataPort.6"/>
+    </featureInstance>
+    <componentInstance name="rsetc" category="system">
+      <componentInstance name="bill_driver" category="process">
+        <featureInstance name="curr_toll_trans_from_roadside">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="toll_paymnt_cnfrmtn">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.1"/>
+        </featureInstance>
+        <featureInstance name="toll_paymnt_debited" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.2"/>
+        </featureInstance>
+        <featureInstance name="toll_paymnt_rqst" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.3"/>
+        </featureInstance>
+        <componentInstance name="toll_cost1" category="thread">
+          <featureInstance name="toll_price">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.32/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.toll_cost1.impl"/>
+        </componentInstance>
+        <componentInstance name="veh_identity1" category="thread">
+          <featureInstance name="veh_nmbr">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.34/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedThreadSubcomponent.1"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.veh_identity1.impl"/>
+        </componentInstance>
+        <componentInstance name="paymnt_cnfrmtn1" category="thread">
+          <featureInstance name="payment_successful">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedDataPort.0"/>
+          </featureInstance>
+          <featureInstance name="payment_fail">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedDataPort.1"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedThreadSubcomponent.2"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.paymnt_cnfrmtn1.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.bill_driver.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.rsetc.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.roadside_equipment.impl"/>
+  </componentInstance>
+  <componentInstance name="personal_info_device" category="system">
+    <featureInstance name="traveller_paymnt_rqst">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="user_acc_report">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="payment">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="traveller_paymnt_info" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="user_acc_setup" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="reqst_for_paymnt" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedDataPort.5"/>
+    </featureInstance>
+    <componentInstance name="pers_interactive_travlr_info" category="system">
+      <componentInstance name="personal_paymnt_dev_intrfc" category="process">
+        <featureInstance name="fpd_travlr_pers_ip_credit_identity">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.42/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="tpd_debited_paymnt_at_pers_device" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.42/@ownedDataPort.1"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.41/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.personal_paymnt_dev_intrfc.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.pers_interactive_travlr_info.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.personal_info_device.impl"/>
+  </componentInstance>
+  <componentInstance name="payment_administrator" category="system">
+    <featureInstance name="paymnt_info_presentatn">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.44/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="paymnt_admin_rqst" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.44/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.payment_administrator.impl"/>
+  </componentInstance>
+  <componentInstance name="payment_administration_center" category="system">
+    <featureInstance name="payment_transactn">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="transaction_status">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="paymnt_rqst" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="paymnt_coordinatn" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="paymnt_instr" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="paymnt_info_presentatn" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="traveller_paymnt_rqst" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.6"/>
+    </featureInstance>
+    <featureInstance name="user_acc_report" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.7"/>
+    </featureInstance>
+    <featureInstance name="vehicle_paymnt_rqst" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.8"/>
+    </featureInstance>
+    <featureInstance name="paymnt_admin_rqst">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.9"/>
+    </featureInstance>
+    <featureInstance name="traveller_paymnt_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.10"/>
+    </featureInstance>
+    <featureInstance name="user_acc_setup">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.11"/>
+    </featureInstance>
+    <featureInstance name="roaduse_history">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.12"/>
+    </featureInstance>
+    <featureInstance name="vehicle_paymnt_info">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.13"/>
+    </featureInstance>
+    <featureInstance name="registratn">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.14"/>
+    </featureInstance>
+    <featureInstance name="license_rqst" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.15"/>
+    </featureInstance>
+    <featureInstance name="paymnt_violatn_notif" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.16"/>
+    </featureInstance>
+    <componentInstance name="pac_paymnt_administration" category="system">
+      <componentInstance name="process_violatn_for_tolls" category="process">
+        <featureInstance name="enforcement_data_for_tolls" direction="in out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="fdmv_toll_violatn_veh_registratn">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedDataPort.1"/>
+        </featureInstance>
+        <featureInstance name="tdmv_toll_violatn_veh_license" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedDataPort.2"/>
+        </featureInstance>
+        <featureInstance name="tec_toll_violatn_data" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedDataPort.3"/>
+        </featureInstance>
+        <featureInstance name="toll_violatn_info">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedDataPort.4"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.process_violatn_for_tolls.impl"/>
+      </componentInstance>
+      <componentInstance name="mng_bad_toll_paymnt_data" category="process">
+        <featureInstance name="bad_toll_paymnt_list" direction="in out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.52/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="toll_paymnt_violator_data">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.52/@ownedDataPort.1"/>
+        </featureInstance>
+        <componentInstance name="credit_identity2" category="thread">
+          <featureInstance name="card_type">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedDataPort.0"/>
+          </featureInstance>
+          <featureInstance name="card_number">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedDataPort.1"/>
+          </featureInstance>
+          <featureInstance name="name_on_card">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedDataPort.2"/>
+          </featureInstance>
+          <featureInstance name="card_expiry">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedDataPort.3"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.53/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.credit_identity2.impl"/>
+        </componentInstance>
+        <componentInstance name="toll_cost2" category="thread">
+          <featureInstance name="toll_price">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.56/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.53/@ownedThreadSubcomponent.1"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.toll_cost2.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedProcessSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.mng_bad_toll_paymnt_data.impl"/>
+      </componentInstance>
+      <componentInstance name="updt_toll_price_data" category="process">
+        <featureInstance name="fpa_toll_price_data">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.58/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="toll_price_changes_rqst">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.58/@ownedDataPort.1"/>
+        </featureInstance>
+        <featureInstance name="toll_price_changes_response" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.58/@ownedDataPort.2"/>
+        </featureInstance>
+        <featureInstance name="toll_price_data" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.58/@ownedDataPort.3"/>
+        </featureInstance>
+        <featureInstance name="toll_price_data_rqst">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.58/@ownedDataPort.4"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedProcessSubcomponent.2"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.updt_toll_price_data.impl"/>
+      </componentInstance>
+      <componentInstance name="mng_toll_processing" category="process">
+        <featureInstance name="curr_toll_trans">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.60/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="ffc_confrm_toll_paymnt">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.60/@ownedDataPort.1"/>
+        </featureInstance>
+        <featureInstance name="tfc_rqst_toll_paymnt" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.60/@ownedDataPort.2"/>
+        </featureInstance>
+        <featureInstance name="toll_trans_records" direction="in out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.60/@ownedDataPort.3"/>
+        </featureInstance>
+        <componentInstance name="credit_identity3" category="thread">
+          <featureInstance name="card_type">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.62/@ownedDataPort.0"/>
+          </featureInstance>
+          <featureInstance name="card_number">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.62/@ownedDataPort.1"/>
+          </featureInstance>
+          <featureInstance name="name_on_card">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.62/@ownedDataPort.2"/>
+          </featureInstance>
+          <featureInstance name="card_expiry">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.62/@ownedDataPort.3"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.61/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.credit_identity3.impl"/>
+        </componentInstance>
+        <componentInstance name="toll_cost3" category="thread">
+          <featureInstance name="toll_price">
+            <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.64/@ownedDataPort.0"/>
+          </featureInstance>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.61/@ownedThreadSubcomponent.1"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.toll_cost3.impl"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedProcessSubcomponent.3"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.mng_toll_processing.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.pac_paymnt_administration.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.7"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.payment_administration_center.impl"/>
+  </componentInstance>
+  <componentInstance name="other_payment_administration" category="system">
+    <featureInstance name="paymnt_coordinatn" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.66/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.8"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.other_payment_administration.impl"/>
+  </componentInstance>
+  <componentInstance name="financial_center" category="system">
+    <featureInstance name="transaction_status" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.68/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="paymnt_rqst">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.68/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.9"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.financial_center.impl"/>
+  </componentInstance>
+  <componentInstance name="DMV" category="system">
+    <featureInstance name="registratn" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.70/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="license_rqst">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.70/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.10"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.DMV.impl"/>
+  </componentInstance>
+  <componentInstance name="enforcement_center" category="system">
+    <featureInstance name="paymnt_violatn_notif">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.72/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.11"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.enforcement_center.impl"/>
+  </componentInstance>
+  <connectionInstance name="driver.request_for_service -> vehicle_obe.request_for_service" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.10" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="driver.driver_input -> vehicle_obe.drvr_ip" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.0/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_obe.driver_updates -> driver.driver_updates" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_obe.vehicle_paymnt_info -> payment_administration_center.vehicle_paymnt_info" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.13" source="//@componentInstance.1/@featureInstance.7">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.7" destination="//@componentInstance.7/@featureInstance.13">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_obe.vehicle_paymnt_info -> roadside_equipment.vehicle_paymnt_info" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.5" source="//@componentInstance.1/@featureInstance.7">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.7" destination="//@componentInstance.4/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_obe.paymnt_device_updt -> payment_device.paymnt_device_updt" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.3" source="//@componentInstance.1/@featureInstance.8">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.8" destination="//@componentInstance.2/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_obe.reqst_for_payment -> payment_device.reqst_for_payment" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.2" source="//@componentInstance.1/@featureInstance.9">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.9" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_device.payment -> vehicle_obe.payment" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.4" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_device.payment -> personal_info_device.payment" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.2" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.5/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_device.paymnt_device_info -> vehicle_obe.paymnt_device_info" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.5" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="its_roadway_paymnt_equipment.payment_transactn -> driver.payment_trans_status" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.3" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="its_roadway_paymnt_equipment.payment_transactn -> payment_administration_center.payment_transactn" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.0" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.24"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="its_roadway_paymnt_equipment.payment_instr -> roadside_equipment.payment_instr" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.1" source="//@componentInstance.3/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.2" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.21"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="roadside_equipment.vehicle_paymnt_rqst -> vehicle_obe.vehicle_payment_request" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@componentInstance.4/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.2" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="roadside_equipment.payment_transactn -> its_roadway_paymnt_equipment.payment_transactn" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.4/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.3" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.23"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="roadside_equipment.vehicle_paymnt_info -> payment_administration_center.vehicle_paymnt_info" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.13" source="//@componentInstance.4/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.5" destination="//@componentInstance.7/@featureInstance.13">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="roadside_equipment.vehicle_payment_update -> vehicle_obe.vehicle_payment_update" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.3" source="//@componentInstance.4/@featureInstance.6">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.6" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="personal_info_device.traveller_paymnt_info -> payment_administration_center.traveller_paymnt_info" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.10" source="//@componentInstance.5/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.3" destination="//@componentInstance.7/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.19"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="personal_info_device.user_acc_setup -> payment_administration_center.user_acc_setup" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.11" source="//@componentInstance.5/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.4" destination="//@componentInstance.7/@featureInstance.11">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.20"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="personal_info_device.reqst_for_paymnt -> payment_device.reqst_for_payment" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.2" source="//@componentInstance.5/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.5" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_administrator.paymnt_admin_rqst -> payment_administration_center.paymnt_admin_rqst" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.9" source="//@componentInstance.6/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.1" destination="//@componentInstance.7/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.26"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_administration_center.paymnt_rqst -> vehicle_obe.vehicle_payment_request" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@componentInstance.7/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.2" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_administration_center.paymnt_rqst -> roadside_equipment.vehicle_paymnt_rqst" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.2" source="//@componentInstance.7/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.2" destination="//@componentInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_administration_center.paymnt_rqst -> financial_center.paymnt_rqst" complete="true" kind="portConnection" destination="//@componentInstance.9/@featureInstance.1" source="//@componentInstance.7/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.2" destination="//@componentInstance.9/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.33"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_administration_center.paymnt_coordinatn -> other_payment_administration.paymnt_coordinatn" complete="true" kind="portConnection" destination="//@componentInstance.8/@featureInstance.0" source="//@componentInstance.7/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.3" destination="//@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.30"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_administration_center.paymnt_instr -> its_roadway_paymnt_equipment.payment_instr" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.2" source="//@componentInstance.7/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.4" destination="//@componentInstance.3/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.22"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_administration_center.paymnt_info_presentatn -> payment_administrator.paymnt_info_presentatn" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.7/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.5" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.25"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_administration_center.traveller_paymnt_rqst -> personal_info_device.traveller_paymnt_rqst" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.7/@featureInstance.6">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.6" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.17"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_administration_center.user_acc_report -> personal_info_device.user_acc_report" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.1" source="//@componentInstance.7/@featureInstance.7">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.7" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.18"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_administration_center.license_rqst -> DMV.license_rqst" complete="true" kind="portConnection" destination="//@componentInstance.10/@featureInstance.1" source="//@componentInstance.7/@featureInstance.15">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.15" destination="//@componentInstance.10/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.31"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="payment_administration_center.paymnt_violatn_notif -> enforcement_center.paymnt_violatn_notif" complete="true" kind="portConnection" destination="//@componentInstance.11/@featureInstance.0" source="//@componentInstance.7/@featureInstance.16">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.16" destination="//@componentInstance.11/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.32"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="other_payment_administration.paymnt_coordinatn -> payment_administration_center.paymnt_coordinatn" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.3" source="//@componentInstance.8/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0" destination="//@componentInstance.7/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.29"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="financial_center.transaction_status -> payment_administration_center.transaction_status" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.1" source="//@componentInstance.9/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.0" destination="//@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.28"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DMV.registratn -> payment_administration_center.registratn" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.14" source="//@componentInstance.10/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.10/@featureInstance.0" destination="//@componentInstance.7/@featureInstance.14">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.27"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.Toll_Collection.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.Toll_Collection.impl"/>
+</instance:SystemInstance>

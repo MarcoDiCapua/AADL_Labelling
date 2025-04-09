@@ -1,0 +1,10 @@
+{
+  "isParsingSucceeded": false,
+  "modelName": "MyPackage",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/MCS-Examples/MCSExamples2/MyPackage.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\",
+  "isSavedTheModel": false,
+  "docFiles": [],
+  "errors": ["Il modello non possiede elementi con nomi di lunghezza superiore a 2, viene quindi considerato invalido perchè non utile al fine dell'analisi"]
+}

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="main_sys_rta_Instance" category="system">
+  <componentInstance name="the_net" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusType" href="../../github/SE206_TP3_AADL/hardware.aadl#hardware_pkg.net"/>
+  </componentInstance>
+  <componentInstance name="the_dist_sensor" category="device">
+    <featureInstance name="dist" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <flowSpecification name="fl_src" destination="//@componentInstance.1/@featureInstance.0">
+      <flowSpecification href="../../github/SE206_TP3_AADL/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/SE206_TP3_AADL/hardware.aadl#hardware_pkg.distance_sensor"/>
+  </componentInstance>
+  <componentInstance name="the_pos_sensor" category="device">
+    <featureInstance name="pos" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <flowSpecification name="fl_src" destination="//@componentInstance.2/@featureInstance.0">
+      <flowSpecification href="../../github/SE206_TP3_AADL/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/SE206_TP3_AADL/hardware.aadl#hardware_pkg.position_sensor"/>
+  </componentInstance>
+  <componentInstance name="the_engine" category="device">
+    <featureInstance name="cmd">
+      <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="obst">
+      <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <flowSpecification name="fl_dst_cmd" source="//@componentInstance.3/@featureInstance.0">
+      <flowSpecification href="../../github/SE206_TP3_AADL/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="fl_dst_obst" source="//@componentInstance.3/@featureInstance.1">
+      <flowSpecification href="../../github/SE206_TP3_AADL/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/SE206_TP3_AADL/hardware.aadl#hardware_pkg.engine"/>
+  </componentInstance>
+  <componentInstance name="the_app" category="process">
+    <featureInstance name="dist">
+      <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="pos">
+      <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="obst" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+      <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="cmd" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+      <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <componentInstance name="obst_detection" category="thread">
+      <featureInstance name="dist">
+        <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+        <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="obst" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+        <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <flowSpecification name="fl_obst" source="//@componentInstance.4/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.1">
+        <flowSpecification href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/SE206_TP3_AADL/software.aadl#software_pkg.obstacle_detection"/>
+    </componentInstance>
+    <componentInstance name="spd_computation" category="thread">
+      <featureInstance name="pos">
+        <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+        <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="spd" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+        <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/4"/>
+      </featureInstance>
+      <flowSpecification name="fl_spd" source="//@componentInstance.4/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.1/@featureInstance.1">
+        <flowSpecification href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/SE206_TP3_AADL/software.aadl#software_pkg.speed_computation"/>
+    </componentInstance>
+    <componentInstance name="cmd_computation" category="thread">
+      <featureInstance name="spd">
+        <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+        <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/4"/>
+      </featureInstance>
+      <featureInstance name="cmd" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+        <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <flowSpecification name="fl_cmd" source="//@componentInstance.4/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.2/@featureInstance.1">
+        <flowSpecification href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/SE206_TP3_AADL/software.aadl#software_pkg.command_computation"/>
+    </componentInstance>
+    <flowSpecification name="fl_cmd" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.4/@featureInstance.3">
+      <flowSpecification href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="fl_obst" source="//@componentInstance.4/@featureInstance.0" destination="//@componentInstance.4/@featureInstance.2">
+      <flowSpecification href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <connectionInstance name="spd_computation.spd -> cmd_computation.spd" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.2/@featureInstance.0" source="//@componentInstance.4/@componentInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.4/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/SE206_TP3_AADL/software.aadl#software_pkg.control_application.impl"/>
+  </componentInstance>
+  <componentInstance name="the_app_cpu" category="processor">
+    <featureInstance name="net_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/SE206_TP3_AADL/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../../github/SE206_TP3_AADL/hardware.aadl#hardware_pkg.cpu"/>
+  </componentInstance>
+  <componentInstance name="the_dist_sensor_cpu" category="processor">
+    <featureInstance name="net_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/SE206_TP3_AADL/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../../github/SE206_TP3_AADL/hardware.aadl#hardware_pkg.cpu"/>
+  </componentInstance>
+  <componentInstance name="the_pos_sensor_cpu" category="processor">
+    <featureInstance name="net_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/SE206_TP3_AADL/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../../github/SE206_TP3_AADL/hardware.aadl#hardware_pkg.cpu"/>
+  </componentInstance>
+  <componentInstance name="the_engine_cpu" category="processor">
+    <featureInstance name="net_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/SE206_TP3_AADL/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/SE206_TP3_AADL/instances/integration_proxy_main_sys_rta_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../../github/SE206_TP3_AADL/hardware.aadl#hardware_pkg.cpu"/>
+  </componentInstance>
+  <connectionInstance name="the_dist_sensor.dist -> the_app.obst_detection.dist" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_pos_sensor.pos -> the_app.spd_computation.pos" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.1/@featureInstance.0" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.4/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_app.obst_detection.obst -> the_engine.obst" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.4/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.2" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_app.cmd_computation.cmd -> the_engine.cmd" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.4/@componentInstance.2/@featureInstance.1">
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.4/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SE206_TP3_AADL/software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.3" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_app_cpu.net_access -> the_net" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.5/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_dist_sensor_cpu.net_access -> the_net" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.6/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_pos_sensor_cpu.net_access -> the_net" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.7/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.0" destination="//@componentInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="the_engine_cpu.net_access -> the_net" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.8/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0" destination="//@componentInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/SE206_TP3_AADL/integration.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/SE206_TP3_AADL/integration_proxy.aadl#integration_proxy.main_sys.rta"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/SE206_TP3_AADL/integration_proxy.aadl#integration_proxy.main_sys.rta"/>
+</instance:SystemInstance>

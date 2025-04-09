@@ -1,0 +1,10 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "integration",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/DAPP_aadl/integration.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\DAPP_aadl_integration_integration_write_owner_request_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\DAPP_aadl\\README.md"],
+  "errors": []
+}

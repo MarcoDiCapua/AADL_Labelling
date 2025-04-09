@@ -1,0 +1,45 @@
+--CTCS_Types.aadl
+
+--types used in the CTCS-3 example
+
+package CTCS_Types
+public
+  with BLESS;
+  
+annex Typedef
+{**
+ type segment is record (
+  v_n :  quantity mps -- velocity for (normal) service brake limit (SBL)
+ 	v_e :  quantity mps -- velocity for emergency brake limit (EBL)
+ 	e :  quantity m)  -- position of end of this segment
+   	  
+ type movementAuthorization is record (
+  ba : quantity m  --beginning position of this MA
+  num_segments : quantity whole  --number of segments in this MA
+  seg : array[#CTCS_Property::MaxSegments] of segment 
+  ea : quantity m )  --ending position of authority
+**};
+
+
+data Segment
+properties BLESS::Typed => "segment";
+end Segment;
+
+data movementAuthorization
+  properties BLESS::Typed => "movementAuthorization";
+end movementAuthorization;
+
+data Position
+  Properties BLESS::Typed => "quantity m";
+end Position;
+
+data Velocity
+  Properties BLESS::Typed => "quantity mps";
+end Velocity;
+
+data Acceleration
+Properties
+  BLESS::Typed => "quantity mpss";
+end Acceleration;
+	
+end CTCS_Types;

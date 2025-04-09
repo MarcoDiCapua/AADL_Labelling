@@ -1,0 +1,10 @@
+package Buses_Serial
+public
+
+bus Serial
+end Serial;
+  
+bus implementation Serial.impl
+end Serial.impl;
+
+end Buses_Serial;

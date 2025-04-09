@@ -1,0 +1,13 @@
+{
+  "isParsingSucceeded": false,
+  "modelName": "SCADA::integration",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-EDS-Model/integration.aadl",
+  "pathXMLFile": "",
+  "isSavedTheModel": false,
+  "docFiles": [],
+  "errors": [
+    "WARNING:SCADA::platform in 'with' clause of public package section is not used. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-EDS-Model/integration.aadl line : 6 column : 6)",
+    "Invalid file path"
+  ]
+}

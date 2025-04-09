@@ -1,0 +1,26 @@
+package UIComponenet
+public
+	with SEI;
+	device UI_Input
+		features
+			ui: out data port;
+		flows
+			ui_flowsource: flow source ui{ 
+				Latency => 5ms..6ms;
+			};
+		properties
+			SEI::NetWeight => 5.0 kg;
+	end UI_Input;
+
+	device UI_Display
+		features
+			ud: in data port;
+		flows
+			ud_flowsink: flow sink ud{ 
+				Latency => 5ms..6ms;
+			};
+		properties
+			SEI::NetWeight => 10.0 kg;
+	end UI_Display;
+
+end UIComponenet;

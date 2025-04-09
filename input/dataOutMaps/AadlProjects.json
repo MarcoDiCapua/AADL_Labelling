@@ -1,0 +1,21 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "smartparking",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AadlProjects/smartpark/smartparking.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\AadlProjects_smartparking_RSEparkmgmt_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AadlProjects\\README.md"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'smartparking_properties'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AadlProjects/smartpark/smartparking.aadl line : 3 column : 7)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'EMV2'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AadlProjects/smartpark/smartparking.aadl line : 3 column : 32)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'smartparking_variables'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AadlProjects/smartpark/smartparking.aadl line : 3 column : 38)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'smartparking_variables::occupiedSpaces'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AadlProjects/smartpark/smartparking.aadl line : 78 column : 30)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'smartparking_variables::occupiedSpaces'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AadlProjects/smartpark/smartparking.aadl line : 113 column : 28)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'smartparking_variables::occupiedSpaces'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AadlProjects/smartpark/smartparking.aadl line : 114 column : 29)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'smartparking_variables::occupiedSpaces'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AadlProjects/smartpark/smartparking.aadl line : 129 column : 28)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'smartparking_variables::occupiedSpaces'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AadlProjects/smartpark/smartparking.aadl line : 141 column : 33)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'smartparking_variables::occupiedSpaces'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AadlProjects/smartpark/smartparking.aadl line : 153 column : 29)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'smartparking_variables::occupiedSpaces'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AadlProjects/smartpark/smartparking.aadl line : 165 column : 24)"
+  ]
+}

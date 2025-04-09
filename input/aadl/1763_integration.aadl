@@ -1,0 +1,64 @@
+package integration
+public
+	
+	with software_pkg,hardware_pkg;
+	
+	system main_sys
+	end main_sys;
+
+	system implementation main_sys.impl
+		subcomponents
+			the_app: process software_pkg::control_application.impl;
+			the_app_cpu: processor hardware_pkg::cpu;
+			the_dist_sensor_cpu: processor hardware_pkg::cpu;
+			the_pos_sensor_cpu: processor hardware_pkg::cpu;
+			the_engine_cpu: processor hardware_pkg::cpu;
+			the_net: bus hardware_pkg::net;
+			the_dist_sensor: device hardware_pkg::distance_sensor;
+			the_pos_sensor: device hardware_pkg::position_sensor;
+			the_engine: device hardware_pkg::engine;
+		connections
+			cnx1: port the_dist_sensor.dist -> the_app.dist;
+			cnx2: port the_pos_sensor.pos -> the_app.pos;
+			cnx3: port the_app.cmd -> the_engine.cmd ;
+			cnx4: port the_app.obst -> the_engine.obst;
+			cnx_phy1: bus access the_app_cpu.net_access -> the_net;
+			cnx_phy2: bus access the_dist_sensor_cpu.net_access -> the_net;
+			cnx_phy3: bus access the_pos_sensor_cpu.net_access -> the_net;
+			cnx_phy4: bus access the_engine_cpu.net_access -> the_net;
+		properties
+			Actual_Processor_Binding => (reference (the_app_cpu)) applies to the_app;
+			Actual_Processor_Binding => (reference (the_pos_sensor_cpu)) applies to the_pos_sensor;
+			Actual_Processor_Binding => (reference (the_dist_sensor_cpu)) applies to the_dist_sensor;
+			Actual_Processor_Binding => (reference (the_engine_cpu)) applies to the_engine;
+			Actual_Connection_Binding => (reference (the_net)) applies to cnx1,cnx2,cnx3,cnx4;
+	end main_sys.impl;
+
+	-- system specification with a view for flow latency analysis (fla).
+	-- In this view, Compute_execution_time property
+	-- is a range corresponding to the interval [BCRT..WCRT]
+	-- BCRT = Best case response time
+	-- WCRT = Worst case response time
+	system implementation main_sys.fla extends main_sys.impl
+		flows
+			e2e_f_cmd: end to end flow the_pos_sensor.fl_src -> cnx2 -> the_app.fl_cmd -> cnx3 -> the_engine.fl_dst_cmd;
+			e2e_f_obst: end to end flow the_dist_sensor.fl_src -> cnx1 -> the_app.fl_obst -> cnx4 -> the_engine.fl_dst_obst;
+		properties
+			latency => 120 ms .. 450 ms applies to e2e_f_cmd;
+			latency => 20 ms .. 350 ms applies to e2e_f_obst;
+	end main_sys.fla;
+	
+	
+	-- system specification with a view for response time analysis (rta)
+	-- In this view, Compute_execution_time property
+	-- is a range corresponding to the interval [BCET..WCET]
+	-- BCET = Best case execution time
+	-- WCET = Worst case execution time
+	system implementation main_sys.rta extends main_sys.impl
+		properties
+			Compute_execution_time => 5 ms .. 10 ms applies to the_app.obst_detection;
+			Compute_execution_time => 10 ms .. 15 ms applies to the_app.spd_computation;
+			Compute_execution_time => 60 ms .. 70 ms applies to the_app.cmd_computation;
+	end main_sys.rta;
+	
+end integration;

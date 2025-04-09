@@ -1,0 +1,38 @@
+package MITESIO::Node
+public
+    with Base_Types;
+    with Data_Model;
+
+    system Node
+    end Node;
+
+    system implementation Node.imp
+    end Node.imp
+
+    data NodeRequest
+    properties
+        Data_Model::Data_Header => Integer; 
+    end NodeRequest;
+
+    device node_server
+        features
+        -- request
+        request: in data port Base_Types::float; 
+
+        -- reply
+        reply: out data port Base_Types::float; 
+    end node_server;
+
+    device implementation node_server.imp
+        annex Behavior_Specification {**
+        states
+            s0 : initial complete state;
+        transitions
+            s0 -[ on dispatch ]-> s0 {
+            computation(1ms);
+            request := false;
+            reply := false;
+            };
+    **};
+    end node_server.imp;
+end MITESIO::Node;

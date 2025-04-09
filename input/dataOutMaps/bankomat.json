@@ -1,0 +1,21 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "Bankomat",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/bankomat/Bankomat/Bankomat.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\bankomat_Bankomat_bankomat_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\bankomat\\README.md"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'base_types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/bankomat/Bankomat/Bankomat.aadl line : 3 column : 7)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'sei'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/bankomat/Bankomat/Bankomat.aadl line : 4 column : 7)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/bankomat/Bankomat/Bankomat.aadl line : 8 column : 29)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::String'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/bankomat/Bankomat/Bankomat.aadl line : 17 column : 34)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Float'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/bankomat/Bankomat/Bankomat.aadl line : 28 column : 31)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/bankomat/Bankomat/Bankomat.aadl line : 37 column : 31)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/bankomat/Bankomat/Bankomat.aadl line : 46 column : 37)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Float'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/bankomat/Bankomat/Bankomat.aadl line : 48 column : 36)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/bankomat/Bankomat/Bankomat.aadl line : 62 column : 32)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::String'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/bankomat/Bankomat/Bankomat.aadl line : 81 column : 30)"
+  ]
+}

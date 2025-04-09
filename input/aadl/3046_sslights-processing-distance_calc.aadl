@@ -1,0 +1,43 @@
+package sslights::processing::distance_calc
+public
+	with sslights::datatypes; 
+	
+	process distance_calc
+		features 
+			distance_estimate :  in data port sslights::datatypes::distance;    --- estimated by the radar
+			object_detected : in data port sslights::datatypes::object_position.i;  -- detected by camera and verified by the image_input 
+			distance : out data port sslights::datatypes::distance;  --- consistent distance after removing the potential bad values
+		flows 
+			f0 : flow path distance_estimate -> distance;
+			f1 : flow path object_detected -> distance;  
+	end distance_calc;
+	
+	process implementation distance_calc.i 
+		subcomponents 
+			thr : thread distance_calc_thr.i;
+		connections
+			c0 : port distance_estimate -> thr.distance_estimate;
+			c1 : port object_detected -> thr.object_detected;
+			c2 : port thr.distance -> distance;
+		flows 
+			f0 : flow path distance_estimate -> c0 -> thr.f0 -> c2 -> distance;
+			f1 : flow path object_detected -> c1 -> thr.f1 -> c2 -> distance; 
+	end distance_calc.i;
+	
+	thread distance_calc_thr
+		features 
+			distance_estimate :  in data port sslights::datatypes::distance;
+			object_detected : in data port sslights::datatypes::object_position.i;
+			distance : out data port sslights::datatypes::distance;
+		flows 
+			f0 : flow path distance_estimate -> distance;
+			f1 : flow path object_detected -> distance;
+		properties
+			Dispatch_Protocol => Periodic;
+			Period => 8ms;
+	end distance_calc_thr;
+	
+	thread implementation distance_calc_thr.i 
+	end distance_calc_thr.i;
+		
+end sslights::processing::distance_calc;

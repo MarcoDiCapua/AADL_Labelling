@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="SimplePCA_impl_Instance" category="system">
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#MDCF_Data_Props.IEEE11073_MDC_ATTR_SYS_TYPE"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:StringLiteral" value="Simple PCA Pump"/>
+    </ownedValue>
+    <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+  </ownedPropertyAssociation>
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#MDCF_Data_Props.ICE_ManufacturerModel"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:RecordValue">
+        <ownedFieldValue>
+          <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.0"/>
+          <ownedValue xsi:type="aadl2:RecordValue">
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.0/@ownedPropertyType/@ownedField.0"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="KSU-Santos"/>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.0/@ownedPropertyType/@ownedField.1"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="HAL 9000"/>
+            </ownedFieldValue>
+          </ownedValue>
+        </ownedFieldValue>
+        <ownedFieldValue>
+          <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.1"/>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="aadl2:StringLiteral" value="cert1"/>
+            <ownedListElement xsi:type="aadl2:StringLiteral" value="cert2"/>
+          </ownedValue>
+        </ownedFieldValue>
+      </ownedValue>
+    </ownedValue>
+    <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
+  </ownedPropertyAssociation>
+  <componentInstance name="pcapump">
+    <featureInstance name="Status_req" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="Status_res" category="eventDataPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/propertyset/MAP_Properties.aadl#MAP_Properties.Output_Rate"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#|::0.5.9.2.34.1.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="300">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#|::0.5.9.2.34.1.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDoseSettings_Settings_LoadingBolus_req" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDoseSettings_Settings_LoadingBolus_res" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.3"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDoseSettings_Settings_LoadingBolus_sen" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.4"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDoseSettings_Settings_LoadingBolus_rcv" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDoseSettings_Settings_BolusDose_req" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.6"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDoseSettings_Settings_BolusDose_res" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.7"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDoseSettings_Settings_LockOutInterval_req" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.8"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDoseSettings_Settings_LockOutInterval_res" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.9"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDrugInfoSettings_Settings_DrugConcentration_res" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.10"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDrugInfoSettings_Settings_DrugConcentration_req" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.11"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="DrugName_Settings_PrescriptionDrugInfoSettings_req" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.12"/>
+    </featureInstance>
+    <featureInstance name="DrugName_Settings_PrescriptionDrugInfoSettings_res" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.13"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDrugInfoSettings_Settings_DrugInitialVolume_req" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.14"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDrugInfoSettings_Settings_DrugInitialVolume_res" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.15"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="AdminSession_Settings_Settings_InfusedVolumeStatus_req" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.16"/>
+    </featureInstance>
+    <featureInstance name="AdminSession_Settings_Settings_InfusedVolumeStatus_res" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.17"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="StatusSettings_Statuses_LockOutTimerStatus_req" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.18"/>
+    </featureInstance>
+    <featureInstance name="StatusSettings_Statuses_LockOutTimerStatus_res" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.19"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="StatusSettings_Statuses_LockOutTimerStatus_pub" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.20"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="StatusSettings_Statuses_OperationalStatus_req" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.21"/>
+    </featureInstance>
+    <featureInstance name="StatusSettings_Statuses_OperationalStatus_res" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.22"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="StatusSettings_Statuses_OperationalStatus_pub" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.23"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="Stop_Actions_Commands_act" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.24"/>
+    </featureInstance>
+    <featureInstance name="Events_Alerts_WarningLowReservoir_pubs" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.25"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <featureInstance name="Events_Alerts_AlarmEmptyReservoir_pub" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.26"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimplePCA_SimplePCA_impl_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#SimplePCA.PCAPumpVmd"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#SimplePCA.SimplePCA.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimplePCA.aadl#SimplePCA.SimplePCA.impl"/>
+</instance:SystemInstance>

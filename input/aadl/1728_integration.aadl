@@ -1,0 +1,212 @@
+
+package Lab2::integration
+
+public
+
+-- Includes --
+with Lab2::devices;
+with Lab2::Software::power_steering;
+with Lab2::Software::adaptive_cruise_control;
+with Lab2::Software::anti_lock_braking;
+with Lab2::Software::car_alarm;
+with Lab2::Software::parking_assistance;
+with Lab2::software::lane_detection;
+with Lab2::software::collision_avoidance;
+with Lab2::software::crash_evaluation;
+with Lab2::platform;
+
+	
+system integration
+end integration;
+
+
+system implementation integration.functional
+	subcomponents
+	-- input devices
+	torque_sensor     			: device Lab2::devices::torque_sensor;
+	vehicle_speed_sensor       	: device Lab2::devices::vehicle_speed_sensor;
+	radar_sensor				: device Lab2::devices::radar_sensor;
+	wheel_speed_sensor			: device Lab2::devices::wheel_speed_sensor;
+	door_sensor					: device Lab2::devices::door_sensor;
+	shock_sensor				: device Lab2::devices::shock_sensor;
+	window_sensor				: device Lab2::devices::window_sensor;
+	motion_sensor				: device Lab2::devices::motion_sensor;
+	ultrasonic_sensor			: device Lab2::devices::ultrasonic_sensor;
+	camera	                                : device Lab2::devices::camera;
+	accelerometer_variable	    		: device Lab2::devices::accelerometer;
+
+
+
+	-- functions
+    power_steering  			: process Lab2::software::power_steering::power_steering.i;
+    adaptive_cruise_control  	: process Lab2::software::adaptive_cruise_control::adaptive_cruise_control.i;
+    anti_lock_braking		  	: process Lab2::software::anti_lock_braking::anti_lock_braking.i;
+    car_alarm		  			: process Lab2::software::car_alarm::car_alarm.i;
+    parking_assistance 			: process Lab2::software::parking_assistance::parking_assistance.i;
+     lane_detection		  	    : process Lab2::software::lane_detection::lane_detection.i;
+    collision_avoidance         : process Lab2::software::collision_avoidance::collision_avoidance.i; 
+crash_evaluation         	: process Lab2::software::crash_evaluation::crash_evaluation.i;
+    
+
+	-- output devices
+	steering_wheel_actuator     : device Lab2::devices::steering_wheel_actuator;
+	brake_actuator     			: device Lab2::devices::brake_actuator;
+	throttle_actuator     		: device Lab2::devices::throttle_actuator;
+	car_siren     				: device Lab2::devices::car_siren;
+	speaker_actuator     		: device Lab2::devices::speaker_actuator;
+	airbag			     		: device Lab2::devices::airbag;
+
+	connections
+	-- power steering connections --
+    c00 : port vehicle_speed_sensor.vehicle_speed        -> power_steering.vehicle_speed;
+    c01 : port torque_sensor.torque_amount               -> power_steering.torque_amount;
+    c02 : port power_steering.steering_wheel_cmd         -> steering_wheel_actuator.cmd;
+    
+    -- adaptive cruise control connections --
+    c03 : port radar_sensor.obstacle_distance		 -> adaptive_cruise_control.radar_obstacle_distance;
+    c04 : port vehicle_speed_sensor.vehicle_speed	 -> adaptive_cruise_control.vehicle_speed;
+    c05 : port adaptive_cruise_control.brake_cmd         -> brake_actuator.cmd;
+    c06 : port adaptive_cruise_control.throttle_cmd      -> throttle_actuator.cmd;
+    
+    -- anti lock breaking connections --
+    c07 : port wheel_speed_sensor.wheel_speed            -> anti_lock_braking.wheel_speed;
+    c08 : port anti_lock_braking.brake_cmd         		 -> brake_actuator.cmd;
+    
+    -- car alarm connections --
+    c09 : port door_sensor.door_distance				-> car_alarm.door_sensor;
+    c10 : port shock_sensor.shock_distance				-> car_alarm.shock_sensor;
+    c11 : port window_sensor.window_distance			-> car_alarm.window_sensor;
+    c12 : port motion_sensor.motion_distance			-> car_alarm.motion_sensor;
+    c13 : port car_alarm.car_siren     				    -> car_siren.cmd;
+    
+     -- parking assistance connections --
+    c14 : port ultrasonic_sensor.ultrasonic_distance	 -> parking_assistance.ultrasonic_distance;
+    c15 : port parking_assistance.brake_cmd        		 -> brake_actuator.cmd;
+    c16 : port parking_assistance.speaker_cmd    		 -> speaker_actuator.cmd;
+    
+    -- lane keep assistance ----------
+    
+    c17 : port camera.lane_position                            -> lane_detection.camera;
+    c18 : port lane_detection.steering_wheel_cmd               -> steering_wheel_actuator.cmd;
+    
+    ------ collision avoidance -------
+    c19 : port radar_sensor.obstacle_distance		       	-> collision_avoidance.radar_object_distance;
+    c20 : port collision_avoidance.steering_wheel_cmd          -> steering_wheel_actuator.cmd;
+    c21 : port collision_avoidance.brake_cmd                   -> brake_actuator.cmd;
+    c22 : port collision_avoidance.speaker_cmd                 -> speaker_actuator.cmd;
+    
+    -- crash evaluation ----------
+    
+    c23 : port accelerometer_variable.accelerometer_value		-> crash_evaluation.accelerometer_variable;
+    c24 : port crash_evaluation.airbag_command               	-> airbag.cmd;
+
+
+	flows
+	-- power steering flows --
+    vehicle_speed_sensor_to_steering_wheel_actuator : end to end flow vehicle_speed_sensor.f0 -> c00 -> power_steering.f0 -> 
+    				c02 -> steering_wheel_actuator.f0;
+    				
+    torque_sensor_to_steering_wheel_actuator : end to end flow torque_sensor.f0 -> c01 -> power_steering.f1 -> 
+    				c02 -> steering_wheel_actuator.f0;
+    
+    -- adaptive cruise control flows --
+    radar_sensor_to_brake_actuator: end to end flow radar_sensor.f0 -> c03 -> adaptive_cruise_control.f1 -> c05 -> 
+    				brake_actuator.f0;
+	
+	vehicle_speed_sensor_to_brake_actuator: end to end flow vehicle_speed_sensor.f0 -> c04 -> adaptive_cruise_control.f0 -> c05 -> 
+    				brake_actuator.f0;
+    
+    radar_sensor_to_throttle_actuator: end to end flow radar_sensor.f0 -> c03 -> adaptive_cruise_control.f3 -> c06 -> 
+    				throttle_actuator.f0;
+	
+	vehicle_speed_to_throttle_actuator: end to end flow vehicle_speed_sensor.f0 -> c04 -> adaptive_cruise_control.f2 -> c06 -> 
+    				throttle_actuator.f0;
+    
+    -- anti lock braking flows --
+    wheel_speed_sensor_to_brake_actuator : end to end flow wheel_speed_sensor.f0 -> c07 -> anti_lock_braking.f0 -> 
+    				c08 -> brake_actuator.f0;	
+    				
+    -- car_alarm flows --
+    door_sensor_to_car_siren: end to end flow door_sensor.f0 -> c09 -> car_alarm.f0 -> c13 -> 
+    				car_siren.f0;
+    shock_sensor_to_car_siren: end to end flow shock_sensor.f0 -> c10 -> car_alarm.f1 -> c13 -> 
+    				car_siren.f0;
+   	window_sensor_to_car_siren: end to end flow window_sensor.f0 -> c11 -> car_alarm.f2 -> c13 -> 
+    				car_siren.f0;
+   	motion_sensor_to_car_siren: end to end flow motion_sensor.f0 -> c12 -> car_alarm.f3 -> c13 -> 
+    				car_siren.f0; 	
+    				
+    -- parking assistance flows --
+   ultrasonic_sensor_to_brake_actuator: end to end flow ultrasonic_sensor.f0 -> c14 -> parking_assistance.f0 -> c15 -> 
+    				brake_actuator.f0;
+    				
+   ultrasonic_sensor_to_speaker_actuator: end to end flow ultrasonic_sensor.f0 -> c14 -> parking_assistance.f1 -> c16 -> 
+    				speaker_actuator.f0;	
+
+----------- lane assistance flows ---------
+  camera_to_steering_wheel_actuator : end to end flow camera.f0 -> c17 -> lane_detection.f0 -> c18 -> steering_wheel_actuator.f0; 
+  
+  -------- collision avoidance flows -----------
+	
+  radar_sensor_to_steering_wheel_actuator: end to end flow radar_sensor.f0 -> c19 -> collision_avoidance.f0 -> c20 -> 
+	steering_wheel_actuator.f0;
+	
+  radar_sensor_to_break_actuator: end to end flow radar_sensor.f0 -> c19 -> collision_avoidance.f1 -> c21 -> brake_actuator.f0;
+	
+  radar_sensor_to_speaker_actuator: end to end flow radar_sensor.f0 -> c19 -> collision_avoidance.f2 -> c22 -> speaker_actuator.f0; 
+  
+   ----------- crash_evaluation ---------
+  accelerometer_to_airbag : end to end flow accelerometer_variable.f0 -> c23 -> crash_evaluation.f0 -> c24 -> airbag.f0; 
+
+	
+end integration.functional;
+
+system implementation integration.variation1 extends integration.functional
+subcomponents
+	cpu1 : processor Lab2::platform::ecu;
+	cpu2 : processor Lab2::platform::ecu;
+	can1 : bus Lab2::platform::can;
+	can2 : bus Lab2::platform::can;
+	can3 : bus Lab2::platform::can;
+connections
+	b00 : bus access can1 <-> cpu1.socket1;
+	b01 : bus access can2 <-> cpu2.socket1;
+	b02 : bus access can3 <-> cpu1.socket2;
+	b03 : bus access can3 <-> cpu2.socket2; 
+properties
+	actual_processor_binding => (reference (cpu1)) applies to 
+			power_steering;
+	actual_connection_binding => (reference (can1)) applies to
+		c00,c01,c02;
+
+end integration.variation1;
+
+--- Variation 2 --
+
+system implementation integration.variation2 extends integration.functional
+subcomponents
+	cpu : processor Lab2::platform::ecu;
+	can1 : bus Lab2::platform::can;
+	can2 : bus Lab2::platform::can;
+connections
+	b00 : bus access can1 <-> cpu.socket1;
+	b01 : bus access can2 <-> cpu.socket2;
+	properties
+		
+	-- All software functions run on the 1 CPU --
+	actual_processor_binding => (reference (cpu)) applies to
+			power_steering, anti_lock_braking, adaptive_cruise_control, 
+			collision_avoidance, lane_detection, crash_evaluation, car_alarm, parking_assistance;
+			
+	-- All connections from Sensors to Software goes through can bus 1 --
+	actual_connection_binding => (reference (can1)) applies to
+			c00, c01, c03, c04, c07, c09, c10, c11, c12, c14, c17, c19, c23;
+			
+	-- All connections from Software to Actuators goes through can bus 2 --
+	actual_connection_binding => (reference (can2)) applies to
+			c02, c05, c06, c08, c13, c15, c16, c18, c20, c21, c22, c24;
+
+end integration.variation2;
+
+
+end Lab2::integration;

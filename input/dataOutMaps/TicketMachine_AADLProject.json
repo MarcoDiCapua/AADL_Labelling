@@ -1,0 +1,18 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "ticketmachine",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/TicketMachine_AADLProject/ticketmachine.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\TicketMachine_AADLProject_ticketmachine_TicketMachineSystem_with_devices_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\TicketMachine_AADLProject\\README.md"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'base_types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/TicketMachine_AADLProject/ticketmachine.aadl line : 3 column : 7)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Character'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/TicketMachine_AADLProject/ticketmachine.aadl line : 50 column : 29)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::String'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/TicketMachine_AADLProject/ticketmachine.aadl line : 51 column : 35)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::String'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/TicketMachine_AADLProject/ticketmachine.aadl line : 52 column : 30)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Character'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/TicketMachine_AADLProject/ticketmachine.aadl line : 127 column : 28)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::String'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/TicketMachine_AADLProject/ticketmachine.aadl line : 135 column : 36)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::String'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/TicketMachine_AADLProject/ticketmachine.aadl line : 143 column : 31)"
+  ]
+}

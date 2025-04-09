@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="ControllerA_imp_Instance" category="system">
+  <featureInstance name="incoming">
+    <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="outgoing" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+  </featureInstance>
+  <componentInstance name="tempConProc" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/TempControlAADL/packages/ACM_Properties.aadl#ACM.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="101"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="current_temp">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="desired_temp">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="desired_temp_ack" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="fan_cmd" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.3"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="fan_ack">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.4"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="alarm_cmd" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.5"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="alarm_ack">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.6"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="status" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.7"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/TempControlAADL/packages/Processes.aadl#Processes.TempControlProcess.imp"/>
+  </componentInstance>
+  <componentInstance name="webInterface" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/TempControlAADL/packages/ACM_Properties.aadl#ACM.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="105"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="desired_temp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="desired_temp_ack">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="status">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.2"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="response" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="request" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/TempControlAADL/packages/Processes.aadl#Processes.WebInterface.imp"/>
+  </componentInstance>
+  <componentInstance name="netServer" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/TempControlAADL/packages/ACM_Properties.aadl#ACM.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="106"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="incoming">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="outgoing" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="in_socket" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="out_socket" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/TempControlAADL/packages/Processes.aadl#Processes.NetServer.imp"/>
+  </componentInstance>
+  <componentInstance name="tempSenProxy_A" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/TempControlAADL/packages/ACM_Properties.aadl#ACM.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="100"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="current_temp_forward">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="current_temp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/TempControlAADL/packages/Processes.aadl#Processes.tempSensorProxy.imp"/>
+  </componentInstance>
+  <componentInstance name="alarmActProxy_A" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/TempControlAADL/packages/ACM_Properties.aadl#ACM.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="102"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="alarm_cmd_forward">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="alarm_cmd" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.1"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="alarm_ack_forward">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.2"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="alarm_ack" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.3"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/TempControlAADL/packages/Processes.aadl#Processes.AlarmProxy.imp"/>
+  </componentInstance>
+  <componentInstance name="fanActProxy_A" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/TempControlAADL/packages/ACM_Properties.aadl#ACM.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="103"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="fan_cmd_forward">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="fan_cmd" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.1"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="fan_ack_forward">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.2"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="fan_ack" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.3"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/TempControlAADL/packages/Processes.aadl#Processes.FanProxy.imp"/>
+  </componentInstance>
+  <componentInstance name="tempConProxy_A" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/TempControlAADL/packages/ACM_Properties.aadl#ACM.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="101"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="desired_temp_forward">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="desired_temp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="desired_temp_ack_foward">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="desired_temp_ack" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="status_forward">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.4"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="status" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TempControlAADL/packages/Processes.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.5"/>
+      <type href="../../github/TempControlAADL/packages/instances/Scenario_ControllerA_imp_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/TempControlAADL/packages/Processes.aadl#Processes.TempControlProxy_A.imp"/>
+  </componentInstance>
+  <connectionInstance name="incoming -> netServer.incoming" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.17"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tempConProc.desired_temp_ack -> tempConProxy_A.desired_temp_ack_foward" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.2" source="//@componentInstance.0/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.6/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tempConProc.fan_cmd -> fanActProxy_A.fan_cmd_forward" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.0/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tempConProc.alarm_cmd -> alarmActProxy_A.alarm_cmd_forward" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.0/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.5" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tempConProc.status -> tempConProxy_A.status_forward" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.4" source="//@componentInstance.0/@featureInstance.7">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.7" destination="//@componentInstance.6/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="webInterface.desired_temp -> tempConProxy_A.desired_temp_forward" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="netServer.outgoing -> outgoing" kind="portConnection" destination="//@featureInstance.1" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="netServer.out_socket -> tempSenProxy_A.current_temp_forward" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.2/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.3" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="netServer.out_socket -> alarmActProxy_A.alarm_ack_forward" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.2" source="//@componentInstance.2/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.3" destination="//@componentInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="netServer.out_socket -> fanActProxy_A.fan_ack_forward" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.2" source="//@componentInstance.2/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.3" destination="//@componentInstance.5/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tempSenProxy_A.current_temp -> tempConProc.current_temp" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="alarmActProxy_A.alarm_cmd -> netServer.in_socket" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.2" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="alarmActProxy_A.alarm_ack -> tempConProc.alarm_ack" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.6" source="//@componentInstance.4/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.3" destination="//@componentInstance.0/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="fanActProxy_A.fan_cmd -> netServer.in_socket" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.2" source="//@componentInstance.5/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="fanActProxy_A.fan_ack -> tempConProc.fan_ack" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.4" source="//@componentInstance.5/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.3" destination="//@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tempConProxy_A.desired_temp -> tempConProc.desired_temp" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.1" source="//@componentInstance.6/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tempConProxy_A.desired_temp_ack -> webInterface.desired_temp_ack" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@componentInstance.6/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.3" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tempConProxy_A.status -> webInterface.status" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@componentInstance.6/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.5" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TempControlAADL/packages/Scenario.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/TempControlAADL/packages/Scenario.aadl#Scenario.ControllerA.imp"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/TempControlAADL/packages/Scenario.aadl#Scenario.ControllerA.imp"/>
+</instance:SystemInstance>

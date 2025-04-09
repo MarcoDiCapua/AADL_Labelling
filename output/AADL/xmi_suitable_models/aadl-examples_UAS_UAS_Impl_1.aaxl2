@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="UAS_Impl_Instance" category="system">
+  <componentInstance name="RFB" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAS.aadl#UAS.RF"/>
+  </componentInstance>
+  <componentInstance name="GND" category="device">
+    <featureInstance name="send_map" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/GS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="recv_status" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/GS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="RFA" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/GS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <flowSpecification name="transmit_map" destination="//@componentInstance.1/@featureInstance.0">
+      <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/GS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="receive_status" source="//@componentInstance.1/@featureInstance.1">
+      <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/GS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/GS.aadl#GS.GroundStation"/>
+  </componentInstance>
+  <componentInstance name="UAV" category="system">
+    <featureInstance name="RFA" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="recv_map" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="send_status" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEventDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="SBUS" category="bus">
+      <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:BusType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#UAV.Serial"/>
+    </componentInstance>
+    <componentInstance name="MCMP" category="system">
+      <featureInstance name="UARTA" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.0"/>
+        <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/6"/>
+      </featureInstance>
+      <featureInstance name="RFA" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.1"/>
+        <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="recv_map" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventDataPort.0"/>
+        <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="position_status" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventDataPort.1"/>
+        <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="waypoint" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventDataPort.2"/>
+        <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="send_status" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventDataPort.3"/>
+        <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <componentInstance name="BUS_HW" category="bus">
+        <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:BusType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#MC.MC_Bus"/>
+      </componentInstance>
+      <componentInstance name="RADIO_HW" category="device">
+        <featureInstance name="recv_map_in" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="recv_map_out" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/2"/>
+        </featureInstance>
+        <featureInstance name="send_status_in" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/3"/>
+        </featureInstance>
+        <featureInstance name="send_status_out" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.3"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="MCA" category="busAccess">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/4"/>
+        </featureInstance>
+        <featureInstance name="RFA" category="busAccess">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.1"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/0"/>
+        </featureInstance>
+        <flowSpecification name="comm_map" source="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.1">
+          <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.0"/>
+        </flowSpecification>
+        <flowSpecification name="comm_status" source="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.3">
+          <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.1"/>
+        </flowSpecification>
+        <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDeviceSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#MC.Radio"/>
+      </componentInstance>
+      <componentInstance name="UART_HW" category="device">
+        <featureInstance name="waypoint_in" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/5"/>
+        </featureInstance>
+        <featureInstance name="waypoint_out" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="position_status_in" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="position_status_out" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventDataPort.3"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/3"/>
+        </featureInstance>
+        <featureInstance name="MCA" category="busAccess">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.0"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/4"/>
+        </featureInstance>
+        <featureInstance name="UARTA" category="busAccess">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.1"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/6"/>
+        </featureInstance>
+        <flowSpecification name="comm_waypoint" source="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.1">
+          <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFlowSpecification.0"/>
+        </flowSpecification>
+        <flowSpecification name="comm_status" source="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.3">
+          <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFlowSpecification.1"/>
+        </flowSpecification>
+        <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDeviceSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#MC.UART"/>
+      </componentInstance>
+      <componentInstance name="MEM_HW" category="memory">
+        <featureInstance name="MCA" category="busAccess">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedBusAccess.0"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/4"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedMemorySubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:MemoryType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#MC.MC_Mem"/>
+      </componentInstance>
+      <componentInstance name="PROC_SW" category="process">
+        <featureInstance name="recv_map" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventDataPort.0"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/2"/>
+        </featureInstance>
+        <featureInstance name="send_status" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventDataPort.1"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/3"/>
+        </featureInstance>
+        <featureInstance name="waypoint" category="eventDataPort" direction="out">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventDataPort.2"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/5"/>
+        </featureInstance>
+        <featureInstance name="position_status" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventDataPort.3"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/3"/>
+        </featureInstance>
+        <componentInstance name="RADIO" category="thread">
+          <featureInstance name="recv_map_in" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventDataPort.0"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/2"/>
+          </featureInstance>
+          <featureInstance name="send_status_out" category="eventDataPort" direction="out">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventDataPort.1"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/3"/>
+          </featureInstance>
+          <featureInstance name="send_status_in" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventDataPort.2"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/3"/>
+          </featureInstance>
+          <featureInstance name="recv_map_out" category="eventDataPort" direction="out">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventDataPort.3"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/2"/>
+          </featureInstance>
+          <flowSpecification name="comm_map" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.0/@featureInstance.3">
+            <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedFlowSpecification.0"/>
+          </flowSpecification>
+          <flowSpecification name="comm_status" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.0/@featureInstance.1">
+            <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedFlowSpecification.1"/>
+          </flowSpecification>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedThreadSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#SW.RadioDriver"/>
+        </componentInstance>
+        <componentInstance name="FLT" category="thread">
+          <featureInstance name="filter_in" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventDataPort.0"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/2"/>
+          </featureInstance>
+          <featureInstance name="filter_out" category="eventDataPort" direction="out">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventDataPort.1"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/2"/>
+          </featureInstance>
+          <flowSpecification name="filtered_cmd" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.1/@featureInstance.1">
+            <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedFlowSpecification.0"/>
+          </flowSpecification>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedThreadSubcomponent.1"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#SW.Filter"/>
+        </componentInstance>
+        <componentInstance name="FPLN_FLT" category="thread">
+          <featureInstance name="flight_plan_in">
+            <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.0"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/7"/>
+          </featureInstance>
+          <featureInstance name="flight_plan_out" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.1"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/7"/>
+          </featureInstance>
+          <flowSpecification name="flight_plan_wellformed" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.2/@featureInstance.1">
+            <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedFlowSpecification.0"/>
+          </flowSpecification>
+          <flowSpecification name="flight_plan_notwellformed" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.2/@featureInstance.0">
+            <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedFlowSpecification.1"/>
+          </flowSpecification>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedThreadSubcomponent.2"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#SW.flight_plan_fliter"/>
+        </componentInstance>
+        <componentInstance name="FPLN_VALID" category="thread">
+          <featureInstance name="flight_plan_in">
+            <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.0"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/7"/>
+          </featureInstance>
+          <featureInstance name="flight_plan_out" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.1"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/7"/>
+          </featureInstance>
+          <flowSpecification name="flight_plan_valid" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.3/@featureInstance.1">
+            <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedFlowSpecification.0"/>
+          </flowSpecification>
+          <flowSpecification name="flight_plan_invalid" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.3/@featureInstance.0">
+            <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedFlowSpecification.1"/>
+          </flowSpecification>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedThreadSubcomponent.3"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#SW.flight_plan_validator"/>
+        </componentInstance>
+        <componentInstance name="FPLN" category="thread">
+          <featureInstance name="flight_plan" direction="out">
+            <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/7"/>
+          </featureInstance>
+          <featureInstance name="recv_map" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventDataPort.0"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/2"/>
+          </featureInstance>
+          <featureInstance name="position_status" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventDataPort.1"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/3"/>
+          </featureInstance>
+          <flowSpecification name="compute_flight_plan_map" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.4/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.4/@featureInstance.0">
+            <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedFlowSpecification.0"/>
+          </flowSpecification>
+          <flowSpecification name="compute_flight_plan_pos" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.4/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.4/@featureInstance.0">
+            <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedFlowSpecification.1"/>
+          </flowSpecification>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedThreadSubcomponent.4"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#SW.FlightPlanner"/>
+        </componentInstance>
+        <componentInstance name="WPM" category="thread">
+          <featureInstance name="flight_plan">
+            <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.0"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/7"/>
+          </featureInstance>
+          <featureInstance name="waypoint" category="eventDataPort" direction="out">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventDataPort.0"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/5"/>
+          </featureInstance>
+          <featureInstance name="position_status" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventDataPort.1"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/3"/>
+          </featureInstance>
+          <flowSpecification name="compute_waypoint_flight_plan" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.5/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.5/@featureInstance.1">
+            <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedFlowSpecification.0"/>
+          </flowSpecification>
+          <flowSpecification name="compute_waypoint_pos_status" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.5/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.5/@featureInstance.1">
+            <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedFlowSpecification.1"/>
+          </flowSpecification>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedThreadSubcomponent.5"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#SW.WaypointManager"/>
+        </componentInstance>
+        <componentInstance name="UART" category="thread">
+          <featureInstance name="position_status_in" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedEventDataPort.0"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/3"/>
+          </featureInstance>
+          <featureInstance name="waypoint_out" category="eventDataPort" direction="out">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedEventDataPort.1"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/5"/>
+          </featureInstance>
+          <featureInstance name="position_status_out" category="eventDataPort" direction="out">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedEventDataPort.2"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/3"/>
+          </featureInstance>
+          <featureInstance name="waypoint_in" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedEventDataPort.3"/>
+            <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/5"/>
+          </featureInstance>
+          <flowSpecification name="comm_waypoint" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.1">
+            <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedFlowSpecification.0"/>
+          </flowSpecification>
+          <flowSpecification name="comm_status" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.2">
+            <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedFlowSpecification.1"/>
+          </flowSpecification>
+          <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedThreadSubcomponent.6"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#SW.UARTDriver"/>
+        </componentInstance>
+        <flowSpecification name="compute_waypoint_flight_plan" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.2">
+          <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedFlowSpecification.0"/>
+        </flowSpecification>
+        <flowSpecification name="compute_waypoint_pos_status" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.2">
+          <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedFlowSpecification.1"/>
+        </flowSpecification>
+        <flowSpecification name="compute_status" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.1">
+          <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedFlowSpecification.2"/>
+        </flowSpecification>
+        <connectionInstance name="RADIO.recv_map_out -> FLT.filter_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.1/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.0/@featureInstance.3">
+          <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.1/@featureInstance.0">
+            <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedPortConnection.2"/>
+          </connectionReference>
+        </connectionInstance>
+        <connectionInstance name="FLT.filter_out -> FPLN.recv_map" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.4/@featureInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.1/@featureInstance.1">
+          <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.4/@featureInstance.1">
+            <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedPortConnection.3"/>
+          </connectionReference>
+        </connectionInstance>
+        <connectionInstance name="FPLN_FLT.flight_plan_out -> FPLN_VALID.flight_plan_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.3/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.2/@featureInstance.1">
+          <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.3/@featureInstance.0">
+            <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedPortConnection.5"/>
+          </connectionReference>
+        </connectionInstance>
+        <connectionInstance name="FPLN_VALID.flight_plan_out -> WPM.flight_plan" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.5/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.3/@featureInstance.1">
+          <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.3/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.5/@featureInstance.0">
+            <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedPortConnection.6"/>
+          </connectionReference>
+        </connectionInstance>
+        <connectionInstance name="FPLN.flight_plan -> FPLN_FLT.flight_plan_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.2/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.4/@featureInstance.0">
+          <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.4/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.2/@featureInstance.0">
+            <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedPortConnection.4"/>
+          </connectionReference>
+        </connectionInstance>
+        <connectionInstance name="WPM.waypoint -> UART.waypoint_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.3" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.5/@featureInstance.1">
+          <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.5/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.3">
+            <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedPortConnection.7"/>
+          </connectionReference>
+        </connectionInstance>
+        <connectionInstance name="UART.position_status_out -> WPM.position_status" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.5/@featureInstance.2" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.2">
+          <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.5/@featureInstance.2">
+            <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedPortConnection.8"/>
+          </connectionReference>
+        </connectionInstance>
+        <connectionInstance name="UART.position_status_out -> FPLN.position_status" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.4/@featureInstance.2" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.2">
+          <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.4/@featureInstance.2">
+            <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedPortConnection.9"/>
+          </connectionReference>
+        </connectionInstance>
+        <connectionInstance name="UART.position_status_out -> RADIO.send_status_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.0/@featureInstance.2" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.2">
+          <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.0/@featureInstance.2">
+            <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedPortConnection.10"/>
+          </connectionReference>
+        </connectionInstance>
+        <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedProcessSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#SW.MC_SW.Impl"/>
+      </componentInstance>
+      <componentInstance name="PROC_HW" category="processor">
+        <featureInstance name="MCA" category="busAccess">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedBusAccess.0"/>
+          <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/4"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedProcessorSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#MC.MC_Proc.Impl"/>
+      </componentInstance>
+      <flowSpecification name="compute_waypoint" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.4">
+        <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <flowSpecification name="compute_status" source="//@componentInstance.2/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.5">
+        <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedFlowSpecification.1"/>
+      </flowSpecification>
+      <connectionInstance name="BUS_HW -> RADIO_HW.MCA" complete="true" kind="accessConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.0">
+        <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.4" reverse="true">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedAccessConnection.0"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="BUS_HW -> UART_HW.MCA" complete="true" kind="accessConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.0">
+        <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.4" reverse="true">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedAccessConnection.1"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="BUS_HW -> PROC_HW.MCA" complete="true" kind="accessConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.5/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.0">
+        <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.5/@featureInstance.0" reverse="true">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedAccessConnection.2"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="BUS_HW -> MEM_HW.MCA" complete="true" kind="accessConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.3/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.0">
+        <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.3/@featureInstance.0" reverse="true">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedAccessConnection.3"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="RADIO_HW.recv_map_out -> PROC_SW.RADIO.recv_map_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.1">
+        <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.0">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.1"/>
+        </connectionReference>
+        <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.0/@featureInstance.0">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedPortConnection.0"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="RADIO_HW.MCA -> BUS_HW" complete="true" kind="accessConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.4">
+        <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.0">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedAccessConnection.0"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="UART_HW.position_status_out -> PROC_SW.UART.position_status_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.3">
+        <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.3">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.7"/>
+        </connectionReference>
+        <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.0">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedPortConnection.12"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="UART_HW.MCA -> BUS_HW" complete="true" kind="accessConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.4">
+        <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.0">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedAccessConnection.1"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="MEM_HW.MCA -> BUS_HW" complete="true" kind="accessConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.3/@featureInstance.0">
+        <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.0">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedAccessConnection.3"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="PROC_SW.RADIO.send_status_out -> RADIO_HW.send_status_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.2" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.0/@featureInstance.1">
+        <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.1">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedPortConnection.1"/>
+        </connectionReference>
+        <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.2">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.2"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="PROC_SW.UART.waypoint_out -> UART_HW.waypoint_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.1">
+        <connectionReference context="//@componentInstance.2/@componentInstance.1/@componentInstance.4" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@componentInstance.6/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.2">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/SW.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedPortConnection.11"/>
+        </connectionReference>
+        <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.4/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.0">
+          <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.4"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="PROC_HW.MCA -> BUS_HW" complete="true" kind="accessConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.5/@featureInstance.0">
+        <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.5/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.0">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedAccessConnection.2"/>
+        </connectionReference>
+      </connectionInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#MC.MissionComputer.Impl"/>
+    </componentInstance>
+    <componentInstance name="FCTL" category="system">
+      <featureInstance name="UARTA" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/FC.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+        <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/6"/>
+      </featureInstance>
+      <featureInstance name="waypoint" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/FC.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="position_status" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/FC.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+        <type href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/instances/UAS_UAS_Impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <flowSpecification name="follow_waypoints" source="//@componentInstance.2/@componentInstance.2/@featureInstance.1">
+        <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/FC.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <flowSpecification name="send_pos" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.2">
+        <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/FC.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.1"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/FC.aadl#FC.FlightController"/>
+    </componentInstance>
+    <flowSpecification name="provide_map" source="//@componentInstance.2/@featureInstance.1">
+      <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="update_status" destination="//@componentInstance.2/@featureInstance.2">
+      <flowSpecification href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <connectionInstance name="SBUS -> MCMP.UART_HW.UARTA" complete="true" kind="accessConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.5" source="//@componentInstance.2/@componentInstance.0">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.0"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.5" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedAccessConnection.5"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="SBUS -> FCTL.UARTA" complete="true" kind="accessConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.0" source="//@componentInstance.2/@componentInstance.0">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="MCMP.UART_HW.waypoint_out -> FCTL.waypoint" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.1">
+      <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.5"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="MCMP.UART_HW.UARTA -> SBUS" complete="true" kind="accessConnection" destination="//@componentInstance.2/@componentInstance.0" source="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.5">
+      <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.5" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedAccessConnection.5"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="FCTL.UARTA -> SBUS" complete="true" kind="accessConnection" destination="//@componentInstance.2/@componentInstance.0" source="//@componentInstance.2/@componentInstance.2/@featureInstance.0">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="FCTL.position_status -> MCMP.UART_HW.position_status_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.2" source="//@componentInstance.2/@componentInstance.2/@featureInstance.2">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.2/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.3"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.2/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.6"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#UAV.UAV.Impl"/>
+  </componentInstance>
+  <connectionInstance name="RFB -> GND.RFA" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="RFB -> UAV.MCMP.RADIO_HW.RFA" complete="true" kind="accessConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.5" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.5">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="GND.send_map -> UAV.MCMP.RADIO_HW.recv_map_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="GND.RFA -> RFB" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.1/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.2" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="UAV.MCMP.RADIO_HW.send_status_out -> GND.recv_status" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.3">
+    <connectionReference context="//@componentInstance.2/@componentInstance.1" source="//@componentInstance.2/@componentInstance.1/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/MC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.5" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAV.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.2" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAS.aadl#UAS.UAS.Impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/CASE_simple_example/AADL/UAS.aadl#UAS.UAS.Impl"/>
+</instance:SystemInstance>

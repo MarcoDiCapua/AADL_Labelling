@@ -1,0 +1,217 @@
+package fcpbase
+
+public
+	WITH FORA::software;
+	WITH FORA::hardware;
+	with FORA::core;
+	WITH FORA::platform;
+
+	Hypervisor renames abstract FORA::software::Hypervisor;
+	FogNodeConfiguration renames abstract FORA::software::FogNodeConfiguration;
+	Partition renames virtual processor FORA::software::Partition;
+	Appications renames abstract FORA::software::Appications;
+	Hardware renames abstract FORA::hardware::HardwarePlatform;
+	Software renames abstract FORA::platform::FogSoftwarePlatform;
+	FogDrive renames abstract FORA::hardware::FogNode;
+
+
+	
+------------------------------------------------
+---- Node
+------------------------------------------------
+
+	system Drive
+		features
+			TSN: provides bus access FORA::hardware::RJ45;	
+			--TSN_1: provides bus access FORA::hardware::RJ45;
+			--TSN_2: provides bus access FORA::hardware::RJ45;
+			--TSN_3: provides bus access FORA::hardware::RJ45;
+			SourcePower: requires bus access FORA::hardware::PowerSupply;
+			SinkPower: provides bus access FORA::hardware::PowerSupply;
+	end Drive;
+	
+	system implementation Drive.i
+		subcomponents
+			FogSoftwarePlatform: abstract Software.Platform;
+			FogHardwarePlatform: abstract Hardware.i;
+			PowerModule: device PowerModule;
+		connections
+			FogNode_HypervisorBased_new_connection: bus access  FogHardwarePlatform.Power <-> SourcePower;
+			FogNode_HypervisorBased_new_connection2: bus access FogHardwarePlatform.Interface <-> FogSoftwarePlatform.Interface;
+			FogNode_HypervisorBased_new_connection3: bus access  FogHardwarePlatform.TSN_0 <-> TSN;
+			--FogNode_HypervisorBased_new_connection4: bus access  FogHardwarePlatform.TSN_1 <-> TSN_1;
+			--FogNode_HypervisorBased_new_connection5: bus access  FogHardwarePlatform.TSN_2 <-> TSN_2;
+			--FogNode_HypervisorBased_new_connection6: bus access  FogHardwarePlatform.TSN_3 <-> TSN_3;
+			--FogNode_HypervisorBased_new_connection7: bus access  FogHardwarePlatform.WiFi <-> WiFi;
+			--FogNode_HypervisorBased_new_connection8: bus access  FogHardwarePlatform.Display <-> Display;
+			FogNode_HypervisorBased_new_connection9: bus access  FogHardwarePlatform.IO <-> PowerModule.IO;
+			FogNode_HypervisorBased_new_connection10: bus access  PowerModule.SinkPower -> SinkPower;
+			FogNode_HypervisorBased_new_connection11: bus access  SourcePower <-> PowerModule.Power;
+			
+			
+	end Drive.i;
+
+	
+	abstract implementation FogDrive.HypervisorBased
+		subcomponents
+			FogSoftwarePlatform: abstract Software.Platform;
+			FogHardwarePlatform: abstract Hardware.i;
+		connections
+			FogNode_HypervisorBased_new_connection: bus access  FogHardwarePlatform.Power <-> Power;
+			FogNode_HypervisorBased_new_connection2: bus access FogHardwarePlatform.Interface <-> FogSoftwarePlatform.Interface;
+			FogNode_HypervisorBased_new_connection3: bus access  FogHardwarePlatform.TSN_0 <-> TSN_0;
+			FogNode_HypervisorBased_new_connection4: bus access  FogHardwarePlatform.TSN_1 <-> TSN_1;
+			FogNode_HypervisorBased_new_connection5: bus access  FogHardwarePlatform.TSN_2 <-> TSN_2;
+			FogNode_HypervisorBased_new_connection6: bus access  FogHardwarePlatform.TSN_3 <-> TSN_3;
+			FogNode_HypervisorBased_new_connection7: bus access  FogHardwarePlatform.WiFi <-> WiFi;
+			FogNode_HypervisorBased_new_connection8: bus access  FogHardwarePlatform.Display <-> Display;
+			FogNode_HypervisorBased_new_connection9: bus access  FogHardwarePlatform.IO <-> IO;
+	end FogDrive.HypervisorBased;
+	
+
+-------------------------------------------
+	--- Partitions
+-------------------------------------------
+
+	virtual processor implementation Partition.Communication
+		subcomponents
+			RTOS: abstract FORA::software::FogOS.i;
+			Applications: abstract Appications.Communication;
+	end Partition.Communication;
+	
+	virtual processor implementation Partition.Operation
+		subcomponents
+			RTOS: abstract FORA::software::FogOS.i;
+			Applications: abstract Appications.Operation;
+	end Partition.Operation;
+
+	virtual processor implementation Partition.Control
+		subcomponents
+			RTOS: abstract FORA::software::FogOS.i;
+			Applications: abstract Appications.Control;
+	end Partition.Control;
+
+
+-------------------------------------------
+	--- Applications
+-------------------------------------------
+
+
+	abstract implementation Appications.Communication
+		subcomponents
+			CommunicationApp: process CommunicationApp.i;
+	end Appications.Communication;
+
+	abstract implementation Appications.Operation
+		subcomponents
+			OperationApp: process OperationApp.i;
+	end Appications.Operation;
+
+	abstract implementation Appications.Control
+		subcomponents
+			ControlApp: process ControlApp.i;
+	end Appications.Control;
+
+
+	process CommunicationApp
+		features
+			outData: out event data port;
+	end CommunicationApp;
+
+	process implementation CommunicationApp.i
+	end CommunicationApp.i;
+
+	process OperationApp
+		features
+			outData: out event data port;
+			inData: in event data port;
+	end OperationApp;
+
+	process implementation OperationApp.i
+		subcomponents
+			ModeControlApp: thread;
+			ManagementApp: thread;
+			MonitoringApp: thread;
+	end OperationApp.i;
+
+	process ControlApp
+		features
+			outData: out event data port;
+			inData: in event data port;
+	end ControlApp;
+
+	process implementation ControlApp.i
+	end ControlApp.i;
+
+	
+-------------------------------------------
+	--- Software Platform
+-------------------------------------------
+	abstract implementation Software.Platform
+		subcomponents
+			Hypervisor: abstract Hypervisor.PikeOS;
+		connections
+			xcn_eten: bus access Hypervisor.Interface <-> Interface;
+	end Software.Platform;
+	
+	abstract implementation Hypervisor.PikeOS
+		subcomponents
+			Partition1: virtual processor Partition.Communication;
+			Partition2: virtual processor Partition.Operation;
+			Partition3: virtual processor Partition.Control;
+			Partition0: virtual processor FORA::software::PrivilegedPartition.i;
+			VirtualLink: abstract FORA::software::CommunicationServices;
+
+		connections
+			xcn_eten: bus access Partition0.Interface <-> Interface;
+			xcn_2: virtual bus access Partition0.Link <-> VirtualLink.Link_0;
+			xcn_3: virtual bus access Partition1.Link <-> VirtualLink.Link_1;
+			xcn_4: virtual bus access Partition2.Link <-> VirtualLink.Link_2;
+			xcn_5: virtual bus access Partition3.Link <-> VirtualLink.Link_3;
+	end Hypervisor.PikeOS;
+	
+
+
+	
+-------------------------------------------
+--- Hardware Platform
+-------------------------------------------
+
+
+
+
+	abstract implementation Hardware.i
+		subcomponents
+			CPU: processor FORA::hardware::Intel.Atom_x7_E3950;
+			TSNCard: system FORA::hardware::TSN_Switch;
+					--WirelessTSNCard: system FORA::hardware::TSN_WCard;
+			RAM: memory FORA::hardware::RAM_8GB;
+			Storage: memory FORA::hardware::FogNodeStorage;
+			pci: bus;
+			A2D: device FORA::hardware::FogNodeA2D;
+		connections
+			xcn_power_cpu: bus access Power -> CPU.power;
+			xcn_ioaccess: bus access Storage.pci <-> pci;
+			xcn_network: bus access Interface <-> pci;
+			xcn_pci_ram: bus access RAM.pci <-> pci;
+			xcn_pci_cpu: bus access CPU.pci <-> pci;
+			xcn_tsn_pow: bus access TSNCard.power <-> Power;
+			xcn_tsn_pci: bus access TSNCard.pci <-> pci;
+			xcn_tsn_0: bus access TSNCard.enet_0 <-> TSN_0;
+			--xcn_tsn_1: bus access TSNCard.enet_1 <-> TSN_1;
+			--xcn_tsn_2: bus access TSNCard.enet_2 <-> TSN_2;
+			--xcn_tsn_3: bus access TSNCard.enet_3 <-> TSN_3;
+			FogNode_HardwarePlatform_new_connection4: bus access pci <-> A2D.pci;
+			FogNode_HardwarePlatform_new_connection5: bus access IO <-> A2D.IO;
+		properties
+			Actual_Memory_Binding => (reference (RAM)) applies to CPU;
+	end Hardware.i;
+	
+	device PowerModule
+		features
+		IO: requires bus access FORA::core::wire;
+		Power: requires bus access FORA::hardware::PowerSupply.v24;
+		SinkPower: provides bus access FORA::hardware::PowerSupply.v24;
+	end PowerModule;
+
+end fcpbase;

@@ -1,0 +1,317 @@
+package aviation
+public
+	with base_types;
+
+	system Supervised_System
+		features
+			timeToFailure: out data port real;
+			timeToRecovery: out data port real;
+
+			p1: out data port bool;
+			p2: out data port bool;
+			p3: out data port bool;
+
+
+		annex agree {**
+--			assume "timeToFailure": timeToFailure = 14.0;
+--			guarantee "time to recovery works": timeToRecovery < timeToFailure;
+
+			guarantee "Completable with sequential operations": p1;
+			guarantee "Completable with at most two concurrent operations": p2;
+			guarantee "Completable with at most three concurrent operations": p3;
+
+		**};
+	end Supervised_System;
+
+	system implementation Supervised_System.impl
+		subcomponents
+			gcas: system GCAS_singleton;
+			tcas: system TCAS_singleton;
+			geof: system GeoFence_singleton;
+
+			supervisor: system Supervisor;
+
+		connections
+			gcas_ttr: port gcas.timeToRecovery -> Supervisor.gcas_timeToRecovery	{Communication_Properties::Timing => immediate;};
+			tcas_ttr: port tcas.timeToRecovery -> Supervisor.tcas_timeToRecovery	{Communication_Properties::Timing => immediate;};
+			geof_ttr: port geof.timeToRecovery -> Supervisor.geof_timeToRecovery	{Communication_Properties::Timing => immediate;};
+
+			gcas_ttf: port gcas.timeToFailure -> Supervisor.gcas_timeToFailure	{Communication_Properties::Timing => immediate;};
+			tcas_ttf: port tcas.timeToFailure -> Supervisor.tcas_timeToFailure	{Communication_Properties::Timing => immediate;};
+			geof_ttf: port geof.timeToFailure -> Supervisor.geof_timeToFailure	{Communication_Properties::Timing => immediate;};
+
+--			ttf_to_supervisor: port timeToFailure -> supervisor.timeToFailure	{Communication_Properties::Timing => immediate;};
+			ttf_to_top: port supervisor.timeToFailure -> timeToFailure	{Communication_Properties::Timing => immediate;};
+
+
+			ttr_to_top: port supervisor.timeToRecovery -> timeToRecovery;
+
+			p1_port: port supervisor.p1 -> p1;
+			p2_port: port supervisor.p2 -> p2;
+			p3_port: port supervisor.p3 -> p3;
+
+		annex agree {**
+
+
+
+		**};
+	end Supervised_System.impl;
+
+
+	system GeoFence_singleton
+		features
+			timeToRecovery: out data port real;
+			timeToFailure: out data port real;
+
+		annex agree {**
+			eq t: real = 0.0 -> pre(t) + 0.1;
+			eq distanceFromFence: real;
+--
+			guarantee "recovery occurs after some time": (t >= timeToRecovery) => (distanceFromFence > pre(distanceFromFence));
+			guarantee "ttr is 1.7": timeToRecovery = 1.7;
+			guarantee "ttf is 2.0": timeToFailure = 9.5;
+			guarantee "": t = 4 + 4 + 4 + 4 + 4;
+		**};
+	end GeoFence_singleton;
+
+	system implementation GeoFence_singleton.impl
+		annex agree {**
+			assign distanceFromFence = geofence_nodes.circleLinearization(t);
+			assign timeToRecovery = 1.7;
+		**};
+	end GeoFence_singleton.impl;
+
+
+
+	system TCAS_singleton
+		features
+			nearestIntruderAltitude: in data port int;
+			nearestIntruderGroundDistance: in data port int;
+			nearestIntruderLongitude: in data port int;
+			ownAltitude_in: in data port int;
+			ownHeading: in data port int; -- degrees from North
+			ownVerticalVelocity: in data port int;
+			ownLatitude: in data port int;
+			ownLongitude: in data port int;
+
+			requiredVerticalVelocity: out data port int;
+			timeToRecovery: out data port real;
+			timeToFailure: out data port real;
+
+		annex agree {**
+
+			eq t: real = 0.0 -> pre(t) + 1.0;
+			eq ownAltitude: int = ownAltitude_in -> pre(ownAltitude) + pre(requiredVerticalVelocity);
+
+
+			eq intrusionSurfaceTop: bool = True;
+			eq ownAircraftGoesUpOnTie: bool;
+			eq threatDetected: bool;
+			eq altitude_diff: int = tcas_nodes.abs_diff(ownAltitude, nearestIntruderAltitude);
+
+			const sameAltitudeGoUp: int = 50;
+			const sameAltitudeGoDown: int = -50;
+			const intrustionFromAbove: int = -10;
+			const intrustionFromBelow: int = 10;
+			const safeAltitudeDifference: int = 100;
+
+--			assume"constant intruder altitude": True -> nearestIntruderAltitude = pre(nearestIntruderAltitude);
+
+
+--			assume"intruder aircraft above ground (in)": nearestIntruderAltitude > 0;
+--			assume"intruder aircraft above ground": nearestIntruderAltitude > 0;
+--			assume"intruder distance above zero": nearestIntruderGroundDistance > 0; -- Distance using lat/long values
+--			assume"Own aircraft above ground": ownAltitude > 0;
+--			assume"heading is in normalized degrees": ownHeading >= 0 and ownHeading < 360;
+--			assume"own latitude is sensible": ownLatitude >= 0 and ownLatitude <= 90;
+--			assume"own longitude is sensible": ownLongitude >= -180 and ownLongitude <= 180;
+--
+--			guarantee"more eastern aircraft has priority": ownAircraftGoesUpOnTie = (ownLongitude > nearestIntruderLongitude);
+--			guarantee"there is exists a non-zero requiredVerticalVelocity": True -> threatDetected => requiredVerticalVelocity != 0;
+--			guarantee"higher aircraft goes up": threatDetected and ownAltitude < nearestIntruderAltitude => requiredVerticalVelocity < 0;
+--			guarantee"lower aircraft goes down": threatDetected and ownAltitude > nearestIntruderAltitude => requiredVerticalVelocity > 0;
+
+			guarantee"Recovery Time from intrusion below thresehold": (t >= timeToRecovery) => (altitude_diff >= safeAltitudeDifference);
+			guarantee "ttr is 9.1": timeToRecovery = 9.1;
+			guarantee "ttf is 10.0": timeToFailure = 15.0;
+
+		**};
+	end TCAS_singleton;
+
+	system implementation TCAS_singleton.impl
+		annex agree {**
+
+			assign timeToRecovery = 9.1;
+
+			assign ownAircraftGoesUpOnTie = (ownLongitude > nearestIntruderLongitude);
+
+			assign requiredVerticalVelocity =
+				if (ownAltitude = nearestIntruderAltitude)
+					then if (ownAircraftGoesUpOnTie)
+						then sameAltitudeGoUp
+						else sameAltitudeGoDown
+				else if(ownAltitude < nearestIntruderAltitude)
+					then intrustionFromAbove
+					else intrustionFromBelow;
+		**};
+	end TCAS_singleton.impl;
+
+
+
+
+	system GCAS_singleton
+		features
+			altitude: in data port real;
+			timeToRecovery: out data port real;
+			timeToFailure: out data port real;
+
+
+		annex agree {**
+			eq t: real = 0.0 -> pre(t) + 0.1;
+			eq height: real;
+
+			const minHeightAllowed: real = 200.0;
+
+			guarantee "safe after some time": (t >= timeToRecovery) => ((height > minHeightAllowed) and (height > pre(height)));
+			guarantee "ttr is 3.7": timeToRecovery = 8.7;
+			guarantee "ttf is 4.0": timeToFailure = 16.0;
+
+
+		**};
+	end GCAS_singleton;
+
+	system implementation GCAS_singleton.impl
+		annex agree {**
+
+				assign height = gcas_nodes.kinematicLinearization(t);
+				assign timeToRecovery = 3.7;
+		**};
+	end GCAS_singleton.impl;
+
+
+	system Supervisor
+		features
+			gcas_timeToFailure: in data port real;
+			tcas_timeToFailure: in data port real;
+			geof_timeToFailure: in data port real;
+
+			timeToFailure: out data port real;
+
+			gcas_timeToRecovery: in data port real;
+			tcas_timeToRecovery: in data port real;
+			geof_timeToRecovery: in data port real;
+
+			timeToRecovery: out data port real;
+			p1: out data port bool;
+			p2: out data port bool;
+			p3: out data port bool;
+
+			annex agree {**
+--				assume "gcas time to failures": gcas_tt_fail = 3.0;
+--				assume "tcas time to failures": tcas_tt_fail = 3.0;
+--				assume "geofence time to failures": geof_tt_fail = 3.0;
+
+--				eq gcas_tt_fail: real = 3.0;
+--				eq tcas_tt_fail: real = 3.0;
+--				eq geof_tt_fail: real = 3.0;
+
+--				guarantee "sum ttf > ttr": gcas_tt_fail + tcas_tt_fail + geof_tt_fail > gcas_tt_recovery + tcas_tt_recovery + geof_tt_recovery;
+
+--				assume "next point of failure": timeToFailure = 15.0;
+--				guarantee "single ttf > ttr": timeToFailure > gcas_tt_recovery + tcas_tt_recovery + geof_tt_recovery;
+
+--				guarantee "yield ttr for top level": timeToRecovery = gcas_timeToRecovery + tcas_timeToRecovery + geof_timeToRecovery;
+
+				guarantee "timeToFailure is min ttf": timeToFailure = composite_nodes.min(gcas_timeToFailure, tcas_timeToFailure, geof_timeToFailure) ;
+
+				eq c1: bool, c2: bool, c3: bool = composite_nodes.concurrencyFactor(gcas_timeToRecovery, tcas_timeToRecovery, geof_timeToRecovery, timeToFailure);
+				guarantee "Performable in one process": p1 = c1;
+				guarantee "Performable in two processes": p2 = c2;
+				guarantee "Performable in three processes": p3 = c3;
+
+
+
+			**};
+	end Supervisor;
+
+	system implementation Supervisor.impl
+
+		annex agree {**
+
+
+		**};
+	end Supervisor.impl;
+
+
+	-- Type Aliases
+
+	data int extends base_types::Integer
+	end int;
+
+	data real extends base_types::Float
+	end real;
+
+	data bool extends base_types::Boolean
+	end bool;
+
+end aviation;
+
+
+
+
+
+
+
+
+
+
+
+package composite_nodes
+public
+annex agree {**
+
+node concurrencyFactor(t0: real, t1: real, t2: real, totalTime: real)
+	returns(can_use_1: bool, can_use_2: bool, can_use_3: bool);
+let
+	can_use_1 = (t0 + t1 + t2) < totalTime;
+	can_use_2 = (((t0) < totalTime) and ((t1 + t2) < totalTime))
+	 or (((t0 + t1) < totalTime) and ((t2) < totalTime))
+	 or (((t1) < totalTime) and ((t0 + t2) < totalTime));
+	can_use_3 = (((t0) < totalTime) and (t1 < totalTime) and (t2 < totalTime));
+
+tel;
+
+node min(num0: real, num1: real, num2: real)
+	returns(min: real);
+let
+	min = if (num0 < num1)
+		then if (num0 < num2)
+			then num0
+			else num2
+		else if (num1 < num2)
+			then num1
+			else num2;
+tel;
+
+
+**};
+
+
+
+
+end composite_nodes;
+
+
+
+
+package tcas_nodes
+public
+annex agree {**
+
+			node abs_diff(a: int, b: int) returns(d: int);
+			let
+				d = if ((a-b) < 0) then b - a else a - b;
+			tel;
+
+	**};
+end tcas_nodes;

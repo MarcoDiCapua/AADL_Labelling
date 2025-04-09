@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Merged_Integration_Models_1_impl_Instance" category="system">
+  <componentInstance name="A_to_B_Transporter">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Segment"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="input0">
+      <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/instances/mergedWithDescription_integration_model_Merged_Integration_Models_1_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="output" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/instances/mergedWithDescription_integration_model_Merged_Integration_Models_1_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#mergedWithDescription_integration_model.A_to_B_Transporter"/>
+  </componentInstance>
+  <componentInstance name="B_to_C_Transporter">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Segment"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="input0">
+      <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/instances/mergedWithDescription_integration_model_Merged_Integration_Models_1_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="output" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+      <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/instances/mergedWithDescription_integration_model_Merged_Integration_Models_1_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#mergedWithDescription_integration_model.B_to_C_Transporter"/>
+  </componentInstance>
+  <componentInstance name="A" category="process">
+    <featureInstance name="output" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/instances/mergedWithDescription_integration_model_Merged_Integration_Models_1_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <componentInstance name="A" category="thread group">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Segment"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Profile"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.3"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Design_Assurance_Level"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="output" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+        <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/instances/mergedWithDescription_integration_model_Merged_Integration_Models_1_impl_Instance.aaxl2#/"/>
+      </featureInstance>
+      <componentInstance name="thread0" category="thread">
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ThreadGroupSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadGroupSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadGroupImplementation" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#mergedWithDescription_PSSS.A.impl"/>
+    </componentInstance>
+    <flowSpecification name="output_source" destination="//@componentInstance.2/@featureInstance.0">
+      <flowSpecification href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#mergedWithDescription_PSSS.A_process.impl"/>
+  </componentInstance>
+  <componentInstance name="B" category="process">
+    <featureInstance name="input">
+      <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/instances/mergedWithDescription_integration_model_Merged_Integration_Models_1_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="output" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+      <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/instances/mergedWithDescription_integration_model_Merged_Integration_Models_1_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <componentInstance name="B" category="thread group">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Segment"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Profile"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.3"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Design_Assurance_Level"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="input">
+        <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+        <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/instances/mergedWithDescription_integration_model_Merged_Integration_Models_1_impl_Instance.aaxl2#/"/>
+      </featureInstance>
+      <featureInstance name="output" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+        <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/instances/mergedWithDescription_integration_model_Merged_Integration_Models_1_impl_Instance.aaxl2#/"/>
+      </featureInstance>
+      <componentInstance name="thread0" category="thread">
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ThreadGroupSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedThreadGroupSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadGroupImplementation" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#mergedWithDescription_PSSS.B.impl"/>
+    </componentInstance>
+    <flowSpecification name="input_sink" source="//@componentInstance.3/@featureInstance.0">
+      <flowSpecification href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="output_source" destination="//@componentInstance.3/@featureInstance.1">
+      <flowSpecification href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#mergedWithDescription_PSSS.B_process.impl"/>
+  </componentInstance>
+  <componentInstance name="C" category="process">
+    <featureInstance name="input">
+      <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+      <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/instances/mergedWithDescription_integration_model_Merged_Integration_Models_1_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <componentInstance name="C" category="thread group">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Segment"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Profile"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.3"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#FACE.Design_Assurance_Level"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/face2aadl/org.osate.face2aadl/resources/FACE.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="input">
+        <feature xsi:type="aadl2:DataPort" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+        <type href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/instances/mergedWithDescription_integration_model_Merged_Integration_Models_1_impl_Instance.aaxl2#/"/>
+      </featureInstance>
+      <componentInstance name="thread0" category="thread">
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ThreadGroupSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedThreadGroupSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadGroupImplementation" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#mergedWithDescription_PSSS.C.impl"/>
+    </componentInstance>
+    <flowSpecification name="input_sink" source="//@componentInstance.4/@featureInstance.0">
+      <flowSpecification href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#mergedWithDescription_PSSS.C_process.impl"/>
+  </componentInstance>
+  <componentInstance name="Channel" category="virtual bus">
+    <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedVirtualBusSubcomponent.0"/>
+    <index>0</index>
+  </componentInstance>
+  <connectionInstance name="A_to_B_Transporter.output -> B.B.input" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="B_to_C_Transporter.output -> C.C.input" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.0" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="A.A.output -> A_to_B_Transporter.input0" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="B.B.output -> B_to_C_Transporter.input0" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.3/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face30/mergedWithDescription/mergedWithDescription_PSSS.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#mergedWithDescription_integration_model.Merged_Integration_Models_1.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/face2aadl/org.osate.face2aadl.tests/src/org/osate/face2aadl/face31/mergedWithDescription/mergedWithDescription_integration_model.aadl#mergedWithDescription_integration_model.Merged_Integration_Models_1.impl"/>
+</instance:SystemInstance>

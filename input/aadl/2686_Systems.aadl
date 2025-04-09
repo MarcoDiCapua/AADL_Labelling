@@ -1,0 +1,40 @@
+package Systems
+public
+	with Interfaces;
+
+	with Accounts;
+
+	with Configurations;
+
+	with Communications;
+
+	with Devices;
+
+	system DHsystem
+	end DHsystem;
+
+	system implementation DHsystem.impl
+		subcomponents
+			WebInterface: device Interfaces::webInterface;
+			BackupRecovery: device Interfaces::backupRecovery;
+			PluginManager: device Interfaces::pluginManager;
+			SimulatedEnvironment: device Interfaces::simulatedEnvironment;
+			Account: system Accounts::DHaccounts.impl;
+			DHConfigurations: system Configurations::DHconfig.impl;
+			Communication: system Communications::DHcommunications.impl;
+			Devices: system Devices::DHdevices.impl;
+		connections
+			DHsystem_impl_new_connection: port WebInterface.web_acc -> Account.web_acc;
+			DHsystem_impl_new_connection2: port BackupRecovery.br_acc -> Account.br_acc;
+			DHsystem_impl_new_connection3: port BackupRecovery.br_config -> DHConfigurations.br_config;
+			DHsystem_impl_new_connection4: port WebInterface.web_cmOUT -> DHConfigurations.web_config;
+			DHsystem_impl_new_connection5: port DHConfigurations.config_acc -> Account.config_acc;
+			DHsystem_impl_new_connection6: port PluginManager.pm_config -> DHConfigurations.pm_config;
+			DHsystem_impl_new_connection7: port PluginManager.pm_comm -> Communication.pm_comm;
+			DHsystem_impl_new_connection8: port DHConfigurations.config_cm -> Communication.config_comm;
+			DHsystem_impl_new_connection9: port PluginManager.pm_device -> Devices.pm_device;
+			DHsystem_impl_new_connection10: port Communication.comm_device -> Devices.comm_device;
+			DHsystem_impl_new_connection11: port Devices.device_se -> SimulatedEnvironment.dev_se;
+	end DHsystem.impl;
+	
+end Systems;

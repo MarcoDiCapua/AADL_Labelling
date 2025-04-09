@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Aviate_Control_Level_Aviate_Control_Level_impl_Instance" category="system">
+  <featureInstance name="inACL">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.0"/>
+    <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/41"/>
+  </featureInstance>
+  <featureInstance name="inAircraftState">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.1"/>
+    <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/42"/>
+  </featureInstance>
+  <featureInstance name="outACLVV" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.2"/>
+    <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/43"/>
+  </featureInstance>
+  <featureInstance name="outACLDeltaHeading" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.3"/>
+    <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/44"/>
+  </featureInstance>
+  <featureInstance name="outACLAirspeed" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.4"/>
+    <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/45"/>
+  </featureInstance>
+  <componentInstance name="gcasm" category="process">
+    <featureInstance name="altitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="verticalVelocity">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="outImpact" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="outRecovery" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="gcasRequested" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#AviateControlLevel.GCAS_Monitor"/>
+  </componentInstance>
+  <componentInstance name="acasm" category="process">
+    <featureInstance name="latitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="longitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="distance">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="outImpact" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="outRecovery" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="acasRequested" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.5"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#AviateControlLevel.ACAS_Monitor"/>
+  </componentInstance>
+  <componentInstance name="sam" category="process">
+    <featureInstance name="horzDistance">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <featureInstance name="vertDistance">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/12"/>
+    </featureInstance>
+    <featureInstance name="saRequested" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.2"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/13"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#AviateControlLevel.SA_Monitor"/>
+  </componentInstance>
+  <componentInstance name="gfm" category="process">
+    <featureInstance name="latitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/14"/>
+    </featureInstance>
+    <featureInstance name="longitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/15"/>
+    </featureInstance>
+    <featureInstance name="distance">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.2"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <featureInstance name="gfRequested" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.3"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/17"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedProcessSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#AviateControlLevel.GF_Monitor"/>
+  </componentInstance>
+  <componentInstance name="wxm" category="process">
+    <featureInstance name="latitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/18"/>
+    </featureInstance>
+    <featureInstance name="longitude">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/19"/>
+    </featureInstance>
+    <featureInstance name="distance">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.2"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/20"/>
+    </featureInstance>
+    <featureInstance name="wxRequested" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.3"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/21"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedProcessSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#AviateControlLevel.Wx_Monitor"/>
+  </componentInstance>
+  <componentInstance name="flsm" category="process">
+    <featureInstance name="linkConnection">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/22"/>
+    </featureInstance>
+    <featureInstance name="landingRequested" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/23"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedProcessSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#AviateControlLevel.FLS_Monitor"/>
+  </componentInstance>
+  <componentInstance name="pc" category="process">
+    <featureInstance name="inpPC">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/24"/>
+    </featureInstance>
+    <featureInstance name="outPC" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/25"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedProcessSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#AviateControlLevel.Pilot_Command"/>
+  </componentInstance>
+  <componentInstance name="dmc" category="process">
+    <featureInstance name="inpGCASM">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/26"/>
+    </featureInstance>
+    <featureInstance name="inpGCASImpact">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/27"/>
+    </featureInstance>
+    <featureInstance name="inpGCASRecovery">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.2"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/28"/>
+    </featureInstance>
+    <featureInstance name="inpSAM">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.3"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/29"/>
+    </featureInstance>
+    <featureInstance name="inpACASM">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.4"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/30"/>
+    </featureInstance>
+    <featureInstance name="inpACASImpact">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.5"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/31"/>
+    </featureInstance>
+    <featureInstance name="inpACASRecovery">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.6"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/32"/>
+    </featureInstance>
+    <featureInstance name="inpGFM">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.7"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/33"/>
+    </featureInstance>
+    <featureInstance name="inpWxM">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.8"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/34"/>
+    </featureInstance>
+    <featureInstance name="inpFLS">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.9"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/35"/>
+    </featureInstance>
+    <featureInstance name="outDec" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.10"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/36"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedProcessSubcomponent.7"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#AviateControlLevel.Aviate_Decider"/>
+  </componentInstance>
+  <componentInstance name="swt" category="process">
+    <featureInstance name="inpDecider">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.0"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/37"/>
+    </featureInstance>
+    <featureInstance name="inpPC">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.1"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/25"/>
+    </featureInstance>
+    <featureInstance name="outSwitchVV" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.2"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/38"/>
+    </featureInstance>
+    <featureInstance name="outSwitchDeltaHeading" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.3"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/39"/>
+    </featureInstance>
+    <featureInstance name="outSwitchAirspeed" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.4"/>
+      <type href="../../github/AviationRequirementModeling/aadl/examples/instances/AviateControlLevel_Aviate_Control_Level_Aviate_Control_Level_impl_Instance.aaxl2#/40"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedProcessSubcomponent.8"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#AviateControlLevel.Switch"/>
+  </componentInstance>
+  <connectionInstance name="inACL -> pc.inpPC" kind="portConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="gcasm.outImpact -> dmc.inpGCASImpact" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.1" source="//@componentInstance.0/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="gcasm.outRecovery -> dmc.inpGCASRecovery" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.2" source="//@componentInstance.0/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.7/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="gcasm.gcasRequested -> dmc.inpGCASM" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.0" source="//@componentInstance.0/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.4" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="acasm.outImpact -> dmc.inpACASImpact" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.5" source="//@componentInstance.1/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.3" destination="//@componentInstance.7/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="acasm.outRecovery -> dmc.inpACASRecovery" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.6" source="//@componentInstance.1/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.4" destination="//@componentInstance.7/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="acasm.acasRequested -> dmc.inpACASM" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.4" source="//@componentInstance.1/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.5" destination="//@componentInstance.7/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sam.saRequested -> dmc.inpSAM" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.3" source="//@componentInstance.2/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.2" destination="//@componentInstance.7/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="gfm.gfRequested -> dmc.inpGFM" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.7" source="//@componentInstance.3/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.3" destination="//@componentInstance.7/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="wxm.wxRequested -> dmc.inpWxM" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.8" source="//@componentInstance.4/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.3" destination="//@componentInstance.7/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="flsm.landingRequested -> dmc.inpFLS" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.9" source="//@componentInstance.5/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@componentInstance.7/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pc.outPC -> swt.inpPC" complete="true" kind="portConnection" destination="//@componentInstance.8/@featureInstance.1" source="//@componentInstance.6/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.1" destination="//@componentInstance.8/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="dmc.outDec -> swt.inpDecider" complete="true" kind="portConnection" destination="//@componentInstance.8/@featureInstance.0" source="//@componentInstance.7/@featureInstance.10">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.10" destination="//@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="swt.outSwitchVV -> outACLVV" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.8/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.2" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="swt.outSwitchDeltaHeading -> outACLDeltaHeading" kind="portConnection" destination="//@featureInstance.3" source="//@componentInstance.8/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.3" destination="//@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="swt.outSwitchAirspeed -> outACLAirspeed" kind="portConnection" destination="//@featureInstance.4" source="//@componentInstance.8/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.4" destination="//@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPortConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#AviateControlLevel.Aviate_Control_Level.Aviate_Control_Level_impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/aadl/examples/AviateControlLevel.aadl#AviateControlLevel.Aviate_Control_Level.Aviate_Control_Level_impl"/>
+</instance:SystemInstance>

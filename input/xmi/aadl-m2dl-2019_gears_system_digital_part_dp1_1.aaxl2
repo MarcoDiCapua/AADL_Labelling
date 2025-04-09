@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="digital_part_dp1_Instance" category="system">
+  <featureInstance name="general_EV" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.0"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/36"/>
+  </featureInstance>
+  <featureInstance name="open_EV" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.1"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/37"/>
+  </featureInstance>
+  <featureInstance name="close_EV" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.2"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/38"/>
+  </featureInstance>
+  <featureInstance name="rectract_EV" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.3"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/39"/>
+  </featureInstance>
+  <featureInstance name="extend_EV" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.4"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/40"/>
+  </featureInstance>
+  <featureInstance name="maneuvring" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.5"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/41"/>
+  </featureInstance>
+  <featureInstance name="locked_down" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.6"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/42"/>
+  </featureInstance>
+  <featureInstance name="error" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.7"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/43"/>
+  </featureInstance>
+  <featureInstance name="handle" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.0"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/15"/>
+  </featureInstance>
+  <featureInstance name="switch_value" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.1"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/14"/>
+  </featureInstance>
+  <featureInstance name="door_closed" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.2"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/44"/>
+  </featureInstance>
+  <featureInstance name="hydrolic_presurized" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.3"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/45"/>
+  </featureInstance>
+  <featureInstance name="door_openned" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.4"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/46"/>
+  </featureInstance>
+  <featureInstance name="gear_extended" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.5"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/47"/>
+  </featureInstance>
+  <featureInstance name="gear_retracted" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.6"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/48"/>
+  </featureInstance>
+  <featureInstance name="gear_shock_absorb" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.7"/>
+    <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/21"/>
+  </featureInstance>
+  <componentInstance name="mbdp" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusType" href="../../github/aadl-m2dl-2019/gears_system.aadl#gears_system.mem_bus"/>
+  </componentInstance>
+  <componentInstance name="dp_mem" category="memory">
+    <featureInstance name="mbus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedMemorySubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryType" href="../../github/aadl-m2dl-2019/gears_system.aadl#gears_system.dp_RAM"/>
+  </componentInstance>
+  <componentInstance name="dps" category="process">
+    <featureInstance name="general_EV" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.0"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/23"/>
+    </featureInstance>
+    <featureInstance name="open_EV" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.1"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/24"/>
+    </featureInstance>
+    <featureInstance name="close_EV" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.2"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/25"/>
+    </featureInstance>
+    <featureInstance name="rectract_EV" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.3"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/26"/>
+    </featureInstance>
+    <featureInstance name="extend_EV" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.4"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/27"/>
+    </featureInstance>
+    <featureInstance name="maneuvring" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.5"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/28"/>
+    </featureInstance>
+    <featureInstance name="locked_down" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.6"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/29"/>
+    </featureInstance>
+    <featureInstance name="error" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.7"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/30"/>
+    </featureInstance>
+    <featureInstance name="handle" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventDataPort.0"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/15"/>
+    </featureInstance>
+    <featureInstance name="switch_value" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventDataPort.1"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/14"/>
+    </featureInstance>
+    <featureInstance name="door_closed" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventDataPort.2"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/31"/>
+    </featureInstance>
+    <featureInstance name="hydrolic_presurized" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventDataPort.3"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/32"/>
+    </featureInstance>
+    <featureInstance name="door_openned" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventDataPort.4"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/33"/>
+    </featureInstance>
+    <featureInstance name="gear_extended" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventDataPort.5"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/34"/>
+    </featureInstance>
+    <featureInstance name="gear_retracted" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventDataPort.6"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/35"/>
+    </featureInstance>
+    <featureInstance name="gear_shock_absorb" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventDataPort.7"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/21"/>
+    </featureInstance>
+    <componentInstance name="pit" category="thread">
+      <featureInstance name="maneuvring" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventDataPort.0"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="locked_down" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventDataPort.1"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="error" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventDataPort.2"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="door_closed" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventDataPort.3"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/4"/>
+      </featureInstance>
+      <featureInstance name="door_openned" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventDataPort.4"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <featureInstance name="gear_extended" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventDataPort.5"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/6"/>
+      </featureInstance>
+      <featureInstance name="gear_retracted" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventDataPort.6"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/7"/>
+      </featureInstance>
+      <featureInstance name="gear_shock_absorb" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventDataPort.7"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/8"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-m2dl-2019/gears_system.aadl#gears_system.pilote_interface_thread"/>
+    </componentInstance>
+    <componentInstance name="gmt" category="thread">
+      <featureInstance name="general_EV" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.0"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/9"/>
+      </featureInstance>
+      <featureInstance name="open_EV" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.1"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/10"/>
+      </featureInstance>
+      <featureInstance name="close_EV" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.2"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/11"/>
+      </featureInstance>
+      <featureInstance name="rectract_EV" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.3"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/12"/>
+      </featureInstance>
+      <featureInstance name="extend_EV" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.4"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/13"/>
+      </featureInstance>
+      <featureInstance name="switch_value" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventDataPort.0"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/14"/>
+      </featureInstance>
+      <featureInstance name="handle" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventDataPort.1"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/15"/>
+      </featureInstance>
+      <featureInstance name="hydrolic_presurized" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventDataPort.2"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/16"/>
+      </featureInstance>
+      <featureInstance name="door_closed" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventDataPort.3"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/17"/>
+      </featureInstance>
+      <featureInstance name="door_openned" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventDataPort.4"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/18"/>
+      </featureInstance>
+      <featureInstance name="gear_extended" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventDataPort.5"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/19"/>
+      </featureInstance>
+      <featureInstance name="gear_retracted" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventDataPort.6"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/20"/>
+      </featureInstance>
+      <featureInstance name="gear_shock_absorb" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventDataPort.7"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/21"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/aadl-m2dl-2019/gears_system.aadl#gears_system.gears_manager_thread"/>
+    </componentInstance>
+    <componentInstance name="adt" category="thread group">
+      <featureInstance name="error" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.0"/>
+        <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/22"/>
+      </featureInstance>
+      <featureInstance name="general_EV" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="maneuvring" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="gear_extended" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="gear_retracted" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="door_openned" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventDataPort.4"/>
+      </featureInstance>
+      <featureInstance name="door_closed" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventDataPort.5"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadGroupSubcomponent" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedThreadGroupSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadGroupType" href="../../github/aadl-m2dl-2019/gears_system.aadl#gears_system.anomaly_detetion_group"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/aadl-m2dl-2019/gears_system.aadl#gears_system.dp_software.dps"/>
+  </componentInstance>
+  <componentInstance name="dp_proc" category="processor">
+    <featureInstance name="mbus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-m2dl-2019/instances/gears_system_digital_part_dp1_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../../github/aadl-m2dl-2019/gears_system.aadl#gears_system.dp_processor"/>
+  </componentInstance>
+  <connectionInstance name="mbdp -> dp_proc.mbus" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.3/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="mbdp -> dp_mem.mbus" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.1/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="dp_mem.mbus -> mbdp" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="dp_proc.mbus -> mbdp" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-m2dl-2019/gears_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-m2dl-2019/gears_system.aadl#gears_system.digital_part.dp1"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-m2dl-2019/gears_system.aadl#gears_system.digital_part.dp1"/>
+</instance:SystemInstance>

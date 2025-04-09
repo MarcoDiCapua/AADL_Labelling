@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="mites_imp_Instance" category="system">
+  <componentInstance name="photon1" category="device">
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/MitesAADL/main_mitesio.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/MitesAADL/main_mitesio.aadl#|::0.5.9.1.47.0::18::/5"/>
+  </componentInstance>
+  <componentInstance name="node1" category="device">
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/MitesAADL/main_mitesio.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/MitesAADL/main_mitesio.aadl#|::0.5.9.1.47.1::18::/5"/>
+  </componentInstance>
+  <componentInstance name="user1" category="device">
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/MitesAADL/main_mitesio.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/MitesAADL/main_mitesio.aadl#|::0.5.9.1.47.2::18::/5"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/MitesAADL/main_mitesio.aadl#MITESIO.mites.imp"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/MitesAADL/main_mitesio.aadl#MITESIO.mites.imp"/>
+</instance:SystemInstance>

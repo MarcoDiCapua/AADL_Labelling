@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="ControlModule_i_Instance" category="system">
+  <featureInstance name="pci" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedBusAccess.0"/>
+    <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baseline_ControlModule_i_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="IO" category="busAccess" direction="out">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedBusAccess.1"/>
+    <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baseline_ControlModule_i_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="power" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedBusAccess.2"/>
+    <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baseline_ControlModule_i_Instance.aaxl2#/2"/>
+  </featureInstance>
+  <componentInstance name="Hardware">
+    <componentInstance name="PCIBus" category="bus">
+      <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedBusSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:BusType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#baseline.PCIBUS"/>
+    </componentInstance>
+    <componentInstance name="A2D" category="device">
+      <featureInstance name="pci" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedBusAccess.0"/>
+        <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baseline_ControlModule_i_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="IO" category="busAccess" direction="out">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedBusAccess.1"/>
+        <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baseline_ControlModule_i_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDeviceSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#baseline.A2D"/>
+    </componentInstance>
+    <componentInstance name="terminal" category="device">
+      <featureInstance name="Expci" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedBusAccess.0"/>
+        <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baseline_ControlModule_i_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Inpci" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedBusAccess.1"/>
+        <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baseline_ControlModule_i_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDeviceSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#baseline.busAccess"/>
+    </componentInstance>
+    <componentInstance name="RAM" category="memory">
+      <featureInstance name="pci" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedBusAccess.0"/>
+        <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baseline_ControlModule_i_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#baseline.RAM"/>
+    </componentInstance>
+    <componentInstance name="CPU" category="processor">
+      <featureInstance name="pci" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedBusAccess.0"/>
+        <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baseline_ControlModule_i_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedProcessorSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessorType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#baseline.SingleCore"/>
+    </componentInstance>
+    <connectionInstance name="PCIBus -> terminal.Inpci" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.1" source="//@componentInstance.0/@componentInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0" destination="//@componentInstance.0/@componentInstance.2/@featureInstance.1" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedAccessConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="PCIBus -> CPU.pci" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.4/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0" destination="//@componentInstance.0/@componentInstance.4/@featureInstance.0" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedAccessConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="PCIBus -> RAM.pci" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.3/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0" destination="//@componentInstance.0/@componentInstance.3/@featureInstance.0" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedAccessConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="A2D.pci -> PCIBus" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedAccessConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="terminal.Inpci -> PCIBus" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.2/@featureInstance.1">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedAccessConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="RAM.pci -> PCIBus" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.3/@featureInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedAccessConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="CPU.pci -> PCIBus" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.4/@featureInstance.0">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.4/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedAccessConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedAbstractSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#baseline.Hardware.control"/>
+  </componentInstance>
+  <componentInstance name="Software">
+    <componentInstance name="OS" category="process">
+      <componentInstance name="ControlApp" category="thread">
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.25/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedProcessSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#baseline.RealTimeOS.control"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedAbstractSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#baseline.Software.control"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#baseline.ControlModule.i"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/baseline.aadl#baseline.ControlModule.i"/>
+</instance:SystemInstance>

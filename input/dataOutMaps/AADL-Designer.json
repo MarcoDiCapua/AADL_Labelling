@@ -1,0 +1,15 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "CruiseControl",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\AADL-Designer_CruiseControl_Cruisecontrol_Generic_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [],
+  "errors": [
+    "ERROR:mismatched input 'port' expecting 'access' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl line : 315 column : 17)",
+    "ERROR:no viable alternative at input '->' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl line : 315 column : 22)",
+    "ERROR:mismatched input '.' expecting ';' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl line : 321 column : 12)",
+    "WARNING:Ending 'speed_in_data' does not match defining identifier 'control.speed_control' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Designer/plugins/org.obeonetwork.dsl.aadl.cruise_control.example/cruise_control.aadl li..."
+  ]
+}

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="PulseOx_Forwarding_System_imp_Instance" category="system">
+  <componentInstance name="pulseOx" category="device">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#MAP_Properties.Component_Type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#/0/@ownedPropertyType.1/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-map-apps/pca-shutoff/packages/PulseOx_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="SpO2" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PulseOx_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      <type href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/instances/PulseOx_Forwarding_System_PulseOx_Forwarding_System_imp_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="DeviceError" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PulseOx_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+    </featureInstance>
+    <flowSpecification name="spo2_flow" destination="//@componentInstance.0/@featureInstance.0">
+      <flowSpecification href="../../github/aadl-map-apps/pca-shutoff/packages/PulseOx_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PulseOx_Interface.aadl#PulseOx_Interface.ICEpoInterface.imp"/>
+  </componentInstance>
+  <componentInstance name="appLogic" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#MAP_Properties.Process_Type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="SpO2">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/instances/PulseOx_Forwarding_System_PulseOx_Forwarding_System_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="DerivedAlarm" category="eventPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#MAP_Properties.Output_Rate"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="200">
+              <unit href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Logic.aadl#|::0.5.9.0.31.0.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="400">
+              <unit href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Logic.aadl#|::0.5.9.0.31.0.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+    </featureInstance>
+    <componentInstance name="CheckSpO2Thread" category="thread">
+      <featureInstance name="Alarm" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Logic.aadl#PulseOx_Forwarding_Logic.CheckSpO2Thread.imp"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Logic.aadl#PulseOx_Forwarding_Logic.PulseOx_Logic_Process.imp"/>
+  </componentInstance>
+  <componentInstance name="appDisplay" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#MAP_Properties.Process_Type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#/0/@ownedPropertyType.0/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="SpO2" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      <type href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/instances/PulseOx_Forwarding_System_PulseOx_Forwarding_System_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="DerivedAlarm" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+    </featureInstance>
+    <componentInstance name="UpdateSpO2Thread" category="thread">
+      <featureInstance name="SpO2" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+        <type href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/instances/PulseOx_Forwarding_System_PulseOx_Forwarding_System_imp_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#PulseOx_Forwarding_Display.UpdateSpO2Thread.imp"/>
+    </componentInstance>
+    <componentInstance name="HandleAlarmThread" category="thread">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#MAP_Properties.Worst_Case_Execution_Time"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="7">
+            <unit href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#|::0.5.9.4.4.2.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="Alarm" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#PulseOx_Forwarding_Display.HandleAlarmThread.imp"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#PulseOx_Forwarding_Display.PulseOx_Display_Process.imp"/>
+  </componentInstance>
+  <connectionInstance name="pulseOx.SpO2 -> appLogic.SpO2" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pulseOx.SpO2 -> appDisplay.UpdateSpO2Thread.SpO2" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#MAP_Properties.Channel_Delay"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="150">
+          <unit href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_System.aadl#|::0.5.9.1.33.1.4.0.7.0.6::2::/2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="appLogic.CheckSpO2Thread.Alarm -> appDisplay.HandleAlarmThread.Alarm" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.0" source="//@componentInstance.1/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_System.aadl#PulseOx_Forwarding_System.PulseOx_Forwarding_System.imp"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-map-apps/pulse-ox-forwarding/packages/PulseOx_Forwarding_System.aadl#PulseOx_Forwarding_System.PulseOx_Forwarding_System.imp"/>
+</instance:SystemInstance>

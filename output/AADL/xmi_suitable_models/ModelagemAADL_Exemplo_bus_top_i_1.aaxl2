@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="top_i_Instance" category="system">
+  <componentInstance name="theBus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusType" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#Exemplo_bus.MyBus"/>
+  </componentInstance>
+  <componentInstance name="sub1" category="system">
+    <featureInstance name="out1" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/instances/busTest_top_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="out2" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/instances/busTest_top_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="out3" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.2"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/instances/busTest_top_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="out4" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.3"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/instances/busTest_top_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#Exemplo_bus.S1"/>
+  </componentInstance>
+  <componentInstance name="sub2" category="system">
+    <featureInstance name="in1">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/instances/busTest_top_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="in2">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.1"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/instances/busTest_top_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="in3">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.2"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/instances/busTest_top_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="in4">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.3"/>
+      <type href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/instances/busTest_top_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#Exemplo_bus.S2"/>
+  </componentInstance>
+  <componentInstance name="VB1" category="virtual bus">
+    <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedVirtualBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualBusType" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#Exemplo_bus.MyVB1"/>
+  </componentInstance>
+  <componentInstance name="VB2" category="virtual bus">
+    <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedVirtualBusSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualBusType" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#Exemplo_bus.MyVB2"/>
+  </componentInstance>
+  <componentInstance name="VB3" category="virtual bus">
+    <modeInstance name="z1" initial="true">
+      <mode href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedMode.0"/>
+    </modeInstance>
+    <modeInstance name="z2">
+      <mode href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedMode.1"/>
+    </modeInstance>
+    <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedVirtualBusSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:VirtualBusType" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#Exemplo_bus.MyVB3"/>
+  </componentInstance>
+  <connectionInstance name="sub1.out1 -> sub2.in1" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sub1.out2 -> sub2.in2" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sub1.out3 -> sub2.in3" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.2" source="//@componentInstance.1/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sub1.out4 -> sub2.in4" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.3" source="//@componentInstance.1/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.3" destination="//@componentInstance.2/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#Exemplo_bus.top.i"/>
+  <systemOperationMode name="som_1" currentMode="//@componentInstance.5/@modeInstance.0"/>
+  <systemOperationMode name="som_2" currentMode="//@componentInstance.5/@modeInstance.1"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/ModelagemAADL/ArquiteturaKart/ModeloCAN/packages/Integration/busTest.aadl#Exemplo_bus.top.i"/>
+</instance:SystemInstance>

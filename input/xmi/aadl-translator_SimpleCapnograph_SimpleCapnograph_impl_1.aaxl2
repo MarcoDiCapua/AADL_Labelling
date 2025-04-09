@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="SimpleCapnograph_impl_Instance" category="system">
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#MDCF_Data_Props.IEEE11073_MDC_ATTR_SYS_TYPE"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:StringLiteral" value="Simple Capnograph"/>
+    </ownedValue>
+    <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+  </ownedPropertyAssociation>
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#MDCF_Data_Props.ICE_ManufacturerModel"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:RecordValue">
+        <ownedFieldValue>
+          <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.0"/>
+          <ownedValue xsi:type="aadl2:RecordValue">
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.0/@ownedPropertyType/@ownedField.0"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="Simple"/>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.0/@ownedPropertyType/@ownedField.1"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="Capnograph 2000"/>
+            </ownedFieldValue>
+          </ownedValue>
+        </ownedFieldValue>
+        <ownedFieldValue>
+          <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.1"/>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="aadl2:StringLiteral" value="cert1"/>
+            <ownedListElement xsi:type="aadl2:StringLiteral" value="cert2"/>
+          </ownedValue>
+        </ownedFieldValue>
+      </ownedValue>
+    </ownedValue>
+    <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
+  </ownedPropertyAssociation>
+  <componentInstance name="capnograph">
+    <featureInstance name="Status_res_in" category="eventDataPort">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.separation_interval_range"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="200">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.0.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="300">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.0.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.data_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Status"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.comm_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.DML_Port"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RecordValue">
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.0"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="capnograph"/>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.1"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedPropertyType.1/@ownedLiteral.0"/>
+              </ownedValue>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.2"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedPropertyType.3/@ownedLiteral.0"/>
+              </ownedValue>
+            </ownedFieldValue>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimpleCapnograph_SimpleCapnograph_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="Status_res_out" category="eventDataPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.data_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Status"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.comm_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#/0/@ownedPropertyType.0/@ownedLiteral.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.DML_Port"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RecordValue">
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.0"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="capnograph"/>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.1"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedPropertyType.1/@ownedLiteral.0"/>
+              </ownedValue>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.2"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedPropertyType.3/@ownedLiteral.1"/>
+              </ownedValue>
+            </ownedFieldValue>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimpleCapnograph_SimpleCapnograph_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="Etco2_Metric_Etco2Num_res_in" category="eventDataPort">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.separation_interval_range"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.2.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="200">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.2.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.data_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="EtCo2_Numeric"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.comm_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2/@ownedPropertyAssociation.4"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.DML_Port"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RecordValue">
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.0"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="etco2"/>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.1"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedPropertyType.1/@ownedLiteral.2"/>
+              </ownedValue>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.2"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedPropertyType.3/@ownedLiteral.1"/>
+              </ownedValue>
+            </ownedFieldValue>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2/@ownedPropertyAssociation.5"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel_group"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Etco2"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Metrics"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="Etco2_Metric_Etco2Num_res_out" category="eventDataPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.data_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="EtCo2_Numeric"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.3/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.comm_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#/0/@ownedPropertyType.0/@ownedLiteral.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.3/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.DML_Port"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RecordValue">
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.0"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="etco2"/>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.1"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedPropertyType.1/@ownedLiteral.2"/>
+              </ownedValue>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.2"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedPropertyType.3/@ownedLiteral.1"/>
+              </ownedValue>
+            </ownedFieldValue>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.3/@ownedPropertyAssociation.4"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel_group"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Etco2"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.3/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Metrics"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.3/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/propertyset/MAP_Properties.aadl#MAP_Properties.Output_Rate"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.3.4.5.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="200">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.3.4.5.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.3/@ownedPropertyAssociation.5"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.3"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimpleCapnograph_SimpleCapnograph_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="Etco2_Metric_Etco2Num_pub_out" category="eventDataPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.separation_interval_range"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.4.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="200">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.4.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.4/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.data_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="EtCo2_Numeric"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.4/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.comm_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#/0/@ownedPropertyType.0/@ownedLiteral.4"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.4/@ownedPropertyAssociation.4"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.DML_Port"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RecordValue">
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.0"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="etco2"/>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.1"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedPropertyType.1/@ownedLiteral.2"/>
+              </ownedValue>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.2"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedPropertyType.3/@ownedLiteral.4"/>
+              </ownedValue>
+            </ownedFieldValue>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.4/@ownedPropertyAssociation.5"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel_group"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Etco2"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.4/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Metrics"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.4/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/propertyset/MAP_Properties.aadl#MAP_Properties.Output_Rate"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.4.4.6.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="200">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.4.4.6.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.4/@ownedPropertyAssociation.6"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.4"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimpleCapnograph_SimpleCapnograph_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDoseSettings_Settings_LoadingBolus_rec_in" category="eventDataPort">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.separation_interval_range"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.5.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="200">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.5.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.5/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.data_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="LoadingBolus"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.5/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.comm_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#/0/@ownedPropertyType.0/@ownedLiteral.2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.5/@ownedPropertyAssociation.4"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.DML_Port"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RecordValue">
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.0"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="prescriptiondose"/>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.1"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedPropertyType.1/@ownedLiteral.3"/>
+              </ownedValue>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.2"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedPropertyType.3/@ownedLiteral.3"/>
+              </ownedValue>
+            </ownedFieldValue>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.5/@ownedPropertyAssociation.5"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel_group"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="PrescriptionDoseSettings"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.5/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Settings"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.5/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/propertyset/MAP_Properties.aadl#MAP_Properties.Output_Rate"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.5.4.6.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="200">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.5.4.6.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.5/@ownedPropertyAssociation.6"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.5"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/SimpleCapnograph_SimpleCapnograph_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="PrescriptionDoseSettings_Settings_LoadingBolus_rec_out" category="eventDataPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.data_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="LoadingBolus"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.6/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.comm_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#/0/@ownedPropertyType.0/@ownedLiteral.3"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.6/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.DML_Port"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RecordValue">
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.0"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="prescriptiondose"/>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.1"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedPropertyType.1/@ownedLiteral.3"/>
+              </ownedValue>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.2"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedPropertyType.3/@ownedLiteral.3"/>
+              </ownedValue>
+            </ownedFieldValue>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.6/@ownedPropertyAssociation.4"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel_group"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="PrescriptionDoseSettings"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.6/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Settings"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.6/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.6"/>
+    </featureInstance>
+    <featureInstance name="Stop_Actions_Commands_exec_in" category="eventDataPort">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.separation_interval_range"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.7.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="200">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#|::0.5.9.2.34.7.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.7/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.data_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Parameter"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.7/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.comm_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#/0/@ownedPropertyType.0/@ownedLiteral.6"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.7/@ownedPropertyAssociation.4"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.DML_Port"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RecordValue">
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.0"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="stop"/>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.1"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedPropertyType.1/@ownedLiteral.5"/>
+              </ownedValue>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.2"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedPropertyType.3/@ownedLiteral.7"/>
+              </ownedValue>
+            </ownedFieldValue>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.7/@ownedPropertyAssociation.5"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel_group"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Stop"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.7/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Commands"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.7/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.7"/>
+    </featureInstance>
+    <featureInstance name="Stop_Actions_Commands_exec_out" category="eventDataPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.data_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Result"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.8/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.comm_type"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#/0/@ownedPropertyType.0/@ownedLiteral.7"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.8/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#MDCF_Comm_Props.DML_Port"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RecordValue">
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.0"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="stop"/>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.1"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedPropertyType.1/@ownedLiteral.5"/>
+              </ownedValue>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedProperty.5/@ownedPropertyType/@ownedField.2"/>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Comm_Props.aadl#/0/@ownedPropertyType.3/@ownedLiteral.7"/>
+              </ownedValue>
+            </ownedFieldValue>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.8/@ownedPropertyAssociation.4"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel_group"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Stop"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.8/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_ICE_Props.aadl#MDCF_ICE_Props.channel"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="Commands"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.8/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.8"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#SimpleCapnograph.CapnographVmd"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#SimpleCapnograph.SimpleCapnograph.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/SimpleCapnograph.aadl#SimpleCapnograph.SimpleCapnograph.impl"/>
+</instance:SystemInstance>

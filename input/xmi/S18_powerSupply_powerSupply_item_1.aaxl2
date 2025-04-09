@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="powerSupply_item_Instance" category="system">
+  <featureInstance name="DC28VoltRawIn">
+    <feature xsi:type="aadl2:DataPort" href="../../github/S18/packages/powerSupply.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    <type href="../../github/S18/packages/instances/powerSupply_powerSupply_item_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="DC28VoltOut" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/S18/packages/powerSupply.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    <type href="../../github/S18/packages/instances/powerSupply_powerSupply_item_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <flowSpecification name="fl1" source="//@featureInstance.0">
+    <flowSpecification href="../../github/S18/packages/powerSupply.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+  </flowSpecification>
+  <flowSpecification name="fl2" destination="//@featureInstance.1">
+    <flowSpecification href="../../github/S18/packages/powerSupply.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.1"/>
+  </flowSpecification>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/S18/packages/powerSupply.aadl#powerSupply.powerSupply.item"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/S18/packages/powerSupply.aadl#powerSupply.powerSupply.item"/>
+</instance:SystemInstance>

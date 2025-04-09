@@ -1,0 +1,46 @@
+-- Simple untyped fault tree
+--	 System is failed with left.item and right.item are failStop
+--   The failstop behavior is a standard error model library behavior
+--   	with two states (operational,failstop) and a transition
+--		defined by: failureTransition : Operational -[failure]-> failStop;
+--
+package Fault_tree_1
+public
+
+with EMV2;
+
+device item
+	annex EMV2 {**
+		use types errorLibrary;
+		use behavior errorLibrary::FailStop;
+		-- the component error behavior definition controls the EMV2 state machine
+		component error behavior
+			transitions
+				FailureTransition : Operational -[ Failure ]-> FailStop ;
+		end component;		
+	**};
+end item;	
+
+device implementation item.i
+end item.i;
+
+system main
+end main;
+
+system implementation main.complete
+	subcomponents
+		left : device item.i;
+		right: device item.i;
+	annex EMV2 {**
+		use types errorLibrary;
+		use behavior errorLibrary::FailStop;
+		composite error behavior
+			states
+			[left.operational or right.operational]->operational;
+			-- system is failed if both channels , i.e. must have one operating channel
+			[left.failStop and right.failStop]->failStop;
+		end composite;
+	**};
+end main.complete;
+
+end Fault_tree_1;

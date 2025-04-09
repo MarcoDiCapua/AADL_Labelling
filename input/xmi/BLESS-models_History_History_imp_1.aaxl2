@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="History_imp_Instance" category="system">
+  <featureInstance name="episodes" direction="in out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/DDDRwE/packages/History.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="mark_A" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/DDDRwE/packages/History.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+    <type href="../../github/BLESS-models/DDDRwE/packages/instances/History_History_imp_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="mark_V" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/DDDRwE/packages/History.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+    <type href="../../github/BLESS-models/DDDRwE/packages/instances/History_History_imp_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="mark_X" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/DDDRwE/packages/History.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.2"/>
+    <type href="../../github/BLESS-models/DDDRwE/packages/instances/History_History_imp_Instance.aaxl2#/2"/>
+  </featureInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/BLESS-models/DDDRwE/packages/History.aadl#History.History.imp"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/BLESS-models/DDDRwE/packages/History.aadl#History.History.imp"/>
+</instance:SystemInstance>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="HA_impl_Instance" category="system">
+  <featureInstance name="TargetTemp">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="TargetHumid">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <componentInstance name="humid_sensor" category="process">
+    <featureInstance name="inValue" category="abstractFeature">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedAbstractFeature.0"/>
+    </featureInstance>
+    <featureInstance name="Value" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <componentInstance name="update" category="thread">
+      <featureInstance name="Value_out" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventDataPort.0"/>
+        <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Value_in" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventDataPort.1"/>
+        <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.SensorThread.Humid"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.Sensor.HumidSensorStep"/>
+  </componentInstance>
+  <componentInstance name="temp_sensor" category="process">
+    <featureInstance name="inValue" category="abstractFeature">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedAbstractFeature.0"/>
+    </featureInstance>
+    <featureInstance name="Value" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <componentInstance name="update" category="thread">
+      <featureInstance name="Value_out" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventDataPort.0"/>
+        <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Value_in" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventDataPort.1"/>
+        <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.SensorThread.Temp"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.Sensor.TemperatureSensorStep"/>
+  </componentInstance>
+  <componentInstance name="window" category="process">
+    <featureInstance name="tempValue" category="abstractFeature" direction="out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAbstractFeature.0"/>
+    </featureInstance>
+    <featureInstance name="cmd" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.0"/>
+      <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <componentInstance name="update" category="thread">
+      <featureInstance name="Cmd" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventDataPort.0"/>
+        <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="Act" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.ActuatorThread.Window"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.Actuator.WindowStep"/>
+  </componentInstance>
+  <componentInstance name="termostat" category="process">
+    <featureInstance name="tempValue" category="abstractFeature" direction="out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAbstractFeature.0"/>
+    </featureInstance>
+    <featureInstance name="cmd" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.0"/>
+      <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <componentInstance name="update" category="thread">
+      <featureInstance name="Cmd" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventDataPort.0"/>
+        <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="Act" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.ActuatorThread.Thermostat"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.Actuator.HeaterStep"/>
+  </componentInstance>
+  <componentInstance name="HA_control" category="process">
+    <featureInstance name="set_TargetTemp">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="set_TargetHumid">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tempValue">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+      <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="humidValue">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+      <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="windowCmd" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.0"/>
+      <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="termostatCMD" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.1"/>
+      <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <componentInstance name="algorithm" category="thread">
+      <featureInstance name="windowCMD" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+        <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="termostatCDM" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.1"/>
+        <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="Temp" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventDataPort.0"/>
+        <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="Humid" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventDataPort.1"/>
+        <type href="../../github/HomeAutomationAADL/packages/instances/HomeAutomation_HA_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.algorithm.ex"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.hostController.PeriodicOp"/>
+  </componentInstance>
+  <componentInstance name="cpu1" category="processor">
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.cpu_1MHz"/>
+  </componentInstance>
+  <componentInstance name="cpu2" category="processor">
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.cpu_1MHz"/>
+  </componentInstance>
+  <componentInstance name="cpu3" category="processor">
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.cpu_1MHz"/>
+  </componentInstance>
+  <componentInstance name="cpu4" category="processor">
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.cpu_1MHz"/>
+  </componentInstance>
+  <componentInstance name="cpu5" category="processor">
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.cpu_1MHz"/>
+  </componentInstance>
+  <connectionInstance name="TargetTemp -> HA_control.set_TargetTemp" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="TargetHumid -> HA_control.set_TargetHumid" kind="portConnection" destination="//@componentInstance.4/@featureInstance.1" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="humid_sensor.update.Value_out -> HA_control.algorithm.Humid" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.4/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.3" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="temp_sensor.update.Value_out -> HA_control.algorithm.Temp" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.2" source="//@componentInstance.1/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.2" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="HA_control.algorithm.windowCMD -> window.update.Cmd" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0" source="//@componentInstance.4/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.4/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.4" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="HA_control.algorithm.termostatCDM -> termostat.update.Cmd" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.0" source="//@componentInstance.4/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.4/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.5" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.HA.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/HomeAutomationAADL/packages/HomeAutomation.aadl#HomeAutomation.HA.impl"/>
+</instance:SystemInstance>

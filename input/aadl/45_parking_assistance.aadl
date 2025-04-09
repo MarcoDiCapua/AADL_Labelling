@@ -1,0 +1,44 @@
+package Lab2::Software::parking_assistance
+
+public
+
+with Lab2::icd; --<-- Access to custom variables: ultrasonic_distance_variable, brake_cmd, speaker_cmd
+
+process parking_assistance
+	features
+	ultrasonic_distance     	: in data port Lab2::icd::ultrasonic_distance_variable;
+	brake_cmd  					: out data port Lab2::icd::brake_cmd;
+	speaker_cmd					: out data port Lab2::icd::speaker_cmd;
+flows
+	f0 : flow path ultrasonic_distance 			-> brake_cmd;
+	f1 : flow path ultrasonic_distance		 	-> speaker_cmd;
+end parking_assistance;
+
+process implementation parking_assistance.i
+subcomponents
+	parking_assistance_thr : thread parking_assistance_thread;
+connections
+	c0 : port ultrasonic_distance    					-> parking_assistance_thr.ultrasonic_distance_variable;
+	c1 : port parking_assistance_thr.brake_cmd   		-> brake_cmd;
+	c2 : port parking_assistance_thr.speaker_cmd  		-> speaker_cmd;
+flows	
+	f0 : flow path ultrasonic_distance  -> c0 -> parking_assistance_thr.f0 -> c1 -> brake_cmd;
+	f1 : flow path ultrasonic_distance  -> c0 -> parking_assistance_thr.f1 -> c2 -> speaker_cmd;
+end parking_assistance.i;
+
+
+thread parking_assistance_thread
+features
+	ultrasonic_distance_variable    		: in data port Lab2::icd::ultrasonic_distance_variable;
+	brake_cmd 								: out data port Lab2::icd::brake_cmd;
+	speaker_cmd 							: out data port Lab2::icd::speaker_cmd;
+flows
+	f0 : flow path ultrasonic_distance_variable 			-> brake_cmd;
+	f1 : flow path ultrasonic_distance_variable 			-> speaker_cmd;
+properties
+	Dispatch_Protocol => Periodic;
+	Period            => 5ms;
+end parking_assistance_thread;
+
+
+end Lab2::Software::parking_assistance;

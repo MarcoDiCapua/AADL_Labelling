@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="NoninPulseOx_impl_Instance" category="system">
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#MDCF_Data_Props.IEEE11073_MDC_ATTR_SYS_TYPE"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:StringLiteral" value="Nonin PO"/>
+    </ownedValue>
+    <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+  </ownedPropertyAssociation>
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#MDCF_Data_Props.ICE_ManufacturerModel"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:RecordValue">
+        <ownedFieldValue>
+          <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.0"/>
+          <ownedValue xsi:type="aadl2:RecordValue">
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.0/@ownedPropertyType/@ownedField.0"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="Nonin"/>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.0/@ownedPropertyType/@ownedField.1"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="Onyx II X5551122"/>
+            </ownedFieldValue>
+          </ownedValue>
+        </ownedFieldValue>
+        <ownedFieldValue>
+          <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.1"/>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="aadl2:StringLiteral" value="cert1"/>
+            <ownedListElement xsi:type="aadl2:StringLiteral" value="cert2"/>
+          </ownedValue>
+        </ownedFieldValue>
+      </ownedValue>
+    </ownedValue>
+    <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
+  </ownedPropertyAssociation>
+  <componentInstance name="pulseox">
+    <featureInstance name="Status_req" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="Status_res" category="eventDataPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/propertyset/MAP_Properties.aadl#MAP_Properties.Output_Rate"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.1.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="300">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.1.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/NoninPulseOx_NoninPulseOx_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="Spo2_Alerts_Limit_pub" category="eventDataPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/propertyset/MAP_Properties.aadl#MAP_Properties.Output_Rate"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.2.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="300">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.2.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/NoninPulseOx_NoninPulseOx_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="Spo2_Metric_Spo2Num_req" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="Spo2_Metric_Spo2Num_res" category="eventDataPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/propertyset/MAP_Properties.aadl#MAP_Properties.Output_Rate"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.4.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="300">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.4.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.4/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#MDCF_Data_Props.MDC_ATTR_ID_PARAM_GRP"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="SpO2 Channel"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/MDCF_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.4"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/NoninPulseOx_NoninPulseOx_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="dummy_num_in" category="eventDataPort">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#MDCF_Data_Props.MDC_ATTR_ID_PARAM_GRP"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="SpO2 Channel"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/MDCF_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.5"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/NoninPulseOx_NoninPulseOx_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="Spo2_Metric_Spo2Num_pub" category="eventDataPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/propertyset/MAP_Properties.aadl#MAP_Properties.Output_Rate"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.6.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="300">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.6.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.6/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#MDCF_Data_Props.MDC_ATTR_ID_PARAM_GRP"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="SpO2 Channel"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/MDCF_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.6"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/NoninPulseOx_NoninPulseOx_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="Spo2_Metric_Spo2NumAlt_req" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.7"/>
+    </featureInstance>
+    <featureInstance name="Spo2_Metric_Spo2NumAlt_res" category="eventDataPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/propertyset/MAP_Properties.aadl#MAP_Properties.Output_Rate"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.8.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="300">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.8.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.8/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#MDCF_Data_Props.MDC_ATTR_ID_PARAM_GRP"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="SpO2 Channel"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/MDCF_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.8"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/NoninPulseOx_NoninPulseOx_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="Spo2_Metric_Spo2NumAlt_pub" category="eventDataPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/propertyset/MAP_Properties.aadl#MAP_Properties.Output_Rate"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.9.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="300">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.9.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.9/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#MDCF_Data_Props.MDC_ATTR_ID_PARAM_GRP"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:StringLiteral" value="SpO2 Channel"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/MDCF_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.9"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/NoninPulseOx_NoninPulseOx_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="Spo2_Metrics_Alerts_Limit_pub" category="eventDataPort" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/propertyset/MAP_Properties.aadl#MAP_Properties.Output_Rate"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.10.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="300">
+              <unit href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#|::0.5.9.2.34.10.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.10/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.10"/>
+      <type href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/instances/NoninPulseOx_NoninPulseOx_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <flowSpecification name="Spo2_Metric_Spo2Num_res_flow" destination="//@componentInstance.0/@featureInstance.4">
+      <flowSpecification href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#NoninPulseOx.PulseOxVmd"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#NoninPulseOx.NoninPulseOx.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/NoninPulseOx.aadl#NoninPulseOx.NoninPulseOx.impl"/>
+</instance:SystemInstance>

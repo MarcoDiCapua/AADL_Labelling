@@ -1,0 +1,3 @@
+property set ACM is
+	id: inherit aadlinteger applies to (process);
+end ACM;

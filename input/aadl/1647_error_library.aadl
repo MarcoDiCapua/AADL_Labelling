@@ -1,0 +1,34 @@
+package error_library
+public
+annex EMV2 {**                                             
+	error types
+		NoPower   				: type;
+		ValueError				: type;
+		NoValue					: type extends ValueError;
+		InvalidValue			: type extends ValueError;
+		BadValue				: type extends ValueError;
+		
+		TimingError				: type;
+		EarlyValue				: type extends TimingError;
+		LateValue				: type extends TimingError;
+		
+		ServiceError            : type;
+		HardwareFailure			: type;
+		SoftwareFailure			: type;
+		
+	end types; 
+	
+	error behavior stateMachine
+	states
+		Operational : initial state;
+		Failed      : state;
+	end behavior;
+	
+	error behavior levels
+	states
+		dormant 			  : initial state;
+		inmotion      : state;
+		brake			  : state;
+	end behavior;**};
+
+end error_library;

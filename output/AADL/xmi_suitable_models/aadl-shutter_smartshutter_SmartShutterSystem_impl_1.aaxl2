@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="SmartShutterSystem_impl_Instance" category="system">
+  <componentInstance name="eth" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.Ethernet.impl"/>
+  </componentInstance>
+  <componentInstance name="hwc" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedBusSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.HWConnection.impl"/>
+  </componentInstance>
+  <componentInstance name="remoteActionDispatcher" category="device">
+    <featureInstance name="server_action_dispatch" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.25/@ownedDataPort.0"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.25/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.remote_action_dispatcher"/>
+  </componentInstance>
+  <componentInstance name="server" category="device">
+    <featureInstance name="server_action_dispatch" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedDataPort.0"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="server_action_receive">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedDataPort.1"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="hwc_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.smart_server"/>
+  </componentInstance>
+  <componentInstance name="shutterEngine" category="device">
+    <featureInstance name="engine_action_receive">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedDataPort.0"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="engine_state" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedDataPort.1"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.shutter_engine"/>
+  </componentInstance>
+  <componentInstance name="shutterController" category="device">
+    <featureInstance name="action_dispatch" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedDataPort.0"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="action_receive">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedDataPort.1"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="engine_state_receive">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedDataPort.2"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.shutter_controller"/>
+  </componentInstance>
+  <componentInstance name="ram" category="memory">
+    <featureInstance name="hwcAccess" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedMemorySubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.RAM.impl"/>
+  </componentInstance>
+  <componentInstance name="serverController" category="process">
+    <featureInstance name="receive_remote_data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="send_remote_data" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.1"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <componentInstance name="serverThread" category="thread">
+      <featureInstance name="data_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.0"/>
+        <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.1"/>
+        <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.ProcessRemoteDataThread.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.ServerController.impl"/>
+  </componentInstance>
+  <componentInstance name="shutterLogicController" category="process">
+    <featureInstance name="receive_remote_data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="receive_engine_state_data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.1"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="send_engine_state_data" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.2"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="send_remote_data" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.3"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <componentInstance name="logicThread" category="thread">
+      <featureInstance name="data_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.0"/>
+        <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.1"/>
+        <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.ShutterLogicControllerThread.impl"/>
+    </componentInstance>
+    <componentInstance name="transformThread" category="thread">
+      <featureInstance name="action_data_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.0"/>
+        <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="engine_state_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.1"/>
+        <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="action_data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.2"/>
+        <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="engine_state_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.3"/>
+        <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.ShutterLogicTransformThread.impl"/>
+    </componentInstance>
+    <connectionInstance name="logicThread.data_out -> transformThread.action_data_in" complete="true" kind="portConnection" destination="//@componentInstance.8/@componentInstance.1/@featureInstance.0" source="//@componentInstance.8/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.8/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.ShutterLogicController.impl"/>
+  </componentInstance>
+  <componentInstance name="shutterEngineController" category="process">
+    <featureInstance name="receive_engine_state">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="send_current_engine_state" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.1"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <componentInstance name="engineThread" category="thread">
+      <featureInstance name="data_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.0"/>
+        <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.1"/>
+        <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.ShutterEngineControllerThread.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.ShutterEngineController.impl"/>
+  </componentInstance>
+  <componentInstance name="cpu" category="processor">
+    <featureInstance name="ethernetAccess" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedBusAccess.0"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="hwcAccess" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedBusAccess.1"/>
+      <type href="../../github/aadl-shutter/instances/smartshutter_SmartShutterSystem_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.CPU.impl"/>
+  </componentInstance>
+  <connectionInstance name="eth -> remoteActionDispatcher.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.2/@featureInstance.1" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="eth -> server.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.3/@featureInstance.2" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="eth -> shutterController.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.5/@featureInstance.3" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.5/@featureInstance.3" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="eth -> cpu.ethernetAccess" complete="true" kind="accessConnection" destination="//@componentInstance.10/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.10/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="hwc -> cpu.hwcAccess" complete="true" kind="accessConnection" destination="//@componentInstance.10/@featureInstance.1" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.10/@featureInstance.1" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="hwc -> ram.hwcAccess" complete="true" kind="accessConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.6/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="hwc -> server.hwc_access" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.3" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.3/@featureInstance.3" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="remoteActionDispatcher.server_action_dispatch -> server.server_action_receive" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="remoteActionDispatcher.bus_access -> eth" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="server.server_action_dispatch -> shutterController.action_receive" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.1" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="server.bus_access -> eth" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.3/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.2" destination="//@componentInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="server.hwc_access -> hwc" complete="true" kind="accessConnection" destination="//@componentInstance.1" source="//@componentInstance.3/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.3" destination="//@componentInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="shutterEngine.engine_state -> shutterController.engine_state_receive" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.2" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.5/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="shutterController.action_dispatch -> shutterEngine.engine_action_receive" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.5/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="shutterController.bus_access -> eth" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.5/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.3" destination="//@componentInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ram.hwcAccess -> hwc" complete="true" kind="accessConnection" destination="//@componentInstance.1" source="//@componentInstance.6/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="serverController.serverThread.data_out -> shutterLogicController.logicThread.data_in" complete="true" kind="portConnection" destination="//@componentInstance.8/@componentInstance.0/@featureInstance.0" source="//@componentInstance.7/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.1" destination="//@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@featureInstance.0" destination="//@componentInstance.8/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="shutterLogicController.send_remote_data -> serverController.serverThread.data_in" complete="true" kind="portConnection" destination="//@componentInstance.7/@componentInstance.0/@featureInstance.0" source="//@componentInstance.8/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.3" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@featureInstance.0" destination="//@componentInstance.7/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="shutterLogicController.transformThread.engine_state_out -> shutterEngineController.engineThread.data_in" complete="true" kind="portConnection" destination="//@componentInstance.9/@componentInstance.0/@featureInstance.0" source="//@componentInstance.8/@componentInstance.1/@featureInstance.1">
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.8/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.2" destination="//@componentInstance.9/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@featureInstance.0" destination="//@componentInstance.9/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="shutterEngineController.engineThread.data_out -> shutterLogicController.transformThread.engine_state_in" complete="true" kind="portConnection" destination="//@componentInstance.8/@componentInstance.1/@featureInstance.3" source="//@componentInstance.9/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.9/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.1" destination="//@componentInstance.8/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@featureInstance.1" destination="//@componentInstance.8/@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cpu.ethernetAccess -> eth" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.10/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.10/@featureInstance.0" destination="//@componentInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cpu.hwcAccess -> hwc" complete="true" kind="accessConnection" destination="//@componentInstance.1" source="//@componentInstance.10/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.10/@featureInstance.1" destination="//@componentInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl-shutter/smartshutter.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.SmartShutterSystem.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-shutter/smartshutter.aadl#smartshutter.SmartShutterSystem.impl"/>
+</instance:SystemInstance>

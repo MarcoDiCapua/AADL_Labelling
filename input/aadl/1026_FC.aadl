@@ -1,0 +1,29 @@
+package FC
+public
+	with SecurityLevels;
+	with UAV;
+	with MC;
+	
+	system FlightController
+		features
+			waypoint: in event data port;
+			position_status: out event data port MC::MISSING_TYPE.Impl;
+			UARTA: requires bus access UAV::Serial;			
+	    flows 
+	    	follow_waypoints: flow sink waypoint;
+	    	send_pos: flow source position_status;
+	    annex EMV2{**
+			use types UAS_Errors;
+			error propagations
+				waypoint : in propagation {wellformed_authenticated};
+			flows
+				authenticated_wellformed : error sink waypoint{wellformed_authenticated};
+			end propagations;
+		**};
+		annex smf {**
+			classification 
+				waypoint : trusted;
+		**};
+	end FlightController;
+	
+end FC;

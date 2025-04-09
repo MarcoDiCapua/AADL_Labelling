@@ -1,0 +1,65 @@
+property set Platform_Properties is
+  
+-- The properties below can be attached to Platform AADL platform modeling
+-- elements to direct the Platform Deployment and Configuration Tool.
+-- These properties were designed support a target environment with
+--
+--    Xen Hypervisor
+--    ZeroMQ - A Distributed Messaging Framework
+--
+-- This is not a general set of properties.  It is a sufficient set of properties to
+-- support the generation of the configuration of the Platform Phase 1 Demonstration.
+-- An example of this configuration is here: Platform-Repo:demo/xml/. In the future
+-- this will be generalised to handle other targets such as SeL4.
+
+-- With additions for Genode Configuration Generation.
+
+-- ==================================================================
+--   G e n e r a l    P u r p o s e     I d e n t i f i c a t i o n
+-- ================================================================== 
+	Name: aadlstring applies to (virtual processor, process, virtual bus, system, thread, port);
+	-- Universally Unique Identifier (UUID) for the Xen Domain or Virtual Network.
+	UUID: aadlstring applies to (virtual processor, virtual bus);
+-- ============================================================
+--   O S   C o n f i g u r a t i o n
+-- ============================================================  
+	OS: aadlstring applies to (virtual processor);
+	Memory_MB: aadlinteger applies to (virtual processor);
+	CPU_Cores: aadlinteger applies to (virtual processor);
+-- ============================================================
+--   N e t w o r k     C o n f i g u r a t i o n
+-- ============================================================  
+	IPv4_Address: aadlstring applies to (virtual bus, port, feature group);
+	IPv4_Netmask: aadlstring applies to (virtual bus, port, feature group);
+	MAC: aadlstring applies to (port);
+-- ===================================================================================
+--   L o g i c a l   C o m m u n i c a t i o n  (Channel)  C o n f i g u r a t i o n
+-- ===================================================================================
+	-- These properties support the specification of ZeroMQ channels
+	Channel_Type: aadlstring applies to (port, feature group);
+	Channel_Protocol: aadlstring applies to (port, feature group);
+	Channel_Port: aadlstring applies to (port, feature group);
+	Channel_Port_Name: aadlstring applies to (port, feature group);
+-- ===================================================================================
+--   M i s c
+-- ===================================================================================
+	-- Mnemonic of a physical hardware pin corresponding to a port.
+	Pin: aadlstring applies to (port);
+-- ===============================================================
+--  D e v i c e   D r i v e r
+-- ===============================================================
+	--used as array dimension so must be a property constant
+	--change this value to the number of devices/drivers in your system 
+	Number_Of_Device_Drivers: constant aadlinteger => 3;
+-- ================================================================
+-- General Purpose Input/Output (GPIO)
+-- ================================================================	
+  --number of GPIO pins on the board
+  Maximum_GPIO_Pins: aadlinteger => 16 applies to (thread);  --CPAL::GPIO_Control
+  --whether pin is input or output  (not both)
+  GPIO_Input_Output: aadlstring => "UUUUUUUUUUUUUUUU" applies to (thread);  --input (I), output (O), unused (U)
+  --define whether high or low voltage on pin is a "1"
+  GPIO_Active_Level: aadlstring => "UUUUUUUUUUUUUUUU" applies to (thread);  -- active high (H), low (L), or unused (U)
+  --what value/change of voltage on pin causes event to be issued
+  GPIO_Irq_Trigger: aadlstring =>  "UUUUUUUUUUUUUUUU" applies to (thread);  -- low (L), high (H), falling (F), rising (R), both (B), unused (U)
+end Platform_Properties;

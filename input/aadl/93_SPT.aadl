@@ -1,0 +1,166 @@
+package SPT
+public
+
+	with BLESS, BLESS_Types, PulseOx_Types;
+
+thread SpO2TrendThread
+  features
+    SpO2 : in event data port PulseOx_Types::Percent	--oxygen saturation from pulse oximeter device
+      {BLESS::Value=>"<< returns quantity percent := SPO2>>";}; 
+    SensorConnected : in data port BLESS_Types::Boolean  --sensor is attached to patient
+      {BLESS::Assertion=>"<<SENSOR_CONNECTED>>";}; 
+    MotionArtifact : in data port BLESS_Types::Boolean  -- indication of motion noise in sensor reading
+       {BLESS::Assertion=>"<<MOTION_ARTIFACT>>";};  
+    SpO2Trend : out data port PulseOx_Types::SpO2Samples  --one SpO2 reading each minute for the past hour
+      {BLESS::Value=>"<< returns spo2_samples := SPO2_HISTORY >>";};  
+    NumSamples : out data port BLESS_Types::Integer
+      {BLESS::Value=>"<< returns quantity percent := NUM_SAMPLES>>";};
+  properties
+    --Thread_Properties::
+        Dispatch_Protocol => Periodic;  
+    --Timing_Properties::
+        Period => PulseOx_Properties::Time_Between_Trending_Samples;
+end SpO2TrendThread;
+
+thread implementation SpO2TrendThread.imp
+annex BLESS 
+{**
+  assert
+    --SPV defines the intended oxygen saturation measure, SpO2, k periods prior to now
+    <<SPV: k ~ quantity whole returns quantity percent := 
+      (if MOTION_ARTIFACT^(-k) or not SENSOR_CONNECTED^(-k) then 0.0 percent else SPO2^(-k))>>
+    --history values for SpO2;
+    <<HOLD:n~quantity whole: all s~quantity whole in 0 .. (n - 1) 
+         are spo2_store[s]=SPV(s)>>
+    <<GIVEN_STT: : num_samples = NUM_SAMPLES and spo2_store = SPO2_HISTORY>>
+  invariant 
+    <<SpO2_INV: :all s~quantity whole in 0 .. (num_samples - 1) 
+         are spo2_store[s]=SPV(s)>>  
+  variables
+    nts~quantity whole :=#PulseOx_Properties::Num_Trending_Samples;
+    spo2_store ~ spo2_samples --holds SpO2 history
+    spo2_nxt ~ spo2_samples  --temporary copy of trend for next output
+    num_samples~quantity whole := 0  --counts samples while filling
+  states
+    start : initial state
+      << num_samples<#PulseOx_Properties::Num_Trending_Samples and num_samples=0 >>;
+    loading : complete state  --loading spo2_a
+      <<SpO2_INV() and num_samples<#PulseOx_Properties::Num_Trending_Samples >>;    
+    check : state  --check if full
+      <<HOLD(num_samples) >>;
+    run : complete state   --full spo2_a
+      <<SpO2_INV() >>;    
+    halt : final state;  --normal termination
+    fail : final state;  --error termination
+  transitions
+    sptt0: start-[ ]->loading
+--      {num_samples' := num_samples};
+    sptt1: loading-[on dispatch]->check
+      {
+        <<SpO2_INV()^-1 >>
+        --persistent variables hold values from previous period
+      |num_samples,spo2_store := 'num_samples,'spo2_store|
+        << all s~quantity whole in 0 .. (num_samples - 1)
+         are spo2_store[s]=SPV(s + 1)>>
+      ; --copy old values to temporary hr_nxt, shifted by one
+      forall i in 0 .. (num_samples - 1)
+        {
+          <<spo2_store[i]=SPV(i + 1) >>
+        spo2_nxt[i+1]:=spo2_store[i] --shift old samples
+          <<spo2_nxt[i+1]=SPV(i + 1) >>
+        }
+        <<SHFT_SP: :all i~quantity whole in 1 .. num_samples
+         are spo2_nxt[i]=SPV(i) >>
+      ;  -- fill in current reading hr_nxt[0]
+      if
+        (MotionArtifact? or not SensorConnected?)~>
+            <<SHFT_SP() and (MOTION_ARTIFACT^0 or not SENSOR_CONNECTED^0)>>
+          spo2_nxt[0] := 0.0 percent  --bad sample
+            <<SHFT_SP() and spo2_nxt[0]=SPV(0) >>
+      []
+        (not (MotionArtifact? or not SensorConnected?))~>
+             <<SHFT_SP() and not (MOTION_ARTIFACT^0 or not SENSOR_CONNECTED^0)>>
+          spo2_nxt[0] := SpO2  --add current sample
+            <<SHFT_SP() and spo2_nxt[0]=SPV(0) >>
+      fi    
+        <<SHFT_SP() and spo2_nxt[0]=SPV(0) >>      
+      ;  --increment count of samples  
+      num_samples:=num_samples+1  
+      <<all i~quantity whole in 0 .. (num_samples - 1)
+        are spo2_nxt[i]=SPV(i)>>
+      ;  -- copy spo2_nxt to spo2_store
+      forall i in 0 .. (num_samples - 1)
+        {
+          <<spo2_nxt[i]=SPV(i) >>
+        spo2_store[i]:=spo2_nxt[i] --copy back
+          <<spo2_store[i]=SPV(i) >>
+        }
+      <<(all i~quantity whole in 0 .. (num_samples - 1)
+        are spo2_store[i]=SPV(i)) and GIVEN_STT()>>  
+      ;
+        {
+        SpO2Trend!(spo2_store)  --put out new SpO2 trend for ui
+        &
+        NumSamples!(num_samples)
+        }
+      <<HOLD(num_samples)>>
+      };
+    sptt2a: check-[num_samples<#PulseOx_Properties::Num_Trending_Samples]->loading
+    sptt2b: check-[num_samples=#PulseOx_Properties::Num_Trending_Samples]->run
+    sptt2c: check-[num_samples>#PulseOx_Properties::Num_Trending_Samples]->fail{};
+    sptt3: run-[on dispatch]->run
+      {
+        <<SpO2_INV()^-1 and GIVEN_STT() >>
+        --persistent variables hold values from previous period
+      |num_samples,spo2_store := 'num_samples,'spo2_store|
+        << all s~quantity whole in 0 .. (num_samples - 1)
+         are spo2_store[s]=SPV(s + 1)>>
+      ; --copy old values to temporary hr_nxt, shifted by one
+      forall i in 0 .. (num_samples - 1)
+        {
+          <<spo2_store[i]=SPV(i + 1) >>
+        spo2_nxt[i+1]:=spo2_store[i] --shift old samples
+          <<spo2_nxt[i+1]=SPV(i + 1) >>
+        }
+        <<SHFT_SP: :all i~quantity whole in 1 .. num_samples
+         are spo2_nxt[i]=SPV(i) >>
+      ;  -- fill in current reading hr_nxt[0]
+      if
+        (MotionArtifact? or not SensorConnected?)~>
+            <<SHFT_SP() and (MOTION_ARTIFACT^0 or not SENSOR_CONNECTED^0)>>
+          spo2_nxt[0] := 0.0 percent  --bad sample
+            <<SHFT_SP() and spo2_nxt[0]=SPV(0) >>
+      []
+        (not (MotionArtifact? or not SensorConnected?))~>
+             <<SHFT_SP() and not (MOTION_ARTIFACT^0 or not SENSOR_CONNECTED^0)>>
+          spo2_nxt[0] := SpO2  --add current sample
+            <<SHFT_SP() and spo2_nxt[0]=SPV(0) >>
+      fi    
+        <<SHFT_SP() and spo2_nxt[0]=SPV(0) and GIVEN_CR()>>      
+      ;  --increment count of samples  
+      skip 
+      <<all i~quantity whole in 0 .. (num_samples - 1)
+        are spo2_nxt[i]=SPV(i)>>
+      ;  -- copy spo2_nxt to spo2_store
+      forall i in 0 .. (num_samples - 1)
+        {
+          <<spo2_nxt[i]=SPV(i) >>
+        spo2_store[i]:=spo2_nxt[i] --copy back
+          <<spo2_store[i]=SPV(i) >>
+        }
+      <<(all i~quantity whole in 0 .. (num_samples - 1)
+        are spo2_store[i]=SPV(i)) and GIVEN_STT()>>  
+      ;
+        {
+        SpO2Trend!(spo2_store)  --put out new SpO2 trend for ui
+        &
+        NumSamples!(num_samples)
+        }
+      <<HOLD(num_samples)>>
+      };
+ --   sptt4: loading,run-[on dispatch stop]->halt{};    
+**};
+end SpO2TrendThread.imp;
+
+	
+end SPT;

@@ -1,0 +1,46 @@
+package MITESIO::Photon
+public
+    with Base_Types;
+
+    system Photon
+    end Photon;
+
+    system implementation Photon.imp
+    subcomponents
+        photon1: device photon.imp;
+
+    connections
+        connTemp: port photon1.temperature -> process_mites.handle_temperature;
+    end Photon.imp
+
+    device photon_board
+        features
+        -- sensors
+        -- sensor of temperature
+        temperature: out data port Base_Types::float; 
+        -- sensor of light
+        light: out data port Base_Types::float;
+        -- sensor of accelerometer x
+        accelerometer_x: out data port Base_Types::float;
+        -- sensor of accelerometer y
+        accelerometer_y: out data port Base_Types::float;
+        -- sensor of accelerometer z
+        accelerometer_z: out data port Base_Types::float;
+
+        -- actuators
+        -- actuator of door
+        door: in data port Base_Types::boolean;
+    end photon_board;
+
+    device implementation photon_board.imp
+        annex Behavior_Specification {**
+        states
+            s0 : initial complete state;
+        transitions
+            s0 -[ on dispatch ]-> s0 {
+            computation(1ms);
+            send_temperature := false;
+            };
+    **};
+    end photon_board.imp;
+end MITESIO::Photon;

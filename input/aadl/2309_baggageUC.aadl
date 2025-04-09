@@ -1,0 +1,165 @@
+package baggageUC
+public
+	
+	---------------------------------
+	------- All abstracts
+	--------------------------------
+	
+	abstract Hardware
+	end Hardware;
+	
+	abstract Software
+	end Software;
+	
+	process RealTimeOS	
+	end RealTimeOS;
+	
+	bus PROFINET end PROFINET;
+	bus PCIBUS end PCIBUS;
+	bus IO end IO;
+	
+	bus PowerSupply end PowerSupply;
+
+	bus implementation PowerSupply.V24
+	end PowerSupply.V24;
+	
+	bus TSN end TSN;
+		
+	system CloudFacility
+		features
+		tsn: requires bus access TSN;
+	end CloudFacility;
+		
+	system Motor
+		features
+		power: requires bus access PowerSupply;
+	end Motor;
+		
+	system PPSensor
+		features
+		tsn: provides bus access TSN;
+	end PPSensor;
+	
+	system Actuator
+		features
+		tsn: provides bus access TSN;
+	end Actuator;
+	
+	system Tagreader
+		features
+		tsn: provides bus access TSN;
+	end Tagreader;
+	
+	system Switch
+		features
+		tsn1: provides bus access TSN;
+		tsn2: provides bus access TSN;
+		tsn3: requires bus access TSN;
+		tsn4: requires bus access TSN;
+		tsn5: requires bus access TSN;
+		tsn6: requires bus access TSN;
+		tsn7: requires bus access TSN;
+		tsn8: requires bus access TSN;
+		tsn9: requires bus access TSN;
+		
+	end Switch;
+		
+	system FN
+		features
+		power1: provides bus access PowerSupply;
+		power2: provides bus access PowerSupply;
+		power3: provides bus access PowerSupply;
+		power4: provides bus access PowerSupply;	
+		tsn: requires bus access TSN;
+		
+	end FN;
+	-----------------------
+	-----Main
+	-----------------------
+	
+	system UC	
+	end UC;
+	
+	system implementation UC.i
+		subcomponents
+			Cloud: system CloudFacility;
+			M1: system Motor;
+			M2: system Motor;
+			M3: system Motor;
+			M4: system Motor;
+			M5: system Motor;
+			M6: system Motor;
+			M7: system Motor;
+			M8: system Motor;
+			P1: system PPSensor;
+			P2: system PPSensor;
+			P3: system PPSensor;
+			P4: system PPSensor;
+			P5: system PPSensor;
+			P6: system PPSensor;
+			P7: system PPSensor;
+			P8: system PPSensor;
+			P9: system PPSensor;
+			P10: system PPSensor;
+			P11: system PPSensor;
+			P12: system PPSensor;
+			Tr1: system Tagreader;
+			Tr2: system Tagreader;
+			Tr3: system Tagreader;
+			Tr4: system Tagreader;
+			SW1: system Switch;
+			SW2: system Switch;
+			SW3: system Switch;
+			N1: system FN;
+			N2: system FN;
+			A1: system Actuator;
+			A2: system Actuator;
+		connections
+			powerconnection1: bus access M1.power <-> N1.power1;
+			powerconnection2: bus access M2.power <-> N1.power2;
+			powerconnection3: bus access M3.power <-> N1.power3;
+			powerconnection4: bus access M4.power <-> N1.power4;
+			powerconnection5: bus access M5.power <-> N2.power1;
+			powerconnection6: bus access M6.power <-> N2.power2;
+			powerconnection7: bus access M7.power <-> N2.power3;
+			powerconnection8: bus access M8.power <-> N2.power4;
+			tsnconnection1: bus access SW1.tsn1 <-> N1.tsn;
+			tsnconnection2: bus access SW2.tsn1 <-> N2.tsn;
+			tsnconnection3: bus access SW3.tsn1 <-> Cloud.tsn;
+			tsnconnection4: bus access SW1.tsn2 <-> SW2.tsn3;
+			tsnconnection5: bus access SW3.tsn3 <-> SW2.tsn2;
+
+			tsnconnection6: bus access P1.tsn <-> SW1.tsn3;
+			tsnconnection7: bus access P2.tsn <-> SW1.tsn4;
+			tsnconnection8: bus access P3.tsn <-> SW1.tsn5;
+			tsnconnection9: bus access P4.tsn <-> SW1.tsn6;
+			tsnconnection10: bus access P5.tsn <-> SW1.tsn7;
+			tsnconnection11: bus access P6.tsn <-> SW1.tsn8;
+			tsnconnection12: bus access P7.tsn <-> SW1.tsn9;
+			tsnconnection13: bus access P8.tsn <-> SW2.tsn4;
+			tsnconnection14: bus access P9.tsn <-> SW2.tsn5;
+			tsnconnection15: bus access P10.tsn <-> SW2.tsn6;
+			tsnconnection16: bus access P11.tsn <-> SW2.tsn7;
+			tsnconnection17: bus access P12.tsn <-> SW2.tsn8;
+			
+			tsnconnection18: bus access Tr1.tsn <-> SW2.tsn9;
+			tsnconnection19: bus access Tr2.tsn <-> SW3.tsn4;
+			tsnconnection20: bus access Tr3.tsn <-> SW3.tsn5;
+			tsnconnection21: bus access Tr4.tsn <-> SW3.tsn6;
+			
+			
+			tsnconnection22: bus access A1.tsn <-> SW3.tsn7;
+			tsnconnection23: bus access A2.tsn <-> SW3.tsn8;
+			
+			
+			
+		
+	end UC.i;
+	
+	
+	
+		
+	
+	
+	
+end baggageUC;

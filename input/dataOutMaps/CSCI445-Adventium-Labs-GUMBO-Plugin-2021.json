@@ -1,0 +1,23 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "Sensor_System",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/CSCI445-Adventium-Labs-GUMBO-Plugin-2021/examples/demoExamples/SensorSystemDemo/packages/Sensor_System.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\CSCI445-Adventium-Labs-GUMBO-Plugin-2021_Sensor_System_SensorSys_impl_2.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\CSCI445-Adventium-Labs-GUMBO-Plugin-2021\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\CSCI445-Adventium-Labs-GUMBO-Plugin-2021\\ui-prototype\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\CSCI445-Adventium-Labs-GUMBO-Plugin-2021\\ui-prototype\\public\\robots.txt"
+  ],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'Base_Types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/CSCI445-Adventium-Labs-GUMBO-Plugin-2021/examples/demoExamples/SensorSystemDemo/packages/Sensor_System.aadl line : 3 colum...",
+    "ERROR:Couldn't resolve reference to AadlPackage 'Base_Types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/CSCI445-Adventium-Labs-GUMBO-Plugin-2021/examples/demoExamples/SensorSystemDemo/packages/Sensor_System.aadl line : 4 col...",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/CSCI445-Adventium-Labs-GUMBO-Plugin-2021/examples/demoExamples/SensorSystemDemo/packages/Sensor_System.aadl line :...",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/CSCI445-Adventium-Labs-GUMBO-Plugin-2021/examples/demoExamples/SensorSystemDemo/packages/Sensor_System.aadl line :...",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/CSCI445-Adventium-Labs-GUMBO-Plugin-2021/examples/demoExamples/SensorSystemDemo/packages/Sensor_System.aadl line :...",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/CSCI445-Adventium-Labs-GUMBO-Plugin-2021/examples/demoExamples/SensorSystemDemo/packages/Sensor_System.aadl line :...",
+    "ERROR:Package Sensor_System has duplicates /Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/CSCI445-Adventium-Labs-GUMBO-Plugin-2021/examples/demoExamples/SensorSystemDemoComplete/packages/Sensor_System.aadl (file:/C:/Users/mdica/Desktop/TE...",
+    "WARNING:constants in 'with' clause of public package section is not used. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/CSCI445-Adventium-Labs-GUMBO-Plugin-2021/examples/demoExamples/SensorSystemDemo/packages/Sensor_System.aadl ..."
+  ]
+}

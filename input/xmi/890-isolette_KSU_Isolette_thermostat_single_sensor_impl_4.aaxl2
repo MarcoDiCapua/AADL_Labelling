@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="thermostat_single_sensor_impl_Instance" category="system">
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/890-isolette/isolette-ksu-03/packages/Isolette.aadl#KSU_Isolette.thermostat_single_sensor.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/890-isolette/isolette-ksu-03/packages/Isolette.aadl#KSU_Isolette.thermostat_single_sensor.impl"/>
+</instance:SystemInstance>

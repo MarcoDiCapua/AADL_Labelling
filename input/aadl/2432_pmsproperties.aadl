@@ -1,0 +1,52 @@
+property set pmsproperties is
+	with smartparking,
+	EMV2,
+  Timing_Properties;
+	  Bandwidth : Data_Volume applies to (all);
+
+  Bandwidth_Range : type range of Data_Volume;
+
+  Bandwidth_Scale : pmsproperties::Bandwidth_Range applies to (bus);
+
+  Available_Bandwidth : list of Data_Volume applies to (bus);
+
+  Required_Bandwidth : Data_Volume applies to
+    (abstract, system, device, bus access, connection);
+    
+
+  
+   
+ 
+  Initialization_Timeout : Timing_Properties::Time => 1 sec
+    applies to (all);
+
+--rate at which user interface fails
+  InterfaceFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-7; Distribution => Fixed;];
+--error rate of detection of interface failure   
+  DetectionInterfaceFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-10; Distribution => Fixed;];
+
+
+--rate at which opt_ctrl fails
+  SensorFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-9; Distribution => Fixed;];
+
+
+
+--rate at which loc_ctrl/remote vehicle OBE fails
+  InfoFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.2E-7; Distribution => Fixed;];
+--error rate of detection of Monitoring failure   
+  MonitorStatusFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.3E-10; Distribution => Fixed;];
+
+
+--rate at which ie road equipment fails
+  RadarFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.5E-9; Distribution => Fixed;];
+
+    end pmsproperties;
+
+
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="simple_impl_Instance" category="system">
+  <componentInstance name="A" category="process">
+    <featureInstance name="DoCalc" category="subprogramAccess">
+      <feature xsi:type="aadl2:SubprogramAccess" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSubprogramAccess.0"/>
+      <type href="../../github/kAADL/tests/unit/instances/SubprogramAndSubprogramGroupAccess_simple_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <componentInstance name="Q" category="thread">
+      <featureInstance name="MyCalc" category="subprogramAccess">
+        <feature xsi:type="aadl2:SubprogramAccess" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedSubprogramAccess.0"/>
+        <type href="../../github/kAADL/tests/unit/instances/SubprogramAndSubprogramGroupAccess_simple_impl_Instance.aaxl2#/"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#RemoteCallExample.caller"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#RemoteCallExample.caller_P.i"/>
+  </componentInstance>
+  <componentInstance name="B" category="process">
+    <featureInstance name="DoCalc" category="subprogramAccess" direction="out">
+      <feature xsi:type="aadl2:SubprogramAccess" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSubprogramAccess.0"/>
+      <type href="../../github/kAADL/tests/unit/instances/SubprogramAndSubprogramGroupAccess_simple_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <componentInstance name="t1" category="thread">
+      <featureInstance name="MyCalc" category="subprogramAccess" direction="out">
+        <feature xsi:type="aadl2:SubprogramAccess" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedSubprogramAccess.0"/>
+        <type href="../../github/kAADL/tests/unit/instances/SubprogramAndSubprogramGroupAccess_simple_impl_Instance.aaxl2#/"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#RemoteCallExample.Remote"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#RemoteCallExample.remote_P.i"/>
+  </componentInstance>
+  <connectionInstance name="A.DoCalc -> B.DoCalc" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#RemoteCallExample.simple.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/kAADL/tests/unit/SubprogramAndSubprogramGroupAccess.aadl#RemoteCallExample.simple.impl"/>
+</instance:SystemInstance>

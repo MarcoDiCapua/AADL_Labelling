@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="operator_interface_impl_Instance" category="system">
+  <featureInstance name="display_temp">
+    <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+    <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="reg_status">
+    <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.1"/>
+    <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="mon_status">
+    <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.2"/>
+    <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="lower_desired_temp" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.3"/>
+    <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/2"/>
+  </featureInstance>
+  <featureInstance name="upper_desired_temp" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.4"/>
+    <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/3"/>
+  </featureInstance>
+  <featureInstance name="lower_alarm_temp" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.5"/>
+    <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/4"/>
+  </featureInstance>
+  <featureInstance name="upper_alarm_temp" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.6"/>
+    <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/5"/>
+  </featureInstance>
+  <componentInstance name="temp_display" category="device">
+    <featureInstance name="air_temp">
+      <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-10/packages/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/890-isolette/isolette-ksu-10/packages/Devices.aadl#Devices.temperature_display.impl"/>
+  </componentInstance>
+  <componentInstance name="status_display" category="device">
+    <featureInstance name="reg_status">
+      <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-10/packages/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="mon_status">
+      <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-10/packages/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+      <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/890-isolette/isolette-ksu-10/packages/Devices.aadl#Devices.status_display.impl"/>
+  </componentInstance>
+  <componentInstance name="desired_set" category="device">
+    <featureInstance name="lower_desired_temp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-10/packages/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+      <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="upper_desired_temp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-10/packages/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.1"/>
+      <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/890-isolette/isolette-ksu-10/packages/Devices.aadl#Devices.desired_setter"/>
+  </componentInstance>
+  <componentInstance name="alarm_set" category="device">
+    <featureInstance name="lower_alarm_temp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-10/packages/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+      <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="upper_alarm_temp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/890-isolette/isolette-ksu-10/packages/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+      <type href="../../github/890-isolette/isolette-ksu-11/packages/instances/Isolette_operator_interface_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/890-isolette/isolette-ksu-10/packages/Devices.aadl#Devices.alarm_setter"/>
+  </componentInstance>
+  <connectionInstance name="display_temp -> temp_display.air_temp" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="reg_status -> status_display.reg_status" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="mon_status -> status_display.mon_status" kind="portConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="desired_set.lower_desired_temp -> lower_desired_temp" kind="portConnection" destination="//@featureInstance.3" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="desired_set.upper_desired_temp -> upper_desired_temp" kind="portConnection" destination="//@featureInstance.4" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="alarm_set.lower_alarm_temp -> lower_alarm_temp" kind="portConnection" destination="//@featureInstance.5" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="alarm_set.upper_alarm_temp -> upper_alarm_temp" kind="portConnection" destination="//@featureInstance.6" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#KSU_Isolette.operator_interface.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/890-isolette/isolette-ksu-11/packages/Isolette.aadl#KSU_Isolette.operator_interface.impl"/>
+</instance:SystemInstance>

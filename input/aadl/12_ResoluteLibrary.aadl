@@ -1,0 +1,24 @@
+package wrisicresolutelibrary
+public
+	annex Resolute {**
+		
+		checkThreads() <= ** "Threads will check for periods" ** 
+ 				forall (t: thread). hasPeriod(t)
+ 
+ 		hasPeriod(t : thread) <= ** "Thread " t " has a period" ** 
+ 				has_property(t,Timing_Properties::Period)
+ 				
+ 		checkSyncData()<= ** "Threads will have a directed protocol" **
+				forall (t: thread). thread_has_dp(t)
+		
+		thread_has_dp(t : component) <= **"Thread " t " will be a directed protocol"**
+    			has_property(t, Thread_Properties::Dispatch_Protocol)
+    			
+   		checkThreshold() <= ** "Sensors will get a sepecfic protocol" ** 
+ 				forall (t: process).hasPowerBudget(t)
+ 
+ 		hasPowerBudget(t : process) <= ** "Sensor " t " assigned a processor capacity" ** 
+ 				has_property(t,SEI::MIPSBudget)
+		
+	**};
+end wrisicresolutelibrary;

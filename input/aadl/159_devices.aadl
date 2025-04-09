@@ -1,0 +1,262 @@
+package Lab2::devices
+
+
+public
+
+with Lab2::icd;
+ 
+--------------------------
+-- vehicle speed sensor --
+--------------------------
+
+device vehicle_speed_sensor
+features
+	vehicle_speed : out data port Lab2::icd::vehicle_speed_variable;
+flows
+	f0 : flow source vehicle_speed;
+	f_adaptive_cruise_control : flow source vehicle_speed;
+properties 
+	Period => 10ms;
+	compute_execution_time => 6 ms .. 8 ms;
+
+end vehicle_speed_sensor;
+
+
+--------------------
+-- accelerometer -- 
+--------------------
+
+device accelerometer
+features
+	accelerometer_value : out data port Lab2::icd::accelerometer_variable;
+flows
+	f0 : flow source accelerometer_value;
+	accelerometer_flow : flow source accelerometer_value;
+properties 
+	Period => 10ms;
+	compute_execution_time => 6 ms .. 8 ms;
+
+end accelerometer;
+
+
+------------------
+-- airbag -- 
+-------------------
+
+device airbag
+features
+	cmd : in data port Lab2::icd::airbag_command;
+flows
+	f0 : flow sink cmd;
+properties
+	Period => 2 ms; 
+
+end airbag;
+
+--------------------------
+--        door sensor         --
+--------------------------
+
+device door_sensor
+features
+	door_distance : out data port Lab2::icd::door_sensor_variable;
+flows
+	f0 : flow source door_distance;
+properties 
+	Period => 10ms;
+	compute_execution_time => 6 ms .. 8 ms;
+
+end door_sensor; 
+
+--------------------------
+--        shock sensor         --
+-------------------------
+
+device shock_sensor
+features
+	shock_distance : out data port Lab2::icd::shock_sensor_variable;
+flows
+	f0 : flow source shock_distance;
+properties 
+	Period => 10 ms;
+	compute_execution_time => 6 ms .. 8 ms;
+
+end shock_sensor; 
+
+
+--------------------------
+--        window sensor         --
+--------------------------
+device window_sensor
+features
+	window_distance : out data port Lab2::icd::window_sensor_variable;
+flows
+	f0 : flow source window_distance;
+properties 
+	Period => 10 ms;
+	compute_execution_time => 6 ms .. 8 ms;
+
+end window_sensor; 
+
+
+--------------------------
+--        motion sensor         --
+--------------------------
+device motion_sensor
+features
+	motion_distance : out data port Lab2::icd::motion_sensor_variable;
+flows
+	f0 : flow source motion_distance;
+properties 
+	Period => 10 ms;
+	compute_execution_time => 6 ms .. 8 ms;
+
+end motion_sensor; 
+
+
+-----------------------------
+--     car siren      --
+-----------------------------
+
+device car_siren
+features
+	cmd : in data port Lab2::icd::car_siren_cmd;
+flows
+	f0 : flow sink cmd;
+properties
+	Period => 2 ms; 
+
+end car_siren;
+
+--------------------------------------
+--        ultrasonic sensor         --
+--------------------------------------
+
+device ultrasonic_sensor
+features
+	ultrasonic_distance : out data port Lab2::icd::ultrasonic_distance_variable;
+flows
+	f0 : flow source ultrasonic_distance;
+properties 
+	Period => 10ms;
+	compute_execution_time => 6 ms .. 8 ms;
+
+end ultrasonic_sensor; 
+
+-----------------------------
+--     speaker      --
+-----------------------------
+
+device speaker_actuator
+features
+	cmd : in data port Lab2::icd::speaker_cmd;
+flows
+	f0 : flow sink cmd;
+properties
+	Period => 2 ms; 
+
+end speaker_actuator;
+
+
+---------------------------
+--     torque sensor     --
+---------------------------
+
+device torque_sensor
+features
+	torque_amount : out data port Lab2::icd::torque_amount_variable;
+flows
+	f0 : flow source torque_amount;
+properties 
+	Period => 10ms;
+	compute_execution_time => 6 ms .. 8 ms;
+
+end torque_sensor; 
+
+--------------------------
+--        radar         --
+--------------------------
+
+device radar_sensor
+features
+	obstacle_distance : out data port Lab2::icd::obstacle_position.i;
+flows
+	f0 : flow source obstacle_distance;
+properties 
+	Period => 10ms;
+	compute_execution_time => 6 ms .. 8 ms;
+
+end radar_sensor; 
+
+--------------------------
+--  wheel speed sensor  --
+--------------------------
+
+device wheel_speed_sensor
+features
+	wheel_speed : out data port Lab2::icd::wheel_speed_variable;
+flows
+	f0 : flow source wheel_speed;
+properties 
+	Period => 10ms;
+	compute_execution_time => 6 ms .. 8 ms;
+
+end wheel_speed_sensor; 
+
+
+-----------------------------
+-- steering wheel actuator --
+-----------------------------
+
+device steering_wheel_actuator
+features
+	cmd : in data port Lab2::icd::steering_wheel_cmd;
+flows
+	f0 : flow sink cmd;
+properties
+	Period => 2 ms; 
+
+end steering_wheel_actuator;
+
+
+-----------------------------
+--     brake actuator      --
+-----------------------------
+
+device brake_actuator
+features
+	cmd : in data port Lab2::icd::brake_cmd;
+flows
+	f0 : flow sink cmd;
+properties
+	Period => 2 ms; 
+
+end brake_actuator;
+
+-----------------------------
+--    throttle actuator    --
+-----------------------------
+
+device throttle_actuator
+features
+	cmd : in data port Lab2::icd::throttle_cmd;
+flows
+	f0 : flow sink cmd;
+properties
+	Period => 2 ms; 
+
+end throttle_actuator;
+
+----------------------------
+--         camera         --
+----------------------------
+
+device camera
+features
+	lane_position : out data port Lab2::icd::lane_position;
+flows
+	f0 : flow source lane_position;
+end camera;
+
+
+end Lab2::devices;

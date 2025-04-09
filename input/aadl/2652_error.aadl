@@ -1,0 +1,26 @@
+------------------------------------------------------------------
+--                    BIBLIOTECA DE ERROS                       --
+------------------------------------------------------------------
+package Sensores::error_library
+public
+	annex EMV2 {**
+		error types
+			NoPower: type;
+			ValueError: type;
+			NoValue: type extends ValueError;
+			InvalidValue: type extends ValueError;
+			HardwareFailure: type;
+			SoftwareFailure: type;
+		end types;
+		
+		error behavior simple
+			states
+				Operational: initial state;
+				Failed: state;
+		end behavior;
+	**};
+end Sensores::error_library;
+
+------------------------------------------------------------------
+--                        FIM DO ARQUIVO                        --
+------------------------------------------------------------------

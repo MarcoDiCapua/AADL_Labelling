@@ -1,0 +1,9 @@
+package iPCA_Buses
+public
+	with Buses;
+	
+bus iPCA_System_Bus extends Buses::System_Bus
+end iPCA_System_Bus;
+
+
+end iPCA_Buses;

@@ -1,0 +1,139 @@
+package Storage_Services
+public
+	with
+	  Device_Drivers;
+	
+--chunk of data to be stored	
+	data Block
+	end Block;
+
+--confirmation of storage or retrieval
+	data Confirmation
+	end Confirmation;
+
+--location of block
+  data Track	
+  end Track;
+
+--block interface between volumes and multiplexer	
+	feature group Block_Group
+		features
+	  write_location : in event data port Storage_Services::Track;
+	  write_value : in data port Storage_Services::Block;
+	  read_location : in event data port Storage_Services::Track;
+	  read_value : out data port Storage_Services::Block;
+	  confirmation : out event data port Storage_Services::Confirmation;  --indication of success or failure	
+	end Block_Group;
+
+--POSIX file system interface
+  feature group File_System_Interface
+  end File_System_Interface;
+
+--Database interface
+  feature group Database_Interface
+  end Database_Interface;
+
+
+--	The logical block device multiplexer is the sole client of the raw storage device driver. 
+--It imposes a storage policy that assigns portions of the raw device to various other components for their exclusive use. 
+--It is possible for the block device multiplexer to manage more than one storage device; on inexpensive products, this will be uncommon. 
+--The block device multiplexer is flexible enough to map a set of hardware storage devices to a desired set of logical storage volumes.
+	thread Logical_Block_Device_Multiplexer
+		features
+      logs : feature group Block_Group;
+		  files : feature group Block_Group;
+		  database : feature group Block_Group;
+	end Logical_Block_Device_Multiplexer;
+	
+	
+	thread implementation Logical_Block_Device_Multiplexer.i
+	  --writer and reader need to refined for storage type
+	  --may add other writer/reader if more than one storage media
+		subcomponents
+		  writer: subprogram Device_Drivers::Write_Storage_Device_Driver;
+		  reader: subprogram Device_Drivers::Fetch_Storage_Device_Driver;	  
+	end Logical_Block_Device_Multiplexer.i;
+	
+--volume for logging
+  thread Logging_Volume
+    	features
+  	    sec_log : in event data port;  --security occurrence log type
+  	    fault_log : in event data port;  --fault occurrence log type 
+  	    bg : feature group inverse of Block_Group;  --to block multiplexer 
+  	    	get_security_log : in event port;
+  	    	the_security_log : out event data port;  --security log type
+  	    	get_fault_log : in event port;
+  	    	the_fault_log : out event data port;  --fault log type
+  end Logging_Volume;
+	
+--volumes for database and file system
+  thread Logical_Volume
+    	features
+  	    bg_in : feature group Block_Group;  --from file system or database 	
+  	    bg_out : feature group inverse of Block_Group;  --to block multiplexer 	
+  end Logical_Volume;
+
+
+  thread Medical_Application_File_System
+    	features
+  	    filesystem : feature group File_System_Interface;
+  	    bg_out : feature group inverse of Block_Group;  --to logical volume 	
+  end Medical_Application_File_System;
+
+  thread Configuration_Database
+    	features
+  	    database : feature group Database_Interface;
+  	    bg_out : feature group inverse of Block_Group;  --to logical volume 	
+  end Configuration_Database;
+
+--this should be in its own partition or virtual machine
+  process Storage_Process
+    	features
+  	    sec_log : in event data port;  --security occurrence log type
+  	    fault_log : in event data port;  --fault occurrence log type 
+  	    	get_security_log : in event port;
+  	    	the_security_log : out event data port;  --security log type
+  	    	get_fault_log : in event port;
+  	    	the_fault_log : out event data port;  --fault log type
+  	    filesystem : feature group File_System_Interface;
+  	    database : feature group Database_Interface;  
+  end Storage_Process;
+
+  process implementation Storage_Process.i
+  	subcomponents
+  	  lv : thread Logging_Volume;  --Logical Volume 1:  Logging
+  	  mafs : thread Medical_Application_File_System;
+  	  cd : thread Configuration_Database;
+  	  lv2 : thread Logical_Volume;  --Logical Volume 2:  Application
+  	  lv3 : thread Logical_Volume;  --Logical Volume 3:  Configuration
+  	  mux : thread Logical_Block_Device_Multiplexer.i;
+  connections
+			a: feature group lv2.bg_out <-> mux.files;
+	b: feature group lv3.bg_out <-> mux.database;
+	c: feature group database -> cd.database;
+	d: feature group cd.bg_out <-> lv3.bg_in;
+	e: feature group mafs.bg_out <-> lv2.bg_in;
+	f: feature group filesystem <-> mafs.filesystem;
+	g: feature group mux.logs <-> lv.bg;
+	h: port sec_log -> lv.sec_log;
+	i: port fault_log -> lv.fault_log;
+	j: port get_security_log -> lv.get_security_log;
+	k: port lv.the_security_log -> the_security_log ;
+	l: port get_fault_log -> lv.get_fault_log;
+	m: port lv.the_fault_log -> the_fault_log;
+	end Storage_Process.i;
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 	
+end Storage_Services;

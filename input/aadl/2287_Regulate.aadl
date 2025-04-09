@@ -1,0 +1,44 @@
+--------------------------------------------------------------------------------
+-- Regulate.aadl (version 09) - 
+--
+-- Authors: Stephen C. Barrett (scbarrett@ksu.edu) &
+--          Brian R. Larson (brl@ksu.edu)
+--          Department of Computing & Information Sciences
+--
+-- Licensed Material - Property of Kansas State University
+--------------------------------------------------------------------------------
+-- 09: Software to deliver thermostat regulating control functionality.
+--------------------------------------------------------------------------------
+package Regulate
+public
+with Base_Types, Iso_Types;  -- Basic & isolette specific data types
+with KSU_Isolette;
+
+
+process regulate_temperature
+  features
+    current_temp: in data port Iso_Types::sensed_temperature;
+    on_heater: out event data port Iso_Types::on_off;
+end regulate_temperature;
+
+process implementation regulate_temperature.impl
+  subcomponents
+    manage_heat_source: thread manage_heat_source.impl;
+
+  connections
+    s1: port current_temp -> manage_heat_source.current_temp;
+    s2: port manage_heat_source.on_heater -> on_heater;
+end regulate_temperature.impl;
+
+
+thread manage_heat_source
+  features
+    current_temp: in data port Iso_Types::sensed_temperature;
+    on_heater: out event data port Iso_Types::on_off;
+end manage_heat_source;
+
+thread implementation manage_heat_source.impl
+end manage_heat_source.impl;
+
+
+end Regulate;

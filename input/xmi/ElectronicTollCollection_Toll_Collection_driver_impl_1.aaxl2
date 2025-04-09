@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="driver_impl_Instance" category="system">
+  <featureInstance name="driver_updates">
+    <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="request_for_service" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="driver_input" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+  </featureInstance>
+  <featureInstance name="payment_trans_status">
+    <feature xsi:type="aadl2:DataPort" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+  </featureInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.driver.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/ElectronicTollCollection/Toll_Collection.aadl#Toll_Collection.driver.impl"/>
+</instance:SystemInstance>

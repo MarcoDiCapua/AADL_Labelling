@@ -1,0 +1,229 @@
+------------------------------------------------------------------
+--                 EXEMPLO DE BUS LOAD ANALYSIS                 --
+------------------------------------------------------------------
+package Exemplo
+
+    public
+    	
+    --------------------------------------------------------------
+	--                       "Includes"                         --
+	--------------------------------------------------------------
+	with SEI;
+
+	--------------------------------------------------------------
+	--                 Especificações de Dados                  --
+	--------------------------------------------------------------
+    data SensorData
+		properties
+			Data_Size => 2 KByte;
+	end SensorData;
+	
+	data CANdata
+		properties
+			Data_Size => 100 Bytes;
+	end CANdata;
+
+	data actuatecmd
+		properties
+			Data_Size => 100 Bytes;
+	end actuatecmd;
+	
+	--------------------------------------------------------------
+	--                 DEFINICAO DE ENERGIA[']                  --
+	--------------------------------------------------------------
+	abstract Eletricidade
+	end Eletricidade;
+
+	abstract Massa
+	end Massa;
+
+	system FornecedorEnergia
+		features
+			Fornecedor: out feature Eletricidade;
+		properties
+			SEI::GrossWeight => 1.2kg;
+			SEI::PowerSupply => 40.0W applies to Fornecedor;
+	end FornecedorEnergia;
+
+	system GridEnergia
+		features
+			Fornecedor: in feature Eletricidade;
+			Consumidor: out feature Eletricidade;
+		properties
+			SEI::GrossWeight => 0.9kg;
+			SEI::PowerCapacity => 40.0W;
+	end GridEnergia;
+
+    --------------------------------------------------------------
+	--                       Barramentos                        --
+	--------------------------------------------------------------
+	
+	--------------------------------------------------------------
+	--                          CAN                             --
+	--------------------------------------------------------------
+	-- exemplos ja com valores, para o uso de variacoes do      --
+	-- protocolo, realizar os calculos de largura de banda do   --
+	-- ModeloCAN pelo link:                                     --
+	--                                                          --
+	-- http://www.esacademy.com/en/library/calculators/can-best-and-worst-case-calculator.html
+	--                                                          --
+	--------------------------------------------------------------
+	bus CANbus
+		properties
+			SEI::GrossWeight => 0.1kg;
+			Latency => 1Ms .. 1Ms;
+			SEI::BandWidthCapacity => 500000.0 bitsps;
+			SEI::BandWidthBudget => 500.0 bitsps;
+			Transmission_Time => [Fixed => 10ms .. 30ms;
+			PerByte => 1us .. 10us;];
+			
+	end CANbus;
+	
+	bus SPI
+		properties
+			SEI::GrossWeight => 0.1kg;
+	        Latency => 10Ms .. 10Ms;
+	        SEI::BandWidthCapacity => 115.2 KBytesps;
+	        Transmission_Time => [Fixed => 10ms .. 20ms;
+			PerByte => 1ms .. 2ms;];
+		
+      end SPI;
+
+	--------------------------------------------------------------
+	--                        DEVICES                           --
+	--------------------------------------------------------------
+	device sensor
+		features
+			potencia: in feature Eletricidade;
+			SPIaccess: requires bus access SPI;
+			sensorout: out data port SensorData;
+		properties
+			SEI::GrossWeight => 0.18kg;
+			SEI::PowerBudget => 0.45w applies to potencia;
+			Period => 25ms;
+			Dispatch_Protocol => Periodic;
+	end sensor;
+
+	device atuador
+		features
+			potencia: in feature Eletricidade;
+			canbusaccess: requires bus access CANbus;
+			actuatorin: in data port actuatecmd;
+		properties
+			SEI::GrossWeight => 0.3kg;
+			SEI::PowerBudget => 0.8w applies to potencia;
+			Period => 25ms;
+			Dispatch_Protocol => Periodic;
+	end atuador;
+	
+	--------------------------------------------------------------
+	--                         SISTEMAS                         --
+	--------------------------------------------------------------
+	-- definicao do sistema
+	system Sistema
+	end Sistema;
+	
+	system DCA
+		features
+			sensorin: in data port SensorData;
+			actuatorOut: out data port actuatecmd;
+			
+			canbusaccess: requires bus access CANbus;
+			potencia: in feature Eletricidade;
+		properties
+			SEI::MIPSBudget => 2.0 mips;
+			SEI::PowerBudget => 0.8w applies to potencia;
+			SEI::MIPSCapacity => 2.4 mips;
+	end DCA;
+	
+	-- Domain Control System
+	system DCS
+		features
+			--CAN_out: out data port CANdata;
+			--CAN_in:  in data port CANdata;
+			
+			potencia: in feature Eletricidade;
+			canbusaccess: requires bus access CANbus;
+			SPIaccess: provides bus access SPI;
+			sensorin: in data port SensorData;
+			actuatorOut: out data port actuatecmd;
+			
+		properties
+			SEI::PowerBudget => 2.5w applies to potencia;
+			SEI::WeightLimit => 2.5kg;
+	end DCS;
+	
+	-- Software Communication System
+	system SCS
+		features
+			--CAN_out: out data port CANdata;
+			--CAN_in:  in data port CANdata;
+				
+            canbusaccess: requires bus access CANbus;
+			potencia: in feature Eletricidade;
+		properties
+			SEI::PowerBudget => 2.5w applies to potencia;
+			SEI::WeightLimit => 2.5kg;
+	end SCS;
+	
+	--------------------------------------------------------------
+	--        Implementacao de sistemas intermediarios          --
+	--------------------------------------------------------------
+	system implementation DCS.i
+		subcomponents
+			dcs: system DCS;
+		connections
+			p1: feature potencia -> dcs.potencia;
+			--extcb: bus access dca.canbusaccess <-> canbusaccess;
+			data1: port sensorin -> dcs.sensorin;
+			data2: port dcs.actuatorOut -> actuatorOut;
+	end DCS.i;
+	
+	system implementation SCS.i
+		subcomponents
+			scs: system DCS;
+			sensor1: device sensor;
+			atuador: device atuador;
+		connections
+			p1: feature potencia -> scs.potencia;
+			p2: feature potencia -> sensor1.potencia;
+			p3: feature potencia -> atuador.potencia;
+			
+			cb1: bus access scs.SPIaccess <-> sensor1.SPIaccess;
+			--cb2: bus access dcs.canbusaccess <-> atuador.canbusaccess;
+			data2: feature scs.actuatorOut -> atuador.actuatorin;
+	end SCS.i;
+	
+	--------------------------------------------------------------
+	--            Implementacao do sistema Geral                --
+	--------------------------------------------------------------
+	system implementation Sistema.i
+		subcomponents
+			Bateria: system FornecedorEnergia;
+			
+			Grid1: system GridEnergia;
+			scs: system SCS.i;
+			
+			Grid2: system GridEnergia;
+			dcs: system DCS.i;
+			
+			barramento: bus CANbus;
+		connections
+			psupply1:  feature Bateria.Fornecedor -> Grid1.Fornecedor;
+			pconsume1: feature Grid1.Consumidor -> dcs.potencia;
+			
+			psupply2:  feature Bateria.Fornecedor -> Grid2.Fornecedor;
+			pconsume2: feature Grid2.Consumidor -> scs.potencia;
+			
+			b0: bus access dcs.canbusaccess  <-> barramento;
+			b1: bus access scs.canbusaccess  <-> barramento;
+			
+		properties
+			SEI::WeightLimit => 3.0kg;
+	end Sistema.i;
+
+end Exemplo;
+
+------------------------------------------------------------------
+--                        FIM DO ARQUIVO                        --
+------------------------------------------------------------------

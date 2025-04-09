@@ -1,0 +1,3 @@
+property set Mem_properties is
+	Size : Size applies to (memory);
+end Mem_properties;

@@ -1,0 +1,311 @@
+package thermostat_arch
+public
+	with securityProperties;
+
+system thermostat
+	
+end thermostat;
+
+system implementation thermostat.impl
+	subcomponents
+		THERMOSTAT_CONTROLLER: system Thermostat_Controller;
+		TEMP_SENSOR:system Temp_sensor;
+		GENERATOR:system Generator;
+		LCD_DISPLAY: device LCD_Display;
+		MOBILE_DISPLAY: device Mobile_Display;
+		 BATTERY: device Battery;
+		 this_Bus: bus HWConnection.impl;
+		this_processor: processor MainProcessor.impl;
+		 
+		  
+	connections
+		
+		c2: port LCD_DISPLAY.desired_temp -> THERMOSTAT_CONTROLLER.desired_temp;
+		c3: port THERMOSTAT_CONTROLLER. control_out -> GENERATOR.control_in;
+		c4: port GENERATOR.control_out -> THERMOSTAT_CONTROLLER.control_in;
+		c5: port THERMOSTAT_CONTROLLER. display_temp -> LCD_DISPLAY.update_temp;
+		c6: port LCD_DISPLAY.lower_desired_auto -> THERMOSTAT_CONTROLLER.lower_desired_auto;
+		c7:port LCD_DISPLAY.upper_desired_auto -> THERMOSTAT_CONTROLLER.upper_desired_auto;
+		c8:port THERMOSTAT_CONTROLLER.alarm->LCD_DISPLAY.alarm;
+		c9:port LCD_DISPLAY.set_echo -> THERMOSTAT_CONTROLLER.echo_mode;
+		c10: port THERMOSTAT_CONTROLLER. display_temp -> MOBILE_DISPLAY.update_temp;
+		c11: port MOBILE_DISPLAY.lower_desired_auto -> THERMOSTAT_CONTROLLER.lower_desired_auto;
+		c12:port MOBILE_DISPLAY.upper_desired_auto -> THERMOSTAT_CONTROLLER.upper_desired_auto;
+		c13:port MOBILE_DISPLAY.location->THERMOSTAT_CONTROLLER.Location_controller;
+		c14:port MOBILE_DISPLAY.set_echo -> THERMOSTAT_CONTROLLER.echo_mode;
+		c15: port THERMOSTAT_CONTROLLER. display_temp -> MOBILE_DISPLAY.update_temp;
+		c16: port MOBILE_DISPLAY.lower_desired_auto -> THERMOSTAT_CONTROLLER.lower_desired_auto;
+		c17:port MOBILE_DISPLAY.upper_desired_auto -> THERMOSTAT_CONTROLLER.upper_desired_auto;
+		c18: port MOBILE_DISPLAY.desired_temp -> THERMOSTAT_CONTROLLER.desired_temp;
+		
+		c21:port BATTERY.Status_out->THERMOSTAT_CONTROLLER.Status_in;
+		c22:port THERMOSTAT_CONTROLLER.Status_out->LCD_DISPLAY.Status_out;
+		
+		bus_send : bus access this_Bus->TEMP_SENSOR.Bus_Access;
+		bus_motion: bus access this_Bus-> LCD_DISPLAY.Bus_Access;
+		bus_magnetic: bus access this_Bus-> THERMOSTAT_CONTROLLER.Bus_Access;
+		bus_smoke: bus access this_Bus-> MOBILE_DISPLAY.Bus_Access;
+		
+		annex Resolute{**
+				
+			prove(print_aadl(this))
+			prove (SystemWideReq1())
+			prove (SystemWideReq2())
+			
+			prove (Security_Features(this))
+			prove (Security_Connections(this))
+			prove (Security_Data(this))
+		**};
+		
+		end thermostat.impl;
+		
+		
+		processor MainProcessor
+		features
+			Bus_Access: requires bus access HWCOnnection;
+			curr_temp: in event port;
+			
+			
+	end MainProcessor;
+	
+	processor implementation MainProcessor.impl
+		subcomponents
+			this_ram: Memory Ram;
+			
+	end MainProcessor.impl;
+	
+	memory Ram
+		
+	end Ram;
+	
+	bus HWConnection
+		
+	end HWConnection;
+	
+	bus implementation HWConnection.impl
+		
+	end HWConnection.impl;
+		
+
+system Thermostat_Controller
+	features
+		curr_temp: in event port;
+		desired_temp: in event port;
+		control_out: out event port;
+		control_in: in event port;
+		display_temp: out event port;
+		lower_desired_auto: in event port;
+		upper_desired_auto: in event port;
+		echo_mode:in event port;
+		alarm:out event port;
+		Location_controller:in event port;
+		status_in:in event port;
+		status_out:out event port;
+		Bus_Access: requires bus access HWCOnnection;
+	annex EMV2{**
+	  	use types   Thermostat::error_library;
+		use behavior  Thermostat::error_library::ThermostatError;   		
+ 		error propagations	
+ 			curr_temp :in propagation{TemperatureSensorFailure};
+ 			alarm : out propagation{InvalidAlarm};
+ 			Location_controller : in propagation{LocationError};
+ 			control_in : in propagation{SmokeDetectionFailure};
+ 			status_out : out propagation{InvalidAlarm};
+ 			status_in : in propagation{InvalidAlarm};
+ 		flows
+ 			Path1: error sink curr_temp;	
+ 			Path2 : error source alarm;
+ 			Path3 : error sink Location_controller;
+ 			Path4 : error sink control_in;
+ 			Path5 : error path status_in -> status_out;
+ 	end propagations;
+ 	**};
+ 	
+end Thermostat_Controller;
+
+system implementation Thermostat_Controller.impl
+	subcomponents 
+		THERMOSTAT_MODE: process Thermostat_Mode;
+	
+	connections
+		cn1:port lower_desired_auto -> THERMOSTAT_MODE.lower_desired_auto;
+		cn2:port upper_desired_auto -> THERMOSTAT_MODE.upper_desired_auto;
+		cn3:port echo_mode -> THERMOSTAT_MODE.echo_mode;
+		cn4:port Location_controller -> THERMOSTAT_MODE.Location_controller;
+		
+		
+end Thermostat_Controller.impl;
+		
+process  Thermostat_Mode
+	features
+		lower_desired_auto: in event port;
+		upper_desired_auto: in event port;
+		echo_mode: in event port;
+		Location_controller: in event port;
+		out_port:out event port;
+end Thermostat_Mode;
+		
+process implementation Thermostat_Mode.impl
+	subcomponents
+		ECHO: thread echo;
+		LOCATION: thread location;
+		AUTO:thread auto;
+	connections
+		cn1:port lower_desired_auto -> AUTO.lower_desired_auto;
+		cn2:port upper_desired_auto -> AUTO.upper_desired_auto;
+		cn3:port echo_mode -> ECHO.echo_in;
+		cn4:port Location_controller -> LOCATION.location_in;
+		cn5:port ECHO.echo_out->out_port;
+		cn6:port location.location_out->out_port;
+		cn7:port auto.desired_out->out_port;
+		
+end Thermostat_Mode.impl;
+
+thread echo
+	features
+		echo_in: in event port;
+		echo_out: out event port;
+end echo;
+
+thread implementation echo.impl
+end echo.impl;
+
+thread location
+	features
+		location_in: in event port;
+		location_out: out event port;
+end location;
+
+thread implementation location.impl
+end location.impl;
+
+thread auto
+	features
+		lower_desired_auto: in event port;
+		upper_desired_auto: in event port;
+		desired_out:out event port;
+end auto;
+
+thread implementation auto.impl
+end auto.impl;
+
+
+		
+
+
+system Temp_sensor
+	features
+		
+		 air: in data port{securityProperties::entryExitPointPrivileges=>1.0;securityProperties::entryExitPointAccessRights=>5.0;};
+		 curr_temp: out data port{securityProperties::entryExitPointPrivileges=>3.0;securityProperties::entryExitPointAccessRights=>6.0;};
+		 Bus_Access: requires bus access HWCOnnection;
+	annex EMV2{**
+	  	use types   Thermostat::error_library;
+		use behavior  Thermostat::error_library::ThermostatError;   		
+ 		error propagations	
+ 			curr_temp :out propagation{TemperatureSensorFailure};
+ 		flows
+ 			Path1: error source curr_temp ;	
+ 	end propagations;
+ 	**};
+		
+end Temp_sensor;
+
+system implementation Temp_sensor.impl
+	
+end Temp_sensor.impl;
+
+system Generator
+	features
+		control_in: in event port;
+		control_out: out event port;
+		
+	annex EMV2{**
+	  	use types   Thermostat::error_library;
+		use behavior  Thermostat::error_library::ThermostatError;   		
+ 		error propagations	
+ 			control_out:out propagation{SmokeDetectionFailure};
+ 		flows
+ 			Path4: error source control_out ;	
+ 	end propagations;
+ 	**};
+end Generator;
+
+system implementation Generator.impl
+end Generator.impl;
+
+Device LCD_Display
+	features
+		desired_temp: out event  port;
+		   curr_temp: in event port;
+		   set_echo:out event port;
+		   update_temp:in event port;
+		   lower_desired_auto:out event port;
+		   upper_desired_auto:out event port;
+		   alarm:in event port;
+		   status_out:in event port;
+		   Bus_Access: requires bus access HWCOnnection;
+		  annex EMV2{**
+	  	use types   Thermostat::error_library;
+		use behavior  Thermostat::error_library::ThermostatError;   		
+ 		error propagations	
+ 			alarm : in propagation{InvalidAlarm};
+ 			status_out:in propagation{InvalidAlarm};
+ 		flows	
+ 			Path2 : error sink alarm;
+ 			Path5 : error sink status_out;
+ 	end propagations;
+ 	**}; 
+		   
+end LCD_Display;
+
+device implementation LCD_Display.impl
+end LCD_Display.impl;
+
+Device Mobile_Display
+	features
+		desired_temp: out event  port;
+		   curr_temp: in event port;
+		   set_echo:out event port;
+		   update_temp:in event port;
+		   lower_desired_auto:out event port;
+		   upper_desired_auto:out event port;
+		   Location:out event port;
+		   Bus_Access: requires bus access HWCOnnection;
+	annex EMV2{**
+	  	use types   Thermostat::error_library;
+		use behavior  Thermostat::error_library::ThermostatError;   		
+ 		error propagations	
+ 			Location :out propagation{LocationError};
+ 		flows
+ 			Path3: error source Location ;	
+ 	end propagations;
+ 	**};
+		   
+		   
+end Mobile_Display;
+
+device implementation Mobile_Display.impl
+end Mobile_Display.impl;
+
+device Battery
+	features
+		status_out: out event port;
+	annex EMV2{**
+	  	use types   Thermostat::error_library;
+		use behavior  Thermostat::error_library::ThermostatError;   		
+ 		error propagations	
+ 			status_out : out propagation{InvalidAlarm};
+ 		flows
+ 			Path5 : error source status_out;	
+ 	end propagations;
+ 	**};
+		
+end Battery;
+
+device implementation Battery.impl
+end Battery.impl;
+	
+	
+	
+end thermostat_arch;

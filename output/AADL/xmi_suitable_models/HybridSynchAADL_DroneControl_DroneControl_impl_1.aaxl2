@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="DroneControl_impl_Instance" category="system">
+  <featureInstance name="currX">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/36"/>
+  </featureInstance>
+  <featureInstance name="currY">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/37"/>
+  </featureInstance>
+  <featureInstance name="currVX">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/38"/>
+  </featureInstance>
+  <featureInstance name="currVY">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/39"/>
+  </featureInstance>
+  <featureInstance name="inX">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/40"/>
+  </featureInstance>
+  <featureInstance name="inY">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/41"/>
+  </featureInstance>
+  <featureInstance name="inVX">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/42"/>
+  </featureInstance>
+  <featureInstance name="inVY">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/43"/>
+  </featureInstance>
+  <featureInstance name="outX" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.8"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/44"/>
+  </featureInstance>
+  <featureInstance name="outY" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.9"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/45"/>
+  </featureInstance>
+  <featureInstance name="outVX" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.10"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/46"/>
+  </featureInstance>
+  <featureInstance name="outVY" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.11"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/47"/>
+  </featureInstance>
+  <featureInstance name="accX" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.12"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/48"/>
+  </featureInstance>
+  <featureInstance name="accY" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.13"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/49"/>
+  </featureInstance>
+  <featureInstance name="refX">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.14"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/50"/>
+  </featureInstance>
+  <featureInstance name="refY">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.15"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/51"/>
+  </featureInstance>
+  <featureInstance name="refVX">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.16"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/52"/>
+  </featureInstance>
+  <featureInstance name="refVY">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.17"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/53"/>
+  </featureInstance>
+  <componentInstance name="droneProc" category="process">
+    <featureInstance name="currX">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/18"/>
+    </featureInstance>
+    <featureInstance name="currY">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/19"/>
+    </featureInstance>
+    <featureInstance name="currVX">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/20"/>
+    </featureInstance>
+    <featureInstance name="currVY">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/21"/>
+    </featureInstance>
+    <featureInstance name="inX">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/22"/>
+    </featureInstance>
+    <featureInstance name="inY">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.5"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/23"/>
+    </featureInstance>
+    <featureInstance name="inVX">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.6"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/24"/>
+    </featureInstance>
+    <featureInstance name="inVY">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.7"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/25"/>
+    </featureInstance>
+    <featureInstance name="outX" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.8"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/26"/>
+    </featureInstance>
+    <featureInstance name="outY" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.9"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/27"/>
+    </featureInstance>
+    <featureInstance name="outVX" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.10"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/28"/>
+    </featureInstance>
+    <featureInstance name="outVY" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.11"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/29"/>
+    </featureInstance>
+    <featureInstance name="accX" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.12"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/30"/>
+    </featureInstance>
+    <featureInstance name="accY" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.13"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/31"/>
+    </featureInstance>
+    <featureInstance name="refX">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.14"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/32"/>
+    </featureInstance>
+    <featureInstance name="refY">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.15"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/33"/>
+    </featureInstance>
+    <featureInstance name="refVX">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.16"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/34"/>
+    </featureInstance>
+    <featureInstance name="refVY">
+      <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.17"/>
+      <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/35"/>
+    </featureInstance>
+    <componentInstance name="droneThread" category="thread">
+      <featureInstance name="currX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="currY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="currVX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="currVY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="inX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/4"/>
+      </featureInstance>
+      <featureInstance name="inY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.5"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <featureInstance name="inVX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.6"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/6"/>
+      </featureInstance>
+      <featureInstance name="inVY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.7"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/7"/>
+      </featureInstance>
+      <featureInstance name="outX" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.8"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/8"/>
+      </featureInstance>
+      <featureInstance name="outY" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.9"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/9"/>
+      </featureInstance>
+      <featureInstance name="outVX" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.10"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/10"/>
+      </featureInstance>
+      <featureInstance name="outVY" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.11"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/11"/>
+      </featureInstance>
+      <featureInstance name="accX" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.12"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/12"/>
+      </featureInstance>
+      <featureInstance name="accY" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.13"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/13"/>
+      </featureInstance>
+      <featureInstance name="refX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.14"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/14"/>
+      </featureInstance>
+      <featureInstance name="refY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.15"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/15"/>
+      </featureInstance>
+      <featureInstance name="refVX">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.16"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/16"/>
+      </featureInstance>
+      <featureInstance name="refVY">
+        <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.17"/>
+        <type href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/instances/DroneControl_DroneControl_impl_Instance.aaxl2#/17"/>
+      </featureInstance>
+      <componentInstance name="offsetX" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#|::0.5.9.5.49.0::18::/5"/>
+      </componentInstance>
+      <componentInstance name="offsetY" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#|::0.5.9.5.49.1::18::/5"/>
+      </componentInstance>
+      <componentInstance name="refVX0" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataSubcomponent.2"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#|::0.5.9.5.49.2::18::/5"/>
+      </componentInstance>
+      <componentInstance name="refVY0" category="data">
+        <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataSubcomponent.3"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#|::0.5.9.5.49.3::18::/5"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#DroneControl.DroneControlThread.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#DroneControl.DroneControlProc.impl"/>
+  </componentInstance>
+  <connectionInstance name="currX -> droneProc.droneThread.currX" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="currY -> droneProc.droneThread.currY" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="currVX -> droneProc.droneThread.currVX" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="currVY -> droneProc.droneThread.currVY" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.3" source="//@featureInstance.3">
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="inX -> droneProc.droneThread.inX" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.4" source="//@featureInstance.4">
+    <connectionReference context="/" source="//@featureInstance.4" destination="//@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="inY -> droneProc.droneThread.inY" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.5" source="//@featureInstance.5">
+    <connectionReference context="/" source="//@featureInstance.5" destination="//@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.5" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="inVX -> droneProc.droneThread.inVX" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.6" source="//@featureInstance.6">
+    <connectionReference context="/" source="//@featureInstance.6" destination="//@componentInstance.0/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="inVY -> droneProc.droneThread.inVY" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.7" source="//@featureInstance.7">
+    <connectionReference context="/" source="//@featureInstance.7" destination="//@componentInstance.0/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.7" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="refX -> droneProc.droneThread.refX" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.14" source="//@featureInstance.14">
+    <connectionReference context="/" source="//@featureInstance.14" destination="//@componentInstance.0/@featureInstance.14">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.14"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.14" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.14">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="refY -> droneProc.droneThread.refY" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.15" source="//@featureInstance.15">
+    <connectionReference context="/" source="//@featureInstance.15" destination="//@componentInstance.0/@featureInstance.15">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.15"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.15" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.15">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="refVX -> droneProc.droneThread.refVX" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.16" source="//@featureInstance.16">
+    <connectionReference context="/" source="//@featureInstance.16" destination="//@componentInstance.0/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.16"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.16" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="refVY -> droneProc.droneThread.refVY" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.17" source="//@featureInstance.17">
+    <connectionReference context="/" source="//@featureInstance.17" destination="//@componentInstance.0/@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.17"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.17" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.17"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="droneProc.droneThread.outX -> outX" kind="portConnection" destination="//@featureInstance.8" source="//@componentInstance.0/@componentInstance.0/@featureInstance.8">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.8" destination="//@componentInstance.0/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.8" destination="//@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="droneProc.droneThread.outY -> outY" kind="portConnection" destination="//@featureInstance.9" source="//@componentInstance.0/@componentInstance.0/@featureInstance.9">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.9" destination="//@componentInstance.0/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.9" destination="//@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="droneProc.droneThread.outVX -> outVX" kind="portConnection" destination="//@featureInstance.10" source="//@componentInstance.0/@componentInstance.0/@featureInstance.10">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.10" destination="//@componentInstance.0/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.10" destination="//@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="droneProc.droneThread.outVY -> outVY" kind="portConnection" destination="//@featureInstance.11" source="//@componentInstance.0/@componentInstance.0/@featureInstance.11">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.11" destination="//@componentInstance.0/@featureInstance.11">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.11"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.11" destination="//@featureInstance.11">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="droneProc.droneThread.accX -> accX" kind="portConnection" destination="//@featureInstance.12" source="//@componentInstance.0/@componentInstance.0/@featureInstance.12">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.12" destination="//@componentInstance.0/@featureInstance.12">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.12"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.12" destination="//@featureInstance.12">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="droneProc.droneThread.accY -> accY" kind="portConnection" destination="//@featureInstance.13" source="//@componentInstance.0/@componentInstance.0/@featureInstance.13">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.13" destination="//@componentInstance.0/@featureInstance.13">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.13"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.13" destination="//@featureInstance.13">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#DroneControl.DroneControl.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/HybridSynchAADL/models/FourDronesSystem_Formation/package/DroneControl.aadl#DroneControl.DroneControl.impl"/>
+</instance:SystemInstance>

@@ -1,0 +1,17 @@
+property set Processor_properties is
+	Family : enumeration
+				(ARM) applies to (processor);
+    
+    -- Frequenza
+    -- la frequenza puo' andare da 0 Hz a 2^32 Hz
+	int_Frequency : type aadlinteger 0 Hz .. 2#1#e32 Hz units
+					(Hz, KHz => Hz  * 1000, MHz => KHz * 1000, GHz => MHz * 1000);
+	
+	
+	Frequency : Processor_properties::int_Frequency applies to (processor);
+	
+	Working_frequency : Processor_properties::int_Frequency applies to (processor);
+	
+	Bits : Size applies to (processor);
+   
+end Processor_properties;

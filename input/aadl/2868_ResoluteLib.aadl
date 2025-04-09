@@ -1,0 +1,85 @@
+package ResoulteLibrary
+public
+		annex Resolute{** 
+				print_aadl(a:aadl)<=
+				**a** 
+				true	
+				print_set(s:{aadl})<=
+				**s**
+				true
+		
+		
+	    Security_Features(self : component) <= **"Calculating total attack surface " **
+			let featureSet : {feature} = features(self);
+			let sumSurfaceC:real = sum({surfaceAreaC(t) for (t:featureSet)});
+			let sumAccessC:real = sum({surfaceAccessC(w) for (w:featureSet)});
+			Req5(sumSurfaceC/sumAccessC)
+			
+		Security_Connections(self : component) <= **"Calculating total attack surface " **
+			let connectionSet : {connection} = connections(self);
+			let sumSurfaceM:real = sum({surfaceAreaM(u) for (u:connectionSet)});
+			let sumAccessM:real = sum({surfaceAccessM(v) for (v:connectionSet)});
+			Req6(sumSurfaceM/sumAccessM)
+			
+		Security_Data(self : component) <= **"Calculating total attack surface " **
+			let dataSet:{component}  = subcomponents(self);
+			let sumSurfaceI:real = sum({surfaceAreaI(u) for (u:dataSet)});
+			let sumAccessI:real = sum({surfaceAccessI(v) for (v:dataSet)});
+		 	Req7(sumSurfaceI/(sumAccessI))
+			
+			 
+		Req5(total:real)<= **"DERC is " total**	true
+		Req6(total:real)<= **"DERM is " total**	true
+		Req7(total:real)<= **"DERI is " total**	true
+		
+		
+		surfaceAreaC(self:feature):real=
+		property(self,securityProperties::entryExitPointPrivileges,0.0)
+			
+		surfaceAreaM(self:connection):real=
+		property(self,securityProperties::Channel_Protocol,0.0)
+		
+		surfaceAreaI(self:component):real=
+		property(self,securityProperties::dataItemType,0.0)
+		
+		surfaceAccessC(self:feature):real=
+		property(self,securityProperties::entryExitPointAccessRights,0.0)
+		
+		surfaceAccessM(self:connection):real=
+		property(self,securityProperties::Channel_AccessRights,0.0)
+		
+		surfaceAccessI(self:component):real=
+		property(self,securityProperties::dataItemAccessRights,0.0)
+	
+			
+		collect_children(self : {component}) : {component} =
+		    {t for (c : self) (t : collect_child(c))}
+		
+		collect_child(self : component) : {component} =
+		    union({self}, collect_children(subcomponents(self)))
+			
+		
+		
+		SystemWideReq1() <= ** "All threads have a period" ** 
+ 				forall (t: thread). HasPeriod(t)
+ 
+ 		HasPeriod(t : thread) <= ** "Thread " t " has a period" ** 
+ 				has_property(t,Timing_Properties::Period)
+		
+		AllHaveWeightBudgets(self : component) <= ** "Component " self " shall have a weight budget" ** 
+ 				HasWeightBudget(self) and forall (c: subcomponents(self)). AllHaveWeightBudgets(c) 
+		
+ 
+ 		HasWeightBudget(t : component) : bool =  
+ 				not(has_property(t,SEI::GrossWeight)) => fail ** t " has no weight" ** 
+		
+		
+		SystemWideReq2() <= ** "All buses have a power capacity" ** 
+ 				forall (t: bus).HasPowerCapacity(t)
+ 
+ 		HasPowerCapacity(t : bus) <= ** "Bus " t " has a power capacity" ** 
+ 				has_property(t,SEI::PowerCapacity)
+		
+		
+			**};
+end ResoulteLibrary;

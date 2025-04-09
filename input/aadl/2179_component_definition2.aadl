@@ -1,0 +1,114 @@
+package aadlbook::component_definition2
+public
+	--with Security_Types, Security_Attributes;
+	with Role, Permission;
+thread sender_thr
+	features
+		valueout : out data port mydata;
+	properties
+		Dispatch_Protocol => periodic;
+		period => 20ms;
+		Permission::permission_set => (Permissions::permit_read_access_to_thread);
+end sender_thr;
+
+process sender_pr
+	features
+		valueout : out data port mydata;
+end sender_pr;
+
+process implementation sender_pr.i
+	subcomponents
+		thr : thread sender_thr;
+	connections
+		c0 : port thr.valueout -> valueout;
+end sender_pr.i;
+
+thread processing_thr
+	features
+		valuein : in data port mydata;
+		valueout : out data port mydata;
+	properties
+		Dispatch_Protocol => periodic;
+		period => 20ms;
+end processing_thr;
+
+process processing_pr
+	features
+		valuein : in data port mydata;
+		valueout : out data port mydata;
+end processing_pr;
+
+process implementation processing_pr.i
+	subcomponents
+		thr : thread processing_thr;
+	connections
+		c1 : port valuein -> thr.valuein;
+		c0 : port thr.valueout -> valueout;		
+end processing_pr.i;
+
+thread receiver_thr
+	features
+		valuein : in data port mydata;
+	properties
+		Dispatch_Protocol => Periodic;
+		period => 10ms;
+		Role::role_hierarchy => (UserRole::role_test1);
+--		Role::role_type => UserRole::role_test1;
+	end receiver_thr;
+
+process receiver_pr
+	features
+		valuein : in data port mydata;
+end receiver_pr;
+
+process implementation receiver_pr.i
+	subcomponents
+		thr : thread receiver_thr;
+	connections
+		c1 : port valuein -> thr.valuein;
+end receiver_pr.i;
+
+bus ethernet
+end ethernet;
+
+
+data mydata
+	properties
+		Data_Size => 1 bytes;
+end mydata;
+
+processor Corei7
+	features
+		eth : requires bus access ethernet;
+end Corei7;
+
+system integeration
+end integeration;
+
+system implementation integeration.i
+	subcomponents
+		cpu0 : processor Corei7;
+		cpu1 : processor Corei7;
+		sender : process sender_pr.i;
+		receiver : process receiver_pr.i;
+		eth : bus ethernet;
+		processing : process processing_pr.i;
+	connections
+		eth0 : bus access eth <-> cpu0.eth;
+		eth1 : bus access eth <-> cpu1.eth;
+		sender_to_processing : port sender.valueout -> processing.valuein;
+		processing_to_receiver : port processing.valueout -> receiver.valuein;
+	properties
+		actual_connection_binding => (reference (eth)) applies to sender_to_processing, processing_to_receiver;
+		--Security_Attributes::Category => (A);
+		--Security_Attributes::Class => secret;
+	annex resolute {** 
+		--prove check_permissions(this.sender)
+		--prove check_permissions(this.receiver)
+		prove  check_authorization(this.receiver, this.sender)
+	**};
+end integeration.i;
+
+
+
+end aadlbook::component_definition2;

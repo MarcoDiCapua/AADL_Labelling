@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Environment_impl_Instance" category="system">
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/HybridSynchAADL/models/FourDronesSystem/propertysets/HybridSynchAADL.aadl#Hybrid_SynchAADL.ContinuousDynamics"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:StringLiteral" value="x(t) = 0.001 * velx * t + x(0); y(t) = 0.001 * vely * t + y(0);"/>
+    </ownedValue>
+    <propertyAssociation href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+  </ownedPropertyAssociation>
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/HybridSynchAADL/models/FourDronesSystem/propertysets/HybridSynchAADL.aadl#Hybrid_SynchAADL.isEnvironment"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+    </ownedValue>
+    <propertyAssociation href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+  </ownedPropertyAssociation>
+  <featureInstance name="cX" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem/package/instances/Environment_Environment_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="cY" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem/package/instances/Environment_Environment_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="vX">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem/package/instances/Environment_Environment_impl_Instance.aaxl2#/2"/>
+  </featureInstance>
+  <featureInstance name="vY">
+    <feature xsi:type="aadl2:DataPort" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+    <type href="../../github/HybridSynchAADL/models/FourDronesSystem/package/instances/Environment_Environment_impl_Instance.aaxl2#/3"/>
+  </featureInstance>
+  <componentInstance name="x" category="data">
+    <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#|::0.5.9.1.46.0::18::/6"/>
+  </componentInstance>
+  <componentInstance name="y" category="data">
+    <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#|::0.5.9.1.46.1::18::/6"/>
+  </componentInstance>
+  <componentInstance name="velx" category="data">
+    <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#|::0.5.9.1.46.2::18::/6"/>
+  </componentInstance>
+  <componentInstance name="vely" category="data">
+    <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#|::0.5.9.1.46.3::18::/6"/>
+  </componentInstance>
+  <connectionInstance name="vX -> velx" kind="portConnection" destination="//@componentInstance.2" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vY -> vely" kind="portConnection" destination="//@componentInstance.3" source="//@featureInstance.3">
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="x -> cX" kind="portConnection" destination="//@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="y -> cY" kind="portConnection" destination="//@featureInstance.1" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#Environment.Environment.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/HybridSynchAADL/models/FourDronesSystem/package/Environment.aadl#Environment.Environment.impl"/>
+</instance:SystemInstance>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="home_controller_framework_impl_Instance" category="system">
+  <featureInstance name="busdata" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedBusAccess.0"/>
+    <type href="../../github/SmartHome/smarthome/instances/main_home_controller_framework_impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="Fin" category="eventPort">
+    <feature xsi:type="aadl2:EventPort" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventPort.0"/>
+  </featureInstance>
+  <featureInstance name="Fout" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventPort.1"/>
+  </featureInstance>
+  <componentInstance name="SYSTEM_SETTINGS" category="process">
+    <featureInstance name="change_settings" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="updated_settings" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/SmartHome/smarthome/main.aadl#smart_home_arch.system_setting"/>
+  </componentInstance>
+  <componentInstance name="USER_COMMAND" category="process">
+    <featureInstance name="give_command" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="execute_command" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/SmartHome/smarthome/main.aadl#smart_home_arch.user_command"/>
+  </componentInstance>
+  <componentInstance name="SCHEDULAR" category="process">
+    <featureInstance name="set_schedular" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="scheduled_task" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/SmartHome/smarthome/main.aadl#smart_home_arch.schedular"/>
+  </componentInstance>
+  <componentInstance name="SOFTWARE_UPDATER" category="process">
+    <featureInstance name="command" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.48/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="status" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.48/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedProcessSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/SmartHome/smarthome/main.aadl#smart_home_arch.Software_updater"/>
+  </componentInstance>
+  <componentInstance name="PROTOCOL_LAYER" category="process">
+    <featureInstance name="Pinput" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.25/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="Poutput" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.25/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedProcessSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/SmartHome/smarthome/main.aadl#smart_home_arch.protocol_layer"/>
+  </componentInstance>
+  <connectionInstance name="Fin -> SYSTEM_SETTINGS.change_settings" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Fin -> SCHEDULAR.set_schedular" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Fin -> USER_COMMAND.give_command" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Fin -> SOFTWARE_UPDATER.command" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Fin -> PROTOCOL_LAYER.Pinput" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SYSTEM_SETTINGS.updated_settings -> Fout" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="USER_COMMAND.execute_command -> Fout" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SCHEDULAR.scheduled_task -> Fout" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SOFTWARE_UPDATER.status -> Fout" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PROTOCOL_LAYER.Poutput -> Fout" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/SmartHome/smarthome/main.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/SmartHome/smarthome/main.aadl#smart_home_arch.home_controller_framework.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/SmartHome/smarthome/main.aadl#smart_home_arch.home_controller_framework.impl"/>
+</instance:SystemInstance>

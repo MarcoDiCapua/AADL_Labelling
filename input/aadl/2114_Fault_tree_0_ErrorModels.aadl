@@ -1,0 +1,13 @@
+package Fault_tree_0_ErrorModels
+public
+
+annex EMV2 {**
+	error behavior twoState
+		events
+			errorEvent : error event;
+		states
+			operational : initial state;
+			failed : state;
+	end behavior;	
+**};
+end Fault_tree_0_ErrorModels;

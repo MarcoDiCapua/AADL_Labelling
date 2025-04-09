@@ -1,0 +1,26 @@
+package Interfaces
+public
+	device webInterface
+		features
+			web_acc: out data port;
+			web_cmOUT: out data port;
+	end webInterface;
+	
+	device backupRecovery
+		features
+			br_acc: out data port;
+			br_config: out data port;
+	end backupRecovery;
+	
+	device simulatedEnvironment
+		features
+			dev_se: in data port;
+	end simulatedEnvironment;
+	
+	device pluginManager
+		features
+			pm_config: out data port;
+			pm_device: out data port;
+			pm_comm: out data port;
+	end pluginManager;
+end Interfaces;

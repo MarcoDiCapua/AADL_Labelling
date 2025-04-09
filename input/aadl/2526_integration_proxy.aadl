@@ -1,0 +1,19 @@
+
+PACKAGE integration_proxy
+PUBLIC
+WITH integration;
+WITH AI;
+
+SYSTEM main_sys
+EXTENDS integration::main_sys
+END main_sys;
+
+SYSTEM IMPLEMENTATION main_sys.rta
+EXTENDS integration::main_sys.rta
+PROPERTIES
+  AI::root_system => "SELECTED";
+END main_sys.rta;
+
+END integration_proxy;
+
+

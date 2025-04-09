@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="bs_i_Instance" category="system">
+  <featureInstance name="bsin" category="eventPort">
+    <feature xsi:type="aadl2:EventPort" href="../../github/air/jvm/src/test/resources/models/example-aadl-models/aadl/Ex3.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.0"/>
+  </featureInstance>
+  <componentInstance name="bp" category="process">
+    <featureInstance name="bpin" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/air/jvm/src/test/resources/models/example-aadl-models/aadl/Ex3.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventPort.0"/>
+    </featureInstance>
+    <componentInstance name="bt" category="thread">
+      <featureInstance name="btin" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/air/jvm/src/test/resources/models/example-aadl-models/aadl/Ex3.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/air/jvm/src/test/resources/models/example-aadl-models/aadl/Ex3.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/air/jvm/src/test/resources/models/example-aadl-models/aadl/Ex3.aadl#Ex3.bt"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/air/jvm/src/test/resources/models/example-aadl-models/aadl/Ex3.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/air/jvm/src/test/resources/models/example-aadl-models/aadl/Ex3.aadl#Ex3.bp.i"/>
+  </componentInstance>
+  <connectionInstance name="bsin -> bp.bt.btin" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/air/jvm/src/test/resources/models/example-aadl-models/aadl/Ex3.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/air/jvm/src/test/resources/models/example-aadl-models/aadl/Ex3.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/air/jvm/src/test/resources/models/example-aadl-models/aadl/Ex3.aadl#Ex3.bs.i"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/air/jvm/src/test/resources/models/example-aadl-models/aadl/Ex3.aadl#Ex3.bs.i"/>
+</instance:SystemInstance>

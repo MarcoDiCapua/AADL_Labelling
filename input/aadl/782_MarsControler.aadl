@@ -1,0 +1,220 @@
+Package MarsPathfinder
+
+Public
+
+
+SYSTEM PT_system
+end PT_system;
+
+
+	data shared_var
+		properties
+		Concurrency_Control_Protocol => PCP;
+	end shared_var;
+	
+
+	data implementation shared_var.impl
+	end shared_var.impl;
+
+
+
+	thread ORDO_BUS
+		properties
+		Dispatch_Protocol => Periodic;
+		Period => 125 ms;
+		
+		Compute_Execution_Time => 1ms .. 25 ms;
+		Priority => 7;
+		
+	end ORDO_BUS;
+
+	thread implementation ORDO_BUS.impl
+	end ORDO_BUS.impl;
+
+
+       thread DONNEES
+
+
+		features
+		share : requires data access shared_var.impl;
+
+
+
+
+		properties
+		Dispatch_Protocol => Periodic;
+		Period => 125 ms;
+		
+		Compute_Execution_Time => 1ms .. 25 ms;
+		Priority => 6;
+
+		
+		
+	end DONNEES;
+
+	thread implementation DONNEES.impl
+	end DONNEES.impl;
+
+	
+        thread PILOTAGE
+
+		features
+		share : requires data access shared_var.impl;
+
+
+		properties
+		Dispatch_Protocol => Periodic;
+		Period => 250 ms;
+		
+		Compute_Execution_Time => 1ms .. 25 ms;
+		Priority => 5;
+
+		
+		
+	end PILOTAGE;
+
+	thread implementation PILOTAGE.impl
+	end PILOTAGE.impl;
+
+
+
+	thread Radio
+		properties
+		Dispatch_Protocol => Periodic;
+		Period => 250 ms;
+		
+		Compute_Execution_Time => 1ms .. 25 ms;
+		Priority => 4;
+		
+	end Radio;
+
+	thread implementation Radio.impl
+	end Radio.impl;
+
+	
+	thread Camera
+		properties
+		Dispatch_Protocol => Periodic;
+		Period => 250 ms;
+		
+		Compute_Execution_Time => 1ms .. 25 ms;
+		Priority => 3;
+		
+	end Camera;
+
+	thread implementation Camera.impl
+	end Camera.impl;
+
+
+
+	thread Mesure
+
+		features
+		share : requires data access shared_var.impl;
+
+
+
+		properties
+		Dispatch_Protocol => Periodic;
+		Period => 50000 ms;
+		
+		Compute_Execution_Time => 1ms .. 50 ms;
+		Priority => 2;
+
+		
+		
+	end Mesure;
+
+	thread implementation Mesure.impl
+	end Mesure.impl;
+
+
+
+
+
+        thread Meteo
+
+
+		features
+		share : requires data access shared_var.impl;
+
+
+		properties
+		Dispatch_Protocol => Periodic;
+		Period => 50000 ms;
+		
+		Compute_Execution_Time => 1ms .. 75 ms;
+		Priority => 1;
+
+		
+		
+	end Meteo;
+
+	thread implementation Meteo.impl
+	end Meteo.impl;
+
+
+
+
+	Processor Leon0
+	properties
+	Scheduling_Protocol => POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL;
+	end leon0;
+
+
+
+	process processing
+	end processing;
+	
+
+	process implementation processing.others
+
+	subcomponents
+		ORDO_BUS :  thread ORDO_BUS.impl;
+		DONNEES : thread DONNEES.impl;
+		PILOTAGE : thread PILOTAGE.impl;
+		Radio : thread Radio.impl;
+		Camera : thread Camera.impl;
+		Mesure : thread Mesure.impl;
+		Meteo : thread Meteo.impl;
+
+		a_data : data shared_var.impl; 
+
+	connections
+		cx1 : data access a_data  -> Meteo.share;
+		cx2 : data access a_data  -> DONNEES.share;
+		cx3 : data access a_data  -> PILOTAGE.share;
+		cx4 : data access a_data  -> Mesure.share;	
+	end processing.others;
+		
+	
+	
+
+
+	
+	system implementation PT_system.simple
+	subcomponents
+		main : process processing.others;
+		cpu : processor leon0;
+	properties
+		Actual_processor_binding => (reference (cpu)) applies to main;
+	
+	end PT_system.simple;
+
+	
+
+
+
+end MarsPathfinder;
+
+
+
+
+
+
+
+
+
+
+
+	

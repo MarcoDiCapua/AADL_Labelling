@@ -1,0 +1,31 @@
+package MITESIO::User
+public
+    with Base_Types;
+    with Data_Model;
+
+    system User
+    end User;
+
+    system implementation User.imp
+    end User.imp
+
+    data UserState
+    properties
+        Data_Model::User_State => Struct; 
+    end UserState;
+
+    device user
+    end user;
+
+    device implementation user.imp
+        annex Behavior_Specification {**
+        states
+            s0 : initial complete state;
+        transitions
+            s0 -[ on dispatch ]-> s0 {
+            computation(1ms);
+            send_temperature := false;
+            };
+    **};
+    end user.imp;
+end MITESIO::User;

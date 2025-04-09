@@ -1,0 +1,39 @@
+package Lab2::Software::anti_lock_braking
+
+public
+
+with Lab2::icd; --<-- Access to custom variables: wheel_speed_variable, brake_cmd
+
+process anti_lock_braking
+features
+	wheel_speed 		: in data port Lab2::icd::wheel_speed_variable;
+	brake_cmd  			: out data port Lab2::icd::brake_cmd;
+flows
+	f0 : flow path wheel_speed -> brake_cmd;
+end anti_lock_braking;
+
+
+process implementation anti_lock_braking.i
+subcomponents
+	anti_lock_breaking_thr : thread anti_lock_braking_thread;
+connections
+	c0 : port wheel_speed    							-> anti_lock_breaking_thr.wheel_speed_variable;
+	c1 : port anti_lock_breaking_thr.brake_cmd   		-> brake_cmd;
+flows	
+	f0 : flow path wheel_speed  -> c0 -> anti_lock_breaking_thr.f0 -> c1 -> brake_cmd;
+end anti_lock_braking.i;
+
+
+thread anti_lock_braking_thread
+features
+	wheel_speed_variable     	: in data port Lab2::icd::wheel_speed_variable;
+	brake_cmd 					: out data port Lab2::icd::brake_cmd;
+flows
+	f0 : flow path wheel_speed_variable -> brake_cmd;
+properties
+	Dispatch_Protocol => Periodic;
+	Period            => 5ms;
+end anti_lock_braking_thread;
+
+
+end Lab2::Software::anti_lock_braking;

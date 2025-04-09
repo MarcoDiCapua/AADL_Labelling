@@ -1,0 +1,34 @@
+package geofence_single
+public
+	with base_types;
+	with geofence_nodes;
+	
+	system GeoFence_singleton
+		features
+			timeToRecovery: out data port real;
+			
+		annex agree {**
+			eq t: real = 0.0 -> pre(t) + 0.1;
+			eq distanceFromFence: real;
+--			
+			guarantee "recovery occurs after some time": t >= timeToRecovery => distanceFromFence > pre(distanceFromFence);
+		**};
+	end GeoFence_singleton;
+	
+	system implementation GeoFence_singleton.impl
+		annex agree {**
+			assign distanceFromFence = geofence_nodes.circleLinearization(t);
+			assign timeToRecovery = 1.7;
+		**};
+	end GeoFence_singleton.impl;
+	
+	
+	-- Type Aliases
+	
+	data int extends base_types::Integer
+	end int;
+	
+	data real extends base_types::Float
+	end real;
+	
+end geofence_single;

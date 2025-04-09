@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Coordinator_impl_Instance" category="system">
+  <featureInstance name="network_connection" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedBusAccess.0"/>
+    <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/24"/>
+  </featureInstance>
+  <featureInstance name="Lost_Confirmation" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedEventPort.0"/>
+  </featureInstance>
+  <featureInstance name="RM_Alarm" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedEventDataPort.0"/>
+    <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/25"/>
+  </featureInstance>
+  <featureInstance name="RM_Alarm_Echo" category="eventDataPort" direction="out">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedEventDataPort.1"/>
+    <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/26"/>
+  </featureInstance>
+  <featureInstance name="PO_Alarm" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedEventDataPort.2"/>
+    <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/27"/>
+  </featureInstance>
+  <featureInstance name="PO_Alarm_Echo" category="eventDataPort" direction="out">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedEventDataPort.3"/>
+    <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/28"/>
+  </featureInstance>
+  <featureInstance name="Pause_Infusion" category="eventDataPort" direction="out">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedEventDataPort.4"/>
+    <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/29"/>
+  </featureInstance>
+  <featureInstance name="Pause_Infusion_Echo" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedEventDataPort.5"/>
+    <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/30"/>
+  </featureInstance>
+  <componentInstance name="spp" category="process">
+    <featureInstance name="RM_Alarm" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedEventDataPort.0"/>
+      <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/18"/>
+    </featureInstance>
+    <featureInstance name="RM_Alarm_Echo" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedEventDataPort.1"/>
+      <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/19"/>
+    </featureInstance>
+    <featureInstance name="PO_Alarm" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedEventDataPort.2"/>
+      <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/20"/>
+    </featureInstance>
+    <featureInstance name="PO_Alarm_Echo" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedEventDataPort.3"/>
+      <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/21"/>
+    </featureInstance>
+    <featureInstance name="Pause_Infusion" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedEventDataPort.4"/>
+      <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/22"/>
+    </featureInstance>
+    <featureInstance name="Pause_Infusion_Echo" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedEventDataPort.5"/>
+      <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/23"/>
+    </featureInstance>
+    <featureInstance name="Lost_Confirmation" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedEventPort.0"/>
+    </featureInstance>
+    <componentInstance name="spt" category="thread">
+      <featureInstance name="RM_Alarm" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedEventDataPort.0"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="RM_Alarm_Echo" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedEventDataPort.1"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="PO_Alarm" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedEventDataPort.2"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="PO_Alarm_Echo" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedEventDataPort.3"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="Pause_Infusion" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedEventDataPort.4"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/4"/>
+      </featureInstance>
+      <featureInstance name="Pause_Infusion_Echo" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedEventDataPort.5"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <featureInstance name="Lost_Confirmation" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedEventPort.0"/>
+      </featureInstance>
+      <flowSpecification name="po_alarm_sink" source="//@componentInstance.0/@componentInstance.0/@featureInstance.2">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <flowSpecification name="rm_alarm_echo_flow_ct" source="//@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedFlowSpecification.1"/>
+      </flowSpecification>
+      <flowSpecification name="po_alarm_echo_ct" source="//@componentInstance.0/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.3">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedFlowSpecification.2"/>
+      </flowSpecification>
+      <flowSpecification name="pi_source" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.4">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedFlowSpecification.3"/>
+      </flowSpecification>
+      <flowSpecification name="pi_echo_sink" source="//@componentInstance.0/@componentInstance.0/@featureInstance.5">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedFlowSpecification.4"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#IoMTwin.Coordinator_Thread.echo"/>
+    </componentInstance>
+    <componentInstance name="spc" category="thread">
+      <featureInstance name="poa" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventDataPort.0"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/6"/>
+      </featureInstance>
+      <featureInstance name="PO_Alarm" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventDataPort.1"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/7"/>
+      </featureInstance>
+      <featureInstance name="poae" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventDataPort.2"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/8"/>
+      </featureInstance>
+      <featureInstance name="PO_Alarm_Echo" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventDataPort.3"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/9"/>
+      </featureInstance>
+      <featureInstance name="rma" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventDataPort.4"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/10"/>
+      </featureInstance>
+      <featureInstance name="RM_Alarm" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventDataPort.5"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/11"/>
+      </featureInstance>
+      <featureInstance name="rmae" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventDataPort.6"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/12"/>
+      </featureInstance>
+      <featureInstance name="RM_Alarm_Echo" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventDataPort.7"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/13"/>
+      </featureInstance>
+      <featureInstance name="pi" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventDataPort.8"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/14"/>
+      </featureInstance>
+      <featureInstance name="Pause_Infusion" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventDataPort.9"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/15"/>
+      </featureInstance>
+      <featureInstance name="pie" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventDataPort.10"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/16"/>
+      </featureInstance>
+      <featureInstance name="Pause_Infusion_Echo" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventDataPort.11"/>
+        <type href="../../github/BLESS-models/IoMT/aadl/packages/instances/IoMTwin_Coordinator_impl_Instance.aaxl2#/17"/>
+      </featureInstance>
+      <featureInstance name="lc" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="Lost_Confirmation" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventPort.1"/>
+      </featureInstance>
+      <flowSpecification name="rm_alarm_echo_flow_cct" source="//@componentInstance.0/@componentInstance.1/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.7">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <flowSpecification name="po_alarm_flow_cct" source="//@componentInstance.0/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.1">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedFlowSpecification.1"/>
+      </flowSpecification>
+      <flowSpecification name="rm_alarm_flow_cct" source="//@componentInstance.0/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.5">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedFlowSpecification.2"/>
+      </flowSpecification>
+      <flowSpecification name="pi_flow_cct" source="//@componentInstance.0/@componentInstance.1/@featureInstance.8" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.9">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedFlowSpecification.3"/>
+      </flowSpecification>
+      <flowSpecification name="po_alarm_echo_flow_cct" source="//@componentInstance.0/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.3">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedFlowSpecification.4"/>
+      </flowSpecification>
+      <flowSpecification name="pi_echo_flow_cct" source="//@componentInstance.0/@componentInstance.1/@featureInstance.10" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.11">
+        <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedFlowSpecification.5"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#IoMTwin.Coordinator_Communication_Thread"/>
+    </componentInstance>
+    <flowSpecification name="po_alarm_sink_cp" source="//@componentInstance.0/@featureInstance.2">
+      <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <connectionInstance name="spt.RM_Alarm_Echo -> spc.rmae" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.6" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.8"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="spt.PO_Alarm_Echo -> spc.poae" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.2" source="//@componentInstance.0/@componentInstance.0/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.10"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="spt.Pause_Infusion -> spc.pi" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.8" source="//@componentInstance.0/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.8">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.6"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="spt.Lost_Confirmation -> spc.lc" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.12" source="//@componentInstance.0/@componentInstance.0/@featureInstance.6">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.12">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.12"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="spc.PO_Alarm -> spt.PO_Alarm" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2" source="//@componentInstance.0/@componentInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="spc.RM_Alarm -> spt.RM_Alarm" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.5">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.5" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="spc.Pause_Infusion_Echo -> spt.Pause_Infusion_Echo" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.5" source="//@componentInstance.0/@componentInstance.1/@featureInstance.11">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.11" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.5">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.5"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#IoMTwin.Coordinator_Process.impl"/>
+  </componentInstance>
+  <flowSpecification name="po_alarm_sink_sys" source="//@featureInstance.4">
+    <flowSpecification href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedFlowSpecification.0"/>
+  </flowSpecification>
+  <connectionInstance name="RM_Alarm -> spp.spc.rma" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.4" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PO_Alarm -> spp.spc.poa" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0" source="//@featureInstance.4">
+    <connectionReference context="/" source="//@featureInstance.4" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Pause_Infusion_Echo -> spp.spc.pie" kind="portConnection" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.10" source="//@featureInstance.7">
+    <connectionReference context="/" source="//@featureInstance.7" destination="//@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.5" destination="//@componentInstance.0/@componentInstance.1/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="spp.spc.PO_Alarm_Echo -> PO_Alarm_Echo" kind="portConnection" destination="//@featureInstance.5" source="//@componentInstance.0/@componentInstance.1/@featureInstance.3">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.11"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.3" destination="//@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="spp.spc.RM_Alarm_Echo -> RM_Alarm_Echo" kind="portConnection" destination="//@featureInstance.3" source="//@componentInstance.0/@componentInstance.1/@featureInstance.7">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.7" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="spp.spc.Pause_Infusion -> Pause_Infusion" kind="portConnection" destination="//@featureInstance.6" source="//@componentInstance.0/@componentInstance.1/@featureInstance.9">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.9" destination="//@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.4" destination="//@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="spp.spc.Lost_Confirmation -> Lost_Confirmation" kind="portConnection" destination="//@featureInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.13">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.13" destination="//@componentInstance.0/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedPortConnection.13"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.6" destination="//@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#IoMTwin.Coordinator.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/BLESS-models/IoMT/aadl/packages/IoMTwin.aadl#IoMTwin.Coordinator.impl"/>
+</instance:SystemInstance>

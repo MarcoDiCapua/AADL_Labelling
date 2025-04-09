@@ -1,0 +1,38 @@
+package vtv_variables
+public
+	 with Base_Types, Data_Model;
+	
+--System Status
+data status
+  properties
+  Data_Model::Data_Representation => Enum;
+  Data_Model::Enumerators => ("Init","On","Failed");
+end status;
+
+--input mode
+data input_mode
+  properties
+  Data_Model::Data_Representation => Enum;
+  Data_Model::Enumerators => ("NORMAL","Platoon","Lane change","STOP");
+end input_mode;
+
+--alarm message
+data alarm_message
+  properties
+  Data_Model::Data_Representation => Enum;
+  Data_Model::Element_Names => ("Normal","Careful","Stop");
+end alarm_message;  
+
+--Location and Motion
+data locm	
+  properties
+  Data_Model::Data_Representation => float  ;
+  Data_Model::Real_Range => 0.0 .. 10.0;
+  Data_Model::Measurement_Unit => "Meter";
+end locm;
+ 
+
+
+end vtv_variables;
+
+

@@ -1,0 +1,252 @@
+--VVI.aadl
+--simple single-chamber pacemaker, VVI mode
+package vvi_mode
+public
+	with BLESS_Types,  --,PP,Thread_Properties, SI,
+	  Data_Model,
+	  BLESS; --BLESS property set including BLESS::Assertion
+
+--	annex Typedef {**
+--	type time is quantity s
+--**};
+
+
+	thread VVI
+		features
+			lrl: in data port CardiacDuration; --lower rate limit interval
+			vrp: in data port CardiacDuration; --ventricular refractory period 
+			s: in event port; --a ventricular contraction has been sensed
+			p: out event port --pace ventricle
+			{BLESS::Assertion => "<<VP()>>";};
+			n: out event port --non-refractory ventricular sense
+			{BLESS::Assertion => "<<(now=0.0 s) or VS()>>";};
+			h: in event port;  --stop thread
+		properties
+			Thread_Properties::Dispatch_Protocol => Sporadic;
+			BLESS::Invariant => "<<LRL()>>";
+	end VVI;
+
+	thread implementation VVI.i
+annex BLESS 
+{**
+assert	     
+  << notVRP: : --Ventricular Refractory Period
+    (n or p)@last_beat --last beat before now,
+    and ((now-last_beat)>=vrp) >> --older than VRP
+--     and --not since then
+--      not (exists t~time  --there is no time  
+--        in (now-last_beat),,now  --since then, ",," means open interval
+--        that (n or p)@t) >>  --with a beat
+    
+  << VS: : --ventricular sense detected, not in VRP
+    s@now and notVRP() >>
+  << VP: : --cause ventricular pace
+    (n or p)@(now-lrl)  --last beat occurred LRL interval ago,
+    and --not since then
+      not (exists t~time  --there is no time  
+        in (now-lrl),,now  --since then, ",," means open interval
+        that (n or p)@t) >>  --with a beat
+  << PACE:x~time: --pace occurred in the previous LRL interval
+    p@last_beat and  --previous beat was a pace
+    (exists t~time  --there is a time 
+      in (x-lrl)..x  --in the previous LRL interval 
+      that p@t) >>  --with a ventricular pace     
+  << SENSE:x~time:  --sense occurred in the previous LRL interval
+    n@last_beat and  --previous beat was a sense
+    (exists t~time  --there is a time 
+      in (x-lrl)..x  --in the previous LRL interval
+      that n@t) >>  --with a non-refractory sense 
+    
+invariant  
+  << LRL: : --Lower Rate Limit
+    exists t~time  --there was a moment
+      in (now-lrl)..now   --within the previous LRL interval
+      that (n@t or p@t) >>  --with a pace or non-refractory sense	
+  
+
+variables
+  last_beat ~ time
+    --the last pace or non-refractory sense occurred at last_beat
+  << LAST: :(n or p)@last_beat>>  
+ 
+states
+  power_on : initial state  --powered-up, 
+    <<now = 0.0 s>>	--start with "sense"
+  pace : complete state 
+      --a ventricular pace has occurred in the 
+      --previous LRL-interval milliseconds
+    << PACE(now)>> 
+  sense : complete state  
+      --a non-refractory ventricular sense has occurred in the 
+      --previous LRL-interval milliseconds
+    << SENSE(now)>>   
+  check_pace_vrp : state  
+      --execute state to check if s is in vrp after pace
+    <<s@now and PACE(now)>>
+  check_sense_vrp : state  
+      --execute state to check if s is in vrp after sense
+    <<s@now and SENSE(now)>>
+  off : final state  --upon "stop"
+
+transitions  
+  T1_POWER_ON:	--initialization
+  power_on -[ ]-> sense 
+    {
+    	<<now = 0.0 s>>
+    n! <<n@now>>   --first "sense" at initialization
+    & 
+    last_beat:=now 
+    <<last_beat=now>>
+    }	  
+
+  T2_STOP_pace:		--turn off pacing
+  pace -[on dispatch h]-> off{}
+
+  T2_STOP_sense:		--turn off pacing
+  sense -[on dispatch h]-> off{}
+
+  T3_PACE_LRL_AFTER_VP:	--pace when LRL times out
+  pace -[on dispatch timeout (n or p) lrl]-> pace
+    { << VP()>>
+    p!    --cause pace when LRL times out
+    <<p@now>>
+    ;
+    last_beat:=now 
+    <<last_beat=now and p@now>>}  
+
+  T4_VS_AFTER_VP:	--sense after pace=>check if in VRP
+  pace -[on dispatch s]-> check_pace_vrp{}  
+
+  T5_VS_AFTER_VP_IN_VRP:  -- s in VRP,  go back to "pace" state
+  check_pace_vrp -[now-last_beat<vrp?]-> pace{}  
+
+  T6_VS_AFTER_VP_IS_NR:	--s after VRP, 
+  check_pace_vrp -[now-last_beat>=vrp?]-> sense	   
+    {  <<VS()>>
+    n! 
+    <<n@now>> 
+    ; 
+    last_beat:=now 
+    <<last_beat=now and n@now>>}  
+
+  T7_PACE_LRL_AFTER_VS:	--pace when LRL times out after VS
+  sense -[on dispatch timeout (n or p) lrl]-> pace
+    {<< VP()>>
+    p! 
+    <<p@now>>
+    ; 
+    last_beat:=now 
+    <<last_beat=now and p@now>>} 
+
+  T8_VS_AFTER_VS:	--check if s in VRP
+  sense -[on dispatch s]-> check_sense_vrp{}  
+
+  T9_VS_AFTER_VS_IN_VRP:  -- s in VRP,  go back to "sense" state
+  check_sense_vrp -[now-last_beat<vrp?]-> sense{}  
+
+  T10_VS_AFTER_VS_IS_NR:  --s after VRP is non-refractory
+  check_sense_vrp -[now-last_beat>=vrp?]-> sense	
+    {  << VS()>>
+    n! 
+    <<n@now>> 
+    ; 
+    last_beat:=now 
+    <<last_beat=now and n@now>>
+    }  
+**}; --end of BLESS annex subclause 
+
+	end VVI.i; --end thread 
+
+	thread RateControl
+		features
+			lrl: out data port CardiacDuration; --lower rate limit interval
+			vrp: out data port CardiacDuration; --ventricular refractory period 
+		properties
+			Dispatch_Protocol => Periodic;
+			Period => 10000 ms;
+		annex BLESS
+		{**
+		DO_NOT_PROVE  --proof left for the student
+		states
+		  start : initial state;
+		  run : complete state;
+		transitions
+		  go: start -[ ]-> run
+		    {
+		    lrl!(1000.0 ms) & vrp!(150.0 ms)
+		    }
+		**};		
+	end RateControl;
+	
+
+	system PG
+		features
+			lead: requires bus access IS1;
+	end PG;
+
+	system implementation PG.i
+		subcomponents
+			pp: process PGprocess.i;
+			fe: device FrontEnd;
+		connections
+			header: bus access fe.lead -> lead;
+			sense: port fe.sense -> pp.sense;
+			pace: port pp.pace -> fe.pace;
+	end PG.i;
+
+	process PGprocess
+		features
+			sense: in event port;
+			pace: out event port;
+	end PGprocess;
+
+	process implementation PGprocess.i
+		subcomponents
+			t: thread VVI.i;
+			rc: thread RateControl;
+		connections
+			s: port sense -> t.s;
+			p: port t.p -> pace;
+			l: port rc.lrl -> t.lrl;
+			v: port rc.vrp -> t.vrp;
+	end PGprocess.i;
+
+	device FrontEnd
+		features
+			sense: out event port;
+			pace: in event port;
+			lead: requires bus access IS1;
+		properties
+			Dispatch_Protocol => Sporadic;
+	end FrontEnd;
+
+	bus IS1
+	end IS1;
+
+	abstract Patient
+		features
+			lead: requires bus access IS1;
+	end Patient;
+
+	system Implant
+	end Implant;
+
+	system implementation Implant.i
+		subcomponents
+			patient: abstract Patient;
+			pacemaker: system PG.i;
+			lead: bus IS1;
+		connections
+			toPatient: bus access lead -> patient.lead;
+			toPG: bus access lead -> pacemaker.lead;
+	end Implant.i;
+
+	data CardiacDuration
+		properties
+			BLESS::Typed => "quantity ms";
+			Data_Model::Data_Representation => Integer;
+			Data_Model::Measurement_Unit => "ms";
+	end CardiacDuration;
+
+end vvi_mode; --end package
+--end of VVI.aadl

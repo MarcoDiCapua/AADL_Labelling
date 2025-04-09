@@ -1,0 +1,461 @@
+package FORA::hardware
+public
+	WITH SEI;
+	WITH FORA::core;
+	WITH Processor_Properties;
+	--WITH Deployment;
+
+------------------------------------------------------------------
+--- EndSystem Devices
+------------------------------------------------------------------
+
+	abstract Sensor extends FORA::core::EndDevice
+		features
+			enet: requires bus access RJ45;
+			fieldbus: requires bus access FORA::core::Wire;
+	end Sensor;
+	
+	abstract Actuator extends FORA::core::EndDevice
+		features
+			enet: requires bus access RJ45;
+			fieldbus: requires bus access FORA::core::Wire;
+	end Actuator;
+	
+	abstract WL_Sensor extends FORA::core::EndDevice
+		features
+			enet: requires bus access FORA::core::Wireless;
+	end WL_Sensor;
+	
+	abstract WL_Actuator extends FORA::core::EndDevice
+		features
+			enet: requires bus access FORA::core::Wireless;
+	end WL_Actuator;
+  
+	processor CPU_with_PCI
+		features
+			pci: requires bus access ;
+	end CPU_with_PCI;
+	
+	abstract implementation Sensor.i
+		prototypes
+			proc: process ;
+		subcomponents
+			application: process proc;
+			cpu: processor CPU_with_PCI;
+		properties
+			Actual_Processor_Binding => (reference (cpu)) applies to application;
+	end Sensor.i;
+	
+	abstract implementation Actuator.i
+		prototypes
+			proc: process; 
+		subcomponents
+			application: process proc;
+			cpu: processor CPU_with_PCI;
+		properties
+			Actual_Processor_Binding => (reference (cpu)) applies to application;
+	end Actuator.i;
+	
+	
+	abstract FogNode extends FORA::core::FogNode
+		features
+			Power: requires bus access PowerSupply.V24;
+			-- network: provides bus access;
+			--LAN: provides bus access RJ45;
+			TSN_0: provides bus access RJ45;
+			TSN_1: provides bus access RJ45;
+			TSN_2: provides bus access RJ45;
+			TSN_3: provides bus access RJ45;
+			WiFi: requires bus access FORA::core::Wireless;
+			Display: requires bus access DisplayPort;
+			IO: provides bus access FORA::core::Wire;
+	end FogNode;
+	
+	
+
+------------------------------------------------------------------
+--- TSNSwitch  
+------------------------------------------------------------------
+	memory TSN_Queue
+		features
+			pci: requires bus access;
+		properties
+			SEI::RAMCapacity => 2.0 MByte;
+	end TSN_Queue;
+	
+	memory implementation TSN_Queue.i
+	end TSN_Queue.i;
+	
+	system TSN_Port
+		features
+			comport: requires bus access RJ45;
+			pci: requires bus access;
+	end TSN_Port;
+	
+	system implementation TSN_Port.i
+		subcomponents
+			cgl: virtual processor TSN_Port_Scheduler.i[8];
+			queues: memory TSN_Queue.i[8];
+		connections
+			cgl_to_mem: bus access cgl.pci <-> pci;
+			local_to_net: bus access pci <-> queues.pci;
+		properties
+			Actual_Memory_Binding => (reference (queues)) applies to cgl;
+	end TSN_Port.i;
+	--for wireless
+	system WTSN_Port
+		features
+			comport1: requires bus access FORA::core::Wireless;
+			comport2: requires bus access;
+	end WTSN_Port;
+	
+	system implementation WTSN_Port.i
+		
+	end WTSN_Port.i;
+	---
+	virtual processor TSN_Port_Scheduler
+		features
+			pci: requires bus access;
+	end TSN_Port_Scheduler;
+	
+	virtual processor implementation TSN_Port_Scheduler.i
+	end TSN_Port_Scheduler.i;
+
+	system TSN_Switch 
+		features
+			pci: requires bus access;
+			enet_0: provides bus access RJ45;
+			enet_1: provides bus access RJ45;
+			enet_2: provides bus access RJ45;
+			enet_3: provides bus access RJ45;
+	     	power: requires bus access PowerSupply {
+				SEI::PowerBudget => 1.0W;
+			};
+		properties
+			SEI::BandWidthCapacity => 12.5 Mbytesps;
+	end TSN_Switch;
+		 
+	system implementation TSN_Switch.i
+		subcomponents
+			control_port_0: system TSN_Port.i;
+			control_port_1: system TSN_Port.i;
+			control_port_2: system TSN_Port.i;
+			control_port_3: system TSN_Port.i;
+			netbus_0: bus RJ45;
+			netbus_1: bus RJ45;
+			netbus_2: bus RJ45;
+			netbus_3: bus RJ45;
+		connections
+			pci_to_control_0: bus access pci <-> control_port_0.pci;
+			enet_0_to_netbus_0: bus access enet_0 <-> netbus_0;
+			enet_1_to_netbus_0: bus access enet_1 <-> netbus_0;
+			enet_2_to_netbus_0: bus access enet_2 <-> netbus_0;
+			enet_3_to_netbus_0: bus access enet_3 <-> netbus_0;
+			enet_0_to_netbus_1: bus access enet_0 <-> netbus_1;
+			enet_1_to_netbus_1: bus access enet_1 <-> netbus_1;
+			enet_2_to_netbus_1: bus access enet_2 <-> netbus_1;
+			enet_3_to_netbus_1: bus access enet_3 <-> netbus_1;
+			enet_0_to_netbus_2: bus access enet_0 <-> netbus_2;
+			enet_1_to_netbus_2: bus access enet_1 <-> netbus_2;
+			enet_2_to_netbus_2: bus access enet_2 <-> netbus_2;
+			enet_3_to_netbus_2: bus access enet_3 <-> netbus_2;
+			enet_0_to_netbus_3: bus access enet_0 <-> netbus_3;
+			enet_1_to_netbus_3: bus access enet_1 <-> netbus_3;
+			enet_2_to_netbus_3: bus access enet_2 <-> netbus_3;
+			enet_3_to_netbus_3: bus access enet_3 <-> netbus_3;
+			control_0_to_netbus_0: bus access control_port_0.comport <-> netbus_0;
+			control_0_to_netbus_1: bus access control_port_0.comport <-> netbus_1;
+			control_0_to_netbus_2: bus access control_port_0.comport <-> netbus_2;
+			control_0_to_netbus_3: bus access control_port_0.comport <-> netbus_3;
+			control_1_to_netbus_0: bus access control_port_1.comport <-> netbus_0;
+			control_1_to_netbus_1: bus access control_port_1.comport <-> netbus_1;
+			control_1_to_netbus_2: bus access control_port_1.comport <-> netbus_2;
+			control_1_to_netbus_3: bus access control_port_1.comport <-> netbus_3;
+			control_2_to_netbus_0: bus access control_port_2.comport <-> netbus_0;
+			control_2_to_netbus_1: bus access control_port_2.comport <-> netbus_1;
+			control_2_to_netbus_2: bus access control_port_2.comport <-> netbus_2;
+			control_2_to_netbus_3: bus access control_port_2.comport <-> netbus_3;
+			control_3_to_netbus_0: bus access control_port_3.comport <-> netbus_0;
+			control_3_to_netbus_1: bus access control_port_3.comport <-> netbus_1;
+			control_3_to_netbus_2: bus access control_port_3.comport <-> netbus_2;
+			control_3_to_netbus_3: bus access control_port_3.comport <-> netbus_3;
+	end TSN_Switch.i;
+
+
+-- This one is for wireless card
+	system TSN_WCard 
+		features
+			WiFi: requires bus access FORA::core::Wireless;
+			pci: requires bus access;
+			power: requires bus access PowerSupply {
+				SEI::PowerBudget => 1.0W;
+			};
+		properties
+			SEI::BandWidthCapacity => 12.5 Mbytesps;
+			-- Reliability communication
+			-- Channel access delay
+			-- Latency
+	end TSN_WCard;	
+	
+	system implementation TSN_WCard.i
+	subcomponents
+		WirelessMAC: system WTSN_Port.i;
+
+	connections
+		TSN_WCard_i_new_connection: bus access WirelessMAC.comport1 <-> WiFi;
+		TSN_WCard_i_new_connection2: bus access pci <-> WirelessMAC.comport2;
+end TSN_WCard.i;
+------------------------------------------------------------------
+---TSN Network
+------------------------------------------------------------------
+
+  virtual bus Virtual_Link
+	annex pycl {**
+	    @constraint("BAG is MANDATORY for each virtual link")
+	    def bag_is_mandatory(self):
+	        return self.hasProperty('AFDX_Properties::BAG')
+	
+	    @constraint("BAG is power of 2 between 1 ms and 128 ms")
+	    def bag_is_power_of_two(self):
+	        from AADL_Project.Time_Units import ms
+	        if not self.properties['AFDX_Properties::BAG'] in ((2**x)*ms for x in range(7)):
+	            self.info(str(self.properties['AFDX_Properties::BAG'])+' is not power of 2 between 1 ms and 128 ms')
+	            return False
+	        return True    
+	
+	    @constraint("only one of SkewDelayA and SkewDelayB should be more than zero")
+	    def skew_delay_zero(self):
+	        return self.properties['AFDX_Properties::SkewDelayA']==0 \
+	            or self.properties['AFDX_Properties::SkewDelayB']==0
+	**};
+  end Virtual_Link;
+
+  virtual bus Network
+		annex pycl {**
+    @constraint("Virtual Link Identifier should be unique across network")
+    def vlids_is_unique(self,vlids):
+        from collections import Counter
+        cnts = Counter(vlids.values())
+        cnts.subtract(Counter(cnts.keys()))
+        if len(cnts)!=0:
+            vlids = {str(vl):vlids[vl] for vl in vlids if vlids[vl] in cnts.keys()}
+            self.info('There are nonunique elements:'+str(vlids))
+            return False
+        return True
+**};
+	end Network;
+
+	virtual bus TTFrame
+	end TTFrame;
+
+	virtual bus Stream extends Virtual_Link
+	end Stream;
+
+------------------------------------------------------------------
+---Fog Node Device
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+--- Platform
+------------------------------------------------------------------	
+	
+	
+	abstract HardwarePlatform
+		features
+			Power: requires bus access PowerSupply.V24;
+			Interface: provides bus access;
+			--LAN: provides bus access RJ45;
+			TSN_0: provides bus access RJ45;
+			TSN_1: provides bus access RJ45;
+			TSN_2: provides bus access RJ45;
+			TSN_3: provides bus access RJ45;
+			WiFi: requires bus access FORA::core::Wireless;
+			Display: requires bus access DisplayPort;
+			IO: provides bus access FORA::core::Wire;
+	end HardwarePlatform;
+	
+	abstract implementation HardwarePlatform.i
+		subcomponents
+			CPU: processor Intel.Atom_x7_E3950;
+			TSNCard: system FORA::hardware::TSN_Switch;
+					--WirelessTSNCard: system FORA::hardware::TSN_WCard;
+			RAM: memory RAM_8GB;
+			Storage: memory FogNodeStorage;
+			pci: bus;
+			WirelessCard: system TSN_WCard.i;
+			A2D: device FogNodeA2D;
+		connections
+			xcn_power_cpu: bus access Power -> CPU.power;
+			xcn_ioaccess: bus access Storage.pci <-> pci;
+			xcn_network: bus access Interface <-> pci;
+			xcn_pci_ram: bus access RAM.pci <-> pci;
+			xcn_pci_cpu: bus access CPU.pci <-> pci;
+			xcn_tsn_pow: bus access TSNCard.power <-> Power;
+			xcn_tsn_pci: bus access TSNCard.pci <-> pci;
+			xcn_tsn_0: bus access TSNCard.enet_0 <-> TSN_0;
+			xcn_tsn_1: bus access TSNCard.enet_1 <-> TSN_1;
+			xcn_tsn_2: bus access TSNCard.enet_2 <-> TSN_2;
+			xcn_tsn_3: bus access TSNCard.enet_3 <-> TSN_3;
+			FogNode_HardwarePlatform_new_connection2: bus access Power -> WirelessCard.power;
+			FogNode_HardwarePlatform_new_connection3: bus access WirelessCard.pci <-> pci;
+			FogNode_HardwarePlatform_new_connection: bus access WirelessCard.WiFi <-> WiFi;
+			FogNode_HardwarePlatform_new_connection4: bus access pci <-> A2D.pci;
+			FogNode_HardwarePlatform_new_connection5: bus access IO <-> A2D.IO;
+		properties
+			Actual_Memory_Binding => (reference (RAM)) applies to CPU;
+	end HardwarePlatform.i;
+	
+	
+	abstract implementation FogNode.i
+		prototypes
+		CPUConfig: processor FogNodeCPU;
+		RAMConfig: memory FogNodeRAM;
+		StorageConfig: memory FogNodeStorage;
+		subcomponents
+			CPU: processor CPUConfig;
+			TSNCard: system FORA::hardware::TSN_Switch;
+					--WirelessTSNCard: system FORA::hardware::TSN_WCard;
+			RAM: memory RAMConfig;
+			Storage: memory StorageConfig;
+			IOAccess: bus;
+			pci: bus;
+			WirelessCard: system TSN_WCard.i;
+			A2D: device FogNodeA2D;
+		connections
+			xcn_power_cpu: bus access Power -> CPU.power;
+			xcn_ioaccess: bus access Storage.pci <-> pci;
+			--xcn_network: bus access Network <-> pci;
+			xcn_pci_ram: bus access RAM.pci <-> pci;
+			xcn_pci_cpu: bus access CPU.pci <-> pci;
+			xcn_tsn_pow: bus access TSNCard.power <-> Power;
+			xcn_tsn_pci: bus access TSNCard.pci <-> pci;
+			xcn_tsn_0: bus access TSNCard.enet_0 <-> TSN_0;
+			xcn_tsn_1: bus access TSNCard.enet_1 <-> TSN_1;
+			xcn_tsn_2: bus access TSNCard.enet_2 <-> TSN_2;
+			xcn_tsn_3: bus access TSNCard.enet_3 <-> TSN_3;
+			FogNode_HardwarePlatform_new_connection2: bus access Power -> WirelessCard.power;
+			FogNode_HardwarePlatform_new_connection3: bus access WirelessCard.pci <-> pci;
+			FogNode_HardwarePlatform_new_connection: bus access WirelessCard.WiFi <-> WiFi;
+			FogNode_HardwarePlatform_new_connection4: bus access pci <-> A2D.pci;
+			FogNode_HardwarePlatform_new_connection5: bus access IO <-> A2D.IO;
+		properties
+			Actual_Memory_Binding => (reference (RAM)) applies to CPU;
+	end FogNode.i;
+	
+------------------------------------------------------------------
+--- Buses
+------------------------------------------------------------------		
+	
+	bus DisplayPort end DisplayPort;
+	
+	bus USB2 end USB2;
+		
+	bus InternalInterface end InternalInterface;
+	
+	bus PowerSupply end PowerSupply;
+
+	bus implementation PowerSupply.V24
+		properties
+			SEI::PowerCapacity => 33.6W;
+	end PowerSupply.V24;
+	
+	bus PCI extends FORA::core::Wire
+		properties
+			SEI::BandWidthCapacity => 250.0 Mbytesps;
+	end PCI;
+	
+	bus MII extends FORA::core::Ethernet
+		properties
+			SEI::BandWidthCapacity => 12.5 Mbytesps;
+	end MII;
+		
+	bus RJ45 extends MII
+	end RJ45;
+------------------------------------------------------------------
+--- Memory devices
+------------------------------------------------------------------		
+
+	memory Cache 
+		features
+			pci: requires bus access ;
+	end Cache;
+
+	memory implementation Cache.L2
+		 properties
+			SEI::RAMCapacity => 2.0 MByte;
+	end Cache.L2;
+	
+	memory implementation Cache.partition
+		--properties
+			--SEI:RAMCapacity => 512 KByte;
+	end Cache.partition;
+
+	memory FogNodeRAM 
+		features
+			pci: requires bus access ;
+		properties
+			SEI::RAMCapacity => 8.0 GByte;
+	end FogNodeRAM;
+	
+	device FogNodeA2D
+		features
+			pci: requires bus access;
+			IO: provides bus access FORA::core::Wire;
+	end FogNodeA2D;
+
+	memory RAM_8GB extends FogNodeRAM 
+		properties
+			SEI::RAMCapacity => 8.0 GByte;
+	end RAM_8GB;
+	
+	memory FogNodeStorage
+		features
+			pci: requires bus access ;
+	end FogNodeStorage;
+	
+	memory HDD_50GB extends FogNodeStorage
+		
+	end HDD_50GB;
+
+------------------------------------------------------------------
+--- Processors
+------------------------------------------------------------------		
+	
+  virtual processor logical
+  end logical;
+
+  virtual processor implementation logical.core
+    properties
+      --Deployment::Execution_Platform  =>  Native;
+      Priority_Range                  =>  1 .. 255;
+      Scheduling_Protocol             =>  (RMS);
+  end logical.core;
+
+  processor FogNodeCPU
+    features
+      pci : requires bus access;
+      power: requires bus access PowerSupply {
+				SEI::PowerBudget => 12.0W;
+			};
+  end FogNodeCPU;
+  processor Intel extends FogNodeCPU
+  end Intel;
+
+  processor implementation Intel.Atom_x7_E3950
+    subcomponents
+      Core0  : virtual processor logical.core  {Processor_Properties::Core_Id => 0;};
+      Core1  : virtual processor logical.core  {Processor_Properties::Core_Id => 1;};
+      Core2  : virtual processor logical.core  {Processor_Properties::Core_Id => 2;};
+      Core3  : virtual processor logical.core  {Processor_Properties::Core_Id => 3;};
+      Cache	 : memory Cache.L2;
+    properties
+      Processor_Properties::Processor_Family    =>  x86_64;
+      Processor_Properties::Endianess           =>  Little_Endian;
+      Processor_Properties::Word_Length         =>  64 bits;
+      Processor_Properties::Processor_Frequency =>  1600 MHz;
+      --Deployment::Supported_Runtime             =>  PolyORB_HI_C;
+      Processor_Properties::HW_Virtualization_Present => True;
+  end Intel.Atom_x7_E3950;
+	
+	
+end FORA::hardware;

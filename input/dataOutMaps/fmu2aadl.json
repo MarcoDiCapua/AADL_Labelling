@@ -1,0 +1,28 @@
+{
+  "isParsingSucceeded": false,
+  "modelName": "ROSACE::FMI",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/fmu2aadl/examples/rosace/rosace-fmi.aadl",
+  "pathXMLFile": "",
+  "isSavedTheModel": false,
+  "docFiles": [
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\fmu2aadl\\Dockerfile",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\fmu2aadl\\LICENSE",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\fmu2aadl\\examples\\moonlanding\\Makefile",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\fmu2aadl\\examples\\rosace\\Makefile",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\fmu2aadl\\examples\\moonlanding\\Modelica\\Makefile"
+  ],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'Data_Model'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/fmu2aadl/examples/rosace/rosace-fmi.aadl line : 8 column : 8)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'Aircraft_Dynamics_FMU'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/fmu2aadl/examples/rosace/rosace-fmi.aadl line : 14 column : 8)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'Elevator_FMU'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/fmu2aadl/examples/rosace/rosace-fmi.aadl line : 15 column : 8)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'Engine_FMU'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/fmu2aadl/examples/rosace/rosace-fmi.aadl line : 16 column : 8)",
+    "ERROR:Couldn't resolve reference to ThreadSubcomponentType 'Aircraft_Dynamics_FMU::Aircraft_Dynamics_thread.impl'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/fmu2aadl/examples/rosace/rosace-fmi.aadl line : 29 column : 32)",
+    "ERROR:Couldn't resolve reference to ConnectionEnd 'FMI_T'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/fmu2aadl/examples/rosace/rosace-fmi.aadl line : 45 column : 52)",
+    "ERROR:Couldn't resolve reference to ThreadSubcomponentType 'Engine_FMU::Engine_thread.impl'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/fmu2aadl/examples/rosace/rosace-fmi.aadl line : 31 column : 32)",
+    "ERROR:Couldn't resolve reference to ConnectionEnd 'FMI_y'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/fmu2aadl/examples/rosace/rosace-fmi.aadl line : 45 column : 23)",
+    "ERROR:Couldn't resolve reference to ConnectionEnd 'FMI_Delta_E'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/fmu2aadl/examples/rosace/rosace-fmi.aadl line : 46 column : 52)",
+    "ERROR:Couldn't resolve reference to ThreadSubcomponentType 'Elevator_FMU::Elevator_thread.impl'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/fmu2aadl/examples/rosace/rosace-fmi.aadl line : 30 column : 32)",
+    "Cannot invoke \"org.osate.aadl2.instantiation.InstancePlugin.getBundle()\" because \"org.osate.aadl2.instantiation.InstancePlugin.plugin\" is null"
+  ]
+}

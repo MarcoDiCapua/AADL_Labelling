@@ -1,0 +1,44 @@
+package Processes
+public
+	
+	thread scan_input_ports
+		features
+			wheel: in data port;
+			break_pedal: in data port;
+			
+			break_pedal2: out data port;
+			actual_velocity: out data port;
+	end scan_input_ports;
+	
+	thread compute_desired_speed
+		features
+			actual_velocity: in data port;
+			output_velocity: out data port;
+	end compute_desired_speed;
+	
+	thread compute_throttle_settings
+		features
+			break_pedal: in data port;
+			output_velocity: in data port;
+			
+			throttle_setting: out data port;
+	end compute_throttle_settings;
+	
+	process process1
+	end process1;
+	
+	process implementation process1.imp
+		subcomponents 
+				thread1: thread scan_input_ports;
+				thread2: thread compute_desired_speed;
+				thread3: thread compute_throttle_settings;
+				
+		--Add some connections
+		connections
+				c1: port thread1.actual_velocity -> thread2.actual_velocity;
+				c2: port thread1.break_pedal2 -> thread3.break_pedal;
+				c3: port thread2.output_velocity -> thread3.output_velocity;
+				
+	end process1.imp;
+	
+end Processes;

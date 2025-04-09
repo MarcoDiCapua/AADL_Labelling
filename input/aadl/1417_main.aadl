@@ -1,0 +1,488 @@
+package smart_home_arch
+public
+
+system smarthome
+end smarthome;
+
+system implementation smarthome.impl
+	subcomponents
+		HOME_CONTROLLER: system sensor_unit;
+		    IN_RANGE: device In_range;
+		 COMMUNICATOR: device out_range;
+		 CLIENT_TIER: system Client_tier.impl;
+		 APPLIANCES: system appliances;
+		
+		 
+	connections
+		c1: port COMMUNICATOR.Turn_off_instructed_appliance -> APPLIANCES.appliance_switch;
+		c2: port HOME_CONTROLLER.user_command -> COMMUNICATOR.Sensor_Instruction;
+		c3: port IN_RANGE. Turn_on_instructed_appliance -> APPLIANCES.appliance_switch;
+		c4: port HOME_CONTROLLER.Sense_inward_moment -> IN_RANGE.Sensor_Instruction;
+		c5: port CLIENT_TIER. Configuration -> HOME_CONTROLLER.Configuration;
+		c6: port APPLIANCES.Current_status -> CLIENT_TIER.Monitoring;
+
+	 annex EMV2 {**
+use types error_library; 
+use behavior error_library::deviceState;
+
+composite error behavior
+states
+[IN_RANGE.Operational and COMMUNICATOR.Operational ]-> Operational;
+[IN_RANGE.Failed or COMMUNICATOR.Failed]-> Failed;
+[HOME_CONTROLLER.Operational and COMMUNICATOR.Operational and IN_RANGE.Operational ]-> Operational;
+[HOME_CONTROLLER.Failed or COMMUNICATOR.Failed or IN_RANGE.Failed]-> Failed;
+[HOME_CONTROLLER.Operational and COMMUNICATOR.Failed and IN_RANGE.Failed ]-> Failed;
+end composite;
+**};
+annex Resolute{**
+				
+			prove(print_aadl(this))
+			prove (SystemWideReq1())
+			prove (SystemWideReq2())
+		
+			prove (Security_Features(this))
+			prove (Security_Connections(this))
+			prove (Security_Data(this))
+		**};
+--EMV2::hazard=>
+--(
+	--[
+		--cross_Reference=> "hazard Do";
+		--Description=> "ineffective thrust to maintain controlled flight or safe toxic";
+		--security=>1;
+	--]
+--)applies to home_security.inefective thrust
+	 
+
+end smarthome.impl;
+
+system sensor_unit
+	features
+		Sense_inward_moment: out event port;
+		user_command: out event port;
+		Configuration: in event port;
+	annex EMV2{**
+			use types    smarthome::error_library;
+			use behavior  error_library::deviceState;
+		   		 error propagations
+ configuration: in propagation{ Device_receiver_failure, Network_failure} ;
+ Sense_inward_moment: out propagation{ Device_receiver_failure, Network_failure} ;
+ user_command: out propagation{ Device_receiver_failure, Network_failure} ;
+ Sense_inward_moment: out propagation{ Sensor_failure,appliance_failure,Transmition_network_failure} ;
+ user_command: out propagation{ Sensor_failure,appliance_failure,Transmition_network_failure} ;
+ flows
+ f2: error path  configuration -> Sense_inward_moment;
+ f1: error path  configuration -> user_command;
+ end propagations;
+ **};
+		
+end sensor_unit;
+
+
+system implementation sensor_unit.impl
+	subcomponents
+		PLUGIN : system plugin;
+		HOME_CONTROLLER_FRAMEWORK : system home_controller_framework;
+		 HW : bus HWConnection;
+	connections
+		cx5: port Configuration -> PLUGIN.configure_control;
+		cx6: port Configuration -> HOME_CONTROLLER_FRAMEWORK.Fin;
+		cx7: port PLUGIN.configured_control -> user_command;
+		cx8: port HOME_CONTROLLER_FRAMEWORK.Fout -> user_command;
+		cx9: bus access hw -> PLUGIN.busdata;
+		cx10: bus access hw ->  HOME_CONTROLLER_FRAMEWORK.busdata;
+		
+end sensor_unit.impl;
+
+system Appliances
+	features
+		Appliance_switch: in event port;
+		Current_status: out event port;
+		annex EMV2{**
+		use types   smarthome::error_library;
+		use behavior  error_library::deviceState;
+		
+			 error propagations
+ Appliance_switch: in propagation{ Device_receiver_failure, Network_failure} ;
+  Current_status: out propagation{ Device_receiver_failure, Network_failure} ;
+ flows
+ f: error path Appliance_switch->Current_status;
+ end propagations;
+		
+**};
+		
+end Appliances;
+
+system implementation appliances.impl
+	subcomponents
+		ACTIVATOR: device Activator;
+		      POWER_SOURCE: device power_source;
+	connections
+		cx1: port POWER_SOURCE.Status -> ACTIVATOR. Battery_Level;
+		cx2: port Appliance_switch -> ACTIVATOR.Activate_devices;
+		cx4: port ACTIVATOR.Running_devices -> Current_status;
+		cx5: port ACTIVATOR.Running_devices -> Current_status;
+	end appliances.impl;
+
+
+
+
+device In_range
+	features
+		Turn_on_instructed_appliance: out event port;
+		Sensor_Instruction  : in event port;
+		 
+		annex EMV2{**
+		use types   smarthome::error_library;
+		use behavior  error_library::deviceState;
+		
+			 error propagations
+ sensor_instruction: in propagation{ Device_receiver_failure, Network_failure} ;
+  Turn_on_instructed_appliance: out propagation{ Device_receiver_failure, Network_failure} ;
+ flows
+ f: error path sensor_Instruction->Turn_on_instructed_appliance;
+ end propagations;
+		
+**};
+		
+end In_range;
+
+device implementation In_range.impl
+end In_range.impl;
+
+device out_range
+	features
+		Turn_off_instructed_appliance: out event port;
+		Sensor_Instruction : in event port;
+		annex EMV2{**
+		use types    smarthome::error_library;
+		use behavior  error_library::deviceState;
+			 error propagations
+ sensor_instruction: in propagation{ Device_receiver_failure, Network_failure} ;
+  Turn_off_instructed_appliance: out propagation{ Device_receiver_failure, Network_failure} ;
+ flows
+ f: error path sensor_Instruction->Turn_off_instructed_appliance;
+ end propagations;
+
+**};
+end out_range;
+
+device implementation out_range.impl
+end out_range.impl;
+
+system Client_tier
+	features
+		Configuration: out event  port;
+		   Monitoring: in event port;
+		   annex EMV2{**
+		   		use types    smarthome::error_library;
+			use behavior  error_library::deviceState;
+			 error propagations
+ Monitoring: in propagation{ Device_receiver_failure, Network_failure,Sensor_failure,appliance_failure,Transmition_network_failure} ;
+ configuration: out propagation{ Device_receiver_failure, Network_failure} ;
+ flows
+ f: error sink Monitoring{Device_receiver_failure, Network_failure,Sensor_failure,appliance_failure,Transmition_network_failure};
+ f1: error source  configuration{ Device_receiver_failure, Network_failure} ;
+ end propagations;
+**};
+end Client_tier;
+
+system implementation Client_tier.impl
+	subcomponents
+		PLUGIN: system plugin;
+		SMARTHOME_HW_PLATFORM: processor Smarthome_HW_Platform;
+	connections
+		cnn1: port Monitoring -> PLUGIN.configure_control;
+		cnn2: port PLUGIN.Configured_control -> Configuration;
+end Client_tier.impl;
+
+system home_controller_framework
+	features
+		Fin: in event port;
+		Fout: out event port;
+		busdata : requires bus access HWCOnnection;
+end home_controller_framework;
+
+system implementation home_controller_framework.impl
+	subcomponents
+		SYSTEM_SETTINGS : process system_setting;
+		USER_COMMAND : process user_command;
+		SCHEDULAR : process schedular;
+		SOFTWARE_UPDATER:process software_updater;		
+		PROTOCOL_LAYER:process PROTOCOL_LAYER;
+	
+	    
+	connections
+		ct1: port fin -> SYSTEM_SETTINGS.change_settings;
+		ct2: port fin -> SCHEDULAR.set_schedular;
+		ct3: port SYSTEM_SETTINGS.updated_settings-> fout;
+		ct4: port SCHEDULAR.scheduled_task -> fout;
+		ct5: port fin -> USER_COMMAND.give_command;
+		ct6: port fin -> SOFTWARE_UPDATER.command;
+		ct7: port fin -> PROTOCOL_LAYER.Pinput;
+		ct8: port USER_COMMAND.execute_command-> fout;
+		ct9: port SOFTWARE_UPDATER.status-> fout;
+		ct10: port PROTOCOL_LAYER.Poutput-> fout;
+	
+end home_controller_framework.impl;
+
+process plugin_manager
+	features
+		Installation: in event port;
+		current_status:out event port;
+end plugin_manager;
+
+process implementation plugin_manager.impl
+	subcomponents
+		INSTALL: thread Install;
+		UNINSTALL: thread Uninstall;
+		MAIN_CONTROL: thread main_control;
+	connections
+		ct1: port Installation -> INSTALL.command;
+		ct2: port Installation -> UNINSTALL.command;
+		ct3: port INSTALL.status -> current_status;
+		ct4: port UNINSTALL.status -> current_status;
+end plugin_manager.impl;
+
+bus HWConnection
+		
+	end HWConnection;
+	
+process schedular
+	features
+		set_schedular: in event port;
+		scheduled_task:out event port;
+end schedular;
+
+process implementation schedular.impl
+end schedular.impl;
+
+process system_setting
+	features
+		change_settings: in event port;
+		updated_settings:out event port;
+end system_setting;
+
+process implementation system_setting.impl
+end system_setting.impl;
+
+process user_command
+	features
+		give_command: in event port;
+		execute_command:out event port;
+end user_command;
+
+process implementation user_command.impl
+end user_command.impl;
+
+process event_manager
+	features
+		REGIN: in event port;
+		current_status:out event port;
+end event_manager;
+
+process implementation event_manager.impl
+	subcomponents
+		REGISTER: thread registerevent;
+		UNREGISTER: thread unregister_event;
+	connections
+		ct1: port REGIN -> REGISTER.add_command;
+		ct2: port REGIN -> UNREGISTER.remove_command;
+		ct3: port REGISTER.status -> current_status;
+		ct4: port UNREGISTER.status -> current_status;
+end event_manager.impl;
+
+process protocol_layer
+	features
+		Pinput: in event port;
+		Poutput:out event port;
+end protocol_layer;
+
+process implementation protocol_layer.impl
+	subcomponents
+		PROTOCOL_PLUGIN: thread protocol_plugin;
+		X10: thread x10;
+		TCP_IP: thread tcp_ip;
+		ZIGBEE: thread zigbee;
+		IR: thread ir;
+	connections
+		ct1: port pinput -> PROTOCOL_PLUGIN.cin;
+		ct2: port PROTOCOL_PLUGIN.cout -> Poutput;
+		ct3: port X10.cout -> Poutput;
+		ct4: port TCP_IP.cout -> Poutput;
+		ct5: port pinput -> X10.cin;
+		ct6: port pinput -> TCP_IP.cin;
+		ct7: port pinput -> ZIGBEE.cin;
+		ct8: port pinput -> IR.cin;
+		ct9: port ZIGBEE.cout -> Poutput;
+		ct10: port IR.cout -> Poutput;
+end protocol_layer.impl;
+
+
+
+
+
+system plugin
+	features
+		configure_control: in event port;
+		Configured_control: out event port;
+		busdata : requires bus access HWCOnnection;
+end plugin;
+
+system implementation plugin.impl
+	subcomponents
+		SOFTWARE_UPDATER:process software_updater;
+		PLUGIN_MANAGER:process plugin_manager;
+		EVENT_MANAGER:process event_manager;
+		CUSTOM_PLUGIN:process custom_plugin;		
+		PROTOCOL_LAYER:process PROTOCOL_LAYER;
+		
+		connections
+		ct1: port configure_control-> SOFTWARE_UPDATER.command;
+		ct2: port configure_control-> PLUGIN_MANAGER.Installation;
+		ct3: port configure_control-> EVENT_MANAGER.REGIN;
+		ct4: port configure_control-> CUSTOM_PLUGIN.command;
+		ct5: port configure_control-> PROTOCOL_LAYER.Pinput;
+		ct6: port SOFTWARE_UPDATER.status-> Configured_control ;
+		ct7: port PLUGIN_MANAGER.current_status-> Configured_control ;
+		ct8: port EVENT_MANAGER.current_status-> Configured_control ;
+		ct9: port CUSTOM_PLUGIN.status-> Configured_control ;
+		ct10: port PROTOCOL_LAYER.Poutput-> Configured_control ;
+		
+		
+end plugin.impl;
+
+processor Smarthome_HW_Platform
+end Smarthome_HW_Platform;
+
+processor implementation Smarthome_HW_Platform.impl
+end Smarthome_HW_Platform.impl;
+
+device Activator
+	features
+		Activate_devices: in event port;
+		Running_devices: out event port;
+		Battery_Level: in event port;
+		Cofig : in event port;
+		Measuring: out event port;
+end Activator;
+
+device power_source
+	features
+		Status: out event port;
+end power_source;
+
+thread DDD_Mode
+	features
+		Sensing_DDD: in event port;
+		Working_DDD: out event port;
+		SW_ERR: out event port;
+end DDD_Mode;
+
+thread implementation DDD_Mode.impl
+end DDD_Mode.impl;
+	
+thread AAI_Mode
+	features
+		Sensing_AAI: in event port;
+		Working_AAI: out event port;
+		SW_ERR: in event port;
+end AAI_Mode;
+
+thread implementation AAI_Mode.impl
+end AAI_Mode.impl;
+
+thread main_control
+	features
+		Signal     : in event port;
+		Signal_reading : in event port;
+		Authentication  : out event port;
+		Authority      : out event port;
+end main_control;
+
+thread Install
+	features
+		command     : in event port;
+		status      : out event port;
+end Install;
+
+thread Uninstall
+	features
+		command     : in event port;
+		status      : out event port;
+end Uninstall;
+
+thread registerevent
+	features
+		add_command     : in event port;
+		status      : out event port;
+end registerevent;
+
+thread unregister_event
+	features
+		remove_command     : in event port;
+		status      : out event port;
+end unregister_event;
+
+thread x10
+	features
+		cin     : in event port;
+		cout      : out event port;
+end x10;
+
+thread tcp_ip
+	features
+		cin     : in event port;
+		cout      : out event port;
+end tcp_ip;
+
+thread zigbee
+	features
+		cin     : in event port;
+		cout      : out event port;
+end zigbee;
+
+thread IR
+	features
+		cin     : in event port;
+		cout      : out event port;
+end IR;
+
+thread protocol_plugin
+	features
+		cin     : in event port;
+		cout      : out event port;
+end protocol_plugin;
+
+
+process custom_plugin
+	features
+		command     : in event port;
+		status      : out event port;
+end custom_plugin;
+
+process Software_updater
+	features
+		command     : in event port;
+		status      : out event port;
+end Software_updater;
+
+
+
+thread implementation main_control.impl
+end main_control.impl;
+
+thread Control_Mode
+	features
+		DDD_SW_ERR: in event port;
+		AAI_SW_ERR: out event port;
+	modes
+		DDD : initial mode;
+		AAI: mode;
+		DDD -[DDD_SW_ERR]-> AAI;
+end Control_Mode;
+	
+	
+	
+	
+end smart_home_arch;

@@ -1,0 +1,30 @@
+{
+  "isParsingSucceeded": false,
+  "modelName": "deploymentview::DV",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-qa/tests/taste/tastegui-ping-two-rasta-spw/deploymentview.aadl",
+  "pathXMLFile": "",
+  "isSavedTheModel": false,
+  "docFiles": [
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\aadl-qa\\requirements\\AADL-CTS\\reqdb.txt",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\aadl-qa\\tests\\osate-bugtrack-core\\issue294\\proof scripts\\proof script (isolette-KSU-with-RDAL)",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\aadl-qa\\tests\\osate-bugtrack-core\\issue294\\proof scripts\\subscripts\\isocon",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\aadl-qa\\tests\\osate-bugtrack-core\\issue294\\proof scripts\\subscripts\\ma",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\aadl-qa\\tests\\osate-bugtrack-core\\issue294\\proof scripts\\subscripts\\mhs",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\aadl-qa\\tests\\osate-bugtrack-core\\issue294\\proof scripts\\subscripts\\mmm",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\aadl-qa\\tests\\osate-bugtrack-core\\issue294\\proof scripts\\subscripts\\mrm"
+  ],
+  "errors": [
+    "ERROR:mismatched input '\"/dev/grspwrasta0\"' expecting ';' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-qa/tests/taste/tastegui-ping-two-rasta-spw/deploymentview.aadl line : 43 column : 47)",
+    "ERROR:no viable alternative at input 'BUS' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-qa/tests/taste/tastegui-ping-two-rasta-spw/deploymentview.aadl line : 65 column : 7)",
+    "ERROR:mismatched input 'applies' expecting ';' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-qa/tests/taste/tastegui-ping-two-rasta-spw/deploymentview.aadl line : 69 column : 62)",
+    "ERROR:mismatched input ';' expecting '=>' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-qa/tests/taste/tastegui-ping-two-rasta-spw/deploymentview.aadl line : 69 column : 86)",
+    "ERROR:mismatched input 'APPLIES' expecting ';' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-qa/tests/taste/tastegui-ping-two-rasta-spw/deploymentview.aadl line : 70 column : 57)",
+    "ERROR:mismatched input ';' expecting '=>' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-qa/tests/taste/tastegui-ping-two-rasta-spw/deploymentview.aadl line : 70 column : 85)",
+    "ERROR:mismatched input 'applies' expecting ';' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-qa/tests/taste/tastegui-ping-two-rasta-spw/deploymentview.aadl line : 71 column : 62)",
+    "ERROR:mismatched input ';' expecting '=>' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-qa/tests/taste/tastegui-ping-two-rasta-spw/deploymentview.aadl line : 71 column : 88)",
+    "ERROR:mismatched input 'applies' expecting ';' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-qa/tests/taste/tastegui-ping-two-rasta-spw/deploymentview.aadl line : 72 column : 59)",
+    "ERROR:mismatched input ';' expecting '=>' (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-qa/tests/taste/tastegui-ping-two-rasta-spw/deploymentview.aadl line : 72 column : 83)",
+    "Invalid file path"
+  ]
+}

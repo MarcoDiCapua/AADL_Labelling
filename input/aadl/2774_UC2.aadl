@@ -1,0 +1,78 @@
+package UC2
+public
+	WITH FORA::platform;
+	WITH FORA::hardware;
+	WITH FORA::software;
+	WITH FORA::core;
+	FogNode renames abstract FORA::hardware::FogNode;
+	FogNodeSoftwarePlatform renames abstract FORA::platform::FogSoftwarePlatform;
+	FogNodeConfiguration renames abstract FORA::software::FogNodeConfiguration;
+	
+	abstract FogComputingPlatform
+		features
+			ClientInterface : requires bus access;
+			AnalyticServerInterface: requires bus access;
+	end FogComputingPlatform;
+	
+	abstract implementation FogComputingPlatform.impl
+		subcomponents
+			FogNodePrimary: abstract FogNodeInstance.impl; -- DataServers in UC2
+			FogNodeOptional: abstract FogNodeInstance.impl;
+			PLC1 : device PLCDevice;
+			PLC2 : device PLCDevice;
+			PLC3 : device PLCDevice;
+			PLC4 : device PLCDevice;
+			TSNSwitch1: system FORA::hardware::TSN_Switch;
+			TSNSwitch2: system FORA::hardware::TSN_Switch;
+			TSNSwitch3: system FORA::hardware::TSN_Switch;
+		connections
+			PLC1_TSNSwitch1_connection: bus access TSNSwitch1.enet_0 <-> PLC1.TSN_0;
+			PLC2_TSNSwitch2_connection: bus access TSNSwitch2.enet_0 <-> PLC2.TSN_0;
+			PLC3_TSNSwitch2_connection: bus access TSNSwitch2.enet_0 <-> PLC3.TSN_0;
+			PLC4_TSNSwitch3_connection: bus access TSNSwitch3.enet_0 <-> PLC4.TSN_0;
+			FogNodePrimary_TSNSwitch2_connection: bus access TSNSwitch2.enet_1 <-> FogNodePrimary.TSN_0;
+			FogNodeOptional_TSNSwitch2_connection: bus access TSNSwitch2.enet_1 <-> FogNodeOptional.TSN_0;
+	end FogComputingPlatform.impl;
+	
+	abstract FogNodeInstance
+		features
+			TSN_0 : requires bus access FORA::hardware::RJ45;
+	end FogNodeInstance;
+	
+	abstract implementation FogNodeInstance.impl
+		prototypes
+			SoftwarePlatform: abstract FogNodeSoftwarePlatform;
+			HardwarePlatform: abstract FogNode;
+		subcomponents
+			FogNodeConfiguration: abstract FogNodeConfiguration;
+			RTVM: abstract RTVirtualMachine.impl;
+			VMs: abstract VirtualMachine[];
+			SecuredManagementVM: abstract VirtualMachine;
+			FirewallVM: abstract VirtualMachine;
+			FogSoftwarePlatform: abstract SoftwarePlatform;
+			FogHardwarePlatform: abstract HardwarePlatform;
+	end FogNodeInstance.impl;
+
+	abstract VirtualMachine
+	end VirtualMachine;
+
+	abstract implementation VirtualMachine.impl
+		subcomponents
+			Applications : abstract FORA::core::Application[]; -- TSDB server, cloud connector, node red, pre-analytics, ...
+	end VirtualMachine.impl;
+	
+	abstract RTVirtualMachine
+	end RTVirtualMachine;
+	
+	abstract implementation RTVirtualMachine.impl
+		subcomponents
+			UDPWriter: abstract FORA::core::Application;
+			CODESYS: abstract FORA::core::Application;
+	end RTVirtualMachine.impl;
+	
+	device PLCDevice
+		features
+			TSN_0: requires bus access FORA::hardware::RJ45;
+	end PLCDevice;
+	
+end UC2;

@@ -1,0 +1,275 @@
+package tcas
+public
+	with base_types;
+	
+	data int extends base_types::Integer
+	end int;
+	
+	-- Top Level system, contains devices for situational awareness and threat resolution
+	
+	system TCAS
+		features
+			nearestIntruderAltitude: in data port base_types::Float;
+			nearestIntruderGroundDistance: in data port int;
+			nearestIntruderLongitude: in data port int;
+			
+			ownAltitude: in data port base_types::float;
+			ownHeading: in data port int; -- degrees from North
+			ownVerticalVelocity: in data port int;
+			ownLatitude: in data port int;
+			ownLongitude: in data port int;
+			
+			requiredVerticalVelocity: out data port int;
+			
+		annex agree {**
+			assume"intruder aircraft above ground (in)": nearestIntruderAltitude > 0.0;
+--			guarantee"intruder aircraft above ground": nearestIntruderAltitude > 0.0;
+			
+			assume"intruder distance above zero": nearestIntruderGroundDistance > 0; -- Distance using lat/long values
+			
+			assume"Own aircraft above ground": ownAltitude > 0.0;
+			assume"heading is in normalized degrees": ownHeading >= 0 and ownHeading < 360;
+			assume"own latitude is sensible": ownLatitude >= 0 and ownLatitude <= 90;
+			assume"own longitude is sensible": ownLongitude >= -180 and ownLongitude <= 180;
+		**};
+	end TCAS;
+	
+	system implementation TCAS.impl
+		
+		subcomponents
+			surveillance: system Surveillance.impl;
+			instrumentation: system Instrumentation.impl;
+			trajectoryExtrapolation: system TrajectoryExtrapolation.impl;
+			threatDetection: system ThreatDetection.impl;
+			maneuverTemplates: system ManeuverTemplates.impl;
+			responseSelection: system ResponseSelection.impl;
+--			
+		connections
+			nia_from_external: port nearestIntruderAltitude -> surveillance.nearestIntruderAltitude_in {Communication_Properties::Timing => immediate;};
+			nigd_from_external: port nearestIntruderGroundDistance -> surveillance.nearestIntruderGroundDistance_in {Communication_Properties::Timing => immediate;};
+			nilo_from_external: port nearestIntruderLongitude -> surveillance.nearestIntruderLongitude_in {Communication_Properties::Timing => immediate;};
+
+			oa_from_external: port ownAltitude -> instrumentation.altitude_in {Communication_Properties::Timing => immediate;};
+			oh_from_external: port ownHeading -> instrumentation.heading_in {Communication_Properties::Timing => immediate;};
+			ovv_from_external: port ownVerticalVelocity -> instrumentation.verticalVelocity_in {Communication_Properties::Timing => immediate;};
+			ola_from_external: port ownLatitude -> instrumentation.ownLatitude_in {Communication_Properties::Timing => immediate;};
+			olo_from_external: port ownLongitude -> instrumentation.ownLongitude_in {Communication_Properties::Timing => immediate;};
+			
+			a_to_td: port instrumentation.altitude -> threatDetection.altitude {Communication_Properties::Timing => immediate;};
+			h_to_td: port instrumentation.heading -> threatDetection.heading {Communication_Properties::Timing => immediate;};
+			vv_to_td: port instrumentation.verticalVelocity -> threatDetection.verticalVelocity {Communication_Properties::Timing => immediate;};
+			nia_to_td: port surveillance.nearestIntruderAltitude -> threatDetection.nearestIntruderAltitude {Communication_Properties::Timing => immediate;};
+			nigd_to_td: port surveillance.nearestIntruderGroundDistance -> threatDetection.nearestIntruderGroundDistance {Communication_Properties::Timing => immediate;};
+			
+			
+			td_to_rs: port threatDetection.threatDetected -> responseSelection.threatDetected {Communication_Properties::Timing => immediate;};
+--			sagu_to_rs: port maneuverTemplates.sameAltitudeGoUp -> responseSelection.sameAltitudeGoUp {Communication_Properties::Timing => immediate;};
+--			sagd_to_rs: port maneuverTemplates.sameAltitudeGoDown -> responseSelection.sameAltitudeGoDown {Communication_Properties::Timing => immediate;};
+--			bi_to_rs: port maneuverTemplates.bottomIntrusion -> responseSelection.bottomIntrusion {Communication_Properties::Timing => immediate;};
+--			ti_to_rs: port maneuverTemplates.topIntrusion -> responseSelection.topIntrusion {Communication_Properties::Timing => immediate;};
+			
+			oa_to_rs: port instrumentation.altitude -> responseSelection.ownAltitude {Communication_Properties::Timing => immediate;};
+			ia_to_rs: port surveillance.nearestIntruderAltitude -> responseSelection.threatAltitude {Communication_Properties::Timing => immediate;};
+			
+			ol_to_rs: port instrumentation.ownLongitude -> responseSelection.ownLongitude {Communication_Properties::Timing => immediate;};
+			il_to_rs: port surveillance.nearestIntruderLongitude -> responseSelection.threatLongitude {Communication_Properties::Timing => immediate;};
+		
+			rvv_to_external: port responseSelection.requiredVerticalVelocity -> requiredVerticalVelocity {Communication_Properties::Timing => immediate;};
+		annex agree {**
+			
+		**};
+
+	end TCAS.impl;
+	
+	-- Determine characteristics of nearby aircraft that intrude on the 'safety cylinder'
+	
+	system Surveillance
+		features
+			nearestIntruderAltitude_in: in data port base_types::Float;
+			nearestIntruderGroundDistance_in: in data port int;
+			nearestIntruderLongitude_in: in data port int;
+
+			nearestIntruderAltitude: out data port base_types::Float;
+			nearestIntruderGroundDistance: out data port int;
+			nearestIntruderLongitude: out data port int;
+			
+
+		annex agree {**
+				assume"intruder aircraft above ground": nearestIntruderAltitude_in > 0.0;
+				assume"intruder distance above zero": nearestIntruderGroundDistance_in > 0; -- Distance using lat/long values
+				
+				guarantee"nearestIntruderAltitude consistent": nearestIntruderAltitude = nearestIntruderAltitude_in;
+				guarantee"nearestIntruderGroundDistance consistent": nearestIntruderAltitude = nearestIntruderAltitude_in;
+				
+		**};
+	end Surveillance;
+	
+	system implementation Surveillance.impl
+		annex agree {**
+			assign nearestIntruderAltitude = nearestIntruderAltitude_in;
+			assign nearestIntruderGroundDistance = nearestIntruderGroundDistance_in;
+		**};
+	end Surveillance.impl;
+	
+	-- Determine characteristics of my own aircraft
+--	
+	system Instrumentation
+		features
+			altitude_in: in data port base_types::float;
+			heading_in: in data port int; -- degrees from North
+			verticalVelocity_in: in data port int;
+			ownLatitude_in: in data port int;
+			ownLongitude_in: in data port int;
+			
+			altitude: out data port base_types::float;
+			heading: out data port int; -- degrees from North
+			verticalVelocity: out data port int;
+			ownLatitude: out data port int;
+			ownLongitude: out data port int;
+		annex agree {**
+				assume"Own aircraft above ground": altitude_in > 0.0;
+				assume"heading is in normalized degrees": heading_in >= 0 and heading_in < 360;
+				assume"own latitude is sensible": ownLatitude_in >= 0 and ownLatitude_in <= 90;
+				assume"own longitude is sensible": ownLongitude_in >= -180 and ownLongitude_in <= 180;
+				
+				guarantee"altitude consistent": altitude = altitude_in;
+				guarantee"heading consistent": heading = heading_in;
+				guarantee"verticalVelocity consistent": verticalVelocity = verticalVelocity_in;
+				guarantee"ownLatitude consistent": ownLatitude = ownLatitude_in;
+				guarantee"ownLongitude consistent": ownLongitude = ownLongitude_in;
+		**};
+	end Instrumentation;
+	
+	system implementation Instrumentation.impl
+		annex agree {**
+				assign altitude = altitude_in;
+				assign heading = heading_in;
+				assign verticalVelocity = verticalVelocity_in;
+				assign ownLatitude = ownLatitude_in;
+				assign ownLongitude = ownLongitude_in;
+			**};
+	end Instrumentation.impl;
+--	
+	-- Extrapolate future position of own/intruder aircraft using linearizations of the kinematic equation y(t) = 1/2*a*t^2 + v(0)*t + y(0)
+	
+	system TrajectoryExtrapolation
+		features
+			nearestIntruderAltitude: in data port base_types::Float;
+--			nearestIntruderGroundDistance: in data port int; -- Distance using lat/long values
+			
+			projectedIntruderAltitude: out data port base_types::Float;
+		annex agree {**
+			eq intruderVerticalVelocity: real = 0.0 -> ((nearestIntruderAltitude - pre(nearestIntruderAltitude)) / 1.0);
+		**};
+	end TrajectoryExtrapolation;
+	
+	system implementation TrajectoryExtrapolation.impl
+		annex agree {**
+			assign projectedIntruderAltitude = nearestIntruderAltitude + intruderVerticalVelocity;
+		**};
+	end TrajectoryExtrapolation.impl;
+--	
+--	-- Determine threat status of intruder
+--	
+	system ThreatDetection
+		features
+			altitude: in data port base_types::float;
+			heading: in data port int; -- degrees from North
+			verticalVelocity: in data port int;
+			nearestIntruderAltitude: in data port base_types::Float;
+			nearestIntruderGroundDistance: in data port int;
+			threatDetected: out data port base_types::Boolean;
+		annex agree {**
+				
+		**};
+	end ThreatDetection;
+	
+	system implementation ThreatDetection.impl
+		annex agree {**
+			eq timeInterval: real = 1.0;			
+			eq safeRadius: int = 15; -- miles
+			eq safeVerticalSeperation: int = 1; -- miles
+			eq altitudeDifference: real = altitude - nearestIntruderAltitude;
+			assign altitudeDifference = if (altitudeDifference < 0.0) then 0.0 - altitudeDifference else altitudeDifference;
+			assign threatDetected = (nearestIntruderGroundDistance < safeRadius and altitudeDifference < 1.0);
+		**};
+	end ThreatDetection.impl;
+--	
+--	-- Offers known 'Maneuver templates' for threat resolution
+--	
+	system ManeuverTemplates
+		features
+			sameAltitudeGoUp: out data port int;
+			sameAltitudeGoDown: out data port int;
+			bottomIntrusion: out data port int;
+			topIntrusion: out data port int;
+			
+		annex agree {**
+			const ctopIntrusion: int = -10;
+			const csameAltitudeGoUp: int = 50;
+			const csameAltitudeGoDown: int = -50;
+			const cbottomIntrusion: int = 10;
+--			guarantee"top/bottom intrustion maneuvers are nonzero": True -> (topIntrusion != 0 and bottomIntrusion != 0);
+			guarantee"same altitude maneuvers are nonzero": sameAltitudeGoUp != 0 and sameAltitudeGoDown != 0;		
+		**};
+	end ManeuverTemplates;
+	
+	system implementation ManeuverTemplates.impl
+		annex agree {**
+			assign sameAltitudeGoUp = 50; -- Vertical velocities associated with scenarios
+			assign sameAltitudeGoDown = -50;
+			assign bottomIntrusion = 10;
+			assign topIntrusion = -10;
+		**};
+	end ManeuverTemplates.impl;
+--	
+--	-- Given a threat, select from a Maneuver Template
+--	
+	system ResponseSelection
+		features
+			threatDetected: in data port base_types::Boolean;
+			threatAltitude: in data port base_types::float;
+			ownAltitude: in data port base_types::float;
+			ownLongitude: in data port int;
+			threatLongitude: in data port int;
+--			sameAltitudeGoUp: in data port int;
+--			sameAltitudeGoDown: in data port int;
+--			bottomIntrusion: in data port int;
+--			topIntrusion: in data port int;
+			
+			requiredVerticalVelocity: out data port int;
+			
+		annex agree {**
+			eq ownAircraftGoesUpOnTie: bool;
+			
+			const sameAltitudeGoUp: int = 50; -- Vertical velocities associated with scenarios
+			const sameAltitudeGoDown: int = -50; -- rates
+			const bottomIntrusion: int = 10;
+			const topIntrusion: int = -10;
+			
+			assume"top/bottom intrustion maneuvers are nonzero": True -> (topIntrusion != 0 and bottomIntrusion != 0);
+			assume"same altitude maneuvers are nonzero": sameAltitudeGoUp != 0 and sameAltitudeGoDown != 0;		
+			
+--			guarantee"response results in safe position": True -> not (pre(threatDetected) and threatDetected) ;
+			guarantee"more eastern aircraft has priority": ownAircraftGoesUpOnTie = (ownLongitude > threatLongitude);
+			guarantee"there is exists a non-zero requiredVerticalVelocity": True -> threatDetected => requiredVerticalVelocity != 0;
+			guarantee"higher aircraft goes up": threatDetected and ownAltitude < threatAltitude => requiredVerticalVelocity < 0;
+			guarantee"lower aircraft goes down": threatDetected and ownAltitude > threatAltitude => requiredVerticalVelocity > 0;
+		**};
+	end ResponseSelection;
+--	
+	system implementation ResponseSelection.impl
+		annex agree {**
+			assign ownAircraftGoesUpOnTie = (ownLongitude > threatLongitude);
+			assign requiredVerticalVelocity = 
+				if (ownAltitude = threatAltitude) 
+					then if (ownAircraftGoesUpOnTie) 
+						then sameAltitudeGoUp
+						else sameAltitudeGoDown
+				else if(ownAltitude < threatAltitude)
+					then topIntrusion
+					else bottomIntrusion;
+		**};
+	end ResponseSelection.impl;
+--	
+end tcas;

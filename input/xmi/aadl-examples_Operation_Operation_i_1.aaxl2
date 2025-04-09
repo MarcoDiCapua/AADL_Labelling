@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Operation_i_Instance" category="system">
+  <featureInstance name="to_safety" category="featureGroup" direction="in out">
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Operation.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.0"/>
+  </featureInstance>
+  <featureInstance name="to_peripherals" category="featureGroup" direction="in out">
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Operation.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.1"/>
+  </featureInstance>
+  <featureInstance name="from_power" category="featureGroup" direction="in out">
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Operation.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.2"/>
+  </featureInstance>
+  <featureInstance name="to_user" category="featureGroup" direction="in out">
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Operation.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.3"/>
+  </featureInstance>
+  <featureInstance name="from_maintenance" category="featureGroup" direction="in out">
+    <featureInstance name="the_fault_log" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      <type href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/instances/Operation_Operation_i_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="the_event_log" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="the_security_log" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="load_drug_library" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="get_fault_log" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="get_event_log" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="get_security_log" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="security_provisioning" category="featureGroup" direction="in out">
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Operation.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.4"/>
+  </featureInstance>
+  <featureInstance name="to_comm" category="featureGroup" direction="in out">
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Operation.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.5"/>
+  </featureInstance>
+  <featureInstance name="alarm" category="featureGroup" direction="in out">
+    <featureInstance name="alarm" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="warning" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="info" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Feature_Groups.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Operation.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.6"/>
+  </featureInstance>
+  <featureInstance name="crypto_control" category="featureGroup" direction="in out">
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Operation.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFeatureGroup.7"/>
+  </featureInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Operation.aadl#Operation.Operation.i"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-examples/awas-examples/open-pca/Medical_Device_Platform/packages/Operation.aadl#Operation.Operation.i"/>
+</instance:SystemInstance>

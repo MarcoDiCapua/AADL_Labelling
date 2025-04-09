@@ -1,0 +1,303 @@
+package Sterownik
+public
+	with base_types;
+	
+	System VendingMachineSterownik	
+	end VendingMachineSterownik;
+	System implementation VendingMachineSterownik.with_Devices
+		subcomponents
+			sys_fotokomorka: device Fotokomorka;
+			sys_przyciski: device Panel_przyciski;
+			sys_wyswietlacz: device Panel_wyswietlacz;
+			sys_liczydlo: device Liczydlo;
+			sys_podajnik:device Podajnik;
+			
+			
+			sys_main_proccesor: processor MainProcessor.impl;
+			sys_controller: process Controller.with_threads;
+			sys_bus: bus HWConnection.impl;
+		connections
+			
+			motion_conn: port sys_fotokomorka.motion_out -> sys_controller.motion_in;
+			message_conn:port sys_controller.wiadomosc_out->sys_wyswietlacz.wiadomosc_in;
+			sum_of_money_conn:port sys_liczydlo.sum_of_money_out->sys_controller.sum_of_money_in;
+			reszta_conn:port sys_controller.reszta_out->sys_liczydlo.reszta_in;
+			wysun_conn:port sys_controller.wysun_produkt_out->sys_podajnik.wysun_produkt_in;
+			przyciski_conn:port sys_przyciski.wcisnieto_out->sys_controller.wcisnieto_in;
+			
+			bus_fotokomorka_conn: bus access sys_bus->sys_fotokomorka.bus_access;
+			bus_przyciski_conn: bus access sys_bus->sys_przyciski.bus_access;
+			bus_wyswietlacz_conn: bus access sys_bus->sys_wyswietlacz.bus_access;
+   			bus_liczydlo_conn: bus access sys_bus->sys_liczydlo.bus_access;
+			bus_podajnik_conn: bus access sys_bus->sys_podajnik.bus_access;
+			bus_processor:bus access sys_bus->sys_main_proccesor.bus_access;
+		
+	end VendingMachineSterownik.with_Devices;
+	
+	process Controller
+		features
+			
+			motion_in: in event port;
+			sum_of_money_in: in data port Base_Types::Integer_16;
+			reszta_out:out data port Base_Types::Integer_16;
+			wiadomosc_out:out data port Base_Types::String;			
+			wysun_produkt_out:out data port Base_Types::Integer_8;
+			wcisnieto_in:in data port Base_Types::Integer_8;
+			
+			
+			
+	end Controller;
+	process implementation Controller.with_threads		
+		subcomponents		
+			this_thread_motion:thread MotionThread.impl;
+			this_thread_deal:thread PayThread.impl;
+			this_thread_give:thread GiveAwayThread.impl;
+			this_thread_view:thread ViewThread.impl;	
+			this_thread_money:thread MoneyThread.impl;
+			this_thread_buttons:thread ButtonsThread.impl;
+		connections
+			motion_conn:port motion_in->this_thread_motion.motion_in;
+			motion_deal_conn:port this_thread_motion.motion_out->this_thread_deal.motion_in;
+			
+			view_conn:port this_thread_view.message_out->wiadomosc_out;
+			view_deal_conn:port this_thread_deal.message_out->this_thread_view.message_in;
+			
+			give_change_conn: port this_thread_give.reszta_out->reszta_out;
+			give_change_deal: port this_thread_deal.reszta_out->this_thread_give.reszta_in;
+			
+			give_product_conn: port this_thread_give.wysun_out->wysun_produkt_out;
+			give_product_deal_conn:port this_thread_deal.wysun_out->this_thread_give.wysun_in;
+			
+			sum_conn:port sum_of_money_in->this_thread_money.sum_in;
+			sum_deal_conn:port this_thread_money.sum_out->this_thread_deal.sum_in;
+			button_conn:port wcisnieto_in->this_thread_buttons.button_in;
+			button_deal_conn:port this_thread_buttons.button_out->this_thread_deal.button_in;
+			
+			
+	end  Controller.with_threads;
+	
+	
+	subprogram Give_change		
+	end Give_change;
+	subprogram implementation Give_change.impl
+		properties
+			Source_Language			=>(C);
+			Source_Name				=>"give_change";
+			source_text				=>("vendingmachine.c");
+	end Give_change.impl;
+	
+	
+	subprogram Give_product
+	end Give_product;
+	subprogram implementation Give_product.impl
+		properties
+			Source_Language			=>(C);
+			Source_Name				=>"give_product";
+			source_text				=>("vendingmachine.c");
+	end Give_product.impl;
+	
+	
+	subprogram Has_Fallen
+	end Has_Fallen;
+	subprogram implementation Has_Fallen.impl
+		properties
+			Source_Language			=>(C);
+			Source_Name				=>"has_fallen";
+			source_text				=>("vendingmachine.c");
+	end Has_Fallen.impl;
+	
+		subprogram View_message
+	end View_message;
+	subprogram implementation View_message.impl
+		properties
+			Source_Language			=>(C);
+			Source_Name				=>"view_message";
+			source_text				=>("vendingmachine.c");
+	end View_message.impl;
+	
+		subprogram Pressed_button
+	end Pressed_button;
+	subprogram implementation Pressed_button.impl
+		properties
+			Source_Language			=>(C);
+			Source_Name				=>"void pressed_button";
+			source_text				=>("vendingmachine.c");
+	end Pressed_button.impl;
+	
+	subprogram Pay_deal
+	end Pay_deal;
+	subprogram implementation Pay_deal.impl
+		properties
+			Source_Language			=>(C);
+			Source_Name				=>"pay_deal";
+			source_text				=>("vendingmachine.c");
+	end Pay_deal.impl;
+	
+	subprogram Insert_money
+	end Insert_money;
+	subprogram implementation Insert_money.impl
+		properties
+			Source_Language			=>(C);
+			Source_Name				=>"insert_money";
+			source_text				=>("vendingmachine.c");
+	end Insert_money.impl;
+	
+	thread MotionThread		
+		features
+			motion_in:in event port;
+			motion_out: out event port;
+	end MotionThread;
+	thread implementation MotionThread.impl
+		calls
+			Main: {
+				has_fallen_call: subprogram Has_fallen;
+			};
+			properties
+				Dispatch_protocol => Aperiodic;
+	end MotionThread.impl;
+	
+	thread ViewThread		
+		features
+			message_in:in data port Base_Types::String;
+			message_out:out data port Base_Types::String;
+	end ViewThread;
+	thread implementation ViewThread.impl
+		calls
+			Main: {
+				view_message_call: subprogram View_message;
+			};
+			properties
+				Dispatch_protocol => Aperiodic;
+	end ViewThread.impl;
+	
+	thread PayThread
+		features
+			motion_in:in event port;
+			button_in:in data port Base_Types::Integer_8;
+			message_out:out data port Base_Types::String;
+		    wysun_out: out data port Base_Types::Integer_8;	
+			reszta_out:out data port Base_Types::Integer_16;
+			sum_in:in data port Base_Types::Integer_16;
+	end PayThread;
+	thread implementation PayThread.impl
+		calls
+			Main: {
+				pay_deal_call:subprogram Pay_deal;				
+			};
+			properties
+				Dispatch_protocol => Aperiodic;
+	end PayThread.impl;
+	
+	thread MoneyThread
+		features
+			sum_in:in data port Base_Types::Integer_16;
+			sum_out:out data port Base_Types::Integer_16;
+	end MoneyThread;
+	thread implementation MoneyThread.impl
+		calls
+			Main: {
+				insert_money_call:subprogram Insert_money;					
+			};
+			properties
+				Dispatch_protocol => Aperiodic;
+	end MoneyThread.impl;
+	
+	thread GiveAwayThread
+		features
+			wysun_in: in data port Base_Types::Integer_8;
+			reszta_in:in data port Base_Types::Integer_16;	
+			wysun_out: out data port Base_Types::Integer_8;
+			reszta_out:out data port Base_Types::Integer_16;		
+	end GiveAwayThread;
+	thread implementation GiveAwayThread.impl
+		calls
+			Main: {
+				give_change_call: subprogram Give_change;
+				give_product_call:subprogram Give_product;
+			};
+			properties
+				Dispatch_protocol => Aperiodic;
+	end GiveAwayThread.impl;
+	thread ButtonsThread
+		features
+			button_in:in data port Base_Types::Integer_8;
+			button_out:out data port Base_Types::Integer_8;
+	end ButtonsThread;
+	thread implementation ButtonsThread.impl
+		calls
+			Main:{
+				pressed_button_call: subprogram Pressed_button;				
+			};
+			properties
+				Dispatch_protocol => Aperiodic;
+	end ButtonsThread.impl;
+	
+	
+	
+	processor MainProcessor
+		features
+			bus_access: requires bus access HWConnection;
+	end MainProcessor;
+	processor implementation MainProcessor.impl
+		subcomponents
+			main_processor_ram: memory Ram;
+	end MainProcessor.impl;
+	
+	
+	memory Ram		
+	end Ram;
+	
+	
+	bus HWConnection		
+	end HWConnection;
+	bus implementation HWConnection.impl		
+	end HWConnection.impl;
+
+
+	device Podajnik
+		features
+			wysun_produkt_in:in data port Base_Types::Integer_8;
+			bus_access: requires bus access HWConnection;			
+	end Podajnik;
+	device implementation Podajnik.impl		
+	end Podajnik.impl;
+
+
+	device Fotokomorka	
+		features
+			motion_out: out event port;
+			bus_access: requires bus access HWConnection;
+	end Fotokomorka;
+	device implementation Fotokomorka.impl		
+	end Fotokomorka.impl;
+	
+	
+	device Liczydlo
+		features
+			sum_of_money_out: out data port Base_Types::Integer_16;
+			reszta_in:in data port Base_Types::Integer_16;
+			bus_access: requires bus access HWConnection;
+	end Liczydlo;
+	device implementation Liczydlo.impl		
+	end Liczydlo.impl;	
+	
+	
+	device Panel_wyswietlacz
+		features
+			wiadomosc_in:in data port Base_Types::String;
+			bus_access: requires bus access HWConnection;		
+	end Panel_wyswietlacz;		
+	device implementation Panel_wyswietlacz.impl		
+	end Panel_wyswietlacz.impl;
+	
+			
+	device Panel_przyciski
+		features
+			wcisnieto_out:out data port Base_Types::Integer_8;
+			bus_access: requires bus access HWConnection;			
+	end Panel_przyciski;
+	device implementation Panel_przyciski.impl		
+	end Panel_przyciski.impl;
+		
+
+end Sterownik;

@@ -1,0 +1,51 @@
+package MITESIO
+public
+    with Base_Types;
+    with MITESIO::User;
+    with MITESIO::Photon;
+    with MITESIO::Node;
+
+    system mites
+    end mites;
+
+    system implementation mites.imp
+    subcomponents
+        photon1: device photon.imp;
+        node1: device node.imp;
+        user1: device user.imp;
+    end mites.imp
+
+    process mites_process
+        features
+        -- temperature sensor
+        P1_handle_temperature: in data port Base_Types::float;
+    end mites_process;
+
+    process implementation mites_process.imp
+        subcomponents
+            photon1: thread photon_handler.imp;
+        connections
+            connTemp: port P1_handle_temperature -> photon1.handle_temperature;
+    end mites_process.imp;
+
+    thread photon_handler
+        features
+        -- photon device
+        handle_temperature: in data port Base_Types::float; 
+    end photon_handler;
+
+    thread implementation photon_handler.imp
+    properties
+      Dispatch_Protocol => Periodic;
+      Compute_Execution_Time => 0 ms .. 20 ms;
+      Period => 50 Ms;
+
+    annex Behavior_Specification {**
+      states
+        send_temp : initial complete final state;
+      transitions
+       send_temp -[on dispatch]-> s1;
+       s1 -[handle_temperature]-> send_temp;
+    **};
+    end photon_handler.imp;
+end MITESIO;

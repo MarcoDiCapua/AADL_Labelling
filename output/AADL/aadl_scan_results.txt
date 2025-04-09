@@ -1,0 +1,529 @@
+Number of AADL files scanned: 1078
+Number of suitable AADL files: 705
+Number of not suitable AADL files: 373
+
+Total components found: 2335
+Total features found: 3504
+Total connection instances found: 4567
+Total mode instances found: 67
+Total flow specifications found: 463
+
+Top 50 Components:
+thread0: 80
+cpu: 74
+dca: 48
+hw: 43
+sensor1: 39
+NICTeaming: 38
+ram: 37
+CPU: 37
+canbus: 36
+app: 33
+dcs: 33
+actuate: 32
+r: 31
+sensor2: 31
+actuator: 30
+iop: 28
+s: 27
+control: 26
+filter: 25
+pci: 25
+B: 25
+sense1: 24
+sense2: 24
+Altitude_Sensor: 24
+Autopilot: 24
+A: 23
+Channel: 22
+x: 22
+y: 22
+PCI_BUS: 21
+C: 20
+data_collector: 16
+data_processor: 16
+collision_classifier: 16
+droneProc: 16
+droneThread: 16
+dotx: 16
+doty: 16
+refX: 15
+refY: 15
+controller: 14
+AFDX_ES: 14
+ASC_Process: 14
+ASC_IDS: 14
+ASC_Discover: 14
+ASC_CDA: 14
+ASC_CP: 14
+ASC_CAM: 14
+ASC_MV: 14
+ASC_SS: 14
+
+Bottom 50 Components:
+DISCOVERY_ARM: 1
+thisRam: 1
+this_uav: 1
+this_linuxOS: 1
+this_CPU: 1
+this_GPU: 1
+this_PCN: 1
+this_PCA: 1
+this_threeDModelGenerator: 1
+this_threeDModelPostProcess: 1
+this_panel_zewnetrzny: 1
+this_silownik_spirali: 1
+this_oswietlenie: 1
+this_licznik_monet: 1
+this_chlodziarka: 1
+this_RAM: 1
+Comprequest1_0: 1
+Comprequest2_1: 1
+Comprequest3_2: 1
+Comprequest4_3: 1
+Compgrant_o_0_4: 1
+Compgrant_o_1_5: 1
+Compgrant_o_2_6: 1
+Compgrant_o_3_7: 1
+Compclock_8: 1
+Compreset_9: 1
+Compclock_BUFGP_BUFG_10: 1
+Compcoda0_4_11: 1
+Compcoda3_4_12: 1
+Compcoda3_3_13: 1
+Compcoda2_3_14: 1
+CompN16_15: 1
+Compcoda1_4_16: 1
+Compgrant_o_3_17: 1
+Compstato_FSM_FFd3_18: 1
+Compfu4_19: 1
+Compgrant_3_20: 1
+Compcoda0_1_21: 1
+Compcoda2_4_22: 1
+Compru4_23: 1
+CompXDL_DUMMY_IOI_X17Y30_ILOGIC_X1Y61_24: 1
+CompXDL_DUMMY_IOI_X17Y70_ILOGIC_X1Y141_25: 1
+CompXDL_DUMMY_IOI_X17Y72_ILOGIC_X1Y144_26: 1
+CompXDL_DUMMY_IOI_X17Y72_OLOGIC_X1Y145_27: 1
+CompXDL_DUMMY_IOI_X17Y73_OLOGIC_X1Y146_28: 1
+CompXDL_DUMMY_IOI_X17Y73_OLOGIC_X1Y147_29: 1
+CompXDL_DUMMY_IOI_X17Y74_ILOGIC_X1Y148_30: 1
+CompXDL_DUMMY_IOI_X17Y74_ILOGIC_X1Y149_31: 1
+CompXDL_DUMMY_IOI_X17Y75_ILOGIC_X1Y150_32: 1
+CompXDL_DUMMY_IOI_X17Y75_OLOGIC_X1Y151_33: 1
+
+Top 50 Features:
+power: 364
+canbusaccess: 198
+DataPort: 176
+pci: 146
+output: 120
+eth1: 119
+eth2: 119
+MainDataPort: 119
+actuatorOut: 110
+Serial_Wire: 102
+current_temperature: 100
+ControlPort: 98
+ba: 97
+sensor1in: 88
+sensor2In: 88
+bus_access: 86
+Dev_Bus: 72
+currX: 67
+currY: 67
+input0: 64
+outX: 63
+outY: 63
+sensorout: 60
+sensor_data: 60
+inX: 60
+inY: 60
+edge: 60
+velX: 60
+velY: 60
+alarm: 59
+eth3: 59
+eth4: 59
+outed: 58
+ined: 58
+system_bus: 57
+power_supply: 54
+input: 52
+controlin: 52
+Supply: 51
+engage: 50
+disengage: 50
+eth5: 49
+eth6: 49
+BackupDataPort: 49
+mtm_bus: 48
+Data_Output: 48
+proc_evt: 48
+signalout: 48
+signalin: 48
+sensorfiltered: 48
+
+Bottom 50 Features:
+dp_ForceB_LOut: 1
+dp_ServoB_ROut: 1
+dp_ServoB_LOut: 1
+pg_ControlMessagesIn: 1
+dp_Servo_ROut: 1
+dp_Servo_LOut: 1
+dp_ForceROut: 1
+dp_ForceLOut: 1
+dp_AngleROut: 1
+dp_AngleLOut: 1
+dp_Servo_RIn: 1
+dp_Servo_LIn: 1
+BI2C1: 1
+BI2C2: 1
+BRS2321: 1
+BRS2322: 1
+BRS2323: 1
+state_out: 1
+noOfInputClouds: 1
+aggregationCompleted: 1
+pointCloud_in: 1
+model_out: 1
+resutl_out: 1
+result_in: 1
+numerek: 1
+ruch: 1
+light_on: 1
+chlodz: 1
+wyswietl: 1
+numerek_in: 1
+numerek_out: 1
+wyswietl_on: 1
+ruch_spirala: 1
+chlodzenie_on: 1
+Srequest1_0: 1
+Srequest2_1: 1
+Srequest3_2: 1
+Srequest4_3: 1
+Sgrant_o_0_4: 1
+Sgrant_o_1_5: 1
+Sgrant_o_2_6: 1
+Sgrant_o_3_7: 1
+Sclock_8: 1
+Sreset_9: 1
+I0: 1
+WE: 1
+AI: 1
+BI: 1
+CI: 1
+DI: 1
+
+Top 50 Connection Instances:
+NICTeaming.Teamedeth -> DigitalLogbook.Dataport: 24
+DigitalLogbook.Dataport -> NICTeaming.Teamedeth: 24
+filter.sensorfiltered -> control.sensorfiltered: 24
+iop.sense1.signalout -> app.filter.sensorraw1: 24
+iop.sense1.signalout -> app.filter.sensorraw2: 24
+iop.sense2.signalout -> app.samplingin2: 24
+app.control.actuatesensor -> iop.actuate.controlin: 24
+canbus -> cpu.cb: 24
+pci -> cpu.pci: 24
+cpu.cb -> canbus: 24
+cpu.pci -> pci: 24
+dcs.dca.actuatorOut -> actuator.actuatorin: 24
+PCI_BUS -> CPU.pci: 21
+dca.actuatorOut -> actuatorOut: 18
+sensor1.canbusaccess -> dcs.hw.canbus: 16
+sensor2.canbusaccess -> dcs.hw.canbus: 16
+actuator.canbusaccess -> dcs.hw.canbus: 16
+dcs.hw.canbus -> sensor1.canbusaccess: 16
+dcs.hw.canbus -> sensor2.canbusaccess: 16
+dcs.hw.canbus -> actuator.canbusaccess: 16
+power -> sensor1.power: 16
+power -> sensor2.power: 16
+power -> actuator.power: 16
+data_collector.raw_data -> data_processor.processed_data: 16
+data_processor.collision_likely -> collision_classifier.collision_data: 16
+PCI_BUS -> AFDX_ES.pci: 14
+ASC_Process.Dataport -> NICTeaming.Teamedeth: 14
+NICTeaming.Teamedeth -> ASC_Process.Dataport: 14
+Mem_Bus -> Ram.Mem_Bus: 12
+NICTeaming.Teamedeth -> ConnectivityManager_Process.DataPort: 12
+NICTeaming.Teamedeth -> UAM.DataPort: 12
+UAM.DataPort -> NICTeaming.Teamedeth: 12
+ConnectivityManager_Process.DataPort -> NICTeaming.Teamedeth: 12
+NICTeaming.Teamedeth -> SIEM.DataPort: 12
+SIEM.DataPort -> NICTeaming.Teamedeth: 12
+canbus -> pc1.cb: 12
+canbus -> pc2.cb: 12
+pcibus -> pc1.pci: 12
+pcibus -> pc2.pci: 12
+pcibus -> M.pci: 12
+M.pci -> pcibus: 12
+pc1.cb -> canbus: 12
+pc1.pci -> pcibus: 12
+pc2.cb -> canbus: 12
+pc2.pci -> pcibus: 12
+power -> hw.canbus.power: 12
+canbusaccess -> hw.canbus: 12
+hw.canbus -> canbusaccess: 12
+sensor1.sensorout -> dcs.dca.sensor1in: 12
+sensor2.sensorout -> dcs.dca.sensor2In: 12
+
+Bottom 50 Connection Instances:
+Compcoda2_4_22.A -> Compcoda2_3_14.C6: 1
+Compcoda2_4_22.A -> Compcoda1_4_16.A6: 1
+Compcoda2_4_22.A -> Compcoda1_4_16.B6: 1
+Compcoda2_4_22.A -> Compcoda1_4_16.C6: 1
+Compcoda2_4_22.A -> Compcoda1_4_16.D6: 1
+Compcoda2_4_22.A -> Compcoda2_4_22.B6: 1
+Compcoda2_4_22.BQ -> Compcoda3_4_12.A2: 1
+Compcoda2_4_22.BQ -> Compcoda1_4_16.D1: 1
+Compcoda2_4_22.BQ -> Compcoda2_4_22.B2: 1
+Compcoda2_4_22.C -> Compcoda0_1_21.A3: 1
+Compcoda2_4_22.D -> Compcoda3_4_12.B5: 1
+Compcoda2_4_22.D -> Compcoda0_1_21.D6: 1
+Compcoda2_4_22.D -> Compcoda2_4_22.C6: 1
+Compru4_23.AQ -> Compcoda0_4_11.A6: 1
+Compru4_23.AQ -> Compcoda3_4_12.B1: 1
+Compru4_23.AQ -> CompN16_15.B6: 1
+Compru4_23.AQ -> Compgrant_o_3_17.A4: 1
+Compru4_23.AQ -> Compgrant_o_3_17.B5: 1
+Compru4_23.AQ -> Compfu4_19.B6: 1
+Compru4_23.AQ -> Compfu4_19.AX: 1
+Compru4_23.AQ -> Compcoda0_1_21.B6: 1
+Compru4_23.AQ -> Compcoda0_1_21.D1: 1
+Compru4_23.AQ -> Compcoda2_4_22.A1: 1
+Compru4_23.AQ -> Compcoda2_4_22.C4: 1
+Compru4_23.AQ -> Compru4_23.A4: 1
+Compru4_23.BQ -> Compcoda3_4_12.B3: 1
+Compru4_23.BQ -> CompN16_15.A3: 1
+Compru4_23.BQ -> CompN16_15.B1: 1
+Compru4_23.BQ -> Compgrant_o_3_17.A5: 1
+Compru4_23.BQ -> Compgrant_o_3_17.B3: 1
+Compru4_23.BQ -> Compfu4_19.B1: 1
+Compru4_23.BQ -> Compfu4_19.D1: 1
+Compru4_23.BQ -> Compfu4_19.BX: 1
+Compru4_23.BQ -> Compcoda0_1_21.D5: 1
+Compru4_23.BQ -> Compcoda2_4_22.C1: 1
+Compru4_23.BQ -> Compru4_23.B4: 1
+Compru4_23.CQ -> CompN16_15.A5: 1
+Compru4_23.CQ -> CompN16_15.C6: 1
+Compru4_23.CQ -> Compfu4_19.C6: 1
+Compru4_23.CQ -> Compfu4_19.D6: 1
+Compru4_23.CQ -> Compfu4_19.CX: 1
+Compru4_23.CQ -> Compcoda2_4_22.D4: 1
+Compru4_23.CQ -> Compru4_23.C4: 1
+Compru4_23.DQ -> CompN16_15.A2: 1
+Compru4_23.DQ -> CompN16_15.C4: 1
+Compru4_23.DQ -> Compfu4_19.C3: 1
+Compru4_23.DQ -> Compfu4_19.D3: 1
+Compru4_23.DQ -> Compfu4_19.DX: 1
+Compru4_23.DQ -> Compcoda2_4_22.D6: 1
+Compru4_23.DQ -> Compru4_23.D4: 1
+
+Top 50 Mode Instances:
+avail_trust: 32
+avail_untrust: 32
+unavail: 32
+avoidable_collision: 17
+unavoidable_collision: 17
+wait_for_sensor: 16
+sensor_data_received: 16
+sensor_data_processed: 16
+check_collision_data: 16
+true_positive_detected: 16
+false_positive_detected: 16
+manual: 12
+auto: 12
+AutonomousExecution: 12
+AutonomousControl: 12
+RemoteControl: 12
+FailToSafe: 12
+dormant: 11
+startUp: 11
+active: 11
+pumpingActive: 11
+pumpingReady: 11
+emergencyShutdown: 11
+wait_for_command: 8
+process_command: 8
+engage_system: 8
+disengage_system: 8
+home: 6
+failsafe: 6
+normal: 6
+init: 6
+s1: 4
+s2: 4
+healthy: 4
+fault_detected: 4
+m1: 3
+atr_mode: 3
+nominal: 3
+fail_mode_1: 3
+fail_mode_2: 3
+fail_mode_3: 3
+z1: 3
+z2: 3
+m2: 2
+initialize: 2
+platoon: 2
+lane_change: 2
+RemoteMonitoring: 2
+StatusInvestigationAndASCUpdate: 2
+RemoteOperation: 2
+
+Bottom 50 Mode Instances:
+dormant: 11
+startUp: 11
+active: 11
+pumpingActive: 11
+pumpingReady: 11
+emergencyShutdown: 11
+wait_for_command: 8
+process_command: 8
+engage_system: 8
+disengage_system: 8
+home: 6
+failsafe: 6
+normal: 6
+init: 6
+s1: 4
+s2: 4
+healthy: 4
+fault_detected: 4
+m1: 3
+atr_mode: 3
+nominal: 3
+fail_mode_1: 3
+fail_mode_2: 3
+fail_mode_3: 3
+z1: 3
+z2: 3
+m2: 2
+initialize: 2
+platoon: 2
+lane_change: 2
+RemoteMonitoring: 2
+StatusInvestigationAndASCUpdate: 2
+RemoteOperation: 2
+Intervention: 2
+ShipRecovery: 2
+swap: 2
+wait_for_message: 2
+message_received: 2
+wait_for_message_to_send: 2
+got_message_to_send: 2
+message_sent: 2
+alart: 2
+mode_NM: 1
+mode_SM: 1
+no_collision_detected: 1
+Critical: 1
+NonCritical: 1
+lowBattery: 1
+charging: 1
+connection: 1
+
+Top 50 Flow Specifications:
+Unnamed flowSpecification: 2229
+f0: 132
+f1: 92
+RadarFlow: 54
+flow1: 49
+LidarFlow: 44
+f2: 31
+E0Flow: 27
+EOFlow: 27
+RadarFlow2: 27
+EOFlow2: 27
+fl1: 27
+output_source: 24
+input_sink: 24
+LidarFlow2: 22
+GNSSFlow: 22
+RTK_UHFFlow: 19
+fl2: 18
+well_formed: 16
+not_well_formed: 16
+fs1: 14
+f3: 13
+f4: 13
+comm_status: 12
+temp_to_heat_flow: 12
+Thruster1Flow: 12
+GNSSInformation_Primary: 12
+GNSSInformation_Secondary: 12
+RemoteControlCommandsFlow_Main: 10
+RemoteControlCommandsFlow_Backup: 10
+DomeCameraFlow: 10
+SPU1Flow: 10
+SPU2Flow: 10
+SPU3Flow: 10
+SPU4Flow: 10
+SPU5Flow: 10
+SPU6Flow: 10
+SPU1Flow_Backup: 10
+SPU2Flow_Backup: 10
+SPU3Flow_Backup: 10
+SPU4Flow_Backup: 10
+SPU5Flow_Backup: 10
+SPU6Flow_Backup: 10
+GNSSSignal: 10
+Altitude_output_source: 10
+Altitude_input_sink: 10
+EmergencyNavigationFlow: 9
+EmergencyButtonFlow: 9
+signalFlowPath: 9
+receive: 8
+
+Bottom 50 Flow Specifications:
+wrs_source: 1
+bp_source: 1
+act_sink: 1
+f6: 1
+f7: 1
+f8: 1
+transmit_map: 1
+receive_status: 1
+dst: 1
+flowSource: 1
+Spo2_Metric_Spo2Num_res_flow: 1
+req_src: 1
+disp_sink: 1
+fs3: 1
+ui_flowsource: 1
+ud_flowsink: 1
+wheel_flowsource: 1
+brake_flowsource: 1
+act_flowsink: 1
+flow_UI_UD: 1
+flow_bp_act: 1
+flow_wr_act: 1
+accel_toggle_source: 1
+brake_toggle_source: 1
+target_voltage_sink: 1
+voltage_output_source: 1
+brake_state_sink: 1
+is_braking_source: 1
+scooter_speed_sink: 1
+measured_speed_source: 1
+battery_pct_source: 1
+speed_data_sink: 1
+brake_ctrl_source: 1
+power_adjust_source: 1
+power_watt_path: 1
+brake_source: 1
+battery_ctrl_source: 1
+flow2: 1
+flow3: 1
+flow4: 1
+fpc1: 1
+fpc2: 1
+fppb: 1
+fpsb: 1
+fpb: 1
+fpr: 1
+fppf: 1
+fpsf: 1
+raw_data: 1
+raw_data_IMU: 1

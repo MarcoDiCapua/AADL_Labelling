@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="avoidance_subsystem_impl_Instance" category="system">
+  <featureInstance name="motion_unavoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="motion_avoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="debris_unavoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.2"/>
+  </featureInstance>
+  <featureInstance name="debris_avoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.3"/>
+  </featureInstance>
+  <featureInstance name="speed_unavoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.4"/>
+  </featureInstance>
+  <featureInstance name="speed_avoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.5"/>
+  </featureInstance>
+  <featureInstance name="vehicle_unavoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.6"/>
+  </featureInstance>
+  <featureInstance name="vehicle_avoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.7"/>
+  </featureInstance>
+  <featureInstance name="tire_unavoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.8"/>
+  </featureInstance>
+  <featureInstance name="tire_avoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.9"/>
+  </featureInstance>
+  <featureInstance name="conditions_unavoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.10"/>
+  </featureInstance>
+  <featureInstance name="conditions_avoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.11"/>
+  </featureInstance>
+  <featureInstance name="driver_unavoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.12"/>
+  </featureInstance>
+  <featureInstance name="driver_avoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.13"/>
+  </featureInstance>
+  <featureInstance name="external_unavoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.14"/>
+  </featureInstance>
+  <featureInstance name="external_avoidable_port">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.15"/>
+  </featureInstance>
+  <featureInstance name="braking_cmd" category="eventDataPort" direction="out">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="steering_cmd" category="eventDataPort" direction="out">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventDataPort.1"/>
+  </featureInstance>
+  <componentInstance name="vehicle_bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#basic_computing.basic_bus.standard"/>
+  </componentInstance>
+  <componentInstance name="bus_driver" category="device">
+    <featureInstance name="event_data" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/instances/avoidance_subsystem_avoidance_subsystem_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#basic_devices.bus_driver.standard"/>
+  </componentInstance>
+  <componentInstance name="event_distributor" category="device">
+    <featureInstance name="event_data" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/instances/avoidance_subsystem_avoidance_subsystem_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#basic_devices.event_distributor.standard"/>
+  </componentInstance>
+  <componentInstance name="vehicle_memory" category="memory">
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/instances/avoidance_subsystem_avoidance_subsystem_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedMemorySubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#basic_computing.ram.standard"/>
+  </componentInstance>
+  <componentInstance name="avoidance_process_A" category="process">
+    <featureInstance name="sensor_data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="vehicle_control_data" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="motion_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="motion_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="debris_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="debris_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="speed_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.6"/>
+    </featureInstance>
+    <featureInstance name="speed_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.7"/>
+    </featureInstance>
+    <featureInstance name="vehicle_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.8"/>
+    </featureInstance>
+    <featureInstance name="vehicle_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.9"/>
+    </featureInstance>
+    <featureInstance name="tire_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.10"/>
+    </featureInstance>
+    <featureInstance name="tire_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.11"/>
+    </featureInstance>
+    <featureInstance name="conditions_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.12"/>
+    </featureInstance>
+    <featureInstance name="conditions_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.13"/>
+    </featureInstance>
+    <featureInstance name="driver_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.14"/>
+    </featureInstance>
+    <featureInstance name="driver_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.15"/>
+    </featureInstance>
+    <featureInstance name="external_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.16"/>
+    </featureInstance>
+    <featureInstance name="external_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.17"/>
+    </featureInstance>
+    <featureInstance name="vehicle_event_output" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="self_test_result" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="proc_watchdog_cmd_input" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventPort.1"/>
+    </featureInstance>
+    <componentInstance name="motion_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.motion"/>
+    </componentInstance>
+    <componentInstance name="debris_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.debris"/>
+    </componentInstance>
+    <componentInstance name="speed_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.speed"/>
+    </componentInstance>
+    <componentInstance name="vehicle_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.vehicle"/>
+    </componentInstance>
+    <componentInstance name="tire_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.tire"/>
+    </componentInstance>
+    <componentInstance name="conditions_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.5"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.conditions"/>
+    </componentInstance>
+    <componentInstance name="driver_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.6"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.driver"/>
+    </componentInstance>
+    <componentInstance name="external_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.7"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.external"/>
+    </componentInstance>
+    <componentInstance name="avoid_collision_control" category="thread">
+      <featureInstance name="predictor_cmd">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_proc_data">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="send_steering_cmds" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="send_brake_cmds" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.8"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.control_laws_avoidable.singleton"/>
+    </componentInstance>
+    <componentInstance name="safe_impact_control" category="thread">
+      <featureInstance name="predictor_cmd">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_proc_data">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="send_steering_cmds" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="send_brake_cmds" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.9"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.control_laws_unavoidable.singleton"/>
+    </componentInstance>
+    <componentInstance name="watchdog_thread" category="thread">
+      <featureInstance name="thread_monitor" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="failure_detected" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventPort.1"/>
+      </featureInstance>
+      <featureInstance name="all_green" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventPort.2"/>
+      </featureInstance>
+      <modeInstance name="init" initial="true">
+        <mode href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedMode.0"/>
+      </modeInstance>
+      <modeInstance name="healthy">
+        <mode href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedMode.1"/>
+      </modeInstance>
+      <modeInstance name="fault_detected">
+        <mode href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedMode.2"/>
+      </modeInstance>
+      <modeTransitionInstance name="init_thread_monitor_fault_detected" destination="//@componentInstance.4/@componentInstance.10/@modeInstance.2" trigger="//@componentInstance.4/@componentInstance.10/@featureInstance.0" source="//@componentInstance.4/@componentInstance.10/@modeInstance.0">
+        <modeTransition href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedModeTransition.0"/>
+      </modeTransitionInstance>
+      <modeTransitionInstance name="fault_detected_failure_detected_fault_detected" destination="//@componentInstance.4/@componentInstance.10/@modeInstance.2" trigger="//@componentInstance.4/@componentInstance.10/@featureInstance.1" source="//@componentInstance.4/@componentInstance.10/@modeInstance.2">
+        <modeTransition href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedModeTransition.1"/>
+      </modeTransitionInstance>
+      <modeTransitionInstance name="init_thread_monitor_healthy" destination="//@componentInstance.4/@componentInstance.10/@modeInstance.1" trigger="//@componentInstance.4/@componentInstance.10/@featureInstance.0" source="//@componentInstance.4/@componentInstance.10/@modeInstance.0">
+        <modeTransition href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedModeTransition.2"/>
+      </modeTransitionInstance>
+      <modeTransitionInstance name="healthy_all_green_init" destination="//@componentInstance.4/@componentInstance.10/@modeInstance.0" trigger="//@componentInstance.4/@componentInstance.10/@featureInstance.2" source="//@componentInstance.4/@componentInstance.10/@modeInstance.1">
+        <modeTransition href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedModeTransition.3"/>
+      </modeTransitionInstance>
+      <flowSpecification name="f1" source="//@componentInstance.4/@componentInstance.10/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.10/@featureInstance.2">
+        <flowSpecification href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <flowSpecification name="f2" source="//@componentInstance.4/@componentInstance.10/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.10/@featureInstance.1">
+        <flowSpecification href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedFlowSpecification.1"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.10"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.watchdog_thread.impl"/>
+    </componentInstance>
+    <connectionInstance name="motion_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1" source="//@componentInstance.4/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.16"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="motion_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1" source="//@componentInstance.4/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.17"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="debris_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1" source="//@componentInstance.4/@componentInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.18"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="debris_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1" source="//@componentInstance.4/@componentInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.19"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="speed_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1" source="//@componentInstance.4/@componentInstance.2/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.20"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="speed_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1" source="//@componentInstance.4/@componentInstance.2/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.21"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="vehicle_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1" source="//@componentInstance.4/@componentInstance.3/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.22"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="vehicle_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1" source="//@componentInstance.4/@componentInstance.3/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.23"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="tire_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1" source="//@componentInstance.4/@componentInstance.4/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.4/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.24"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="tire_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1" source="//@componentInstance.4/@componentInstance.4/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.4/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.25"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="driver_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1" source="//@componentInstance.4/@componentInstance.6/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.6/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.26"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="driver_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1" source="//@componentInstance.4/@componentInstance.6/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.6/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.27"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="external_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1" source="//@componentInstance.4/@componentInstance.7/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.7/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.28"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="external_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1" source="//@componentInstance.4/@componentInstance.7/@featureInstance.0">
+      <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.7/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.29"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.collision_threat_handler.A"/>
+  </componentInstance>
+  <componentInstance name="avoidance_process_B" category="process">
+    <featureInstance name="sensor_data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="vehicle_control_data" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="motion_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="motion_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="debris_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="debris_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="speed_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.6"/>
+    </featureInstance>
+    <featureInstance name="speed_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.7"/>
+    </featureInstance>
+    <featureInstance name="vehicle_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.8"/>
+    </featureInstance>
+    <featureInstance name="vehicle_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.9"/>
+    </featureInstance>
+    <featureInstance name="tire_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.10"/>
+    </featureInstance>
+    <featureInstance name="tire_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.11"/>
+    </featureInstance>
+    <featureInstance name="conditions_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.12"/>
+    </featureInstance>
+    <featureInstance name="conditions_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.13"/>
+    </featureInstance>
+    <featureInstance name="driver_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.14"/>
+    </featureInstance>
+    <featureInstance name="driver_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.15"/>
+    </featureInstance>
+    <featureInstance name="external_unavoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.16"/>
+    </featureInstance>
+    <featureInstance name="external_avoidable_port">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.17"/>
+    </featureInstance>
+    <featureInstance name="vehicle_event_output" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="self_test_result" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="proc_watchdog_cmd_input" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventPort.1"/>
+    </featureInstance>
+    <componentInstance name="motion_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.motion"/>
+    </componentInstance>
+    <componentInstance name="debris_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.debris"/>
+    </componentInstance>
+    <componentInstance name="speed_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.speed"/>
+    </componentInstance>
+    <componentInstance name="vehicle_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.vehicle"/>
+    </componentInstance>
+    <componentInstance name="tire_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.tire"/>
+    </componentInstance>
+    <componentInstance name="conditions_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.5"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.conditions"/>
+    </componentInstance>
+    <componentInstance name="driver_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.6"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.driver"/>
+    </componentInstance>
+    <componentInstance name="external_data_handler" category="thread">
+      <featureInstance name="send_proc_data" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_sensor" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.7"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.data_handler.external"/>
+    </componentInstance>
+    <componentInstance name="avoid_collision_control" category="thread">
+      <featureInstance name="predictor_cmd">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_proc_data">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="send_steering_cmds" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="send_brake_cmds" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.8"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.control_laws_avoidable.singleton"/>
+    </componentInstance>
+    <componentInstance name="safe_impact_control" category="thread">
+      <featureInstance name="predictor_cmd">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="read_proc_data">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="send_steering_cmds" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="send_brake_cmds" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.9"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.control_laws_unavoidable.singleton"/>
+    </componentInstance>
+    <componentInstance name="watchdog_thread" category="thread">
+      <featureInstance name="thread_monitor" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="failure_detected" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventPort.1"/>
+      </featureInstance>
+      <featureInstance name="all_green" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventPort.2"/>
+      </featureInstance>
+      <modeInstance name="init" initial="true">
+        <mode href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedMode.0"/>
+      </modeInstance>
+      <modeInstance name="healthy">
+        <mode href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedMode.1"/>
+      </modeInstance>
+      <modeInstance name="fault_detected">
+        <mode href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedMode.2"/>
+      </modeInstance>
+      <modeTransitionInstance name="init_thread_monitor_fault_detected" destination="//@componentInstance.5/@componentInstance.10/@modeInstance.2" trigger="//@componentInstance.5/@componentInstance.10/@featureInstance.0" source="//@componentInstance.5/@componentInstance.10/@modeInstance.0">
+        <modeTransition href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedModeTransition.0"/>
+      </modeTransitionInstance>
+      <modeTransitionInstance name="fault_detected_failure_detected_fault_detected" destination="//@componentInstance.5/@componentInstance.10/@modeInstance.2" trigger="//@componentInstance.5/@componentInstance.10/@featureInstance.1" source="//@componentInstance.5/@componentInstance.10/@modeInstance.2">
+        <modeTransition href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedModeTransition.1"/>
+      </modeTransitionInstance>
+      <modeTransitionInstance name="init_thread_monitor_healthy" destination="//@componentInstance.5/@componentInstance.10/@modeInstance.1" trigger="//@componentInstance.5/@componentInstance.10/@featureInstance.0" source="//@componentInstance.5/@componentInstance.10/@modeInstance.0">
+        <modeTransition href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedModeTransition.2"/>
+      </modeTransitionInstance>
+      <modeTransitionInstance name="healthy_all_green_init" destination="//@componentInstance.5/@componentInstance.10/@modeInstance.0" trigger="//@componentInstance.5/@componentInstance.10/@featureInstance.2" source="//@componentInstance.5/@componentInstance.10/@modeInstance.1">
+        <modeTransition href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedModeTransition.3"/>
+      </modeTransitionInstance>
+      <flowSpecification name="f1" source="//@componentInstance.5/@componentInstance.10/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.10/@featureInstance.2">
+        <flowSpecification href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <flowSpecification name="f2" source="//@componentInstance.5/@componentInstance.10/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.10/@featureInstance.1">
+        <flowSpecification href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedFlowSpecification.1"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.10"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.watchdog_thread.impl"/>
+    </componentInstance>
+    <connectionInstance name="motion_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1" source="//@componentInstance.5/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.16"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="motion_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1" source="//@componentInstance.5/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.17"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="debris_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1" source="//@componentInstance.5/@componentInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.18"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="debris_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1" source="//@componentInstance.5/@componentInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.19"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="speed_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1" source="//@componentInstance.5/@componentInstance.2/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.20"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="speed_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1" source="//@componentInstance.5/@componentInstance.2/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.21"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="vehicle_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1" source="//@componentInstance.5/@componentInstance.3/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.22"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="vehicle_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1" source="//@componentInstance.5/@componentInstance.3/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.23"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="tire_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1" source="//@componentInstance.5/@componentInstance.4/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.4/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.24"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="tire_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1" source="//@componentInstance.5/@componentInstance.4/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.4/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.25"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="driver_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1" source="//@componentInstance.5/@componentInstance.6/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.6/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.26"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="driver_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1" source="//@componentInstance.5/@componentInstance.6/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.6/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.27"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="external_data_handler.send_proc_data -> safe_impact_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1" source="//@componentInstance.5/@componentInstance.7/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.7/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.9/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.28"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="external_data_handler.send_proc_data -> avoid_collision_control.read_proc_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1" source="//@componentInstance.5/@componentInstance.7/@featureInstance.0">
+      <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.7/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.29"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.collision_threat_handler.B"/>
+  </componentInstance>
+  <componentInstance name="watchdog_process" category="process">
+    <featureInstance name="proc_monitor" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="hot_swap" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventPort.1"/>
+    </featureInstance>
+    <modeInstance name="init" initial="true">
+      <mode href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedMode.0"/>
+    </modeInstance>
+    <modeInstance name="swap">
+      <mode href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedMode.1"/>
+    </modeInstance>
+    <modeTransitionInstance name="init_proc_monitor_swap" destination="//@componentInstance.6/@modeInstance.1" trigger="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.6/@modeInstance.0">
+      <modeTransition href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedModeTransition.0"/>
+    </modeTransitionInstance>
+    <modeTransitionInstance name="swap_hot_swap_init" destination="//@componentInstance.6/@modeInstance.0" trigger="//@componentInstance.6/@featureInstance.1" source="//@componentInstance.6/@modeInstance.1">
+      <modeTransition href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedModeTransition.1"/>
+    </modeTransitionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.watchdog_proc.impl"/>
+  </componentInstance>
+  <componentInstance name="vehicle_processor" category="processor">
+    <featureInstance name="BA1" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/instances/avoidance_subsystem_avoidance_subsystem_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#basic_computing.real_time.one_ghz"/>
+  </componentInstance>
+  <connectionInstance name="motion_unavoidable_port -> avoidance_process_A.motion_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.1" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.2" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="motion_unavoidable_port -> avoidance_process_A.external_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.7/@featureInstance.1" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.2" destination="//@componentInstance.4/@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="motion_unavoidable_port -> avoidance_process_A.external_avoidable_port" kind="portConnection" destination="//@componentInstance.4/@featureInstance.17" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.4/@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.19"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="motion_unavoidable_port -> avoidance_process_B.motion_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.0/@featureInstance.1" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.5/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.21"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.2" destination="//@componentInstance.5/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="motion_unavoidable_port -> avoidance_process_B.external_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.7/@featureInstance.1" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.5/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.21"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.2" destination="//@componentInstance.5/@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="motion_unavoidable_port -> avoidance_process_B.external_avoidable_port" kind="portConnection" destination="//@componentInstance.5/@featureInstance.17" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.5/@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.36"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="motion_avoidable_port -> avoidance_process_A.motion_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.1" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.4/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.3" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="motion_avoidable_port -> avoidance_process_B.motion_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.0/@featureInstance.1" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.5/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.22"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.3" destination="//@componentInstance.5/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="debris_unavoidable_port -> avoidance_process_A.debris_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.1/@featureInstance.1" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.4/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.4" destination="//@componentInstance.4/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="debris_unavoidable_port -> avoidance_process_B.debris_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.1" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.5/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.23"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.4" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="debris_avoidable_port -> avoidance_process_A.debris_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.1/@featureInstance.1" source="//@featureInstance.3">
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.4/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.5" destination="//@componentInstance.4/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="debris_avoidable_port -> avoidance_process_B.debris_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.1" source="//@featureInstance.3">
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.5/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.24"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.5" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speed_unavoidable_port -> avoidance_process_A.speed_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.2/@featureInstance.1" source="//@featureInstance.4">
+    <connectionReference context="/" source="//@featureInstance.4" destination="//@componentInstance.4/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.6" destination="//@componentInstance.4/@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speed_unavoidable_port -> avoidance_process_B.speed_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.2/@featureInstance.1" source="//@featureInstance.4">
+    <connectionReference context="/" source="//@featureInstance.4" destination="//@componentInstance.5/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.25"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.6" destination="//@componentInstance.5/@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speed_avoidable_port -> avoidance_process_A.speed_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.2/@featureInstance.1" source="//@featureInstance.5">
+    <connectionReference context="/" source="//@featureInstance.5" destination="//@componentInstance.4/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.7" destination="//@componentInstance.4/@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speed_avoidable_port -> avoidance_process_B.speed_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.2/@featureInstance.1" source="//@featureInstance.5">
+    <connectionReference context="/" source="//@featureInstance.5" destination="//@componentInstance.5/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.26"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.7" destination="//@componentInstance.5/@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_unavoidable_port -> avoidance_process_A.vehicle_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.3/@featureInstance.1" source="//@featureInstance.6">
+    <connectionReference context="/" source="//@featureInstance.6" destination="//@componentInstance.4/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.8" destination="//@componentInstance.4/@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_unavoidable_port -> avoidance_process_B.vehicle_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.3/@featureInstance.1" source="//@featureInstance.6">
+    <connectionReference context="/" source="//@featureInstance.6" destination="//@componentInstance.5/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.27"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.8" destination="//@componentInstance.5/@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_avoidable_port -> avoidance_process_A.vehicle_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.3/@featureInstance.1" source="//@featureInstance.7">
+    <connectionReference context="/" source="//@featureInstance.7" destination="//@componentInstance.4/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.11"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.9" destination="//@componentInstance.4/@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_avoidable_port -> avoidance_process_B.vehicle_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.3/@featureInstance.1" source="//@featureInstance.7">
+    <connectionReference context="/" source="//@featureInstance.7" destination="//@componentInstance.5/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.28"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.9" destination="//@componentInstance.5/@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tire_unavoidable_port -> avoidance_process_A.tire_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.4/@featureInstance.1" source="//@featureInstance.8">
+    <connectionReference context="/" source="//@featureInstance.8" destination="//@componentInstance.4/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.12"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.10" destination="//@componentInstance.4/@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tire_unavoidable_port -> avoidance_process_B.tire_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.4/@featureInstance.1" source="//@featureInstance.8">
+    <connectionReference context="/" source="//@featureInstance.8" destination="//@componentInstance.5/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.29"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.10" destination="//@componentInstance.5/@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tire_avoidable_port -> avoidance_process_A.tire_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.4/@featureInstance.1" source="//@featureInstance.9">
+    <connectionReference context="/" source="//@featureInstance.9" destination="//@componentInstance.4/@featureInstance.11">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.13"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.11" destination="//@componentInstance.4/@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tire_avoidable_port -> avoidance_process_B.tire_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.4/@featureInstance.1" source="//@featureInstance.9">
+    <connectionReference context="/" source="//@featureInstance.9" destination="//@componentInstance.5/@featureInstance.11">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.30"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.11" destination="//@componentInstance.5/@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="conditions_unavoidable_port -> avoidance_process_A.conditions_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.5/@featureInstance.1" source="//@featureInstance.10">
+    <connectionReference context="/" source="//@featureInstance.10" destination="//@componentInstance.4/@featureInstance.12">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.14"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.12" destination="//@componentInstance.4/@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="conditions_unavoidable_port -> avoidance_process_B.conditions_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.5/@featureInstance.1" source="//@featureInstance.10">
+    <connectionReference context="/" source="//@featureInstance.10" destination="//@componentInstance.5/@featureInstance.12">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.31"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.12" destination="//@componentInstance.5/@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="conditions_avoidable_port -> avoidance_process_A.conditions_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.5/@featureInstance.1" source="//@featureInstance.11">
+    <connectionReference context="/" source="//@featureInstance.11" destination="//@componentInstance.4/@featureInstance.13">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.15"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.13" destination="//@componentInstance.4/@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="conditions_avoidable_port -> avoidance_process_B.conditions_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.5/@featureInstance.1" source="//@featureInstance.11">
+    <connectionReference context="/" source="//@featureInstance.11" destination="//@componentInstance.5/@featureInstance.13">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.32"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.13" destination="//@componentInstance.5/@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="driver_unavoidable_port -> avoidance_process_A.driver_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.6/@featureInstance.1" source="//@featureInstance.12">
+    <connectionReference context="/" source="//@featureInstance.12" destination="//@componentInstance.4/@featureInstance.14">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.16"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.14" destination="//@componentInstance.4/@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="driver_unavoidable_port -> avoidance_process_B.driver_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.6/@featureInstance.1" source="//@featureInstance.12">
+    <connectionReference context="/" source="//@featureInstance.12" destination="//@componentInstance.5/@featureInstance.14">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.33"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.14" destination="//@componentInstance.5/@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="driver_avoidable_port -> avoidance_process_A.driver_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.6/@featureInstance.1" source="//@featureInstance.13">
+    <connectionReference context="/" source="//@featureInstance.13" destination="//@componentInstance.4/@featureInstance.15">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.17"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.15" destination="//@componentInstance.4/@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="driver_avoidable_port -> avoidance_process_B.driver_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.6/@featureInstance.1" source="//@featureInstance.13">
+    <connectionReference context="/" source="//@featureInstance.13" destination="//@componentInstance.5/@featureInstance.15">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.34"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.15" destination="//@componentInstance.5/@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="external_unavoidable_port -> avoidance_process_A.external_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.4/@componentInstance.7/@featureInstance.1" source="//@featureInstance.14">
+    <connectionReference context="/" source="//@featureInstance.14" destination="//@componentInstance.4/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.18"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.16" destination="//@componentInstance.4/@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="external_unavoidable_port -> avoidance_process_B.external_data_handler.read_sensor" kind="portConnection" destination="//@componentInstance.5/@componentInstance.7/@featureInstance.1" source="//@featureInstance.14">
+    <connectionReference context="/" source="//@featureInstance.14" destination="//@componentInstance.5/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.35"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.16" destination="//@componentInstance.5/@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_bus -> bus_driver.ba" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.1/@featureInstance.1" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="bus_driver.ba -> vehicle_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="event_distributor.event_data -> avoidance_process_A.sensor_data" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.20"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="event_distributor.event_data -> avoidance_process_B.sensor_data" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.37"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_A.self_test_result -> watchdog_process.proc_monitor" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.4/@featureInstance.19">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.19" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_A.avoid_collision_control.send_steering_cmds -> braking_cmd" kind="portConnection" destination="//@featureInstance.16" source="//@componentInstance.4/@componentInstance.8/@featureInstance.2">
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.8/@featureInstance.2" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.32"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.38"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_A.avoid_collision_control.send_steering_cmds -> steering_cmd" kind="portConnection" destination="//@featureInstance.17" source="//@componentInstance.4/@componentInstance.8/@featureInstance.2">
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.8/@featureInstance.2" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.32"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.39"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_A.avoid_collision_control.send_brake_cmds -> braking_cmd" kind="portConnection" destination="//@featureInstance.16" source="//@componentInstance.4/@componentInstance.8/@featureInstance.3">
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.8/@featureInstance.3" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.30"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.38"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_A.avoid_collision_control.send_brake_cmds -> steering_cmd" kind="portConnection" destination="//@featureInstance.17" source="//@componentInstance.4/@componentInstance.8/@featureInstance.3">
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.8/@featureInstance.3" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.30"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.39"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_A.safe_impact_control.send_steering_cmds -> braking_cmd" kind="portConnection" destination="//@featureInstance.16" source="//@componentInstance.4/@componentInstance.9/@featureInstance.2">
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.9/@featureInstance.2" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.33"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.38"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_A.safe_impact_control.send_steering_cmds -> steering_cmd" kind="portConnection" destination="//@featureInstance.17" source="//@componentInstance.4/@componentInstance.9/@featureInstance.2">
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.9/@featureInstance.2" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.33"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.39"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_A.safe_impact_control.send_brake_cmds -> braking_cmd" kind="portConnection" destination="//@featureInstance.16" source="//@componentInstance.4/@componentInstance.9/@featureInstance.3">
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.9/@featureInstance.3" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.31"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.38"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_A.safe_impact_control.send_brake_cmds -> steering_cmd" kind="portConnection" destination="//@featureInstance.17" source="//@componentInstance.4/@componentInstance.9/@featureInstance.3">
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@componentInstance.9/@featureInstance.3" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.31"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.39"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_B.self_test_result -> watchdog_process.proc_monitor" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.5/@featureInstance.19">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.19" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_B.avoid_collision_control.send_steering_cmds -> braking_cmd" kind="portConnection" destination="//@featureInstance.16" source="//@componentInstance.5/@componentInstance.8/@featureInstance.2">
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.8/@featureInstance.2" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.32"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.40"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_B.avoid_collision_control.send_steering_cmds -> steering_cmd" kind="portConnection" destination="//@featureInstance.17" source="//@componentInstance.5/@componentInstance.8/@featureInstance.2">
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.8/@featureInstance.2" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.32"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.41"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_B.avoid_collision_control.send_brake_cmds -> braking_cmd" kind="portConnection" destination="//@featureInstance.16" source="//@componentInstance.5/@componentInstance.8/@featureInstance.3">
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.8/@featureInstance.3" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.30"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.40"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_B.avoid_collision_control.send_brake_cmds -> steering_cmd" kind="portConnection" destination="//@featureInstance.17" source="//@componentInstance.5/@componentInstance.8/@featureInstance.3">
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.8/@featureInstance.3" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.30"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.41"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_B.safe_impact_control.send_steering_cmds -> braking_cmd" kind="portConnection" destination="//@featureInstance.16" source="//@componentInstance.5/@componentInstance.9/@featureInstance.2">
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.9/@featureInstance.2" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.33"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.40"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_B.safe_impact_control.send_steering_cmds -> steering_cmd" kind="portConnection" destination="//@featureInstance.17" source="//@componentInstance.5/@componentInstance.9/@featureInstance.2">
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.9/@featureInstance.2" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.33"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.41"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_B.safe_impact_control.send_brake_cmds -> braking_cmd" kind="portConnection" destination="//@featureInstance.16" source="//@componentInstance.5/@componentInstance.9/@featureInstance.3">
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.9/@featureInstance.3" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.31"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.40"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="avoidance_process_B.safe_impact_control.send_brake_cmds -> steering_cmd" kind="portConnection" destination="//@featureInstance.17" source="//@componentInstance.5/@componentInstance.9/@featureInstance.3">
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.9/@featureInstance.3" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPortConnection.31"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.41"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="watchdog_process.hot_swap -> avoidance_process_A.proc_watchdog_cmd_input" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.20" source="//@componentInstance.6/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.1" destination="//@componentInstance.4/@featureInstance.20">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="watchdog_process.hot_swap -> avoidance_process_B.proc_watchdog_cmd_input" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.20" source="//@componentInstance.6/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.1" destination="//@componentInstance.5/@featureInstance.20">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.avoidance_subsystem.impl"/>
+  <systemOperationMode name="som_1" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.0 //@componentInstance.5/@componentInstance.10/@modeInstance.0 //@componentInstance.6/@modeInstance.0"/>
+  <systemOperationMode name="som_2" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.0 //@componentInstance.5/@componentInstance.10/@modeInstance.0 //@componentInstance.6/@modeInstance.1"/>
+  <systemOperationMode name="som_3" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.0 //@componentInstance.5/@componentInstance.10/@modeInstance.1 //@componentInstance.6/@modeInstance.0"/>
+  <systemOperationMode name="som_4" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.0 //@componentInstance.5/@componentInstance.10/@modeInstance.1 //@componentInstance.6/@modeInstance.1"/>
+  <systemOperationMode name="som_5" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.0 //@componentInstance.5/@componentInstance.10/@modeInstance.2 //@componentInstance.6/@modeInstance.0"/>
+  <systemOperationMode name="som_6" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.0 //@componentInstance.5/@componentInstance.10/@modeInstance.2 //@componentInstance.6/@modeInstance.1"/>
+  <systemOperationMode name="som_7" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.1 //@componentInstance.5/@componentInstance.10/@modeInstance.0 //@componentInstance.6/@modeInstance.0"/>
+  <systemOperationMode name="som_8" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.1 //@componentInstance.5/@componentInstance.10/@modeInstance.0 //@componentInstance.6/@modeInstance.1"/>
+  <systemOperationMode name="som_9" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.1 //@componentInstance.5/@componentInstance.10/@modeInstance.1 //@componentInstance.6/@modeInstance.0"/>
+  <systemOperationMode name="som_10" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.1 //@componentInstance.5/@componentInstance.10/@modeInstance.1 //@componentInstance.6/@modeInstance.1"/>
+  <systemOperationMode name="som_11" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.1 //@componentInstance.5/@componentInstance.10/@modeInstance.2 //@componentInstance.6/@modeInstance.0"/>
+  <systemOperationMode name="som_12" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.1 //@componentInstance.5/@componentInstance.10/@modeInstance.2 //@componentInstance.6/@modeInstance.1"/>
+  <systemOperationMode name="som_13" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.2 //@componentInstance.5/@componentInstance.10/@modeInstance.0 //@componentInstance.6/@modeInstance.0"/>
+  <systemOperationMode name="som_14" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.2 //@componentInstance.5/@componentInstance.10/@modeInstance.0 //@componentInstance.6/@modeInstance.1"/>
+  <systemOperationMode name="som_15" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.2 //@componentInstance.5/@componentInstance.10/@modeInstance.1 //@componentInstance.6/@modeInstance.0"/>
+  <systemOperationMode name="som_16" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.2 //@componentInstance.5/@componentInstance.10/@modeInstance.1 //@componentInstance.6/@modeInstance.1"/>
+  <systemOperationMode name="som_17" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.2 //@componentInstance.5/@componentInstance.10/@modeInstance.2 //@componentInstance.6/@modeInstance.0"/>
+  <systemOperationMode name="som_18" currentMode="//@componentInstance.4/@componentInstance.10/@modeInstance.2 //@componentInstance.5/@componentInstance.10/@modeInstance.2 //@componentInstance.6/@modeInstance.1"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/collision_detection_aadl/packages/Collision%20Avoidance%20Subsystem/avoidance_subsystem.aadl#avoidance_subsystem.avoidance_subsystem.impl"/>
+</instance:SystemInstance>

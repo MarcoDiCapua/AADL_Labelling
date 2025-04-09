@@ -1,0 +1,24 @@
+property set securityProperties is
+--access rights are scored based on the clearance required
+--no clearance required => 1.0
+--secret clearance required => 3.0
+--top secret clearance required => 5.0 
+	Channel_Protocol : aadlreal applies to (connection);
+	Channel_AccessRights: aadlreal applies to (connection);
+	
+	entryExitPointPrivileges: aadlreal applies to (port);
+	entryExitPointAccessRights:aadlreal applies to (port);
+	
+	dataItemType:aadlreal applies to (data);
+	dataItemAccessRights:aadlreal applies to (data);
+	
+	--From SEI Tech Report CMU/SEI-2015-TR-01
+	
+	-- properties to support documenting and analyzing security  
+	-- Added property that supports access mode of data 
+	AccessProtection: list of record
+	( 
+	  AccessMode: enumeration(r, w, rw, x); 
+	  AccessGroup: enumeration (CC, ABS); 
+	) applies to (all); 
+end securityProperties;

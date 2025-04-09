@@ -1,0 +1,104 @@
+package Configurations
+public
+	device thermoProgram
+		features
+			plan_tp: in data port;
+			cm_tp: in data port;
+			rep_tp: in data port;
+	end thermoProgram;
+	
+	device appProgramManager
+		features
+			plan_apm: in data port;
+			cm_apm: in data port;
+			rep_apm: in data port;
+	end appProgramManager;
+		
+	device securitySystem
+		features
+			plan_ss: in data port;
+			cm_ss: in data port;
+			rep_ss: in data port;
+	end securitySystem;
+	
+	device humProgram
+		features
+			plan_hp: in data port;
+			cm_hp: in data port;
+			rep_hp: in data port;
+	end humProgram;
+	
+	device planner
+		features
+			plan_tp: out data port;
+			plan_apm: out data port;
+			plan_ss: out data port;
+			plan_hp: out data port;
+			cm_plan: in data port;
+	end planner;
+	
+	device commManager
+		features
+			cm_tp: out data port;
+			cm_plan: out data port;
+			cm_ss: out data port;
+			cm_outCM: out data port;
+			cm_outACC: out data port;
+			cm_hp: out data port;
+			cm_rep: out data port;
+			cm_apm: out data port;
+			webOUT_cm: in data port;
+			brOUT_cm: in data port;
+			pmOUT_cm: in data port;
+	end commManager;
+	
+	device report
+		features
+			rep_apm: out data port;
+			rep_tp: out data port;
+			rep_ss: out data port;
+			rep_hp: out data port;
+			cm_rep: in data port;
+	end report;
+	
+	system DHconfig
+		features
+			config_acc: out data port;
+			config_cm: out data port;
+			web_config: in data port;
+			br_config: in data port;
+			pm_config: in data port;
+	end DHconfig;
+	
+	system implementation DHconfig.impl
+		subcomponents
+			ProgrammableThermostat: device thermoProgram;
+			ProgrammableApplianceManager: device appProgramManager;
+			SecuritySystem: device securitySystem;
+			ProgrammableHumidistat: device humProgram;
+			Planner: device planner;
+			ConfigurationManager: device commManager;
+			Report: device report;
+		connections
+			DHconfig_impl_new_connection: port ConfigurationManager.cm_apm -> ProgrammableApplianceManager.cm_apm;
+			DHconfig_impl_new_connection2: port ConfigurationManager.cm_tp -> ProgrammableThermostat.cm_tp;
+			DHconfig_impl_new_connection3: port Report.rep_tp -> ProgrammableThermostat.rep_tp;
+			DHconfig_impl_new_connection4: port ConfigurationManager.cm_rep -> Report.cm_rep;
+			DHconfig_impl_new_connection5: port ConfigurationManager.cm_plan -> Planner.cm_plan;
+			DHconfig_impl_new_connection6: port ConfigurationManager.cm_ss -> SecuritySystem.cm_ss;
+			DHconfig_impl_new_connection7: port ConfigurationManager.cm_hp -> ProgrammableHumidistat.cm_hp;
+			DHconfig_impl_new_connection8: port Planner.plan_hp -> ProgrammableHumidistat.plan_hp;
+			DHconfig_impl_new_connection9: port Report.rep_hp -> ProgrammableHumidistat.rep_hp;
+			DHconfig_impl_new_connection10: port Report.rep_ss -> SecuritySystem.rep_ss;
+			DHconfig_impl_new_connection11: port Planner.plan_tp -> ProgrammableThermostat.plan_tp;
+			DHconfig_impl_new_connection12: port Planner.plan_apm -> ProgrammableApplianceManager.plan_apm;
+			DHconfig_impl_new_connection13: port Planner.plan_ss -> SecuritySystem.plan_ss;
+			DHconfig_impl_new_connection14: port Report.rep_apm -> ProgrammableApplianceManager.rep_apm;
+			DHconfig_impl_new_connection15: port web_config -> ConfigurationManager.webOUT_cm;
+			DHconfig_impl_new_connection16: port ConfigurationManager.cm_outCM -> config_cm;
+			DHconfig_impl_new_connection17: port br_config -> ConfigurationManager.brOUT_cm;
+			DHconfig_impl_new_connection18: port pm_config -> ConfigurationManager.pmOUT_cm;
+			DHconfig_impl_new_connection19: port ConfigurationManager.cm_outACC -> config_acc;
+	end DHconfig.impl;
+	
+end Configurations;

@@ -1,0 +1,173 @@
+--iPCA_Medical_Device.aadl
+
+--this package refines the system Medical_Device in the file Medical_Device.aadl in the Medical_Device_Platform project
+
+ 
+package iPCA_Medical_Device
+public
+	with Platform, --Platform platform
+	Functional, --generic medical device
+	Buses, iPCA_Feature_Groups, iPCA_Peripherals, iPCA_Safety_Subsystem, iPCA_Operation, iPCA_Hardware, ISO14971;
+
+	system PCA_Pump_System extends Platform::Generic_System
+		features
+			sense: refined to feature group iPCA_Feature_Groups::Sensing_iPCA;
+			act: refined to feature group iPCA_Feature_Groups::Actuation_iPCA;
+		properties
+			Classifier_Substitution_Rule => Type_Extension;
+		annex EMV2 {**
+			use types iPCA_Error_Model, ErrorLibrary;
+			
+			error propagations
+				-- drug output may be incorrect flow rate, or wrong kind of drug
+				act.drug_outlet: out propagation {DrugStopped, DrugOverInfusion, DrugUnderInfusion, DrugKindError};
+				-- the reservoir may be filled with the wrong kind of drug
+				act.fill_reservoir: in propagation {DrugKindError};
+				-- someone other than the patient presses the button
+				sense.patient_button_press: in propagation {ButtonError};
+				-- signal to barcode reader may be corrupted
+				sense.barcode_signal: in propagation {ValueError};
+				-- clinician may enter data incorrectly
+				sense.ui_touch: in propagation {OperatorError};
+			--		flows
+			--			dke_source : error sink act.fill_reservoir {DrugKindError};
+			end propagations;
+			
+			properties
+				--The major hazard for the Open PCA Pump is that the patient gets too much drug.
+				--This can slow respiration enough to cause brain damage or even death			
+				ISO14971::Hazards => ([CrossReference => "reference to Open PCA requirements";
+						Failure => "drug over-infusion";
+						Phases => ("all");
+						Severity => ISO14971::Critical;
+						QualitativeProbability => ISO14971::Remote;
+						Description => "more drug infused than prescribed";
+						Comment => "critical hazard, may kill patient";
+					]) applies to act.drug_outlet.DrugOverInfusion;
+			
+				--A lesser hazard is that the patient gets too little, or no drug.
+				--Their pain will not be allieviated, but they won't be harmed either'			
+				ISO14971::Hazards => ([CrossReference => "reference to Open PCA requirements";
+						Failure => "drug under-infusion";
+						Phases => ("all");
+						Severity => ISO14971::Negligible;
+						QualitativeProbability => ISO14971::Remote;
+						Description => "less drug infused than prescribed";
+						Comment => "negligible hazard, Inconvenience or temporary discomfort";
+					]) applies to act.drug_outlet.DrugUnderInfusion, act.drug_outlet.DrugStopped;
+			
+				ISO14971::Hazards => ([CrossReference => "reference to Open PCA requirements";
+						Failure => "drug kind error";
+						Phases => ("all");
+						Severity => ISO14971::Catastrophic;
+						QualitativeProbability => ISO14971::Remote;
+						Description => "wrong drug prescribed";
+						Comment => "catastrophic hazard, wrong drug or concentration can kill";
+					]) applies to act.drug_outlet.DrugKindError; --    EMV2::OccurrenceDistribution => iPCA_Properties::WrongDrugKindRate 
+			--      applies to dke_source;	
+		**};
+	end PCA_Pump_System;
+
+	system implementation PCA_Pump_System.i extends Platform::Generic_System.i
+		subcomponents
+			--functional architecture
+			func: refined to system PCA_Function.i;
+			--physical architecture
+			board: refined to system iPCA_Hardware::PCB_iPCA.i;
+--	connections
+--		dr_ou : port board.act.drug_outlet -> drug_outlet;
+		properties
+			--this binds the abstract component for the patient button at the functional level
+			--to the CPAL device driver, and the physical button
+			Actual_Function_Binding => ( --reference (serv.cpal.cbd), 
+				reference (board.button)) applies to func.sensors_actuators.button;
+			--drug reservoir binding
+			Actual_Function_Binding => ( -- reference (serv.cpal.cdrd), 
+				reference (board.drug_reservoir)) applies to func.sensors_actuators.reservoir;
+			--upstream monitor binding
+			Actual_Function_Binding => ( --reference (serv.cpal.cumd), 
+				reference (board.upstream_monitor)) applies to func.sensors_actuators.upstream;
+			--downstream monitor binding
+			Actual_Function_Binding => ( -- reference (serv.cpal.cdmd), 
+				reference (board.downstream_monitor)) applies to func.sensors_actuators.downstream;
+			--mechanical pump binding
+			Actual_Function_Binding => ( -- reference (serv.cpal.cmpd), 
+				reference (board.pump)) applies to func.sensors_actuators.pump;
+			-- memory bindings
+			Actual_Memory_Binding => (reference (board.cpu.ram)) 
+	    applies to func.safety_subsystem.alarm_process, func.operation_subsystem.operation_process;
+			--processor bindings
+			Actual_Processor_Binding => (reference (board.cpu)) 
+	    applies to func.safety_subsystem.alarm_process.alarm_thr, func.safety_subsystem.alarm_process.flow_rate, --this binds all the operation threads to the CPU
+			func.operation_subsystem.operation_process;
+		annex EMV2 {**
+			use types ErrorLibrary, iPCA_Error_Model;
+			use behavior iPCA_Error_Model::CompositeFailUndetected;
+			
+			composite error behavior
+				states
+					--PCA_Pump_System is (detected) failed if any subsystem is failed
+					--and no subsystem has undetected failure
+					fd: [1 ormore (func.failed, board.failed) --  and 0 orless (func.undetected_failure,board.undetected_failure)
+					]-> failed;
+					fu: [1 ormore (func.undetected_failure, board.undetected_failure)]-> undetected_failure;
+			end composite;
+		**};
+	end PCA_Pump_System.i;
+
+	system PCA_Function extends Functional::Generic_Medical_Function
+		features
+			sense: refined to feature group iPCA_Feature_Groups::Sensing_iPCA;
+			act: refined to feature group iPCA_Feature_Groups::Actuation_iPCA;
+			to_network: requires bus access Buses::CAT5;
+--			jack : refined to requires bus access Buses::Maintenance_Bus;
+		properties
+			Classifier_Substitution_Rule => Type_Extension;
+		annex EMV2 {**
+			use types iPCA_Error_Model, ErrorLibrary;
+			
+			error propagations
+				sense.patient_button_press: in propagation {ButtonError};
+				sense.barcode_signal: in propagation {ValueError};
+				sense.ui_touch: in propagation {OperatorError};
+			end propagations;
+		**};
+	end PCA_Function;
+
+	system implementation PCA_Function.i extends Functional::Generic_Medical_Function.i
+		subcomponents
+			sensors_actuators: refined to system iPCA_Peripherals::iPCA_Fluid.i;
+			safety_subsystem: refined to system iPCA_Safety_Subsystem::iPCA_Safety.i;
+			operation_subsystem: refined to system iPCA_Operation::iPCA_Operation.i;
+--	  pow  : system Power;
+--	  netw : system Network_Controller;
+--	  main : system Maintenance_Controller;
+--  	  ui   : refined to system User_Interface;
+--		connections
+--			net: bus access communication_subsystem.to_network -> to_network;
+		properties
+			Classifier_Substitution_Rule => Type_Extension;
+		annex EMV2 {**
+			use types ErrorLibrary, iPCA_Error_Model;
+			use behavior iPCA_Error_Model::CompositeFailUndetected;
+			
+			composite error behavior
+				states
+					fd: [1 ormore (safety_subsystem.failed, sensors_actuators.failed) 
+						-- and 0 orless(safety_subsystem.undetected_failure,sensors_actuators.failed)
+					]-> failed;
+					fu: [1 ormore (safety_subsystem.undetected_failure, sensors_actuators.undetected_failure)]-> undetected_failure;
+			end composite;
+		**};
+	end PCA_Function.i;
+
+	bus Internal_Bus
+	end Internal_Bus;
+
+	bus Power_Bus
+	end Power_Bus;
+
+	bus Internal_Maintenance_Bus
+	end Internal_Maintenance_Bus;
+
+end iPCA_Medical_Device;

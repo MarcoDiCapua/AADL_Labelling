@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="S_I_Instance" category="system">
+  <componentInstance name="p_a" category="process">
+    <componentInstance name="ta" category="thread">
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/kAADL/tests/unit/SystemBinding.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.t1.i1"/>
+    </componentInstance>
+    <componentInstance name="tb" category="thread">
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/kAADL/tests/unit/SystemBinding.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.t1.i1"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/kAADL/tests/unit/SystemBinding.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.p1.i1"/>
+  </componentInstance>
+  <componentInstance name="p_b" category="process">
+    <componentInstance name="ta" category="thread">
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/kAADL/tests/unit/SystemBinding.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.t1.i1"/>
+    </componentInstance>
+    <componentInstance name="tb" category="thread">
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/kAADL/tests/unit/SystemBinding.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.t1.i1"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/kAADL/tests/unit/SystemBinding.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.p1.i1"/>
+  </componentInstance>
+  <componentInstance name="up1" category="processor">
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/kAADL/tests/unit/SystemBinding.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.cpu.u1"/>
+  </componentInstance>
+  <componentInstance name="up2" category="processor">
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/kAADL/tests/unit/SystemBinding.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedProcessorSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.cpu.u1"/>
+  </componentInstance>
+  <componentInstance name="ss1" category="system">
+    <componentInstance name="p1" category="processor">
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/kAADL/tests/unit/SystemBinding.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.cpu.u1"/>
+    </componentInstance>
+    <componentInstance name="p2" category="processor">
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/kAADL/tests/unit/SystemBinding.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.cpu.u1"/>
+    </componentInstance>
+    <componentInstance name="p3" category="processor">
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/kAADL/tests/unit/SystemBinding.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.cpu.u1"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/kAADL/tests/unit/SystemBinding.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.smp.s1"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.S.I"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/kAADL/tests/unit/SystemBinding.aadl#Deployment.S.I"/>
+</instance:SystemInstance>

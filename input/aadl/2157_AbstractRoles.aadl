@@ -1,0 +1,14 @@
+-- Role is a single set of permissions
+-- We may need a default role with some permission(s)
+-- Roles are assigned to subjects (accessing entity of resources) and subjects can be any aadl component
+property set Role is
+	with Permission;
+	role_type: type record(
+			id : aadlinteger;
+			name: aadlstring;
+			description: aadlstring;
+			assigned_permissions: list of permission::permission_type;-- applies to (all);-- seems we cannot have list of permission, but we can have list of permission::permission_type;
+			);
+	role_hierarchy: list of Role::role_type applies to (all);
+end Role;
+

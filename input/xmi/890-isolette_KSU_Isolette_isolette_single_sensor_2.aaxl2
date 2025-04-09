@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="isolette_single_sensor_Instance" category="system">
+  <componentInstance name="heat_source" category="device">
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/890-isolette/isolette-ksu-03/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/890-isolette/isolette-ksu-03/packages/Devices.aadl#Devices.heat_source.impl"/>
+  </componentInstance>
+  <componentInstance name="temperature_sensor" category="device">
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/890-isolette/isolette-ksu-03/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/890-isolette/isolette-ksu-03/packages/Devices.aadl#Devices.temperature_sensor.impl"/>
+  </componentInstance>
+  <componentInstance name="thermostat" category="system">
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/890-isolette/isolette-ksu-03/packages/Isolette.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/890-isolette/isolette-ksu-03/packages/Isolette.aadl#KSU_Isolette.thermostat_single_sensor.impl"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/890-isolette/isolette-ksu-03/packages/Isolette.aadl#KSU_Isolette.isolette.single_sensor"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/890-isolette/isolette-ksu-03/packages/Isolette.aadl#KSU_Isolette.isolette.single_sensor"/>
+</instance:SystemInstance>

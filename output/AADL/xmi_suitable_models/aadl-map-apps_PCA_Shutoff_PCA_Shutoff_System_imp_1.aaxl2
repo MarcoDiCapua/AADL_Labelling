@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="PCA_Shutoff_System_imp_Instance" category="system">
+  <componentInstance name="pulseOx" category="device">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#MAP_Properties.Component_Type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#/0/@ownedPropertyType.1/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-map-apps/pca-shutoff/packages/PulseOx_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="SpO2" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PulseOx_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="DeviceError" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PulseOx_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+    </featureInstance>
+    <flowSpecification name="spo2_flow" destination="//@componentInstance.0/@featureInstance.0">
+      <flowSpecification href="../../github/aadl-map-apps/pca-shutoff/packages/PulseOx_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PulseOx_Interface.aadl#PulseOx_Interface.ICEpoInterface.imp"/>
+  </componentInstance>
+  <componentInstance name="capnograph" category="device">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#MAP_Properties.Component_Type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#/0/@ownedPropertyType.1/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-map-apps/pca-shutoff/packages/Capnograph_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="ETCO2" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/Capnograph_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="RespiratoryRate" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/Capnograph_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+      <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="DeviceError" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-map-apps/pca-shutoff/packages/Capnograph_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/Capnograph_Interface.aadl#Capnograph_Interface.ICEcapnographInterface.imp"/>
+  </componentInstance>
+  <componentInstance name="pcaPump" category="device">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#MAP_Properties.Component_Type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#/0/@ownedPropertyType.1/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-map-apps/pca-shutoff/packages/PCAPump_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="PumpNormally" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCAPump_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <flowSpecification name="spo2_flow" source="//@componentInstance.2/@featureInstance.0">
+      <flowSpecification href="../../github/aadl-map-apps/pca-shutoff/packages/PCAPump_Interface.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCAPump_Interface.aadl#PCAPump_Interface.ICEpcaInterface.imp"/>
+  </componentInstance>
+  <componentInstance name="appLogic" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#MAP_Properties.Process_Type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="ETCO2">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="SpO2" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="RespiratoryRate" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+      <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="CommandPumpNormal" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.2"/>
+      <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="CapnographError" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="PulseOxError" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.1"/>
+    </featureInstance>
+    <componentInstance name="UpdateSpO2Thread" category="thread">
+      <featureInstance name="SpO2" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+        <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#PCA_Shutoff_Logic.UpdateSpO2Thread.imp"/>
+    </componentInstance>
+    <componentInstance name="UpdateRespiratoryRateThread" category="thread">
+      <featureInstance name="RespiratoryRate" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.0"/>
+        <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#PCA_Shutoff_Logic.UpdateRespiratoryRateThread.imp"/>
+    </componentInstance>
+    <componentInstance name="PumpControlThread" category="thread">
+      <featureInstance name="PumpNormal" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventDataPort.0"/>
+        <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#PCA_Shutoff_Logic.PumpControlThread.imp"/>
+    </componentInstance>
+    <componentInstance name="CapnographErrorThread" category="thread">
+      <featureInstance name="CapnographError" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#PCA_Shutoff_Logic.CapnographErrorThread.imp"/>
+    </componentInstance>
+    <componentInstance name="PulseOxErrorThread" category="thread">
+      <featureInstance name="PulseOxError" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#PCA_Shutoff_Logic.PulseOxErrorThread.imp"/>
+    </componentInstance>
+    <flowSpecification name="spo2_flow" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.3">
+      <flowSpecification href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#PCA_Shutoff_Logic.ICEpcaShutoffProcess.imp"/>
+  </componentInstance>
+  <componentInstance name="appDisplay" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#MAP_Properties.Process_Type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/aadl-map-apps/map-globals/propertysets/MAP_Properties.aadl#/0/@ownedPropertyType.0/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="SpO2" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="ETCO2" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+      <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="RespiratoryRate" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.2"/>
+      <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="CommandPumpNormal" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.3"/>
+      <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="show" category="dataAccess" direction="out">
+      <feature xsi:type="aadl2:DataAccess" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataAccess.0"/>
+    </featureInstance>
+    <componentInstance name="UpdateSpO2Thread" category="thread">
+      <featureInstance name="SpO2" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+        <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#PCA_Shutoff_Display.UpdateSpO2Thread.imp"/>
+    </componentInstance>
+    <componentInstance name="UpdateETCO2Thread" category="thread">
+      <featureInstance name="ETCO2" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.0"/>
+        <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#PCA_Shutoff_Display.UpdateETCO2Thread.imp"/>
+    </componentInstance>
+    <componentInstance name="UpdateRespiratoryRateThread" category="thread">
+      <featureInstance name="RespiratoryRate" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventDataPort.0"/>
+        <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#PCA_Shutoff_Display.UpdateRespiratoryRateThread.imp"/>
+    </componentInstance>
+    <componentInstance name="PumpStatusThread" category="thread">
+      <featureInstance name="StatusNormal" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventDataPort.0"/>
+        <type href="../../github/aadl-map-apps/pca-shutoff/packages/instances/PCA_Shutoff_System_PCA_Shutoff_System_imp_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#PCA_Shutoff_Display.PumpStatusThread.imp"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#PCA_Shutoff_Display.ICEpcaDisplayProcess.imp"/>
+  </componentInstance>
+  <connectionInstance name="pulseOx.SpO2 -> appLogic.UpdateSpO2Thread.SpO2" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pulseOx.SpO2 -> appDisplay.UpdateSpO2Thread.SpO2" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.0" destination="//@componentInstance.4/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pulseOx.DeviceError -> appLogic.PulseOxErrorThread.PulseOxError" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.0" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@featureInstance.5" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="capnograph.ETCO2 -> appLogic.ETCO2" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="capnograph.ETCO2 -> appDisplay.UpdateETCO2Thread.ETCO2" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.1/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.4/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="capnograph.RespiratoryRate -> appLogic.UpdateRespiratoryRateThread.RespiratoryRate" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.0" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@featureInstance.2" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="capnograph.RespiratoryRate -> appDisplay.UpdateRespiratoryRateThread.RespiratoryRate" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.2/@featureInstance.0" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.2" destination="//@componentInstance.4/@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="capnograph.DeviceError -> appLogic.CapnographErrorThread.CapnographError" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.3/@featureInstance.0" source="//@componentInstance.1/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.2" destination="//@componentInstance.3/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="appLogic.PumpControlThread.PumpNormal -> pcaPump.PumpNormally" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.3/@componentInstance.2/@featureInstance.0">
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.3/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.3" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="appLogic.PumpControlThread.PumpNormal -> appDisplay.PumpStatusThread.StatusNormal" complete="true" kind="portConnection" destination="//@componentInstance.4/@componentInstance.3/@featureInstance.0" source="//@componentInstance.3/@componentInstance.2/@featureInstance.0">
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.3/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Logic.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.3" destination="//@componentInstance.4/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.4" source="//@componentInstance.4/@featureInstance.3" destination="//@componentInstance.4/@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_Display.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#PCA_Shutoff.PCA_Shutoff_System.imp"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-map-apps/pca-shutoff/packages/PCA_Shutoff_System.aadl#PCA_Shutoff.PCA_Shutoff_System.imp"/>
+</instance:SystemInstance>

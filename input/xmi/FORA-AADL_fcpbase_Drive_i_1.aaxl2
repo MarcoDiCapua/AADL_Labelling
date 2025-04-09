@@ -1,0 +1,1126 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Drive_i_Instance" category="system">
+  <featureInstance name="TSN" category="busAccess" direction="out">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+    <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/3"/>
+  </featureInstance>
+  <featureInstance name="SourcePower" category="busAccess">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.1"/>
+    <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/2"/>
+  </featureInstance>
+  <featureInstance name="SinkPower" category="busAccess" direction="out">
+    <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.2"/>
+    <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/2"/>
+  </featureInstance>
+  <componentInstance name="FogSoftwarePlatform">
+    <featureInstance name="Interface" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/platform.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+    </featureInstance>
+    <componentInstance name="Hypervisor">
+      <featureInstance name="Interface" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.0"/>
+      </featureInstance>
+      <componentInstance name="VirtualLink">
+        <featureInstance name="Link_0" category="busAccess">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.0"/>
+        </featureInstance>
+        <featureInstance name="Link_1" category="busAccess" direction="out">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.1"/>
+        </featureInstance>
+        <featureInstance name="Link_2" category="busAccess" direction="out">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.2"/>
+        </featureInstance>
+        <featureInstance name="Link_3" category="busAccess" direction="out">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.3"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedAbstractSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.CommunicationServices"/>
+      </componentInstance>
+      <componentInstance name="Partition1" category="virtual processor">
+        <featureInstance name="Link" category="busAccess">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedBusAccess.0"/>
+        </featureInstance>
+        <componentInstance name="RTOS">
+          <componentInstance name="AppServices">
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAbstractSubcomponent.0"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.AppServices.i"/>
+          </componentInstance>
+          <componentInstance name="AppSupport">
+            <featureInstance name="getTaskmessage" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.0"/>
+            </featureInstance>
+            <featureInstance name="forwardTaskMessage" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.1"/>
+            </featureInstance>
+            <featureInstance name="bidsMessages" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.2"/>
+            </featureInstance>
+            <featureInstance name="appAdvertisementMessages" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.3"/>
+            </featureInstance>
+            <featureInstance name="sendApplicationDeployment" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.4"/>
+            </featureInstance>
+            <featureInstance name="sendBids" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.5"/>
+            </featureInstance>
+            <componentInstance name="resourceManagement">
+              <featureInstance name="ApplicationModel" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.0"/>
+              </featureInstance>
+              <featureInstance name="getNeighborhood" category="eventDataPort" direction="in out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.1"/>
+              </featureInstance>
+              <featureInstance name="deploymentApplicationModel" category="eventDataPort" direction="out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.2"/>
+              </featureInstance>
+              <featureInstance name="receiveBid" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.3"/>
+              </featureInstance>
+              <featureInstance name="sendBid" category="eventDataPort" direction="out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.4"/>
+              </featureInstance>
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.0"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.ResourceManagement"/>
+            </componentInstance>
+            <componentInstance name="nodeDiscovery">
+              <featureInstance name="discoveryAPI" category="subprogramAccess" direction="out">
+                <feature xsi:type="aadl2:SubprogramAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedSubprogramAccess.0"/>
+              </featureInstance>
+              <featureInstance name="neighbors" category="subprogramAccess" direction="out">
+                <feature xsi:type="aadl2:SubprogramAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedSubprogramAccess.1"/>
+              </featureInstance>
+              <featureInstance name="contactNode" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedEventDataPort.0"/>
+              </featureInstance>
+              <featureInstance name="neighborhood" category="eventDataPort" direction="in out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedEventDataPort.1"/>
+              </featureInstance>
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.1"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.NodeDiscovery"/>
+            </componentInstance>
+            <componentInstance name="gateway">
+              <featureInstance name="receiveMessage" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.64/@ownedEventDataPort.0"/>
+              </featureInstance>
+              <featureInstance name="sendMessage" category="eventDataPort" direction="out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.64/@ownedEventDataPort.1"/>
+              </featureInstance>
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.2"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.Gateway"/>
+            </componentInstance>
+            <componentInstance name="LocalResourceSchedulerIntraPartition">
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.3"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.LocalResourceSchedulerIntraPartition.i"/>
+            </componentInstance>
+            <componentInstance name="PartitionMonitor">
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.4"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.PartitionMonitor.i"/>
+            </componentInstance>
+            <componentInstance name="TaskMonitor">
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.5"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.TaskMonitor.i"/>
+            </componentInstance>
+            <connectionInstance name="resourceManagement.getNeighborhood -> nodeDiscovery.neighborhood" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.1/@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@componentInstance.1/@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.1">
+              <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.1/@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.0/@componentInstance.1/@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.1/@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.3">
+                <connection xsi:type="aadl2:PortConnection" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedPortConnection.0"/>
+              </connectionReference>
+            </connectionInstance>
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAbstractSubcomponent.1"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.AppSupport.i"/>
+          </componentInstance>
+          <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedAbstractSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.FogOS.i"/>
+        </componentInstance>
+        <componentInstance name="Applications">
+          <componentInstance name="CommunicationApp" category="process">
+            <featureInstance name="outData" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventDataPort.0"/>
+            </featureInstance>
+            <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedProcessSubcomponent.0"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.CommunicationApp.i"/>
+          </componentInstance>
+          <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedAbstractSubcomponent.1"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.Appications.Communication"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedVirtualProcessorSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.Partition.Communication"/>
+      </componentInstance>
+      <componentInstance name="Partition2" category="virtual processor">
+        <featureInstance name="Link" category="busAccess">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedBusAccess.0"/>
+        </featureInstance>
+        <componentInstance name="RTOS">
+          <componentInstance name="AppServices">
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAbstractSubcomponent.0"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.AppServices.i"/>
+          </componentInstance>
+          <componentInstance name="AppSupport">
+            <featureInstance name="getTaskmessage" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.0"/>
+            </featureInstance>
+            <featureInstance name="forwardTaskMessage" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.1"/>
+            </featureInstance>
+            <featureInstance name="bidsMessages" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.2"/>
+            </featureInstance>
+            <featureInstance name="appAdvertisementMessages" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.3"/>
+            </featureInstance>
+            <featureInstance name="sendApplicationDeployment" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.4"/>
+            </featureInstance>
+            <featureInstance name="sendBids" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.5"/>
+            </featureInstance>
+            <componentInstance name="resourceManagement">
+              <featureInstance name="ApplicationModel" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.0"/>
+              </featureInstance>
+              <featureInstance name="getNeighborhood" category="eventDataPort" direction="in out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.1"/>
+              </featureInstance>
+              <featureInstance name="deploymentApplicationModel" category="eventDataPort" direction="out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.2"/>
+              </featureInstance>
+              <featureInstance name="receiveBid" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.3"/>
+              </featureInstance>
+              <featureInstance name="sendBid" category="eventDataPort" direction="out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.4"/>
+              </featureInstance>
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.0"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.ResourceManagement"/>
+            </componentInstance>
+            <componentInstance name="nodeDiscovery">
+              <featureInstance name="discoveryAPI" category="subprogramAccess" direction="out">
+                <feature xsi:type="aadl2:SubprogramAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedSubprogramAccess.0"/>
+              </featureInstance>
+              <featureInstance name="neighbors" category="subprogramAccess" direction="out">
+                <feature xsi:type="aadl2:SubprogramAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedSubprogramAccess.1"/>
+              </featureInstance>
+              <featureInstance name="contactNode" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedEventDataPort.0"/>
+              </featureInstance>
+              <featureInstance name="neighborhood" category="eventDataPort" direction="in out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedEventDataPort.1"/>
+              </featureInstance>
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.1"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.NodeDiscovery"/>
+            </componentInstance>
+            <componentInstance name="gateway">
+              <featureInstance name="receiveMessage" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.64/@ownedEventDataPort.0"/>
+              </featureInstance>
+              <featureInstance name="sendMessage" category="eventDataPort" direction="out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.64/@ownedEventDataPort.1"/>
+              </featureInstance>
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.2"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.Gateway"/>
+            </componentInstance>
+            <componentInstance name="LocalResourceSchedulerIntraPartition">
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.3"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.LocalResourceSchedulerIntraPartition.i"/>
+            </componentInstance>
+            <componentInstance name="PartitionMonitor">
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.4"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.PartitionMonitor.i"/>
+            </componentInstance>
+            <componentInstance name="TaskMonitor">
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.5"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.TaskMonitor.i"/>
+            </componentInstance>
+            <connectionInstance name="resourceManagement.getNeighborhood -> nodeDiscovery.neighborhood" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.2/@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@componentInstance.2/@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.1">
+              <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.2/@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.0/@componentInstance.2/@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.2/@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.3">
+                <connection xsi:type="aadl2:PortConnection" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedPortConnection.0"/>
+              </connectionReference>
+            </connectionInstance>
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAbstractSubcomponent.1"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.AppSupport.i"/>
+          </componentInstance>
+          <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAbstractSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.FogOS.i"/>
+        </componentInstance>
+        <componentInstance name="Applications">
+          <componentInstance name="OperationApp" category="process">
+            <featureInstance name="outData" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.0"/>
+            </featureInstance>
+            <featureInstance name="inData" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedEventDataPort.1"/>
+            </featureInstance>
+            <componentInstance name="ModeControlApp" category="thread">
+              <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedThreadSubcomponent.0"/>
+              <index>0</index>
+            </componentInstance>
+            <componentInstance name="ManagementApp" category="thread">
+              <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedThreadSubcomponent.1"/>
+              <index>0</index>
+            </componentInstance>
+            <componentInstance name="MonitoringApp" category="thread">
+              <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedThreadSubcomponent.2"/>
+              <index>0</index>
+            </componentInstance>
+            <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedProcessSubcomponent.0"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.OperationApp.i"/>
+          </componentInstance>
+          <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAbstractSubcomponent.1"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.Appications.Operation"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedVirtualProcessorSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.Partition.Operation"/>
+      </componentInstance>
+      <componentInstance name="Partition3" category="virtual processor">
+        <featureInstance name="Link" category="busAccess">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedBusAccess.0"/>
+        </featureInstance>
+        <componentInstance name="RTOS">
+          <componentInstance name="AppServices">
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAbstractSubcomponent.0"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.AppServices.i"/>
+          </componentInstance>
+          <componentInstance name="AppSupport">
+            <featureInstance name="getTaskmessage" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.0"/>
+            </featureInstance>
+            <featureInstance name="forwardTaskMessage" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.1"/>
+            </featureInstance>
+            <featureInstance name="bidsMessages" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.2"/>
+            </featureInstance>
+            <featureInstance name="appAdvertisementMessages" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.3"/>
+            </featureInstance>
+            <featureInstance name="sendApplicationDeployment" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.4"/>
+            </featureInstance>
+            <featureInstance name="sendBids" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.5"/>
+            </featureInstance>
+            <componentInstance name="resourceManagement">
+              <featureInstance name="ApplicationModel" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.0"/>
+              </featureInstance>
+              <featureInstance name="getNeighborhood" category="eventDataPort" direction="in out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.1"/>
+              </featureInstance>
+              <featureInstance name="deploymentApplicationModel" category="eventDataPort" direction="out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.2"/>
+              </featureInstance>
+              <featureInstance name="receiveBid" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.3"/>
+              </featureInstance>
+              <featureInstance name="sendBid" category="eventDataPort" direction="out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.4"/>
+              </featureInstance>
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.0"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.ResourceManagement"/>
+            </componentInstance>
+            <componentInstance name="nodeDiscovery">
+              <featureInstance name="discoveryAPI" category="subprogramAccess" direction="out">
+                <feature xsi:type="aadl2:SubprogramAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedSubprogramAccess.0"/>
+              </featureInstance>
+              <featureInstance name="neighbors" category="subprogramAccess" direction="out">
+                <feature xsi:type="aadl2:SubprogramAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedSubprogramAccess.1"/>
+              </featureInstance>
+              <featureInstance name="contactNode" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedEventDataPort.0"/>
+              </featureInstance>
+              <featureInstance name="neighborhood" category="eventDataPort" direction="in out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedEventDataPort.1"/>
+              </featureInstance>
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.1"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.NodeDiscovery"/>
+            </componentInstance>
+            <componentInstance name="gateway">
+              <featureInstance name="receiveMessage" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.64/@ownedEventDataPort.0"/>
+              </featureInstance>
+              <featureInstance name="sendMessage" category="eventDataPort" direction="out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.64/@ownedEventDataPort.1"/>
+              </featureInstance>
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.2"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.Gateway"/>
+            </componentInstance>
+            <componentInstance name="LocalResourceSchedulerIntraPartition">
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.3"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.LocalResourceSchedulerIntraPartition.i"/>
+            </componentInstance>
+            <componentInstance name="PartitionMonitor">
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.4"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.PartitionMonitor.i"/>
+            </componentInstance>
+            <componentInstance name="TaskMonitor">
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.5"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.TaskMonitor.i"/>
+            </componentInstance>
+            <connectionInstance name="resourceManagement.getNeighborhood -> nodeDiscovery.neighborhood" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.3/@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@componentInstance.3/@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.1">
+              <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.3/@componentInstance.0/@componentInstance.1" source="//@componentInstance.0/@componentInstance.0/@componentInstance.3/@componentInstance.0/@componentInstance.1/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.3/@componentInstance.0/@componentInstance.1/@componentInstance.1/@featureInstance.3">
+                <connection xsi:type="aadl2:PortConnection" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedPortConnection.0"/>
+              </connectionReference>
+            </connectionInstance>
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAbstractSubcomponent.1"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.AppSupport.i"/>
+          </componentInstance>
+          <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAbstractSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.FogOS.i"/>
+        </componentInstance>
+        <componentInstance name="Applications">
+          <componentInstance name="ControlApp" category="process">
+            <featureInstance name="outData" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventDataPort.0"/>
+            </featureInstance>
+            <featureInstance name="inData" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedEventDataPort.1"/>
+            </featureInstance>
+            <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedProcessSubcomponent.0"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.ControlApp.i"/>
+          </componentInstance>
+          <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAbstractSubcomponent.1"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.Appications.Control"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedVirtualProcessorSubcomponent.2"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.Partition.Control"/>
+      </componentInstance>
+      <componentInstance name="Partition0" category="virtual processor">
+        <featureInstance name="Interface" category="busAccess">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedBusAccess.0"/>
+        </featureInstance>
+        <featureInstance name="Link" category="busAccess" direction="out">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.22/@ownedBusAccess.1"/>
+        </featureInstance>
+        <componentInstance name="NodeConfiguration">
+          <featureInstance name="ApplicationModel" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.0"/>
+          </featureInstance>
+          <featureInstance name="ResourceModel" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.1"/>
+          </featureInstance>
+          <featureInstance name="StreamModel" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.2"/>
+          </featureInstance>
+          <featureInstance name="GCL" category="eventDataPort" direction="out">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.3"/>
+          </featureInstance>
+          <featureInstance name="PartitionTable" category="eventDataPort" direction="out">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.4"/>
+          </featureInstance>
+          <featureInstance name="ScheduleTable" category="eventDataPort" direction="out">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.5"/>
+          </featureInstance>
+          <componentInstance name="ControlConfiguration">
+            <featureInstance name="getAppModel" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedEventDataPort.0"/>
+            </featureInstance>
+            <featureInstance name="getResourceModel" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedEventDataPort.1"/>
+            </featureInstance>
+            <featureInstance name="getStreamModel" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedEventDataPort.2"/>
+            </featureInstance>
+            <featureInstance name="GCL" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedEventDataPort.3"/>
+            </featureInstance>
+            <featureInstance name="ScheduleTable" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedEventDataPort.4"/>
+            </featureInstance>
+            <featureInstance name="PartitionTable" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedEventDataPort.5"/>
+            </featureInstance>
+            <componentInstance name="SchedulingConfiguration">
+              <featureInstance name="CPUResources" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedEventDataPort.0"/>
+              </featureInstance>
+              <featureInstance name="AppModel" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedEventDataPort.1"/>
+              </featureInstance>
+              <featureInstance name="ScheduleTable" category="eventDataPort" direction="out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedEventDataPort.2"/>
+              </featureInstance>
+              <featureInstance name="PartitionTable" category="eventDataPort" direction="out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedEventDataPort.3"/>
+              </featureInstance>
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.53/@ownedAbstractSubcomponent.0"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.SchedulingConfiguration"/>
+            </componentInstance>
+            <componentInstance name="TSNGCLGonfiguration">
+              <featureInstance name="NetworkModel" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.48/@ownedEventDataPort.0"/>
+              </featureInstance>
+              <featureInstance name="StreamModel" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.48/@ownedEventDataPort.1"/>
+              </featureInstance>
+              <featureInstance name="GCL" category="eventDataPort" direction="out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.48/@ownedEventDataPort.2"/>
+              </featureInstance>
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.53/@ownedAbstractSubcomponent.1"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.TSNGCLGonfiguration"/>
+            </componentInstance>
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.51/@ownedAbstractSubcomponent.0"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.ControlConfiguration.i"/>
+          </componentInstance>
+          <componentInstance name="SafetyConfiguration">
+            <featureInstance name="ApplicationModel" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.0"/>
+            </featureInstance>
+            <featureInstance name="ResourceModel" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.1"/>
+            </featureInstance>
+            <featureInstance name="StreamModel" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.2"/>
+            </featureInstance>
+            <featureInstance name="GCL" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.3"/>
+            </featureInstance>
+            <featureInstance name="PartitionTable" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.4"/>
+            </featureInstance>
+            <featureInstance name="ScheduleTable" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.5"/>
+            </featureInstance>
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.51/@ownedAbstractSubcomponent.1"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.SafetyConfiguration"/>
+          </componentInstance>
+          <componentInstance name="SecurityConfiguration">
+            <featureInstance name="ApplicationModel" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.0"/>
+            </featureInstance>
+            <featureInstance name="ResourceModel" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.1"/>
+            </featureInstance>
+            <featureInstance name="StreamModel" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.2"/>
+            </featureInstance>
+            <featureInstance name="GCL" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.3"/>
+            </featureInstance>
+            <featureInstance name="PartitionTable" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.4"/>
+            </featureInstance>
+            <featureInstance name="ScheduleTable" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.43/@ownedEventDataPort.5"/>
+            </featureInstance>
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.51/@ownedAbstractSubcomponent.2"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.SecurityConfiguration"/>
+          </componentInstance>
+          <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedAbstractSubcomponent.0"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.FogNodeConfiguration.i"/>
+        </componentInstance>
+        <componentInstance name="AppSupport">
+          <featureInstance name="getTaskmessage" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.0"/>
+          </featureInstance>
+          <featureInstance name="forwardTaskMessage" category="eventDataPort" direction="out">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.1"/>
+          </featureInstance>
+          <featureInstance name="bidsMessages" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.2"/>
+          </featureInstance>
+          <featureInstance name="appAdvertisementMessages" category="eventDataPort">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.3"/>
+          </featureInstance>
+          <featureInstance name="sendApplicationDeployment" category="eventDataPort" direction="out">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.4"/>
+          </featureInstance>
+          <featureInstance name="sendBids" category="eventDataPort" direction="out">
+            <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedEventDataPort.5"/>
+          </featureInstance>
+          <componentInstance name="resourceManagement">
+            <featureInstance name="ApplicationModel" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.0"/>
+            </featureInstance>
+            <featureInstance name="getNeighborhood" category="eventDataPort" direction="in out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.1"/>
+            </featureInstance>
+            <featureInstance name="deploymentApplicationModel" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.2"/>
+            </featureInstance>
+            <featureInstance name="receiveBid" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.3"/>
+            </featureInstance>
+            <featureInstance name="sendBid" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.65/@ownedEventDataPort.4"/>
+            </featureInstance>
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.0"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.ResourceManagement"/>
+          </componentInstance>
+          <componentInstance name="nodeDiscovery">
+            <featureInstance name="discoveryAPI" category="subprogramAccess" direction="out">
+              <feature xsi:type="aadl2:SubprogramAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedSubprogramAccess.0"/>
+            </featureInstance>
+            <featureInstance name="neighbors" category="subprogramAccess" direction="out">
+              <feature xsi:type="aadl2:SubprogramAccess" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedSubprogramAccess.1"/>
+            </featureInstance>
+            <featureInstance name="contactNode" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedEventDataPort.0"/>
+            </featureInstance>
+            <featureInstance name="neighborhood" category="eventDataPort" direction="in out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.63/@ownedEventDataPort.1"/>
+            </featureInstance>
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.1"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.NodeDiscovery"/>
+          </componentInstance>
+          <componentInstance name="gateway">
+            <featureInstance name="receiveMessage" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.64/@ownedEventDataPort.0"/>
+            </featureInstance>
+            <featureInstance name="sendMessage" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.64/@ownedEventDataPort.1"/>
+            </featureInstance>
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.2"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.Gateway"/>
+          </componentInstance>
+          <componentInstance name="LocalResourceSchedulerIntraPartition">
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.3"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.LocalResourceSchedulerIntraPartition.i"/>
+          </componentInstance>
+          <componentInstance name="PartitionMonitor">
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.4"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.PartitionMonitor.i"/>
+          </componentInstance>
+          <componentInstance name="TaskMonitor">
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedAbstractSubcomponent.5"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.TaskMonitor.i"/>
+          </componentInstance>
+          <connectionInstance name="resourceManagement.getNeighborhood -> nodeDiscovery.neighborhood" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.4/@componentInstance.1/@componentInstance.1/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@componentInstance.4/@componentInstance.1/@componentInstance.0/@featureInstance.1">
+            <connectionReference context="//@componentInstance.0/@componentInstance.0/@componentInstance.4/@componentInstance.1" source="//@componentInstance.0/@componentInstance.0/@componentInstance.4/@componentInstance.1/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.4/@componentInstance.1/@componentInstance.1/@featureInstance.3">
+              <connection xsi:type="aadl2:PortConnection" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedPortConnection.0"/>
+            </connectionReference>
+          </connectionInstance>
+          <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedAbstractSubcomponent.1"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.AppSupport.i"/>
+        </componentInstance>
+        <componentInstance name="NodeManagement">
+          <componentInstance name="PartitionManagement">
+            <featureInstance name="PartitionAlive" category="eventDataPort">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedEventDataPort.0"/>
+              <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/0"/>
+            </featureInstance>
+            <featureInstance name="ScheduleInterPartition" category="eventDataPort" direction="out">
+              <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedEventDataPort.1"/>
+            </featureInstance>
+            <componentInstance name="LocalResourceManagement">
+              <featureInstance name="PartitionAlive" category="eventDataPort">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.32/@ownedEventDataPort.0"/>
+                <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/0"/>
+              </featureInstance>
+              <featureInstance name="PartitionFailure" category="eventDataPort" direction="out">
+                <feature xsi:type="aadl2:EventDataPort" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.32/@ownedEventDataPort.1"/>
+              </featureInstance>
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedAbstractSubcomponent.0"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.LocalResourceManagement.i"/>
+            </componentInstance>
+            <componentInstance name="LocalResourceSchedulerInterPartition">
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedAbstractSubcomponent.1"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.LocalResourceSchedulerInterPartition.i"/>
+            </componentInstance>
+            <componentInstance name="CoreMonitor">
+              <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedAbstractSubcomponent.2"/>
+              <index>0</index>
+              <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.CoreMonitor.i"/>
+            </componentInstance>
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.41/@ownedAbstractSubcomponent.0"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.PartitionManagement.i"/>
+          </componentInstance>
+          <componentInstance name="SafetyManagement">
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.41/@ownedAbstractSubcomponent.1"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.SafetyManagement"/>
+          </componentInstance>
+          <componentInstance name="SecurityManagement">
+            <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.41/@ownedAbstractSubcomponent.2"/>
+            <index>0</index>
+            <classifier xsi:type="aadl2:AbstractType" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.SecurityManagement"/>
+          </componentInstance>
+          <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/aadl/software.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedAbstractSubcomponent.2"/>
+          <index>0</index>
+          <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.NodeManagement.i"/>
+        </componentInstance>
+        <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedVirtualProcessorSubcomponent.3"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/FORA-AADL/FCP/aadl/software.aadl#FORA.software.PrivilegedPartition.i"/>
+      </componentInstance>
+      <connectionInstance name="VirtualLink.Link_0 -> Partition0.Link" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.4/@featureInstance.1" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+        <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.4/@featureInstance.1" reverse="true">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedAccessConnection.1"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="VirtualLink.Link_1 -> Partition1.Link" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.1/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+        <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.1/@featureInstance.0" reverse="true">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedAccessConnection.2"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="VirtualLink.Link_2 -> Partition2.Link" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.2/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2">
+        <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.2/@featureInstance.0" reverse="true">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedAccessConnection.3"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="VirtualLink.Link_3 -> Partition3.Link" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.3/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.3">
+        <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.3/@featureInstance.0" reverse="true">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedAccessConnection.4"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="Partition1.Link -> VirtualLink.Link_1" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1" source="//@componentInstance.0/@componentInstance.0/@componentInstance.1/@featureInstance.0">
+        <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.1">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedAccessConnection.2"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="Partition2.Link -> VirtualLink.Link_2" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2" source="//@componentInstance.0/@componentInstance.0/@componentInstance.2/@featureInstance.0">
+        <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedAccessConnection.3"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="Partition3.Link -> VirtualLink.Link_3" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.3" source="//@componentInstance.0/@componentInstance.0/@componentInstance.3/@featureInstance.0">
+        <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.3">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedAccessConnection.4"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="Partition0.Link -> VirtualLink.Link_0" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.4/@featureInstance.1">
+        <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.4/@featureInstance.1" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0">
+          <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedAccessConnection.1"/>
+        </connectionReference>
+      </connectionInstance>
+      <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedAbstractSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.Hypervisor.PikeOS"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.Software.Platform"/>
+  </componentInstance>
+  <componentInstance name="FogHardwarePlatform">
+    <featureInstance name="Power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="Interface" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.1"/>
+    </featureInstance>
+    <featureInstance name="TSN_0" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.2"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="TSN_1" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.3"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="TSN_2" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.4"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="TSN_3" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.5"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="WiFi" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.6"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="Display" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.7"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="IO" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedBusAccess.8"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <componentInstance name="pci" category="bus">
+      <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedBusSubcomponent.0"/>
+      <index>0</index>
+    </componentInstance>
+    <componentInstance name="A2D" category="device">
+      <featureInstance name="pci" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedBusAccess.0"/>
+      </featureInstance>
+      <featureInstance name="IO" category="busAccess" direction="out">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedBusAccess.1"/>
+        <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDeviceSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#FORA.hardware.FogNodeA2D"/>
+    </componentInstance>
+    <componentInstance name="RAM" category="memory">
+      <featureInstance name="pci" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedBusAccess.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryType" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#FORA.hardware.RAM_8GB"/>
+    </componentInstance>
+    <componentInstance name="Storage" category="memory">
+      <featureInstance name="pci" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.41/@ownedBusAccess.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedMemorySubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryType" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#FORA.hardware.FogNodeStorage"/>
+    </componentInstance>
+    <componentInstance name="CPU" category="processor">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/FORA-AADL/FCP/lib/property_sets.aadl#Processor_Properties.Processor_Family"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/FORA-AADL/FCP/lib/property_sets.aadl#/0/@ownedProperty.0/@ownedPropertyType/@ownedLiteral.5"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/FORA-AADL/FCP/lib/property_sets.aadl#Processor_Properties.Endianess"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/FORA-AADL/FCP/lib/property_sets.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/FORA-AADL/FCP/lib/property_sets.aadl#Processor_Properties.Word_Length"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+            <unit href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#|::0.5.9.47.4.2.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/FORA-AADL/FCP/lib/property_sets.aadl#Processor_Properties.Processor_Frequency"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1600">
+            <unit href="../../github/FORA-AADL/FCP/lib/property_sets.aadl#/0/@ownedPropertyType.0/@ownedUnitsType/@ownedLiteral.2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/FORA-AADL/FCP/lib/property_sets.aadl#Processor_Properties.HW_Virtualization_Present"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+        </ownedValue>
+        <propertyAssociation href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedPropertyAssociation.4"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="pci" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.45/@ownedBusAccess.0"/>
+      </featureInstance>
+      <featureInstance name="power" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.45/@ownedBusAccess.1"/>
+        <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <componentInstance name="Cache" category="memory">
+        <featureInstance name="pci" category="busAccess">
+          <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.35/@ownedBusAccess.0"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedMemorySubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#FORA.hardware.Cache.L2"/>
+      </componentInstance>
+      <componentInstance name="Core0" category="virtual processor">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/FORA-AADL/FCP/lib/property_sets.aadl#Processor_Properties.Core_Id"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedVirtualProcessorSubcomponent.0/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedVirtualProcessorSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#FORA.hardware.logical.core"/>
+      </componentInstance>
+      <componentInstance name="Core1" category="virtual processor">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/FORA-AADL/FCP/lib/property_sets.aadl#Processor_Properties.Core_Id"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="1"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedVirtualProcessorSubcomponent.1/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedVirtualProcessorSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#FORA.hardware.logical.core"/>
+      </componentInstance>
+      <componentInstance name="Core2" category="virtual processor">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/FORA-AADL/FCP/lib/property_sets.aadl#Processor_Properties.Core_Id"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedVirtualProcessorSubcomponent.2/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedVirtualProcessorSubcomponent.2"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#FORA.hardware.logical.core"/>
+      </componentInstance>
+      <componentInstance name="Core3" category="virtual processor">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="../../github/FORA-AADL/FCP/lib/property_sets.aadl#Processor_Properties.Core_Id"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="3"/>
+          </ownedValue>
+          <propertyAssociation href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedVirtualProcessorSubcomponent.3/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedVirtualProcessorSubcomponent.3"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:VirtualProcessorImplementation" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#FORA.hardware.logical.core"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedProcessorSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#FORA.hardware.Intel.Atom_x7_E3950"/>
+    </componentInstance>
+    <componentInstance name="TSNCard" category="system">
+      <featureInstance name="pci" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.0"/>
+      </featureInstance>
+      <featureInstance name="enet_0" category="busAccess" direction="out">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.1"/>
+        <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="enet_1" category="busAccess" direction="out">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.2"/>
+        <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="enet_2" category="busAccess" direction="out">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.3"/>
+        <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="enet_3" category="busAccess" direction="out">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.4"/>
+        <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="power" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.5"/>
+        <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/aadl/hardware.aadl#FORA.hardware.TSN_Switch"/>
+    </componentInstance>
+    <connectionInstance name="pci -> Storage.pci" complete="true" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.3/@featureInstance.0" source="//@componentInstance.1/@componentInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0" destination="//@componentInstance.1/@componentInstance.3/@featureInstance.0" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="pci -> RAM.pci" complete="true" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.2/@featureInstance.0" source="//@componentInstance.1/@componentInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0" destination="//@componentInstance.1/@componentInstance.2/@featureInstance.0" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="pci -> CPU.pci" complete="true" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.4/@featureInstance.0" source="//@componentInstance.1/@componentInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0" destination="//@componentInstance.1/@componentInstance.4/@featureInstance.0" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="pci -> TSNCard.pci" complete="true" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.5/@featureInstance.0" source="//@componentInstance.1/@componentInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0" destination="//@componentInstance.1/@componentInstance.5/@featureInstance.0" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.6"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="pci -> A2D.pci" complete="true" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.1/@featureInstance.0" source="//@componentInstance.1/@componentInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0" destination="//@componentInstance.1/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.8"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="A2D.pci -> pci" complete="true" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.1/@featureInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0" reverse="true">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.8"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="RAM.pci -> pci" complete="true" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.2/@featureInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="Storage.pci -> pci" complete="true" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.3/@featureInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="CPU.pci -> pci" complete="true" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.4/@featureInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.4/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="TSNCard.pci -> pci" complete="true" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.1/@componentInstance.5/@featureInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.5/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.6"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.Hardware.i"/>
+  </componentInstance>
+  <componentInstance name="PowerModule" category="device">
+    <featureInstance name="IO" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="Power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedBusAccess.1"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="SinkPower" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedBusAccess.2"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/fcpbase_Drive_i_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.PowerModule"/>
+  </componentInstance>
+  <connectionInstance name="TSN -> FogHardwarePlatform.TSNCard.enet_0" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.5/@featureInstance.1" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.1/@featureInstance.2" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@featureInstance.2" destination="//@componentInstance.1/@componentInstance.5/@featureInstance.1" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SourcePower -> FogHardwarePlatform.CPU.power" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.4/@featureInstance.1" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SourcePower -> FogHardwarePlatform.TSNCard.power" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.5/@featureInstance.5" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.5/@featureInstance.5" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SourcePower -> PowerModule.Power" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="FogSoftwarePlatform.Hypervisor.Partition0.Interface -> FogHardwarePlatform.pci" complete="true" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.4/@featureInstance.0">
+    <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@componentInstance.4/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedAccessConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedAccessConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.1" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.1/@componentInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="FogHardwarePlatform.pci -> FogSoftwarePlatform.Hypervisor.Partition0.Interface" complete="true" kind="accessConnection" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.4/@featureInstance.0" source="//@componentInstance.1/@componentInstance.0">
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0" destination="//@componentInstance.1/@featureInstance.1" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.2"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedAccessConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.0/@componentInstance.0" source="//@componentInstance.0/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.0/@componentInstance.0/@componentInstance.4/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="FogHardwarePlatform.A2D.IO -> PowerModule.IO" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.1/@componentInstance.1/@featureInstance.1">
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.8" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.9"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.8" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="FogHardwarePlatform.TSNCard.enet_0 -> TSN" kind="accessConnection" destination="//@featureInstance.0" source="//@componentInstance.1/@componentInstance.5/@featureInstance.1">
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.5/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.7"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.2" destination="//@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="FogHardwarePlatform.TSNCard.power -> SourcePower" kind="accessConnection" destination="//@featureInstance.1" source="//@componentInstance.1/@componentInstance.5/@featureInstance.5">
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.5/@featureInstance.5" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PowerModule.IO -> FogHardwarePlatform.A2D.IO" complete="true" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.1/@featureInstance.1" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.8" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@featureInstance.8" destination="//@componentInstance.1/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PowerModule.Power -> SourcePower" kind="accessConnection" destination="//@featureInstance.1" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@featureInstance.1" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PowerModule.SinkPower -> SinkPower" kind="accessConnection" destination="//@featureInstance.2" source="//@componentInstance.2/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.2" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.Drive.i"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/fcpbase.aadl#fcpbase.Drive.i"/>
+</instance:SystemInstance>

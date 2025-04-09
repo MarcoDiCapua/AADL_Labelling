@@ -1,0 +1,195 @@
+package Controller
+public
+	system Scooter_Controller
+	end Scooter_Controller;
+	
+	system implementation Scooter_Controller.i
+		subcomponents
+			speed_ctrl: process speed_controller_pr.i;
+			power_mgr: process power_manager_pr.i;
+			accel_handle_dev: device accel_handle;
+			brake_handle_dev: device brake_handle;
+			battery_dev: device battery;
+			brake_dev: device brake;
+			speedo_dev: device speedometer;
+			batt_sensor_dev: device battery_sensor;
+		connections
+			speedo_sc_data: port speedo_dev.measured_speed_out -> speed_ctrl.measured_speed_in;
+			accel_sc_data: port accel_handle_dev.accel_toggle_out -> speed_ctrl.accel_toggle_in;
+			brake_handle_sc_data: port brake_handle_dev.brake_toggle_out -> speed_ctrl.brake_toggle_in;
+			battery_sc_data: port batt_sensor_dev.measured_batt_pct_out -> power_mgr.battery_pct_in;
+			
+			speed_power_data: port speed_ctrl.power_output_out -> power_mgr.power_output_in;
+			speed_brake_event: port speed_ctrl.brake_state_out -> brake_dev.brake_state_in;
+			power_battery_eventdata: port power_mgr.target_voltage_out -> battery_dev.target_voltage_in;
+		flows
+			speedo_sc_speed: end to end flow speedo_dev.measured_speed_source -> speedo_sc_data -> speed_ctrl.speed_sink;
+			accel_sc_acclevel: end to end flow accel_handle_dev.accel_toggle_source -> accel_sc_data -> speed_ctrl.accel_level_sink;
+			brake_sc_brakelevel: end to end flow brake_handle_dev.brake_toggle_source -> brake_handle_sc_data -> speed_ctrl.brake_level_sink;
+			batt_bc_battlevel: end to end flow batt_sensor_dev.battery_pct_source -> battery_sc_data -> power_mgr.battery_pct_sink;
+											
+			speed_power_output: end to end flow speed_ctrl.battery_ctrl_source -> speed_power_data -> power_mgr.power_output_sink;
+			power_batt_targetvolt: end to end flow power_mgr.target_voltage_source -> power_battery_eventdata -> battery_dev.target_voltage_sink;
+			speed_brake_ctrl: end to end flow speed_ctrl.brake_source -> speed_brake_event -> brake_dev.brake_state_sink;
+	end Scooter_Controller.i;
+	
+	-- Software/controllers
+	process speed_controller_pr
+		features
+			measured_speed_in: in data port;
+			accel_toggle_in: in data port;
+			brake_toggle_in: in data port;
+			power_output_out: out data port;
+			brake_state_out: out data port;
+		flows
+			speed_sink: flow sink measured_speed_in;
+			accel_level_sink: flow sink accel_toggle_in;
+			brake_level_sink: flow sink brake_toggle_in;
+			brake_source: flow source brake_state_out;
+			battery_ctrl_source: flow source power_output_out;
+	end speed_controller_pr;
+	
+	process implementation speed_controller_pr.i
+		subcomponents
+			regulate_th: thread regulate_speed_th;
+			power_th: thread adjust_power_th;
+		connections
+			speed_ext_regulate_speed: port measured_speed_in -> regulate_th.speed_data_in;
+			accel_ext_regulate_accel: port accel_toggle_in -> regulate_th.accel_level_in;
+			brake_ext_regulate_brake: port brake_toggle_in -> regulate_th.brake_level_in;
+			regulate_brake_ext: port regulate_th.brake_ctrl -> brake_state_out;
+			regulate_power: port regulate_th.power_adjust -> power_th.power_adjust_in;
+			power_battery_ext: port power_th.watt_adjust_out -> power_output_out;
+		flows
+			speed_sink: flow sink measured_speed_in -> speed_ext_regulate_speed ->  regulate_th.speed_data_sink;
+			accel_level_sink: flow sink accel_toggle_in -> accel_ext_regulate_accel -> regulate_th.accel_level_sink;
+			brake_level_sink: flow sink brake_toggle_in -> brake_ext_regulate_brake -> regulate_th.brake_level_sink;
+			brake_source: flow source regulate_th.brake_ctrl_source -> regulate_brake_ext -> brake_state_out;
+			battery_ctrl_source: flow source regulate_th.power_adjust_source -> regulate_power -> power_th.power_watt_path
+											-> power_battery_ext -> power_output_out;
+	end speed_controller_pr.i;
+
+	
+	thread regulate_speed_th
+		features
+			speed_data_in: in data port;
+			accel_level_in: in data port;
+			brake_level_in: in data port;
+			power_adjust: out data port;
+			brake_ctrl: out data port;
+		flows
+			speed_data_sink: flow sink speed_data_in;
+			accel_level_sink: flow sink accel_level_in;
+			brake_level_sink:  flow sink brake_level_in;
+			brake_ctrl_source: flow source brake_ctrl;
+			power_adjust_source: flow source power_adjust;
+	end regulate_speed_th;
+	
+	thread adjust_power_th
+		features
+			power_adjust_in: in event data port;
+			watt_adjust_out: out event data port;
+		flows
+			power_watt_path: flow path power_adjust_in -> watt_adjust_out;
+	end adjust_power_th;
+	
+	process power_manager_pr
+		features
+			power_output_in: in data port;
+			battery_pct_in: in data port;
+			target_voltage_out: out data port;
+		flows
+			power_output_sink: flow sink power_output_in;
+			battery_pct_sink: flow sink battery_pct_in;
+			target_voltage_source: flow source target_voltage_out;
+			
+	end power_manager_pr;
+	
+	process implementation power_manager_pr.i
+		subcomponents
+			batt_ctrl_th: thread battery_ctrl_th;
+		connections
+			batt_pct_ext_batt_pct: port battery_pct_in -> batt_ctrl_th.battery_pct_in;
+			power_output_ext_power_output: port power_output_in -> batt_ctrl_th.power_output_in;
+			batt_ctrl_voltage_ext: port batt_ctrl_th.target_voltage_out -> target_voltage_out;
+		flows
+			power_output_sink: flow sink power_output_in -> power_output_ext_power_output -> batt_ctrl_th.power_output_sink;
+			battery_pct_sink: flow sink battery_pct_in -> batt_pct_ext_batt_pct -> batt_ctrl_th.battery_pct_sink;
+			target_voltage_source: flow source batt_ctrl_th.target_voltage_source -> batt_ctrl_voltage_ext -> target_voltage_out;
+	end power_manager_pr.i;	
+	
+	thread battery_ctrl_th
+		features
+			battery_pct_in: in data port;
+			power_output_in: in data port;
+			target_voltage_out: out data port;
+		flows
+			battery_pct_sink: flow sink battery_pct_in;
+			power_output_sink: flow sink power_output_in;
+			target_voltage_source: flow source target_voltage_out;
+	end battery_ctrl_th;
+	
+	-- Output devices
+	device battery
+		features
+			target_voltage_in: in data port;
+			voltage_output_out: out data port;
+			main_bus: requires bus access scooter_info.i;
+		flows
+			target_voltage_sink: flow sink target_voltage_in;
+			voltage_output_source: flow source voltage_output_out;
+	end battery;
+	
+	device brake
+		features
+			brake_state_in: in data port;
+			is_braking_out: out data port;
+			main_bus: requires bus access scooter_info.i;
+		flows
+			brake_state_sink: flow sink brake_state_in;
+			is_braking_source: flow source is_braking_out;
+	end brake; 
+	
+	-- Input devices
+	device speedometer
+		features
+			scooter_speed_in: in data port;
+			measured_speed_out: out data port;
+			main_bus: requires bus access scooter_info.i;
+		flows
+			scooter_speed_sink: flow sink scooter_speed_in;
+			measured_speed_source: flow source measured_speed_out;
+	end speedometer;
+	
+	device battery_sensor
+		features
+			battery_pct_in: in data port;
+			measured_batt_pct_out: out data port;
+			main_bus: requires bus access scooter_info.i;
+		flows
+			battery_pct_sink: flow sink battery_pct_in;
+			battery_pct_source: flow source measured_batt_pct_out;
+	end battery_sensor;
+	
+	device accel_handle
+		features
+			accel_toggle_out: out data port;
+			main_bus: requires bus access scooter_info.i;
+		flows
+			accel_toggle_source: flow source accel_toggle_out;
+	end accel_handle;
+	
+	device brake_handle
+		features
+			brake_toggle_out: out data port;
+			main_bus: requires bus access scooter_info.i;
+		flows
+			brake_toggle_source: flow source brake_toggle_out;
+	end brake_handle;
+		
+	bus scooter_info
+	end scooter_info;
+	
+	bus implementation scooter_info.i
+	end scooter_info.i;
+end Controller;

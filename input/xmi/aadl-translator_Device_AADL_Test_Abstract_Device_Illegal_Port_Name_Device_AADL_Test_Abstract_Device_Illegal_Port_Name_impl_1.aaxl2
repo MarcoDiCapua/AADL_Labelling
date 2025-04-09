@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Device_AADL_Test_Abstract_Device_Illegal_Port_Name_impl_Instance" category="system">
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#MDCF_Data_Props.IEEE11073_MDC_ATTR_SYS_TYPE"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:StringLiteral" value="Device_AADL_Test_Abstract_Device_Illegal_Port_Name"/>
+    </ownedValue>
+    <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/Device_AADL_Test_Abstract_Device_Illegal_Port_Name.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+  </ownedPropertyAssociation>
+  <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+    <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#MDCF_Data_Props.ICE_ManufacturerModel"/>
+    <ownedValue>
+      <ownedValue xsi:type="aadl2:RecordValue">
+        <ownedFieldValue>
+          <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.0"/>
+          <ownedValue xsi:type="aadl2:RecordValue">
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.0/@ownedPropertyType/@ownedField.0"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="Tester"/>
+            </ownedFieldValue>
+            <ownedFieldValue>
+              <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.0/@ownedPropertyType/@ownedField.1"/>
+              <ownedValue xsi:type="aadl2:StringLiteral" value="Test1000"/>
+            </ownedFieldValue>
+          </ownedValue>
+        </ownedFieldValue>
+        <ownedFieldValue>
+          <property href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/propertysets/MDCF_Data_Props.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedField.1"/>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="aadl2:StringLiteral" value="cert1"/>
+            <ownedListElement xsi:type="aadl2:StringLiteral" value="cert2"/>
+          </ownedValue>
+        </ownedFieldValue>
+      </ownedValue>
+    </ownedValue>
+    <propertyAssociation href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/Device_AADL_Test_Abstract_Device_Illegal_Port_Name.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
+  </ownedPropertyAssociation>
+  <componentInstance name="d1">
+    <featureInstance name="Status_in" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/Device_AADL_Test_Abstract_Device_Illegal_Port_Name.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/Device_AADL_Test_Abstract_Device_Illegal_Port_Name.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAbstractSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractType" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/Device_AADL_Test_Abstract_Device_Illegal_Port_Name.aadl#Device_AADL_Test_Abstract_Device_Illegal_Port_Name.subdevice"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/Device_AADL_Test_Abstract_Device_Illegal_Port_Name.aadl#Device_AADL_Test_Abstract_Device_Illegal_Port_Name.Device_AADL_Test_Abstract_Device_Illegal_Port_Name.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-translator/edu.ksu.cis.projects.mdcf.aadl-translator-test/src/test/resources/edu/ksu/cis/projects/mdcf/aadltranslator/test/aadl/device_eis/packages/Device_AADL_Test_Abstract_Device_Illegal_Port_Name.aadl#Device_AADL_Test_Abstract_Device_Illegal_Port_Name.Device_AADL_Test_Abstract_Device_Illegal_Port_Name.impl"/>
+</instance:SystemInstance>

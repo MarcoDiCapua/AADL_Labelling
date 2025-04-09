@@ -1,0 +1,12 @@
+package ITU_Hardware
+public
+	
+	memory RAM
+		
+	end RAM;
+	
+	bus CTUBus
+		
+	end CTUBus;
+	
+end ITU_Hardware;

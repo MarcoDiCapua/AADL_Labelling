@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="networking_subsystem_standard_Instance" category="system">
+  <featureInstance name="received_message" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="message_to_send">
+    <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.1"/>
+  </featureInstance>
+  <componentInstance name="vehicle_bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#basic_computing.basic_bus.standard"/>
+  </componentInstance>
+  <componentInstance name="shortwave_receiver" category="device">
+    <featureInstance name="received_broadcast" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/instances/networking_system_networking_subsystem_standard_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#basic_devices.receiver.shortwave"/>
+  </componentInstance>
+  <componentInstance name="cellular_receiver" category="device">
+    <featureInstance name="received_broadcast" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/instances/networking_system_networking_subsystem_standard_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#basic_devices.receiver.cellular"/>
+  </componentInstance>
+  <componentInstance name="shortwave_sender" category="device">
+    <featureInstance name="broadcast" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/instances/networking_system_networking_subsystem_standard_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#basic_devices.broadcaster.shortwave"/>
+  </componentInstance>
+  <componentInstance name="cellular_sender" category="device">
+    <featureInstance name="broadcast" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/instances/networking_system_networking_subsystem_standard_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#basic_devices.broadcaster.cellular"/>
+  </componentInstance>
+  <componentInstance name="bus_driver" category="device">
+    <featureInstance name="event_data" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/instances/networking_system_networking_subsystem_standard_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#basic_devices.bus_driver.standard"/>
+  </componentInstance>
+  <componentInstance name="event_distributor" category="device">
+    <featureInstance name="event_data" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/instances/networking_system_networking_subsystem_standard_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#basic_devices.event_distributor.standard"/>
+  </componentInstance>
+  <componentInstance name="vehicle_memory" category="memory">
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/instances/networking_system_networking_subsystem_standard_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedMemorySubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#basic_computing.ram.standard"/>
+  </componentInstance>
+  <componentInstance name="receiver" category="process">
+    <featureInstance name="received_message" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="message_to_send">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="shortwave_receiver" category="thread">
+      <featureInstance name="received_data">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="message" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#networking_subsystem.receive_shortwave_broadcast.standard"/>
+    </componentInstance>
+    <componentInstance name="cellular_receiver" category="thread">
+      <featureInstance name="received_data">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="message" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#networking_subsystem.receive_cellular_broadcast.standard"/>
+    </componentInstance>
+    <modeInstance name="wait_for_message" initial="true">
+      <mode href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedMode.0"/>
+    </modeInstance>
+    <modeInstance name="message_received">
+      <mode href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedMode.1"/>
+    </modeInstance>
+    <modeTransitionInstance name="wait_for_message_shortwave_receiver_message_message_received" destination="//@componentInstance.8/@modeInstance.1" trigger="//@componentInstance.8/@componentInstance.0/@featureInstance.1" source="//@componentInstance.8/@modeInstance.0">
+      <modeTransition href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedModeTransition.0"/>
+    </modeTransitionInstance>
+    <modeTransitionInstance name="wait_for_message_cellular_receiver_message_message_received" destination="//@componentInstance.8/@modeInstance.1" trigger="//@componentInstance.8/@componentInstance.1/@featureInstance.1" source="//@componentInstance.8/@modeInstance.0">
+      <modeTransition href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedModeTransition.1"/>
+    </modeTransitionInstance>
+    <modeTransitionInstance name="message_received_shortwave_receiver_message_wait_for_message" destination="//@componentInstance.8/@modeInstance.0" trigger="//@componentInstance.8/@componentInstance.0/@featureInstance.1" source="//@componentInstance.8/@modeInstance.1">
+      <modeTransition href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedModeTransition.2"/>
+    </modeTransitionInstance>
+    <modeTransitionInstance name="message_received_cellular_receiver_message_wait_for_message" destination="//@componentInstance.8/@modeInstance.0" trigger="//@componentInstance.8/@componentInstance.1/@featureInstance.1" source="//@componentInstance.8/@modeInstance.1">
+      <modeTransition href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedModeTransition.3"/>
+    </modeTransitionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#networking_subsystem.message_handling.receiver"/>
+  </componentInstance>
+  <componentInstance name="sender" category="process">
+    <featureInstance name="received_message" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="message_to_send">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="shortwave_sender" category="thread">
+      <featureInstance name="message" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="message_data">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#networking_subsystem.send_shortwave_broadcast.standard"/>
+    </componentInstance>
+    <componentInstance name="cellular_sender" category="thread">
+      <featureInstance name="message" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="message_data">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#networking_subsystem.send_cellular_broadcast.standard"/>
+    </componentInstance>
+    <modeInstance name="wait_for_message_to_send" initial="true">
+      <mode href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedMode.0"/>
+    </modeInstance>
+    <modeInstance name="got_message_to_send">
+      <mode href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedMode.1"/>
+    </modeInstance>
+    <modeInstance name="message_sent">
+      <mode href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedMode.2"/>
+    </modeInstance>
+    <modeTransitionInstance name="wait_for_message_to_send_message_to_send_got_message_to_send" destination="//@componentInstance.9/@modeInstance.1" trigger="//@componentInstance.9/@featureInstance.1" source="//@componentInstance.9/@modeInstance.0">
+      <modeTransition href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedModeTransition.0"/>
+    </modeTransitionInstance>
+    <modeTransitionInstance name="got_message_to_send_shortwave_sender_message_message_sent" destination="//@componentInstance.9/@modeInstance.2" trigger="//@componentInstance.9/@componentInstance.0/@featureInstance.0" source="//@componentInstance.9/@modeInstance.1">
+      <modeTransition href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedModeTransition.1"/>
+    </modeTransitionInstance>
+    <modeTransitionInstance name="got_message_to_send_cellular_sender_message_message_sent" destination="//@componentInstance.9/@modeInstance.2" trigger="//@componentInstance.9/@componentInstance.1/@featureInstance.0" source="//@componentInstance.9/@modeInstance.1">
+      <modeTransition href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedModeTransition.2"/>
+    </modeTransitionInstance>
+    <modeTransitionInstance name="message_sent_shortwave_sender_message_wait_for_message_to_send" destination="//@componentInstance.9/@modeInstance.0" trigger="//@componentInstance.9/@componentInstance.0/@featureInstance.0" source="//@componentInstance.9/@modeInstance.2">
+      <modeTransition href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedModeTransition.3"/>
+    </modeTransitionInstance>
+    <modeTransitionInstance name="message_sent_cellular_sender_message_wait_for_message_to_send" destination="//@componentInstance.9/@modeInstance.0" trigger="//@componentInstance.9/@componentInstance.1/@featureInstance.0" source="//@componentInstance.9/@modeInstance.2">
+      <modeTransition href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedModeTransition.4"/>
+    </modeTransitionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#networking_subsystem.message_handling.sender"/>
+  </componentInstance>
+  <componentInstance name="vehicle_processor" category="processor">
+    <featureInstance name="BA1" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/instances/networking_system_networking_subsystem_standard_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#basic_computing.real_time.one_ghz"/>
+  </componentInstance>
+  <connectionInstance name="message_to_send -> sender.shortwave_sender.message_data" kind="portConnection" destination="//@componentInstance.9/@componentInstance.0/@featureInstance.1" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.9/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@featureInstance.1" destination="//@componentInstance.9/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="message_to_send -> sender.cellular_sender.message_data" kind="portConnection" destination="//@componentInstance.9/@componentInstance.1/@featureInstance.1" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.9/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@featureInstance.1" destination="//@componentInstance.9/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_bus -> shortwave_receiver.ba" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_bus -> cellular_receiver.ba" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_bus -> shortwave_sender.ba" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_bus -> cellular_sender.ba" complete="true" kind="accessConnection" destination="//@componentInstance.4/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_bus -> event_distributor.ba" complete="true" kind="accessConnection" destination="//@componentInstance.6/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_bus -> bus_driver.ba" complete="true" kind="accessConnection" destination="//@componentInstance.5/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="shortwave_receiver.ba -> vehicle_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cellular_receiver.ba -> vehicle_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="shortwave_sender.ba -> vehicle_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cellular_sender.ba -> vehicle_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="bus_driver.ba -> vehicle_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.5/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="event_distributor.ba -> vehicle_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.6/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="receiver.shortwave_receiver.message -> received_message" kind="portConnection" destination="//@featureInstance.0" source="//@componentInstance.8/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0" destination="//@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="receiver.cellular_receiver.message -> received_message" kind="portConnection" destination="//@featureInstance.0" source="//@componentInstance.8/@componentInstance.1/@featureInstance.1">
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0" destination="//@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#networking_subsystem.networking_subsystem.standard"/>
+  <systemOperationMode name="som_1" currentMode="//@componentInstance.8/@modeInstance.0 //@componentInstance.9/@modeInstance.0"/>
+  <systemOperationMode name="som_2" currentMode="//@componentInstance.8/@modeInstance.0 //@componentInstance.9/@modeInstance.1"/>
+  <systemOperationMode name="som_3" currentMode="//@componentInstance.8/@modeInstance.0 //@componentInstance.9/@modeInstance.2"/>
+  <systemOperationMode name="som_4" currentMode="//@componentInstance.8/@modeInstance.1 //@componentInstance.9/@modeInstance.0"/>
+  <systemOperationMode name="som_5" currentMode="//@componentInstance.8/@modeInstance.1 //@componentInstance.9/@modeInstance.1"/>
+  <systemOperationMode name="som_6" currentMode="//@componentInstance.8/@modeInstance.1 //@componentInstance.9/@modeInstance.2"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/collision_detection_aadl/packages/Networking%20Subsystem/networking_system.aadl#networking_subsystem.networking_subsystem.standard"/>
+</instance:SystemInstance>

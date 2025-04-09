@@ -1,0 +1,166 @@
+--Safety.aadl
+
+--safety subsystem
+
+
+package Safety
+public
+	
+with
+  Base_Types, Data_Model,   --AADL data model
+  BLESS,
+  Buses,
+  FG            --feature group definitions
+  ;
+
+flag renames data Base_Types::Boolean;
+
+--safety subsystem
+system Safety
+	features
+	  halt : out event port;  --halt medical device operation on safety command
+    peripheral_malfunction : in data port flag;  --peripheral detected malfunction	
+	  alarm : feature group FG::Alarm_Indication;  --alarm and waring signals
+    to_peripherals : feature group FG::Safety_Peripherals;  
+    from_operation : feature group inverse of FG::Operation_Safety;
+    from_power: feature group inverse of FG::Power_Safety;
+    from_maintenance: feature group inverse of FG::Maintenance;
+		alarm_inactivation : in data port flag;  --user suspends alarms
+		main_bus : requires bus access Buses::System_Bus;  --for thread monitoring
+end Safety;
+
+
+system implementation Safety.i
+	subcomponents
+	  led : device Failure_LED;  --indicate hardware-detected fault, usually POST
+    fault_log : device Fault_Logger;  --logs hardware-detected faults and software-detected hazards
+    error_detect : device Error_Detector;  --detects hardware faults
+    alarm_process : process Alarm_Process;  --detects hazardous conditions  
+connections
+	i  : port error_detect.illuminate -> led.Illuminate;
+	sa : feature group alarm_process.send_alarm <-> alarm;
+	tp : feature group alarm_process.to_peripherals <-> to_peripherals;
+	fo : feature group alarm_process.from_operation <-> from_operation;
+	po : feature group alarm_process.from_power <-> from_power;
+	rh : port alarm_process.report_hazard -> fault_log.log_soft_fault;
+	fl : port from_maintenance.get_fault_log -> fault_log.get_log;
+	tl : port fault_log.the_log -> from_maintenance.the_fault_log;
+	hf:  port error_detect.hardware_fault -> fault_log.log_hard_fault ;
+	pm : port peripheral_malfunction -> alarm_process.peripheral_malfunction;
+	stop: port error_detect.halt -> halt;
+	inac : port alarm_inactivation -> alarm_process.alarm_inactivation;
+	hwed: feature group error_detect.hw_error_detections -> from_operation;
+	ed_b: bus access main_bus -> error_detect.main_bus;
+end Safety.i;
+	
+
+--R6.4.0(7) hardware fault indicator
+device Failure_LED	--illuminated LED when hardware-failure detected
+  features
+    illuminate: in data port flag --turn-on led
+    		{BLESS::Assertion=>"<<exists t:BLESS_Types::Time in t<=now
+         that (POST_Failure or RAM_Failure or ROM_failure or CPU_Failure or Thread_Monitor_Failure)@t>>";};    
+    light : out data port flag  --light emitted by LED  (put into Actuator feature group)
+		{BLESS::Assertion=>"<<light iff( exists t:BLESS_Types::Time in t<=now
+         that (POST_Failure or RAM_Failure or ROM_failure or CPU_Failure or Thread_Monitor_Failure)@t)>>";};
+end Failure_LED;
+
+device implementation Failure_LED.i
+annex BLESS
+{**
+invariant <<true>>
+states
+	start: initial state;
+	run: complete state;
+	done: final state;
+transitions
+  led0: start -[ ]-> run{};
+  led1: run -[on dispatch illuminate]-> run {light!(true)};
+  led2: run -[on dispatch stop]-> done{};		
+**};
+end Failure_LED.i;
+
+--hardware-only logging of malfunctions
+device Fault_Logger
+  features
+    log_hard_fault : in event data port;  -- Error_Indication.hardware;  --record hardware-detected fault in the log
+    log_soft_fault : in event data port;  -- Error_Indication.software;  --record software-detected fault in the log
+    get_log : in event port;  --read the fault log
+    the_log : out data port Fault_Records;  --stored error records
+end Fault_Logger;
+
+device implementation Fault_Logger.i
+end Fault_Logger.i;
+
+--record of fault occurrence
+data Error_Indication
+end Error_Indication;
+
+--hardware-detected error indication
+data implementation Error_Indication.hardware
+end Error_Indication.hardware;
+
+--software-detected error indication
+data implementation Error_Indication.software
+end Error_Indication.software;
+
+--list of hardware error indications
+data Fault_Records
+	properties
+	  Data_Model::Data_Representation => Array;
+	  Data_Model::Base_Type => (classifier(Error_Indication));
+end Fault_Records;
+
+--hardware error detection
+device Error_Detector
+	features
+	  illuminate: out data port flag; --turn-on led
+    hardware_fault : out event data port;  -- Error_Indication.hardware;  --tell logger hardware fault detected
+    halt : out event port;  --halt medical device operation on hardware command
+	  hw_error_detections:  feature group inverse of FG::Operation_Safety;     
+	  main_bus : requires bus access Buses::System_Bus;--monitor thread heartbeat
+end Error_Detector;
+
+device implementation Error_Detector.i
+end Error_Detector.i;
+
+--holds safety subsystem software
+process Alarm_Process
+	features
+    to_peripherals : feature group FG::Safety_Peripherals;  --communicate with sensors/actuators
+    from_operation:  feature group inverse of FG::Operation_Safety;      --communicate with operation subsystem
+	  from_power: feature group inverse of FG::Power_Safety;               --communicate with power subsystem
+	  report_hazard : out event data port;       --record hazard detected by software
+    send_alarm : feature group FG::Alarm_Indication;                                --alarm or warning for clinician
+    peripheral_malfunction : in data port flag;  --peripheral detected malfunction	
+		alarm_inactivation : in data port flag;  --user suspends alarms
+end Alarm_Process;
+
+process implementation Alarm_Process.i
+	subcomponents
+	  detect_hazard : thread Hazard_Thread;   --main software hazard detection software
+--	  special_hazard1 : thread Special_Thread;  --thread dedicated to specific hazards
+--	  special_hazard2 : thread Special_Thread;  --thread dedicated to specific hazards
+  connections
+  	tp: feature group detect_hazard.to_peripherals <-> to_peripherals;
+  	fo: feature group from_operation <-> detect_hazard.from_operation;
+  	po: feature group from_power <-> detect_hazard.from_power;
+  	rh: port detect_hazard.report_hazard -> report_hazard;
+  	sa: feature group send_alarm <-> detect_hazard.send_alarm;
+end Alarm_Process.i;
+
+thread Hazard_Thread
+	features
+    to_peripherals : feature group FG::Safety_Peripherals;  --communicate with sensors/actuators
+  	from_operation:  feature group inverse of FG::Operation_Safety;     --communicate with operation subsystem
+  	from_power: feature group inverse of FG::Power_Safety;              --communicate with power subsystem
+  	report_hazard : out event data port;  -- Error_Indication.software;      --record hazard detected by software
+    send_alarm : feature group FG::Alarm_Indication;                               --alarm or warning for clinician
+end Hazard_Thread;
+
+--thread dedicated to specific hazards
+thread Special_Thread
+end Special_Thread;
+
+	
+end Safety;

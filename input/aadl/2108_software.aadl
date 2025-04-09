@@ -1,0 +1,550 @@
+package FORA::software
+public
+	WITH FORA::core;
+
+------------------------------------------------------------------
+--- Core elements
+------------------------------------------------------------------		
+	abstract FogSoftwareElement extends FORA::core::Element
+	end FogSoftwareElement;
+
+	-- Represents an element of the Software Backplane such as OS, firmware, drivers and etc.
+	abstract SoftwareBackplaneElement extends FogSoftwareElement
+	end SoftwareBackplaneElement;
+
+	-- Represents an element of the Fog Middleware
+	abstract FogMiddlewareElement extends FogSoftwareElement
+	end FogMiddlewareElement;
+
+	-- Represents an element of the Fog Middleware which is located within each partition
+	abstract AppSupportElement extends FogMiddlewareElement
+	end AppSupportElement;
+
+	-- Represents an element of the Fog Middleware which is located within the privileged partition
+	abstract NodeManagementElement extends FogMiddlewareElement
+	end NodeManagementElement;
+
+------------------------------------------------------------------
+--- Software Backplane
+------------------------------------------------------------------		
+	abstract drivers extends SoftwareBackplaneElement
+	end drivers;
+
+	abstract firmware extends SoftwareBackplaneElement
+		features
+			Interface: requires bus access;
+	end firmware;
+
+	abstract CommunicationServices extends SoftwareBackplaneElement
+		features
+			Link_0: requires virtual bus access;
+			Link_1: provides virtual bus access;
+			Link_2: provides virtual bus access;
+			Link_3: provides virtual bus access;
+	end CommunicationServices;
+
+	abstract IOServices extends SoftwareBackplaneElement
+		features
+			IO: requires bus access;
+	end IOServices;
+
+	abstract FogOS extends SoftwareBackplaneElement
+	end FogOS;
+
+	abstract ContainerEnvironment extends SoftwareBackplaneElement
+	end ContainerEnvironment;
+
+	abstract implementation FogOS.i
+		subcomponents
+			AppServices: abstract AppServices.i;
+			AppSupport: abstract AppSupport.i;
+	end FogOS.i;
+
+	abstract implementation FogOS.privileged
+		subcomponents
+			NodeConfiguration: abstract FogNodeConfiguration.i;
+			AppSupport: abstract AppSupport.i;
+			NodeManagement: abstract NodeManagement.i;
+	end FogOS.privileged;
+
+	-- container based virtualization OS
+	abstract implementation FogOS.lightweight
+		subcomponents
+			NodeConfiguration: abstract FogNodeConfigurationContainer.i;
+			AppSupport: abstract AppSupport.containers;
+			NodeManagement: abstract NodeManagementContainers.i;
+			RealTimeSupport: abstract RealTimeSupport.i;
+	end FogOS.lightweight;
+
+	abstract implementation ContainerEnvironment.i
+	end ContainerEnvironment.i;
+
+	abstract Virtualization extends SoftwareBackplaneElement
+	end Virtualization;
+
+	abstract Hypervisor extends SoftwareBackplaneElement
+		features
+			Interface: requires bus access;
+			--IO: requires bus access FORA::core::Wire;
+			--cache_partitions: requires bus access;
+	end Hypervisor;
+
+	abstract Containerization extends SoftwareBackplaneElement
+		features
+			Interface: requires bus access;
+			--IO: requires bus access FORA::core::Wire;
+	end Containerization;
+
+	virtual processor Partition extends Virtualization
+		features
+			Link: requires virtual bus access;
+			--virtualIO: requires virtual bus access;
+	end Partition;
+
+	virtual processor implementation Partition.i
+		subcomponents
+			Applications: abstract Appications;
+			OS: abstract FogOS.i;
+	end Partition.i;
+
+	abstract Container extends Virtualization
+	end Container;
+
+	abstract implementation Container.i
+		subcomponents
+			Applications: abstract Appications;
+			ContainerEnvironment: abstract ContainerEnvironment.i;
+	end Container.i;
+
+	virtual processor PrivilegedPartition extends Virtualization
+		features
+			Interface: requires bus access;
+			--io: requires bus access FORA::core::Wire;
+			Link: provides virtual bus access;
+			--virtualIOBackend: requires virtual bus access;
+	end PrivilegedPartition;
+
+	-- Privileged partition for fog node management
+	virtual processor implementation PrivilegedPartition.i
+		subcomponents
+			NodeConfiguration: abstract FogNodeConfiguration.i;
+			AppSupport: abstract AppSupport.i;
+			NodeManagement: abstract NodeManagement.i;
+	end PrivilegedPartition.i;
+
+------------------------------------------------------------------
+--- Fog Middleware
+------------------------------------------------------------------		
+	abstract FogMiddleware extends FogSoftwareElement
+	end FogMiddleware;
+
+	abstract implementation FogMiddleware.i
+		subcomponents
+			AppSupport: abstract AppSupport.i;
+			NodeManagement: abstract NodeManagement.i;
+	end FogMiddleware.i;
+
+------------------------------------------------------------------
+--- NodeManagement
+------------------------------------------------------------------
+	abstract NodeManagement extends FogMiddlewareElement
+	end NodeManagement;
+
+	abstract NodeManagementContainers extends FogMiddlewareElement
+	end NodeManagementContainers;
+
+	abstract SecurityManagement extends NodeManagementElement
+	end SecurityManagement;
+
+	abstract SafetyManagement extends NodeManagementElement
+	end SafetyManagement;
+
+	abstract PartitionManagement extends NodeManagementElement
+		-- Added ESR2 --
+		features
+			PartitionAlive: in event data port PartitionAlive;
+			ScheduleInterPartition: out event data port;
+	-- end ESR2 --
+	end PartitionManagement;
+
+	-- Added ESR2 --
+	abstract implementation PartitionManagement.i
+		subcomponents
+			LocalResourceManagement: abstract LocalResourceManagement.i;
+			LocalResourceSchedulerInterPartition: abstract LocalResourceSchedulerInterPartition.i;
+			CoreMonitor: abstract CoreMonitor.i;
+		connections
+			PartitionAliveEvent: port PartitionAlive -> LocalResourceManagement.PartitionAlive;
+	end PartitionManagement.i;
+
+	--------------
+	abstract LocalResourceManagement extends NodeManagementElement
+		features
+			PartitionAlive: in event data port PartitionAlive;
+			PartitionFailure: out event data port;
+	end LocalResourceManagement;
+
+	abstract LocalResourceSchedulerInterPartition extends NodeManagementElement
+
+	end LocalResourceSchedulerInterPartition;
+
+	abstract CoreMonitor extends NodeManagementElement
+
+	end CoreMonitor;
+
+	--------------
+	abstract implementation LocalResourceManagement.i
+		internal features LocalResourceManagement_i_new_feature: event data;
+	end LocalResourceManagement.i;
+
+	data PartitionAlive
+	end PartitionAlive;
+
+	data implementation PartitionAlive.i
+		subcomponents
+			pid: data;
+	end PartitionAlive.i;
+
+	abstract implementation LocalResourceSchedulerInterPartition.i
+
+	end LocalResourceSchedulerInterPartition.i;
+
+	abstract implementation CoreMonitor.i
+
+	end CoreMonitor.i;
+
+	-- end ESR2 --
+	abstract ContainerManagement extends NodeManagementElement
+	end ContainerManagement;
+
+	abstract implementation NodeManagement.i
+		subcomponents
+			PartitionManagement: abstract PartitionManagement.i; -- modified ESR2 --
+			SafetyManagement: abstract SafetyManagement;
+			SecurityManagement: abstract SecurityManagement;
+	end NodeManagement.i;
+
+	abstract implementation NodeManagementContainers.i
+		subcomponents
+			ContainerManagement: abstract ContainerManagement;
+			SafetyManagement: abstract SafetyManagement;
+			SecurityManagement: abstract SecurityManagement;
+	end NodeManagementContainers.i;
+
+	abstract FogNodeConfiguration extends NodeManagementElement
+		features
+			ApplicationModel: in event data port;
+			ResourceModel: in event data port;
+			StreamModel: in event data port;
+			GCL: out event data port;
+			PartitionTable: out event data port;
+			ScheduleTable: out event data port;
+
+	end FogNodeConfiguration;
+
+	abstract FogNodeConfigurationContainer extends NodeManagementElement
+	end FogNodeConfigurationContainer;
+
+	abstract ContainersConfiguration extends FogNodeConfiguration
+	end ContainersConfiguration;
+
+	abstract ControlConfiguration
+		features
+			getAppModel: in event data port;
+			getResourceModel: in event data port;
+			getStreamModel: in event data port;
+			GCL: out event data port;
+			ScheduleTable: out event data port;
+			PartitionTable: out event data port;
+	end ControlConfiguration;
+
+	abstract SchedulingConfiguration
+		features
+			CPUResources: in event data port;
+			AppModel: in event data port;
+			ScheduleTable: out event data port;
+			PartitionTable: out event data port;
+	end SchedulingConfiguration;
+
+	abstract TSNGCLGonfiguration
+		features
+			NetworkModel: in event data port;
+			StreamModel: in event data port;
+			GCL: out event data port;
+	end TSNGCLGonfiguration;
+
+	abstract SafetyConfiguration extends FogNodeConfiguration
+	end SafetyConfiguration;
+
+	abstract SecurityConfiguration extends FogNodeConfiguration
+	end SecurityConfiguration;
+
+	abstract implementation FogNodeConfiguration.i
+		subcomponents
+			ControlConfiguration: abstract ControlConfiguration.i;
+			SafetyConfiguration: abstract FORA::software::SafetyConfiguration;
+			SecurityConfiguration: abstract FORA::software::SecurityConfiguration;
+		connections
+			FogNodeConfiguration_i_connection_1: port ApplicationModel -> ControlConfiguration.getAppModel;
+			FogNodeConfiguration_i_connection_2: port ResourceModel -> ControlConfiguration.getResourceModel;
+			FogNodeConfiguration_i_connection_3: port StreamModel -> ControlConfiguration.getStreamModel;
+			FogNodeConfiguration_i_connection_4: port ControlConfiguration.GCL -> GCL;
+			FogNodeConfiguration_i_connection_5: port ControlConfiguration.ScheduleTable -> ScheduleTable;
+			FogNodeConfiguration_i_connection_6: port ControlConfiguration.PartitionTable -> PartitionTable;
+	end FogNodeConfiguration.i;
+
+	abstract implementation FogNodeConfigurationContainer.i
+		subcomponents
+			ContainersConfiguration: abstract FORA::software::ContainersConfiguration;
+			SafetyConfiguration: abstract FORA::software::SafetyConfiguration;
+			SecurityConfiguration: abstract FORA::software::SecurityConfiguration;
+	end FogNodeConfigurationContainer.i;
+
+	abstract implementation ControlConfiguration.i
+		subcomponents
+			SchedulingConfiguration: abstract FORA::software::SchedulingConfiguration;
+			TSNGCLGonfiguration: abstract FORA::software::TSNGCLGonfiguration;
+		connections
+			ControlConfiguration_i_connection_1: port getResourceModel -> TSNGCLGonfiguration.NetworkModel;
+			ControlConfiguration_i_connection_2: port getStreamModel -> TSNGCLGonfiguration.StreamModel;
+			ControlConfiguration_i_connection_3: port TSNGCLGonfiguration.GCL -> GCL;
+			ControlConfiguration_i_connection_4: port getAppModel -> SchedulingConfiguration.AppModel;
+			ControlConfiguration_i_connection_5: port getResourceModel -> SchedulingConfiguration.CPUResources;
+			ControlConfiguration_i_connection_6: port SchedulingConfiguration.ScheduleTable -> ScheduleTable;
+			ControlConfiguration_i_connection_7: port SchedulingConfiguration.PartitionTable -> PartitionTable;
+	end ControlConfiguration.i;
+
+------------------------------------------------------------------
+--- ApplicationSupport
+------------------------------------------------------------------	
+	abstract AppSupport extends FogMiddlewareElement
+		features
+			getTaskmessage: in event data port;
+			forwardTaskMessage: out event data port;
+			bidsMessages: in event data port;
+			appAdvertisementMessages: in event data port;
+			sendApplicationDeployment: out event data port;
+			sendBids: out event data port;
+	end AppSupport;
+
+	abstract RealTimeSupport
+	end RealTimeSupport;
+
+	abstract implementation RealTimeSupport.i
+	end RealTimeSupport.i;
+
+	abstract implementation AppSupport.i
+		subcomponents
+			resourceManagement: abstract ResourceManagement;
+			nodeDiscovery: abstract NodeDiscovery;
+			gateway: abstract Gateway;
+			LocalResourceSchedulerIntraPartition: abstract LocalResourceSchedulerIntraPartition.i; --- Added by ESR2 ---
+			PartitionMonitor: abstract PartitionMonitor.i; --- Added by ESR2 ---
+			TaskMonitor: abstract TaskMonitor.i; --- Added by ESR2 ---
+		connections
+			AppSupport_i_new_connection3: port resourceManagement.getNeighborhood -> nodeDiscovery.neighborhood;
+			AppSupport_i_new_connection: port gateway.sendMessage -> forwardTaskMessage;
+			AppSupport_i_new_connection2: port getTaskmessage -> gateway.receiveMessage;
+			AppSupport_i_new_connection4: port appAdvertisementMessages -> resourceManagement.ApplicationModel;
+			AppSupport_i_new_connection5: port bidsMessages -> resourceManagement.receiveBid;
+			AppSupport_i_new_connection6: port resourceManagement.deploymentApplicationModel -> sendApplicationDeployment;
+			AppSupport_i_new_connection7: port resourceManagement.sendBid -> sendBids;
+	end AppSupport.i;
+	
+	abstract implementation AppSupport.containers
+		subcomponents
+			resourceManagement: abstract ResourceManagement;
+			nodeDiscovery: abstract NodeDiscovery;
+			gateway: abstract Gateway;
+			--LocalResourceSchedulerIntraPartition: abstract LocalResourceSchedulerIntraPartition.i; --- Added by ESR2 ---
+			ContainerMonitor: abstract PartitionMonitor.i; --- Added by ESR2 ---
+			--TaskMonitor: abstract TaskMonitor.i; --- Added by ESR2 ---
+		connections
+			AppSupport_containers_new_connection3: port resourceManagement.getNeighborhood -> nodeDiscovery.neighborhood;
+			AppSupport_containers_new_connection: port gateway.sendMessage -> forwardTaskMessage;
+			AppSupport_containers_new_connection2: port getTaskmessage -> gateway.receiveMessage;
+			AppSupport_containers_new_connection4: port appAdvertisementMessages -> resourceManagement.ApplicationModel;
+			AppSupport_containers_new_connection5: port bidsMessages -> resourceManagement.receiveBid;
+			AppSupport_containers_new_connection6: port resourceManagement.deploymentApplicationModel -> sendApplicationDeployment;
+			AppSupport_containers_new_connection7: port resourceManagement.sendBid -> sendBids;
+	end AppSupport.containers;
+
+
+	--- Added by ESR2 ---
+	abstract LocalResourceSchedulerIntraPartition extends AppSupportElement
+	end LocalResourceSchedulerIntraPartition;
+
+	abstract PartitionMonitor extends AppSupportElement
+	end PartitionMonitor;
+	
+	abstract ContainerMonitor extends AppSupportElement
+	end ContainerMonitor;
+	
+	abstract TaskMonitor extends AppSupportElement
+	end TaskMonitor;
+
+	--- end Added by ESR2 ---
+	abstract NodeDiscovery extends AppSupportElement
+		features
+			contactNode: in event data port;
+			discoveryAPI: provides subprogram access;
+			neighbors: provides subprogram access;
+			neighborhood: in out event data port;
+
+	end NodeDiscovery;
+
+	abstract Gateway extends AppSupportElement
+		features
+			receiveMessage: in event data port;
+			sendMessage: out event data port;
+	end Gateway;
+
+	abstract ResourceManagement extends AppSupportElement
+		features
+			ApplicationModel: in event data port;
+			getNeighborhood: in out event data port;
+			deploymentApplicationModel: out event data port;
+			receiveBid: in event data port;
+			sendBid: out event data port;
+	end ResourceManagement;
+
+	--- Added by ESR2 ---
+	abstract implementation LocalResourceSchedulerIntraPartition.i
+	end LocalResourceSchedulerIntraPartition.i;
+
+	abstract implementation PartitionMonitor.i
+	end PartitionMonitor.i;
+
+	abstract implementation ContainerMonitor.i
+	end ContainerMonitor.i;
+
+	abstract implementation TaskMonitor.i
+	end TaskMonitor.i;
+
+	--- end Added by ESR2 ---
+	abstract implementation ResourceManagement.i
+		subcomponents
+			ResourceAllocation: abstract ResourceAllocation;
+			NetworkMonitoring: abstract NetworkMonitoring;
+		connections
+			ResourceManagement_i_new_connection: port ApplicationModel -> ResourceAllocation.getApplicationModel;
+			ResourceManagement_i_new_connection2: port ResourceAllocation.deployApplication -> deploymentApplicationModel;
+			ResourceManagement_i_new_connection3: port getNeighborhood -> NetworkMonitoring.contactNodes;
+			ResourceManagement_i_new_connection4: port ResourceAllocation.getCollabrators <-> NetworkMonitoring.sendCollaborators;
+	end ResourceManagement.i;
+
+--- ResourceManagement
+	abstract ResourceAllocation extends AppSupportElement
+		features
+			getCollabrators: in out data port;
+			getApplicationModel: in event data port;
+			receiveBids: in event data port;
+			getAppAdvertisement: in event data port;
+			deployApplication: out event data port;
+			advertiseApplication: out event data port;
+			sendBids: out event data port;
+
+	end ResourceAllocation;
+
+	abstract implementation ResourceAllocation.i
+		subcomponents
+			DeploymentPolicyModule: abstract DeploymentModule;
+			DecisionPolicyModule: abstract DecisionModule;
+		connections
+			ResourceAllocation_i_new_connection: port DeploymentPolicyModule.deployApplication -> deployApplication;
+			ResourceAllocation_i_new_connection2: port getCollabrators -> DeploymentPolicyModule.getCollaboratorsGroup;
+			ResourceAllocation_i_new_connection3: port getApplicationModel -> DeploymentPolicyModule.getApplication;
+			ResourceAllocation_i_new_connection4: port receiveBids -> DeploymentPolicyModule.getBids;
+			ResourceAllocation_i_new_connection5: port getAppAdvertisement -> DecisionPolicyModule.getApplicationAdvertisement;
+			ResourceAllocation_i_new_connection6: port DecisionPolicyModule.generateBid -> sendBids;
+			ResourceAllocation_i_new_connection7: port DeploymentPolicyModule.advertiseApplication -> advertiseApplication;
+	end ResourceAllocation.i;
+
+	abstract NetworkMonitoring extends AppSupportElement
+		features
+			sendCollaborators: in out data port;
+			contactNodes: in event data port;
+	end NetworkMonitoring;
+
+	abstract DeploymentModule extends AppSupportElement
+		features
+			getApplication: in event data port;
+			getBids: in event data port;
+			getCollaboratorsGroup: in event data port;
+			advertiseApplication: out event data port;
+			deployApplication: out event data port;
+	end DeploymentModule;
+
+	abstract DecisionModule extends AppSupportElement
+		features
+			getApplicationAdvertisement: in event data port;
+			generateBid: out event data port;
+
+	end DecisionModule;
+
+------------------------------------------------------------------
+--- Applications
+------------------------------------------------------------------
+	abstract Appications
+	end Appications;
+
+-- An example of critical application deployment
+	abstract implementation Appications.DeploymentCritical
+		subcomponents
+			App1: process FORA::core::CriticalApp;
+			App2: process FORA::core::CriticalApp;
+			App3: process FORA::core::CriticalApp;
+	end Appications.DeploymentCritical;
+
+---Non critical applications --------------------------------------
+	abstract implementation Appications.DeploymentNonCritical
+		subcomponents
+			App1: process FORA::core::NonCriticalApp;
+			App2: process FORA::core::NonCriticalApp;
+			App3: process FORA::core::NonCriticalApp;
+	end Appications.DeploymentNonCritical;
+
+	--------------------------------------------------------
+------------------------------------------------------------------
+--- ApplicationServices
+------------------------------------------------------------------
+	--------------------------------------------------------
+	abstract AppServiceElement extends FogSoftwareElement
+	end AppServiceElement;
+
+	abstract AppServices extends FogSoftwareElement
+	end AppServices;
+
+	abstract implementation AppServices.i
+	end AppServices.i;
+
+	abstract FogConnectorService extends AppServiceElement
+	end FogConnectorService;
+
+	abstract CoreService extends AppServiceElement
+	end CoreService;
+
+	abstract SupportingService extends AppServiceElement
+	end SupportingService;
+
+	abstract AnalyticsService extends AppServiceElement
+	end AnalyticsService;
+
+	abstract IntegrationService extends AppServiceElement
+	end IntegrationService;
+
+--
+--	abstract implementation FogMiddleware.i
+--		subcomponents
+--			FogConnectorServices: abstract AppServices;
+--			CoreServices: abstract AppServices;
+--			SupportingServices: abstract AppServices;
+--			AnalyticsServices: abstract AppServices;
+--			IntegrationServices: abstract AppServices;
+--	end FogMiddleware.i;
+--	abstract VirtualizationSupport extends AppSupport
+--	end VirtualizationSupport;
+------------------------------------------------------------------
+--- FogNode
+------------------------------------------------------------------	
+end FORA::software;

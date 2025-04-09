@@ -1,0 +1,114 @@
+--------------------------------------------------------------------------------
+-- Devices.aadl (version 10) - 
+--
+-- Authors: Stephen C. Barrett (scbarrett@ksu.edu) &
+--          Brian R. Larson (brl@ksu.edu)
+--          Department of Computing & Information Sciences
+--
+-- Licensed Material - Property of Kansas State University
+--------------------------------------------------------------------------------
+-- 03: Minimally defined physical devices of isolette system.
+--
+-- 04: Device interfaces defined, but left untyped.
+--
+-- 05: Device interfaces typed with modeled data entities.
+--
+-- 07: New enumerated & range composite types.
+--
+-- 10: Temperature setting, display & alarm devices.
+--------------------------------------------------------------------------------
+package Devices
+public
+with Base_Types, Iso_Types;  -- Basic & isolette specific data types
+
+
+--------------------------------------------------------------------------------
+-- Device for producing heat.
+--------------------------------------------------------------------------------
+device heat_source
+  features
+    on_heater: in event data port Iso_Types::on_off;
+    heater_output: out data port Iso_Types::heat;
+end heat_source;
+
+device implementation heat_source.impl
+end heat_source.impl;
+
+
+--------------------------------------------------------------------------------
+-- Device for measuring the quantity of heat production.
+--------------------------------------------------------------------------------
+device temperature_sensor
+  features
+    air_heat: in data port Iso_Types::heat;
+    air_temp: out data port Iso_Types::sensed_temperature;
+end temperature_sensor;
+
+device implementation temperature_sensor.impl
+end temperature_sensor.impl;
+
+
+--------------------------------------------------------------------------------
+-- Device for showing heat quantity measure.
+--------------------------------------------------------------------------------
+device temperature_display
+  features
+    air_temp: in data port Iso_Types::sensed_temperature;
+end temperature_display;
+
+device implementation temperature_display.impl
+end temperature_display.impl;
+
+
+--------------------------------------------------------------------------------
+-- Device for showing status of thermostat regulating & monitoring.
+--------------------------------------------------------------------------------
+device status_display
+  features
+    reg_status: in data port Iso_Types::op_status;
+    mon_status: in data port Iso_Types::op_status;
+end status_display;
+
+device implementation status_display.impl
+end status_display.impl;
+
+
+--------------------------------------------------------------------------------
+-- Device to alert system operator in event of a system failure.
+--------------------------------------------------------------------------------
+device failure_alarm
+  features
+    on_alarm: in event data port Iso_Types::on_off;
+end failure_alarm;
+
+device implementation failure_alarm.impl
+end failure_alarm.impl;
+
+
+--------------------------------------------------------------------------------
+-- Device for setting desired lower and upper temperatures.
+--------------------------------------------------------------------------------
+device desired_setter
+  features
+    lower_desired_temp: out data port Iso_Types::lower_desired_temperature;
+    upper_desired_temp: out data port Iso_Types::upper_desired_temperature;
+end desired_setter;
+
+device implementation desired_setter.impl
+end desired_setter.impl;
+
+
+--------------------------------------------------------------------------------
+-- Device for setting desired lower and upper alarm temperatures.
+--------------------------------------------------------------------------------
+device alarm_setter
+  features
+    lower_alarm_temp: out data port Iso_Types::lower_alarm_temperature;
+    upper_alarm_temp: out data port Iso_Types::upper_alarm_temperature;
+end alarm_setter;
+
+device implementation alarm_setter.impl
+end alarm_setter.impl;
+
+
+end Devices;

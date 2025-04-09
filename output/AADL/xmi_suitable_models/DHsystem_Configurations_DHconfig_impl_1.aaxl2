@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="DHconfig_impl_Instance" category="system">
+  <featureInstance name="config_acc" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="config_cm" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="web_config">
+    <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.2"/>
+  </featureInstance>
+  <featureInstance name="br_config">
+    <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.3"/>
+  </featureInstance>
+  <featureInstance name="pm_config">
+    <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.4"/>
+  </featureInstance>
+  <componentInstance name="ProgrammableThermostat" category="device">
+    <featureInstance name="plan_tp">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="cm_tp">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="rep_tp">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Configurations.aadl#Configurations.thermoProgram"/>
+  </componentInstance>
+  <componentInstance name="ProgrammableApplianceManager" category="device">
+    <featureInstance name="plan_apm">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="cm_apm">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="rep_apm">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Configurations.aadl#Configurations.appProgramManager"/>
+  </componentInstance>
+  <componentInstance name="SecuritySystem" category="device">
+    <featureInstance name="plan_ss">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="cm_ss">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="rep_ss">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Configurations.aadl#Configurations.securitySystem"/>
+  </componentInstance>
+  <componentInstance name="ProgrammableHumidistat" category="device">
+    <featureInstance name="plan_hp">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="cm_hp">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="rep_hp">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.2"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Configurations.aadl#Configurations.humProgram"/>
+  </componentInstance>
+  <componentInstance name="Planner" category="device">
+    <featureInstance name="plan_tp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="plan_apm" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="plan_ss" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="plan_hp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="cm_plan">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Configurations.aadl#Configurations.planner"/>
+  </componentInstance>
+  <componentInstance name="ConfigurationManager" category="device">
+    <featureInstance name="cm_tp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="cm_plan" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="cm_ss" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="cm_outCM" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="cm_outACC" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="cm_hp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.5"/>
+    </featureInstance>
+    <featureInstance name="cm_rep" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.6"/>
+    </featureInstance>
+    <featureInstance name="cm_apm" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.7"/>
+    </featureInstance>
+    <featureInstance name="webOUT_cm">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.8"/>
+    </featureInstance>
+    <featureInstance name="brOUT_cm">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.9"/>
+    </featureInstance>
+    <featureInstance name="pmOUT_cm">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.10"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Configurations.aadl#Configurations.commManager"/>
+  </componentInstance>
+  <componentInstance name="Report" category="device">
+    <featureInstance name="rep_apm" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="rep_tp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="rep_ss" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="rep_hp" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="cm_rep">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.4"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDeviceSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Configurations.aadl#Configurations.report"/>
+  </componentInstance>
+  <connectionInstance name="web_config -> ConfigurationManager.webOUT_cm" kind="portConnection" destination="//@componentInstance.5/@featureInstance.8" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.5/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="br_config -> ConfigurationManager.brOUT_cm" kind="portConnection" destination="//@componentInstance.5/@featureInstance.9" source="//@featureInstance.3">
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.5/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pm_config -> ConfigurationManager.pmOUT_cm" kind="portConnection" destination="//@componentInstance.5/@featureInstance.10" source="//@featureInstance.4">
+    <connectionReference context="/" source="//@featureInstance.4" destination="//@componentInstance.5/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.17"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Planner.plan_tp -> ProgrammableThermostat.plan_tp" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.4/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Planner.plan_apm -> ProgrammableApplianceManager.plan_apm" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Planner.plan_ss -> SecuritySystem.plan_ss" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.4/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.2" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Planner.plan_hp -> ProgrammableHumidistat.plan_hp" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.4/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.3" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ConfigurationManager.cm_tp -> ProgrammableThermostat.cm_tp" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.1" source="//@componentInstance.5/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ConfigurationManager.cm_plan -> Planner.cm_plan" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.4" source="//@componentInstance.5/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@componentInstance.4/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ConfigurationManager.cm_ss -> SecuritySystem.cm_ss" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@componentInstance.5/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.2" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ConfigurationManager.cm_outCM -> config_cm" kind="portConnection" destination="//@featureInstance.1" source="//@componentInstance.5/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.3" destination="//@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ConfigurationManager.cm_outACC -> config_acc" kind="portConnection" destination="//@featureInstance.0" source="//@componentInstance.5/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.4" destination="//@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.18"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ConfigurationManager.cm_hp -> ProgrammableHumidistat.cm_hp" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.5/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.5" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ConfigurationManager.cm_rep -> Report.cm_rep" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.4" source="//@componentInstance.5/@featureInstance.6">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.6" destination="//@componentInstance.6/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="ConfigurationManager.cm_apm -> ProgrammableApplianceManager.cm_apm" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@componentInstance.5/@featureInstance.7">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.7" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Report.rep_apm -> ProgrammableApplianceManager.rep_apm" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@componentInstance.6/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Report.rep_tp -> ProgrammableThermostat.rep_tp" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.2" source="//@componentInstance.6/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Report.rep_ss -> SecuritySystem.rep_ss" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.2" source="//@componentInstance.6/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.2" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Report.rep_hp -> ProgrammableHumidistat.rep_hp" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.2" source="//@componentInstance.6/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.3" destination="//@componentInstance.3/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Configurations.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/DHsystem/Configurations.aadl#Configurations.DHconfig.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/DHsystem/Configurations.aadl#Configurations.DHconfig.impl"/>
+</instance:SystemInstance>

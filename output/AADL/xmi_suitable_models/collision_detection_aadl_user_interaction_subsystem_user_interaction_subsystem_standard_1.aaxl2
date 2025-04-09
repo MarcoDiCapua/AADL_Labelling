@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="user_interaction_subsystem_standard_Instance" category="system">
+  <featureInstance name="message_received_from_user" category="eventDataPort" direction="out">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="message_to_send_to_user" category="eventDataPort">
+    <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventDataPort.1"/>
+  </featureInstance>
+  <componentInstance name="vehicle_bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#basic_computing.basic_bus.standard"/>
+  </componentInstance>
+  <componentInstance name="microphone" category="device">
+    <featureInstance name="spoken_command" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/instances/user_interaction_subsystem_user_interaction_subsystem_standard_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#basic_devices.microphone.in_vehicle"/>
+  </componentInstance>
+  <componentInstance name="speaker" category="device">
+    <featureInstance name="audio">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/instances/user_interaction_subsystem_user_interaction_subsystem_standard_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_devices.aadl#basic_devices.speaker.in_vehicle"/>
+  </componentInstance>
+  <componentInstance name="system_spoken_to" category="device">
+    <featureInstance name="sensor_data" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_sensors.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_sensors.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/instances/user_interaction_subsystem_user_interaction_subsystem_standard_Instance.aaxl2#/"/>
+    </featureInstance>
+    <modeInstance name="avail_trust" initial="true" derived="true">
+      <mode href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_sensors.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedMode.0"/>
+    </modeInstance>
+    <modeInstance name="avail_untrust" derived="true">
+      <mode href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_sensors.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedMode.1"/>
+    </modeInstance>
+    <modeInstance name="unavail" derived="true">
+      <mode href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_sensors.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedMode.2"/>
+    </modeInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_sensors.aadl#basic_sensors.sensor.system_spoken_to"/>
+  </componentInstance>
+  <componentInstance name="vehicle_memory" category="memory">
+    <featureInstance name="ba" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/instances/user_interaction_subsystem_user_interaction_subsystem_standard_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedMemorySubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#basic_computing.ram.standard"/>
+  </componentInstance>
+  <componentInstance name="speaker_controller" category="process">
+    <featureInstance name="message">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="audio" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="audio_player" category="thread">
+      <featureInstance name="text">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="audio" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#user_interaction_subsystem.play_audio.standard"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#user_interaction_subsystem.speaker_controller.standard"/>
+  </componentInstance>
+  <componentInstance name="microphone_controller" category="process">
+    <featureInstance name="text" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="sensor_ready" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventDataPort.0"/>
+    </featureInstance>
+    <componentInstance name="microphone_sensor" category="thread">
+      <featureInstance name="audio_available" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#user_interaction_subsystem.listen_for_audio.standard"/>
+    </componentInstance>
+    <componentInstance name="microphone" category="thread">
+      <featureInstance name="audio">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="text" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#user_interaction_subsystem.convert_to_text.standard"/>
+    </componentInstance>
+    <connectionInstance name="microphone_sensor.audio_available -> microphone.audio" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.0" source="//@componentInstance.6/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#user_interaction_subsystem.microphone_controller.standard"/>
+  </componentInstance>
+  <componentInstance name="vehicle_processor" category="processor">
+    <featureInstance name="BA1" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/instances/user_interaction_subsystem_user_interaction_subsystem_standard_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/collision_detection_aadl/packages/Basic%20Types/basic_computing.aadl#basic_computing.real_time.one_ghz"/>
+  </componentInstance>
+  <connectionInstance name="message_to_send_to_user -> speaker_controller.audio_player.text" kind="portConnection" destination="//@componentInstance.5/@componentInstance.0/@featureInstance.0" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_bus -> microphone.ba" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="vehicle_bus -> speaker.ba" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="microphone.spoken_command -> microphone_controller.sensor_ready" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.1" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="microphone.ba -> vehicle_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speaker.ba -> vehicle_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speaker_controller.audio_player.audio -> speaker.audio" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.5/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="microphone_controller.microphone.text -> message_received_from_user" kind="portConnection" destination="//@featureInstance.0" source="//@componentInstance.6/@componentInstance.1/@featureInstance.1">
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#user_interaction_subsystem.user_interaction_subsystem.standard"/>
+  <systemOperationMode name="som_1" currentMode="//@componentInstance.3/@modeInstance.0"/>
+  <systemOperationMode name="som_2" currentMode="//@componentInstance.3/@modeInstance.1"/>
+  <systemOperationMode name="som_3" currentMode="//@componentInstance.3/@modeInstance.2"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/collision_detection_aadl/packages/User%20Interaction%20Subsystem/user_interaction_subsystem.aadl#user_interaction_subsystem.user_interaction_subsystem.standard"/>
+</instance:SystemInstance>

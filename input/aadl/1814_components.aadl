@@ -1,0 +1,121 @@
+package components
+public
+WITH FORA::hardware;
+with arinc653;
+
+data dummyData
+properties
+	Data_Size => 4 bytes;
+	Type_Source_Name => "int";
+end dummyData;
+
+system Sensor extends FORA::hardware::Sensor
+end Sensor;
+
+system Actuator extends FORA::hardware::Actuator
+end Actuator;
+
+-- S1
+
+system implementation Sensor.S1 extends  FORA::hardware::Sensor.i
+	(proc => process procS1.i)
+end Sensor.S1;
+
+
+process procS1
+features
+	sensing_data : out data port dummyData;
+end procS1;
+
+process implementation procS1.i
+subcomponents
+	thr : thread sensor_thr.i;
+connections
+	c : port thr.sensing_data -> sensing_data;
+end procS1.i;
+
+thread sensor_thr
+features
+	sensing_data : out data port dummyData ;
+end sensor_thr;
+
+thread implementation sensor_thr.i
+calls 
+   call1 : { pspg : subprogram sensor_simulator;};
+connections
+	c0 : parameter pspg.altitude_value -> sensing_data;
+properties
+   Priority => 1;
+   dispatch_protocol 		=> periodic;
+   period            		=> 1000ms; 
+   deadline          		=> 500ms;
+   compute_execution_time 	=> 0ms .. 1ms;
+   Code_Size  => 4 Kbyte;
+   Stack_Size => 30 Kbyte; 
+   Data_Size  => 4 Kbyte;	
+end sensor_thr.i;
+
+subprogram sensor_simulator
+features
+	altitude_value : out parameter dummyData ;
+properties
+   source_name => "sensor_simulation";
+   source_language => (C);
+   Source_Text => ("sensor.c");
+   Code_Size  => 2 Kbyte;
+   Data_Size  => 2 Kbyte;	
+end sensor_simulator;
+
+-- A1
+
+system implementation Actuator.A1 extends  FORA::hardware::Actuator.i
+	
+end Actuator.A1;
+
+
+process procA1
+features
+	command_in : in data port dummyData {arinc653::sampling_refresh_period => 10 ms;};
+end procA1;
+
+process implementation procA1.i
+subcomponents
+	thr : thread actuator_thr.i;
+connections
+	c0 : port command_in -> thr.command_in;
+end procA1.i;
+
+thread actuator_thr
+features
+	command_in : in data port dummyData;
+end actuator_thr;
+
+thread implementation actuator_thr.i
+calls 
+   call1 : { pspg : subprogram actuator_spg;};
+connections
+	c0 : parameter command_in -> pspg.command_in;
+properties
+   Priority => 1;
+   dispatch_protocol => periodic;
+   period            => 1000ms; 
+   deadline          => 500ms;
+   compute_execution_time => 0ms .. 1ms;
+   Code_Size  => 4 Kbyte;
+   Stack_Size => 30 Kbyte;
+   Data_Size  => 4 Kbyte;	
+end actuator_thr.i;
+
+subprogram actuator_spg
+features
+	command_in : in parameter dummyData;
+properties
+   source_name => "actuator_spg";
+   source_language => (C);
+   Source_Text => ("actuator.c");
+   Code_Size  => 2 Kbyte;
+   Data_Size  => 2 Kbyte;	
+end actuator_spg;
+
+	
+end components;

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="T_I_Instance" category="system">
+  <featureInstance name="outDataPort" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/aadl-qa/tests/requality/AADL-CTS/02-Semantic/SC0006/AADL-7.1-L3-L4/01-neg/01-neg.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="outEventPort" category="eventPort" direction="out">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-qa/tests/requality/AADL-CTS/02-Semantic/SC0006/AADL-7.1-L3-L4/01-neg/01-neg.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEventPort.0"/>
+  </featureInstance>
+  <featureInstance name="inEventPort" category="eventPort">
+    <feature xsi:type="aadl2:EventPort" href="../../github/aadl-qa/tests/requality/AADL-CTS/02-Semantic/SC0006/AADL-7.1-L3-L4/01-neg/01-neg.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEventPort.1"/>
+  </featureInstance>
+  <componentInstance name="myProgSubc" category="subprogram">
+    <subcomponent xsi:type="aadl2:SubprogramSubcomponent" href="../../github/aadl-qa/tests/requality/AADL-CTS/02-Semantic/SC0006/AADL-7.1-L3-L4/01-neg/01-neg.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSubprogramSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SubprogramType" href="../../github/aadl-qa/tests/requality/AADL-CTS/02-Semantic/SC0006/AADL-7.1-L3-L4/01-neg/01-neg.aadl#SYSTEM_IMPLEMENTATION_TC1.simpleProg"/>
+  </componentInstance>
+  <flowSpecification name="flowSource" destination="//@featureInstance.0">
+    <flowSpecification href="../../github/aadl-qa/tests/requality/AADL-CTS/02-Semantic/SC0006/AADL-7.1-L3-L4/01-neg/01-neg.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFlowSpecification.0"/>
+  </flowSpecification>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl-qa/tests/requality/AADL-CTS/02-Semantic/SC0006/AADL-7.1-L3-L4/01-neg/01-neg.aadl#SYSTEM_IMPLEMENTATION_TC1.T.I"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl-qa/tests/requality/AADL-CTS/02-Semantic/SC0006/AADL-7.1-L3-L4/01-neg/01-neg.aadl#SYSTEM_IMPLEMENTATION_TC1.T.I"/>
+</instance:SystemInstance>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="TCS_impl_Instance" category="system">
+  <componentInstance name="standard_tcs_bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.tcs_bus.standard"/>
+  </componentInstance>
+  <componentInstance name="tcs_switch" category="device">
+    <featureInstance name="tcs_on" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="bus_acc" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.0"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.tcs_switch.impl"/>
+  </componentInstance>
+  <componentInstance name="rear_right_wheel_ss" category="device">
+    <featureInstance name="current_wheel_speed" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="bus_acc" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.0"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.wheel_speed_sensor.impl"/>
+  </componentInstance>
+  <componentInstance name="rear_left_wheel_ss" category="device">
+    <featureInstance name="current_wheel_speed" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="bus_acc" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.0"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.wheel_speed_sensor.impl"/>
+  </componentInstance>
+  <componentInstance name="rear_right_wheel_brake" category="device">
+    <featureInstance name="apply_break" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="bus_acc" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusAccess.0"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.brake_caliper.impl"/>
+  </componentInstance>
+  <componentInstance name="rear_left_wheel_brake" category="device">
+    <featureInstance name="apply_break" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="bus_acc" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusAccess.0"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.brake_caliper.impl"/>
+  </componentInstance>
+  <componentInstance name="speedometer" category="device">
+    <featureInstance name="current_speed" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="bus_acc" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.0"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.speedometer.impl"/>
+  </componentInstance>
+  <componentInstance name="standard_tcs_controller" category="process">
+    <featureInstance name="tcs_on">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.0"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="current_rear_right_wheel_speed">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.1"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="current_rear_left_wheel_speed">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.2"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="current_speed">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedDataPort.3"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="apply_rear_right_wheel_brake" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="apply_rear_left_wheel_brake" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventPort.1"/>
+    </featureInstance>
+    <componentInstance name="check_tcs_state" category="thread">
+      <featureInstance name="tcs_on">
+        <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.0"/>
+        <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="perform_tcs" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.1"/>
+        <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/4"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.check_tcs_state.impl"/>
+    </componentInstance>
+    <componentInstance name="establish_car_state" category="thread">
+      <featureInstance name="current_speed">
+        <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.0"/>
+        <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="car_state" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.1"/>
+        <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.establish_car_state.impl"/>
+    </componentInstance>
+    <componentInstance name="fix_wheel_spin" category="thread">
+      <featureInstance name="perform_tcs">
+        <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.0"/>
+        <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/6"/>
+      </featureInstance>
+      <featureInstance name="car_state">
+        <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.1"/>
+        <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/7"/>
+      </featureInstance>
+      <featureInstance name="current_speed">
+        <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.2"/>
+        <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="current_rear_left_wheel_speed">
+        <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.3"/>
+        <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="current_rear_right_wheel_speed">
+        <feature xsi:type="aadl2:DataPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedDataPort.4"/>
+        <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="apply_rear_right_wheel_brake" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="apply_rear_left_wheel_brake" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.fix_wheel_spin.impl"/>
+    </componentInstance>
+    <connectionInstance name="check_tcs_state.perform_tcs -> fix_wheel_spin.perform_tcs" complete="true" kind="portConnection" destination="//@componentInstance.7/@componentInstance.2/@featureInstance.0" source="//@componentInstance.7/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.7/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedPortConnection.7"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="establish_car_state.car_state -> fix_wheel_spin.car_state" complete="true" kind="portConnection" destination="//@componentInstance.7/@componentInstance.2/@featureInstance.1" source="//@componentInstance.7/@componentInstance.1/@featureInstance.1">
+      <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.7/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedPortConnection.6"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.tcs_controller.impl"/>
+  </componentInstance>
+  <componentInstance name="cpu" category="processor">
+    <featureInstance name="bus_acc" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedBusAccess.0"/>
+      <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <componentInstance name="ram" category="memory">
+      <featureInstance name="bus_acc" category="busAccess">
+        <feature xsi:type="aadl2:BusAccess" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedBusAccess.0"/>
+        <type href="../../github/TCS-ABS-AADL-models/instances/TractionControlSystem_TCS_impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.RAM.standard"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.tcs_processor.impl"/>
+  </componentInstance>
+  <connectionInstance name="standard_tcs_bus -> tcs_switch.bus_acc" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="standard_tcs_bus -> rear_right_wheel_ss.bus_acc" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="standard_tcs_bus -> rear_left_wheel_ss.bus_acc" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="standard_tcs_bus -> rear_right_wheel_brake.bus_acc" complete="true" kind="accessConnection" destination="//@componentInstance.4/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="standard_tcs_bus -> rear_left_wheel_brake.bus_acc" complete="true" kind="accessConnection" destination="//@componentInstance.5/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="standard_tcs_bus -> speedometer.bus_acc" complete="true" kind="accessConnection" destination="//@componentInstance.6/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="standard_tcs_bus -> cpu.ram.bus_acc" complete="true" kind="accessConnection" destination="//@componentInstance.8/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@featureInstance.0" destination="//@componentInstance.8/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tcs_switch.tcs_on -> standard_tcs_controller.check_tcs_state.tcs_on" complete="true" kind="portConnection" destination="//@componentInstance.7/@componentInstance.0/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@featureInstance.0" destination="//@componentInstance.7/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="tcs_switch.bus_acc -> standard_tcs_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="rear_right_wheel_ss.current_wheel_speed -> standard_tcs_controller.fix_wheel_spin.current_rear_right_wheel_speed" complete="true" kind="portConnection" destination="//@componentInstance.7/@componentInstance.2/@featureInstance.4" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@featureInstance.1" destination="//@componentInstance.7/@componentInstance.2/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="rear_right_wheel_ss.bus_acc -> standard_tcs_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="rear_left_wheel_ss.current_wheel_speed -> standard_tcs_controller.fix_wheel_spin.current_rear_left_wheel_speed" complete="true" kind="portConnection" destination="//@componentInstance.7/@componentInstance.2/@featureInstance.3" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.7/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@featureInstance.2" destination="//@componentInstance.7/@componentInstance.2/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="rear_left_wheel_ss.bus_acc -> standard_tcs_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="rear_right_wheel_brake.bus_acc -> standard_tcs_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.4/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="rear_left_wheel_brake.bus_acc -> standard_tcs_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.5/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speedometer.current_speed -> standard_tcs_controller.establish_car_state.current_speed" complete="true" kind="portConnection" destination="//@componentInstance.7/@componentInstance.1/@featureInstance.0" source="//@componentInstance.6/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.7/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@featureInstance.3" destination="//@componentInstance.7/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speedometer.current_speed -> standard_tcs_controller.fix_wheel_spin.current_speed" complete="true" kind="portConnection" destination="//@componentInstance.7/@componentInstance.2/@featureInstance.2" source="//@componentInstance.6/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.7/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@featureInstance.3" destination="//@componentInstance.7/@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="speedometer.bus_acc -> standard_tcs_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.6/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.1" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="standard_tcs_controller.fix_wheel_spin.apply_rear_right_wheel_brake -> rear_right_wheel_brake.apply_break" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.7/@componentInstance.2/@featureInstance.5">
+    <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@componentInstance.2/@featureInstance.5" destination="//@componentInstance.7/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.4" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="standard_tcs_controller.fix_wheel_spin.apply_rear_left_wheel_brake -> rear_left_wheel_brake.apply_break" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.7/@componentInstance.2/@featureInstance.6">
+    <connectionReference context="//@componentInstance.7" source="//@componentInstance.7/@componentInstance.2/@featureInstance.6" destination="//@componentInstance.7/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.5" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cpu.ram.bus_acc -> standard_tcs_bus" complete="true" kind="accessConnection" destination="//@componentInstance.0" source="//@componentInstance.8/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.8/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedAccessConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0" destination="//@componentInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.TCS.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/TCS-ABS-AADL-models/TractionControlSystem.aadl#TractionControlSystem.TCS.impl"/>
+</instance:SystemInstance>

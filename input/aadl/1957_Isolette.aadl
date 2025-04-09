@@ -1,0 +1,97 @@
+--------------------------------------------------------------------------------
+-- Isolette.aadl (version 08) - System level components of the infant incubator
+--   as specified in the FAA's Requirements Engineering Management Handbook.
+--
+-- Authors: Stephen C. Barrett (scbarrett@ksu.edu) &
+--          Brian R. Larson (brl@ksu.edu)
+--          Department of Computing & Information Sciences
+--
+-- Licensed Material - Property of Kansas State University
+--------------------------------------------------------------------------------
+-- 01: Highlight difference between AADL types & implementations with 2 systems.
+--
+-- 02: Minimally define thermostat subcomponent of isolette.
+--
+-- 03: Physical devices minimally defined & added as system subcomponents.
+--
+-- 04: System interfaces defined, but left untyped.
+--
+-- 05: System interfaces typed with modeled data entities.
+--
+-- 06: Intra-system connections made among subcomponents.
+--
+-- 07: New enumerated & range composite types.
+--
+-- 08: Abstract air component as control loop's controlled block.
+--------------------------------------------------------------------------------
+package KSU_Isolette
+public
+with Base_Types, Iso_Types;  -- Basic & isolette specific data types
+with Devices;  -- System's physical entities (i.e., black boxes)
+
+
+--------------------------------------------------------------------------------
+-- Top-level type is the boundary between the isolette unit & its environment.
+--------------------------------------------------------------------------------
+system isolette
+  features
+    heat_loss: out data port Iso_Types::heat;
+end isolette;
+
+-- An implementation of the isolette type having a single-sensor thermostat.
+system implementation isolette.single_sensor
+  subcomponents
+    thermostat: system thermostat_single_sensor.impl;
+    heat_source: device Devices::heat_source.impl;
+    temp_sensor: device Devices::temperature_sensor.impl;
+    heated_air: abstract air_to_heat.impl;
+
+  connections
+    t1: port temp_sensor.air_temp -> thermostat.air_temp;
+    t2: port thermostat.on_heater -> heat_source.on_heater;
+    
+    h1: port heated_air.heat_sense -> temp_sensor.air_heat; 
+    h2: port heat_source.heater_output -> heated_air.heat_source;
+    h3: port heated_air.heat_sink -> heat_loss;
+end isolette.single_sensor;
+
+-- An implementation of the isolette type having a dual-sensor thermostat.
+system implementation isolette.dual_sensor
+end isolette.dual_sensor;
+
+
+--------------------------------------------------------------------------------
+-- Thermostat component type that relies on a single temperature sensor.
+--------------------------------------------------------------------------------
+system thermostat_single_sensor
+  features
+    air_temp: in data port Iso_Types::sensed_temperature;
+    on_heater: out event data port Iso_Types::on_off;
+    on_alarm: out event data port Iso_Types::on_off;
+end thermostat_single_sensor;
+
+-- An implementation of the single sensor thermostat type.
+system implementation thermostat_single_sensor.impl
+end thermostat_single_sensor.impl;
+
+
+--------------------------------------------------------------------------------
+-- Air component type is the controlled entity in the system control loop.
+--------------------------------------------------------------------------------
+abstract air_to_heat
+  features
+    heat_source: in data port Iso_Types::heat;  -- Negative in would be a loss.
+    heat_sink: out data port Iso_Types::heat;  -- Negative out would be a gain.
+    heat_sense: out data port Iso_Types::heat;
+end air_to_heat;
+
+-- An implementation of the abstract air type.
+abstract implementation air_to_heat.impl
+  -- Model continuous behavior air heating & cooling with hybrid annex.
+
+  connections
+    h1: port heat_source -> heat_sink;  -- Make final connections through HA.
+end air_to_heat.impl;
+
+
+end KSU_Isolette;

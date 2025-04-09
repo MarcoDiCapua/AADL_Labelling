@@ -1,0 +1,37 @@
+package integration
+public
+	with dapp::systems;
+	
+	system integration
+	end integration;
+	
+	system implementation integration.generic
+		subcomponents
+			-- systems
+			frontend_application: system dapp::systems::frontend;
+			backend_application: system dapp::systems::backend;
+			mobile_application: system dapp::systems::mobile;
+			dapp_application: system dapp::systems::dapp;
+			hyperledger_besu: system dapp::systems::ethereum_client;
+			alchemy: system dapp::systems::node_provider;
+		connections
+			connection_f_b: port frontend_application.backend_port -> backend_application.connection_port;
+			connection_m_b: port mobile_application.backend_port -> backend_application.connection_port;
+			connection_b_d: port backend_application.dapp_port -> dapp_application.connection_port;
+			connection_d_eth: port dapp_application.etherium_rpc_port -> hyperledger_besu.connection_port;
+			connection_d_np: port dapp_application.node_provider_port -> alchemy.connection_port;
+	end integration.generic;
+	
+	system implementation integration.write_owner_request_impl extends integration.generic
+		flows
+			WriteOwnerRequestFlow: end to end flow mobile_application.WriteOwnerRequestFlow -> 
+			connection_m_b -> 
+			backend_application.dapp_request ->
+		 	connection_b_d ->
+		 	dapp_application.ethereum_request ->
+		 	connection_d_eth ->
+		 	hyperledger_besu.WriteOwnerRequestFlow;
+	end integration.write_owner_request_impl;
+	
+	
+end integration;

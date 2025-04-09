@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Vehicletransit_impl_Instance" category="system">
+  <featureInstance name="LSpeed" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    <type href="../../github/AadlProjects/Speedwrisic/packages/instances/Speedwrisic_Vehicletransit_impl_Instance.aaxl2#/5"/>
+  </featureInstance>
+  <featureInstance name="WSensor" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="SpeedMgmtData">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+    <type href="../../github/AadlProjects/Speedwrisic/packages/instances/Speedwrisic_Vehicletransit_impl_Instance.aaxl2#/6"/>
+  </featureInstance>
+  <featureInstance name="SignalInfo">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+  </featureInstance>
+  <componentInstance name="sensor" category="device">
+    <featureInstance name="sensor_output" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+    </featureInstance>
+    <flowSpecification name="init_sensor" destination="//@componentInstance.0/@featureInstance.0">
+      <flowSpecification href="../../github/AadlProjects/Speedwrisic/packages/sensor.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#Speedwrisic.weathersensor.impl"/>
+  </componentInstance>
+  <componentInstance name="SpeedAssistances" category="process">
+    <featureInstance name="speedInformation">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#Speedwrisic.SpeedAssistances.impl"/>
+  </componentInstance>
+  <componentInstance name="RoadsideInfoReception" category="process">
+    <featureInstance name="SpeedManagement">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      <type href="../../github/AadlProjects/Speedwrisic/packages/instances/Speedwrisic_Vehicletransit_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="VehicleSignage">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+      <type href="../../github/AadlProjects/Speedwrisic/packages/instances/Speedwrisic_Vehicletransit_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="speedInformation" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.2"/>
+      <type href="../../github/AadlProjects/Speedwrisic/packages/instances/Speedwrisic_Vehicletransit_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <componentInstance name="speed_limit" category="thread">
+      <featureInstance name="s_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="s_out" category="eventDataPort" direction="out">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <flowSpecification name="speedreg_thread_path0" source="//@componentInstance.2/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.1">
+        <flowSpecification href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#Speedwrisic.speedReg.impl"/>
+    </componentInstance>
+    <componentInstance name="vehicle_signage" category="thread">
+      <featureInstance name="v_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="s_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="s_in" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedEventDataPort.0"/>
+      </featureInstance>
+      <flowSpecification name="vehiclesign_thread_path0" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.1">
+        <flowSpecification href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <flowSpecification name="vehiclesign_thread_path1" source="//@componentInstance.2/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.1">
+        <flowSpecification href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedFlowSpecification.1"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#Speedwrisic.vehicleSign.impl"/>
+    </componentInstance>
+    <flowSpecification name="speedFlow" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.2/@featureInstance.2">
+      <flowSpecification href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <connectionInstance name="speed_limit.s_out -> vehicle_signage.s_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#Speedwrisic.RoadsideInfoReception.impl"/>
+  </componentInstance>
+  <componentInstance name="EnvironmentMontior" category="process">
+    <featureInstance name="In_data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      <type href="../../github/AadlProjects/Speedwrisic/packages/instances/Speedwrisic_Vehicletransit_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="EnvData" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+      <type href="../../github/AadlProjects/Speedwrisic/packages/instances/Speedwrisic_Vehicletransit_impl_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <componentInstance name="sensor" category="thread">
+      <featureInstance name="temp_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="temp_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.1"/>
+      </featureInstance>
+      <flowSpecification name="temp_thread_path0" source="//@componentInstance.3/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.1">
+        <flowSpecification href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedFlowSpecification.0"/>
+      </flowSpecification>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#Speedwrisic.inVehicleSensor.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#Speedwrisic.EnvironmentMontior.impl"/>
+  </componentInstance>
+  <componentInstance name="safecheck" category="process">
+    <featureInstance name="LocationInfo" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#Speedwrisic.safecheck.impl"/>
+  </componentInstance>
+  <connectionInstance name="SpeedMgmtData -> RoadsideInfoReception.speed_limit.s_in" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SignalInfo -> RoadsideInfoReception.vehicle_signage.v_in" kind="portConnection" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.0" source="//@featureInstance.3">
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.2/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sensor.sensor_output -> EnvironmentMontior.sensor.temp_in" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="RoadsideInfoReception.vehicle_signage.s_out -> SpeedAssistances.speedInformation" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@featureInstance.1">
+    <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.2" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="EnvironmentMontior.sensor.temp_out -> WSensor" kind="portConnection" destination="//@featureInstance.1" source="//@componentInstance.3/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="safecheck.LocationInfo -> LSpeed" kind="portConnection" destination="//@featureInstance.0" source="//@componentInstance.4/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.0" destination="//@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#Speedwrisic.Vehicletransit.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AadlProjects/Speedwrisic/packages/Speedwrisic.aadl#Speedwrisic.Vehicletransit.impl"/>
+</instance:SystemInstance>

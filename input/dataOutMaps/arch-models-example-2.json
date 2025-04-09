@@ -1,0 +1,21 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "GNC",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example-2/delivery-drone/GNC.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\arch-models-example-2_GNC_GNC_Impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\arch-models-example-2\\README.md"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'Base_Types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example-2/delivery-drone/GNC.aadl line : 4 column : 7)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example-2/delivery-drone/GNC.aadl line : 239 column : 32)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example-2/delivery-drone/GNC.aadl line : 225 column : 40)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example-2/delivery-drone/GNC.aadl line : 223 column : 33)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example-2/delivery-drone/GNC.aadl line : 229 column : 37)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example-2/delivery-drone/GNC.aadl line : 233 column : 37)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example-2/delivery-drone/GNC.aadl line : 18 column : 33)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example-2/delivery-drone/GNC.aadl line : 63 column : 33)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example-2/delivery-drone/GNC.aadl line : 133 column : 22)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/arch-models-example-2/delivery-drone/GNC.aadl line : 134 column : 39)"
+  ]
+}

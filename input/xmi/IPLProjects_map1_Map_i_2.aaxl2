@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Map_i_Instance" category="system">
+  <componentInstance name="l1" category="memory">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.edges"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.9"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.hasChargingSt"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:BooleanLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="edge" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryType" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#Map_Types.LocationWithoutCharge"/>
+  </componentInstance>
+  <componentInstance name="l2" category="memory">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.edges"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.0"/>
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.2"/>
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.7"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.10"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.hasChargingSt"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:BooleanLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="edge" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryType" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#Map_Types.LocationWithoutCharge"/>
+  </componentInstance>
+  <componentInstance name="l3" category="memory">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.edges"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.1"/>
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.3"/>
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.5"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.11"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.hasChargingSt"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:BooleanLiteral" value="true"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="edge" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryType" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#Map_Types.LocationWithCharge"/>
+  </componentInstance>
+  <componentInstance name="l4" category="memory">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="3"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.3"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.edges"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.2"/>
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.4"/>
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.8"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.12"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.hasChargingSt"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:BooleanLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="edge" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryType" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#Map_Types.LocationWithoutCharge"/>
+  </componentInstance>
+  <componentInstance name="l5" category="memory">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="4"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.4"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.edges"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.3"/>
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.5"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.13"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.hasChargingSt"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:BooleanLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="edge" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryType" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#Map_Types.LocationWithoutCharge"/>
+  </componentInstance>
+  <componentInstance name="l6" category="memory">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="5"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.5"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.edges"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.2"/>
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.4"/>
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.6"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.14"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.hasChargingSt"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:BooleanLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="edge" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryType" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#Map_Types.LocationWithoutCharge"/>
+  </componentInstance>
+  <componentInstance name="l7" category="memory">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="6"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.6"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.edges"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.5"/>
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.7"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.15"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.hasChargingSt"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:BooleanLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="edge" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryType" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#Map_Types.LocationWithoutCharge"/>
+  </componentInstance>
+  <componentInstance name="l8" category="memory">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="7"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.7"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.edges"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.1"/>
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.6"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.16"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.hasChargingSt"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:BooleanLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="edge" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.7"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryType" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#Map_Types.LocationWithoutCharge"/>
+  </componentInstance>
+  <componentInstance name="ls" category="memory">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="8"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.8"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.edges"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.3"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.17"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Properties.aadl#Map_Properties.hasChargingSt"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:BooleanLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="edge" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.8"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryType" href="../../github/IPLProjects/IPLRobotProp/aadl/Map_Types.aadl#Map_Types.LocationWithoutCharge"/>
+  </componentInstance>
+  <connectionInstance name="l2.edge -> l1.edge" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="l3.edge -> l1.edge" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="l4.edge -> l2.edge" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#map1.Map.i"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/IPLProjects/IPLRobotProp/aadl/map1.aadl#map1.Map.i"/>
+</instance:SystemInstance>

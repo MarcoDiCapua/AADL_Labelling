@@ -1,0 +1,56 @@
+package UAV
+public
+	
+	with MC;
+	with FC;
+	with UAS;
+	with UAS_Errors;
+	bus Serial
+	end Serial;
+	
+	system UAV
+		features
+			recv_map: in event data port;
+			send_status: out event data port;
+			RFA: requires bus access UAS::RF;
+		flows
+		    provide_map: flow sink recv_map;
+		    update_status: flow source send_status;
+		annex EMV2{**
+			use types UAS_Errors;
+			error propagations
+				recv_map : in propagation {wellformed_authenticated, 
+					wellformed_unauthenticated, not_wellformed_authenticated, not_wellformed_unauthenticated
+				};
+--			flows
+--				authenticated_map : error source send_map{authenticated_cmd};
+--				unauthenticated_map : error source send_map{unauthenticated_cmd};
+--				wellformed_map : error source send_map{wellformed_cmd};
+--				not_wellformed_map : error source send_map{not_wellformed_cmd};
+				
+			end propagations;
+		**};
+		    
+	end UAV;
+	
+	system implementation UAV.Impl
+		subcomponents
+			MCMP: system MC::MissionComputer.Impl;
+			FCTL: system FC::FlightController;
+			SBUS: bus Serial;
+			
+		connections
+			bac1: bus access SBUS <-> MCMP.UARTA;
+			bac2: bus access SBUS <-> FCTL.UARTA;
+			bac3: bus access RFA -> MCMP.RFA;
+			c1: port recv_map -> MCMP.recv_map;
+			c2: port MCMP.send_status -> send_status;
+			c3: port MCMP.waypoint -> FCTL.waypoint;
+			c4: port FCTL.position_status -> MCMP.position_status;
+			
+		properties
+			Actual_Connection_Binding => (reference (SBUS)) applies to c3, c4;
+			
+	end UAV.Impl;
+	
+end UAV;

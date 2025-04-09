@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="ResponseSelection_impl_Instance" category="system">
+  <featureInstance name="threatDetected">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.0"/>
+    <type href="../../github/AviationRequirementModeling/aadl/tcas/instances/tcas_full_ResponseSelection_impl_Instance.aaxl2#/0"/>
+  </featureInstance>
+  <featureInstance name="threatAltitude">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.1"/>
+    <type href="../../github/AviationRequirementModeling/aadl/tcas/instances/tcas_full_ResponseSelection_impl_Instance.aaxl2#/1"/>
+  </featureInstance>
+  <featureInstance name="ownAltitude">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.2"/>
+    <type href="../../github/AviationRequirementModeling/aadl/tcas/instances/tcas_full_ResponseSelection_impl_Instance.aaxl2#/2"/>
+  </featureInstance>
+  <featureInstance name="ownLongitude">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.3"/>
+    <type href="../../github/AviationRequirementModeling/aadl/tcas/instances/tcas_full_ResponseSelection_impl_Instance.aaxl2#/3"/>
+  </featureInstance>
+  <featureInstance name="threatLongitude">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.4"/>
+    <type href="../../github/AviationRequirementModeling/aadl/tcas/instances/tcas_full_ResponseSelection_impl_Instance.aaxl2#/3"/>
+  </featureInstance>
+  <featureInstance name="requiredVerticalVelocity" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedDataPort.5"/>
+    <type href="../../github/AviationRequirementModeling/aadl/tcas/instances/tcas_full_ResponseSelection_impl_Instance.aaxl2#/3"/>
+  </featureInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#tcas.ResponseSelection.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#tcas.ResponseSelection.impl"/>
+</instance:SystemInstance>

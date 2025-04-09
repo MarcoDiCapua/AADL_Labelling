@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="tispSys_impl_Instance" category="system">
+  <featureInstance name="signal_in">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/19"/>
+  </featureInstance>
+  <featureInstance name="signal2_in">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/20"/>
+  </featureInstance>
+  <featureInstance name="signal3_in">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+    <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/21"/>
+  </featureInstance>
+  <componentInstance name="sub_driver">
+    <featureInstance name="DriverInfo_input">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/Driver.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="DriverOut" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/Driver.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <flowSpecification name="driver_sink" source="//@componentInstance.0/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/Driver.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="driver_source" destination="//@componentInstance.0/@featureInstance.1">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/Driver.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAbstractSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:AbstractImplementation" href="../../github/AADL-SmartParkingApplication/Driver.aadl#Driver.driver.impl"/>
+  </componentInstance>
+  <componentInstance name="sub_hardwareComm" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/AADL-SmartParkingApplication/InformationServiceProvider.aadl#InformationServiceProvider.hardwareComm.impl"/>
+  </componentInstance>
+  <componentInstance name="sub_vehicleOBE" category="device">
+    <featureInstance name="signal_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="parking_data_received">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <flowSpecification name="Vehicle_sink" source="//@componentInstance.2/@featureInstance.1">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="Vehicle_source" destination="//@componentInstance.2/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#SmartParkingSystem.VehicleOBE"/>
+  </componentInstance>
+  <componentInstance name="sub_roadsideOBE" category="device">
+    <featureInstance name="signal_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="parking_data_received">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.1"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <flowSpecification name="Roadside_sink" source="//@componentInstance.3/@featureInstance.1">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="Roadside_source" destination="//@componentInstance.3/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#SmartParkingSystem.RoadsideOBE"/>
+  </componentInstance>
+  <componentInstance name="sub_parkingManager" category="process">
+    <featureInstance name="signal_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="signal_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.1"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <flowSpecification name="Roadside_sink" source="//@componentInstance.4/@featureInstance.1">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="Roadside_source" destination="//@componentInstance.4/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#SmartParkingSystem.ParkingManager"/>
+  </componentInstance>
+  <componentInstance name="sub_RSE_ElectricChargeSupportProvider" category="process">
+    <featureInstance name="RSE_ECSP_data_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="RSE_ECSP_data_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <flowSpecification name="sys_RSE_ECSP_sink" source="//@componentInstance.5/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="sys_RSE_ECSP_source" destination="//@componentInstance.5/@featureInstance.1">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AADL-SmartParkingApplication/RSE.aadl#RSE.RSE_ElectricChargeSupportProvider"/>
+  </componentInstance>
+  <componentInstance name="sub_RSE_WorkzoneSafetyProvider" category="process">
+    <featureInstance name="RSE_WSP_data_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <featureInstance name="RSE_WSP_data_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <flowSpecification name="sys_RSE_WSP_sink" source="//@componentInstance.6/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="sys_RSE_WSP_source" destination="//@componentInstance.6/@featureInstance.1">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AADL-SmartParkingApplication/RSE.aadl#RSE.RSE_WorkzoneSafetyProvider"/>
+  </componentInstance>
+  <componentInstance name="sub_RSE_TravelInformationCommunicationProvider" category="process">
+    <featureInstance name="RSE_TICP_data_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/12"/>
+    </featureInstance>
+    <featureInstance name="RSE_TICP_data_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/13"/>
+    </featureInstance>
+    <flowSpecification name="sys_RSE_TICP_sink" source="//@componentInstance.7/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="sys_RSE_TICP_source" destination="//@componentInstance.7/@featureInstance.1">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedProcessSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AADL-SmartParkingApplication/RSE.aadl#RSE.RSE_TravelInformationCommunicationProvider"/>
+  </componentInstance>
+  <componentInstance name="sub_RSE_TrafficMeteringProvider" category="process">
+    <featureInstance name="RSE_TMP_data_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/14"/>
+    </featureInstance>
+    <featureInstance name="RSE_TMP_data_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.1"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/15"/>
+    </featureInstance>
+    <flowSpecification name="sys_RSE_TMP_sink" source="//@componentInstance.8/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="sys_RSE_TMP_source" destination="//@componentInstance.8/@featureInstance.1">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedProcessSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AADL-SmartParkingApplication/RSE.aadl#RSE.RSE_TrafficMeteringProvider"/>
+  </componentInstance>
+  <componentInstance name="sub_RSE_SpeedManagementProvider" category="process">
+    <featureInstance name="RSE_SMP_data_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <featureInstance name="RSE_SMP_data_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/17"/>
+    </featureInstance>
+    <flowSpecification name="sys_RSE_SMP_sink" source="//@componentInstance.9/@featureInstance.0">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="sys_RSE_SMP_source" destination="//@componentInstance.9/@featureInstance.1">
+      <flowSpecification href="../../github/AADL-SmartParkingApplication/RSE.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedProcessSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/AADL-SmartParkingApplication/RSE.aadl#RSE.RSE_SpeedManagementProvider"/>
+  </componentInstance>
+  <componentInstance name="sub_TIC" category="processor">
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/AADL-SmartParkingApplication/InformationServiceProvider.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+      <type href="../../github/AADL-SmartParkingApplication/instances/SmartParkingSystem_tispSys_impl_Instance.aaxl2#/18"/>
+    </featureInstance>
+    <componentInstance name="collection" category="memory">
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/AADL-SmartParkingApplication/InformationServiceProvider.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryType" href="../../github/AADL-SmartParkingApplication/InformationServiceProvider.aadl#InformationServiceProvider.dataCollection"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/AADL-SmartParkingApplication/InformationServiceProvider.aadl#InformationServiceProvider.TIC.impl"/>
+  </componentInstance>
+  <connectionInstance name="signal_in -> sub_RSE_ElectricChargeSupportProvider.RSE_ECSP_data_in" kind="portConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="signal2_in -> sub_RSE_TravelInformationCommunicationProvider.RSE_TICP_data_in" kind="portConnection" destination="//@componentInstance.7/@featureInstance.0" source="//@featureInstance.1">
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="signal3_in -> sub_parkingManager.signal_in" kind="portConnection" destination="//@componentInstance.4/@featureInstance.1" source="//@featureInstance.2">
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sub_hardwareComm -> sub_TIC.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.10/@featureInstance.0" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.10/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sub_parkingManager.signal_out -> sub_driver.DriverInfo_input" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.4/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sub_RSE_ElectricChargeSupportProvider.RSE_ECSP_data_out -> sub_roadsideOBE.parking_data_received" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.5/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="sub_RSE_TravelInformationCommunicationProvider.RSE_TICP_data_out -> sub_vehicleOBE.parking_data_received" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@componentInstance.7/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#SmartParkingSystem.tispSys.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AADL-SmartParkingApplication/SmartParkingSystem.aadl#SmartParkingSystem.tispSys.impl"/>
+</instance:SystemInstance>

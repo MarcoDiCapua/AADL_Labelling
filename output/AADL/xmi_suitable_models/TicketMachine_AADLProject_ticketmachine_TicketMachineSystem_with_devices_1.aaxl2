@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="TicketMachineSystem_with_devices_Instance" category="system">
+  <componentInstance name="this_bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/TicketMachine_AADLProject/devices.aadl#devices.Hw_Connection.impl"/>
+  </componentInstance>
+  <componentInstance name="this_data_fetcher_module" category="device">
+    <featureInstance name="card_data_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="bank_account_data_auth" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.0"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/TicketMachine_AADLProject/devices.aadl#devices.Data_Fetcher_Module"/>
+  </componentInstance>
+  <componentInstance name="this_proximity_card_reader" category="device">
+    <featureInstance name="nfc_card_tapped" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/TicketMachine_AADLProject/devices.aadl#devices.Proximity_Card_Reader"/>
+  </componentInstance>
+  <componentInstance name="this_city_card_reader" category="device">
+    <featureInstance name="city_card_inserted" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedBusAccess.0"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/TicketMachine_AADLProject/devices.aadl#devices.City_Card_Reader"/>
+  </componentInstance>
+  <componentInstance name="this_cash_box" category="device">
+    <featureInstance name="cash_inserted" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="give_the_change" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/TicketMachine_AADLProject/devices.aadl#devices.Cash_Box"/>
+  </componentInstance>
+  <componentInstance name="this_keyboard" category="device">
+    <featureInstance name="key_pressed" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedBusAccess.0"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/TicketMachine_AADLProject/devices.aadl#devices.Keyboard"/>
+  </componentInstance>
+  <componentInstance name="this_display_unit" category="device">
+    <featureInstance name="display_view_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.0"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/TicketMachine_AADLProject/devices.aadl#devices.Display_Unit"/>
+  </componentInstance>
+  <componentInstance name="this_cash_unit" category="device">
+    <featureInstance name="get_cash" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="cash_inserted" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedBusAccess.0"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/TicketMachine_AADLProject/devices.aadl#devices.Cash_Unit"/>
+  </componentInstance>
+  <componentInstance name="this_printer" category="device">
+    <featureInstance name="print_ticket" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TicketMachine_AADLProject/devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.0"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.7"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/TicketMachine_AADLProject/devices.aadl#devices.Printer"/>
+  </componentInstance>
+  <componentInstance name="this_controller" category="process">
+    <featureInstance name="key_pressed">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="display_view_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="printer_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="card_data_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="proximity_card_reader_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="city_card_reader_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="cash_box_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="cash_box_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.3"/>
+    </featureInstance>
+    <featureInstance name="cash_unit_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.4"/>
+    </featureInstance>
+    <featureInstance name="cash_unit_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.5"/>
+    </featureInstance>
+    <featureInstance name="bank_account_data_auth_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.6"/>
+    </featureInstance>
+    <componentInstance name="this_nfc_thread" category="thread">
+      <featureInstance name="proximity_card_reader_in" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#ticketmachine.nfc_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="this_city_card_thread" category="thread">
+      <featureInstance name="city_card_reader_in" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#ticketmachine.city_card_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="this_cash_unit_thread" category="thread">
+      <featureInstance name="cash_unit_in" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="cash_unit_out" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#ticketmachine.cash_unit_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="this_cash_box_thread" category="thread">
+      <featureInstance name="cash_box_in" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="cash_box_out" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#ticketmachine.cash_box_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="this_keyboard_thread" category="thread">
+      <featureInstance name="key_input">
+        <feature xsi:type="aadl2:DataPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+        <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#ticketmachine.keyboard_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="this_display_view_thread" category="thread">
+      <featureInstance name="display_view_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+        <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/4"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.5"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#ticketmachine.display_view_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="this_printer_thread" category="thread">
+      <featureInstance name="printer_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+        <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.6"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#ticketmachine.printer_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="this_data_fetcher_thread" category="thread">
+      <featureInstance name="card_data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="bank_account_data_auth_in" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.7"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#ticketmachine.data_fetcher_thread.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#ticketmachine.Controller.with_threads"/>
+  </componentInstance>
+  <componentInstance name="this_processor" category="processor">
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedBusAccess.0"/>
+      <type href="../../github/TicketMachine_AADLProject/instances/ticketmachine_TicketMachineSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <componentInstance name="this_memory" category="memory">
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryType" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#ticketmachine.RAM"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#ticketmachine.Main_Processor.impl"/>
+  </componentInstance>
+  <connectionInstance name="this_bus -> this_proximity_card_reader.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_city_card_reader.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_cash_unit.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.7/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.7/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_printer.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.8/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.8/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_cash_box.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.4/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_keyboard.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.5/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_display_unit.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.6/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_processor.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.10/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.10/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_data_fetcher_module.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_data_fetcher_module.bank_account_data_auth -> this_controller.this_data_fetcher_thread.bank_account_data_auth_in" complete="true" kind="portConnection" destination="//@componentInstance.9/@componentInstance.7/@featureInstance.1" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.9/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@featureInstance.10" destination="//@componentInstance.9/@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_proximity_card_reader.nfc_card_tapped -> this_controller.this_nfc_thread.proximity_card_reader_in" complete="true" kind="portConnection" destination="//@componentInstance.9/@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.9/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@featureInstance.4" destination="//@componentInstance.9/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_city_card_reader.city_card_inserted -> this_controller.this_city_card_thread.city_card_reader_in" complete="true" kind="portConnection" destination="//@componentInstance.9/@componentInstance.1/@featureInstance.0" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.9/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@featureInstance.5" destination="//@componentInstance.9/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_cash_box.cash_inserted -> this_controller.this_cash_box_thread.cash_box_in" complete="true" kind="portConnection" destination="//@componentInstance.9/@componentInstance.3/@featureInstance.0" source="//@componentInstance.4/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.0" destination="//@componentInstance.9/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@featureInstance.6" destination="//@componentInstance.9/@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_keyboard.key_pressed -> this_controller.this_keyboard_thread.key_input" complete="true" kind="portConnection" destination="//@componentInstance.9/@componentInstance.4/@featureInstance.0" source="//@componentInstance.5/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.9/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@featureInstance.0" destination="//@componentInstance.9/@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_cash_unit.cash_inserted -> this_controller.this_cash_unit_thread.cash_unit_in" complete="true" kind="portConnection" destination="//@componentInstance.9/@componentInstance.2/@featureInstance.0" source="//@componentInstance.7/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.1" destination="//@componentInstance.9/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@featureInstance.8" destination="//@componentInstance.9/@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.this_cash_unit_thread.cash_unit_out -> this_cash_unit.get_cash" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.0" source="//@componentInstance.9/@componentInstance.2/@featureInstance.1">
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.9/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.9" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.this_cash_box_thread.cash_box_out -> this_cash_box.give_the_change" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.1" source="//@componentInstance.9/@componentInstance.3/@featureInstance.1">
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@componentInstance.3/@featureInstance.1" destination="//@componentInstance.9/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.7" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.this_display_view_thread.display_view_out -> this_display_unit.display_view_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.9/@componentInstance.5/@featureInstance.0">
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@componentInstance.5/@featureInstance.0" destination="//@componentInstance.9/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.1" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.this_printer_thread.printer_out -> this_printer.print_ticket" complete="true" kind="portConnection" destination="//@componentInstance.8/@featureInstance.0" source="//@componentInstance.9/@componentInstance.6/@featureInstance.0">
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@componentInstance.6/@featureInstance.0" destination="//@componentInstance.9/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.2" destination="//@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.this_data_fetcher_thread.card_data_out -> this_data_fetcher_module.card_data_in" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.9/@componentInstance.7/@featureInstance.0">
+    <connectionReference context="//@componentInstance.9" source="//@componentInstance.9/@componentInstance.7/@featureInstance.0" destination="//@componentInstance.9/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.3" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#ticketmachine.TicketMachineSystem.with_devices"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/TicketMachine_AADLProject/ticketmachine.aadl#ticketmachine.TicketMachineSystem.with_devices"/>
+</instance:SystemInstance>

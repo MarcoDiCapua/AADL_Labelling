@@ -1,0 +1,157 @@
+package mece_learning_system_package
+
+public
+		
+	with mece_learning_app_package;
+		
+	system MeceLearningSystem
+		features
+		get_req: in data port;
+		send_reply: out data port;
+	end MeceLearningSystem;
+
+	system API_Gateway
+		features
+		get_req: in data port;
+		send_reply: out data port;
+	end API_Gateway;
+	
+	system loadbalancer
+		features
+		get_req: in data port;
+		send_reply: out data port;	
+	end loadbalancer;
+	
+	system ServerSide
+		features
+		get_req: in data port;
+		send_reply: out data port;
+	end ServerSide;
+
+	system PrimarySever1
+		features
+			ps1_get: in data port;
+			ps1_send: out data port;
+	end PrimarySever1;
+
+	system PrimarySever2
+		features
+			ps2_get: in data port;
+			ps2_send: out data port;
+	end PrimarySever2;
+
+	system SecondaryServer1
+		features
+			ss1_get: in data port;
+			ss1_send: out data port;
+	end SecondaryServer1;
+
+	system SecondaryServer2
+		features
+			ss2_get: in data port;
+			ss2_send: out data port;
+	end SecondaryServer2;
+
+	system MonitoringPredictionServer
+		features
+			get_req: in data port;
+			send_reply: out data port;
+	end MonitoringPredictionServer;
+
+	system AccountDB
+		features
+		write_update: in data port;
+		read: out data port;
+	end AccountDB;
+
+	system ContentDB
+		features
+		write_update: in data port;
+		read: out data port;
+	end ContentDB;
+
+	system MasterAccountDB
+		features
+			sync: out data port;
+	end MasterAccountDB;
+
+	system SlaveAccountDB
+		features
+			sync: in data port;
+	end SlaveAccountDB;
+
+	system MasterContentDB
+		features
+			sync: out data port;
+	end MasterContentDB;
+
+	system SlaveContentDB1
+		features
+			sync : in data port;
+	end SlaveContentDB1;
+
+	system SlaveContentDB2
+		features
+			sync: in data port;
+	end SlaveContentDB2;
+
+	system implementation MeceLearningSystem.Impl
+		subcomponents
+			MonitorPredServer: system MonitoringPredictionServer;
+			apiGateway: system API_Gateway;
+			serverSide: system ServerSide.Impl;
+			accountDatabase: system AccountDB.Impl;
+			contentDatabase: system ContentDB.Impl;
+		connections
+			conn1: port apiGateway.send_reply-> MonitorPredServer.get_req;
+			conn2: port MonitorPredServer.send_reply -> apiGateway.get_req;
+			conn3: port apiGateway.send_reply -> serverside.get_req;
+			conn4: port serverSide.send_reply -> accountDatabase.write_update;
+			conn5: port serverSide.send_reply -> contentDatabase.write_update;
+			conn6: port accountDatabase.read -> MonitorPredServer.get_req;
+			conn7: port contentDatabase.read -> MonitorPredServer.get_req;
+	end MeceLearningSystem.Impl;
+
+	system implementation ServerSide.Impl
+		subcomponents
+			MeceApp: system mece_learning_app_package::mece_learning_app.Impl;
+			primaryServer1: system PrimarySever1;
+			primaryServer2: system PrimarySever2;
+			secondaryServer1: system SecondaryServer1;
+			secondaryServer2: system SecondaryServer2;
+			monitoringPredictionServer: system MonitoringPredictionServer;
+		connections
+			conn1: port primaryServer1.ps1_send -> monitoringPredictionServer.get_req;
+			conn2: port primaryServer2.ps2_send -> monitoringPredictionServer.get_req;
+			conn3: port secondaryServer1.ss1_send -> monitoringPredictionServer.get_req;
+			conn4: port secondaryServer2.ss2_send -> monitoringPredictionServer.get_req;
+			conn5: port get_req -> primaryServer2.ps2_get;
+			conn6: port get_req -> primaryServer1.ps1_get;
+			conn7: port get_req -> secondaryServer1.ss1_get;
+			conn8: port get_req -> secondaryServer2.ss2_get;
+			conn9: port primaryServer2.ps2_send -> MeceApp.get_req;				
+
+			
+	end ServerSide.Impl;
+
+	system implementation AccountDB.Impl
+		subcomponents
+			masterDB: system MasterAccountDB;
+			slaveDB: system SlaveAccountDB;
+		connections
+			conn1: port masterDB.sync -> slaveDB.sync;
+	end AccountDB.Impl;
+
+	system implementation ContentDB.Impl
+		subcomponents
+			masterDB: system MasterContentDB;
+			slaveDB1: system SlaveContentDB1;
+			slaveDB2: system SlaveContentDB2;
+		connections
+			conn1: port masterDB.sync -> slaveDB1.sync;
+			conn2: port masterDB.sync -> slaveDB2.sync;
+	end ContentDB.Impl;
+
+
+
+end mece_learning_system_package;

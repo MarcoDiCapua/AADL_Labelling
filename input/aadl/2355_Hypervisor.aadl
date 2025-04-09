@@ -1,0 +1,32 @@
+property set Hypervisor_Properties is
+
+-- Worst case latency when switching between partitions on a single core
+	Partition_Context_Switch_Latency : Time applies to (abstract);
+	
+-- We assume the hypervisor provides a synchronized global time reference.
+-- This property gives the precision of this global time thus it is guaranteed
+-- that any two nodes are synchronized to each other within this value.
+	Clock_Sync_Precision : Time applies to (abstract);
+	
+   Task_Window: type record(
+   	s: aadlinteger;
+   	e: aadlinteger;
+   );
+	
+   Task_Schedule : type record (
+   Task : aadlstring;
+   Schedule: list of Hypervisor_Properties::Task_Window;
+   );
+   
+   App_Schedule_Window : type record (
+   App : reference (process);
+   Schedule: list of Hypervisor_Properties::Task_Schedule;
+   );
+   
+   App_Schedule : Hypervisor_Properties::App_Schedule_Window applies to ( processor, virtual processor );
+   
+
+   
+   
+   	
+end Hypervisor_Properties;

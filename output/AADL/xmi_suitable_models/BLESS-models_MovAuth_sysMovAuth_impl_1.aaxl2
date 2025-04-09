@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="sysMovAuth_impl_Instance" category="system">
+  <componentInstance name="rbc" category="device">
+    <featureInstance name="ea" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="m" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+      <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="r" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#MovAuth.RBC"/>
+  </componentInstance>
+  <componentInstance name="train" category="system">
+    <featureInstance name="ea">
+      <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="r" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="ma" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventDataPort.0"/>
+      <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <componentInstance name="driver">
+      <featureInstance name="xl" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+        <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:AbstractSubcomponent" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedAbstractSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:AbstractType" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#MovAuth.Operator"/>
+    </componentInstance>
+    <componentInstance name="motor" category="device">
+      <featureInstance name="ca">
+        <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+        <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDeviceSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#MovAuth.Motor"/>
+    </componentInstance>
+    <componentInstance name="sensor" category="device">
+      <featureInstance name="s" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+        <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="v" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.1"/>
+        <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/4"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDeviceSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceType" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#MovAuth.Sensor"/>
+    </componentInstance>
+    <componentInstance name="controller" category="process">
+      <featureInstance name="ca" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+        <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="s">
+        <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+        <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <featureInstance name="v">
+        <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.2"/>
+        <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/4"/>
+      </featureInstance>
+      <featureInstance name="ea">
+        <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.3"/>
+        <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="xl">
+        <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.4"/>
+        <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="m" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventDataPort.0"/>
+        <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/1"/>
+      </featureInstance>
+      <featureInstance name="r" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+      </featureInstance>
+      <componentInstance name="Controller" category="thread">
+        <featureInstance name="ca" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+          <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/2"/>
+        </featureInstance>
+        <featureInstance name="ea">
+          <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.1"/>
+          <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/0"/>
+        </featureInstance>
+        <featureInstance name="s">
+          <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.2"/>
+          <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/3"/>
+        </featureInstance>
+        <featureInstance name="v">
+          <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.3"/>
+          <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/4"/>
+        </featureInstance>
+        <featureInstance name="xl">
+          <feature xsi:type="aadl2:DataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.4"/>
+          <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/2"/>
+        </featureInstance>
+        <featureInstance name="m" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventDataPort.0"/>
+          <type href="../../github/BLESS-models/CTCS/packages/aadl/packages/instances/MovAuth_sysMovAuth_impl_Instance.aaxl2#/1"/>
+        </featureInstance>
+        <featureInstance name="r" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.0"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#MovAuth.Controller.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedProcessSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#MovAuth.pController.impl"/>
+    </componentInstance>
+    <connectionInstance name="driver.xl -> controller.Controller.xl" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.4" source="//@componentInstance.1/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.3/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.6"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1/@componentInstance.3" source="//@componentInstance.1/@componentInstance.3/@featureInstance.4" destination="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.6"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="sensor.s -> controller.Controller.s" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.2" source="//@componentInstance.1/@componentInstance.2/@featureInstance.0">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.2/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.3/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.2"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1/@componentInstance.3" source="//@componentInstance.1/@componentInstance.3/@featureInstance.1" destination="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="sensor.v -> controller.Controller.v" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.3" source="//@componentInstance.1/@componentInstance.2/@featureInstance.1">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.1/@componentInstance.3/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.3"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1/@componentInstance.3" source="//@componentInstance.1/@componentInstance.3/@featureInstance.2" destination="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="controller.Controller.ca -> motor.ca" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.1/@featureInstance.0" source="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="//@componentInstance.1/@componentInstance.3" source="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.3/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.2"/>
+      </connectionReference>
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#MovAuth.Train.impl"/>
+  </componentInstance>
+  <connectionInstance name="rbc.ea -> train.controller.Controller.ea" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.1" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.3/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1/@componentInstance.3" source="//@componentInstance.1/@componentInstance.3/@featureInstance.3" destination="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="rbc.m -> train.controller.Controller.m" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.5" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@featureInstance.2" destination="//@componentInstance.1/@componentInstance.3/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1/@componentInstance.3" source="//@componentInstance.1/@componentInstance.3/@featureInstance.5" destination="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="train.controller.Controller.r -> rbc.r" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.2" source="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.6">
+    <connectionReference context="//@componentInstance.1/@componentInstance.3" source="//@componentInstance.1/@componentInstance.3/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.1/@componentInstance.3/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.3/@featureInstance.6" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#MovAuth.sysMovAuth.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/BLESS-models/CTCS/packages/aadl/packages/MovAuth.aadl#MovAuth.sysMovAuth.impl"/>
+</instance:SystemInstance>

@@ -1,0 +1,17 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "test",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AviationRequirementModeling/aadl/TrafficLight.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\AviationRequirementModeling_test_TrafficLight_small_2.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'Base_Types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AviationRequirementModeling/aadl/TrafficLight.aadl line : 3 column : 7)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AviationRequirementModeling/aadl/TrafficLight.aadl line : 32 column : 29)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AviationRequirementModeling/aadl/TrafficLight.aadl line : 33 column : 29)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AviationRequirementModeling/aadl/TrafficLight.aadl line : 34 column : 29)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Boolean'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AviationRequirementModeling/aadl/TrafficLight.aadl line : 35 column : 29)",
+    "ERROR:Package test has duplicates /Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AviationRequirementModeling/workspace/aadl/TrafficLight.aadl (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AviationRequirementMode..."
+  ]
+}

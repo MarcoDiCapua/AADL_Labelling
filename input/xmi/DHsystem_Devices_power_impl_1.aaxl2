@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="power_impl_Instance" category="system">
+  <featureInstance name="dm_pow">
+    <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+  </featureInstance>
+  <componentInstance name="Switch" category="device">
+    <featureInstance name="sw_app" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="sw_light" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.switch"/>
+  </componentInstance>
+  <componentInstance name="Appliances" category="device">
+    <featureInstance name="sw_app">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.appliances"/>
+  </componentInstance>
+  <componentInstance name="Lights" category="device">
+    <featureInstance name="sw_light">
+      <feature xsi:type="aadl2:DataPort" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/DHsystem/Devices.aadl#Devices.lights"/>
+  </componentInstance>
+  <connectionInstance name="Switch.sw_app -> Appliances.sw_app" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Switch.sw_light -> Lights.sw_light" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/DHsystem/Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/DHsystem/Devices.aadl#Devices.power.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/DHsystem/Devices.aadl#Devices.power.impl"/>
+</instance:SystemInstance>

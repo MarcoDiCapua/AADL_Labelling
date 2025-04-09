@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Car_impl_Instance" category="system">
+  <componentInstance name="ui" category="device">
+    <featureInstance name="ui" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CarModelAADL/UIComponenet.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <flowSpecification name="ui_flowsource" destination="//@componentInstance.0/@featureInstance.0">
+      <flowSpecification href="../../github/CarModelAADL/UIComponenet.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/CarModelAADL/UIComponenet.aadl#UIComponenet.UI_Input"/>
+  </componentInstance>
+  <componentInstance name="ud" category="device">
+    <featureInstance name="ud">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CarModelAADL/UIComponenet.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    </featureInstance>
+    <flowSpecification name="ud_flowsink" source="//@componentInstance.1/@featureInstance.0">
+      <flowSpecification href="../../github/CarModelAADL/UIComponenet.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/CarModelAADL/UIComponenet.aadl#UIComponenet.UI_Display"/>
+  </componentInstance>
+  <componentInstance name="wheel_sensor" category="device">
+    <featureInstance name="wheel_sensor" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CarModelAADL/BrakeHardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <flowSpecification name="wheel_flowsource" destination="//@componentInstance.2/@featureInstance.0">
+      <flowSpecification href="../../github/CarModelAADL/BrakeHardware.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/CarModelAADL/BrakeHardware.aadl#BrakeHardware.Wheel_Rotation_Sensor"/>
+  </componentInstance>
+  <componentInstance name="brake_pedal" category="device">
+    <featureInstance name="brake_pedal">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CarModelAADL/BrakeHardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="brake_pedal_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CarModelAADL/BrakeHardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <flowSpecification name="brake_flowsource" destination="//@componentInstance.3/@featureInstance.1">
+      <flowSpecification href="../../github/CarModelAADL/BrakeHardware.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/CarModelAADL/BrakeHardware.aadl#BrakeHardware.Brake_Pedal"/>
+  </componentInstance>
+  <componentInstance name="actuator" category="device">
+    <featureInstance name="act_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CarModelAADL/ElectricalComponents.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <flowSpecification name="act_flowsink" source="//@componentInstance.4/@featureInstance.0">
+      <flowSpecification href="../../github/CarModelAADL/ElectricalComponents.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/CarModelAADL/ElectricalComponents.aadl#ElectricalComponents.Actuator"/>
+  </componentInstance>
+  <componentInstance name="cc" category="system">
+    <featureInstance name="ui_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CarModelAADL/SoftwareSystems.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="ud_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CarModelAADL/SoftwareSystems.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="ta_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CarModelAADL/SoftwareSystems.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="wrs_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CarModelAADL/SoftwareSystems.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="bp_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CarModelAADL/SoftwareSystems.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+    </featureInstance>
+    <flowSpecification name="flow_UI_UD" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.5/@featureInstance.1">
+      <flowSpecification href="../../github/CarModelAADL/SoftwareSystems.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+    </flowSpecification>
+    <flowSpecification name="flow_bp_act" source="//@componentInstance.5/@featureInstance.4" destination="//@componentInstance.5/@featureInstance.2">
+      <flowSpecification href="../../github/CarModelAADL/SoftwareSystems.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.1"/>
+    </flowSpecification>
+    <flowSpecification name="flow_wr_act" source="//@componentInstance.5/@featureInstance.3" destination="//@componentInstance.5/@featureInstance.2">
+      <flowSpecification href="../../github/CarModelAADL/SoftwareSystems.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.2"/>
+    </flowSpecification>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/CarModelAADL/SoftwareSystems.aadl#SoftwareSystems.cruiseControl"/>
+  </componentInstance>
+  <componentInstance name="albs" category="system">
+    <featureInstance name="wrs_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CarModelAADL/SoftwareSystems.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="bp_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CarModelAADL/SoftwareSystems.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/CarModelAADL/SoftwareSystems.aadl#SoftwareSystems.antiLockSystem"/>
+  </componentInstance>
+  <endToEndFlow name="ete" flowElement="//@componentInstance.0/@flowSpecification.0 //@connectionInstance.0 //@componentInstance.5/@flowSpecification.0 //@connectionInstance.4 //@componentInstance.1/@flowSpecification.0">
+    <endToEndFlow href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.0"/>
+  </endToEndFlow>
+  <endToEndFlow name="BP_PATH_ACT" flowElement="//@componentInstance.3/@flowSpecification.0 //@connectionInstance.3 //@componentInstance.5/@flowSpecification.1 //@connectionInstance.5 //@componentInstance.4/@flowSpecification.0">
+    <endToEndFlow href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.1"/>
+  </endToEndFlow>
+  <endToEndFlow name="WRS_PATH_ACT" flowElement="//@componentInstance.2/@flowSpecification.0 //@connectionInstance.2 //@componentInstance.5/@flowSpecification.2 //@connectionInstance.5 //@componentInstance.4/@flowSpecification.0">
+    <endToEndFlow href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.2"/>
+  </endToEndFlow>
+  <connectionInstance name="ui.ui -> cc.ui_in" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="wheel_sensor.wheel_sensor -> albs.wrs_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="wheel_sensor.wheel_sensor -> cc.wrs_in" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.3" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.5/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="brake_pedal.brake_pedal_out -> cc.bp_in" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.4" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.5/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cc.ud_out -> ud.ud" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.5/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.1" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cc.ta_out -> actuator.act_in" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.5/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.2" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="albs.bp_out -> brake_pedal.brake_pedal" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.6/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.1" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CarModelAADL/CarSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/CarModelAADL/CarSystem.aadl#CarSystem.Car.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/CarModelAADL/CarSystem.aadl#CarSystem.Car.impl"/>
+</instance:SystemInstance>

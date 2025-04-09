@@ -1,0 +1,10 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "map1",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/IPLProjects/IPLRobotProp/aadl/map1.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\IPLProjects_map1_Map_i_2.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\IPLProjects\\README.md"],
+  "errors": ["ERROR:Package map1 has duplicates /Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/IPLProjects/IPLTest/src/aadl/map1.aadl (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/IPLProjects/IPLRobotProp/aadl/map1.aadl line ..."]
+}

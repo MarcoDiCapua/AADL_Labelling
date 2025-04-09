@@ -1,0 +1,46 @@
+-------------------------------------------------
+-- Power Supply component block
+--
+-- Failure events: stop (lambdaPwrSupply)
+-- Inputs: engine component block (operative,failed)   {* {noPower} *}
+-- Outputs: true or false                            {noPower}
+-- States: operative, failed                        {* S18_ErrorLibrary::twoState{operative, failed}  *}
+-- Transfer function:
+--  State (operative) out == input                   {* operative, failed  *}                 
+--	state (failed)    out == false
+--------------------------------------------------
+
+package powerSupply
+public
+
+with dataDictionary;
+
+with EMV2, ARP4761;
+
+system powerSupply
+	features
+		DC28VoltRawIn : in data port dataDictionary::DC28VoltRaw;
+		DC28VoltOut : out data port dataDictionary::DC28Volt;
+	flows
+		fl1 : flow sink DC28VoltRawIn;
+		fl2 : flow source DC28VoltOut;
+	annex EMV2{**
+		use types S18_ErrorLibrary;
+		use behavior S18_ErrorLibrary::twoState;
+		error propagations
+				DC28VoltRawIn : in propagation {noPower};
+				DC28VoltOut : out propagation {noPower};
+			flows
+				es1: error source DC28VoltOut{noPower} when failed;
+				es2: error path DC28VoltRawIn{noPower} -> DC28VoltOut{noPower};
+		end propagations;
+	--	component error behavior
+			
+	--	end component;
+	**};
+end powerSupply;
+
+system implementation powerSupply.item
+end powerSupply.item;
+
+end powerSupply;

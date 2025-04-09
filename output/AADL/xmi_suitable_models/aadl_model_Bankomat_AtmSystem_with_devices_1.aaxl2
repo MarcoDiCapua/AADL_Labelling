@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="AtmSystem_with_devices_Instance" category="system">
+  <componentInstance name="this_bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/aadl_model/Bankomat.aadl#Bankomat.HwConnection.impl"/>
+  </componentInstance>
+  <componentInstance name="this_czytnik_kart" category="device">
+    <featureInstance name="wlozono_karte" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.45/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="zatrzymaj_karte" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.45/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.45/@ownedBusAccess.0"/>
+      <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl_model/Bankomat.aadl#Bankomat.CzytnikKart"/>
+  </componentInstance>
+  <componentInstance name="this_modul_gotowkowy" category="device">
+    <featureInstance name="pobierz_gotowke" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="gotowka_pobrana" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.47/@ownedBusAccess.0"/>
+      <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl_model/Bankomat.aadl#Bankomat.ModulGotowkowy"/>
+  </componentInstance>
+  <componentInstance name="this_drukarka" category="device">
+    <featureInstance name="drukuj" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.49/@ownedBusAccess.0"/>
+      <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl_model/Bankomat.aadl#Bankomat.Drukarka"/>
+  </componentInstance>
+  <componentInstance name="this_sejf" category="device">
+    <featureInstance name="umieszczono_gotowke" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.51/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="wydaj_gotowke" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.51/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.51/@ownedBusAccess.0"/>
+      <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl_model/Bankomat.aadl#Bankomat.Sejf"/>
+  </componentInstance>
+  <componentInstance name="this_klawiatura" category="device">
+    <featureInstance name="key_input" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.53/@ownedDataPort.0"/>
+      <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.53/@ownedBusAccess.0"/>
+      <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl_model/Bankomat.aadl#Bankomat.Klawiatura"/>
+  </componentInstance>
+  <componentInstance name="this_wyswietlacz" category="device">
+    <featureInstance name="obraz_input">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.55/@ownedDataPort.0"/>
+      <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.55/@ownedBusAccess.0"/>
+      <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl_model/Bankomat.aadl#Bankomat.Wyswietlacz"/>
+  </componentInstance>
+  <componentInstance name="this_modul_lacznosci" category="device">
+    <featureInstance name="dane_karty">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="dane_konta" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.57/@ownedBusAccess.0"/>
+      <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/aadl_model/Bankomat.aadl#Bankomat.Modul_Lacznosci"/>
+  </componentInstance>
+  <componentInstance name="this_controller" category="process">
+    <featureInstance name="key_input">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="obraz_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="drukarka_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="dane_karty_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="dane_konta_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+    </featureInstance>
+    <featureInstance name="czytnik_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="sejf_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="czytnik_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="sejf_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.3"/>
+    </featureInstance>
+    <featureInstance name="modul_gotowkowy_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.4"/>
+    </featureInstance>
+    <featureInstance name="modul_gotowkowy_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.5"/>
+    </featureInstance>
+    <componentInstance name="this_read_card_insert" category="thread">
+      <featureInstance name="czytnik_in" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="czytnik_out" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl_model/Bankomat.aadl#Bankomat.read_card_insert.impl"/>
+    </componentInstance>
+    <componentInstance name="this_read_modul_input" category="thread">
+      <featureInstance name="modul_in" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="modul_out" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl_model/Bankomat.aadl#Bankomat.read_modul_input.impl"/>
+    </componentInstance>
+    <componentInstance name="this_sejf_thread" category="thread">
+      <featureInstance name="sejf_in" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="sejf_out" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl_model/Bankomat.aadl#Bankomat.sejf_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="this_klawiatura_thread" category="thread">
+      <featureInstance name="keyboard_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+        <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl_model/Bankomat.aadl#Bankomat.klawiatura_input.impl"/>
+    </componentInstance>
+    <componentInstance name="this_obraz_output" category="thread">
+      <featureInstance name="obraz_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+        <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/4"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl_model/Bankomat.aadl#Bankomat.obraz_output.impl"/>
+    </componentInstance>
+    <componentInstance name="this_drukarka_out" category="thread">
+      <featureInstance name="drukarka_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+        <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.5"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl_model/Bankomat.aadl#Bankomat.drukarka_output.impl"/>
+    </componentInstance>
+    <componentInstance name="this_lacznosc_thread" category="thread">
+      <featureInstance name="dane_konta_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="dane_karty_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.6"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/aadl_model/Bankomat.aadl#Bankomat.lacznosc_thread.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/aadl_model/Bankomat.aadl#Bankomat.Controller.with_threads"/>
+  </componentInstance>
+  <componentInstance name="this_processor" category="processor">
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.40/@ownedBusAccess.0"/>
+      <type href="../../github/aadl_model/instances/Bankomat_AtmSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <componentInstance name="this_memory" category="memory">
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.41/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryType" href="../../github/aadl_model/Bankomat.aadl#Bankomat.RAM"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/aadl_model/Bankomat.aadl#Bankomat.MainProcessor.impl"/>
+  </componentInstance>
+  <connectionInstance name="this_bus -> this_czytnik_kart.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_modul_gotowkowy.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_drukarka.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_sejf.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.4/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.4/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_klawiatura.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.5/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_wyswietlacz.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.6/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_processor.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.9/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.9/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_bus -> this_modul_lacznosci.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.7/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.7/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_czytnik_kart.wlozono_karte -> this_controller.this_read_card_insert.czytnik_in" complete="true" kind="portConnection" destination="//@componentInstance.8/@componentInstance.0/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.8/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@featureInstance.5" destination="//@componentInstance.8/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_modul_gotowkowy.gotowka_pobrana -> this_controller.this_read_modul_input.modul_in" complete="true" kind="portConnection" destination="//@componentInstance.8/@componentInstance.1/@featureInstance.0" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.8/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@featureInstance.9" destination="//@componentInstance.8/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_sejf.umieszczono_gotowke -> this_controller.this_sejf_thread.sejf_in" complete="true" kind="portConnection" destination="//@componentInstance.8/@componentInstance.2/@featureInstance.0" source="//@componentInstance.4/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.0" destination="//@componentInstance.8/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@featureInstance.6" destination="//@componentInstance.8/@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_klawiatura.key_input -> this_controller.this_klawiatura_thread.keyboard_in" complete="true" kind="portConnection" destination="//@componentInstance.8/@componentInstance.3/@featureInstance.0" source="//@componentInstance.5/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@featureInstance.0" destination="//@componentInstance.8/@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_modul_lacznosci.dane_konta -> this_controller.this_lacznosc_thread.dane_konta_in" complete="true" kind="portConnection" destination="//@componentInstance.8/@componentInstance.6/@featureInstance.0" source="//@componentInstance.7/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.1" destination="//@componentInstance.8/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@featureInstance.4" destination="//@componentInstance.8/@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.this_read_card_insert.czytnik_out -> this_czytnik_kart.zatrzymaj_karte" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@componentInstance.8/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.8/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.7" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.this_read_modul_input.modul_out -> this_modul_gotowkowy.pobierz_gotowke" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.8/@componentInstance.1/@featureInstance.1">
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.8/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.10" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.this_sejf_thread.sejf_out -> this_sejf.wydaj_gotowke" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.1" source="//@componentInstance.8/@componentInstance.2/@featureInstance.1">
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.8/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.8" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.this_obraz_output.obraz_out -> this_wyswietlacz.obraz_input" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.8/@componentInstance.4/@featureInstance.0">
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@componentInstance.4/@featureInstance.0" destination="//@componentInstance.8/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.1" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.this_drukarka_out.drukarka_out -> this_drukarka.drukuj" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.8/@componentInstance.5/@featureInstance.0">
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@componentInstance.5/@featureInstance.0" destination="//@componentInstance.8/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.2" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.this_lacznosc_thread.dane_karty_out -> this_modul_lacznosci.dane_karty" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.0" source="//@componentInstance.8/@componentInstance.6/@featureInstance.1">
+    <connectionReference context="//@componentInstance.8" source="//@componentInstance.8/@componentInstance.6/@featureInstance.1" destination="//@componentInstance.8/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.3" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/aadl_model/Bankomat.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadl_model/Bankomat.aadl#Bankomat.AtmSystem.with_devices"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadl_model/Bankomat.aadl#Bankomat.AtmSystem.with_devices"/>
+</instance:SystemInstance>

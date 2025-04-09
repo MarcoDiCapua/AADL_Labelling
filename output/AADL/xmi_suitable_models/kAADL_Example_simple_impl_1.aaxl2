@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="simple_impl_Instance" category="system">
+  <componentInstance name="A" category="process">
+    <featureInstance name="Dataset" category="dataAccess" direction="out">
+      <feature xsi:type="aadl2:DataAccess" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataAccess.0"/>
+      <type href="../../github/kAADL/tests/unit/instances/DataComponentAccess_simple_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <componentInstance name="Share1" category="data">
+      <subcomponent xsi:type="aadl2:DataSubcomponent" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DataType" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#Example.dataset_type"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#Example.pp.i"/>
+  </componentInstance>
+  <componentInstance name="B" category="process">
+    <featureInstance name="Reqdataset" category="dataAccess">
+      <feature xsi:type="aadl2:DataAccess" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataAccess.0"/>
+      <type href="../../github/kAADL/tests/unit/instances/DataComponentAccess_simple_impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <componentInstance name="Q" category="thread">
+      <featureInstance name="Req1" category="dataAccess">
+        <feature xsi:type="aadl2:DataAccess" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataAccess.0"/>
+        <type href="../../github/kAADL/tests/unit/instances/DataComponentAccess_simple_impl_Instance.aaxl2#/"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#Example.rr"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#Example.qq.i"/>
+  </componentInstance>
+  <connectionInstance name="A.Share1 -> B.Q.Req1" complete="true" kind="accessConnection" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@componentInstance.0">
+    <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedAccessConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#Example.simple.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/kAADL/tests/unit/DataComponentAccess.aadl#Example.simple.impl"/>
+</instance:SystemInstance>

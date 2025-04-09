@@ -1,0 +1,70 @@
+package SCADA::devices
+public
+	
+with SCADA::icd;
+
+
+
+system substation
+features
+	current : out data port SCADA::icd::current;
+	voltage : out data port SCADA::icd::voltage;
+	breaker : in data port SCADA::icd::breaker;
+	transformer : in data port SCADA::icd::transformer;
+	--receiveBUS: requires bus access SCADA::icd::internalBUS;
+	--sendBUS: provides bus access SCADA::icd::internalBUS;
+flows
+	f0 : flow source current;
+	f1 : flow source voltage;
+	f2 : flow sink breaker;
+	f3 : flow sink transformer;
+
+end substation; 
+
+system HMI
+features
+	current : in data port SCADA::icd::current;
+	voltage : in data port SCADA::icd::voltage;
+	breaker : out data port SCADA::icd::breaker;
+	transformer : out data port SCADA::icd::transformer;
+	--receiveBUS: requires bus access SCADA::icd::internalBUS;
+	--sendBUS: provides bus access SCADA::icd::internalBUS;
+flows
+	f0 : flow source breaker;
+	f1 : flow source transformer;
+	f2 : flow sink current;
+	f3 : flow sink voltage;
+
+end HMI; 
+
+system DB
+features
+	current : in data port SCADA::icd::current;
+	voltage : in data port SCADA::icd::voltage;
+	--receiveBUS: requires bus access SCADA::icd::internalBUS;
+flows
+	f0 : flow sink current;
+	f1 : flow sink voltage;
+
+end DB; 
+
+system DMS
+features
+	current : in data port SCADA::icd::current;
+	voltage : in data port SCADA::icd::voltage;
+	--receiveBUS: requires bus access SCADA::icd::internalBUS;
+flows
+	f0 : flow sink current;
+	f1 : flow sink voltage;
+
+end DMS; 
+
+system alarm
+features
+	alarmdata : in data port SCADA::icd::alarm_data;
+	--receiveBUS: requires bus access SCADA::icd::internalBUS;
+flows
+	f0 : flow sink alarmdata;
+end alarm; 
+
+end SCADA::devices;

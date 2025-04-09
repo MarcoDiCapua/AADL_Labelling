@@ -1,0 +1,45 @@
+package Lab2::Software::power_steering
+
+public
+
+with Lab2::icd; --<-- Access to custom variables: vehicle_speed_variable, torque_amount_variable, steering_wheel_cmd
+
+process power_steering
+features
+	vehicle_speed 		: in data port Lab2::icd::vehicle_speed_variable;
+	torque_amount     	: in data port Lab2::icd::torque_amount_variable;
+	steering_wheel_cmd  : out data port Lab2::icd::steering_wheel_cmd;
+flows
+	f0 : flow path vehicle_speed -> steering_wheel_cmd;
+	f1 : flow path torque_amount -> steering_wheel_cmd;
+end power_steering;
+
+
+process implementation power_steering.i
+subcomponents
+	power_steering_thr : thread power_steering_thread;
+connections
+	c0 : port vehicle_speed    							-> power_steering_thr.vehicle_speed_variable;
+	c1 : port torque_amount   							-> power_steering_thr.torque_amount_variable;
+	c2 : port power_steering_thr.steering_wheel_cmd   	-> steering_wheel_cmd;
+flows	
+	f0 : flow path vehicle_speed  -> c0 -> power_steering_thr.f0 -> c2 -> steering_wheel_cmd;
+	f1 : flow path torque_amount  -> c1 -> power_steering_thr.f1 -> c2 -> steering_wheel_cmd;
+end power_steering.i;
+
+
+thread power_steering_thread
+features
+	vehicle_speed_variable     	: in data port Lab2::icd::vehicle_speed_variable;
+	torque_amount_variable     	: in data port Lab2::icd::torque_amount_variable;
+	steering_wheel_cmd 			: out data port Lab2::icd::steering_wheel_cmd;
+flows
+	f0 : flow path vehicle_speed_variable -> steering_wheel_cmd;
+	f1 : flow path torque_amount_variable -> steering_wheel_cmd;
+properties
+	Dispatch_Protocol => Periodic;
+	Period            => 5ms;
+end power_steering_thread;
+
+
+end Lab2::Software::power_steering;

@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="ADIRU_impl_Instance" category="system">
+  <componentInstance name="afdx_network" category="bus">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Channel_Type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#/0/@ownedProperty.1/@ownedPropertyType/@ownedLiteral.2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Bandwidth"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="100">
+          <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.7.4.1.7.0.6::2::/2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <componentInstance name="VL1" category="virtual bus">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Bandwidth_Allocation_Gap"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="32">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.1.4.0.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Latency_Constraint"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.1.4.1.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Allowed_Message_Size"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="512">
+              <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="12144">
+              <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Jitter_Max"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="500">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.1.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedVirtualBusSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:VirtualBusImplementation" href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#adiru_buses.VL.vl1"/>
+    </componentInstance>
+    <componentInstance name="VL2" category="virtual bus">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Bandwidth_Allocation_Gap"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="8">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.2.4.0.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Latency_Constraint"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.2.4.1.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Allowed_Message_Size"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="512">
+              <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="12144">
+              <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Jitter_Max"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="500">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.1.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedVirtualBusSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:VirtualBusImplementation" href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#adiru_buses.VL.vl2"/>
+    </componentInstance>
+    <componentInstance name="VL3" category="virtual bus">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Bandwidth_Allocation_Gap"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="16">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.3.4.0.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Latency_Constraint"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.3.4.1.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Allowed_Message_Size"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="512">
+              <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="12144">
+              <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Jitter_Max"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="500">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.1.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedVirtualBusSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:VirtualBusImplementation" href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#adiru_buses.VL.vl3"/>
+    </componentInstance>
+    <componentInstance name="VL4" category="virtual bus">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Bandwidth_Allocation_Gap"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.4.4.0.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Latency_Constraint"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.4.4.1.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Allowed_Message_Size"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="512">
+              <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="12144">
+              <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Jitter_Max"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="500">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.1.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedVirtualBusSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:VirtualBusImplementation" href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#adiru_buses.VL.vl4"/>
+    </componentInstance>
+    <componentInstance name="VL5" category="virtual bus">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Bandwidth_Allocation_Gap"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="32">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.5.4.0.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Latency_Constraint"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.5.4.1.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Allowed_Message_Size"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="512">
+              <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="12144">
+              <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Jitter_Max"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="500">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.1.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedVirtualBusSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:VirtualBusImplementation" href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#adiru_buses.VL.vl5"/>
+    </componentInstance>
+    <componentInstance name="VL6" category="virtual bus">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Bandwidth_Allocation_Gap"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="32">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.6.4.0.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Latency_Constraint"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.6.4.1.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Allowed_Message_Size"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="512">
+              <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.0.7.0.6.2::2::/2"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="12144">
+              <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.0.7.0.6.3::2::/2"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../github/adiru_aadl/Adiru/afdx_properties.aadl#AFDX_Properties.Jitter_Max"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="500">
+            <unit href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#|::0.5.9.0.4.1.7.0.6::2::/2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <subcomponent xsi:type="aadl2:VirtualBusSubcomponent" href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedVirtualBusSubcomponent.5"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:VirtualBusImplementation" href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#adiru_buses.VL.vl6"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/adiru_aadl/Adiru/adiru_buses.aadl#adiru_buses.physical_afdx_link.impl"/>
+  </componentInstance>
+  <componentInstance name="cdu" category="device">
+    <featureInstance name="indicated_AOA">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="on_off_cdu" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="ad_on_off_cdu" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="ir_off_cmd" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.2"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="m1_disc_output" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.3"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="m2_disc_output" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.4"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="latitude" category="eventDataPort" direction="in out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.5"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="longitude" category="eventDataPort" direction="in out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.6"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="magnetic_heading" category="eventDataPort" direction="in out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.7"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/adiru_aadl/Adiru/subsystem.aadl#subsystem.cdu"/>
+  </componentInstance>
+  <componentInstance name="temperature_sensor_rdc" category="device">
+    <featureInstance name="tot_temp" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEventDataPort.0"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="static_air_temp" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEventDataPort.1"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <featureInstance name="afdx_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusAccess.0"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/adiru_aadl/Adiru/subsystem.aadl#subsystem.RDC_temperature_sensor"/>
+  </componentInstance>
+  <componentInstance name="pitot_static_sensor_rdc" category="device">
+    <featureInstance name="true_airspeed" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.0"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/12"/>
+    </featureInstance>
+    <featureInstance name="tot_pressure" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.1"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/13"/>
+    </featureInstance>
+    <featureInstance name="ground_speed" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.2"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/14"/>
+    </featureInstance>
+    <featureInstance name="indicated_AOA" category="eventDataPort" direction="out">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventDataPort.3"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="afdx_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/adiru_aadl/Adiru/subsystem.aadl#subsystem.RDC_pitot_static_sensor"/>
+  </componentInstance>
+  <componentInstance name="mem" category="memory">
+    <componentInstance name="irMem" category="memory">
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/adiru_aadl/Adiru/adiru_memory.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/adiru_aadl/Adiru/adiru_memory.aadl#adiru_memory.partition_memory.i"/>
+    </componentInstance>
+    <componentInstance name="adrMem" category="memory">
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/adiru_aadl/Adiru/adiru_memory.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedMemorySubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/adiru_aadl/Adiru/adiru_memory.aadl#adiru_memory.partition_memory.i"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/adiru_aadl/Adiru/adiru_memory.aadl#adiru_memory.main_memory.impl"/>
+  </componentInstance>
+  <componentInstance name="module_ir" category="system">
+    <featureInstance name="afdx_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedBusAccess.0"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <featureInstance name="altitude_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/15"/>
+    </featureInstance>
+    <featureInstance name="true_airspeed_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/12"/>
+    </featureInstance>
+    <featureInstance name="inertial_altitude_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.2"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/16"/>
+    </featureInstance>
+    <featureInstance name="inertial_vs_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.3"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/17"/>
+    </featureInstance>
+    <featureInstance name="present_pos_lat_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.4"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/18"/>
+    </featureInstance>
+    <featureInstance name="present_pos_long_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.5"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/19"/>
+    </featureInstance>
+    <featureInstance name="ground_speed_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.6"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/14"/>
+    </featureInstance>
+    <featureInstance name="track_angle_true_D" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.7"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/20"/>
+    </featureInstance>
+    <featureInstance name="magnetic_heading" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.8"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/21"/>
+    </featureInstance>
+    <featureInstance name="wind_speed_D" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.9"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/22"/>
+    </featureInstance>
+    <featureInstance name="wind_direction_true_D" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.10"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/23"/>
+    </featureInstance>
+    <featureInstance name="true_heading_D" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.11"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/24"/>
+    </featureInstance>
+    <featureInstance name="body_pitch_acc_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.12"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/25"/>
+    </featureInstance>
+    <featureInstance name="body_roll_acc_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.13"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/26"/>
+    </featureInstance>
+    <featureInstance name="body_yaw_acc_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.14"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/27"/>
+    </featureInstance>
+    <featureInstance name="set_latitude_in" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventDataPort.0"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="set_longitude_in" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventDataPort.1"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="set_magnetic_heading_in" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventDataPort.2"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="m1_disc" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventDataPort.3"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="m2_disc" category="eventDataPort">
+      <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventDataPort.4"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <componentInstance name="ir_memory" category="memory">
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/adiru_aadl/Adiru/adiru_memory.aadl#adiru_memory.partition_memory.i"/>
+    </componentInstance>
+    <componentInstance name="ir_process" category="process">
+      <featureInstance name="altitude_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/15"/>
+      </featureInstance>
+      <featureInstance name="true_airspeed_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/12"/>
+      </featureInstance>
+      <featureInstance name="inertial_altitude_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/16"/>
+      </featureInstance>
+      <featureInstance name="inertial_vs_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/17"/>
+      </featureInstance>
+      <featureInstance name="present_pos_lat_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/18"/>
+      </featureInstance>
+      <featureInstance name="present_pos_long_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/19"/>
+      </featureInstance>
+      <featureInstance name="ground_speed_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/14"/>
+      </featureInstance>
+      <featureInstance name="track_angle_true_D" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/20"/>
+      </featureInstance>
+      <featureInstance name="magnetic_heading" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.8"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/21"/>
+      </featureInstance>
+      <featureInstance name="wind_speed_D" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.9"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/22"/>
+      </featureInstance>
+      <featureInstance name="wind_direction_true_D" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.10"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/23"/>
+      </featureInstance>
+      <featureInstance name="true_heading_D" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.11"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/24"/>
+      </featureInstance>
+      <featureInstance name="body_pitch_acc_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.12"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/25"/>
+      </featureInstance>
+      <featureInstance name="body_roll_acc_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.13"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/26"/>
+      </featureInstance>
+      <featureInstance name="body_yaw_acc_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.14"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/27"/>
+      </featureInstance>
+      <featureInstance name="set_latitude" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.0"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/6"/>
+      </featureInstance>
+      <featureInstance name="set_longitude" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.1"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/7"/>
+      </featureInstance>
+      <featureInstance name="set_magnetic_heading" category="eventDataPort">
+        <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventDataPort.2"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/8"/>
+      </featureInstance>
+      <componentInstance name="IR_thread" category="thread">
+        <featureInstance name="th_altitude">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/15"/>
+        </featureInstance>
+        <featureInstance name="th_true_airspeed">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/12"/>
+        </featureInstance>
+        <featureInstance name="th_inertial_altitude" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/16"/>
+        </featureInstance>
+        <featureInstance name="th_inertial_vs" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/17"/>
+        </featureInstance>
+        <featureInstance name="th_present_pos_lat" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/18"/>
+        </featureInstance>
+        <featureInstance name="th_present_pos_long" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.5"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/19"/>
+        </featureInstance>
+        <featureInstance name="th_ground_speed" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.6"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/14"/>
+        </featureInstance>
+        <featureInstance name="th_track_angle_true_D" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.7"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/20"/>
+        </featureInstance>
+        <featureInstance name="th_magnetic_heading" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.8"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/21"/>
+        </featureInstance>
+        <featureInstance name="th_wind_speed_D" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.9"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/22"/>
+        </featureInstance>
+        <featureInstance name="th_wind_direction_true_D" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.10"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/23"/>
+        </featureInstance>
+        <featureInstance name="th_true_heading_D" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.11"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/24"/>
+        </featureInstance>
+        <featureInstance name="th_body_pitch_acc" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.12"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/25"/>
+        </featureInstance>
+        <featureInstance name="th_body_roll_acc" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.13"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/26"/>
+        </featureInstance>
+        <featureInstance name="th_body_yaw_acc" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.14"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/27"/>
+        </featureInstance>
+        <featureInstance name="th_set_latitude" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.0"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/6"/>
+        </featureInstance>
+        <featureInstance name="th_set_longitude" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.1"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/7"/>
+        </featureInstance>
+        <featureInstance name="th_set_magnetic_heading" category="eventDataPort">
+          <feature xsi:type="aadl2:EventDataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventDataPort.2"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/8"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadType" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#adiru_software.th_IR"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedProcessSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#adiru_software.prs_IR.impl"/>
+    </componentInstance>
+    <componentInstance name="cpu" category="processor">
+      <componentInstance name="partition_IR" category="virtual processor">
+        <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/adiru_aadl/Adiru/adiru_processor.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedVirtualProcessorSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:VirtualProcessorType" href="../../github/adiru_aadl/Adiru/adiru_processor.aadl#adiru_processor.partition_runtime"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedProcessorSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/adiru_aadl/Adiru/adiru_processor.aadl#adiru_processor.ir_processor.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/adiru_aadl/Adiru/subsystem.aadl#subsystem.ir_system.impl"/>
+  </componentInstance>
+  <componentInstance name="module_adr" category="system">
+    <featureInstance name="afdx_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.0"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <featureInstance name="altitude" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/15"/>
+    </featureInstance>
+    <featureInstance name="mach" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.1"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/28"/>
+    </featureInstance>
+    <featureInstance name="altitude_rate" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.2"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/29"/>
+    </featureInstance>
+    <featureInstance name="tat" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.3"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="indicated_AOA" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.4"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="baro_corr_altitude1" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.5"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/30"/>
+    </featureInstance>
+    <featureInstance name="baro_corr_altitude2" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.6"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/31"/>
+    </featureInstance>
+    <featureInstance name="computed_air_speed" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.7"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/32"/>
+    </featureInstance>
+    <featureInstance name="true_airspeed" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.8"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/12"/>
+    </featureInstance>
+    <featureInstance name="ground_speed" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.9"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/14"/>
+    </featureInstance>
+    <featureInstance name="sat" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.10"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <featureInstance name="impact_pressure" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.11"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/33"/>
+    </featureInstance>
+    <featureInstance name="tot_pressure" direction="in out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.12"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/13"/>
+    </featureInstance>
+    <featureInstance name="corrected_AOA" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.13"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/34"/>
+    </featureInstance>
+    <featureInstance name="discrete_word1" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.14"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/35"/>
+    </featureInstance>
+    <featureInstance name="discrete_word2" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.15"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/36"/>
+    </featureInstance>
+    <componentInstance name="adr_memory" category="memory">
+      <componentInstance name="irMem" category="memory">
+        <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/adiru_aadl/Adiru/adiru_memory.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedMemorySubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/adiru_aadl/Adiru/adiru_memory.aadl#adiru_memory.partition_memory.i"/>
+      </componentInstance>
+      <componentInstance name="adrMem" category="memory">
+        <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/adiru_aadl/Adiru/adiru_memory.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedMemorySubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/adiru_aadl/Adiru/adiru_memory.aadl#adiru_memory.partition_memory.i"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedMemorySubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:MemoryImplementation" href="../../github/adiru_aadl/Adiru/adiru_memory.aadl#adiru_memory.main_memory.impl"/>
+    </componentInstance>
+    <componentInstance name="adr_process" category="process">
+      <featureInstance name="altitude" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/15"/>
+      </featureInstance>
+      <featureInstance name="mach" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/28"/>
+      </featureInstance>
+      <featureInstance name="altitude_rate" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/29"/>
+      </featureInstance>
+      <featureInstance name="tat" direction="in out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/9"/>
+      </featureInstance>
+      <featureInstance name="indicated_AOA" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="baro_corr_altitude1" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.5"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/30"/>
+      </featureInstance>
+      <featureInstance name="baro_corr_altitude2" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.6"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/31"/>
+      </featureInstance>
+      <featureInstance name="computed_air_speed" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.7"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/32"/>
+      </featureInstance>
+      <featureInstance name="true_airspeed" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.8"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/12"/>
+      </featureInstance>
+      <featureInstance name="ground_speed" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.9"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/14"/>
+      </featureInstance>
+      <featureInstance name="sat" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.10"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/10"/>
+      </featureInstance>
+      <featureInstance name="impact_pressure" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.11"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/33"/>
+      </featureInstance>
+      <featureInstance name="tot_pressure" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.12"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/13"/>
+      </featureInstance>
+      <featureInstance name="corrected_AOA" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.13"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/34"/>
+      </featureInstance>
+      <featureInstance name="discrete_word1" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.14"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/35"/>
+      </featureInstance>
+      <featureInstance name="discrete_word2" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.15"/>
+        <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/36"/>
+      </featureInstance>
+      <componentInstance name="ADR_thread" category="thread">
+        <featureInstance name="altitude" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/15"/>
+        </featureInstance>
+        <featureInstance name="mach" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.1"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/28"/>
+        </featureInstance>
+        <featureInstance name="altitude_rate" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.2"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/29"/>
+        </featureInstance>
+        <featureInstance name="tat" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.3"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/9"/>
+        </featureInstance>
+        <featureInstance name="indicated_AOA" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.4"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/0"/>
+        </featureInstance>
+        <featureInstance name="baro_corr_altitude1" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.5"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/30"/>
+        </featureInstance>
+        <featureInstance name="baro_corr_altitude2" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.6"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/31"/>
+        </featureInstance>
+        <featureInstance name="computed_air_speed" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.7"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/32"/>
+        </featureInstance>
+        <featureInstance name="true_airspeed" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.8"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/12"/>
+        </featureInstance>
+        <featureInstance name="sat" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.9"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/10"/>
+        </featureInstance>
+        <featureInstance name="impact_pressure" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.10"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/33"/>
+        </featureInstance>
+        <featureInstance name="tot_pressure" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.11"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/13"/>
+        </featureInstance>
+        <featureInstance name="corrected_AOA" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.12"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/34"/>
+        </featureInstance>
+        <featureInstance name="discrete_word1" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.13"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/35"/>
+        </featureInstance>
+        <featureInstance name="discrete_word2" direction="out">
+          <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.14"/>
+          <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/36"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadType" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#adiru_software.th_ADR"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedProcessSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#adiru_software.prs_ADR.impl"/>
+    </componentInstance>
+    <componentInstance name="cpu" category="processor">
+      <componentInstance name="partition_ADR" category="virtual processor">
+        <subcomponent xsi:type="aadl2:VirtualProcessorSubcomponent" href="../../github/adiru_aadl/Adiru/adiru_processor.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedVirtualProcessorSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:VirtualProcessorType" href="../../github/adiru_aadl/Adiru/adiru_processor.aadl#adiru_processor.partition_runtime"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedProcessorSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/adiru_aadl/Adiru/adiru_processor.aadl#adiru_processor.adr_processor.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/adiru_aadl/Adiru/subsystem.aadl#subsystem.adr_system.impl"/>
+  </componentInstance>
+  <componentInstance name="FMC" category="system">
+    <featureInstance name="present_pos_lat_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/other_system.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/18"/>
+    </featureInstance>
+    <featureInstance name="present_pos_long_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/other_system.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/19"/>
+    </featureInstance>
+    <featureInstance name="ground_speed_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/other_system.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/14"/>
+    </featureInstance>
+    <featureInstance name="track_angle_true_D">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/other_system.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/20"/>
+    </featureInstance>
+    <featureInstance name="wind_speed_D">
+      <feature xsi:type="aadl2:DataPort" href="../../github/adiru_aadl/Adiru/other_system.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+      <type href="../../github/adiru_aadl/Adiru/instances/Adiru_ADIRU_impl_Instance.aaxl2#/22"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/adiru_aadl/Adiru/other_system.aadl#other_system.fmc_system.impl"/>
+  </componentInstance>
+  <connectionInstance name="afdx_network -> module_ir.afdx_access" complete="true" kind="accessConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="afdx_network -> module_adr.afdx_access" complete="true" kind="accessConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="afdx_network -> pitot_static_sensor_rdc.afdx_access" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.4" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.3/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="afdx_network -> temperature_sensor_rdc.afdx_access" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cdu.m1_disc_output -> module_ir.m1_disc" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.19" source="//@componentInstance.1/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.4" destination="//@componentInstance.5/@featureInstance.19">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cdu.latitude -> module_ir.ir_process.IR_thread.th_set_latitude" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.15" source="//@componentInstance.1/@featureInstance.6">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.6" destination="//@componentInstance.5/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.16" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.15">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5/@componentInstance.1" source="//@componentInstance.5/@componentInstance.1/@featureInstance.15" destination="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.15">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cdu.longitude -> module_ir.ir_process.IR_thread.th_set_longitude" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.16" source="//@componentInstance.1/@featureInstance.7">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.7" destination="//@componentInstance.5/@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.17" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5/@componentInstance.1" source="//@componentInstance.5/@componentInstance.1/@featureInstance.16" destination="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cdu.magnetic_heading -> module_ir.ir_process.IR_thread.th_set_magnetic_heading" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.17" source="//@componentInstance.1/@featureInstance.8">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.8" destination="//@componentInstance.5/@featureInstance.18">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.18" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5/@componentInstance.1" source="//@componentInstance.5/@componentInstance.1/@featureInstance.17" destination="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="temperature_sensor_rdc.tot_temp -> module_adr.adr_process.tat" complete="true" kind="portConnection" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.3" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.6/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@featureInstance.4" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="temperature_sensor_rdc.static_air_temp -> module_adr.sat" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.11" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.6/@featureInstance.11">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pitot_static_sensor_rdc.true_airspeed -> module_adr.true_airspeed" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.9" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.6/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pitot_static_sensor_rdc.tot_pressure -> module_adr.tot_pressure" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.13" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@componentInstance.6/@featureInstance.13">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pitot_static_sensor_rdc.ground_speed -> module_adr.ground_speed" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.10" source="//@componentInstance.3/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.2" destination="//@componentInstance.6/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pitot_static_sensor_rdc.indicated_AOA -> module_adr.indicated_AOA" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.5" source="//@componentInstance.3/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.3" destination="//@componentInstance.6/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.17"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="module_ir.ir_process.IR_thread.th_present_pos_lat -> FMC.present_pos_lat_in" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.0" source="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.4">
+    <connectionReference context="//@componentInstance.5/@componentInstance.1" source="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.5/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.5" destination="//@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="module_ir.ir_process.IR_thread.th_present_pos_long -> FMC.present_pos_long_in" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.1" source="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.5">
+    <connectionReference context="//@componentInstance.5/@componentInstance.1" source="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.1/@featureInstance.5" destination="//@componentInstance.5/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.6" destination="//@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="module_ir.ir_process.IR_thread.th_ground_speed -> FMC.ground_speed_in" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.2" source="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.6">
+    <connectionReference context="//@componentInstance.5/@componentInstance.1" source="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.6" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.1/@featureInstance.6" destination="//@componentInstance.5/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.7" destination="//@componentInstance.7/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="module_ir.ir_process.IR_thread.th_track_angle_true_D -> FMC.track_angle_true_D" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.3" source="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.7">
+    <connectionReference context="//@componentInstance.5/@componentInstance.1" source="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.7" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.1/@featureInstance.7" destination="//@componentInstance.5/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.8" destination="//@componentInstance.7/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="module_ir.ir_process.IR_thread.th_wind_speed_D -> FMC.wind_speed_D" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.4" source="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.9">
+    <connectionReference context="//@componentInstance.5/@componentInstance.1" source="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.9" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@componentInstance.1/@featureInstance.9" destination="//@componentInstance.5/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.12"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.10" destination="//@componentInstance.7/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="module_adr.adr_process.ADR_thread.altitude -> module_ir.ir_process.IR_thread.th_altitude" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.0" source="//@componentInstance.6/@componentInstance.1/@componentInstance.0/@featureInstance.0">
+    <connectionReference context="//@componentInstance.6/@componentInstance.1" source="//@componentInstance.6/@componentInstance.1/@componentInstance.0/@featureInstance.0" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.1" destination="//@componentInstance.5/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.1" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5/@componentInstance.1" source="//@componentInstance.5/@componentInstance.1/@featureInstance.0" destination="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="module_adr.adr_process.ADR_thread.indicated_AOA -> cdu.indicated_AOA" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.6/@componentInstance.1/@componentInstance.0/@featureInstance.4">
+    <connectionReference context="//@componentInstance.6/@componentInstance.1" source="//@componentInstance.6/@componentInstance.1/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.6/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.5" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="module_adr.adr_process.ADR_thread.true_airspeed -> module_ir.ir_process.IR_thread.th_true_airspeed" complete="true" kind="portConnection" destination="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.1" source="//@componentInstance.6/@componentInstance.1/@componentInstance.0/@featureInstance.8">
+    <connectionReference context="//@componentInstance.6/@componentInstance.1" source="//@componentInstance.6/@componentInstance.1/@componentInstance.0/@featureInstance.8" destination="//@componentInstance.6/@componentInstance.1/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.6" source="//@componentInstance.6/@componentInstance.1/@featureInstance.8" destination="//@componentInstance.6/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.9" destination="//@componentInstance.5/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/Adiru.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5" source="//@componentInstance.5/@featureInstance.2" destination="//@componentInstance.5/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/subsystem.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.5/@componentInstance.1" source="//@componentInstance.5/@componentInstance.1/@featureInstance.1" destination="//@componentInstance.5/@componentInstance.1/@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/adiru_aadl/Adiru/adiru_software.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/adiru_aadl/Adiru/Adiru.aadl#Adiru.ADIRU.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/adiru_aadl/Adiru/Adiru.aadl#Adiru.ADIRU.impl"/>
+</instance:SystemInstance>

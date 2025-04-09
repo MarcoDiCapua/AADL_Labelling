@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="vantSystem_with_devices_Instance" category="system">
+  <componentInstance name="this_usb_1" category="bus">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/StereoCamAADL/StereoCamAADL/properties_set/bus_properties.aadl#Bus_Properties.Available_Bandwidth"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="aadl2:IntegerLiteral" value="1500">
+            <unit href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-usb.aadl#|::0.5.9.0.4.0.7.0.6.2.0::2::/2"/>
+          </ownedListElement>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-usb.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-usb.aadl#buses.USB.USB.impl"/>
+  </componentInstance>
+  <componentInstance name="this_usb_2" category="bus">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/StereoCamAADL/StereoCamAADL/properties_set/bus_properties.aadl#Bus_Properties.Available_Bandwidth"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="aadl2:IntegerLiteral" value="1500">
+            <unit href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-usb.aadl#|::0.5.9.0.4.0.7.0.6.2.0::2::/2"/>
+          </ownedListElement>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-usb.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-usb.aadl#buses.USB.USB.impl"/>
+  </componentInstance>
+  <componentInstance name="this_ethernet" category="bus">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/StereoCamAADL/StereoCamAADL/properties_set/bus_properties.aadl#Bus_Properties.Available_Bandwidth"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="aadl2:IntegerLiteral" value="10">
+            <unit href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-ethernet.aadl#|::0.5.9.0.4.0.7.0.6.2.0::2::/2"/>
+          </ownedListElement>
+          <ownedListElement xsi:type="aadl2:IntegerLiteral" value="100">
+            <unit href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-ethernet.aadl#|::0.5.9.0.4.0.7.0.6.2.1::2::/2"/>
+          </ownedListElement>
+          <ownedListElement xsi:type="aadl2:IntegerLiteral" value="1">
+            <unit href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-ethernet.aadl#|::0.5.9.0.4.0.7.0.6.2.2::2::/2"/>
+          </ownedListElement>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-ethernet.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-ethernet.aadl#Buses.Ethernet.Ethernet.impl"/>
+  </componentInstance>
+  <componentInstance name="this_uart" category="bus">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/StereoCamAADL/StereoCamAADL/properties_set/bus_properties.aadl#Bus_Properties.Available_Bandwidth"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="aadl2:IntegerLiteral" value="9600">
+            <unit href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-uart.aadl#|::0.5.9.1.4.0.7.0.6.2.0::2::/2"/>
+          </ownedListElement>
+          <ownedListElement xsi:type="aadl2:IntegerLiteral" value="19200">
+            <unit href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-uart.aadl#|::0.5.9.1.4.0.7.0.6.2.1::2::/2"/>
+          </ownedListElement>
+          <ownedListElement xsi:type="aadl2:IntegerLiteral" value="38400">
+            <unit href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-uart.aadl#|::0.5.9.1.4.0.7.0.6.2.2::2::/2"/>
+          </ownedListElement>
+          <ownedListElement xsi:type="aadl2:IntegerLiteral" value="57600">
+            <unit href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-uart.aadl#|::0.5.9.1.4.0.7.0.6.2.3::2::/2"/>
+          </ownedListElement>
+          <ownedListElement xsi:type="aadl2:IntegerLiteral" value="115200">
+            <unit href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-uart.aadl#|::0.5.9.1.4.0.7.0.6.2.4::2::/2"/>
+          </ownedListElement>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-uart.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-uart.aadl#Buses.UART.UART.impl"/>
+  </componentInstance>
+  <componentInstance name="this_sd_bus" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-misc.aadl#Buses.Misc.generic_bus.impl"/>
+  </componentInstance>
+  <componentInstance name="this_wifi" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusImplementation" href="../../github/StereoCamAADL/StereoCamAADL/buses/buses-wifi.aadl#buses.wifi.wifi.impl"/>
+  </componentInstance>
+  <componentInstance name="this_camera_L" category="device">
+    <featureInstance name="imgOut" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="camera_trigger" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="usbPort" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#StereoCamAADL_Devices.camera.impl"/>
+  </componentInstance>
+  <componentInstance name="this_camera_R" category="device">
+    <featureInstance name="imgOut" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="camera_trigger" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="usbPort" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedBusAccess.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#StereoCamAADL_Devices.camera.impl"/>
+  </componentInstance>
+  <componentInstance name="this_laser" category="device">
+    <featureInstance name="laser_data_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="proc_evt" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="Serial_Wire" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="Supply" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.1"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#StereoCamAADL_Devices.laser.impl"/>
+  </componentInstance>
+  <componentInstance name="this_gps" category="device">
+    <featureInstance name="gps_data_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="gps_trigger" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="gps_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedBusAccess.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#StereoCamAADL_Devices.GPS.impl"/>
+  </componentInstance>
+  <componentInstance name="this_sd_card" category="device">
+    <featureInstance name="data_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedBusAccess.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#StereoCamAADL_Devices.SDcard.impl"/>
+  </componentInstance>
+  <componentInstance name="this_remote_control" category="device">
+    <featureInstance name="control_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="l_camera_img_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="r_camera_img_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.2"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="bus_access" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedBusAccess.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Devices.aadl#StereoCamAADL_Devices.remote_control.impl"/>
+  </componentInstance>
+  <componentInstance name="this_controller" category="process">
+    <featureInstance name="l_cam_img_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="r_cam_img_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="laser_data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="gps_data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/5"/>
+    </featureInstance>
+    <featureInstance name="flash_mem_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/7"/>
+    </featureInstance>
+    <featureInstance name="control_data">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.5"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/9"/>
+    </featureInstance>
+    <featureInstance name="l_cam_img_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.6"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="r_cam_img_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.7"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="cameras_trigger" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="laser_trigger" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="gps_trigger" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.2"/>
+    </featureInstance>
+    <componentInstance name="data_saver_thread" category="thread">
+      <featureInstance name="l_camera_img_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="r_camera_img_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="gps_data_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <featureInstance name="laser_data_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="flash_mem_data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/7"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#StereoCamAADL_Threads.data_saver.impl"/>
+    </componentInstance>
+    <componentInstance name="stereo_img_collector_thread" category="thread">
+      <featureInstance name="l_camera_img_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="r_camera_img_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="l_camera_img_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="r_camera_img_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="cameras_trigger" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#StereoCamAADL_Threads.stereo_img_collector.impl"/>
+    </componentInstance>
+    <componentInstance name="laser_data_collector_thread" category="thread">
+      <featureInstance name="laser_data_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="laser_data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/2"/>
+      </featureInstance>
+      <featureInstance name="laser_trigger" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#StereoCamAADL_Threads.laser_data_collector"/>
+    </componentInstance>
+    <componentInstance name="gps_data_collector_thread" category="thread">
+      <featureInstance name="gps_data_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.0"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <featureInstance name="gps_data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedDataPort.1"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <featureInstance name="gps_trigger" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadType" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#StereoCamAADL_Threads.gps_data_collector"/>
+    </componentInstance>
+    <componentInstance name="wifi_control_data_collector_thread" category="thread">
+      <featureInstance name="control_data">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/9"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#StereoCamAADL_Threads.wifi_control_data_collector.impl"/>
+    </componentInstance>
+    <componentInstance name="wifi_video_data_sender_thread" category="thread">
+      <featureInstance name="l_camera_img_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="r_camera_img_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.1"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="l_camera_img_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.2"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <featureInstance name="r_camera_img_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.3"/>
+        <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.5"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL_Threads.aadl#StereoCamAADL_Threads.wifi_video_data_sender.impl"/>
+    </componentInstance>
+    <connectionInstance name="stereo_img_collector_thread.l_camera_img_out -> data_saver_thread.l_camera_img_in" complete="true" kind="portConnection" destination="//@componentInstance.12/@componentInstance.0/@featureInstance.0" source="//@componentInstance.12/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.12/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="stereo_img_collector_thread.l_camera_img_out -> wifi_video_data_sender_thread.l_camera_img_in" complete="true" kind="portConnection" destination="//@componentInstance.12/@componentInstance.5/@featureInstance.0" source="//@componentInstance.12/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.12/@componentInstance.5/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.12"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="stereo_img_collector_thread.r_camera_img_out -> data_saver_thread.r_camera_img_in" complete="true" kind="portConnection" destination="//@componentInstance.12/@componentInstance.0/@featureInstance.1" source="//@componentInstance.12/@componentInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.12/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="stereo_img_collector_thread.r_camera_img_out -> wifi_video_data_sender_thread.r_camera_img_in" complete="true" kind="portConnection" destination="//@componentInstance.12/@componentInstance.5/@featureInstance.1" source="//@componentInstance.12/@componentInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.12/@componentInstance.5/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.13"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="laser_data_collector_thread.laser_data_out -> data_saver_thread.laser_data_in" complete="true" kind="portConnection" destination="//@componentInstance.12/@componentInstance.0/@featureInstance.3" source="//@componentInstance.12/@componentInstance.2/@featureInstance.1">
+      <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.12/@componentInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.7"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="gps_data_collector_thread.gps_data_out -> data_saver_thread.gps_data_in" complete="true" kind="portConnection" destination="//@componentInstance.12/@componentInstance.0/@featureInstance.2" source="//@componentInstance.12/@componentInstance.3/@featureInstance.1">
+      <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.3/@featureInstance.1" destination="//@componentInstance.12/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.10"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#StreoCamAADL.controller.withThreads"/>
+  </componentInstance>
+  <componentInstance name="this_A57" category="processor">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/StereoCamAADL/StereoCamAADL/properties_set/processor_properties.aadl#Processor_Properties.Processor_Frequency"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1430">
+          <unit href="../../github/StereoCamAADL/StereoCamAADL/properties_set/processor_properties.aadl#/0/@ownedPropertyType.0/@ownedUnitsType/@ownedLiteral.2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/StereoCamAADL/StereoCamAADL/properties_set/processor_properties.aadl#Processor_Properties.Processor_Family"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/StereoCamAADL/StereoCamAADL/properties_set/processor_properties.aadl#/0/@ownedProperty.0/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/StereoCamAADL/StereoCamAADL/processors/processors-arm.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/StereoCamAADL/StereoCamAADL/properties_set/processor_properties.aadl#Processor_Properties.Endianess"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/StereoCamAADL/StereoCamAADL/properties_set/processor_properties.aadl#/0/@ownedProperty.2/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/StereoCamAADL/StereoCamAADL/processors/processors-arm.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/StereoCamAADL/StereoCamAADL/properties_set/processor_properties.aadl#Processor_Properties.Word_Length"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="32">
+          <unit href="../../github/StereoCamAADL/StereoCamAADL/processors/processors-arm.aadl#|::0.5.9.0.4.2.7.0.6::2::/2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/StereoCamAADL/StereoCamAADL/processors/processors-arm.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.2"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="uart_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/6"/>
+    </featureInstance>
+    <featureInstance name="usb_bus_1" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.1"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="usb_bus_2" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.2"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="ethernet" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.3"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="sd_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.4"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/8"/>
+    </featureInstance>
+    <featureInstance name="wifi_bus" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.5"/>
+      <type href="../../github/StereoCamAADL/StereoCamAADL/src/instances/StereoCamAADL_vantSystem_with_devices_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#StreoCamAADL.A57.impl"/>
+  </componentInstance>
+  <connectionInstance name="this_usb_1 -> this_A57.usb_bus_1" complete="true" kind="accessConnection" destination="//@componentInstance.13/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.13/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_usb_1 -> this_camera_L.usbPort" complete="true" kind="accessConnection" destination="//@componentInstance.6/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.6/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_usb_2 -> this_A57.usb_bus_2" complete="true" kind="accessConnection" destination="//@componentInstance.13/@featureInstance.2" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.13/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_usb_2 -> this_camera_R.usbPort" complete="true" kind="accessConnection" destination="//@componentInstance.7/@featureInstance.2" source="//@componentInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1" destination="//@componentInstance.7/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_ethernet -> this_A57.ethernet" complete="true" kind="accessConnection" destination="//@componentInstance.13/@featureInstance.3" source="//@componentInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2" destination="//@componentInstance.13/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_ethernet -> this_laser.Serial_Wire" complete="true" kind="accessConnection" destination="//@componentInstance.8/@featureInstance.2" source="//@componentInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2" destination="//@componentInstance.8/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_uart -> this_A57.uart_bus" complete="true" kind="accessConnection" destination="//@componentInstance.13/@featureInstance.0" source="//@componentInstance.3">
+    <connectionReference context="/" source="//@componentInstance.3" destination="//@componentInstance.13/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_uart -> this_gps.gps_bus" complete="true" kind="accessConnection" destination="//@componentInstance.9/@featureInstance.2" source="//@componentInstance.3">
+    <connectionReference context="/" source="//@componentInstance.3" destination="//@componentInstance.9/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_sd_bus -> this_A57.sd_bus" complete="true" kind="accessConnection" destination="//@componentInstance.13/@featureInstance.4" source="//@componentInstance.4">
+    <connectionReference context="/" source="//@componentInstance.4" destination="//@componentInstance.13/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_sd_bus -> this_sd_card.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.10/@featureInstance.1" source="//@componentInstance.4">
+    <connectionReference context="/" source="//@componentInstance.4" destination="//@componentInstance.10/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_wifi -> this_A57.wifi_bus" complete="true" kind="accessConnection" destination="//@componentInstance.13/@featureInstance.5" source="//@componentInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5" destination="//@componentInstance.13/@featureInstance.5">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_wifi -> this_remote_control.bus_access" complete="true" kind="accessConnection" destination="//@componentInstance.11/@featureInstance.3" source="//@componentInstance.5">
+    <connectionReference context="/" source="//@componentInstance.5" destination="//@componentInstance.11/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_camera_L.imgOut -> this_controller.stereo_img_collector_thread.l_camera_img_in" complete="true" kind="portConnection" destination="//@componentInstance.12/@componentInstance.1/@featureInstance.0" source="//@componentInstance.6/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.12/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@featureInstance.0" destination="//@componentInstance.12/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_camera_R.imgOut -> this_controller.stereo_img_collector_thread.r_camera_img_in" complete="true" kind="portConnection" destination="//@componentInstance.12/@componentInstance.1/@featureInstance.1" source="//@componentInstance.7/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.0" destination="//@componentInstance.12/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@featureInstance.1" destination="//@componentInstance.12/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_laser.laser_data_out -> this_controller.laser_data_collector_thread.laser_data_in" complete="true" kind="portConnection" destination="//@componentInstance.12/@componentInstance.2/@featureInstance.0" source="//@componentInstance.8/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0" destination="//@componentInstance.12/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@featureInstance.2" destination="//@componentInstance.12/@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_gps.gps_data_out -> this_controller.gps_data_collector_thread.gps_data_in" complete="true" kind="portConnection" destination="//@componentInstance.12/@componentInstance.3/@featureInstance.0" source="//@componentInstance.9/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.0" destination="//@componentInstance.12/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@featureInstance.3" destination="//@componentInstance.12/@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_remote_control.control_out -> this_controller.wifi_control_data_collector_thread.control_data" complete="true" kind="portConnection" destination="//@componentInstance.12/@componentInstance.4/@featureInstance.0" source="//@componentInstance.11/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.0" destination="//@componentInstance.12/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@featureInstance.5" destination="//@componentInstance.12/@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.data_saver_thread.flash_mem_data_out -> this_sd_card.data_in" complete="true" kind="portConnection" destination="//@componentInstance.10/@featureInstance.0" source="//@componentInstance.12/@componentInstance.0/@featureInstance.4">
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.12/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.11"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.4" destination="//@componentInstance.10/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.stereo_img_collector_thread.cameras_trigger -> this_camera_L.camera_trigger" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.1" source="//@componentInstance.12/@componentInstance.1/@featureInstance.4">
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.12/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.8" destination="//@componentInstance.6/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.stereo_img_collector_thread.cameras_trigger -> this_camera_R.camera_trigger" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.1" source="//@componentInstance.12/@componentInstance.1/@featureInstance.4">
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.12/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.8" destination="//@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.laser_data_collector_thread.laser_trigger -> this_laser.proc_evt" complete="true" kind="portConnection" destination="//@componentInstance.8/@featureInstance.1" source="//@componentInstance.12/@componentInstance.2/@featureInstance.2">
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.2/@featureInstance.2" destination="//@componentInstance.12/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.9" destination="//@componentInstance.8/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.gps_data_collector_thread.gps_trigger -> this_gps.gps_trigger" complete="true" kind="portConnection" destination="//@componentInstance.9/@featureInstance.1" source="//@componentInstance.12/@componentInstance.3/@featureInstance.2">
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.3/@featureInstance.2" destination="//@componentInstance.12/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.10" destination="//@componentInstance.9/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.wifi_video_data_sender_thread.l_camera_img_out -> this_remote_control.l_camera_img_in" complete="true" kind="portConnection" destination="//@componentInstance.11/@featureInstance.1" source="//@componentInstance.12/@componentInstance.5/@featureInstance.2">
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.5/@featureInstance.2" destination="//@componentInstance.12/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.14"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.6" destination="//@componentInstance.11/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="this_controller.wifi_video_data_sender_thread.r_camera_img_out -> this_remote_control.r_camera_img_in" complete="true" kind="portConnection" destination="//@componentInstance.11/@featureInstance.2" source="//@componentInstance.12/@componentInstance.5/@featureInstance.3">
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.5/@featureInstance.3" destination="//@componentInstance.12/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.15"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.7" destination="//@componentInstance.11/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#StreoCamAADL.vantSystem.with_devices"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/StereoCamAADL/StereoCamAADL/src/StereoCamAADL.aadl#StreoCamAADL.vantSystem.with_devices"/>
+</instance:SystemInstance>

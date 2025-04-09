@@ -1,0 +1,139 @@
+package StreoCamAADL
+public
+	with Processors::ARM;
+
+	with Buses::USB;
+
+	with Processor_Properties;
+
+	with StereoCamAADL_Threads;
+
+	with StereoCamAADL_Devices;
+
+	with StereoCamAADL_Data;
+
+	with Buses::Ethernet;
+
+	with Buses::UART;
+
+	with Buses::wifi;
+	
+	with Buses::Misc;
+
+	system vantSystem
+	end vantSystem;
+
+	system implementation vantSystem.with_devices
+		subcomponents
+			this_controller: process controller.withThreads;
+			this_A57: processor A57.impl;
+			this_camera_L: device StereoCamAADL_Devices::camera.impl;
+			this_camera_R: device StereoCamAADL_Devices::camera.impl;
+			this_laser: device StereoCamAADL_Devices::laser.impl;
+			this_gps: device StereoCamAADL_Devices::GPS.impl;
+			this_sd_card: device StereoCamAADL_Devices::SDcard.impl;
+			this_remote_control: device StereoCamAADL_Devices::remote_control.impl;
+			this_usb_1: bus Buses::USB::USB.impl;
+			this_usb_2: bus Buses::USB::USB.impl;
+			this_ethernet: bus Buses::Ethernet::Ethernet.impl;
+			this_uart: bus Buses::UART::UART.impl;
+			this_sd_bus: bus Buses::Misc::generic_bus.impl;
+			this_wifi: bus buses::wifi::wifi.impl;
+		connections
+			bus_usb_1_A57: bus access this_usb_1 -> this_A57.usb_bus_1;
+			bus_usb_2_A57: bus access this_usb_2 -> this_A57.usb_bus_2;
+			bus_ethernet_A57: bus access this_ethernet -> this_A57.ethernet;
+			bus_uart_A57: bus access this_uart -> this_A57.uart_bus;
+			bus_sd_A57: bus access this_sd_bus -> this_A57.sd_bus;
+			bus_wifi_A57: bus access this_wifi -> this_A57.wifi_bus;
+			bus_usb_1_cam_l: bus access this_usb_1 -> this_camera_l.usbPort;
+			bus_usb_2_cam_r: bus access this_usb_2 -> this_camera_r.usbPort;
+			bus_ethernet_laser: bus access this_ethernet -> this_laser.Serial_Wire;
+			bus_uart_gps: bus access this_uart -> this_gps.gps_bus;
+			bus_sd: bus access this_sd_bus -> this_sd_card.bus_access;
+			bus_wifi_remote_control: bus access this_wifi -> this_remote_control.bus_access;
+			l_cam_trigger: port this_controller.cameras_trigger -> this_camera_l.camera_trigger;
+			r_cam_trigger: port this_controller.cameras_trigger -> this_camera_r.camera_trigger;
+			l_cam_img: port this_camera_L.imgOut -> this_controller.l_cam_img_in;
+			r_cam_img: port this_camera_R.imgOut -> this_controller.r_cam_img_in;
+			laser_trigger: port this_controller.laser_trigger -> this_laser.proc_evt;
+			laser_data: port this_laser.laser_data_out -> this_controller.laser_data;
+			gps_trigger: port this_controller.gps_trigger -> this_gps.gps_trigger;
+			gps_data: port this_gps.gps_data_out -> this_controller.gps_data;
+			sd_data: port this_controller.flash_mem_out -> this_sd_card.data_in;
+			control_data: port this_remote_control.control_out -> this_controller.control_data;
+			l_cam_img_out: port this_controller.l_cam_img_out -> this_remote_control.l_camera_img_in;
+			r_cam_img_out: port this_controller.r_cam_img_out -> this_remote_control.r_camera_img_in;
+		properties
+			Actual_Processor_Binding => (reference (this_A57)) applies to this_controller;
+	end vantSystem.with_devices;
+
+	-----------------------
+	-------PROCESSOR-------
+	-----------------------
+	processor A57 extends Processors::ARM::Generic_ARM
+		features
+			uart_bus: requires bus access Buses::UART::UART.impl;
+			usb_bus_1: requires bus access Buses::USB::USB.impl;
+			usb_bus_2: requires bus access Buses::USB::USB.impl;
+			ethernet: requires bus access Buses::Ethernet::Ethernet.impl;
+			sd_bus: requires bus access Buses::Misc::generic_bus.impl;
+			wifi_bus: requires bus access Buses::wifi::wifi.impl;
+		properties
+			Processor_Properties::Processor_Frequency => 1430 Mhz;
+			Scheduling_Protocol => (POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL);
+	end A57;
+
+	processor implementation A57.impl
+	end A57.impl;
+
+	-----------------------
+	-------PROCESS---------
+	-----------------------
+	process controller
+		features
+			l_cam_img_in: in data port StereoCamAADL_Data::camera_image.impl;
+			r_cam_img_in: in data port StereoCamAADL_Data::camera_image.impl;
+			laser_data: in data port StereoCamAADL_Data::laser_data.impl;
+			gps_data: in data port StereoCamAADL_Data::gps_data.impl;
+			flash_mem_out: out data port StereoCamAADL_Data::flash_mem_data.impl;
+			control_data: in data port StereoCamAADL_Data::control_data.impl;
+			l_cam_img_out: out data port StereoCamAADL_Data::camera_image.impl;
+			r_cam_img_out: out data port StereoCamAADL_Data::camera_image.impl;
+			cameras_trigger: out event port;
+			laser_trigger: out event port;
+			gps_trigger: out event port;
+	end controller;
+
+	process implementation controller.withThreads
+		subcomponents
+			data_saver_thread: thread StereoCamAADL_Threads::data_saver.impl;
+			stereo_img_collector_thread: thread StereoCamAADL_Threads::stereo_img_collector.impl;
+			laser_data_collector_thread: thread StereoCamAADL_Threads::laser_data_collector;
+			gps_data_collector_thread: thread StereoCamAADL_Threads::gps_data_collector;
+			wifi_control_data_collector_thread: thread StereoCamAADL_Threads::wifi_control_data_collector.impl;
+			wifi_video_data_sender_thread: thread StereoCamAADL_Threads::wifi_video_data_sender.impl;
+		connections
+			cameras_trigger_conn: port stereo_img_collector_thread.cameras_trigger -> cameras_trigger;
+			l_cam_img_in_conn: port l_cam_img_in -> stereo_img_collector_thread.l_camera_img_in;
+			r_cam_img_in_conn: port r_cam_img_in -> stereo_img_collector_thread.r_camera_img_in;
+			l_cam_img_save: port stereo_img_collector_thread.l_camera_img_out -> data_saver_thread.l_camera_img_in;
+			r_cam_img_save: port stereo_img_collector_thread.r_camera_img_out -> data_saver_thread.r_camera_img_in;
+			laser_trigger_conn: port laser_data_collector_thread.laser_trigger -> laser_trigger;
+			laser_data_in: port laser_data -> laser_data_collector_thread.laser_data_in;
+			laser_data_save: port laser_data_collector_thread.laser_data_out -> data_saver_thread.laser_data_in;
+			gps_trigger_conn: port gps_data_collector_thread.gps_trigger -> gps_trigger;
+			gps_data_in: port gps_data -> gps_data_collector_thread.gps_data_in;
+			gps_data_save: port gps_data_collector_thread.gps_data_out -> data_saver_thread.gps_data_in;
+			flash_mem_conn: port data_saver_thread.flash_mem_data_out -> flash_mem_out;
+			l_cam_img_stream: port stereo_img_collector_thread.l_camera_img_out -> wifi_video_data_sender_thread.l_camera_img_in;
+			r_cam_img_stream: port stereo_img_collector_thread.r_camera_img_out -> wifi_video_data_sender_thread.r_camera_img_in;
+			l_cam_img_out_conn: port wifi_video_data_sender_thread.l_camera_img_out -> l_cam_img_out;
+			r_cam_img_out_conn: port wifi_video_data_sender_thread.r_camera_img_out -> r_cam_img_out;
+			control_data_conn: port control_data -> wifi_control_data_collector_thread.control_data;
+	end controller.withThreads;
+
+	
+end StreoCamAADL;
+
+

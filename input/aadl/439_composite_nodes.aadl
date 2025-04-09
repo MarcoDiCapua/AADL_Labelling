@@ -1,0 +1,34 @@
+package composite_nodes
+public
+annex agree {**
+						
+node concurrencyFactor(t0: real, t1: real, t2: real, totalTime: real)
+	returns(can_use_1: bool, can_use_2: bool, can_use_3: bool);
+let
+	can_use_1 = ((t0 + t1 + t2) < totalTime);
+	can_use_2 = ((t0) < totalTime and (t1 + t2) < totalTime)
+	 or ((t0 + t1) < totalTime and (t2) < totalTime)
+	 or ((t1) < totalTime and (t0 + t2) < totalTime);
+	can_use_3 = ((t0) < totalTime and (t1) < totalTime and (t2) < totalTime);
+
+tel;
+
+node min(num0: real, num1: real, num2: real)
+	returns(min: real);
+let
+	min = if (num0 < num1) 
+		then if (num0 < num2)
+			then num0
+			else num2
+		else if (num1 < num2)
+			then num1
+			else num2;
+tel;
+
+
+**};
+
+
+
+	
+end composite_nodes;

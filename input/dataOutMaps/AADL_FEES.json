@@ -1,0 +1,12 @@
+{
+  "isParsingSucceeded": false,
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_FEES/Hardware/Properties/Mem_properties.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\",
+  "isSavedTheModel": false,
+  "docFiles": [],
+  "errors": [
+    "ERROR:Couldn't resolve reference to property type 'Size'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_FEES/Hardware/Properties/Mem_properties.aadl line : 2 column : 9)",
+    "Questo modello: file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL_FEES/Hardware/Properties/Mem_properties.aadl non è un AadlPackage"
+  ]
+}

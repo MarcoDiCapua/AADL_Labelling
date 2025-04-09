@@ -1,0 +1,22 @@
+Property Set Permissions is
+	with permission;
+	deny_all_access_to_port: inherit permission::permission_type => 
+					[id => 01; action => zero; object => "this port";] applies to (port);
+					
+	permit_read_access_to_port: inherit permission::permission_type => 
+					[id => 02; action => read; object => "this port";] applies to (port);
+	
+	permit_write_access_to_port: inherit permission::permission_type => 
+					[id => 03; action => write; object => "this port";] applies to (port);
+					
+	permit_read_access_to_thread: inherit permission::permission_type => 
+					[id => 04; action => read; object => "this port";] applies to (thread);
+
+	permit_write_access_to_thread: inherit permission::permission_type => 
+					[id => 05; action => write; object => "this port";] applies to (thread);
+					
+	permit_writeonly_access_to_thread: inherit permission::permission_type => 
+					[id => 06; action => writeonly; object => "this port";] applies to (thread);
+	
+	
+end Permissions;

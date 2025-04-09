@@ -1,0 +1,21 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "smartshutter",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-shutter/smartshutter.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\aadl-shutter_smartshutter_SmartShutterSystem_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'SEI'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-shutter/smartshutter.aadl line : 5 column : 7)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'Data_Model'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-shutter/smartshutter.aadl line : 6 column : 7)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'Base_Types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-shutter/smartshutter.aadl line : 7 column : 7)",
+    "ERROR:Couldn't resolve reference to property definition 'Data_Model::Enumerators'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-shutter/smartshutter.aadl line : 13 column : 10)",
+    "ERROR:Couldn't resolve reference to property definition 'Data_Model::base_type'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-shutter/smartshutter.aadl line : 14 column : 10)",
+    "ERROR:Couldn't resolve reference to Classifier 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-shutter/smartshutter.aadl line : 14 column : 48)",
+    "ERROR:Couldn't resolve reference to property definition 'Data_Size'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-shutter/smartshutter.aadl line : 15 column : 10)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'Bytes'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-shutter/smartshutter.aadl line : 15 column : 26)",
+    "ERROR:Couldn't resolve reference to property definition 'Data_Model::Enumerators'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-shutter/smartshutter.aadl line : 20 column : 7)",
+    "ERROR:Couldn't resolve reference to property definition 'Data_Model::base_type'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/aadl-shutter/smartshutter.aadl line : 21 column : 10)"
+  ]
+}

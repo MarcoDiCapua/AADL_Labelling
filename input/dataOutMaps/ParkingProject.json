@@ -1,0 +1,25 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "parking_system",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ParkingProject/parking_system.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\ParkingProject_parking_system_parking_simple_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": [
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\ParkingProject\\README.md",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\ParkingProject\\parking_simple\\Makefile",
+    "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\ParkingProject\\parking_simple\\main\\Makefile"
+  ],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'deployment'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ParkingProject/parking_system.aadl line : 3 column : 7)",
+    "ERROR:Couldn't resolve reference to ModelUnit 'Base_Types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ParkingProject/parking_system.aadl line : 4 column : 7)",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Memory_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ParkingProject/parking_system.aadl line : 62 column : 3)",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ParkingProject/parking_system.aadl line : 63 column : 3)",
+    "ERROR:Couldn't resolve reference to property definition 'Compute_Execution_Time'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ParkingProject/parking_system.aadl line : 73 column : 4)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'ms'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ParkingProject/parking_system.aadl line : 73 column : 31)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'ms'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ParkingProject/parking_system.aadl line : 73 column : 39)",
+    "ERROR:Couldn't resolve reference to property definition 'Deadline'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ParkingProject/parking_system.aadl line : 74 column : 4)",
+    "ERROR:Couldn't resolve reference to UnitLiteral 'ms'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ParkingProject/parking_system.aadl line : 74 column : 18)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/ParkingProject/parking_system.aadl line : 71 column : 29)"
+  ]
+}

@@ -1,0 +1,47 @@
+--------------------------------------------------------------------------------
+-- Devices.aadl (version 05) - 
+--
+-- Authors: Stephen C. Barrett (scbarrett@ksu.edu) &
+--          Brian R. Larson (brl@ksu.edu)
+--          Department of Computing & Information Sciences
+--
+-- Licensed Material - Property of Kansas State University
+--------------------------------------------------------------------------------
+-- 03: Minimally defined physical devices of isolette system.
+--
+-- 04: Device interfaces defined, but left untyped.
+--
+-- 05: Device interfaces typed with modeled data entities.
+--------------------------------------------------------------------------------
+package Devices
+public
+with Base_Types, Iso_Types;  -- Basic & isolette specific data types
+
+
+--------------------------------------------------------------------------------
+-- Device for producing heat.
+--------------------------------------------------------------------------------
+device heat_source
+  features
+    on_heater: in event data port Base_Types::Boolean;
+    heater_output: out data port Iso_Types::heat;
+end heat_source;
+
+device implementation heat_source.impl
+end heat_source.impl;
+
+
+--------------------------------------------------------------------------------
+-- Device for measuring the quantity of heat production.
+--------------------------------------------------------------------------------
+device temperature_sensor
+  features
+    air_heat: in data port Iso_Types::heat;
+    air_temp: out data port Iso_Types::temperature;
+end temperature_sensor;
+
+device implementation temperature_sensor.impl
+end temperature_sensor.impl;
+
+
+end Devices;

@@ -1,0 +1,51 @@
+property set FORA_Security is
+
+	-- properties to support documenting and analyzing trust boundaries in a system
+	-- Trust level {Low, Medium, High} - initial cut at trust levels
+	-- Constants defined for our TrustLevel Property, with the semantics
+	-- that the higher the value, the greater the trust level
+	
+	Low : constant aadlinteger => 0;
+	Medium : constant aadlinteger => 1;
+	High : constant aadlinteger => 2;
+
+	-- Definition of the TrustLevel property
+	TrustLevel: aadlinteger applies to (all);
+
+	-- Specify the allowable groups in the GroupMembership property
+	 GroupMembership: enumeration (FogNode, EndSystem, Sensor, Actuator, Cloud) applies to
+	 (device, system, process, thread, processor,memory,bus, data);
+	-- Group matches to Category in Bell LaPadula confidentiality plug-in
+	
+	-- Properties that supports access mode of data
+     AccessProtection: list of record (
+	 AccessMode: enumeration (r, w, rw, x);
+	 AccessGroup: enumeration (FogNode, EndSystem, Sensor, Actuator, Cloud);
+	 ) applies to (all);
+	
+	-- Data encryption properties - a list of applicable types (these are just examples, more can be added later)
+	-- To support Tampering Attack Type
+	 DataEncryptionHashing: enumeration 
+	 	(MD5, SHA ) applies to (data);
+	 	
+	 DataEncryptionPrivateKey: enumeration 
+	 	( DataEncryptionStandard, AdvancedEncryptionStandard, InternationalDataEncryptionAlgorithm) 
+	 	applies to (data);
+	  
+	  --DataEncryptionPrivateKey: enumeration (DES, AES, IDEA) applies to (data);
+ 	 DataEncryptionPublicKey: enumeration (RSA, DiffieHellman) applies to (data);
+	
+	-- Timing properties specific to Denial of Service Attacks
+	-- Interval allowed between incoming messages....if interval exceeded then trigger DOS alert
+	 PageRequestTime: Time_Range applies to (thread);
+	
+	-- Maximum amount of time for a page to be serviced
+	 PageServiceDeadline: Time applies to 
+	 	(thread, device, subprogram, subprogram access, event port, event data port);
+	
+	 PageExecution_Time: Time_Range applies to
+	    (thread, device, subprogram, event port, event data port); 
+	 
+	
+end FORA_Security;
+	

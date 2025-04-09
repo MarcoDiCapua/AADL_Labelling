@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="ManeuverTemplates_impl_Instance" category="system">
+  <featureInstance name="sameAltitudeGoUp" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.0"/>
+    <type href="../../github/AviationRequirementModeling/aadl/tcas/instances/tcas_full_ManeuverTemplates_impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="sameAltitudeGoDown" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.1"/>
+    <type href="../../github/AviationRequirementModeling/aadl/tcas/instances/tcas_full_ManeuverTemplates_impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="bottomIntrusion" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.2"/>
+    <type href="../../github/AviationRequirementModeling/aadl/tcas/instances/tcas_full_ManeuverTemplates_impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="topIntrusion" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedDataPort.3"/>
+    <type href="../../github/AviationRequirementModeling/aadl/tcas/instances/tcas_full_ManeuverTemplates_impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#tcas.ManeuverTemplates.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/AviationRequirementModeling/aadl/tcas/tcas_full.aadl#tcas.ManeuverTemplates.impl"/>
+</instance:SystemInstance>

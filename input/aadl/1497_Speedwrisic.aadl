@@ -1,0 +1,542 @@
+package Speedwrisic
+public
+	with SEI;
+	with sensor;
+	with EMV2;
+	with wrisicresolutelibrary;
+	with Base_Types;
+	with agree_speed;
+	
+	
+	annex EMV2 {**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+	
+	error types
+		ValueError : type; -- when device sends incompatiable values
+		NoValueError : type extends ValueError; -- null or no value
+		InvalidValueError : type extends ValueError; -- outofrange or invalid value
+		
+	end types;**};
+	
+system Speed
+		
+end Speed;
+ 	
+system implementation Speed.impl
+	subcomponents
+		Vehicletransit: system Vehicletransit.impl;
+		RSE: system RSEquip.impl;
+		TMInfo: system TMInfo.impl;
+		RoadAssistanceITS: system RoadAssistanceITS.impl;
+	connections
+		LSpeed:port Vehicletransit.LSpeed->RSE.LInfo;
+		WSensor:port Vehicletransit.WSensor->RSE.Einfo;
+		speed:port RSE.speedInformation->Vehicletransit.SpeedMgmtData;
+		SignalData:port RSE.SignalInfo->Vehicletransit.SignalInfo;
+		TRAfficEnvData:port RSE.TRAfficEnvData->RoadAssistanceITS.TRAfficEnvData;
+		RoadsideSignage:port RoadAssistanceITS.vehicleSignagedata->RSE.vehicleSignagedata;
+		
+		new2: port RoadAssistanceITS.variableSpeedlimit -> TMInfo.variableSpeed;
+		new3: port TMInfo.Sensorscontrol -> RoadAssistanceITS.Sensorscontrol;
+		new4: port RoadAssistanceITS.Sensorsflowpath -> TMInfo.Sensorsflowpath;
+		new5: port RSE.TRAfficEnvData -> TMInfo.trafficSituation;
+		new6: port TMInfo.SpeedMMInfo -> RSE.SpeedMMInfo;
+		
+	annex Resolute {**
+		prove(checkThreshold())		
+		prove (checkSyncData())
+		prove (checkThreads())		
+		
+	**};
+	
+	end Speed.impl;
+	
+system Vehicletransit
+	
+	features
+	LSpeed: out data port Base_Types::Integer_16;
+	WSensor: out data port;
+	SpeedMgmtData: in data port Base_Types::Integer_16;
+	SignalInfo: in data port;
+	
+	
+	annex agree {**
+		
+		assume "speed data should'nt be negative" : SpeedMgmtData >= 0;
+		
+		guarantee "Transition speed should be less than the desired transit speed" : (LSpeed <= SpeedMgmtData);
+		
+	**};
+		
+	
+	end Vehicletransit;
+
+	system implementation Vehicletransit.impl
+	subcomponents
+			SpeedAssistances: process SpeedAssistances.impl;
+			RoadsideInfoReception: process RoadsideInfoReception.impl;
+			EnvironmentMontior: process EnvironmentMontior.impl;
+			safecheck:	process safecheck.impl;
+			sensor: device weathersensor.impl;
+	connections
+	vsignalidata: port SignalInfo -> RoadsideInfoReception.VehicleSignage;
+	vehicleEnvironmentalData: port EnvironmentMontior.EnvData -> WSensor;
+	vlocationmot: port safecheck.LocationInfo -> LSpeed;
+	SpeedManageInfo: port SpeedMgmtData->RoadsideInfoReception.SpeedManagement;
+	speedInformation : port RoadsideInfoReception.speedInformation->SpeedAssistances.speedInformation;
+	weatherInfo : port sensor.sensor_output -> EnvironmentMontior.In_data;
+
+	end Vehicletransit.impl;
+	
+	process SpeedAssistances
+		features
+			speedInformation: in data port;
+	end SpeedAssistances;
+	
+	process implementation SpeedAssistances.impl
+		properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+	end SpeedAssistances.impl;
+	
+	process RoadsideInfoReception
+		
+	features
+			SpeedManagement: in data port Base_Types::Integer_16;
+			VehicleSignage: in data port Base_Types::Boolean;
+			speedInformation : out data port Base_Types::Integer_16;
+	flows
+			speedFlow: flow path SpeedManagement-> speedInformation;
+	properties
+			Latency => 2 ms .. 4 ms applies to speedFlow;
+			
+      		SEI::MIPSBudget => 775.0 MIPS;
+      		SEI::RAMBudget => 775.0 MByte;
+	
+	annex EMV2 {**
+			use types     error_library;
+					
+		**};
+	annex agree {**
+		assume "speed data should'nt exceed its threshold value" : SpeedManagement >= 0;
+		assume "signal data should not be false and always be a boolean type" : VehicleSignage = true;
+		
+		
+		guarantee "information remains positive" : speedInformation >= 0;
+	**};
+	end RoadsideInfoReception;
+	
+	process implementation RoadsideInfoReception.impl
+		subcomponents
+			speed_limit: thread speedReg.impl;
+			vehicle_signage: thread vehicleSign.impl;
+		connections
+			speed_in : port SpeedManagement -> speed_limit.s_in;
+			speed_val: port speed_limit.s_out -> vehicle_signage.s_in;
+			SignalData	 : port VehicleSignage -> vehicle_signage.v_in;
+			speed_out: port vehicle_signage.s_out -> speedInformation;
+		properties
+      		SEI::MIPSBudget => 775.0 MIPS;
+      		SEI::RAMBudget => 775.0 MByte;
+			
+		
+	end RoadsideInfoReception.impl;
+	
+	process EnvironmentMontior
+		features
+			In_data: in data port Base_Types::Integer_8;
+			EnvData: out data port Base_Types::Integer_8;
+		annex EMV2 {**
+			use types error_library;	
+				error propagations
+				In_data : in propagation {InvalidValue};
+			flows
+				ef0 : error sink In_data{InvalidValue};
+			end propagations;
+		
+			properties	
+				emv2::hazards => 
+					([	failure => "Error/No Value";
+						description => "NO data displayed by temperature sensors";
+					])
+					applies to In_data.invalidvalue;
+		**};
+		annex agree{**
+			assume "tempearture displays no data" : In_data < 50 and In_data > -50;
+			
+			guarantee "tempearture displayed. Validation is true" : EnvData < 50 and EnvData > -50;
+		**};
+	end EnvironmentMontior;
+	
+	process implementation EnvironmentMontior.impl
+		subcomponents 
+			sensor: thread inVehicleSensor.impl;
+		connections
+			conn0: port In_data -> sensor.temp_in;
+			conn1: port sensor.temp_out -> EnvData;
+		properties
+      		SEI::MIPSBudget => 775.0 MIPS;
+      		SEI::RAMBudget => 775.0 MByte;
+			
+	end EnvironmentMontior.impl;
+	
+	process safecheck
+		
+	features
+		LocationInfo: out data port;
+			
+	end safecheck;
+	
+	process implementation safecheck.impl
+		properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+	end safecheck.impl;
+	
+	thread speedReg
+		features 
+			s_in : in data port;
+			s_out: out event data port;
+		flows
+			speedreg_thread_path0 : flow path s_in -> s_out;		
+		properties
+			latency => 3 ms .. 4 ms applies to speedreg_thread_path0;
+			Dispatch_Protocol => Periodic;
+			Period => 20ms;
+	end speedReg;
+	
+	thread implementation speedReg.impl
+	end speedReg.impl;
+	
+	thread vehicleSign
+		features
+			v_in: in data port;
+			s_in: in event data port;
+			s_out: out data port;
+		flows
+			vehiclesign_thread_path0 : flow path s_in -> s_out;
+			vehiclesign_thread_path1 : flow path v_in -> s_out;			
+		properties
+			latency => 3 ms .. 4 ms applies to vehiclesign_thread_path0,vehiclesign_thread_path1;
+			Dispatch_Protocol => Periodic;
+			Period => 20ms;	
+			
+	end vehicleSign;
+	
+	thread implementation vehicleSign.impl
+	end vehicleSign.impl;
+	
+	thread inVehicleSensor
+		features
+			temp_in : in data port;
+			temp_out: out data port;
+		flows
+			temp_thread_path0: flow path temp_in -> temp_out;
+		properties
+			latency => 3 ms .. 4 ms applies to temp_thread_path0;
+			Dispatch_Protocol => Periodic;
+			Period => 20ms;	
+	end inVehicleSensor;
+	
+	thread implementation inVehicleSensor.impl
+		
+	end inVehicleSensor.impl;
+	
+	device weathersensor extends sensor::env_sensor
+		features
+			sensor_output : refined to out data port;
+			annex EMV2 {**
+			use types error_library;	
+				error propagations
+				sensor_output : out propagation {InvalidValue};
+			flows
+				ef0 : error source sensor_output{InvalidValue};
+			end propagations;
+		
+			properties	
+				emv2::hazards => 
+					([	failure => "Error/No Value";
+						description => "NO data displayed by temperature sensors";
+					])
+					applies to sensor_output.invalidvalue;
+		**};
+	end weathersensor;
+	
+	device implementation weathersensor.impl
+		
+	end weathersensor.impl;
+
+	system RSEquip
+		features
+	LInfo: in data port;
+	Einfo: in data port;
+	speedInformation: out data port;
+	SignalInfo: out data port;
+	vehicleSignagedata:in data port;
+	TRAfficEnvData:out data port;
+	SpeedMMInfo : in data port;
+	
+	end RSEquip;
+
+	system implementation RSEquip.impl
+		subcomponents
+			RSEEnvMonitoring: process RSEEnvMonitoring.impl;
+			RoadwayTMonitoring: process RoadwayTMonitoring.impl;
+			RSETravInfoComm: process RSETravInfoComm.impl;
+			RSESpeedMgmt: process RSESpeedMgmt.impl;
+		connections
+			RSESignage: port RoadwayTMonitoring.SignalInfo-> SignalInfo ;
+			RSEEnvironmentalData: port Einfo->RSEEnvMonitoring.Einfo ;
+			RSETravInfo: port RSESpeedMgmt.SpeedOut-> speedInformation ;
+			RSElocinfo: port LInfo->RSETravInfoComm.LocInfo ;
+			vsignalidata:port vehicleSignagedata->RoadwayTMonitoring.vehicleSignageinfo;
+			TRAfficEnv:port RoadwayTMonitoring.trafficmonitoring->TRAfficEnvData;
+	
+	
+			new_connection: port SpeedMMInfo -> RSESpeedMgmt.SpeedIn;
+	end RSEquip.impl;
+
+
+
+process RSEEnvMonitoring
+	
+	features
+		Einfo:in data port;
+	
+end RSEEnvMonitoring;
+
+process implementation RSEEnvMonitoring.impl
+	properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+end RSEEnvMonitoring.impl;
+
+
+process RoadwayTMonitoring
+	features
+		SignalInfo:out data port;
+		vehicleSignageinfo:in data port;
+		trafficmonitoring:out data port;
+	flows
+			signFlow: flow path vehicleSignageinfo-> SignalInfo;
+			traffFlow: flow path vehicleSignageinfo -> trafficmonitoring;
+	properties
+			Latency => 2 ms .. 4 ms applies to signFlow,traffFlow;
+			
+      		SEI::MIPSBudget => 775.0 MIPS;
+      		SEI::RAMBudget => 775.0 MByte;
+	
+	annex EMV2 {**
+			use types     error_library;
+			
+			
+		**};
+end RoadwayTMonitoring;
+
+process implementation RoadwayTMonitoring.impl
+	subcomponents
+		vehicleSign: thread signal_in.impl;
+	connections
+		conn0: port vehicleSignageinfo -> vehicleSign.v_in;
+		conn1: port vehicleSign.s_out -> SignalInfo;
+		conn2: port vehicleSign.t_out -> trafficmonitoring;
+	properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+end RoadwayTMonitoring.impl;
+
+process RSETravInfoComm
+	features
+		LocInfo:in data port;
+end RSETravInfoComm;
+process implementation RSETravInfoComm.impl
+	properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+end RSETravInfoComm.impl;
+
+process RSESpeedMgmt
+	features
+		
+		SpeedIn: in data port;
+		SpeedOut: out data port;
+end RSESpeedMgmt;
+
+process implementation RSESpeedMgmt.impl
+	properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+end RSESpeedMgmt.impl;
+
+thread signal_in
+		features
+			v_in: in data port;
+			t_out: out data port;
+			s_out: out data port;
+		flows
+			vehiclesign_thread_path0 : flow path v_in -> t_out;
+			vehiclesign_thread_path1 : flow path v_in -> s_out;			
+		properties
+			latency => 3 ms .. 4 ms applies to vehiclesign_thread_path0,vehiclesign_thread_path1;
+			Dispatch_Protocol => Periodic;
+			Period => 20ms;	
+			
+	end signal_in;
+thread implementation signal_in.impl
+	
+end signal_in.impl;
+
+	system TMInfo
+		features
+			
+			variableSpeed:in data port;
+			Sensorscontrol:out data port;
+			Sensorsflowpath:in data port;
+			trafficSituation:in data port;
+			SpeedMMInfo:out data port;
+			SpeedMMStatus:in data port;
+								
+	end TMInfo;
+
+	system implementation TMInfo.impl
+		subcomponents
+			TMDistribution: process TMDistribution.impl;
+			TMLimits: process TMLimits.impl;
+			TMMontior: process TMMontior.impl;
+			Survelliance:	process Survelliance.impl;
+		
+	connections
+	new: port TMLimits.info -> SpeedMMInfo;
+	new2: port SpeedMMStatus -> TMLimits.status;
+	new3: port trafficSituation -> Survelliance.trafficData;
+	new4: port TMMontior.EnvOut -> Sensorscontrol;
+	new5: port variableSpeed -> TMDistribution.varSpeed;
+	new6: port Sensorsflowpath ->
+							TMMontior.EnvIn;
+	end TMInfo.impl;
+
+
+process TMDistribution
+	
+	features
+		varSpeed : in data port;
+		
+end TMDistribution;
+
+process implementation TMDistribution.impl
+	properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+end TMDistribution.impl;
+
+process TMLimits
+	features
+		status : in data port;
+		info : out data port;
+	
+end TMLimits;
+
+process implementation TMLimits.impl
+	properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+end TMLimits.impl;
+
+process TMMontior
+	features
+			EnvIn: in data port;
+			EnvOut : out data port;
+	
+end TMMontior;
+
+process implementation TMMontior.impl
+	properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+end TMMontior.impl;
+
+process Survelliance
+	features
+		trafficData: in data port;
+	
+end Survelliance;
+
+process implementation Survelliance.impl
+	properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+end Survelliance.impl;
+
+
+
+	system RoadAssistanceITS
+		features 
+			
+			variableSpeedlimit:out data port;
+			Sensorscontrol:in data port;
+			Sensorsflowpath:out data port;
+			vehicleSignagedata:out data port;
+			TrafficEnvData:in data port;
+			
+	end RoadAssistanceITS;
+
+	system implementation RoadAssistanceITS.impl
+		subcomponents
+			RTInfo: process RTInfo.impl;
+			RTSurveillance: process RTSurveillance.impl;
+			REmontior: process REmontior.impl;
+			RVaryingLimits: process RVaryingLimits.impl;
+		connections
+			trafficIfo : port TrafficEnvData->RTSurveillance.trafficInfo;
+	
+	new2: port TrafficEnvData -> RTInfo.trafficInfo;
+	new3: port REmontior.EnvOut -> Sensorsflowpath;
+	new4: port Sensorscontrol -> REmontior.EnvIn;
+	new5: port RTInfo.SignalData -> vehicleSignagedata;
+	new6: port RVaryingLimits.varSpeed -> variableSpeedlimit;
+	end RoadAssistanceITS.impl;
+
+
+process RTInfo
+	features
+		trafficInfo : in data port;
+		SignalData : out data port;
+	
+end RTInfo;
+
+process implementation RTInfo.impl
+	properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+end RTInfo.impl;
+
+process RTSurveillance
+	features
+		trafficInfo: in data port;
+	
+end RTSurveillance;
+
+process implementation RTSurveillance.impl
+	properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+end RTSurveillance.impl;
+
+process REmontior
+	features
+		EnvOut : out data port;
+		EnvIn : in data port;
+	
+end REmontior;
+
+process implementation REmontior.impl
+	properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+end REmontior.impl;
+
+process RVaryingLimits
+	features
+		varSpeed : out data port;
+	
+end RVaryingLimits;
+
+process implementation RVaryingLimits.impl
+	properties		
+      		SEI::MIPSBudget => 775.0 MIPS;
+end RVaryingLimits.impl;
+
+
+
+
+
+
+
+
+end Speedwrisic;

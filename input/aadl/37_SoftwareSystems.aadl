@@ -1,0 +1,31 @@
+package SoftwareSystems
+public
+	system cruiseControl
+		features
+			ui_in: in data port;
+			ud_out: out data port;
+			ta_out: out data port;
+			wrs_in: in data port;
+			bp_in: in data port;
+		flows
+			flow_UI_UD: flow path ui_in -> ud_out {
+				Latency => 5ms..5ms;
+			};
+			flow_bp_act: flow path bp_in -> ta_out{
+				Latency => 15ms..15ms;
+			};
+			flow_wr_act: flow path wrs_in -> ta_out{
+				Latency => 30ms..30ms;
+			};
+	end cruiseControl;
+	
+	system antiLockSystem
+		features
+			wrs_in: in data port;
+			bp_out: out data port;
+--		flows
+--			flow_bp_act: flow path albs_in -> act_out {
+--				Latency => 15ms..15ms;
+--			};
+	end antiLockSystem;
+end SoftwareSystems;

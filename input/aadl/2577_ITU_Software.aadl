@@ -1,0 +1,272 @@
+package ITU_Software
+public
+	
+-------------------------------
+-- 引用包
+-------------------------------	
+	with ITU_Data_Types;
+	with ITU_Hardware;
+
+-------------------------------
+-- 系统
+-------------------------------	
+	system ITU_System
+
+	end ITU_System;
+		
+	system implementation ITU_System.impl
+		subcomponents
+			PC : process ParseCmd;
+			SG : process SGNCC;
+			ES : process ESLC;
+			EO : process EONOFF;
+			FT : process FreTime;
+		connections
+			c_SGNCC : port PC.ParseCmd_Data -> SG.ParseCmd_Data;
+			c_ESLC : port PC.ParseCmd_Data -> ES.ParseCmd_Data;
+			c_EONOFF : port PC.ParseCmd_Data -> EO.ParseCmd_Data;
+			c_FreTime : port PC.ParseCmd_Data -> FT.ParseCmd_Data;
+	end ITU_System.impl;
+	
+-------------------------------
+-- 解析指令
+-------------------------------	
+	process ParseCmd
+		features
+		-- in
+			ParseCmd_BusInt : in data port ITU_Data_Types::ParseCmd_BusInt;
+			ParseCmd_DataFromCtu : in event data port ITU_Data_Types::ParseCmd_DataFromCtu;
+		-- out
+			ParseCmd_SGNCC : out event data port ITU_Data_Types::ParseCmd_SGNCC;	
+			ParseCmd_ESLC : out event data port ITU_Data_Types::ParseCmd_ESLC;
+			ParseCmd_EONOFF : out event data port ITU_Data_Types::ParseCmd_EONOFF;
+			ParseCmd_FreTime : out event data port ITU_Data_Types::ParseCmd_FreTime;
+			
+			ParseCmd_Data : out data port ITU_Data_Types::ParseCmd_Data;
+--			SGNCC_DataToGncc : out data port ITU_Data_Types::SGNCC_DataToGncc;
+--			FreTime_LclTime : out data port ITU_Data_Types::FreTime_LclTime;
+--			ESLC_SlcCmd : out data port ITU_Data_Types::ESLC_SlcCmd;
+--			EONOFF_OnOffCmd : out data port ITU_Data_Types::EONOFF_OnOffCmd;
+		flows
+			flow0 : flow source ParseCmd_SGNCC;
+			flow1 : flow source ParseCmd_ESLC;
+			flow2 : flow source ParseCmd_EONOFF;
+			flow3 : flow source ParseCmd_FreTime;
+			flow4 : flow source ParseCmd_Data;
+	end ParseCmd;
+	
+	process implementation ParseCmd.impl
+		subcomponents
+			answerBusInt : thread AnswerBusInt ;
+			postBusOp : thread PostBusInt.ParseCmd in modes (BusOp);
+--			DataToGncc : thread group SGNCC;
+		connections
+			c0 : port ParseCmd_BusInt -> answerBusInt.BusInt in modes (BusOp); 
+		modes
+			wait : initial mode;
+			BusOp : mode;
+			wait -[ answerBusInt.BusInt ]-> BusOp;
+--		connections
+--			c0 : port ParseCmd_BusInt -> DataToGncc.SGNCC_DataToGncc;
+	end ParseCmd.impl;
+			
+	thread AnswerBusInt 
+		features
+			BusInt : in event data port ITU_Data_Types::ParseCmd_BusInt;
+	end AnswerBusInt;
+	
+	thread implementation AnswerBusInt.ParseCmd
+	end AnswerBusInt.ParseCmd;
+	
+	thread PostBusInt		
+	end PostBusInt;
+	
+	thread implementation PostBusInt.ParseCmd		
+	end PostBusInt.ParseCmd;
+	
+-------------------------------
+-- 响应指令
+-------------------------------		
+	thread AnswerParseCmd	
+		features
+			parseCmd_SGNCC : in event data port ITU_Data_Types::ParseCmd_SGNCC;
+			parseCmd_ESLC : in event data port ITU_Data_Types::ParseCmd_ESLC;
+			parseCmd_EONOFF : in event data port ITU_Data_Types::ParseCmd_EONOFF;
+			parseCmd_FreTime : in event data port ITU_Data_Types::ParseCmd_FreTime;
+	end AnswerParseCmd;
+	
+-------------------------------
+-- 转发GNCC数据
+-------------------------------	
+	process SGNCC
+		features
+			ParseCmd_Data : in data port ITU_Data_Types::ParseCmd_Data;
+			ParseCmd_SGNCC : in event data port ITU_Data_Types::ParseCmd_SGNCC;
+			
+			SGNCC_DataToGncc : out data port ITU_Data_Types::SGNCC_DataToGncc;
+			FaultCheck_MF : out data port ITU_Data_Types::FaultCheck_MF;
+		flows 
+			flow0 : flow path ParseCmd_Data -> SGNCC_DataToGncc;
+	end SGNCC;
+	
+	process implementation SGNCC.impl
+		subcomponents
+			answerParseCmd : thread AnswerParseCmd.SGNCC;
+		connections
+			c0 : port ParseCmd_SGNCC -> AnswerParseCmd.parseCmd_SGNCC in modes (parseOp); 
+		modes
+			wait : initial mode;
+			parseOp : mode;
+			wait -[ answerParseCmd.parseCmd_SGNCC ]-> parseOp;	
+	end SGNCC.impl;
+	
+	thread implementation AnswerParseCmd.SGNCC
+	end AnswerParseCmd.SGNCC;
+	
+-------------------------------
+-- 执行SLC指令
+-------------------------------
+	process ESLC
+		features
+			ParseCmd_Data : in data port ITU_Data_Types::ParseCmd_Data;
+			ParseCmd_ESLC : in event data port ITU_Data_Types::ParseCmd_ESLC;
+			
+			ESLC_SlcCmd : out data port ITU_Data_Types::ESLC_SlcCmd;
+		flows
+			flow0 : flow path ParseCmd_Data -> ESLC_SlcCmd;
+	end ESLC;
+	
+	process implementation ESLC.impl
+		subcomponents
+			answerParseCmd : thread AnswerParseCmd.ESLC;
+		connections
+			c0 : port ParseCmd_ESLC -> AnswerParseCmd.parseCmd_ESLC in modes (parseOp); 
+		modes
+			wait : initial mode;
+			parseOp : mode;
+			wait -[ answerParseCmd.parseCmd_SGNCC ]-> parseOp;	
+	end ESLC.impl;
+		
+	thread implementation AnswerParseCmd.ESLC
+	end AnswerParseCmd.ESLC;
+	
+-------------------------------
+-- 执行ON/OFFָ指令
+-------------------------------
+	process EONOFF
+		features
+			ParseCmd_Data : in data port ITU_Data_Types::ParseCmd_Data;
+			ParseCmd_EONOFF : in event data port ITU_Data_Types::ParseCmd_EONOFF;
+			
+			EONOFF_OnOffCmd : out data port ITU_Data_Types::EONOFF_OnOffCmd;
+		flows
+			flow0 : flow path ParseCmd_Data -> EONOFF_OnOffCmd;
+	end EONOFF;
+	
+	process implementation EONOFF.impl
+		subcomponents
+			answerParseCmd : thread AnswerParseCmd.EONOFF;
+		connections
+			c0 : port ParseCmd_EONOFF -> AnswerParseCmd.parseCmd_EONOFF in modes (parseOp); 
+		modes
+			wait : initial mode;
+			parseOp : mode;
+			wait -[ answerParseCmd.parseCmd_EONOFF ]-> parseOp;	
+	end EONOFF.impl;
+		
+	thread implementation AnswerParseCmd.EONOFF
+	end AnswerParseCmd.EONOFF;	
+	
+-------------------------------
+-- 执行广播校时指令 
+-------------------------------	
+	process FreTime
+		features
+			ParseCmd_Data : in data port ITU_Data_Types::ParseCmd_Data;
+			ParseCmd_FreTime : in event data port ITU_Data_Types::ParseCmd_FreTime;
+			
+			FreTime_LclTime : out data port ITU_Data_Types::FreTime_LclTime;
+			FreTime_toGNCC : out data port ;
+		properties
+			Load_Time => 0 ms .. 30 ms; -- xx ms
+	end FreTime;
+	
+	process implementation FreTime.impl
+		subcomponents
+			answerParseCmd : thread AnswerParseCmd.FreTime;
+		connections
+			c0 : port ParseCmd_FreTime -> AnswerParseCmd.parseCmd_FreTime in modes (parseOp); 
+		modes
+			wait : initial mode;
+			parseOp : mode;
+			wait -[ answerParseCmd.parseCmd_FreTime ]-> parseOp;	
+	end FreTime.impl;
+	
+	thread implementation AnswerParseCmd.FreTime	
+	end AnswerParseCmd.FreTime;
+	
+-------------------------------
+-- 接收并转发来自GNCC的数据
+-------------------------------	
+	process RGNCC
+		features
+			RGNCC_SerialInt : in event data port ITU_Data_Types::RGNCC_SerialInt;
+			GNCCData_In : in data port ;
+			FaultCheck_MF : out event data port ITU_Data_Types::FaultCheck_MF;
+			GNCCData_Out : out data port;
+	end RGNCC;
+	
+	process implementation RGNCC.impl
+		properties
+			Timing_Properties::Startup_Execution_Time => 0 us .. 500 us;
+	end RGNCC.impl;
+	
+-------------------------------
+-- 采集ITU模拟量
+-------------------------------		
+	process ColData
+		features
+			IncentiveEvent : in data port ITU_Data_Types::ColData_AnalogData;
+			per500ms_Int : in event port ;
+			ColData : out data port ;
+	end ColData;
+	
+	process implementation ColData.impl
+	end ColData.impl;
+
+-------------------------------
+-- 本地时钟管理
+-------------------------------
+	process TimeMan	
+	end TimeMan;
+	
+	process implementation TimeMan.impl
+		subcomponents
+			clockInterrupt : thread CLockInterrupt;
+		modes
+			wait : initial mode;
+			intHandler : mode;
+			wait -[ clockInterrupt.clockInterrupt_Out ]-> intHandler;
+	end TimeMan.impl;
+	
+-------------------------------
+-- 20ms时钟中断
+-------------------------------	
+	thread ClockInterrupt
+		features
+			clockInterrupt_Out : out event port ;
+	end ClockInterrupt;
+	
+	thread implementation ClockInterrupt.impl
+		properties
+			Period => 20 ms;
+			Dispatch_Protocol => Periodic;		
+--			Dispatch_Trigger => ClockInterrupt_Out;
+	end ClockInterrupt.impl;
+	
+	subprogram InterruptProcess
+		properties
+			Source_Name => "interrupt handler";
+	end InterruptProcess;
+	
+end ITU_Software;

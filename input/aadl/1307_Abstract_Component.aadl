@@ -1,0 +1,21 @@
+package abstract_component
+public
+	with Base_Types;
+	
+	system Abstract_Component
+		features
+			maneuverDuration: out data port float;
+			timeToFailure: out data port float;
+			
+		annex agree {**
+			guarantee "Time To Recovery provided": true -> maneuverDuration > 0.0;
+			guarantee "Time To Failure provided": true -> timeToFailure > 0.0;
+		**};
+	end Abstract_Component;
+	
+	data int extends base_types::Integer
+	end int;
+	
+	data float extends base_types::Float
+	end float;
+end abstract_component;

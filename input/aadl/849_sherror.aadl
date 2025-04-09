@@ -1,0 +1,44 @@
+package smarthome::error_library
+public
+annex EMV2 {**
+	error types	
+	
+		No_connectivity			 : type;
+		Device_receiver_failure	 : type extends No_connectivity;
+		Network_failure		     : type extends No_connectivity;
+		
+		Appliance_error		    	: type;
+		Sensor_failure		    	: type extends Appliance_error;
+		appliance_failure	    	: type extends Appliance_error;
+		Transmition_network_failure	: type extends Appliance_error;
+		
+		Security_system_error 		: type;
+		user_authentication_failed 	: type extends Security_system_error;
+		user_notauthorized			: type extends Security_system_error;
+		intruder_alert				: type extends Security_system_error;
+		system_locked_for_saftey	: type extends Security_system_error;
+		
+		SoftwareFailure			: type;
+		DeviceDamage            : type;
+		
+	end types; 
+	
+	error behavior deviceState
+	states
+		Operational : initial state;
+		Failed      : state;
+	end behavior;
+	
+	error behavior levels
+	states
+		idle 			   : initial state;
+		working            : state;
+		Moment_sensing     : state;
+		security_active	   : state;
+		damaged            :state;
+	end behavior;
+	
+
+**};
+
+end error_library;

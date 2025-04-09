@@ -1,0 +1,478 @@
+-- System Monitorowania Aktywności Człowieka --
+--- na podstawie wskazań czujników IMU ---
+-- projekt opisał Mateusz Strzałkowski, 2023 --
+
+package smacz
+public
+	with data_model;
+	with Base_Types;
+	
+	data RawIMUVec1
+		properties
+			Data_Model::Data_Representation => Float;
+	end RawIMUVec1;
+	
+	data RawIMUVec3
+	end RawIMUVec3;
+	
+	data implementation RawIMUVec3.Cartesian
+  		subcomponents
+    		x : data RawIMUVec1;
+    		y : data RawIMUVec1;
+    		z : data RawIMUVec1;
+  end RawIMUVec3.Cartesian;
+  
+  data imu_out_type
+  end imu_out_type;
+	
+	data implementation imu_out_type.impl
+  		subcomponents
+    		Accelerometer : data RawIMUVec3;
+    		Gyroscope : data RawIMUVec3;
+    		Magnetometer : data RawIMUVec3;
+  end imu_out_type.impl;
+	
+	data IMUSamplingSettingsType
+	end IMUSamplingSettingsType;
+	
+	device IMU
+		features
+			AccelerometerOutput: out data port RawIMUVec3;
+			GyroscopeOutput: out data port RawIMUVec3;
+			MagnetometerOutput: out data port RawIMUVec3;
+			GeneralOutput: out data port imu_out_type;
+			SamplingSettings: in data port IMUSamplingSettingsType;
+    		BA1: requires bus access i2c_bus;
+	end IMU;
+	
+	device implementation IMU.Near
+	end IMU.Near;
+	device implementation IMU.Far
+	end IMU.Far;
+	
+	device PhysicalLCDScreen
+		features
+		    BA1: requires bus access i2c_bus;
+	end PhysicalLCDScreen;
+	
+	data screen_command_type
+	end screen_command_type;
+	
+	device ScreenController
+		features
+			BA1: requires bus access i2c_bus;
+			input1: in data port screen_command_type;
+			input2: in data port screen_command_type;
+	end ScreenController;
+	
+	device AlarmSystem
+		features
+			ToggleAlarm: in data port Base_Types::Boolean;
+			BA1: requires bus access gpio_bus;
+	end AlarmSystem;
+	
+	device PushButton
+		features
+			State: out data port Base_Types::Boolean;
+			BA1: requires bus access gpio_bus;
+	end PushButton;
+	
+	device ToggleSwitch
+		features
+			State: out data port Base_Types::Boolean;
+			BA1: requires bus access gpio_bus;
+	end ToggleSwitch;
+	
+	data gpios_type
+	end gpios_type;
+	
+	data implementation gpios_type.impl
+  		subcomponents
+    		a : data Base_Types::Boolean;
+    		b : data Base_Types::Boolean;
+    		c : data Base_Types::Boolean;
+    		d : data Base_Types::Boolean;
+    		rec : data Base_Types::Boolean;
+    		pow : data Base_Types::Boolean;
+  	end gpios_type.impl;
+	
+	device GPIO_Aggregator
+		features
+			output: out data port gpios_type;
+			a: in data port Base_Types::Boolean;
+			b: in data port Base_Types::Boolean;
+			c: in data port Base_Types::Boolean;
+			d: in data port Base_Types::Boolean;
+			rec: in data port Base_Types::Boolean;
+			pow: in data port Base_Types::Boolean;
+			
+			BA1: requires bus access gpio_bus;
+	end GPIO_Aggregator;
+	
+	data signal_type
+	end signal_type;
+	
+	device Terminal
+		features
+			Input: in data port Base_Types::String;
+	end Terminal;
+	
+	--trzy magistrale - wewnętrzna, i2c, piny gpio
+	
+	bus internal_bus
+	end internal_bus;
+	
+	bus implementation internal_bus.impl
+	end internal_bus.impl;
+	
+	bus i2c_bus
+	end i2c_bus;
+	
+	bus implementation i2c_bus.impl
+	end i2c_bus.impl;
+	
+	bus gpio_bus
+	end gpio_bus;
+	
+	bus implementation gpio_bus.impl
+	end gpio_bus.impl;
+	
+	processor ARMv8
+  	features
+    	BA1: requires bus access internal_bus;
+	end ARMv8;
+	
+	memory RAM
+		features
+    		BA1: requires bus access internal_bus;
+	end RAM;
+ 
+	memory implementation RAM.impl
+	end RAM.impl;
+	
+	memory SD_card
+		features
+    		BA1: requires bus access internal_bus;
+	end SD_card;
+	
+	memory implementation SD_card.micro32GB
+	end SD_card.micro32GB;
+	
+----- SUPERVISING DAEMON -----	
+	
+	thread DaemonMainLoop
+		features
+			GPIOInput: in data port gpios_type;
+			ScreenOutput: out data port screen_command_type;
+			Signal: in out data port signal_type;--for killing and maybe dummy for creating processes
+		properties
+			Dispatch_Protocol => Periodic;
+			Dispatch_Offset => 4ms;
+			Deadline => 150ms;
+			Period => 1000ms;
+			Compute_Execution_Time => 0ms .. 50ms;
+	end DaemonMainLoop;
+	thread implementation DaemonMainLoop.impl
+	end DaemonMainLoop.impl;
+	
+	thread DeamonInterrupts
+		features
+			GPIOInput: in data port gpios_type;
+			Signal: in out data port signal_type;
+			ScreenOutput: out data port screen_command_type;
+		properties
+			Dispatch_Protocol => Sporadic;
+			Dispatch_Offset => 4ms;
+			Deadline => 50ms;
+			Compute_Execution_Time => 0ms .. 30ms;
+	end DeamonInterrupts;
+	thread implementation DeamonInterrupts.impl
+	end DeamonInterrupts.impl;
+	
+	process daemon_process
+		features
+			GPIOInput: in data port gpios_type;
+			ScreenOutput: out data port screen_command_type;
+			Signal: in out data port signal_type;
+	end daemon_process;
+	
+	process implementation daemon_process.impl
+		subcomponents
+			MainLoop: thread DaemonMainLoop.impl;
+			Interrupts: thread DeamonInterrupts.impl;
+		connections
+			gp_loop: port GPIOInput -> MainLoop.GPIOInput;
+			gp_int: port GPIOInput -> Interrupts.GPIOInput;
+			sig_loop: port Signal <-> MainLoop.Signal;
+			sig_int: port Signal <-> Interrupts.Signal;
+			scr_loop: port MainLoop.ScreenOutput -> ScreenOutput;
+			int_loop: port Interrupts.ScreenOutput -> ScreenOutput;
+	end daemon_process.impl;
+	
+	----- RECORDING MECHANISM -----	
+	
+	data recording_binary_type
+	end recording_binary_type;
+	
+	thread RecordMainLoop
+		features
+			IMU_N_input: in data port imu_out_type;
+			IMU_F_input: in data port imu_out_type;
+			GPIOInput: in data port gpios_type;
+			Signal: in out data port signal_type;
+			ScreenWriterOutput: out data port Base_Types::String;
+			BinaryOutput: out data port recording_binary_type;
+		properties
+			Dispatch_Protocol => Periodic;
+			Dispatch_Offset => 4ms;
+			Deadline => 45ms;
+			Period => 50ms;--20 Hz
+			Compute_Execution_Time => 0ms .. 30ms;
+	end RecordMainLoop;
+	thread implementation RecordMainLoop.impl
+	end RecordMainLoop.impl;
+	
+	thread RecordScreenWriter
+		features
+			WhatToWrite: in data port Base_Types::String;
+			ScreenOutput: out data port screen_command_type;
+		properties
+			Dispatch_Protocol => Periodic;
+			Dispatch_Offset => 6ms;
+			Deadline => 45ms;
+			Period => 50ms;--20 Hz
+			Compute_Execution_Time => 0ms .. 30ms;
+	end RecordScreenWriter;
+	thread implementation RecordScreenWriter.impl
+	end RecordScreenWriter.impl;
+	
+	thread RecordInterrupts
+		features
+			GPIOInput: in data port gpios_type;
+			Signal: in out data port signal_type;
+		properties
+			Dispatch_Protocol => Sporadic;
+			Dispatch_Offset => 4ms;
+			Deadline => 50ms;
+			Compute_Execution_Time => 0ms .. 30ms;
+	end RecordInterrupts;
+	thread implementation RecordInterrupts.impl
+	end RecordInterrupts.impl;
+	
+	process record_process
+		features
+			IMU_N_input: in data port imu_out_type;
+			IMU_F_input: in data port imu_out_type;
+			GPIOInput: in data port gpios_type;
+			Signal: in out data port signal_type;
+			ScreenOutput: out data port screen_command_type;
+			BinaryOutput: out data port recording_binary_type;
+	end record_process;
+	
+	process implementation record_process.impl
+    		subcomponents
+			MainLoop: thread RecordMainLoop.impl;
+			Interrupts: thread RecordInterrupts.impl;
+            ScreenWriter: thread RecordScreenWriter.impl;
+		connections
+			gp_loop: port GPIOInput -> MainLoop.GPIOInput;
+			gp_int: port GPIOInput -> Interrupts.GPIOInput;
+			sig_loop: port Signal <-> MainLoop.Signal;
+			sig_int: port Signal <-> Interrupts.Signal;
+			loop_wri: port MainLoop.ScreenWriterOutput -> ScreenWriter.WhatToWrite;
+			wri_scr: port ScreenWriter.ScreenOutput -> ScreenOutput;
+			imu_n_loop: port IMU_N_input -> MainLoop.IMU_N_input;
+			imu_f_loop: port IMU_F_input -> MainLoop.IMU_F_input;
+			loop_out: port MainLoop.BinaryOutput -> BinaryOutput;
+	end record_process.impl;
+	
+	----- EXPORTING MECHANISM -----	
+	
+	thread ExportMainLoop
+		features
+			BinaryInput: in data port recording_binary_type;
+			CSVOutput: out data port Base_Types::String;
+			Signal: in out data port signal_type;
+		properties
+			Dispatch_Protocol => Periodic;
+			Dispatch_Offset => 4ms;
+			Deadline => 45ms;
+			Period => 50ms;
+			Compute_Execution_Time => 0ms .. 40ms;
+	end ExportMainLoop;
+	thread implementation ExportMainLoop.impl
+	end ExportMainLoop.impl;
+	
+	process export_process
+		features
+			BinaryInput: in data port recording_binary_type;
+			CSVOutput: out data port Base_Types::String;
+			Signal: in out data port signal_type;
+	end export_process;
+	
+	process implementation export_process.impl
+    	subcomponents
+			MainLoop: thread ExportMainLoop.impl;
+		connections
+			loop_bin: port BinaryInput -> MainLoop.BinaryInput;
+			loop_csv: port MainLoop.CSVOutput -> CSVOutput;
+			sig_loop: port Signal <-> MainLoop.Signal;
+	end export_process.impl;
+	
+	----- PREDICTING MECHANISM -----	
+	
+	thread PedictMainLoop
+		features
+			BinaryInput: in data port recording_binary_type;
+			AlarmPort: out data port Base_Types::Boolean;
+			Signal: in out data port signal_type;
+		properties
+			Dispatch_Protocol => Periodic;
+			Dispatch_Offset => 4ms;
+			Deadline => 45ms;
+			Period => 50ms;
+			Compute_Execution_Time => 0ms .. 40ms;
+	end PedictMainLoop;
+	thread implementation PedictMainLoop.impl
+	end PedictMainLoop.impl;
+	
+	process predict_process
+		features
+			BinaryInput: in data port recording_binary_type;
+			AlarmPort: out data port Base_Types::Boolean;
+			Signal: in out data port signal_type;
+	end predict_process;
+	
+	process implementation predict_process.impl
+    	subcomponents
+			MainLoop: thread PedictMainLoop.impl;
+		connections
+			loop_bin: port BinaryInput -> MainLoop.BinaryInput;
+			loop_alm: port MainLoop.AlarmPort -> AlarmPort;
+			sig_loop: port Signal <-> MainLoop.Signal;
+	end predict_process.impl;
+	
+	device SystemAbstraction
+		features
+			BA1: requires bus access i2c_bus;
+			SIG1: in out data port signal_type;
+			SIG2: in out data port signal_type;
+			SIG3: in out data port signal_type;
+			SIG4: in out data port signal_type;
+			SIG5: in out data port signal_type;
+	end SystemAbstraction;
+	
+--	process ssh_daemon
+--		features
+--			GPIOInput: in data port gpios_type;
+--			Signal: in out data port signal_type;
+--	end ssh_daemon;
+--	
+--	process implementation ssh_daemon.impl
+--	end ssh_daemon.impl;
+	
+	
+	system HumanActivityMonitoringSystem
+	end HumanActivityMonitoringSystem;
+	system implementation HumanActivityMonitoringSystem.impl
+		subcomponents
+			daemon_process: process daemon_process.impl;
+			record_process: process record_process.impl;
+			export_process: process export_process.impl;
+			predict_process: process predict_process.impl;
+			operating_sys: device SystemAbstraction;
+--			ssh_daemon: process ssh_daemon.impl;
+			pi_cpu_1: processor ARMv8;
+			pi_cpu_2: processor ARMv8;
+			pi_ram: memory RAM.impl;
+			pi_card: memory SD_card.micro32GB;
+			pi_bus: bus internal_bus.impl;
+			i2c: bus i2c_bus.impl;
+			gpios_bus: bus gpio_bus.impl;
+			imu_n: device IMU.Near;
+			imu_f: device IMU.Far;
+			screen_controller: device ScreenController;
+			screen: device PhysicalLCDScreen;
+			
+			alarm: device AlarmSystem;
+			brba: device PushButton;--Big Red Button A
+			brbb: device PushButton;
+			brbc: device PushButton;
+			brbd: device PushButton;
+			sw_pow: device ToggleSwitch;
+			sw_rec: device ToggleSwitch;
+			gpios: device GPIO_Aggregator;
+			
+			terminal: device Terminal;
+			
+			
+		connections
+			---- process connections
+			--for daemon process
+			gpios_dae: port gpios.output -> daemon_process.GPIOInput;
+			dae_scr_contr: port daemon_process.ScreenOutput -> screen_controller.input1;
+			dae_sys: port daemon_process.Signal -> operating_sys.SIG1;
+			dae_rec: port record_process.Signal -> operating_sys.SIG2;
+			dae_exp: port  export_process.Signal -> operating_sys.SIG3;
+			dae_pred: port predict_process.Signal -> operating_sys.SIG4;
+			--for recording process
+			gpios_rec: port gpios.output -> record_process.GPIOInput;
+			rec_scr_contr: port record_process.ScreenOutput -> screen_controller.input2;
+			imu_n_rec: port imu_n.GeneralOutput -> record_process.IMU_N_input;
+			imu_f_rec: port imu_f.GeneralOutput -> record_process.IMU_F_input;
+			--binary output consumed by exporter and predictor
+			--rec_dae == dae_rec
+			--for exporting process
+			rec_exp: port record_process.BinaryOutput -> export_process.BinaryInput;
+			exp_term: port export_process.CSVOutput -> terminal.Input;
+			--for predicting process
+			rec_pred: port record_process.BinaryOutput -> predict_process.BinaryInput;
+			pred_alm: port predict_process.AlarmPort -> alarm.ToggleAlarm;
+			
+			---gpios
+			a_agr: port brba.State -> gpios.a;
+			b_agr: port brbb.State -> gpios.b;
+			c_agr: port brbc.State -> gpios.c;
+			d_agr: port brbd.State -> gpios.d;
+			pow_agr: port sw_pow.State -> gpios.pow;
+			rec_agr: port sw_rec.State -> gpios.rec;
+			
+			-- -- buses
+			--internal bus
+			PIBAC1: bus access pi_bus <-> pi_cpu_1.BA1;
+			PIBAC2: bus access pi_bus <-> pi_cpu_2.BA1;
+			PIBAC3: bus access pi_bus <-> pi_ram.BA1;
+			PIBAC4: bus access pi_bus <-> pi_card.BA1;
+			--i2cbus
+			I2CAC1: bus access i2c <-> imu_n.BA1;
+			I2CAC2: bus access i2c <-> imu_f.BA1;
+			I2CAC3: bus access i2c <-> screen_controller.BA1;
+			I2CAC4: bus access i2c <-> screen.BA1;
+			--gpio bus (in reality not a bus...)
+			GPAC1: bus access gpios_bus <-> gpios.BA1;
+			GPAC2: bus access gpios_bus <-> brba.BA1;
+			GPAC3: bus access gpios_bus <-> brbb.BA1;
+			GPAC4: bus access gpios_bus <-> brbc.BA1;
+			GPAC5: bus access gpios_bus <-> brbd.BA1;
+			GPAC6: bus access gpios_bus <-> sw_pow.BA1;
+			GPAC7: bus access gpios_bus <-> sw_rec.BA1;
+			GPAC8: bus access gpios_bus <-> alarm.BA1;
+			--
+			--temp_conn :port tempsensor.Temp -> control_process.TempInput;
+			-- pass
+			--abstrakcyjne komponenty w aadlu
+			--analiza przepływu do modelu
+		properties
+  			Actual_Processor_Binding => (reference(pi_cpu_1))  applies to daemon_process;
+  			Actual_Memory_Binding => (reference(pi_ram)) applies to daemon_process;
+  			Actual_Processor_Binding => (reference(pi_cpu_2))  applies to record_process;
+  			Actual_Memory_Binding => (reference(pi_ram)) applies to record_process;
+  			Actual_Processor_Binding => (reference(pi_cpu_2))  applies to export_process;
+  			Actual_Memory_Binding => (reference(pi_ram)) applies to export_process;
+  			Actual_Processor_Binding => (reference(pi_cpu_2))  applies to predict_process;
+  			Actual_Memory_Binding => (reference(pi_ram)) applies to predict_process;
+  			--Actual_Memory_Binding => (reference(pi_card)) applies to daemon_process;
+	end HumanActivityMonitoringSystem.impl;
+	
+	--panel z przyciskami i układ konwertujący dane na cyfrowe do magistrali
+end smacz;

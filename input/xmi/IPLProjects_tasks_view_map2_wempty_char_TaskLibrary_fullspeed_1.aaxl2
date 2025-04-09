@@ -1,0 +1,1378 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="TaskLibrary_fullspeed_Instance" category="system">
+  <componentInstance name="m_l1_to_l2" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="673"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.3"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.4"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.5"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l2_to_l1" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.6"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.7"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.8"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="673"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.9"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.10"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.11"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l2_to_l3" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.12"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.13"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.14"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="994"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.15"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.16"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.17"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l2_to_l8" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="3"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.18"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.19"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="7"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.20"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="656"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.21"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.22"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.23"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l3_to_l2" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="4"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.24"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.25"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.26"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="994"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.27"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.28"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.29"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l3_to_l4" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="5"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.30"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.31"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="3"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.32"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="759"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.33"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.34"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.35"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l4_to_l3" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="6"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.36"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="3"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.37"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.38"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="759"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.39"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.40"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.41"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l4_to_ls" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="7"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.42"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="3"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.43"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="8"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.44"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="681"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.45"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.46"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.47"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.7"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l4_to_l5" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="8"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.48"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="3"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.49"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="4"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.50"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="768"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.51"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.52"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.53"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.8"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l5_to_l4" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="9"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.54"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="4"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.55"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="3"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.56"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="768"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.57"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.58"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.59"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.9"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l5_to_l6" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="10"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.60"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="4"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.61"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="5"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.62"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="759"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.63"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.64"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.65"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.10"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l6_to_l5" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="11"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.66"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="5"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.67"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="4"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.68"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="759"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.69"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.70"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.71"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.11"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l6_to_l7" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="12"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.72"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="5"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.73"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="6"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.74"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="994"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.75"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.76"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.77"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.12"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l7_to_l6" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="13"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.78"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="6"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.79"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="5"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.80"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="994"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.81"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.82"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.83"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.13"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l7_to_l8" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="14"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.84"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="6"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.85"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="7"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.86"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="694"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.87"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.88"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.89"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.14"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l8_to_l2" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="15"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.90"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="7"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.91"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.92"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="656"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.93"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.94"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.95"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.15"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_l8_to_l7" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="16"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.96"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="7"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.97"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="6"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.98"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="694"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.99"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.100"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.101"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.16"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="m_ls_to_l4" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="17"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.102"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="8"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.103"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="3"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.104"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="681"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.105"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.106"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.107"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.17"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="e_l1" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="18"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.108"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.109"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.110"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.111"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.112"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.113"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.18"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="e_l2" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="20"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.114"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.115"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="1"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.116"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.117"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.118"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.119"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.19"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="e_l3" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="22"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.120"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.121"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.122"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.123"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.124"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.125"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.20"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="e_ls" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="24"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.126"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="8"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.127"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="8"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.128"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.129"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.130"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.131"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.21"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="e_l4" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="26"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.132"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="3"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.133"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="3"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.134"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.135"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.136"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.137"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.22"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="e_l5" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="28"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.138"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="4"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.139"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="4"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.140"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.141"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.142"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.143"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.23"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="e_l6" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="30"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.144"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="5"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.145"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="5"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.146"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.147"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.148"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.149"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.24"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="e_l7" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="32"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.150"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="6"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.151"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="6"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.152"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.153"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.154"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.155"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.25"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="e_l8" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="34"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.156"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="7"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.157"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="7"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.158"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.159"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.160"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.161"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.26"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <componentInstance name="ch_l3" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_id"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="23"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.162"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.start_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.163"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.end_loc"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.164"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.energy"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="-125"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.165"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type_enum"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#/0/@ownedProperty.3/@ownedPropertyType/@ownedLiteral.3"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.166"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Properties.aadl#Robot_Task_Properties.task_type"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="3"/>
+      </ownedValue>
+      <propertyAssociation href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.167"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.27"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessType" href="../../github/IPLProjects/IPLRobotProp/aadl/Robot_Task_Types.aadl#Robot_Task_Types.Task"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#tasks_view_map2_wempty_char.TaskLibrary.fullspeed"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/IPLProjects/IPLRobotProp/aadl/tasks_view_map2_wempty_char.aadl#tasks_view_map2_wempty_char.TaskLibrary.fullspeed"/>
+</instance:SystemInstance>

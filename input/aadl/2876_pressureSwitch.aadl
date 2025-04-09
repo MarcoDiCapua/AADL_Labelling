@@ -1,0 +1,16 @@
+package pressureSwitch
+public
+
+system pressureSwitch
+	features
+		signalIn : in data port;
+		signalOut : out data port;
+		pressureSignalIn : in data port;
+	flows
+		signalFlowPath  : flow path signalIn -> signalOut;
+end pressureSwitch;
+
+system implementation pressureSwitch.i
+end pressureSwitch.i;
+
+end pressureSwitch;

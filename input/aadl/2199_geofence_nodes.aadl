@@ -1,0 +1,23 @@
+package geofence_nodes
+public
+annex agree {**
+						
+	node circleLinearization(t: real) returns(y: real);
+	let
+		y = if t <= 0.00 then -98.01*t + 99.73
+			else if t > 0.00 and t <= 0.40 then -98.01*t + 99.73
+			else if t > 0.40 and t <= 0.80 then -82.53*t + 93.06
+			else if t > 0.80 and t <= 1.20 then -54.03*t + 69.88
+			else if t > 1.20 and t <= 1.60 then -17.00*t + 25.25
+			else if t > 1.60 and t <= 2.00 then 22.72*t + -38.28
+			else if t > 2.00 and t <= 2.40 then 58.85*t + -110.32
+			else if t > 2.40 and t <= 2.80 then 85.69*t + -174.34
+			else if t > 2.80 and t <= 3.20 then 99.00*t + -211.11
+			else if t > 3.20 and t <= 3.60 then 96.68*t + -203.16
+		else 79.10*t + -139.38;
+	tel;
+	
+	**};
+end geofence_nodes;
+
+

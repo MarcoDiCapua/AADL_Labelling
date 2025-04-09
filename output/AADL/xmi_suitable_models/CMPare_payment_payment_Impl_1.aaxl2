@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="payment_Impl_Instance" category="system">
+  <featureInstance name="get_req">
+    <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="send_reply" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+  </featureInstance>
+  <componentInstance name="U" category="system">
+    <featureInstance name="get_user_name">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="get_user_email">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="get_user_phone">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="get_user_adress">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="sendUserPaymentInfo" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.4"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/payment.aadl#payment.user"/>
+  </componentInstance>
+  <componentInstance name="P" category="system">
+    <featureInstance name="get_product_name">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="get_product_ID">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="get_product_price">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="sendProductPaymentInfo" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/payment.aadl#payment.product"/>
+  </componentInstance>
+  <componentInstance name="CC" category="system">
+    <featureInstance name="Card_Owner_Name">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="Card_Number">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="Card_Date">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.2"/>
+    </featureInstance>
+    <featureInstance name="Card_CVV">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.3"/>
+    </featureInstance>
+    <featureInstance name="sendCreditCardInfo" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.4"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/payment.aadl#payment.credit_card"/>
+  </componentInstance>
+  <componentInstance name="OBC" category="system">
+    <featureInstance name="getCardInfo">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="paymentVerification" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSystemSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/payment.aadl#payment.OnlineBankCheck"/>
+  </componentInstance>
+  <connectionInstance name="P.sendProductPaymentInfo -> U.get_user_name" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.1/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.3" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P.sendProductPaymentInfo -> U.get_user_email" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.1" source="//@componentInstance.1/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.3" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P.sendProductPaymentInfo -> U.get_user_phone" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.2" source="//@componentInstance.1/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.3" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="CC.sendCreditCardInfo -> U.get_user_name" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.4" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="CC.sendCreditCardInfo -> U.get_user_email" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.1" source="//@componentInstance.2/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.4" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="CC.sendCreditCardInfo -> U.get_user_phone" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.2" source="//@componentInstance.2/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.4" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="CC.sendCreditCardInfo -> OBC.getCardInfo" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.2/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.4" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/CMPare/payment.aadl#payment.payment.Impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/CMPare/payment.aadl#payment.payment.Impl"/>
+</instance:SystemInstance>

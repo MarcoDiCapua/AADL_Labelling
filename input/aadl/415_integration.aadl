@@ -1,0 +1,58 @@
+package SCADA::integration
+public
+
+with SCADA::icd;
+with SCADA::devices;
+with SCADA::platform;
+with SCADA::software;
+
+system integration
+	features
+		test : provides bus access SCADA::icd::InternalBUS;
+		test2 : requires bus access SCADA::icd::InternalBUS;
+end integration;
+
+system implementation integration.i
+	subcomponents
+-- input devices
+HMI    : system SCADA::devices::HMI;
+DMS    : system SCADA::devices::DMS;
+DB    : system SCADA::devices::DB;
+Substation    : system SCADA::devices::substation;
+alarm    : system SCADA::devices::alarm;
+-- software and processing elements.
+scada  : process SCADA::software::SCADAP.i;
+FEP  : process SCADA::software::FEP.i;
+
+Connections
+    c00 : port Substation.voltage   -> FEP.voltagefromsubstation;
+    c01 : port Substation.current   -> FEP.currentfromsubstation; 
+    c02 : port FEP.breakertosubstation      -> Substation.breaker;
+    c03 : port FEP.transformertosubstation  -> Substation.transformer;
+    c04 : port FEP.voltagetoSCADAP          -> scada.voltagefromFEP;
+    c05 : port FEP.currenttoSCADAP          -> scada.currentfromFEP;
+    c06 : port scada.breakertoFEP           -> FEP.breakerfromSCADAP;
+    c07 : port scada.transformertoFEP       -> FEP.transformerfromSCADAP;
+    c08 : port scada.voltagetoHMI           -> HMI.voltage;
+    c09 : port scada.currenttoHMI           -> HMI.current;
+    c10 : port scada.alarmtoAlarm           -> alarm.alarmdata;
+    c11 : port scada.voltagetoDMS           -> DMS.voltage;
+    c12 : port scada.currenttoDMS           -> DMS.current;
+    c13 : port scada.voltagetoDB        -> DB.voltage;
+    c14 : port scada.currenttoDB        -> DB.current;
+    c15 : port HMI.breaker        -> scada.breakerfromHMI;
+    c16 : port HMI.transformer        -> scada.transformerfromHMI;
+flows
+	substation_to_HMI_current : end to end flow substation.f0 -> c01 -> FEP.f01 -> c05 -> scada.f01 -> c09 -> HMI.f2;
+	substation_to_HMI_voltage : end to end flow substation.f1 -> c00 -> FEP.f00 -> c04 -> scada.f00 -> c08 -> HMI.f3;
+	substation_to_DMS_current : end to end flow substation.f0 -> c01 -> FEP.f01 -> c05 -> scada.f05 -> c12 -> DMS.f0;
+	substation_to_DMS_voltage : end to end flow substation.f1 -> c00 -> FEP.f00 -> c04 -> scada.f04 -> c11 -> DMS.f1;
+	substation_to_DB_current : end to end flow substation.f0 -> c01 -> FEP.f01 -> c05 -> scada.f08 -> c14 -> DB.f0;
+	substation_to_DB_voltage : end to end flow substation.f1 -> c00 -> FEP.f00 -> c04 -> scada.f07 -> c13 -> DB.f1;
+	HMI_to_substation_breaker : end to end flow HMI.f0 -> c15 -> scada.f02 -> c06 -> FEP.f02 -> c02 -> substation.f2;
+	HMI_to_substation_transformer : end to end flow HMI.f1 -> c16 -> scada.f03 -> c07 -> FEP.f03 -> c03 -> substation.f3;
+	scada_to_alarm : end to end flow scada.f06 -> c10 -> alarm.f0;
+end integration.i;
+
+
+end SCADA::integration;

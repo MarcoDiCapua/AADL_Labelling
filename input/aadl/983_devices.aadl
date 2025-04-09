@@ -1,0 +1,354 @@
+------------------------------------------------------------------
+--                            HARDWARE                          --
+------------------------------------------------------------------
+package Cabeamento::devices
+
+public
+	--------------------------------------------------------------
+	--                       "Includes"                         --
+	--------------------------------------------------------------
+	with Cabeamento::icd;
+	with emv2;
+	with arp4761;
+
+	--------------------------------------------------------------
+	--              Camera e Deteccao de Objetos                --
+	--------------------------------------------------------------
+	device camera
+		features
+			picture: out data port Cabeamento::icd::picture;
+		flows
+			f0: flow source picture;
+		properties
+			Period => 200ms;
+			compute_execution_time => 20ms .. 50ms;
+		annex EMV2 {**
+			use types Cabeamento::error_library;
+			
+			error propagations
+				picture: out propagation {NoValue};
+				flows
+					ef0: error source picture {NoValue};
+			end propagations;
+			
+			properties
+				emv2::severity => ARP4761::Major applies to picture;
+				emv2::likelihood => ARP4761::Probable applies to picture;
+				emv2::hazards => ([crossreference => "N/A";
+						failure => "Novalue";
+						phases => ("all");
+						description => "No picture from the camera";
+						comment => "Would impact the detection of obstacle if the radar is not working as well";
+					]) applies to picture.novalue;
+		**};
+	end camera;
+
+	--------------------------------------------------------------
+	--                         Radar                            --
+	--------------------------------------------------------------
+	device radar
+		features
+			distance_estimate: out data port Cabeamento::icd::distance;
+		flows
+			f0: flow source distance_estimate;
+		properties
+			Period => 10ms;
+			compute_execution_time => 6ms .. 8ms;
+		annex EMV2 {**
+			use types Cabeamento::error_library;
+			
+			error propagations
+				distance_estimate: out propagation {NoValue, InvalidValue};
+				flows
+					ef0: error source distance_estimate {NoValue, InvalidValue};
+			end propagations;
+			
+			properties
+				emv2::severity => ARP4761::Major applies to distance_estimate.novalue;
+				emv2::likelihood => ARP4761::Probable applies to distance_estimate.novalue;
+				emv2::hazards => ([crossreference => "N/A";
+						failure => "NoValue";
+						phases => ("all");
+						description => "No information from the Radar";
+						comment => "Error if both the camera and the radar does not send any value";
+					]) applies to distance_estimate.novalue;
+			
+				emv2::severity => ARP4761::Minor applies to distance_estimate.invalidvalue;
+				emv2::likelihood => ARP4761::Probable applies to distance_estimate.invalidvalue;
+				emv2::hazards => ([crossreference => "N/A";
+						failure => "InvalidValue";
+						phases => ("all");
+						description => "Invalid distance sent by the radar";
+						comment => "First occurrences of invalid data Should be handled by the distance estimator.";
+					]) applies to distance_estimate.invalidvalue;
+		**};
+	end radar;
+
+	--------------------------------------------------------------
+	--                 Sensores de Velocidade                   --
+	--------------------------------------------------------------
+	device speed_sensor
+		features
+			speed: out data port Cabeamento::icd::speed;
+		flows
+			f0: flow source speed;
+		annex EMV2 {**
+			use types Cabeamento::error_library;
+			
+			error propagations
+				speed: out propagation {NoValue, InvalidValue};
+				flows
+					ef0: error source speed {NoValue, InvalidValue};
+			end propagations;
+			
+			properties
+				emv2::severity => ARP4761::Major applies to speed.invalidvalue;
+				emv2::likelihood => ARP4761::Probable applies to speed.invalidvalue;
+				emv2::severity => ARP4761::Major applies to speed.novalue;
+				emv2::likelihood => ARP4761::Probable applies to speed.novalue;
+		**};
+	end speed_sensor;
+
+	device speed_wheel_sensor extends speed_sensor
+		properties
+			Period => 10ms;
+			compute_execution_time => 6ms .. 9ms;
+		annex EMV2 {**
+			properties
+				emv2::hazards => ([crossreference => "N/A";
+						failure => "InvalidValue";
+						phases => ("all");
+						description => "Invalid value from wheel sensor";
+						comment => "The speed sensor sends invalid value. This should be then discovered and handled by the speed controller.";
+					]) applies to speed.invalidvalue;
+			
+				emv2::hazards => ([crossreference => "N/A";
+						failure => "NoValue";
+						phases => ("all");
+						description => "No speed from wheel sensor";
+						comment => "The sensor does not sendn any speed, might be an error if all sensors does not send a consistent value";
+					]) applies to speed.novalue;
+		**};
+	end speed_wheel_sensor;
+
+	device speed_laser_sensor extends speed_sensor
+		properties
+			Period => 10ms;
+			compute_execution_time => 6ms .. 9ms;
+		annex EMV2 {**
+			properties
+				emv2::hazards => ([crossreference => "N/A";
+						failure => "InvalidValue";
+						phases => ("all");
+						description => "Invalid value from laser sensor";
+						comment => "The speed sensor sends invalid value. This should be then discovered and handled by the speed controller.";
+					]) applies to speed.invalidvalue;
+			
+				emv2::hazards => ([crossreference => "N/A";
+						failure => "NoValue";
+						phases => ("all");
+						description => "No speed from laser sensor";
+						comment => "The sensor does not sendn any speed, might be an error if all sensors does not send a consistent value";
+					]) applies to speed.novalue;
+		**};
+	end speed_laser_sensor;
+
+	--------------------------------------------------------------
+	--                           GPS                            --
+	--------------------------------------------------------------
+	device gps
+		features
+			position: out data port Cabeamento::icd::gps_position;
+		flows
+			f0: flow source position;
+		annex EMV2 {**
+			use types Cabeamento::error_library;
+			
+			error propagations
+				position: out propagation {NoValue, InvalidValue};
+				flows
+					ef0: error source position {NoValue, InvalidValue};
+			end propagations;
+			
+			properties
+				emv2::severity => ARP4761::Major applies to position;
+				emv2::likelihood => ARP4761::Probable applies to position;
+				emv2::OccurrenceDistribution => [ProbabilityValue => 3.4e-5;
+					Distribution => Fixed;] applies to position.invalidvalue;
+		**};
+	end gps;
+	--------------------------------------------------------------
+	--                Modelos de Implementacao                  --
+	--------------------------------------------------------------
+	--                     Implementacao 1                      --
+	--------------------------------------------------------------
+	device implementation gps.impl1
+		properties
+			Period => 6ms;
+		annex EMV2 {**
+			use types Cabeamento::error_library;
+			
+			error propagations
+				position: out propagation {NoValue, InvalidValue};
+				flows
+					ef0: error source position {novalue};
+					ef1: error source position {invalidValue};
+			end propagations;
+			
+			properties
+				emv2::severity => ARP4761::Major applies to position;
+				emv2::likelihood => ARP4761::Probable applies to position;
+				emv2::hazards => ([crossreference => "N/A";
+						failure => "Novalue";
+						phases => ("all");
+						description => "No value from the gps from vendor1";
+						comment => "No value from the GPS, may then be an issue if the voter has no position from all gps";
+					]) applies to position.novalue;
+				emv2::hazards => ([crossreference => "N/A";
+						failure => "InvalidValue";
+						phases => ("all");
+						description => "Invalid value from the gps";
+						comment => "Invalid value from the GPS that can then trigger issue in the position voter";
+					]) applies to position.invalidvalue;
+			
+				emv2::OccurrenceDistribution => [ProbabilityValue => 3.4e-5;
+					Distribution => Fixed;] applies to position.invalidvalue;
+		**};
+	end gps.impl1;
+	--------------------------------------------------------------
+	--                     Implementacao 2                      --
+	--------------------------------------------------------------
+	device implementation gps.impl2
+		properties
+			Period => 9ms;
+		annex EMV2 {**
+			use types Cabeamento::error_library;
+			
+			error propagations
+				position: out propagation {NoValue, InvalidValue};
+				flows
+					ef0: error source position {noValue};
+					ef1: error source position {invalidValue};
+			end propagations;
+			
+			properties
+				emv2::severity => ARP4761::Major applies to position;
+				emv2::likelihood => ARP4761::Probable applies to position;
+				emv2::hazards => ([crossreference => "N/A";
+						failure => "Novalue";
+						phases => ("all");
+						description => "No value from the gps from vendor2";
+						comment => "No value from the GPS, may then be an issue if the voter has no position from all gps";
+					]) applies to position.novalue;
+				emv2::hazards => ([crossreference => "N/A";
+						failure => "InvalidValue";
+						phases => ("all");
+						description => "Invalid value from the gps from vendor2";
+						comment => "Invalid value from the GPS that can then trigger issue in the position voter";
+					]) applies to position.invalidvalue;
+			
+				emv2::OccurrenceDistribution => [ProbabilityValue => 3.4e-5;
+					Distribution => Fixed;] applies to position.invalidvalue;
+		**};
+	end gps.impl2;
+
+    --------------------------------------------------------------
+	--                  Aparelho de Avisos                      --
+	--------------------------------------------------------------
+	device warning_device
+		features
+			warning: in data port Cabeamento::icd::boolean;
+		flows
+			f0: flow sink warning;
+		properties
+			Period => 500ms;
+			Deadline => 400ms;
+			Compute_Execution_Time => 20ms .. 50ms;
+		annex EMV2 {**
+			use types Cabeamento::error_library;
+			use behavior Cabeamento::error_library::simple;
+			
+			error propagations
+				warning: in propagation {NoValue, InvalidValue};
+				flows
+					ef0: error sink warning {NoValue, InvalidValue};
+			end propagations;
+			
+			component error behavior
+				events
+					Reset: recover event;
+				transitions
+					t0: Operational -[warning {NoValue}]-> Failed;
+					t1: Operational -[warning {InvalidValue}]-> Failed;
+					t2: Failed -[Reset]-> Operational;
+			end component;
+		**};
+	end warning_device;
+
+    --------------------------------------------------------------
+	--                        Freios                            --
+	--------------------------------------------------------------
+	device brake
+		features
+			cmd: in data port Cabeamento::icd::speed_command.i;
+		flows
+			f0: flow sink cmd;
+		properties
+			Period => 2ms;
+		annex EMV2 {**
+			use types Cabeamento::error_library;
+			use behavior Cabeamento::error_library::simple;
+			
+			error propagations
+				cmd: in propagation {NoValue, InvalidValue};
+				flows
+					ef0: error sink cmd {NoValue, InvalidValue};
+			end propagations;
+			
+			component error behavior
+				events
+					Reset: recover event;
+				transitions
+					t0: Operational -[cmd {NoValue}]-> Failed;
+					t1: Operational -[cmd {InvalidValue}]-> Failed;
+					t2: Failed -[Reset]-> Operational;
+			end component;
+		**};
+	end brake;
+
+	--------------------------------------------------------------
+	--                      Acelerador                          --
+	--------------------------------------------------------------
+	device acceleration
+		features
+			cmd: in data port Cabeamento::icd::speed_command.i;
+		flows
+			f0: flow sink cmd;
+		properties
+			Period => 2ms;
+		annex EMV2 {**
+			use types Cabeamento::error_library;
+			use behavior Cabeamento::error_library::simple;
+			
+			error propagations
+				cmd: in propagation {NoValue, InvalidValue};
+				flows
+					ef0: error sink cmd {NoValue, InvalidValue};
+			end propagations;
+			
+			component error behavior
+				events
+					Reset: recover event;
+				transitions
+					t0: Operational -[cmd {NoValue}]-> Failed;
+					t1: Operational -[cmd {InvalidValue}]-> Failed;
+					t2: Failed -[Reset]-> Operational;
+			end component;
+		**};
+	end acceleration;
+
+end Cabeamento::devices;
+
+------------------------------------------------------------------
+--                        FIM DO ARQUIVO                        --
+------------------------------------------------------------------

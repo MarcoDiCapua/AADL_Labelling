@@ -1,0 +1,15 @@
+package power
+public
+
+with base_types;
+
+bus power
+	features
+		socketPlus : provides bus access;
+		socketGround : provides bus access;
+end power;
+
+bus implementation power.i
+end power.i;
+
+end power;

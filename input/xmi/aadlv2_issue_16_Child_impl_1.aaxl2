@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="Child_impl_Instance" category="system">
+  <featureInstance name="FG1" category="featureGroup" direction="in out">
+    <featureInstance name="FG2" category="featureGroup" direction="in out">
+      <featureInstance name="F3" category="abstractFeature" direction="out">
+        <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedAbstractFeature.0"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <featureInstance name="F2" category="abstractFeature" direction="out">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAbstractFeature.0"/>
+    </featureInstance>
+    <featureInstance name="F3" category="abstractFeature">
+      <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedAbstractFeature.1"/>
+    </featureInstance>
+    <feature xsi:type="aadl2:FeatureGroup" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedFeatureGroup.0"/>
+  </featureInstance>
+  <featureInstance name="F1" category="abstractFeature" direction="out">
+    <feature xsi:type="aadl2:AbstractFeature" href="../../github/aadlv2/issues/issue_16.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedAbstractFeature.0"/>
+  </featureInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/aadlv2/issues/issue_16.aadl#issue_16.Child.impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/aadlv2/issues/issue_16.aadl#issue_16.Child.impl"/>
+</instance:SystemInstance>

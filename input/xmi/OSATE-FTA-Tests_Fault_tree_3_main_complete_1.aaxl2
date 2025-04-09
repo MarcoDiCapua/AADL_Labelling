@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="main_complete_Instance" category="system">
+  <componentInstance name="left" category="device">
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/OSATE-FTA-Tests/packages/Fault_tree_3.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/OSATE-FTA-Tests/packages/Fault_tree_3.aadl#Fault_tree_3.item.i"/>
+  </componentInstance>
+  <componentInstance name="right" category="device">
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/OSATE-FTA-Tests/packages/Fault_tree_3.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceImplementation" href="../../github/OSATE-FTA-Tests/packages/Fault_tree_3.aadl#Fault_tree_3.item.i"/>
+  </componentInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/OSATE-FTA-Tests/packages/Fault_tree_3.aadl#Fault_tree_3.main.complete"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/OSATE-FTA-Tests/packages/Fault_tree_3.aadl#Fault_tree_3.main.complete"/>
+</instance:SystemInstance>

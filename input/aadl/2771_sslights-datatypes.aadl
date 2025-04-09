@@ -1,0 +1,58 @@
+package sslights::datatypes
+public
+	
+with base_types;
+with data_model;
+
+data object_position
+end object_position;
+
+data implementation object_position.i
+subcomponents
+  present : data base_types::boolean;
+  x       : data Base_Types::Unsigned_8;
+end object_position.i;
+--- lamppost will carry only an array of the ids of lampposts (which will be used to determine the sphere of light) -- 
+data lamppost
+	properties 
+	data_model::data_representation => array; 
+end lamppost;
+
+data implementation lamppost.i
+subcomponents 
+	ids : data Base_Types::Integer_8;
+end lamppost.i;
+
+--- actuation_type will contain only a code number to determine what operation needs to be carried out ---
+data actuation_type extends Base_Types::Integer_8
+end actuation_type;
+
+data color_cmd extends Base_Types::Integer_8 -- what color needs to be set
+end color_cmd;
+
+data intensity_cmd extends Base_Types::Integer_8 -- what inensity of light needs to be set
+end intensity_cmd;
+
+data speed extends base_types::unsigned_16
+end speed;
+
+data picture 
+properties
+	data_size => 600 KByte;
+	data_model::data_representation => array;
+end picture; 
+
+data boolean
+properties
+	data_size => 1 bits;
+end boolean;
+
+data distance extends base_types::unsigned_32
+end distance;
+
+data probe_msg
+end probe_msg;
+
+
+
+end sslights::datatypes;

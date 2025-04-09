@@ -1,0 +1,14 @@
+package FORA::datatype
+public
+	data modelparameter
+		
+	end modelparameter;
+	data ensemblemodelparameter
+		
+	end ensemblemodelparameter;
+	data rawdata
+	end rawdata;
+	data decision
+		
+	end decision;
+end FORA::datatype;

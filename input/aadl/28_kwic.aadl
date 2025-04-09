@@ -1,0 +1,404 @@
+package kwic
+public
+	with Data_Model;
+	with Base_Types;
+
+	system kwic_sys
+		features
+			lines_out: out data port string_list;
+			request_lines: in event port;
+		flows
+			fpd: flow source lines_out;
+			fe: flow sink request_lines;
+	end kwic_sys;
+
+	system implementation kwic_sys.i
+		subcomponents
+			cpu0: processor genuineintel;
+			mem: memory mem;
+			input: process input_pr.i;
+			circular: process circular_pr.i;
+			alpha: process alpha_pr.i;
+			output: process output_pr.i;
+			ibus: virtual bus interthread;
+			keyboard: device keyboard;
+		connections
+			input_circular_data: port input.lines_out -> circular.lines_in;
+			input_circular_notify: port input.notify_circular -> circular.rcv_callback;
+			input_circular_get: port circular.call_getlines -> input.rcv_getlines;
+			
+			circular_alpha_data: port circular.lines_out -> alpha.lines_in;
+			circular_alpha_notify: port circular.notify_alpha -> alpha.rcv_callback;
+			circular_alpha_get: port alpha.call_getlines -> circular.rcv_getlines;
+			
+			alpha_output_data: port alpha.lines_out -> output.lines_in;
+			alpha_output_notify: port alpha.notify_output -> output.rcv_callback;
+			alpha_output_get: port output.call_getlines -> alpha.rcv_getlines;
+			
+			system_output_conn: port output.lines_out -> lines_out;
+			system_req_conn: port request_lines -> output.ext_getlines;
+		flows
+			ic_data_etef: end to end flow input.fdo -> input_circular_data -> circular.fdi;
+			ic_event_etef: end to end flow input.feo -> input_circular_notify -> circular.fpe 
+											-> input_circular_get -> input.fei;
+			
+			ca_data_etef: end to end flow circular.fdo -> circular_alpha_data -> alpha.fdi;
+			ca_event_etef: end to end flow circular.feo -> circular_alpha_notify -> alpha.fpe
+											-> circular_alpha_get -> circular.fei;
+			
+			ao_lines_etef: end to end flow alpha.fdo -> alpha_output_data -> output.fdi;
+			ao_event_etef: end to end flow alpha.feo -> alpha_output_notify -> output.fpe
+											-> alpha_output_get -> alpha.fei;
+			
+			fpd: flow source output.fdo -> system_output_conn -> lines_out;
+			fe: flow sink request_lines -> system_req_conn -> output.fe;
+		properties
+			Actual_Processor_Binding => (reference (cpu0))
+			applies to
+			input, circular, alpha, output;
+			Actual_Memory_Binding => (reference (mem))
+			applies to
+			input, circular, alpha, output;
+	end kwic_sys.i;
+
+	process input_pr
+		features
+			lines_out: out data port string_list;
+			notify_circular: out event port;
+			rcv_getlines: in event port;
+		flows
+			fdo: flow source lines_out;
+			feo: flow source notify_circular;
+			fei: flow sink rcv_getlines;
+	end input_pr;
+
+	process implementation input_pr.i
+		subcomponents
+			process_thr: thread input_th;
+			notify_thr: thread input_notify_th;
+			getlines_thr: thread input_getlines_th;
+			
+			input_buffer: data buffer.i;
+		connections
+			c0: port process_thr.lines_out -> getlines_thr.lines_in;
+			c1: port notify_thr.notify_circular -> notify_circular;
+			c2: port getlines_thr.return_lines -> lines_out;
+			c3: port process_thr.call_notify -> notify_thr.call_in;
+			c4: port rcv_getlines -> getlines_thr.get_lines;
+		flows
+			fdo: flow source process_thr.fd -> c0 -> getlines_thr.fpd -> c2 -> lines_out;
+			feo: flow source process_thr.fe -> c3 -> notify_thr.fpe -> c1 -> notify_circular;
+			fei: flow sink rcv_getlines -> c4 -> getlines_thr.fe;
+	end input_pr.i;
+
+	process circular_pr
+		features
+			lines_in: in data port string_list;
+			lines_out: out data port string_list;
+			notify_alpha: out event port;
+			rcv_callback: in event port;
+			call_getlines: out event port;
+			rcv_getlines: in event port;
+		flows
+			fdi: flow sink lines_in;
+			fdo: flow source lines_out;
+			feo: flow source notify_alpha;
+			fpe: flow path rcv_callback -> call_getlines;
+			fei: flow sink rcv_getlines;
+	end circular_pr;
+
+	process implementation circular_pr.i
+		subcomponents
+			process_thr: thread circular_th;
+			notify_thr: thread circular_notify_th;
+			callback_thr: thread circular_callback_th;
+			getlines_thr: thread circular_getlines_th;
+			
+			circular_buffer: data buffer.i;
+		connections
+			c0: port getlines_thr.return_lines -> lines_out;
+			c1: port lines_in -> callback_thr.input_data_in;
+			c2: port notify_thr.notify_alpha -> notify_alpha;
+			c3: port rcv_callback -> callback_thr.on_input_ready;
+			c5: port callback_thr.call_getlines -> call_getlines;
+			c4: port callback_thr.input_data_fwd -> process_thr.lines_in;
+			c6: port process_thr.call_notify -> notify_thr.call_in;
+			c7: port process_thr.lines_out -> getlines_thr.lines_in;
+			c8: port rcv_getlines -> getlines_thr.get_lines;
+		flows
+			fdi: flow sink lines_in -> c1 -> callback_thr.fpd -> c4 -> process_thr.fdi;
+			fdo: flow source process_thr.fdo -> c7 -> getlines_thr.fpd -> c0 -> lines_out;
+			feo: flow source notify_thr.fpe -> c2 -> notify_alpha;
+			fpe: flow path rcv_callback -> c3 -> callback_thr.fpe -> c5 -> call_getlines;
+			fei: flow sink rcv_getlines -> c8 -> getlines_thr.fe;
+	end circular_pr.i;
+
+	process alpha_pr
+		features
+			lines_in: in data port string_list;
+			lines_out: out data port string_list;
+			notify_output: out event port;
+			rcv_callback: in event port;
+			call_getlines: out event port;
+			rcv_getlines: in event port;
+		flows
+			fdi: flow sink lines_in;
+			fdo: flow source lines_out;
+			feo: flow source notify_output;
+			fei: flow sink rcv_getlines;
+			fpe: flow path rcv_callback -> call_getlines;
+	end alpha_pr;
+
+	process implementation alpha_pr.i
+		subcomponents
+			process_thr: thread alpha_th;
+			notify_thr: thread alpha_notify_th;
+			callback_thr: thread alpha_callback_th;
+			getlines_thr: thread alpha_getlines_th;
+			
+			alpha_buffer: data buffer.i;
+		connections
+			c0: port getlines_thr.return_lines -> lines_out;
+			c1: port lines_in -> callback_thr.circular_data_in;
+			c2: port notify_thr.notify_output -> notify_output;
+			c3: port rcv_callback -> callback_thr.on_circular_ready;
+			c5: port callback_thr.call_getlines -> call_getlines;
+			c4: port callback_thr.circular_data_fwd -> process_thr.lines_in;
+			c6: port process_thr.call_notify -> notify_thr.call_in;
+			c7: port process_thr.lines_out -> getlines_thr.lines_in;
+			c8: port rcv_getlines -> getlines_thr.get_lines;
+		flows
+			fdi: flow sink lines_in -> c1 -> callback_thr.fpd -> c4 -> process_thr.fdi;
+			fdo: flow source process_thr.fdo -> c7 -> getlines_thr.fpd -> c0 -> lines_out;
+			feo: flow source notify_thr.fpe -> c2 -> notify_output;
+			fei: flow sink rcv_getlines -> c8 -> getlines_thr.fe;
+			fpe: flow path rcv_callback -> c3 -> callback_thr.fpe -> c5 -> call_getlines;
+	end alpha_pr.i;
+
+	process output_pr
+		features
+			lines_out: out data port string_list;
+			lines_in: in data port string_list;
+			rcv_callback: in event port;
+			call_getlines: out event port;
+			ext_getlines: in event port;
+		flows
+			fpe: flow path rcv_callback -> call_getlines;
+			fdi: flow sink lines_in;
+			fdo: flow source lines_out;
+			fe: flow sink ext_getlines;
+	end output_pr;
+
+	process implementation output_pr.i
+		subcomponents
+			process_thr: thread output_th;
+			callback_thr: thread output_callback_th;
+			output_buffer: data buffer.i;
+		connections
+			c0: port lines_in -> callback_thr.alpha_data_in;
+			c1: port rcv_callback -> callback_thr.on_alpha_ready;
+			c2: port callback_thr.alpha_data_fwd -> process_thr.lines_in;
+			c3: port callback_thr.call_getline -> call_getlines;
+			c4: port process_thr.lines_out -> lines_out;
+			c5: port ext_getlines -> process_thr.get_lines;
+		flows
+			fdi: flow sink lines_in -> c0 -> callback_thr.fpd -> c2 -> process_thr.fdi;
+			fdo: flow source process_thr.fdo -> c4 -> lines_out;
+			fpe: flow path rcv_callback -> c1 -> callback_thr.fpe -> c3 -> call_getlines;
+			fe: flow sink ext_getlines -> c5 -> process_thr.fe;
+	end output_pr.i;
+
+	thread input_th
+		features
+			lines_out: out data port string_list;
+			call_notify: out event port;
+		flows
+			fd: flow source lines_out;
+			fe: flow source call_notify;
+		properties
+			Dispatch_Protocol => Periodic;
+	end input_th;
+	
+	thread input_notify_th
+		features
+			call_in: in event port;
+			notify_circular: out event port;
+		flows
+			fpe: flow path call_in -> notify_circular;
+		properties
+			Dispatch_Protocol => Aperiodic;
+	end input_notify_th;
+	
+	thread input_getlines_th
+		features
+			get_lines: in event port;
+			lines_in: in data port string_list;
+			return_lines: out data port string_list;
+		flows
+			fe: flow sink get_lines;
+			fpd: flow path lines_in -> return_lines;
+	end input_getlines_th;
+
+	thread circular_th
+		features
+			lines_in: in data port string_list;
+			lines_out: out data port string_list;
+			call_notify: out event port;
+		flows
+			fdi: flow sink lines_in;
+			fdo: flow source lines_out;
+			fe: flow source call_notify;
+		properties
+			Dispatch_Protocol => Sporadic;
+	end circular_th;
+	
+	thread circular_getlines_th
+		features
+			get_lines: in event port;
+			return_lines: out data port string_list;
+			lines_in: in data port string_list;
+		flows
+			fe: flow sink get_lines;
+			fpd: flow path lines_in -> return_lines;
+	end circular_getlines_th;
+	
+	thread circular_notify_th
+		features
+			call_in: in event port;
+			notify_alpha: out event port;
+		flows
+			fpe: flow path call_in -> notify_alpha;
+		properties
+			Dispatch_Protocol => Aperiodic;
+	end circular_notify_th;
+	
+	thread circular_callback_th
+		features
+			on_input_ready: in event port;
+			call_getlines: out event port;
+			input_data_in: in data port string_list;
+			input_data_fwd: out data port string_list;
+		flows
+			fpe: flow path on_input_ready -> call_getlines;
+			fpd: flow path input_data_in -> input_data_fwd;
+		properties
+			Dispatch_Protocol => Aperiodic;
+	end circular_callback_th;
+
+	thread alpha_th
+		features
+			lines_in: in data port string_list;
+			lines_out: out data port string_list;
+			call_notify: out event port;
+		flows
+			fdi: flow sink lines_in;
+			fdo: flow source lines_out;
+			fe: flow source call_notify;
+		properties
+			Dispatch_Protocol => Sporadic;
+	end alpha_th;
+	
+	thread alpha_notify_th
+		features
+			notify_output: out event port;
+			call_in : in event port;
+		flows
+			fpe: flow path call_in -> notify_output;
+		properties
+			Dispatch_Protocol => Aperiodic;
+	end alpha_notify_th;
+	
+	thread alpha_callback_th
+		features
+			on_circular_ready: in event port;
+			call_getlines: out event port;
+			circular_data_in : in data port string_list;
+			circular_data_fwd: out data port string_list;
+		flows
+			fpe: flow path on_circular_ready -> call_getlines;
+			fpd: flow path circular_data_in -> circular_data_fwd;
+		properties
+			Dispatch_Protocol => Aperiodic;
+	end alpha_callback_th;
+	
+	thread alpha_getlines_th
+		features
+			get_lines: in event port;
+			return_lines: out data port string_list;
+			lines_in: in data port string_list;
+		flows
+			fe: flow sink get_lines;
+			fpd: flow path lines_in -> return_lines;
+	end alpha_getlines_th;
+	
+	thread output_th
+		features
+			lines_in: in data port string_list;
+			lines_out: out data port string_list;
+			get_lines: in event port;
+		flows
+			fdi: flow source lines_out;
+			fdo: flow sink lines_in;
+			fe: flow sink get_lines;
+		properties
+			Dispatch_Protocol => Sporadic;
+	end output_th;
+	
+	thread output_callback_th
+		features
+			on_alpha_ready: in event port;
+			alpha_data_in : in data port string_list;
+			alpha_data_fwd: out data port string_list;
+			call_getline: out event port;
+		flows
+			fpe: flow path on_alpha_ready -> call_getline;
+			fpd: flow path alpha_data_in -> alpha_data_fwd;
+		properties
+			Dispatch_Protocol => Aperiodic;
+	end output_callback_th;
+
+	data string_list
+	end string_list;
+
+	data buffer
+	end buffer;
+	
+	data implementation buffer.i
+		subcomponents
+			blocking_queue: data string_list;
+		properties
+			Data_Model::Data_Representation => Struct;
+			Concurrency_Control_Protocol => Semaphore;
+	end buffer.i;
+	
+	data implementation string_list.i
+		properties
+			Data_Model::Data_Representation => Array;
+			Data_Model::Base_Type => (classifier(Base_Types::String));
+	end string_list.i;
+	
+	device keyboard
+		features
+			ibus: requires virtual bus access interthread.i;
+			raw_input: out data port Base_Types::Character;
+	end keyboard;
+
+	processor genuineintel
+		features
+			ibus: requires virtual bus access interthread.i;
+	end genuineintel;
+
+	memory mem
+		features
+			ibus: requires virtual bus access interthread.i;
+	end mem;
+
+	virtual bus interthread
+		properties
+			Transmission_Type => push;
+	end interthread;
+	
+	virtual bus implementation interthread.i
+	end interthread.i;
+	
+end kwic;

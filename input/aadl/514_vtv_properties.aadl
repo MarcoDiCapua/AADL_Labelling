@@ -1,0 +1,42 @@
+--vtv_properties.aadl
+--these properties are used by vtv.aadl
+
+property set vtv_properties is
+  with vtv,     --AADL components that use the properties herein
+    EMV2,  --error modeling annex V2 predeclared properties
+    Timing_Properties;
+   
+ 
+  Initialization_Timeout : Timing_Properties::Time => 1 sec
+    applies to (all);
+
+--rate at which user interface fails
+  InterfaceFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-7; Distribution => Fixed;];
+--error rate of detection of interface failure   
+  DetectionInterfaceFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-10; Distribution => Fixed;];
+
+
+--rate at which opt_ctrl fails
+  SensorFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.0E-9; Distribution => Fixed;];
+
+
+
+--rate at which loc_ctrl/remote vehicle OBE fails
+  InfoFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.2E-7; Distribution => Fixed;];
+--error rate of detection of Monitoring failure   
+  MonitorStatusFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.3E-10; Distribution => Fixed;];
+
+
+--rate at which ie road equipment fails
+  RadarFailureRate : constant EMV2::DistributionSpecification => 
+    [ProbabilityValue => 1.5E-9; Distribution => Fixed;];
+
+
+end vtv_properties;  
+
+

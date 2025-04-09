@@ -1,0 +1,118 @@
+-- Copyright (c) 2015 Carnegie Mellon University and Ivan Ruchkin.
+-- All Rights Reserved.
+--
+-- Released under a modified MIT license, please see license.txt or contact permission@sei.cmu.edu for full terms.  DM-0002665
+--
+-- This Software includes and/or makes use of the following Third-Party Software subject to its own license:
+-- collision_detection_aadl
+-- ========================
+--
+-- A AADL model of a collision prevention system for use in a telematics architecture
+--
+-- License
+-- =======
+--
+-- The MIT License (MIT) 
+-- Copyright (c) 2013 Nicholas Guzzardo, Mike Kabbani, Ethan McGee
+-- 
+-- Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+--
+-- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+--
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+-- This package contains types of autonomous vehicle sensors.
+
+package basic_sensors
+	public
+	with basic_computing, 
+		Sensor_Properties,
+		Security_Properties;
+	
+	-- A generic sensor connected to a bus
+	-- Contains failure modes 
+	device sensor
+		features
+			sensor_data:out data port;
+			ba:requires bus access basic_computing::basic_bus.standard;
+		requires modes 
+			avail_trust: initial mode;
+			avail_untrust: mode;
+			unavail: mode;
+		properties
+			-- non-modal properties
+			Timing_Properties::Period => 50ms;
+			Sensor_Properties::Pow => true;
+			
+			-- modal properties
+			Security_Properties::Trustworthiness => 
+				true in modes (avail_trust, unavail), -- for unambiguity we assume that unavailable sensors are trustworthy
+				false in modes (avail_untrust);
+				
+			Sensor_Properties::Avail => 
+				true in modes (avail_trust, avail_untrust),
+				false in modes (unavail);
+			
+	end sensor;
+	
+	-- Concrete sensor types and implementations
+	-- Only those variables specified that are considered in the analysis example
+	
+	device implementation sensor.gps
+		properties
+			Sensor_Properties::VarsS => (Position);
+	end sensor.gps;
+	
+	device implementation sensor.speedometer
+		properties
+			Sensor_Properties::VarsS => (Velocity);
+	end sensor.speedometer;
+		
+	device implementation sensor.frontal_obstacle
+		properties
+			Sensor_Properties::VarsS => (Distance);
+	end sensor.frontal_obstacle;
+	
+	device implementation sensor.rear_obstacle
+	end sensor.rear_obstacle;
+	
+	device implementation sensor.frontal_vehicle
+		properties
+			Sensor_Properties::VarsS => (Distance);
+	end sensor.frontal_vehicle;
+	
+	device implementation sensor.rear_vehicle
+	end sensor.rear_vehicle;
+	
+	device implementation sensor.side_vehicle
+	end sensor.side_vehicle;
+	
+	device implementation sensor.tire_pressure
+	end sensor.tire_pressure;
+	
+	device implementation sensor.tire_tread
+	end sensor.tire_tread;
+	
+	device implementation sensor.wheel_slippage
+	end sensor.wheel_slippage;
+	
+	device implementation sensor.brake_depth
+	end sensor.brake_depth;
+	
+	device implementation sensor.road_conditions
+	end sensor.road_conditions;
+	
+	device implementation sensor.visibility
+	end sensor.visibility;
+	
+	device implementation sensor.driver_responsive
+	end sensor.driver_responsive;
+	
+	device implementation sensor.driver_impaired
+	end sensor.driver_impaired;
+	
+	device implementation sensor.system_spoken_to
+	end sensor.system_spoken_to;
+		
+end basic_sensors;

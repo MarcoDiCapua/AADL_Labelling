@@ -1,0 +1,9 @@
+property set smartparkProperties is
+	Velocity_Type: TYPE AADLREAL UNITS smartparkProperties::Velocity_Units;
+  	Velocity_Units: TYPE UNITS (mph);
+  	Frequency_Type: TYPE AADLREAL UNITS smartparkProperties::Frequency_Units;
+  	Frequency_Units: TYPE UNITS (GHz);
+  	Angle_Type: TYPE AADLREAL UNITS smartparkProperties::Angle_Units;
+  	Angle_Units: TYPE UNITS (degrees);
+  	ccCmds: enumeration (on,off,engage) applies to (data, port, system);
+end caccProperties;

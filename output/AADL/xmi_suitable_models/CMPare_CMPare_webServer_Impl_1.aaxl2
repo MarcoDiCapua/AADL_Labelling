@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="webServer_Impl_Instance" category="system">
+  <featureInstance name="get_req">
+    <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="control_HB">
+    <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="send_reply" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+  </featureInstance>
+  <featureInstance name="send_HB" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+  </featureInstance>
+  <componentInstance name="PM" category="system">
+    <featureInstance name="get_req">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="send_reply" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="U" category="system">
+      <featureInstance name="get_user_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="get_user_email">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="get_user_phone">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="get_user_adress">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="sendUserPaymentInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.4"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/payment.aadl#payment.user"/>
+    </componentInstance>
+    <componentInstance name="P" category="system">
+      <featureInstance name="get_product_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="get_product_ID">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="get_product_price">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="sendProductPaymentInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSystemSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/payment.aadl#payment.product"/>
+    </componentInstance>
+    <componentInstance name="CC" category="system">
+      <featureInstance name="Card_Owner_Name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="Card_Number">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="Card_Date">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="Card_CVV">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="sendCreditCardInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.4"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSystemSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/payment.aadl#payment.credit_card"/>
+    </componentInstance>
+    <componentInstance name="OBC" category="system">
+      <featureInstance name="getCardInfo">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="paymentVerification" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSystemSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/payment.aadl#payment.OnlineBankCheck"/>
+    </componentInstance>
+    <connectionInstance name="P.sendProductPaymentInfo -> U.get_user_name" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductPaymentInfo -> U.get_user_email" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1" source="//@componentInstance.0/@componentInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductPaymentInfo -> U.get_user_phone" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2" source="//@componentInstance.0/@componentInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="CC.sendCreditCardInfo -> U.get_user_name" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@componentInstance.2/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.2/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="CC.sendCreditCardInfo -> U.get_user_email" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1" source="//@componentInstance.0/@componentInstance.2/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.2/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="CC.sendCreditCardInfo -> U.get_user_phone" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2" source="//@componentInstance.0/@componentInstance.2/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.2/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.5"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="CC.sendCreditCardInfo -> OBC.getCardInfo" complete="true" kind="portConnection" destination="//@componentInstance.0/@componentInstance.3/@featureInstance.0" source="//@componentInstance.0/@componentInstance.2/@featureInstance.4">
+      <connectionReference context="//@componentInstance.0" source="//@componentInstance.0/@componentInstance.2/@featureInstance.4" destination="//@componentInstance.0/@componentInstance.3/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/payment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.6"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/CMPare/payment.aadl#payment.payment.Impl"/>
+  </componentInstance>
+  <componentInstance name="OS" category="system">
+    <featureInstance name="get_req">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="send_reply" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="u" category="system">
+      <featureInstance name="get_user_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="get_user_email">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="get_user_phone">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="get_user_address">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="sendUserInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.4"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/Order_System.aadl#Order_System.User"/>
+    </componentInstance>
+    <componentInstance name="p" category="system">
+      <featureInstance name="get_product_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="get_product_ID">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="get_product_price">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="get_description">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="sendProductOrderInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedSystemSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/Order_System.aadl#Order_System.Product"/>
+    </componentInstance>
+    <connectionInstance name="p.sendProductOrderInfo -> u.get_user_name" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.0" source="//@componentInstance.1/@componentInstance.1/@featureInstance.4">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="p.sendProductOrderInfo -> u.get_user_email" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.4">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="p.sendProductOrderInfo -> u.get_user_phone" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.2" source="//@componentInstance.1/@componentInstance.1/@featureInstance.4">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="p.sendProductOrderInfo -> u.get_user_address" complete="true" kind="portConnection" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.3" source="//@componentInstance.1/@componentInstance.1/@featureInstance.4">
+      <connectionReference context="//@componentInstance.1" source="//@componentInstance.1/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.1/@componentInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Order_System.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/CMPare/Order_System.aadl#Order_System.Order.Impl"/>
+  </componentInstance>
+  <componentInstance name="DS" category="system">
+    <featureInstance name="get_req">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="send_reply" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="U" category="system">
+      <featureInstance name="get_user_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="get_user_ID">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="get_user_email">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="get_user_address">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="sendUserInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.4"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/Deliver_System.aadl#deliver_system.User"/>
+    </componentInstance>
+    <componentInstance name="P" category="system">
+      <featureInstance name="get_product_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="get_product_ID">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="sendProductInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSystemSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/Deliver_System.aadl#deliver_system.Product"/>
+    </componentInstance>
+    <componentInstance name="S" category="system">
+      <featureInstance name="get_seller_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="get_seller_ID">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="get_seller_email">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="get_seller_phoneNum">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="get_seller_address">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.4"/>
+      </featureInstance>
+      <featureInstance name="sendSellerInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.5"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSystemSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/Deliver_System.aadl#deliver_system.Seller"/>
+    </componentInstance>
+    <componentInstance name="DG" category="system">
+      <featureInstance name="DG_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="DG_ID">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="DG_phoneNum">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="sendDGInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedSystemSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/Deliver_System.aadl#deliver_system.delivery_guy"/>
+    </componentInstance>
+    <connectionInstance name="U.sendUserInfo -> S.get_seller_name" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.0" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> S.get_seller_ID" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.1" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.5"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> S.get_seller_email" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.6"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> S.get_seller_phoneNum" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.3" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.7"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> DG.DG_name" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.0" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.8"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> DG.DG_ID" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.1" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.9"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> DG.DG_phoneNum" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.10"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> U.get_user_name" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> U.get_user_ID" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.1" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> U.get_user_email" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> U.get_user_address" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.3" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> DG.DG_name" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.0" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.14"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> DG.DG_ID" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.1" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.15"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> DG.DG_phoneNum" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.16"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="S.sendSellerInfo -> DG.DG_name" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.0" source="//@componentInstance.2/@componentInstance.2/@featureInstance.5">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.2/@featureInstance.5" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.11"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="S.sendSellerInfo -> DG.DG_ID" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.1" source="//@componentInstance.2/@componentInstance.2/@featureInstance.5">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.2/@featureInstance.5" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.12"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="S.sendSellerInfo -> DG.DG_phoneNum" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.2" source="//@componentInstance.2/@componentInstance.2/@featureInstance.5">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.2/@featureInstance.5" destination="//@componentInstance.2/@componentInstance.3/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.13"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="DG.sendDGInfo -> U.get_user_name" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.17"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="DG.sendDGInfo -> U.get_user_ID" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.1" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.18"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="DG.sendDGInfo -> U.get_user_email" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.2" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.19"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="DG.sendDGInfo -> U.get_user_address" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.3" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.20"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="DG.sendDGInfo -> S.get_seller_name" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.0" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.21"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="DG.sendDGInfo -> S.get_seller_ID" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.1" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.22"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="DG.sendDGInfo -> S.get_seller_email" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.2" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.23"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="DG.sendDGInfo -> S.get_seller_phoneNum" complete="true" kind="portConnection" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.3" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3">
+      <connectionReference context="//@componentInstance.2" source="//@componentInstance.2/@componentInstance.3/@featureInstance.3" destination="//@componentInstance.2/@componentInstance.2/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/Deliver_System.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.24"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/CMPare/Deliver_System.aadl#deliver_system.Deliver.Impl"/>
+  </componentInstance>
+  <componentInstance name="CS" category="system">
+    <featureInstance name="get_req">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="send_reply" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="U" category="system">
+      <featureInstance name="get_user_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="get_user_ID">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="get_user_email">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="get_user_answer">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="send_user_question" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.4"/>
+      </featureInstance>
+      <featureInstance name="sendUserInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.5"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedSystemSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/customerService.aadl#Customer_Service.User"/>
+    </componentInstance>
+    <componentInstance name="WO" category="system">
+      <featureInstance name="get_owner_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="get_owner_email">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="OW_getQuestion">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="OW_sendAnswer" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedDataPort.3"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedSystemSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/customerService.aadl#Customer_Service.Website_Owner"/>
+    </componentInstance>
+    <componentInstance name="S" category="system">
+      <featureInstance name="get_seller_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="get_seller_ID">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="get_seller_email">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="get_seller_question">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="get_seller_answer">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.4"/>
+      </featureInstance>
+      <featureInstance name="send_seller_question" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.5"/>
+      </featureInstance>
+      <featureInstance name="sendSellerInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.6"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedSystemSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/customerService.aadl#Customer_Service.Seller"/>
+    </componentInstance>
+    <componentInstance name="P" category="system">
+      <featureInstance name="get_product_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="get_product_ID">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="get_product_category">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="get_product_comment">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="sendProductInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.4"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedSystemSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/customerService.aadl#Customer_Service.Product"/>
+    </componentInstance>
+    <componentInstance name="CSS" category="system">
+      <featureInstance name="CS_Stuff_name">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="CS_Stuff_ID">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="CS_Stuff_email">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="CS_Stuff_phoneNum">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="CS_getQuestion">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.4"/>
+      </featureInstance>
+      <featureInstance name="CS_getAnswer">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.5"/>
+      </featureInstance>
+      <featureInstance name="sendStuffInfo" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.6"/>
+      </featureInstance>
+      <featureInstance name="CS_sendAnswer" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.7"/>
+      </featureInstance>
+      <featureInstance name="CS_sendQuestion" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDataPort.8"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedSystemSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:SystemType" href="../../github/CMPare/customerService.aadl#Customer_Service.CustomerServiceStuff"/>
+    </componentInstance>
+    <connectionInstance name="U.send_user_question -> CSS.CS_getQuestion" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.4" source="//@componentInstance.3/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.23"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.send_user_question -> S.get_seller_question" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.29"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> WO.get_owner_email" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.1" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> WO.get_owner_name" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.0" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> S.get_seller_email" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.2" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> S.get_seller_name" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.0" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> S.get_seller_ID" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.1" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> CSS.CS_Stuff_name" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.0" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.5"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> CSS.CS_Stuff_ID" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.1" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.6"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> CSS.CS_Stuff_email" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.2" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.7"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="U.sendUserInfo -> CSS.CS_Stuff_phoneNum" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.0/@featureInstance.5" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.8"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="WO.OW_sendAnswer -> CSS.CS_getAnswer" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.5" source="//@componentInstance.3/@componentInstance.1/@featureInstance.3">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.5">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.26"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="S.send_seller_question -> CSS.CS_getQuestion" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.4" source="//@componentInstance.3/@componentInstance.2/@featureInstance.5">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.2/@featureInstance.5" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.24"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> U.get_user_name" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.0" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.9"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> U.get_user_email" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.2" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.10"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> U.get_user_ID" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.1" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.11"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> WO.get_owner_email" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.1" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.12"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> WO.get_owner_name" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.0" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.13"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> S.get_seller_email" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.2" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.14"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> S.get_seller_name" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.0" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.15"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> S.get_seller_ID" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.1" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.16"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> CSS.CS_Stuff_name" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.0" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.17"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> CSS.CS_Stuff_ID" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.1" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.18"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> CSS.CS_Stuff_email" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.2" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.19"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="P.sendProductInfo -> CSS.CS_Stuff_phoneNum" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.3" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.3/@featureInstance.4" destination="//@componentInstance.3/@componentInstance.4/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.20"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="CSS.sendStuffInfo -> WO.get_owner_email" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.1" source="//@componentInstance.3/@componentInstance.4/@featureInstance.6">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.4/@featureInstance.6" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.21"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="CSS.sendStuffInfo -> WO.get_owner_name" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.0" source="//@componentInstance.3/@componentInstance.4/@featureInstance.6">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.4/@featureInstance.6" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.22"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="CSS.CS_sendAnswer -> U.get_user_answer" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.3" source="//@componentInstance.3/@componentInstance.4/@featureInstance.7">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.4/@featureInstance.7" destination="//@componentInstance.3/@componentInstance.0/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.27"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="CSS.CS_sendAnswer -> S.get_seller_answer" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.4" source="//@componentInstance.3/@componentInstance.4/@featureInstance.7">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.4/@featureInstance.7" destination="//@componentInstance.3/@componentInstance.2/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.28"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="CSS.CS_sendQuestion -> WO.OW_getQuestion" complete="true" kind="portConnection" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.2" source="//@componentInstance.3/@componentInstance.4/@featureInstance.8">
+      <connectionReference context="//@componentInstance.3" source="//@componentInstance.3/@componentInstance.4/@featureInstance.8" destination="//@componentInstance.3/@componentInstance.1/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/customerService.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPortConnection.25"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedSystemSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/CMPare/customerService.aadl#Customer_Service.CustomerService.Impl"/>
+  </componentInstance>
+  <connectionInstance name="get_req -> PM.get_req" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="get_req -> OS.get_req" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="get_req -> DS.get_req" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="get_req -> CS.get_req" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@featureInstance.0">
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="PM.send_reply -> send_reply" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.1" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="OS.send_reply -> send_reply" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.1/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.1" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DS.send_reply -> send_reply" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.2/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="CS.send_reply -> send_reply" kind="portConnection" destination="//@featureInstance.2" source="//@componentInstance.3/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.1" destination="//@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/CMPare/CMPare_System.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/CMPare/CMPare_System.aadl#CMPare.webServer.Impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/CMPare/CMPare_System.aadl#CMPare.webServer.Impl"/>
+</instance:SystemInstance>

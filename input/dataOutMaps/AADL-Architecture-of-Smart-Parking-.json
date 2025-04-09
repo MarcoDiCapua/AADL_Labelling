@@ -1,0 +1,21 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "RSE",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Architecture-of-Smart-Parking-/RSE.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\AADL-Architecture-of-Smart-Parking-_RSE_RSEOwner_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\AADL-Architecture-of-Smart-Parking-\\README.md"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to ModelUnit 'Base_Types'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Architecture-of-Smart-Parking-/RSE.aadl line : 3 column : 7)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Architecture-of-Smart-Parking-/RSE.aadl line : 18 column : 38)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Architecture-of-Smart-Parking-/RSE.aadl line : 42 column : 38)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Architecture-of-Smart-Parking-/RSE.aadl line : 19 column : 46)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Architecture-of-Smart-Parking-/RSE.aadl line : 43 column : 46)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Architecture-of-Smart-Parking-/RSE.aadl line : 30 column : 37)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Architecture-of-Smart-Parking-/RSE.aadl line : 31 column : 45)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Architecture-of-Smart-Parking-/RSE.aadl line : 54 column : 37)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Architecture-of-Smart-Parking-/RSE.aadl line : 55 column : 45)",
+    "ERROR:Couldn't resolve reference to DataSubcomponentType 'Base_Types::Integer'. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/AADL-Architecture-of-Smart-Parking-/RSE.aadl line : 66 column : 37)"
+  ]
+}

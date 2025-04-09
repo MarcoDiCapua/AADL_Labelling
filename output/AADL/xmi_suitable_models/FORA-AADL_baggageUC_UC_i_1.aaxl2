@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="UC_i_Instance" category="system">
+  <componentInstance name="Cloud" category="system">
+    <featureInstance name="tsn" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.CloudFacility"/>
+  </componentInstance>
+  <componentInstance name="M1" category="system">
+    <featureInstance name="power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Motor"/>
+  </componentInstance>
+  <componentInstance name="M2" category="system">
+    <featureInstance name="power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Motor"/>
+  </componentInstance>
+  <componentInstance name="M3" category="system">
+    <featureInstance name="power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Motor"/>
+  </componentInstance>
+  <componentInstance name="M4" category="system">
+    <featureInstance name="power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Motor"/>
+  </componentInstance>
+  <componentInstance name="M5" category="system">
+    <featureInstance name="power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Motor"/>
+  </componentInstance>
+  <componentInstance name="M6" category="system">
+    <featureInstance name="power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Motor"/>
+  </componentInstance>
+  <componentInstance name="M7" category="system">
+    <featureInstance name="power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.7"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Motor"/>
+  </componentInstance>
+  <componentInstance name="M8" category="system">
+    <featureInstance name="power" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.8"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Motor"/>
+  </componentInstance>
+  <componentInstance name="P1" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.9"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.PPSensor"/>
+  </componentInstance>
+  <componentInstance name="P2" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.10"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.PPSensor"/>
+  </componentInstance>
+  <componentInstance name="P3" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.11"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.PPSensor"/>
+  </componentInstance>
+  <componentInstance name="P4" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.12"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.PPSensor"/>
+  </componentInstance>
+  <componentInstance name="P5" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.13"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.PPSensor"/>
+  </componentInstance>
+  <componentInstance name="P6" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.14"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.PPSensor"/>
+  </componentInstance>
+  <componentInstance name="P7" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.15"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.PPSensor"/>
+  </componentInstance>
+  <componentInstance name="P8" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.16"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.PPSensor"/>
+  </componentInstance>
+  <componentInstance name="P9" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.17"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.PPSensor"/>
+  </componentInstance>
+  <componentInstance name="P10" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.18"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.PPSensor"/>
+  </componentInstance>
+  <componentInstance name="P11" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.19"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.PPSensor"/>
+  </componentInstance>
+  <componentInstance name="P12" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.20"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.PPSensor"/>
+  </componentInstance>
+  <componentInstance name="Tr1" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.21"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Tagreader"/>
+  </componentInstance>
+  <componentInstance name="Tr2" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.22"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Tagreader"/>
+  </componentInstance>
+  <componentInstance name="Tr3" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.23"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Tagreader"/>
+  </componentInstance>
+  <componentInstance name="Tr4" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.24"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Tagreader"/>
+  </componentInstance>
+  <componentInstance name="SW1" category="system">
+    <featureInstance name="tsn1" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn2" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.1"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn3" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.2"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn4" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.3"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn5" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.4"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn6" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.5"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn7" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.6"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn8" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.7"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn9" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.8"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.25"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Switch"/>
+  </componentInstance>
+  <componentInstance name="SW2" category="system">
+    <featureInstance name="tsn1" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn2" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.1"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn3" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.2"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn4" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.3"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn5" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.4"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn6" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.5"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn7" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.6"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn8" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.7"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn9" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.8"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.26"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Switch"/>
+  </componentInstance>
+  <componentInstance name="SW3" category="system">
+    <featureInstance name="tsn1" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn2" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.1"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn3" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.2"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn4" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.3"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn5" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.4"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn6" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.5"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn7" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.6"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn8" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.7"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="tsn9" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedBusAccess.8"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.27"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Switch"/>
+  </componentInstance>
+  <componentInstance name="N1" category="system">
+    <featureInstance name="power1" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="power2" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedBusAccess.1"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="power3" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedBusAccess.2"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="power4" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedBusAccess.3"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="tsn" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedBusAccess.4"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.28"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.FN"/>
+  </componentInstance>
+  <componentInstance name="N2" category="system">
+    <featureInstance name="power1" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="power2" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedBusAccess.1"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="power3" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedBusAccess.2"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="power4" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedBusAccess.3"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <featureInstance name="tsn" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedBusAccess.4"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.29"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.FN"/>
+  </componentInstance>
+  <componentInstance name="A1" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.30"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Actuator"/>
+  </componentInstance>
+  <componentInstance name="A2" category="system">
+    <featureInstance name="tsn" category="busAccess" direction="out">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedBusAccess.0"/>
+      <type href="../../github/FORA-AADL/FCP/ucs/danfoss/instances/baggageUC_UC_i_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedSystemSubcomponent.31"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemType" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.Actuator"/>
+  </componentInstance>
+  <connectionInstance name="Cloud.tsn -> SW3.tsn1" complete="true" kind="accessConnection" destination="//@componentInstance.27/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.27/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="M1.power -> N1.power1" complete="true" kind="accessConnection" destination="//@componentInstance.28/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.28/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="M2.power -> N1.power2" complete="true" kind="accessConnection" destination="//@componentInstance.28/@featureInstance.1" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.28/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="M3.power -> N1.power3" complete="true" kind="accessConnection" destination="//@componentInstance.28/@featureInstance.2" source="//@componentInstance.3/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.0" destination="//@componentInstance.28/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="M4.power -> N1.power4" complete="true" kind="accessConnection" destination="//@componentInstance.28/@featureInstance.3" source="//@componentInstance.4/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.4/@featureInstance.0" destination="//@componentInstance.28/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="M5.power -> N2.power1" complete="true" kind="accessConnection" destination="//@componentInstance.29/@featureInstance.0" source="//@componentInstance.5/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.29/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="M6.power -> N2.power2" complete="true" kind="accessConnection" destination="//@componentInstance.29/@featureInstance.1" source="//@componentInstance.6/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.29/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="M7.power -> N2.power3" complete="true" kind="accessConnection" destination="//@componentInstance.29/@featureInstance.2" source="//@componentInstance.7/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.0" destination="//@componentInstance.29/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="M8.power -> N2.power4" complete="true" kind="accessConnection" destination="//@componentInstance.29/@featureInstance.3" source="//@componentInstance.8/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0" destination="//@componentInstance.29/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P1.tsn -> SW1.tsn3" complete="true" kind="accessConnection" destination="//@componentInstance.25/@featureInstance.2" source="//@componentInstance.9/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.0" destination="//@componentInstance.25/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P2.tsn -> SW1.tsn4" complete="true" kind="accessConnection" destination="//@componentInstance.25/@featureInstance.3" source="//@componentInstance.10/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.10/@featureInstance.0" destination="//@componentInstance.25/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P3.tsn -> SW1.tsn5" complete="true" kind="accessConnection" destination="//@componentInstance.25/@featureInstance.4" source="//@componentInstance.11/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.0" destination="//@componentInstance.25/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P4.tsn -> SW1.tsn6" complete="true" kind="accessConnection" destination="//@componentInstance.25/@featureInstance.5" source="//@componentInstance.12/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.0" destination="//@componentInstance.25/@featureInstance.5">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P5.tsn -> SW1.tsn7" complete="true" kind="accessConnection" destination="//@componentInstance.25/@featureInstance.6" source="//@componentInstance.13/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.13/@featureInstance.0" destination="//@componentInstance.25/@featureInstance.6">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.17"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P6.tsn -> SW1.tsn8" complete="true" kind="accessConnection" destination="//@componentInstance.25/@featureInstance.7" source="//@componentInstance.14/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.14/@featureInstance.0" destination="//@componentInstance.25/@featureInstance.7">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.18"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P7.tsn -> SW1.tsn9" complete="true" kind="accessConnection" destination="//@componentInstance.25/@featureInstance.8" source="//@componentInstance.15/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.0" destination="//@componentInstance.25/@featureInstance.8">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.19"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P8.tsn -> SW2.tsn4" complete="true" kind="accessConnection" destination="//@componentInstance.26/@featureInstance.3" source="//@componentInstance.16/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.16/@featureInstance.0" destination="//@componentInstance.26/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.20"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P9.tsn -> SW2.tsn5" complete="true" kind="accessConnection" destination="//@componentInstance.26/@featureInstance.4" source="//@componentInstance.17/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.17/@featureInstance.0" destination="//@componentInstance.26/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.21"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P10.tsn -> SW2.tsn6" complete="true" kind="accessConnection" destination="//@componentInstance.26/@featureInstance.5" source="//@componentInstance.18/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.18/@featureInstance.0" destination="//@componentInstance.26/@featureInstance.5">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.22"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P11.tsn -> SW2.tsn7" complete="true" kind="accessConnection" destination="//@componentInstance.26/@featureInstance.6" source="//@componentInstance.19/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.19/@featureInstance.0" destination="//@componentInstance.26/@featureInstance.6">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.23"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="P12.tsn -> SW2.tsn8" complete="true" kind="accessConnection" destination="//@componentInstance.26/@featureInstance.7" source="//@componentInstance.20/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.20/@featureInstance.0" destination="//@componentInstance.26/@featureInstance.7">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.24"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Tr1.tsn -> SW2.tsn9" complete="true" kind="accessConnection" destination="//@componentInstance.26/@featureInstance.8" source="//@componentInstance.21/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.21/@featureInstance.0" destination="//@componentInstance.26/@featureInstance.8">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.25"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Tr2.tsn -> SW3.tsn4" complete="true" kind="accessConnection" destination="//@componentInstance.27/@featureInstance.3" source="//@componentInstance.22/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.22/@featureInstance.0" destination="//@componentInstance.27/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.26"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Tr3.tsn -> SW3.tsn5" complete="true" kind="accessConnection" destination="//@componentInstance.27/@featureInstance.4" source="//@componentInstance.23/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.23/@featureInstance.0" destination="//@componentInstance.27/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.27"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="Tr4.tsn -> SW3.tsn6" complete="true" kind="accessConnection" destination="//@componentInstance.27/@featureInstance.5" source="//@componentInstance.24/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.24/@featureInstance.0" destination="//@componentInstance.27/@featureInstance.5">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.28"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW1.tsn1 -> N1.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.28/@featureInstance.4" source="//@componentInstance.25/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.25/@featureInstance.0" destination="//@componentInstance.28/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW1.tsn2 -> SW2.tsn3" complete="true" kind="accessConnection" destination="//@componentInstance.26/@featureInstance.2" source="//@componentInstance.25/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.25/@featureInstance.1" destination="//@componentInstance.26/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW1.tsn3 -> P1.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.9/@featureInstance.0" source="//@componentInstance.25/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.25/@featureInstance.2" destination="//@componentInstance.9/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW1.tsn4 -> P2.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.10/@featureInstance.0" source="//@componentInstance.25/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.25/@featureInstance.3" destination="//@componentInstance.10/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW1.tsn5 -> P3.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.11/@featureInstance.0" source="//@componentInstance.25/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.25/@featureInstance.4" destination="//@componentInstance.11/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW1.tsn6 -> P4.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.12/@featureInstance.0" source="//@componentInstance.25/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.25/@featureInstance.5" destination="//@componentInstance.12/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW1.tsn7 -> P5.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.13/@featureInstance.0" source="//@componentInstance.25/@featureInstance.6">
+    <connectionReference context="/" source="//@componentInstance.25/@featureInstance.6" destination="//@componentInstance.13/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.17"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW1.tsn8 -> P6.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.14/@featureInstance.0" source="//@componentInstance.25/@featureInstance.7">
+    <connectionReference context="/" source="//@componentInstance.25/@featureInstance.7" destination="//@componentInstance.14/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.18"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW1.tsn9 -> P7.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.15/@featureInstance.0" source="//@componentInstance.25/@featureInstance.8">
+    <connectionReference context="/" source="//@componentInstance.25/@featureInstance.8" destination="//@componentInstance.15/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.19"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW2.tsn1 -> N2.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.29/@featureInstance.4" source="//@componentInstance.26/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.26/@featureInstance.0" destination="//@componentInstance.29/@featureInstance.4">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW2.tsn2 -> SW3.tsn3" complete="true" kind="accessConnection" destination="//@componentInstance.27/@featureInstance.2" source="//@componentInstance.26/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.26/@featureInstance.1" destination="//@componentInstance.27/@featureInstance.2" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW2.tsn3 -> SW1.tsn2" complete="true" kind="accessConnection" destination="//@componentInstance.25/@featureInstance.1" source="//@componentInstance.26/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.26/@featureInstance.2" destination="//@componentInstance.25/@featureInstance.1" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW2.tsn4 -> P8.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.16/@featureInstance.0" source="//@componentInstance.26/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.26/@featureInstance.3" destination="//@componentInstance.16/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.20"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW2.tsn5 -> P9.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.17/@featureInstance.0" source="//@componentInstance.26/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.26/@featureInstance.4" destination="//@componentInstance.17/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.21"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW2.tsn6 -> P10.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.18/@featureInstance.0" source="//@componentInstance.26/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.26/@featureInstance.5" destination="//@componentInstance.18/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.22"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW2.tsn7 -> P11.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.19/@featureInstance.0" source="//@componentInstance.26/@featureInstance.6">
+    <connectionReference context="/" source="//@componentInstance.26/@featureInstance.6" destination="//@componentInstance.19/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.23"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW2.tsn8 -> P12.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.20/@featureInstance.0" source="//@componentInstance.26/@featureInstance.7">
+    <connectionReference context="/" source="//@componentInstance.26/@featureInstance.7" destination="//@componentInstance.20/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.24"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW2.tsn9 -> Tr1.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.21/@featureInstance.0" source="//@componentInstance.26/@featureInstance.8">
+    <connectionReference context="/" source="//@componentInstance.26/@featureInstance.8" destination="//@componentInstance.21/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.25"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW3.tsn1 -> Cloud.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@componentInstance.27/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.27/@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW3.tsn3 -> SW2.tsn2" complete="true" kind="accessConnection" destination="//@componentInstance.26/@featureInstance.1" source="//@componentInstance.27/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.27/@featureInstance.2" destination="//@componentInstance.26/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW3.tsn4 -> Tr2.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.22/@featureInstance.0" source="//@componentInstance.27/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.27/@featureInstance.3" destination="//@componentInstance.22/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.26"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW3.tsn5 -> Tr3.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.23/@featureInstance.0" source="//@componentInstance.27/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.27/@featureInstance.4" destination="//@componentInstance.23/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.27"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW3.tsn6 -> Tr4.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.24/@featureInstance.0" source="//@componentInstance.27/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.27/@featureInstance.5" destination="//@componentInstance.24/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.28"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW3.tsn7 -> A1.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.30/@featureInstance.0" source="//@componentInstance.27/@featureInstance.6">
+    <connectionReference context="/" source="//@componentInstance.27/@featureInstance.6" destination="//@componentInstance.30/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.29"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="SW3.tsn8 -> A2.tsn" complete="true" kind="accessConnection" destination="//@componentInstance.31/@featureInstance.0" source="//@componentInstance.27/@featureInstance.7">
+    <connectionReference context="/" source="//@componentInstance.27/@featureInstance.7" destination="//@componentInstance.31/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.30"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="N1.power1 -> M1.power" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.28/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.28/@featureInstance.0" destination="//@componentInstance.1/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="N1.power2 -> M2.power" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.28/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.28/@featureInstance.1" destination="//@componentInstance.2/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="N1.power3 -> M3.power" complete="true" kind="accessConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.28/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.28/@featureInstance.2" destination="//@componentInstance.3/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="N1.power4 -> M4.power" complete="true" kind="accessConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.28/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.28/@featureInstance.3" destination="//@componentInstance.4/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="N1.tsn -> SW1.tsn1" complete="true" kind="accessConnection" destination="//@componentInstance.25/@featureInstance.0" source="//@componentInstance.28/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.28/@featureInstance.4" destination="//@componentInstance.25/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="N2.power1 -> M5.power" complete="true" kind="accessConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.29/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.29/@featureInstance.0" destination="//@componentInstance.5/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="N2.power2 -> M6.power" complete="true" kind="accessConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.29/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.29/@featureInstance.1" destination="//@componentInstance.6/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="N2.power3 -> M7.power" complete="true" kind="accessConnection" destination="//@componentInstance.7/@featureInstance.0" source="//@componentInstance.29/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.29/@featureInstance.2" destination="//@componentInstance.7/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="N2.power4 -> M8.power" complete="true" kind="accessConnection" destination="//@componentInstance.8/@featureInstance.0" source="//@componentInstance.29/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.29/@featureInstance.3" destination="//@componentInstance.8/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="N2.tsn -> SW2.tsn1" complete="true" kind="accessConnection" destination="//@componentInstance.26/@featureInstance.0" source="//@componentInstance.29/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.29/@featureInstance.4" destination="//@componentInstance.26/@featureInstance.0" reverse="true">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="A1.tsn -> SW3.tsn7" complete="true" kind="accessConnection" destination="//@componentInstance.27/@featureInstance.6" source="//@componentInstance.30/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.30/@featureInstance.0" destination="//@componentInstance.27/@featureInstance.6">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.29"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="A2.tsn -> SW3.tsn8" complete="true" kind="accessConnection" destination="//@componentInstance.27/@featureInstance.7" source="//@componentInstance.31/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.31/@featureInstance.0" destination="//@componentInstance.27/@featureInstance.7">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedAccessConnection.30"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.UC.i"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/FORA-AADL/FCP/ucs/danfoss/baggageUC.aadl#baggageUC.UC.i"/>
+</instance:SystemInstance>

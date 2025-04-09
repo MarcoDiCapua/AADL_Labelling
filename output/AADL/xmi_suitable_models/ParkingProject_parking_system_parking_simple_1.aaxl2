@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="parking_simple_Instance" category="system">
+  <componentInstance name="VME" category="bus">
+    <subcomponent xsi:type="aadl2:BusSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:BusType" href="../../github/ParkingProject/parking_system.aadl#parking_system.VME"/>
+  </componentInstance>
+  <componentInstance name="camera_in" category="device">
+    <featureInstance name="plates_data" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/0"/>
+    </featureInstance>
+    <featureInstance name="recognise_plates" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="plates_data_event" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="VME" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.0"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ParkingProject/parking_system.aadl#parking_system.camera"/>
+  </componentInstance>
+  <componentInstance name="camera_out" category="device">
+    <featureInstance name="plates_data" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedDataPort.0"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/2"/>
+    </featureInstance>
+    <featureInstance name="recognise_plates" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="plates_data_event" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="VME" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedBusAccess.0"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ParkingProject/parking_system.aadl#parking_system.camera"/>
+  </componentInstance>
+  <componentInstance name="gate_in" category="device">
+    <featureInstance name="open_gate" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="close_gate" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ParkingProject/parking_system.aadl#parking_system.gate"/>
+  </componentInstance>
+  <componentInstance name="gate_out" category="device">
+    <featureInstance name="open_gate" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="close_gate" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ParkingProject/parking_system.aadl#parking_system.gate"/>
+  </componentInstance>
+  <componentInstance name="inductive_loop_in" category="device">
+    <featureInstance name="car_on_loop" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ParkingProject/parking_system.aadl#parking_system.inductive_loop"/>
+  </componentInstance>
+  <componentInstance name="inductive_loop_out" category="device">
+    <featureInstance name="car_on_loop" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ParkingProject/parking_system.aadl#parking_system.inductive_loop"/>
+  </componentInstance>
+  <componentInstance name="gate_loop_in" category="device">
+    <featureInstance name="car_on_loop" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ParkingProject/parking_system.aadl#parking_system.inductive_loop"/>
+  </componentInstance>
+  <componentInstance name="gate_loop_out" category="device">
+    <featureInstance name="car_on_loop" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.7"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ParkingProject/parking_system.aadl#parking_system.inductive_loop"/>
+  </componentInstance>
+  <componentInstance name="check_out" category="device">
+    <featureInstance name="parking_price">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/3"/>
+    </featureInstance>
+    <featureInstance name="parking_paid" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="VME" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedBusAccess.0"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.8"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ParkingProject/parking_system.aadl#parking_system.check_out"/>
+  </componentInstance>
+  <componentInstance name="board" category="device">
+    <featureInstance name="open_slots">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/4"/>
+    </featureInstance>
+    <featureInstance name="VME" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedBusAccess.0"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.9"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ParkingProject/parking_system.aadl#parking_system.capacity_board"/>
+  </componentInstance>
+  <componentInstance name="parking_slot1" category="device">
+    <featureInstance name="car_in" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="car_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.10"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ParkingProject/parking_system.aadl#parking_system.slot_sensor"/>
+  </componentInstance>
+  <componentInstance name="parking_slot2" category="device">
+    <featureInstance name="car_in" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="car_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.11"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ParkingProject/parking_system.aadl#parking_system.slot_sensor"/>
+  </componentInstance>
+  <componentInstance name="parking_slot3" category="device">
+    <featureInstance name="car_in" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="car_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedEventPort.1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.12"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../../github/ParkingProject/parking_system.aadl#parking_system.slot_sensor"/>
+  </componentInstance>
+  <componentInstance name="RAM" category="memory">
+    <featureInstance name="VME" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.40/@ownedBusAccess.0"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedMemorySubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:MemoryType" href="../../github/ParkingProject/parking_system.aadl#parking_system.RAM"/>
+  </componentInstance>
+  <componentInstance name="main" category="process">
+    <featureInstance name="plates_data_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedDataPort.0"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/10"/>
+    </featureInstance>
+    <featureInstance name="plates_data_out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedDataPort.1"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/11"/>
+    </featureInstance>
+    <featureInstance name="parking_price" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedDataPort.2"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/12"/>
+    </featureInstance>
+    <featureInstance name="open_slots" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedDataPort.3"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/13"/>
+    </featureInstance>
+    <featureInstance name="open_gate_in" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="open_gate_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="car_on_loop_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="car_on_loop_out" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.3"/>
+    </featureInstance>
+    <featureInstance name="recognise_plates_in" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.4"/>
+    </featureInstance>
+    <featureInstance name="recognise_plates_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.5"/>
+    </featureInstance>
+    <featureInstance name="parking_paid" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.6"/>
+    </featureInstance>
+    <featureInstance name="car_on_gate_loop_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.7"/>
+    </featureInstance>
+    <featureInstance name="car_on_gate_loop_out" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.8"/>
+    </featureInstance>
+    <featureInstance name="close_gate_in" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.9"/>
+    </featureInstance>
+    <featureInstance name="close_gate_out" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.10"/>
+    </featureInstance>
+    <featureInstance name="car_in" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.11"/>
+    </featureInstance>
+    <featureInstance name="car_out" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.12"/>
+    </featureInstance>
+    <featureInstance name="plates_data_in_event" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.13"/>
+    </featureInstance>
+    <featureInstance name="plates_data_event" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedEventPort.14"/>
+    </featureInstance>
+    <componentInstance name="inductive_loop_in_thread" category="thread">
+      <featureInstance name="car_on_loop" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="recognize_plates_in" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ParkingProject/parking_system.aadl#parking_system.inductive_loop_in_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="plates_data_thread" category="thread">
+      <featureInstance name="plates_data_in">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedDataPort.0"/>
+        <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/5"/>
+      </featureInstance>
+      <featureInstance name="plates_data_in_event" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="open_gate_in" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ParkingProject/parking_system.aadl#parking_system.plates_data_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="car_passed_entry_thread" category="thread">
+      <featureInstance name="car_on_loop" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="close_gate" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedThreadSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ParkingProject/parking_system.aadl#parking_system.car_passed_entry_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="car_parked_thread" category="thread">
+      <featureInstance name="slots_number" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedDataPort.0"/>
+        <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/6"/>
+      </featureInstance>
+      <featureInstance name="car_parked" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedThreadSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ParkingProject/parking_system.aadl#parking_system.car_parked_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="car_moved_thread" category="thread">
+      <featureInstance name="slots_number" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedDataPort.0"/>
+        <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/7"/>
+      </featureInstance>
+      <featureInstance name="car_moved" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.24/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedThreadSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ParkingProject/parking_system.aadl#parking_system.car_moved_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="inductive_loop_out_thread" category="thread">
+      <featureInstance name="car_on_loop" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="recognize_plates_out" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedThreadSubcomponent.5"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ParkingProject/parking_system.aadl#parking_system.inductive_loop_out_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="calculate_price" category="thread">
+      <featureInstance name="plate_number">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedDataPort.0"/>
+        <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/8"/>
+      </featureInstance>
+      <featureInstance name="calculated_price" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedDataPort.1"/>
+        <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/9"/>
+      </featureInstance>
+      <featureInstance name="plate_number_event" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedEventPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedThreadSubcomponent.6"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ParkingProject/parking_system.aadl#parking_system.calculate_price.impl"/>
+    </componentInstance>
+    <componentInstance name="open_gate_out_thread" category="thread">
+      <featureInstance name="parking_paid" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="open_gate_out" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedThreadSubcomponent.7"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ParkingProject/parking_system.aadl#parking_system.open_gate_out_thread.impl"/>
+    </componentInstance>
+    <componentInstance name="car_passed_exit_thread" category="thread">
+      <featureInstance name="car_on_loop" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="close_gate" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedThreadSubcomponent.8"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../../github/ParkingProject/parking_system.aadl#parking_system.car_passed_exit_thread.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../../github/ParkingProject/parking_system.aadl#parking_system.parking_process.impl"/>
+  </componentInstance>
+  <componentInstance name="cpu" category="processor">
+    <featureInstance name="VME" category="busAccess">
+      <feature xsi:type="aadl2:BusAccess" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedBusAccess.0"/>
+      <type href="../../github/ParkingProject/instances/parking_system_parking_simple_Instance.aaxl2#/1"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../../github/ParkingProject/parking_system.aadl#parking_system.leon2"/>
+  </componentInstance>
+  <connectionInstance name="VME -> camera_in.VME" complete="true" kind="accessConnection" destination="//@componentInstance.1/@featureInstance.3" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="VME -> camera_out.VME" complete="true" kind="accessConnection" destination="//@componentInstance.2/@featureInstance.3" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.2/@featureInstance.3">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="VME -> check_out.VME" complete="true" kind="accessConnection" destination="//@componentInstance.9/@featureInstance.2" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.9/@featureInstance.2">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="VME -> RAM.VME" complete="true" kind="accessConnection" destination="//@componentInstance.14/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.14/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="VME -> cpu.VME" complete="true" kind="accessConnection" destination="//@componentInstance.16/@featureInstance.0" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.16/@featureInstance.0">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="VME -> board.VME" complete="true" kind="accessConnection" destination="//@componentInstance.10/@featureInstance.1" source="//@componentInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0" destination="//@componentInstance.10/@featureInstance.1">
+      <connection xsi:type="aadl2:AccessConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="camera_in.plates_data -> main.plates_data_thread.plates_data_in" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.1/@featureInstance.0" source="//@componentInstance.1/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.0" destination="//@componentInstance.15/@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="camera_in.plates_data_event -> main.calculate_price.plate_number_event" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.6/@featureInstance.2" source="//@componentInstance.1/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.2" destination="//@componentInstance.15/@featureInstance.18">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.22"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.18" destination="//@componentInstance.15/@componentInstance.6/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.19"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="camera_out.plates_data -> main.calculate_price.plate_number" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.6/@featureInstance.0" source="//@componentInstance.2/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.1" destination="//@componentInstance.15/@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="camera_out.plates_data_event -> main.plates_data_thread.plates_data_in_event" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.1/@featureInstance.1" source="//@componentInstance.2/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.2" destination="//@componentInstance.15/@featureInstance.17">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.21"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.17" destination="//@componentInstance.15/@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.18"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="inductive_loop_in.car_on_loop -> main.inductive_loop_in_thread.car_on_loop" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.0" source="//@componentInstance.5/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.6" destination="//@componentInstance.15/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="inductive_loop_out.car_on_loop -> main.inductive_loop_out_thread.car_on_loop" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.5/@featureInstance.0" source="//@componentInstance.6/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.6/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.7" destination="//@componentInstance.15/@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="gate_loop_in.car_on_loop -> main.car_passed_entry_thread.car_on_loop" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.2/@featureInstance.0" source="//@componentInstance.7/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.11">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.11" destination="//@componentInstance.15/@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="gate_loop_out.car_on_loop -> main.car_passed_exit_thread.car_on_loop" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.8/@featureInstance.0" source="//@componentInstance.8/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.12">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.12" destination="//@componentInstance.15/@componentInstance.8/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="check_out.parking_paid -> main.open_gate_out_thread.parking_paid" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.7/@featureInstance.0" source="//@componentInstance.9/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.10" destination="//@componentInstance.15/@componentInstance.7/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.17"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="parking_slot1.car_in -> main.car_parked_thread.car_parked" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.3/@featureInstance.1" source="//@componentInstance.11/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.15">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.17"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.15" destination="//@componentInstance.15/@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="parking_slot1.car_out -> main.car_moved_thread.car_moved" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.4/@featureInstance.1" source="//@componentInstance.11/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.14"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.16" destination="//@componentInstance.15/@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="parking_slot2.car_in -> main.car_parked_thread.car_parked" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.3/@featureInstance.1" source="//@componentInstance.12/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.15">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.16"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.15" destination="//@componentInstance.15/@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="parking_slot2.car_out -> main.car_moved_thread.car_moved" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.4/@featureInstance.1" source="//@componentInstance.12/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.20"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.16" destination="//@componentInstance.15/@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="parking_slot3.car_in -> main.car_moved_thread.car_moved" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.4/@featureInstance.1" source="//@componentInstance.13/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.13/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.18"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.16" destination="//@componentInstance.15/@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="parking_slot3.car_out -> main.car_moved_thread.car_moved" complete="true" kind="portConnection" destination="//@componentInstance.15/@componentInstance.4/@featureInstance.1" source="//@componentInstance.13/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.13/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.16">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.15"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@featureInstance.16" destination="//@componentInstance.15/@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main.inductive_loop_in_thread.recognize_plates_in -> camera_in.recognise_plates" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@componentInstance.15/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.8" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main.plates_data_thread.open_gate_in -> gate_in.open_gate" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.15/@componentInstance.1/@featureInstance.2">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.15/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.4" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main.car_passed_entry_thread.close_gate -> gate_in.close_gate" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.15/@componentInstance.2/@featureInstance.1">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.2/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.13">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.13" destination="//@componentInstance.3/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main.car_parked_thread.slots_number -> board.open_slots" complete="true" kind="portConnection" destination="//@componentInstance.10/@featureInstance.0" source="//@componentInstance.15/@componentInstance.3/@featureInstance.0">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.3/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.3" destination="//@componentInstance.10/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main.car_moved_thread.slots_number -> board.open_slots" complete="true" kind="portConnection" destination="//@componentInstance.10/@featureInstance.0" source="//@componentInstance.15/@componentInstance.4/@featureInstance.0">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.4/@featureInstance.0" destination="//@componentInstance.15/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.3" destination="//@componentInstance.10/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main.inductive_loop_out_thread.recognize_plates_out -> camera_out.recognise_plates" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@componentInstance.15/@componentInstance.5/@featureInstance.1">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.5/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.14"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.9" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main.calculate_price.calculated_price -> check_out.parking_price" complete="true" kind="portConnection" destination="//@componentInstance.9/@featureInstance.0" source="//@componentInstance.15/@componentInstance.6/@featureInstance.1">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.6/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.11"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.2" destination="//@componentInstance.9/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main.open_gate_out_thread.open_gate_out -> gate_out.open_gate" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.15/@componentInstance.7/@featureInstance.1">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.7/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.15"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.5" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="main.car_passed_exit_thread.close_gate -> gate_out.close_gate" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.1" source="//@componentInstance.15/@componentInstance.8/@featureInstance.1">
+    <connectionReference context="//@componentInstance.15" source="//@componentInstance.15/@componentInstance.8/@featureInstance.1" destination="//@componentInstance.15/@featureInstance.14">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPortConnection.16"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.15/@featureInstance.14" destination="//@componentInstance.4/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/ParkingProject/parking_system.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.19"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/ParkingProject/parking_system.aadl#parking_system.parking.simple"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/ParkingProject/parking_system.aadl#parking_system.parking.simple"/>
+</instance:SystemInstance>

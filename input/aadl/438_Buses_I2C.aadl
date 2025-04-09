@@ -1,0 +1,13 @@
+package Buses_I2C
+public
+
+bus I2C
+	features
+		SCL : in out event port; -- Clock line
+    	SDA : in out event port; -- Data line
+end I2C;
+  
+bus implementation I2C.impl
+end I2C.impl;
+
+end Buses_I2C;

@@ -1,0 +1,224 @@
+package TractionControlSystem
+public
+	with Data_Model;
+	with Base_Types;
+	with SEI;
+	
+--	data
+	data Speed
+		properties
+			Data_Model::Data_Representation => integer;
+	end Speed;
+	
+	
+--  system
+
+	system TCS
+		properties
+       SEI::NetWeight => 1.0kg;
+	end TCS;
+	
+	system implementation TCS.impl
+		subcomponents
+			tcs_switch: device tcs_switch.impl;
+			rear_right_wheel_ss: device wheel_speed_sensor.impl;
+			rear_left_wheel_ss: device wheel_speed_sensor.impl;
+			rear_right_wheel_brake: device brake_caliper.impl;
+			rear_left_wheel_brake: device brake_caliper.impl;
+			speedometer: device speedometer.impl;
+			standard_tcs_bus: bus tcs_bus.standard;
+			cpu: processor tcs_processor.impl;
+			standard_tcs_controller: process tcs_controller.impl;
+			
+		connections
+			c0: port tcs_switch.tcs_on -> standard_tcs_controller.tcs_on;
+			c1: port rear_right_wheel_ss.current_wheel_speed -> standard_tcs_controller.current_rear_right_wheel_speed;
+			c2: port rear_left_wheel_ss.current_wheel_speed -> standard_tcs_controller.current_rear_left_wheel_speed;
+			c3: port speedometer.current_speed -> standard_tcs_controller.current_speed;
+			c4: port standard_tcs_controller.apply_rear_right_wheel_brake -> rear_right_wheel_brake.apply_break;
+			c5: port standard_tcs_controller.apply_rear_left_wheel_brake -> rear_left_wheel_brake.apply_break;
+			
+			bac0: bus access standard_tcs_bus <-> tcs_switch.bus_acc;
+			bac1: bus access standard_tcs_bus <-> rear_right_wheel_ss.bus_acc;
+			bac2: bus access standard_tcs_bus <-> rear_left_wheel_ss.bus_acc;
+			bac3: bus access standard_tcs_bus <-> rear_right_wheel_brake.bus_acc;
+			bac4: bus access standard_tcs_bus <-> rear_left_wheel_brake.bus_acc;
+			bac5: bus access standard_tcs_bus <-> speedometer.bus_acc;
+			bac7: bus access standard_tcs_bus <-> cpu.bus_acc;
+			
+		properties
+			Actual_Processor_Binding => (reference (cpu)) applies to standard_tcs_controller;
+			Actual_Memory_Binding => (reference (cpu.ram)) applies to standard_tcs_controller;
+			Actual_Connection_Binding => (reference(standard_tcs_bus)) applies to c0;
+			Actual_Connection_Binding => (reference(standard_tcs_bus)) applies to c1;
+			Actual_Connection_Binding => (reference(standard_tcs_bus)) applies to c2;
+			Actual_Connection_Binding => (reference(standard_tcs_bus)) applies to c3;
+			Actual_Connection_Binding => (reference(standard_tcs_bus)) applies to c4;
+			Actual_Connection_Binding => (reference(standard_tcs_bus)) applies to c5;
+  			SEI::WeightLimit => 10.0kg;
+			
+	end TCS.impl;
+	
+--	devices
+	
+	device tcs_switch
+		features
+			tcs_on: out data port Base_Types::Boolean;
+			bus_acc: requires bus access tcs_bus.standard;
+		properties
+       		SEI::NetWeight => 0.2kg;
+	end tcs_switch;
+	
+	device implementation tcs_switch.impl
+		
+	end tcs_switch.impl;
+	
+	device speedometer
+		features
+			current_speed: out data port Speed;
+			bus_acc: requires bus access tcs_bus.standard;
+		properties
+       		SEI::NetWeight => 0.5kg;			
+	end speedometer;
+	
+	device implementation speedometer.impl
+		
+	end speedometer.impl;
+	
+	device wheel_speed_sensor
+		features
+			current_wheel_speed: out data port Speed;
+			bus_acc: requires bus access tcs_bus.standard;
+		properties
+       		SEI::NetWeight => 1.0kg;		
+	end wheel_speed_sensor;
+	
+	device implementation wheel_speed_sensor.impl
+		
+	end wheel_speed_sensor.impl;
+
+	
+	device brake_caliper
+		features
+			apply_break: in event port;
+			bus_acc: requires bus access tcs_bus.standard;
+		properties
+       		SEI::NetWeight => 1.0kg;	
+	end brake_caliper;
+	
+	device implementation brake_caliper.impl
+		
+	end brake_caliper.impl;
+-- bus
+	bus tcs_bus
+		properties
+			SEI::BandWidthCapacity => 200.0 MBytesps;
+			SEI::BandWidthBudget => 950.0 KBytesps;
+			SEI::NetWeight => 0.5kg;
+	end tcs_bus;
+	
+	bus implementation tcs_bus.standard
+	
+	end tcs_bus.standard;
+	
+--	memory
+
+	memory RAM
+		features
+    		bus_acc: requires bus access tcs_bus.standard;
+		properties
+			SEI::NetWeight => 1.5kg;
+	end RAM;
+	
+	memory implementation RAM.standard
+	end RAM.standard;
+	
+--	processor
+
+	processor tcs_processor
+		features
+			bus_acc: requires bus access tcs_bus.standard;
+		properties
+			SEI::NetWeight => 1.5kg;
+			SEI::GrossWeight => 3.0kg;
+	end tcs_processor;
+	
+	processor implementation tcs_processor.impl
+		subcomponents
+	  			ram: memory RAM.standard;
+	  	connections
+			bac1: bus access bus_acc <-> ram.bus_acc;
+		properties
+			SEI::WeightLimit => 5.0kg;
+	end tcs_processor.impl;
+
+-- processes
+
+	process tcs_controller
+		features
+			tcs_on: in data port Base_Types::Boolean;
+			current_rear_right_wheel_speed: in data port Speed;
+			current_rear_left_wheel_speed: in data port Speed;
+			current_speed: in data port Speed;
+			apply_rear_right_wheel_brake: out event port;
+			apply_rear_left_wheel_brake: out event port;
+	end tcs_controller;
+	
+	process implementation tcs_controller.impl
+		subcomponents
+			check_tcs_state: thread check_tcs_state.impl;
+			establish_car_state: thread establish_car_state.impl;
+			fix_wheel_spin: thread fix_wheel_spin.impl;
+		connections
+			c0: port tcs_on -> check_tcs_state.tcs_on;
+			c1: port current_speed -> establish_car_state.current_speed;
+			c2: port current_rear_right_wheel_speed -> fix_wheel_spin.current_rear_right_wheel_speed;
+			c3: port current_rear_left_wheel_speed -> fix_wheel_spin.current_rear_left_wheel_speed;
+			c4: port fix_wheel_spin.apply_rear_right_wheel_brake -> apply_rear_right_wheel_brake;
+			c5: port fix_wheel_spin.apply_rear_left_wheel_brake -> apply_rear_left_wheel_brake;
+			c6: port establish_car_state.car_state -> fix_wheel_spin.car_state;
+			c7: port check_tcs_state.perform_tcs -> fix_wheel_spin.perform_tcs;
+			c8: port current_speed -> fix_wheel_spin.current_speed;
+		properties
+  			SEI::MIPSBudget => 0.8 mips;
+	end tcs_controller.impl;
+
+--	threads
+	thread check_tcs_state
+		features
+			tcs_on: in data port Base_Types::Boolean;
+			perform_tcs: out Data port Base_Types::Boolean;
+	end check_tcs_state;
+	
+	thread implementation check_tcs_state.impl
+		
+	end check_tcs_state.impl;
+
+	thread establish_car_state
+		features
+			current_speed: in data port Speed;
+			car_state: out data port Base_Types::Boolean;
+	end establish_car_state;
+	
+	thread implementation establish_car_state.impl
+		
+	end establish_car_state.impl;
+
+	thread fix_wheel_spin
+		features
+			perform_tcs: in data port Base_Types::Boolean;
+			car_state: in data port Base_Types::Boolean;
+			current_speed: in data port Speed;
+			current_rear_left_wheel_speed: in data port Speed;
+			current_rear_right_wheel_speed: in data port Speed;
+			apply_rear_right_wheel_brake: out event port;
+			apply_rear_left_wheel_brake: out event port;
+			
+	end fix_wheel_spin;
+	
+	thread implementation fix_wheel_spin.impl
+		
+	end fix_wheel_spin.impl;
+	
+end TractionControlSystem;
+

@@ -1,0 +1,15 @@
+{
+  "isParsingSucceeded": true,
+  "modelName": "lowLevelSubsystem",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl",
+  "pathXMLFile": "C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\output-processing\\xmi\\UAV_AADL_Project_lowLevelSubsystem_LowLevelProcessing_impl_1.aaxl2",
+  "isSavedTheModel": true,
+  "docFiles": ["C:\\Users\\mdica\\Desktop\\TESI\\CODICE\\CODICE_ORIGINALE\\models\\github\\UAV_AADL_Project\\README.md"],
+  "errors": [
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl line : 78 colum...",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl line : 79 colum...",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl line : 80 colum...",
+    "ERROR:Couldn't resolve reference to property definition 'Actual_Processor_Binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/UAV_AADL_Project/packages/lowLevelSubsystem.aadl line : 81 colum..."
+  ]
+}

@@ -1,0 +1,43 @@
+--Peripherals.aadl
+
+--devices that perform the medical function of the device
+
+
+
+package Peripherals
+public
+	
+with
+  Base_Types,   --AADL data model
+	  FG,   --platform feature groups
+	  CPAL,  --cyber-physical access layer
+	  Buses
+	    ;
+
+flag renames data Base_Types::Boolean;
+
+	
+system Sensors_Actuators
+	features
+		sense : feature group FG::Sensing;  --sensors
+    act : feature group FG::Actuation;  --actuators		
+		--connection to cpu
+		gpio : requires bus access Buses::GPIO;
+		--power
+		power_supply : requires bus access Buses::Power_Supply;
+	  	--test interface
+	  	mtm_bus : requires bus access Buses::MTM_Bus;
+	  halt : in event port;  --halt medical device operation on safety command 
+--    malfunction : out data port flag;  --hardware detected malfunction, such as pump overheating
+    from_safety : feature group inverse of FG::Safety_Peripherals;
+    from_operation : feature group inverse of FG::Operation_Peripherals;
+end Sensors_Actuators;
+
+--this will be filled by actual medical device's ABSTRACT sensor and actuators
+--this is part of the functional architecture
+system implementation Sensors_Actuators.i
+end Sensors_Actuators.i;
+
+
+	
+end Peripherals;

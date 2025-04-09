@@ -1,0 +1,33 @@
+--------------------------------------------------------------------------------
+-- Isolette.aadl (version 01) - System level components of the infant incubator
+--   as specified in the FAA's Requirements Engineering Management Handbook.
+--
+-- Authors: Stephen C. Barrett (scbarrett@ksu.edu) &
+--          Brian R. Larson (brl@ksu.edu)
+--          Department of Computing & Information Sciences
+--
+-- Licensed Material - Property of Kansas State University
+--------------------------------------------------------------------------------
+-- 01: Highlight difference between AADL types & implementations with 2 systems.
+--------------------------------------------------------------------------------
+package KSU_Isolette
+public
+with Base_Types;  -- Basic data types
+
+
+--------------------------------------------------------------------------------
+-- Top-level type is the boundary between the isolette unit & its environment.
+--------------------------------------------------------------------------------
+system isolette
+end isolette;
+
+-- An implementation of the isolette unit having a single-sensor thermostat.
+system implementation isolette.single_sensor
+end isolette.single_sensor;
+
+-- An implementation of the isolette unit having a dual-sensor thermostat.
+system implementation isolette.dual_sensor
+end isolette.dual_sensor;
+
+
+end KSU_Isolette;

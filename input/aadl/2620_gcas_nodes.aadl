@@ -1,0 +1,21 @@
+package gcas_nodes
+public
+annex agree {**
+						
+node kinematicLinearization(t: real) returns(y: real);
+let
+	y = if t <= 0.00 then -126.00*t + 492.80
+		else if t > 0.00 and t <= 1.20 then -126.00*t + 492.80
+		else if t > 1.20 and t <= 2.40 then -78.00*t + 435.20
+		else if t > 2.40 and t <= 3.60 then -30.00*t + 320.00
+		else if t > 3.60 and t <= 4.80 then 18.00*t + 147.20
+		else if t > 4.80 and t <= 6.00 then 66.00*t + -83.20
+		else if t > 6.00 and t <= 7.20 then 114.00*t + -371.20
+		else if t > 7.20 and t <= 8.40 then 162.00*t + -716.80
+		else if t > 8.40 and t <= 9.60 then 210.00*t + -1120.00
+		else if t > 9.60 and t <= 10.80 then 258.00*t + -1580.80
+		else 306.00*t + -2099.20;
+tel;
+			
+	**};
+end gcas_nodes;

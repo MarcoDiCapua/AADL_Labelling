@@ -1,0 +1,31 @@
+--------------------------------------------------------------------------------
+-- Iso_Types.aadl (version 05) - 
+--
+-- Authors: Stephen C. Barrett (scbarrett@ksu.edu) &
+--          Brian R. Larson (brl@ksu.edu)
+--          Department of Computing & Information Sciences
+--
+-- Licensed Material - Property of Kansas State University
+--------------------------------------------------------------------------------
+-- 05: Initial simple units of measure.
+--------------------------------------------------------------------------------
+package Iso_Types
+public
+with Base_Types, Data_Model;
+
+
+data heat
+  properties
+    Data_Model::Data_Representation => Float;
+    Data_Model::Measurement_Unit => "KJoule";
+end heat;
+
+
+data temperature
+  properties
+    Data_Model::Data_Representation => Float;
+    Data_Model::Measurement_Unit => "Fahrenheit";
+end temperature;
+
+
+end Iso_Types;

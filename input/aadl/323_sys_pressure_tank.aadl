@@ -1,0 +1,79 @@
+package sys_pressure_tank
+public
+
+with EMV2;
+
+with fuse, motor_pump, power;
+with relay;
+with switch;
+with tank;
+with valve;
+with pressureSwitch;
+
+system sys_pressure_tank
+	features
+		startCommand : in event port;
+		OpenOutletValveCommand : in event port;
+		fluidfromReservoir : in data port;
+		fluidHighPressure : out data port;
+end sys_pressure_tank;
+
+system implementation sys_pressure_tank.complete
+	subcomponents
+		-- electrical power
+		ac120v : bus power::power.i;
+		dc28v  : bus power::power.i;
+		dcFuse : system fuse::fuse.i;
+		-- pump subsystem
+		pump : system motor_pump::motor_pump.i;
+		-- electrical power control
+		k1 : system relay::relay.i;
+		k2 : system relay::relay.i;
+		s1 : system switch::switch.i;
+		timerRelay : system relay::timedRelay.i;		
+		-- tank subsystem
+		tank_pressurized : system tank::tank.i;
+		outletValve : system valve::valve.i;
+		tankPressureSwitch : system pressureSwitch::pressureSwitch.i;
+		
+connections
+		
+
+new_connection3: port pump.fluidOut -> tank_pressurized.flowIn;
+new_connection4: port tank_pressurized.flowOut -> outletValve.flowIn;
+new_connection6: port startCommand -> s1.closeCommand;
+new_connection7: port fluidfromReservoir -> pump.fluidIn;
+new_connection8: port OpenOutletValveCommand -> outletValve.openCommand;
+new_connection9: port outletValve.flowOut -> fluidHighPressure;
+new_connection10: port tank_pressurized.pressurSignalOut -> tankPressureSwitch.pressureSignalIn;
+new_connection: port dcFuse.powerOut -> k2.signalIn;
+new_connection2: port k2.signalOut -> pump.powerIn;
+new_connection12: port tankPressureSwitch.signalOut -> timerRelay.powerIn;
+new_connection13: port timerRelay.powerOut -> k2.powerIn;
+new_connection14: port k2.powerOut -> s1.signalIn;
+new_connection16: port timerRelay.signalOut -> k1.powerIn;
+new_connection17: port k1.powerOut -> k1.signalIn;
+new_connection5: bus access pump.ground -> ac120v.socketGround;
+new_connection11: bus access dcFuse.powerIn ->
+						ac120v.socketPlus;
+
+annex EMV2{**
+		use types errorLibrary;
+		use behavior errorLibrary::FailStop;
+		composite error behavior
+			states
+				-- operational if switch and pump is working
+				[pump.operational and
+					s1.operational
+				]-> operational;
+				-- not working of pump is on for more than 60 seconds
+				[pump.operational and 
+					timerRelay.FailStop
+				]-> failStop;
+		end composite;
+**};
+end sys_pressure_tank.complete;
+
+end sys_pressure_tank;
+
+

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="RTA_Controller_Impl_Instance" category="system">
+  <featureInstance name="pre_psi1">
+    <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+    <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="pre_psi2">
+    <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+    <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="pre_psi3">
+    <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+    <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="pre_psi4">
+    <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+    <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="psi_dot_comm_1" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+    <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="psi_dot_comm_2" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+    <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="psi_dot_comm_3" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+    <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <featureInstance name="psi_dot_comm_4" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
+    <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+  </featureInstance>
+  <componentInstance name="DM_sub" category="system">
+    <featureInstance name="pre_psi1_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="pre_psi2_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="pre_psi3_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="pre_psi4_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_1_verified_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_2_verified_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_3_verified_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_4_verified_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_1_unverified_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.8"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_2_unverified_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.9"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_3_unverified_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.10"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_4_unverified_in">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.11"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_1_dm" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.12"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_2_dm" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.13"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_3_dm" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.14"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_4_dm" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.15"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Decision_Module.aadl#Decision_Module.Decision_Module_2_Controller.Impl"/>
+  </componentInstance>
+  <componentInstance name="UNV_sub" category="system">
+    <featureInstance name="pre_psi1">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Unverified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="pre_psi2">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Unverified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="pre_psi3">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Unverified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="pre_psi4">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Unverified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_1" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Unverified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_2" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Unverified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_3" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Unverified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_4" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Unverified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Unverified_Controller.aadl#Unverified_Controller.PID_controller_not_rate_limited_package.Impl"/>
+  </componentInstance>
+  <componentInstance name="VER_sub" category="system">
+    <featureInstance name="pre_psi1">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Verified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="pre_psi2">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Verified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="pre_psi3">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Verified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="pre_psi4">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Verified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_1" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Verified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_2" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Verified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_3" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Verified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <featureInstance name="psi_dot_comm_4" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Verified_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
+      <type href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/instances/RTA_Controller_RTA_Controller_Impl_Instance.aaxl2#/"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/Verified_Controller.aadl#Verified_Controller.Rate_Limited_PID_Controller.Impl"/>
+  </componentInstance>
+  <connectionInstance name="pre_psi1 -> DM_sub.pre_psi1_in" kind="portConnection" destination="//@componentInstance.0/@featureInstance.0" source="//@featureInstance.0">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pre_psi1 -> VER_sub.pre_psi1" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@featureInstance.0">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.16/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.16"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pre_psi1 -> UNV_sub.pre_psi1" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@featureInstance.0">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.20/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@featureInstance.0" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.20"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pre_psi2 -> DM_sub.pre_psi2_in" kind="portConnection" destination="//@componentInstance.0/@featureInstance.1" source="//@featureInstance.1">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pre_psi2 -> VER_sub.pre_psi2" kind="portConnection" destination="//@componentInstance.2/@featureInstance.1" source="//@featureInstance.1">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.17/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.2/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.17"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pre_psi2 -> UNV_sub.pre_psi2" kind="portConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@featureInstance.1">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.21/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@featureInstance.1" destination="//@componentInstance.1/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.21"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pre_psi3 -> DM_sub.pre_psi3_in" kind="portConnection" destination="//@componentInstance.0/@featureInstance.2" source="//@featureInstance.2">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.14/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.14"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pre_psi3 -> VER_sub.pre_psi3" kind="portConnection" destination="//@componentInstance.2/@featureInstance.2" source="//@featureInstance.2">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.18/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.2/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.18"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pre_psi3 -> UNV_sub.pre_psi3" kind="portConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@featureInstance.2">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.22/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@featureInstance.2" destination="//@componentInstance.1/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.22"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pre_psi4 -> DM_sub.pre_psi4_in" kind="portConnection" destination="//@componentInstance.0/@featureInstance.3" source="//@featureInstance.3">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.15/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.15"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pre_psi4 -> VER_sub.pre_psi4" kind="portConnection" destination="//@componentInstance.2/@featureInstance.3" source="//@featureInstance.3">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.19/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.2/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.19"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="pre_psi4 -> UNV_sub.pre_psi4" kind="portConnection" destination="//@componentInstance.1/@featureInstance.3" source="//@featureInstance.3">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.23/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@featureInstance.3" destination="//@componentInstance.1/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.23"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DM_sub.psi_dot_comm_1_dm -> psi_dot_comm_1" kind="portConnection" destination="//@featureInstance.4" source="//@componentInstance.0/@featureInstance.12">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.12" destination="//@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DM_sub.psi_dot_comm_2_dm -> psi_dot_comm_2" kind="portConnection" destination="//@featureInstance.5" source="//@componentInstance.0/@featureInstance.13">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.13" destination="//@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DM_sub.psi_dot_comm_3_dm -> psi_dot_comm_3" kind="portConnection" destination="//@featureInstance.6" source="//@componentInstance.0/@featureInstance.14">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.14" destination="//@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="DM_sub.psi_dot_comm_4_dm -> psi_dot_comm_4" kind="portConnection" destination="//@featureInstance.7" source="//@componentInstance.0/@featureInstance.15">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.15" destination="//@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="UNV_sub.psi_dot_comm_1 -> DM_sub.psi_dot_comm_1_unverified_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.8" source="//@componentInstance.1/@featureInstance.4">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.4" destination="//@componentInstance.0/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="UNV_sub.psi_dot_comm_2 -> DM_sub.psi_dot_comm_2_unverified_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.9" source="//@componentInstance.1/@featureInstance.5">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.5" destination="//@componentInstance.0/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="UNV_sub.psi_dot_comm_3 -> DM_sub.psi_dot_comm_3_unverified_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.10" source="//@componentInstance.1/@featureInstance.6">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.6" destination="//@componentInstance.0/@featureInstance.10">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="UNV_sub.psi_dot_comm_4 -> DM_sub.psi_dot_comm_4_unverified_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.11" source="//@componentInstance.1/@featureInstance.7">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.7" destination="//@componentInstance.0/@featureInstance.11">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="VER_sub.psi_dot_comm_1 -> DM_sub.psi_dot_comm_1_verified_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.4" source="//@componentInstance.2/@featureInstance.4">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.4" destination="//@componentInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="VER_sub.psi_dot_comm_2 -> DM_sub.psi_dot_comm_2_verified_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.5" source="//@componentInstance.2/@featureInstance.5">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.5" destination="//@componentInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="VER_sub.psi_dot_comm_3 -> DM_sub.psi_dot_comm_3_verified_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.6" source="//@componentInstance.2/@featureInstance.6">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.6" destination="//@componentInstance.0/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="VER_sub.psi_dot_comm_4 -> DM_sub.psi_dot_comm_4_verified_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.7" source="//@componentInstance.2/@featureInstance.7">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#Communication_Properties.Timing"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../github/6UCubeSat/Basic%20CubeSat%20Models/AGREE_6UCubeSat_Rate_Limited_PID_Verification/Plugin_Resources/Communication_Properties.aadl#/0/@ownedProperty.7/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <connectionReference context="/" source="//@componentInstance.2/@featureInstance.7" destination="//@componentInstance.0/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <classifier xsi:type="aadl2:SystemImplementation" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#RTA_Controller.RTA_Controller.Impl"/>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../../github/6UCubeSat/RTA%20CubeSat%20Models/AGREE_CubeSat_4Wheel_RTA/RTA_Controller.aadl#RTA_Controller.RTA_Controller.Impl"/>
+</instance:SystemInstance>

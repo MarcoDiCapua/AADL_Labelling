@@ -1,0 +1,19 @@
+{
+  "isParsingSucceeded": false,
+  "modelName": "Lab2::integration",
+  "extension": "aadl",
+  "pathAADLFile": "file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/DVA488Lab2/integration.aadl",
+  "pathXMLFile": "",
+  "isSavedTheModel": false,
+  "docFiles": [],
+  "errors": [
+    "ERROR:Couldn't resolve reference to property definition 'actual_processor_binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/DVA488Lab2/integration.aadl line : 177 column : 2)",
+    "ERROR:Couldn't resolve reference to property definition 'actual_connection_binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/DVA488Lab2/integration.aadl line : 179 column : 2)",
+    "ERROR:Couldn't resolve reference to property definition 'actual_processor_binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/DVA488Lab2/integration.aadl line : 197 column : 2)",
+    "ERROR:Couldn't resolve reference to property definition 'actual_connection_binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/DVA488Lab2/integration.aadl line : 202 column : 2)",
+    "ERROR:Couldn't resolve reference to property definition 'actual_connection_binding'. Property set name may be missing. (file:/C:/Users/mdica/Desktop/TESI/CODICE/CODICE_ORIGINALE/models/github/DVA488Lab2/integration.aadl line : 206 column : 2)",
+    "Invalid file path",
+    "Invalid file path",
+    "Invalid file path"
+  ]
+}
