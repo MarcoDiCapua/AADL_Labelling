@@ -68,3 +68,23 @@ Example `config.json`:
     "models_feature_extraction": "basic/full",
     "validate_csv": "validate/cluster_test_set_specific.csv"
 }
+```
+
+### Running the Code
+Run the `main.py` script to start the scanning and analysis process:
+
+```bash
+python main.py
+```
+
+After the script completes, the results will be saved in the specified `output_folder` as a `.txt` file containing the analysis.
+
+### Example Output
+The generated `.txt` report will contain information like:
+
+- The total number of files scanned.
+- The number of suitable and not suitable files.
+- The counts of each tag (e.g., components, features).
+- The top 50 and bottom 50 items for each tag.
+
+
