@@ -1,7 +1,0 @@
-package Memory_RAM
-public
-
-memory Generic_RAM
-end Generic_RAM;
-
-end Memory_RAM;

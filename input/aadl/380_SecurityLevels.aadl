@@ -1,9 +1,0 @@
-package SecurityLevels
-public
-	annex smf {**
-		domain types
-		trusted : type;
-		untrusted : type extends trusted;
-		end types;	
-	**};
-end SecurityLevels;

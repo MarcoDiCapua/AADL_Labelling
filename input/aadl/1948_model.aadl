@@ -1,9 +1,0 @@
-package Deployment
-public
-  data D
-  end D;
-
-private
-  data E
-  end E;
-end Deployment;

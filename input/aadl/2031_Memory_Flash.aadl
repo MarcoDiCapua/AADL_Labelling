@@ -1,7 +1,0 @@
-package Memory_Flash
-public
-
-memory Generic_Flash
-end Generic_Flash;
-
-end Memory_Flash;

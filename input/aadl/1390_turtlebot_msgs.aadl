@@ -1,8 +1,0 @@
--- Auto-generated data for types turtlebot_msgs
--- Generated on: 07/11/2017 17:24:53
-package turtlebot_msgs
-public
-	data PanoramaImg
-	end PanoramaImg;
-	
-end turtlebot_msgs;

@@ -1,4 +1,0 @@
-property set mypropertyset2 is
-	RoleTypes: type enumeration (employer, Server);
-	Role: mypropertyset2::RoleTypes applies to (system, thread);
-end mypropertyset2;

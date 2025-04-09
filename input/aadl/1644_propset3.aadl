@@ -1,4 +1,0 @@
-property set mypropertyset3 is
-	RoleTypes: type enumeration (UserManagement, Server);
-	Role: mypropertyset3::RoleTypes applies to (system, thread);
-end mypropertyset3;

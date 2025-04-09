@@ -1,9 +1,0 @@
-package MyPackage
-public
- system MySystem
- 		
- end MySystem;
- system implementation MySystem.impl
- 	
- end MySystem.impl;
-end MyPackage;

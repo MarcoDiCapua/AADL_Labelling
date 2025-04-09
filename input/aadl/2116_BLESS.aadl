@@ -1,9 +1,0 @@
---BLESS.aadl
-
-property set BLESS is
-  Assertion : aadlstring applies to ( all );
-  Typed : aadlstring applies to ( all );
-  Invariant : aadlstring applies to ( all );
-  Precondition : aadlstring applies to ( subprogram );
-  Postcondition : aadlstring applies to ( subprogram );
-end BLESS;

@@ -1,4 +1,0 @@
-property set topic_properties is
-	Name: aadlstring applies to (connection);
-	Default_Name : aadlstring applies to (port, subprogram access);
-end topic_properties;
