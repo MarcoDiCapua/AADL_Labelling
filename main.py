@@ -6,6 +6,9 @@ from utility import load_config, create_directory, delete_file, list_files_in_di
 
 def main():
     try:
+        starting_time = get_current_timestamp()
+        print("Starting elaboration time: ", starting_time)
+
         # Initialize the AADLManager with the path to the configuration file
         aadl_manager = AADLManager(config_path="config.json")
         
@@ -49,6 +52,9 @@ def main():
         # Generate the .txt report
         aadl_analysis.generate_report(component_counter, feature_counter, connection_instance_counter,
                                       mode_instance_counter, flow_specification_counter)
+        
+        print("Finished elaboration time: ", get_current_timestamp())
+        print("Total time: ", get_current_timestamp() - starting_time)
 
     except FileNotFoundError as e:
         print(f"Error: {e}")

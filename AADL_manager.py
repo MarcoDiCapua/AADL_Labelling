@@ -1,9 +1,6 @@
 import os
-import json
-import shutil
-from collections import Counter
 from lxml import etree
-from utility import load_config, create_directory, delete_file, list_files_in_directory, copy_file, get_current_timestamp
+from utility import load_config, create_directory, delete_file, list_files_in_directory, copy_file
 
 class AADLManager:
     def __init__(self, config_path="config.json"):
@@ -38,6 +35,7 @@ class AADLManager:
         for aadl_file in aadl_files:
             aadl_file_path = os.path.join(self.xmi_folder, aadl_file)
 
+            # Parse the AADL file
             print(f"Scanning file: {aadl_file_path}")
             try:
                 tree = etree.parse(aadl_file_path)
@@ -59,8 +57,7 @@ class AADLManager:
 
         print(f"Total suitable files: {len(suitable_files)}")
         print(f"Total not suitable files: {len(not_suitable_files)}")
-
-        # Return the list of suitable files, non suitable files and the original files
+        print("Scanning complete.")
         return suitable_files, aadl_files, not_suitable_files
     
     def is_suitable_aadl_model(self, root):
@@ -91,15 +88,17 @@ class AADLAnalysis:
         self.suitable_models_folder = self.config.get("xmi_suitable_models", "")
         self.output_folder = os.path.join(self.config.get("output_folder", ""), "AADL")
 
+    # Helper method to process tags and update counters.
     def process_tag(self, elements, counter, attribute, default_name):
-        """Helper method to process tags and update counters."""
         for element in elements:
             tag_value = element.get(attribute, default_name)
             counter[tag_value] += 1
 
+    # Analyze AADL files and generate report.
     def generate_report(self, component_counter, feature_counter, connection_instance_counter,
                         mode_instance_counter, flow_specification_counter):
         output_file_path = os.path.join(self.output_folder, "aadl_scan_results.txt")
+
         with open(output_file_path, "w") as f:
             f.write(f"Number of AADL files scanned: {len(self.aadl_files)}\n")
             f.write(f"Number of suitable AADL files: {len(self.suitable_files)}\n")
