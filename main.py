@@ -1,6 +1,13 @@
 from AADL_manager import AADLManager, AADLAnalysis
 from collections import Counter
 from utility import get_current_timestamp
+import sys
+
+# Redirect standard output to a log file
+# log_file_path = "output/log.txt"
+# log_file = open(log_file_path, 'w')
+# sys.stdout = log_file  
+
 
 def main():
     try:
@@ -33,12 +40,16 @@ def main():
                                       mode_instance_counter, flow_specification_counter)
         
         print("Finished elaboration time: ", get_current_timestamp())
-        print("Total time: ", get_current_timestamp() - starting_time)
 
     except FileNotFoundError as e:
         print(f"Error: {e}")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+
+
+# Restore stdout to the terminal after the program ends
+# sys.stdout = sys.__stdout__
+# log_file.close()
 
 # Entry point
 if __name__ == "__main__":

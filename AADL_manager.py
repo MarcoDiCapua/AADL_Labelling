@@ -1,4 +1,5 @@
 import os
+import csv
 from lxml import etree
 from utility import load_config, create_directory, delete_file, list_files_in_directory, copy_file
 
@@ -8,6 +9,7 @@ class AADLManager:
         self.xmi_folder = self.config.get("xmi_folder", "")
         self.suitable_models_folder = self.config.get("xmi_suitable_models", "")
         self.output_folder = self.config.get("output_folder", "")
+        self.clusters_file = self.config.get("clusters", "")
 
     def scan_aadl_files(self):
         # Ensure suitable models folder exists and delete old files
@@ -54,6 +56,9 @@ class AADLManager:
             else:
                 not_suitable_files.append(aadl_file)
                 print(f"File {aadl_file} is not suitable.")
+        
+        # Generate suitable_models_cluster.csv
+        self.generate_suitable_models_cluster_csv(suitable_files)
 
         print(f"Total suitable files: {len(suitable_files)}")
         print(f"Total not suitable files: {len(not_suitable_files)}")
@@ -77,6 +82,54 @@ class AADLManager:
         if '}' in tag:
             return tag.split('}', 1)[1]  # Split and return the part after '}'
         return tag
+
+    def generate_suitable_models_cluster_csv(self, suitable_files):        
+        # Read the clusters from clusters.csv
+        cluster_mapping = {}
+        with open(self.clusters_file, mode='r') as file:
+            csv_reader = csv.reader(file)
+            next(csv_reader)  # Skip header
+            for row in csv_reader:
+                cluster_mapping[row[0]] = row[1]  # Map model name to cluster number
+
+        # Debugging: Print out the cluster mapping to verify its contents
+        print("Cluster mapping:")
+        for model, cluster in cluster_mapping.items():
+            print(f"Model: {model}, Cluster: {cluster}")
+        
+        suitable_models_with_clusters = []
+
+        # Debugging: Print out the list of suitable files
+        print("\nSuitable files being processed:")
+        for model in suitable_files:
+            # Strip the .aaxl2 extension from the model name before comparing
+            model_name_without_extension = model.split('.')[0]
+
+            print(f"Processing model: {model_name_without_extension}")
+
+            # Look for the cluster for the current model
+            cluster = cluster_mapping.get(model_name_without_extension)
+            
+            # Debugging: Print the result of the cluster lookup
+            if cluster:
+                print(f"Model {model_name_without_extension} found in cluster {cluster}")
+                suitable_models_with_clusters.append([model, cluster])
+            else:
+                print(f"Model {model_name_without_extension} not found in cluster mapping.")
+        
+        if suitable_models_with_clusters:
+            # Output path for suitable_models_cluster.csv
+            suitable_models_cluster_file = os.path.join(self.output_folder, 'suitable_models_cluster.csv')
+
+            with open(suitable_models_cluster_file, mode='w', newline='') as file:
+                csv_writer = csv.writer(file)
+                csv_writer.writerow(['Model', 'Cluster'])  # Write header
+                csv_writer.writerows(suitable_models_with_clusters)
+
+            print(f"Suitable models with clusters have been written to {suitable_models_cluster_file}")
+        else:
+            print("No suitable models with clusters to write.")
+
 
     def process_aadl_files(self, suitable_files, aadl_analysis, component_counter, 
                             feature_counter, connection_instance_counter, 
