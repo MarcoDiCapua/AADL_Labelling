@@ -34,6 +34,7 @@ The project is divided into two main components:
 1. **Scan the AADL Files**: The `AADLManager` class scans a directory for `.aaxl2` files. It checks each file to determine if it contains at least one component and one feature. Suitable files are copied to a dedicated folder.
 2. **Analyze the Suitable Files**: The `AADLAnalysis` class processes the suitable files and extracts relevant information. It counts the occurrences of key tags (such as components, features, etc.) and generates a report.
 3. **Generate the Report**: The `.txt` report is generated and saved in the output folder, containing a detailed summary of the analysis.
+4. **Generate the Suitable Models and Clusters CSV**: The `AADLManager` also generates a `suitable_models_cluster.csv` file, which maps the suitable AADL models to their respective clusters. This CSV is saved in the output folder.
 
 ## Setup and Usage
 
