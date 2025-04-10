@@ -59,7 +59,7 @@ class AADLManager:
         print(f"Total not suitable files: {len(not_suitable_files)}")
         print("Scanning complete.")
         return suitable_files, aadl_files, not_suitable_files
-    
+
     def is_suitable_aadl_model(self, root):
         # Remove namespaces from the XML tree by renaming tags.
         for elem in root.getiterator():
@@ -77,6 +77,34 @@ class AADLManager:
         if '}' in tag:
             return tag.split('}', 1)[1]  # Split and return the part after '}'
         return tag
+
+    def process_aadl_files(self, suitable_files, aadl_analysis, component_counter, 
+                            feature_counter, connection_instance_counter, 
+                            mode_instance_counter, flow_specification_counter):
+        # Process each of the suitable AADL files
+        for aadl_file in suitable_files:
+            aadl_file_path = os.path.join(self.xmi_folder, aadl_file)
+            try:
+                tree = etree.parse(aadl_file_path)
+                root = tree.getroot()
+            except Exception as e:
+                print(f"Error parsing file {aadl_file}: {e}")
+                continue
+
+            # Extract relevant tags and update counters
+            components = root.findall('.//componentInstance')
+            features = root.findall('.//featureInstance')
+            connection_instances = root.findall('.//connectionInstance')
+            mode_instances = root.findall('.//modeInstance')
+            flow_specifications = root.findall('.//flowSpecification')
+
+            # Process each tag using AADLAnalysis
+            aadl_analysis.process_tag(components, component_counter, 'name', 'Unnamed component')
+            aadl_analysis.process_tag(features, feature_counter, 'name', 'Unnamed feature')
+            aadl_analysis.process_tag(connection_instances, connection_instance_counter, 'name', 'Unnamed connectionInstance')
+            aadl_analysis.process_tag(mode_instances, mode_instance_counter, 'name', 'Unnamed modeInstance')
+            aadl_analysis.process_tag(flow_specifications, flow_specification_counter, 'name', 'Unnamed flowSpecification')
+
 
 
 class AADLAnalysis:

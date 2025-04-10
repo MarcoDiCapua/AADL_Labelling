@@ -1,8 +1,6 @@
 from AADL_manager import AADLManager, AADLAnalysis
 from collections import Counter
-import os
-from lxml import etree
-from utility import load_config, create_directory, delete_file, list_files_in_directory, copy_file, get_current_timestamp
+from utility import get_current_timestamp
 
 def main():
     try:
@@ -25,29 +23,10 @@ def main():
         mode_instance_counter = Counter()
         flow_specification_counter = Counter()
 
-        # Process each of the suitable AADL files
-        for aadl_file in suitable_files:
-            aadl_file_path = os.path.join(aadl_manager.xmi_folder, aadl_file)
-            try:
-                tree = etree.parse(aadl_file_path)
-                root = tree.getroot()
-            except Exception as e:
-                print(f"Error parsing file {aadl_file}: {e}")
-                continue
-
-            # Extract relevant tags and update counters
-            components = root.findall('.//componentInstance')
-            features = root.findall('.//featureInstance')
-            connection_instances = root.findall('.//connectionInstance')
-            mode_instances = root.findall('.//modeInstance')
-            flow_specifications = root.findall('.//flowSpecification')
-
-            # Process each tag using AADLAnalysis
-            aadl_analysis.process_tag(components, component_counter, 'name', 'Unnamed component')
-            aadl_analysis.process_tag(features, feature_counter, 'name', 'Unnamed feature')
-            aadl_analysis.process_tag(connection_instances, connection_instance_counter, 'name', 'Unnamed connectionInstance')
-            aadl_analysis.process_tag(mode_instances, mode_instance_counter, 'name', 'Unnamed modeInstance')
-            aadl_analysis.process_tag(flow_specifications, flow_specification_counter, 'name', 'Unnamed flowSpecification')
+        # Process the AADL files and update counters
+        aadl_manager.process_aadl_files(suitable_files, aadl_analysis, component_counter, 
+                                        feature_counter, connection_instance_counter, 
+                                        mode_instance_counter, flow_specification_counter)
 
         # Generate the .txt report
         aadl_analysis.generate_report(component_counter, feature_counter, connection_instance_counter,
