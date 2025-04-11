@@ -17,6 +17,11 @@ class AADLManager:
         for existing_file in os.listdir(self.suitable_models_folder):
             file_path = os.path.join(self.suitable_models_folder, existing_file)
             delete_file(file_path)
+            
+        csv_file_path = os.path.join(self.output_folder, "suitable_models_data.csv")
+        if os.path.exists(csv_file_path):
+            os.remove(csv_file_path)
+            print(f"Existing file {csv_file_path} deleted.")
 
         # List all .AAXL2 files in the xmi_folder
         aadl_files = list_files_in_directory(self.xmi_folder)
@@ -52,7 +57,10 @@ class AADLManager:
                 # Copy the file to the suitable models folder
                 destination_file = os.path.join(self.suitable_models_folder, aadl_file)
                 copy_file(aadl_file_path, destination_file)
-                print(f"File {aadl_file} is suitable and copied to {self.suitable_models_folder}")
+                print(f"File {aadl_file} is suitable and copied to {self.suitable_models_folder}")    
+            
+                # Generate the CSV data for this model
+                self.generate_model_csv(aadl_file, root)
             else:
                 not_suitable_files.append(aadl_file)
                 print(f"File {aadl_file} is not suitable.")
@@ -82,6 +90,39 @@ class AADLManager:
         if '}' in tag:
             return tag.split('}', 1)[1]  # Split and return the part after '}'
         return tag
+    
+    def generate_model_csv(self, model_name, root):
+        model_name_without_extension = model_name.split('.')[0]
+        components = root.findall('.//componentInstance')
+        features = root.findall('.//featureInstance')
+        connection_instances = root.findall('.//connectionInstance')
+
+        # CSV file path for suitable models data
+        csv_file_path = os.path.join(self.output_folder, "suitable_models_data.csv")
+
+        # Check if the CSV file already exists to append data, otherwise create it
+        file_exists = os.path.exists(csv_file_path)
+
+        with open(csv_file_path, mode='a', newline='') as file:
+            csv_writer = csv.writer(file)
+            if not file_exists:
+                header = ['Model', 'Component', 'Feature', 'ConnectionInstance']
+                csv_writer.writerow(header)
+
+            # Extract and concatenate the information for the components, features, and connection instances
+            component_names = [component.get('name', 'Unnamed component') for component in components]
+            feature_names = [feature.get('name', 'Unnamed feature') for feature in features]
+            connection_names = [connection.get('name', 'Unnamed connectionInstance') for connection in connection_instances]
+
+            # Concatenate all information as a string, separated by commas
+            components_str = ', '.join(component_names)
+            features_str = ', '.join(feature_names)
+            connection_str = ', '.join(connection_names)
+
+            # Write the data for the model into the CSV (one row per model)
+            csv_writer.writerow([model_name_without_extension, components_str, features_str, connection_str])
+
+        print(f"Data for model {model_name} appended to {csv_file_path}")
 
     def generate_suitable_models_cluster_csv(self, suitable_files):        
         # Read the clusters from clusters.csv
