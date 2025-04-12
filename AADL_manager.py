@@ -18,7 +18,7 @@ class AADLManager:
             file_path = os.path.join(self.suitable_models_folder, existing_file)
             delete_file(file_path)
             
-        csv_file_path = os.path.join(self.output_folder, "suitable_models_data.csv")
+        csv_file_path = os.path.join(self.output_folder, "AADL/suitable_models_data.csv")
         if os.path.exists(csv_file_path):
             os.remove(csv_file_path)
             print(f"Existing file {csv_file_path} deleted.")
@@ -98,7 +98,7 @@ class AADLManager:
         connection_instances = root.findall('.//connectionInstance')
 
         # CSV file path for suitable models data
-        csv_file_path = os.path.join(self.output_folder, "suitable_models_data.csv")
+        csv_file_path = os.path.join(self.output_folder, "AADL/suitable_models_data.csv")
 
         # Check if the CSV file already exists to append data, otherwise create it
         file_exists = os.path.exists(csv_file_path)
@@ -160,7 +160,7 @@ class AADLManager:
         
         if suitable_models_with_clusters:
             # Output path for suitable_models_cluster.csv
-            suitable_models_cluster_file = os.path.join(self.output_folder, 'suitable_models_cluster.csv')
+            suitable_models_cluster_file = os.path.join(self.output_folder, 'AADL/suitable_models_cluster.csv')
 
             with open(suitable_models_cluster_file, mode='w', newline='') as file:
                 csv_writer = csv.writer(file)
