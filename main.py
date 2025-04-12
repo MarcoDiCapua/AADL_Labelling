@@ -1,6 +1,7 @@
 from AADL_manager import AADLManager, AADLAnalysis
 from collections import Counter
 from utility import get_current_timestamp
+from labelling import TextPreprocessing
 import sys
 
 # Redirect standard output to a log file
@@ -38,6 +39,10 @@ def main():
         # Generate the .txt report
         aadl_analysis.generate_report(component_counter, feature_counter, connection_instance_counter,
                                       mode_instance_counter, flow_specification_counter)
+        
+        # Preprocess the data (call the TextPreprocessing class after generating the reports)
+        text_preprocessor = TextPreprocessing(config_path="config.json")
+        text_preprocessor.preprocess()
         
         print("Finished elaboration time: ", get_current_timestamp())
 
