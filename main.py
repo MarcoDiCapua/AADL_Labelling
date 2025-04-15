@@ -40,6 +40,17 @@ def main():
         aadl_analysis.generate_report(component_counter, feature_counter, connection_instance_counter,
                                       mode_instance_counter, flow_specification_counter)
         
+        # Generate plots
+        print("Generating plots...")
+        aadl_analysis.plot_total_models()
+        aadl_analysis.plot_total_vs_suitable_models_pie()
+        aadl_analysis.plot_cluster_distribution_stacked()
+        aadl_analysis.plot_cluster_distribution()
+        aadl_analysis.plot_suitable_cluster_distribution()
+        aadl_analysis.plot_top_instances(component_counter, feature_counter, connection_instance_counter)
+        aadl_analysis.plot_total_counts(component_counter, feature_counter, connection_instance_counter, mode_instance_counter, flow_specification_counter)
+        print("Plots generated successfully.")
+        
         # Preprocess the data (call the TextPreprocessing class after generating the reports)
         text_preprocessor = TextPreprocessing(config_path="config.json")
         text_preprocessor.preprocess()

@@ -1,5 +1,8 @@
 import os
 import csv
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
 from lxml import etree
 from utility import load_config, create_directory, delete_file, list_files_in_directory, copy_file
 
@@ -274,3 +277,161 @@ class AADLAnalysis:
 
         print(f"Results written to {output_file_path}")
         print("Analysis complete.")
+
+    def plot_total_models(self):
+        total_aadl_models = len(self.aadl_files)
+        total_suitable_models = len(self.suitable_files)
+        
+        plt.figure(figsize=(8, 6))
+        bars = plt.bar(['Total AADL Models', 'Suitable AADL Models'], [total_aadl_models, total_suitable_models])
+        plt.title('Total vs Suitable AADL Models')
+        plt.ylabel('Count')
+        for bar in bars:
+            plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), str(int(bar.get_height())), 
+                     ha='center', va='bottom', fontsize=12)
+        plt.savefig(os.path.join(self.output_folder, 'total_vs_suitable_models.png'))
+        plt.close()
+
+    def plot_total_counts(self, component_counter, feature_counter, connection_instance_counter, mode_instance_counter, flow_specification_counter):
+        counts = {
+            'Components': len(component_counter),
+            'Features': len(feature_counter),
+            'Connections': len(connection_instance_counter),
+            'Modes': len(mode_instance_counter),
+            'Flow Specifications': len(flow_specification_counter)
+        }
+
+        plt.figure(figsize=(8, 6))
+        bars = plt.bar(counts.keys(), counts.values())
+        plt.title('Total Count of Components, Features, Connections, Modes and Flow Specifications')
+        plt.ylabel('Count')
+        for bar in bars:
+            plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), str(int(bar.get_height())), 
+                     ha='center', va='bottom', fontsize=12)
+        plt.savefig(os.path.join(self.output_folder, 'total_counts.png'))
+        plt.close()
+
+    def plot_cluster_distribution(self):
+        clusters_df = pd.read_csv(self.config.get("clusters", ""))
+        cluster_counts = clusters_df['Cluster'].value_counts().sort_index()
+
+        plt.figure(figsize=(10, 6))
+        bars = sns.barplot(x=cluster_counts.index, y=cluster_counts.values)
+        plt.title('Cluster Distribution of AADL Models')
+        plt.xlabel('Cluster')
+        plt.ylabel('Number of Models')
+        for bar in bars.patches:
+            plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), str(int(bar.get_height())), 
+                     ha='center', va='bottom', fontsize=12)
+        plt.xticks(rotation=90)
+        plt.tight_layout()
+        plt.savefig(os.path.join(self.output_folder, 'cluster_distribution.png'))
+        plt.close()
+
+    def plot_suitable_cluster_distribution(self):
+        suitable_models_cluster_df = pd.read_csv(os.path.join(self.output_folder, 'suitable_models_cluster.csv'))
+
+        # Count suitable models per cluster
+        suitable_cluster_counts = suitable_models_cluster_df['Cluster'].value_counts().sort_index()
+        all_clusters = set(range(1, 45))
+        # Add missing clusters with 0 suitable models
+        for cluster in all_clusters:
+            if cluster not in suitable_cluster_counts:
+                suitable_cluster_counts[cluster] = 0
+        suitable_cluster_counts = suitable_cluster_counts.sort_index()
+        plt.figure(figsize=(10, 6))
+        bars = sns.barplot(x=suitable_cluster_counts.index, y=suitable_cluster_counts.values)
+        # Highlight clusters with 0 suitable models
+        for cluster, count in suitable_cluster_counts.items():
+            if count == 0:
+                plt.axvline(x=cluster - 1, color='red', linestyle='--')
+        for bar in bars.patches:
+            plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), str(int(bar.get_height())), 
+                    ha='center', va='bottom', fontsize=12)
+        plt.xticks(list(suitable_cluster_counts.index), rotation=90)
+        plt.title('Cluster Distribution of Suitable AADL Models')
+        plt.xlabel('Cluster')
+        plt.ylabel('Number of Suitable Models')
+        plt.tight_layout()
+        plt.savefig(os.path.join(self.output_folder, 'suitable_cluster_distribution.png'))
+        plt.close()
+
+
+    def plot_top_instances(self, component_counter, feature_counter, connection_instance_counter):
+        top_25_components = component_counter.most_common(25)
+        top_25_features = feature_counter.most_common(25)
+        top_25_connections = connection_instance_counter.most_common(25)
+
+        plt.figure(figsize=(10, 6))
+        sns.barplot(x=[comp[1] for comp in top_25_components], y=[comp[0] for comp in top_25_components])
+        plt.title('Top 25 Components')
+        plt.xlabel('Count')
+        plt.ylabel('Component')
+        plt.tight_layout()
+        plt.savefig(os.path.join(self.output_folder, 'top_25_components.png'))
+        plt.close()
+
+        plt.figure(figsize=(10, 6))
+        sns.barplot(x=[comp[1] for comp in top_25_features], y=[comp[0] for comp in top_25_features])
+        plt.title('Top 25 Features')
+        plt.xlabel('Count')
+        plt.ylabel('Fature')
+        plt.tight_layout()
+        plt.savefig(os.path.join(self.output_folder, 'top_25_features.png'))
+        plt.close()
+
+        plt.figure(figsize=(10, 6))
+        sns.barplot(x=[comp[1] for comp in top_25_connections], y=[comp[0] for comp in top_25_connections])
+        plt.title('Top 25 Connections')
+        plt.xlabel('Count')
+        plt.ylabel('Connection')
+        plt.tight_layout()
+        plt.savefig(os.path.join(self.output_folder, 'top_25_connections.png'))
+        plt.close()
+
+
+    def plot_total_vs_suitable_models_pie(self):
+        total_aadl_models = len(self.aadl_files)
+        total_suitable_models = len(self.suitable_files)
+        labels = ['Suitable\nModels', 'Not suitable\nMoldels']
+        sizes = [total_suitable_models, total_aadl_models - total_suitable_models]
+        colors = ['skyblue', 'lightcoral']
+
+        plt.figure(figsize=(6, 6))
+        plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=colors)
+        plt.title(f'Total vs Suitable AADL Models \nTotal Models: {total_aadl_models} \nSuitable Models: {total_suitable_models} ')
+        plt.axis('equal')
+        plt.savefig(os.path.join(self.output_folder, 'total_vs_suitable_models_pie.png'))
+        plt.close()
+
+
+    def plot_cluster_distribution_stacked(self):
+        clusters_df = pd.read_csv(self.config.get("clusters", ""))
+        suitable_models_cluster_df = pd.read_csv(os.path.join(self.output_folder, 'suitable_models_cluster.csv'))
+        
+        # Get counts for total models in each cluster
+        total_cluster_counts = clusters_df['Cluster'].value_counts().sort_index()
+        # Get counts for suitable models in each cluster
+        suitable_cluster_counts = suitable_models_cluster_df['Cluster'].value_counts().sort_index()
+        all_clusters = set(range(1, 45))
+        # Add missing clusters with 0 values
+        for cluster in all_clusters:
+            if cluster not in total_cluster_counts:
+                total_cluster_counts[cluster] = 0
+            if cluster not in suitable_cluster_counts:
+                suitable_cluster_counts[cluster] = 0
+        total_cluster_counts = total_cluster_counts.sort_index()
+        suitable_cluster_counts = suitable_cluster_counts.sort_index()
+        non_suitable_cluster_counts = total_cluster_counts - suitable_cluster_counts
+
+        plt.figure(figsize=(10, 6))
+        plt.bar(total_cluster_counts.index, non_suitable_cluster_counts, label='Non-Suitable', color='lightcoral')
+        plt.bar(total_cluster_counts.index, suitable_cluster_counts, bottom=non_suitable_cluster_counts, label='Suitable', color='skyblue')
+        plt.title('Cluster Distribution of AADL Models (Stacked)')
+        plt.xlabel('Cluster')
+        plt.ylabel('Number of Models')
+        plt.legend()
+        plt.xticks(range(1, 45), rotation=90)
+        plt.tight_layout()
+        plt.savefig(os.path.join(self.output_folder, 'cluster_distribution_stacked.png'))
+        plt.close()
