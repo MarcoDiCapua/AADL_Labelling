@@ -68,8 +68,9 @@ class AADLManager:
                 not_suitable_files.append(aadl_file)
                 print(f"File {aadl_file} is not suitable.")
         
-        # Generate suitable_models_cluster.csv
+        # Generate suitable_models_cluster.csv and add cluster information
         self.generate_suitable_models_cluster_csv(suitable_files)
+        self.add_cluster_to_suitable_models_data()
 
         print(f"Total suitable files: {len(suitable_files)}")
         print(f"Total not suitable files: {len(not_suitable_files)}")
@@ -109,7 +110,7 @@ class AADLManager:
         with open(csv_file_path, mode='a', newline='') as file:
             csv_writer = csv.writer(file)
             if not file_exists:
-                header = ['Model', 'Component', 'Feature', 'ConnectionInstance']
+                header = ['Model', 'Cluster', 'Component', 'Feature', 'ConnectionInstance']
                 csv_writer.writerow(header)
 
             # Extract and concatenate the information for the components, features, and connection instances
@@ -123,7 +124,7 @@ class AADLManager:
             connection_str = ', '.join(connection_names)
 
             # Write the data for the model into the CSV (one row per model)
-            csv_writer.writerow([model_name_without_extension, components_str, features_str, connection_str])
+            csv_writer.writerow([model_name_without_extension, '', components_str, features_str, connection_str])
 
         print(f"Data for model {model_name} appended to {csv_file_path}")
 
@@ -174,6 +175,27 @@ class AADLManager:
         else:
             print("No suitable models with clusters to write.")
 
+    def add_cluster_to_suitable_models_data(self):
+        """Adds the Cluster column to the suitable_models_data.csv based on clusters.csv"""
+        suitable_models_data_file = os.path.join(self.output_folder, "AADL/suitable_models_data.csv")
+        cluster_mapping = {}
+
+        # Read the cluster mappings from clusters.csv
+        with open(self.clusters_file, mode='r') as file:
+            csv_reader = csv.reader(file)
+            next(csv_reader)  # Skip header
+            for row in csv_reader:
+                cluster_mapping[row[0]] = row[1]  # Model to Cluster mapping
+
+        # Read the suitable models data
+        suitable_models_df = pd.read_csv(suitable_models_data_file)
+
+        # Add the Cluster column based on the model name
+        suitable_models_df['Cluster'] = suitable_models_df['Model'].apply(lambda x: cluster_mapping.get(x, 'Unknown'))
+
+        # Save the updated suitable_models_data.csv
+        suitable_models_df.to_csv(suitable_models_data_file, index=False)
+        print(f"Updated suitable_models_data.csv with Cluster column.")
 
     def process_aadl_files(self, suitable_files, aadl_analysis, component_counter, 
                             feature_counter, connection_instance_counter, 
@@ -201,8 +223,6 @@ class AADLManager:
             aadl_analysis.process_tag(connection_instances, connection_instance_counter, 'name', 'Unnamed connectionInstance')
             aadl_analysis.process_tag(mode_instances, mode_instance_counter, 'name', 'Unnamed modeInstance')
             aadl_analysis.process_tag(flow_specifications, flow_specification_counter, 'name', 'Unnamed flowSpecification')
-
-
 
 class AADLAnalysis:
         
