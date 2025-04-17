@@ -51,9 +51,11 @@ def main():
         aadl_analysis.plot_total_counts(component_counter, feature_counter, connection_instance_counter, mode_instance_counter, flow_specification_counter)
         print("Plots generated successfully.")
         
-        # Preprocess the data (call the TextPreprocessing class after generating the reports)
+        # Preprocess the data
+        print("Preprocessing data...")
         text_preprocessor = TextPreprocessing(config_path="config.json")
         text_preprocessor.preprocess()
+        print("Data preprocessing completed.")
         
         print("Finished elaboration time: ", get_current_timestamp())
 
