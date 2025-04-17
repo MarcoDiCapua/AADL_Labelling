@@ -283,7 +283,7 @@ class AADLAnalysis:
         total_suitable_models = len(self.suitable_files)
         
         plt.figure(figsize=(8, 6))
-        bars = plt.bar(['Total AADL Models', 'Suitable AADL Models'], [total_aadl_models, total_suitable_models])
+        bars = plt.bar(['Total AADL Models', 'Suitable AADL Models'], [total_aadl_models, total_suitable_models], color='skyblue')
         plt.title('Total vs Suitable AADL Models')
         plt.ylabel('Count')
         for bar in bars:
@@ -302,7 +302,7 @@ class AADLAnalysis:
         }
 
         plt.figure(figsize=(8, 6))
-        bars = plt.bar(counts.keys(), counts.values())
+        bars = plt.bar(counts.keys(), counts.values(), color='skyblue')
         plt.title('Total Count of Components, Features, Connections, Modes and Flow Specifications')
         plt.ylabel('Count')
         for bar in bars:
@@ -316,7 +316,7 @@ class AADLAnalysis:
         cluster_counts = clusters_df['Cluster'].value_counts().sort_index()
 
         plt.figure(figsize=(10, 6))
-        bars = sns.barplot(x=cluster_counts.index, y=cluster_counts.values)
+        bars = sns.barplot(x=cluster_counts.index, y=cluster_counts.values, color='skyblue')
         plt.title('Cluster Distribution of AADL Models')
         plt.xlabel('Cluster')
         plt.ylabel('Number of Models')
@@ -340,7 +340,7 @@ class AADLAnalysis:
                 suitable_cluster_counts[cluster] = 0
         suitable_cluster_counts = suitable_cluster_counts.sort_index()
         plt.figure(figsize=(10, 6))
-        bars = sns.barplot(x=suitable_cluster_counts.index, y=suitable_cluster_counts.values)
+        bars = sns.barplot(x=suitable_cluster_counts.index, y=suitable_cluster_counts.values, color='skyblue')
         # Highlight clusters with 0 suitable models
         for cluster, count in suitable_cluster_counts.items():
             if count == 0:
@@ -356,14 +356,13 @@ class AADLAnalysis:
         plt.savefig(os.path.join(self.output_folder, 'suitable_cluster_distribution.png'))
         plt.close()
 
-
     def plot_top_instances(self, component_counter, feature_counter, connection_instance_counter):
         top_25_components = component_counter.most_common(25)
         top_25_features = feature_counter.most_common(25)
         top_25_connections = connection_instance_counter.most_common(25)
 
         plt.figure(figsize=(10, 6))
-        sns.barplot(x=[comp[1] for comp in top_25_components], y=[comp[0] for comp in top_25_components])
+        sns.barplot(x=[comp[1] for comp in top_25_components], y=[comp[0] for comp in top_25_components], color='skyblue')
         plt.title('Top 25 Components')
         plt.xlabel('Count')
         plt.ylabel('Component')
@@ -372,16 +371,16 @@ class AADLAnalysis:
         plt.close()
 
         plt.figure(figsize=(10, 6))
-        sns.barplot(x=[comp[1] for comp in top_25_features], y=[comp[0] for comp in top_25_features])
+        sns.barplot(x=[comp[1] for comp in top_25_features], y=[comp[0] for comp in top_25_features], color='skyblue')
         plt.title('Top 25 Features')
         plt.xlabel('Count')
-        plt.ylabel('Fature')
+        plt.ylabel('Feature')
         plt.tight_layout()
         plt.savefig(os.path.join(self.output_folder, 'top_25_features.png'))
         plt.close()
 
         plt.figure(figsize=(10, 6))
-        sns.barplot(x=[comp[1] for comp in top_25_connections], y=[comp[0] for comp in top_25_connections])
+        sns.barplot(x=[comp[1] for comp in top_25_connections], y=[comp[0] for comp in top_25_connections], color='skyblue')
         plt.title('Top 25 Connections')
         plt.xlabel('Count')
         plt.ylabel('Connection')
