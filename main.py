@@ -1,7 +1,7 @@
 from AADL_manager import AADLManager, AADLAnalysis
 from collections import Counter
 from utility import get_current_timestamp
-from labelling import TextPreprocessing
+from labelling import TextPreprocessing, Labeling
 import sys
 
 # Redirect standard output to a log file
@@ -56,6 +56,12 @@ def main():
         text_preprocessor = TextPreprocessing(config_path="config.json")
         text_preprocessor.preprocess()
         print("Data preprocessing completed.")
+        
+        # Apply TF-IDF and generate labels for clusters using the Labeling class
+        print("Generating labels using TF-IDF...")
+        labeling = Labeling(config_path="config.json")
+        labeling.apply_tfidf()  # This will calculate TF-IDF for both clusters and suitable models
+        print("Labels generation completed.")
         
         print("Finished elaboration time: ", get_current_timestamp())
 

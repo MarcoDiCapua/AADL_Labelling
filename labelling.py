@@ -8,6 +8,11 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import nltk
 from utility import load_config, create_directory, file_exists, delete_file, list_files_in_directory, copy_file
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_selection import SelectKBest, chi2
+from sklearn.decomposition import LatentDirichletAllocation as LDA
+import numpy as np
+from sklearn.preprocessing import LabelEncoder
 
 nltk.download('punkt', download_dir='./nltk_data')
 nltk.download('stopwords', download_dir='./nltk_data')
@@ -180,3 +185,111 @@ class TextPreprocessing:
                 plt.close()
                 print(f"Top 25 words plot saved to {plot_file}")
 
+
+class Labeling:
+    def __init__(self, config_path="config.json"):
+        self.config = load_config(config_path)
+        self.clusters_file = self.config.get("clusters", "")
+        self.suitable_models_data_file = os.path.join(self.config.get("output_folder", ""), "AADL/suitable_models_data.csv")
+        self.num_clusters = 44  # Total number of clusters
+
+        # Define the Preprocessing folder path
+        self.preprocessing_folder = os.path.join(self.config.get("output_folder", ""), "Preprocessing")
+        create_directory(self.preprocessing_folder)
+
+        # Define the Top25Report folder path
+        self.top25_report_folder = os.path.join(self.preprocessing_folder, "Top25Report")
+        create_directory(self.top25_report_folder)
+
+    def apply_tfidf(self):
+        """Apply TF-IDF to calculate the importance of words in each cluster"""
+        # Read preprocessed clusters and suitable models data files
+        clusters_df = pd.read_csv(os.path.join(self.preprocessing_folder, 'preprocessed_clusters.csv'))
+        suitable_models_df = pd.read_csv(os.path.join(self.preprocessing_folder, 'preprocessed_suitable_models_data.csv'))
+
+        # Apply TF-IDF on preprocessed_clusters.csv
+        print("Applying TF-IDF on preprocessed_clusters.csv...")
+        tfidf_cluster = self.calculate_tfidf_by_cluster(clusters_df['Model'], clusters_df['Cluster'])
+        self.save_top_tfidf(tfidf_cluster, "Clusters_Top_10_TFIDF.csv")
+
+        # Apply TF-IDF on preprocessed_suitable_models_data.csv
+        print("Applying TF-IDF on preprocessed_suitable_models_data.csv...")
+        tfidf_suitable_models = self.calculate_tfidf_by_cluster(suitable_models_df['Model'], suitable_models_df['Cluster'])
+        self.save_top_tfidf(tfidf_suitable_models, "Suitable_Models_Top_10_TFIDF.csv")
+
+        # Combine Component, Feature, and ConnectionInstance columns into one
+        print("Combining Component, Feature, and ConnectionInstance columns for TF-IDF...")
+        suitable_models_df['Combined'] = suitable_models_df['Component'].astype(str) + " " + suitable_models_df['Feature'].astype(str) + " " + suitable_models_df['ConnectionInstance'].astype(str)
+
+        # Apply TF-IDF on the combined column, ensuring we only analyze clusters that have models
+        self.apply_tfidf_combined_column(suitable_models_df)
+
+    def apply_tfidf_combined_column(self, df):
+        """Applies TF-IDF to the combined column (Component + Feature + ConnectionInstance)"""
+        # Check for non-empty rows and valid data for TF-IDF calculation
+        valid_data = df['Combined'].str.strip().apply(len) > 0  # Remove rows with empty or whitespace-only data
+        df_valid = df[valid_data]
+
+        # If there are valid rows, apply TF-IDF to each cluster
+        if len(df_valid) > 0:
+            tfidf_by_cluster = self.calculate_tfidf_by_cluster(df_valid['Combined'], df_valid['Cluster'], "Combined")
+            self.save_top_tfidf(tfidf_by_cluster, "Combined_Top_10_TFIDF.csv")
+        else:
+            print("No valid data for TF-IDF calculation in the combined columns.")
+
+    def calculate_tfidf_by_cluster(self, text_data, clusters, column_name="Model"):
+        """Calculate the TF-IDF for each cluster separately"""
+        tfidf_by_cluster = {}
+
+        # Apply TF-IDF within each cluster
+        for cluster_id in range(1, self.num_clusters + 1):
+            # Filter the data for the current cluster
+            cluster_data = text_data[clusters == cluster_id]
+            if len(cluster_data) > 0:
+                tfidf_matrix, feature_names = self.compute_tfidf(cluster_data)
+                tfidf_scores = np.asarray(tfidf_matrix.sum(axis=0)).flatten()
+
+                # Sort words by their TF-IDF scores and get the top 10
+                word_scores = [(feature_names[i], tfidf_scores[i]) for i in range(len(feature_names))]
+                sorted_word_scores = sorted(word_scores, key=lambda x: x[1], reverse=True)
+                top_words = sorted_word_scores[:10]  # Top 10 words by TF-IDF score
+
+                tfidf_by_cluster[cluster_id] = top_words
+
+        return tfidf_by_cluster
+
+    def compute_tfidf(self, text_data):
+        """Compute TF-IDF matrix for the given text data"""
+        vectorizer = TfidfVectorizer()  # No stopwords parameter needed since data is already cleaned
+        tfidf_matrix = vectorizer.fit_transform(text_data)
+        feature_names = vectorizer.get_feature_names_out()  # Get the feature names (words)
+        return tfidf_matrix, feature_names
+
+    def save_top_tfidf(self, top_tfidf, file_name):
+        """Save the top 10 TF-IDF words to a CSV file"""
+        output_file = os.path.join(self.top25_report_folder, file_name)
+        # Create a dataframe for easier saving with pandas
+        df = pd.DataFrame(
+            [(cluster_id, ", ".join([word for word, score in top_words])) for cluster_id, top_words in top_tfidf.items()],
+            columns=['Cluster', 'Top 10 Words (TF-IDF)']
+        )
+        df.to_csv(output_file, index=False)
+
+        print(f"Top 10 TF-IDF words saved to {output_file}")
+
+    def visualize_top_words(self, top_tfidf, title):
+        """Generate a bar plot for the top TF-IDF words"""
+        for cluster_id in range(1, self.num_clusters + 1):
+            fig, ax = plt.subplots(figsize=(8, 6))
+
+            # Top Words
+            words, scores = zip(*top_tfidf[cluster_id])
+
+            ax.barh(words, scores, color='skyblue')
+            ax.set_xlabel("TF-IDF Score")
+            ax.set_title(f"{title} - Cluster {cluster_id}")
+
+            plt.tight_layout()
+            plt.savefig(os.path.join(self.top25_report_folder, f"Cluster_{cluster_id}_{title}_Top_10.png"))
+            plt.close()
+            print(f"Top 10 TF-IDF words plot for Cluster {cluster_id} saved.")
