@@ -306,33 +306,33 @@ aadlmodel smartthermostat thermostat arch generator 1,10
 aadlmodel smartthermostat thermostat arch temp sensor 1,5
 aadlmodel smartthermostat thermostat arch thermostat controller 1,9
 aadlmodel smartthermostat thermostat arch thermostat 1,38
-aadlprojects smartparking communicationsupport 1,44
-aadlprojects smartparking driver 1,3
-aadlprojects smartparking parkelecpaymt 1,4
-aadlprojects smartparking parkingsystem 1,44
-aadlprojects smartparking parkmgmtsys 1,4
-aadlprojects smartparking parkmgmt 1,4
-aadlprojects smartparking persinfodev 1,4
-aadlprojects smartparking persinteractvtravinfo 1,4
-aadlprojects smartparking personallocmanagement 1,4
-aadlprojects smartparking roadsideequip 1,4
-aadlprojects smartparking roadsideinforeception 1,44
-aadlprojects smartparking rseparkmgmt 1,4
-aadlprojects smartparking smartparkingsystem 1,17
-aadlprojects smartparking ticdatacoll 1,4
-aadlprojects smartparking ticinteractvtravinfo 1,4
-aadlprojects smartparking transinfoctr 1,17
-aadlprojects smartparking vehbasesafe 1,5
-aadlprojects smartparking vehicleobe 1,4
-aadlprojects speedwrisic roadassistanceits 1,4
-aadlprojects speedwrisic rsequip 1,5
-aadlprojects speedwrisic speed 1,4
-aadlprojects speedwrisic tminfo 1,4
-aadlprojects speedwrisic vehicletransit 1,17
-aadlprojects vtv remotevehicleobe 1,3
-aadlprojects vtv transoperator 1,3
-aadlprojects vtv transvobe 1,4
-aadlprojects vtv vehicletransitsystem 1,4
+smartparking communicationsupport 1,44
+smartparking driver 1,3
+smartparking parkelecpaymt 1,4
+smartparking parkingsystem 1,44
+smartparking parkmgmtsys 1,4
+smartparking parkmgmt 1,4
+smartparking persinfodev 1,4
+smartparking persinteractvtravinfo 1,4
+smartparking personallocmanagement 1,4
+smartparking roadsideequip 1,4
+smartparking roadsideinforeception 1,44
+smartparking rseparkmgmt 1,4
+smartparking smartparkingsystem 1,17
+smartparking ticdatacoll 1,4
+smartparking ticinteractvtravinfo 1,4
+smartparking transinfoctr 1,17
+smartparking vehbasesafe 1,5
+smartparking vehicleobe 1,4
+speedwrisic roadassistanceits 1,4
+speedwrisic rsequip 1,5
+speedwrisic speed 1,4
+speedwrisic tminfo 1,4
+speedwrisic vehicletransit 1,17
+vtv remotevehicleobe 1,3
+vtv transoperator 1,3
+vtv transvobe 1,4
+vtv vehicletransitsystem 1,4
 aadlv2 issue 16 child 1,43
 aadlv2 issue 16 parent 1,43
 aadlvending sterownik vendingmachinesterownik with devices 1,39

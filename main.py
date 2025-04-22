@@ -60,7 +60,7 @@ def main():
         # Apply TF-IDF and generate labels for clusters using the Labeling class
         print("Generating labels using TF-IDF...")
         labeling = Labeling(config_path="config.json")
-        labeling.apply_tfidf()  # This will calculate TF-IDF for both clusters and suitable models
+        labeling.apply_tfidf()
         print("Labels generation completed.")
         
         print("Finished elaboration time: ", get_current_timestamp())

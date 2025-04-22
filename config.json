@@ -5,6 +5,5 @@
     "xmi_folder": "input/xmi",
     "xmi_suitable_models": "output/AADL/xmi_suitable_models",
     "output_folder": "output",
-    "models_feature_extraction": "basic/full",
     "validate_csv": "MANCANTEvalidate/cluster_test_set_specific.csv"
   }
