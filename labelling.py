@@ -34,7 +34,7 @@ class TextPreprocessing:
         create_directory(self.top25_report_folder)
 
         # Specific words to remove
-        self.words_to_remove = ["aadl", "aadlib", "aadlprojects",  "impl"] #forse anche "main", "system", "subsystem" sono da rimuovere
+        self.words_to_remove = ["aadl", "aadlib", "aadlprojects",  "impl"] #forse anche "this", "main", "system", "subsystem" sono da rimuovere
 
     def preprocess(self):
         clusters_df = pd.read_csv(self.clusters_file)
@@ -284,23 +284,20 @@ class Labeling:
 
         # Combine Component, Feature, and ConnectionInstance columns into one
         print("Combining Component, Feature, and ConnectionInstance columns for TF-IDF...")
-        suitable_models_df['Combined'] = suitable_models_df['Component'].astype(str) + " " + suitable_models_df['Feature'].astype(str) + " " + suitable_models_df['ConnectionInstance'].astype(str)
-        # Export the suitable_models_df content into a CSV file
-        suitable_models_df.to_csv(os.path.join(self.TFIDF_folder, "Suitable_Models_Export.csv"), index=False)
-        print(f"Suitable models data exported to {os.path.join(self.TFIDF_folder, 'Suitable_Models_Export.csv')}")
-        # Apply TF-IDF on the combined column (Component + Feature + ConnectionInstance)
-        # NON DOVREBBERO ESSERCI NA O VALORI VUOTI IN QUESTA COLONNA
-        valid_data = suitable_models_df['Combined'].str.strip().apply(len) > 0  # Remove rows with empty or whitespace-only data
-        df_valid = suitable_models_df[valid_data]
-        df_valid.to_csv(os.path.join(self.TFIDF_folder, "DFVALID_Export.csv"), index=False)
-        # If there are valid rows, apply TF-IDF to each cluster
-        if len(df_valid) > 0:
-            tfidf_by_cluster = self.calculate_tfidf(df_valid['Combined'], df_valid['Cluster'], "Combined")
-            self.save_top_tfidf(tfidf_by_cluster, "Combined_Top_10_TFIDF.csv")
-        else:
-            print("No valid data for TF-IDF calculation in the combined columns.")
+        suitable_models_df['Combined'] = suitable_models_df.apply(
+            lambda row: ' '.join([str(row['Component']), str(row['Feature']), str(row['ConnectionInstance'])]).strip(),
+            axis=1
+        )
+        empty_combined_rows = suitable_models_df[suitable_models_df['Combined'].str.strip() == '']
+        if not empty_combined_rows.empty:
+            print(f"ATTENZIONE: Le seguenti righe hanno la colonna 'Combined' vuota:")
+            print(empty_combined_rows[['Model', 'Component', 'Feature', 'ConnectionInstance']])
 
-    def calculate_tfidf(self, text_data, clusters, column_name="Model"):
+        # Apply TF-IDF on the combined column
+        tfidf_by_cluster = self.calculate_tfidf(suitable_models_df['Combined'], suitable_models_df['Cluster'])
+        self.save_top_tfidf(tfidf_by_cluster, "Combined_Top_10_TFIDF.csv")
+
+    def calculate_tfidf(self, text_data, clusters):
         """Calculate the TF-IDF for each cluster separately"""
         tfidf_by_cluster = {}
 
@@ -308,18 +305,43 @@ class Labeling:
         for cluster_id in range(1, self.num_clusters + 1):
             # Filter the data for the current cluster
             cluster_data = text_data[clusters == cluster_id]
-            if len(cluster_data) > 0:
-                tfidf_matrix, feature_names = self.compute_tfidf(cluster_data)
-                tfidf_scores = np.asarray(tfidf_matrix.sum(axis=0)).flatten()
+            print(f"Cluster {cluster_id}: {cluster_data}")  # Debugging line to check data
 
-                # Sort words by their TF-IDF scores and get the top 10
-                word_scores = [(feature_names[i], tfidf_scores[i]) for i in range(len(feature_names))]
-                sorted_word_scores = sorted(word_scores, key=lambda x: x[1], reverse=True)
-                top_words = sorted_word_scores[:10]  # Top 10 words by TF-IDF score
+            # Verifica se tutte le parole di una riga sono corte
+            cluster_data = cluster_data.apply(self.filter_short_words)
+            print(f"Filtered Cluster {cluster_id}: {cluster_data}")  # Debugging line to check data after filtering
 
-                tfidf_by_cluster[cluster_id] = top_words
+            # Escludi righe con solo parole corte
+            cluster_data = cluster_data[cluster_data.str.len() > 0]  # Rimuovi righe vuote
+            if cluster_data.empty:
+                print(f"Warning: Cluster {cluster_id} contains only short words. Skipping TF-IDF calculation for this cluster.")
+                continue  # Salta il calcolo del TF-IDF per il cluster se non ci sono parole valide
+
+            tfidf_matrix, feature_names = self.compute_tfidf(cluster_data)
+            print(f"TF-IDF Matrix for Cluster {cluster_id}: {tfidf_matrix.shape}")  # Debugging line
+
+            # Check if the matrix is empty or all zeros
+            if tfidf_matrix.shape[0] == 0 or np.sum(tfidf_matrix.toarray()) == 0:
+                print(f"Warning: TF-IDF matrix for Cluster {cluster_id} is empty or contains only zeros.")
+
+            tfidf_scores = np.asarray(tfidf_matrix.sum(axis=0)).flatten()
+
+            # Sort words by their TF-IDF scores and get the top 10
+            word_scores = [(feature_names[i], tfidf_scores[i]) for i in range(len(feature_names))]
+            sorted_word_scores = sorted(word_scores, key=lambda x: x[1], reverse=True)
+            top_words = sorted_word_scores[:10]  # Top 10 words by TF-IDF score
+
+            tfidf_by_cluster[cluster_id] = top_words
 
         return tfidf_by_cluster
+
+    def filter_short_words(self, text):
+        """Remove words with length < 3"""
+        if isinstance(text, str):
+            words = text.split()
+            words = [word for word in words if len(word) >= 4]  # Rimuove le parole brevi che non sono significative
+            return ' '.join(words)
+        return text
 
     def compute_tfidf(self, text_data):
         """Compute TF-IDF matrix for the given text data"""
@@ -329,16 +351,19 @@ class Labeling:
         return tfidf_matrix, feature_names
 
     def save_top_tfidf(self, top_tfidf, file_name):
-        """Save the top 10 TF-IDF words to a CSV file"""
+        """Save the top 10 TF-IDF words and their scores to a CSV file"""
         output_file = os.path.join(self.TFIDF_folder, file_name)
         # Create a dataframe for easier saving with pandas
-        df = pd.DataFrame(
-            [(cluster_id, ", ".join([word for word, score in top_words])) for cluster_id, top_words in top_tfidf.items()],
-            columns=['Cluster', 'Top 10 Words (TF-IDF)']
-        )
+        data = []
+        for cluster_id, top_words in top_tfidf.items():
+            words = [word for word, _ in top_words]
+            scores = [score for _, score in top_words]
+            data.append([cluster_id, ", ".join(words), ", ".join(map(str, scores))])
+        
+        df = pd.DataFrame(data, columns=['Cluster', 'Top 10 Words (TF-IDF)', 'Scores'])
         df.to_csv(output_file, index=False)
 
-        print(f"Top 10 TF-IDF words saved to {output_file}")
+        print(f"Top 10 TF-IDF words and scores saved to {output_file}")
 
     def visualize_top_words(self, top_tfidf, title):
         """Generate a bar plot for the top TF-IDF words"""
