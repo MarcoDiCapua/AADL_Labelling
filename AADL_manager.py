@@ -99,7 +99,7 @@ class AADLManager:
         model_name_without_extension = model_name.split('.')[0]
         components = root.findall('.//componentInstance')
         features = root.findall('.//featureInstance')
-        connection_instances = root.findall('.//connectionInstance')
+        #connection_instances = root.findall('.//connectionInstance')
 
         # CSV file path for suitable models data
         csv_file_path = os.path.join(self.output_folder, "AADL/suitable_models_data.csv")
@@ -110,21 +110,21 @@ class AADLManager:
         with open(csv_file_path, mode='a', newline='') as file:
             csv_writer = csv.writer(file)
             if not file_exists:
-                header = ['Model', 'Cluster', 'Component', 'Feature', 'ConnectionInstance']
+                header = ['Model', 'Cluster', 'Component', 'Feature'] # , 'ConnectionInstance'
                 csv_writer.writerow(header)
 
             # Extract and concatenate the information for the components, features, and connection instances
             component_names = [component.get('name', 'Unnamed component') for component in components]
             feature_names = [feature.get('name', 'Unnamed feature') for feature in features]
-            connection_names = [connection.get('name', 'Unnamed connectionInstance') for connection in connection_instances]
+            #connection_names = [connection.get('name', 'Unnamed connectionInstance') for connection in connection_instances]
 
             # Concatenate all information as a string, separated by commas
             components_str = ', '.join(component_names)
             features_str = ', '.join(feature_names)
-            connection_str = ', '.join(connection_names)
+            #connection_str = ', '.join(connection_names)
 
             # Write the data for the model into the CSV (one row per model)
-            csv_writer.writerow([model_name_without_extension, '', components_str, features_str, connection_str])
+            csv_writer.writerow([model_name_without_extension, '', components_str, features_str]) #, connection_str])
 
         print(f"Data for model {model_name} appended to {csv_file_path}")
 
@@ -176,7 +176,6 @@ class AADLManager:
             print("No suitable models with clusters to write.")
 
     def add_cluster_to_suitable_models_data(self):
-        """Adds the Cluster column to the suitable_models_data.csv based on clusters.csv"""
         suitable_models_data_file = os.path.join(self.output_folder, "AADL/suitable_models_data.csv")
         cluster_mapping = {}
 

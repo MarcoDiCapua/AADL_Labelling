@@ -34,7 +34,7 @@ class TextPreprocessing:
         create_directory(self.top25_report_folder)
 
         # Specific words to remove
-        self.words_to_remove = ["aadl", "aadlib", "aadlprojects",  "impl"] #forse anche "this", "main", "system", "subsystem" sono da rimuovere
+        self.words_to_remove = ["aadl", "aadlib", "aadlprojects",  "impl", "this", "main", "system", "subsystem"]
 
     def preprocess(self):
         clusters_df = pd.read_csv(self.clusters_file)
@@ -51,7 +51,7 @@ class TextPreprocessing:
         suitable_models_df['Model'] = suitable_models_df['Model'].apply(self.preprocess_column)
         suitable_models_df['Component'] = suitable_models_df['Component'].apply(self.preprocess_column)
         suitable_models_df['Feature'] = suitable_models_df['Feature'].apply(self.preprocess_column)
-        suitable_models_df['ConnectionInstance'] = suitable_models_df['ConnectionInstance'].apply(self.preprocess_column)
+        #suitable_models_df['ConnectionInstance'] = suitable_models_df['ConnectionInstance'].apply(self.preprocess_column)
         self.save_intermediate_csv(suitable_models_df, 'tokenized_suitable_models_data')
 
         # Remove non-alphanumeric characters (except hyphens and underscores)
@@ -61,19 +61,19 @@ class TextPreprocessing:
         suitable_models_df['Model'] = suitable_models_df['Model'].apply(self.remove_non_alphanumeric)
         suitable_models_df['Component'] = suitable_models_df['Component'].apply(self.remove_non_alphanumeric)
         suitable_models_df['Feature'] = suitable_models_df['Feature'].apply(self.remove_non_alphanumeric)
-        suitable_models_df['ConnectionInstance'] = suitable_models_df['ConnectionInstance'].apply(self.remove_non_alphanumeric)
+        #suitable_models_df['ConnectionInstance'] = suitable_models_df['ConnectionInstance'].apply(self.remove_non_alphanumeric)
         self.save_intermediate_csv(suitable_models_df, 'non_alphanumeric_removed_suitable_models_data')
 
         # Remove stopwords (skip empty or NaN entries)
         clusters_df['Model'] = clusters_df['Model'].apply(self.remove_stopwords)
         self.save_intermediate_csv(clusters_df, 'stopwords_removed_clusters')
 
-        # Note: The stopwords removal is commented out for suitable models as it does not remove a lot of words
-        # suitable_models_df['Model'] = suitable_models_df['Model'].apply(self.remove_stopwords)
-        # suitable_models_df['Component'] = suitable_models_df['Component'].apply(self.remove_stopwords)
-        # suitable_models_df['Feature'] = suitable_models_df['Feature'].apply(self.remove_stopwords)
-        # suitable_models_df['ConnectionInstance'] = suitable_models_df['ConnectionInstance'].apply(self.remove_stopwords)
-        # self.save_intermediate_csv(suitable_models_df, 'stopwords_removed_suitable_models_data')
+        # Remove stopwords from suitable models data
+        suitable_models_df['Model'] = suitable_models_df['Model'].apply(self.remove_stopwords)
+        suitable_models_df['Component'] = suitable_models_df['Component'].apply(self.remove_stopwords)
+        suitable_models_df['Feature'] = suitable_models_df['Feature'].apply(self.remove_stopwords)
+        #suitable_models_df['ConnectionInstance'] = suitable_models_df['ConnectionInstance'].apply(self.remove_stopwords)
+        self.save_intermediate_csv(suitable_models_df, 'stopwords_removed_suitable_models_data')
 
         # Lemmatize (skip empty or NaN entries)
         clusters_df['Model'] = clusters_df['Model'].apply(self.lemmatize)
@@ -82,7 +82,7 @@ class TextPreprocessing:
         suitable_models_df['Model'] = suitable_models_df['Model'].apply(self.lemmatize)
         suitable_models_df['Component'] = suitable_models_df['Component'].apply(self.lemmatize)
         suitable_models_df['Feature'] = suitable_models_df['Feature'].apply(self.lemmatize)
-        suitable_models_df['ConnectionInstance'] = suitable_models_df['ConnectionInstance'].apply(self.lemmatize)
+        #suitable_models_df['ConnectionInstance'] = suitable_models_df['ConnectionInstance'].apply(self.lemmatize)
         self.save_intermediate_csv(suitable_models_df, 'lemmatized_suitable_models_data')
 
         # Save the final preprocessed DataFrames back to new CSV files for inspection
@@ -181,18 +181,18 @@ class TextPreprocessing:
         csv_files_data = [
             os.path.join(self.preprocessing_folder, 'tokenized_suitable_models_data.csv'),
             os.path.join(self.preprocessing_folder, 'non_alphanumeric_removed_suitable_models_data.csv'),
-            #os.path.join(self.preprocessing_folder, 'stopwords_removed_suitable_models_data.csv'),
+            os.path.join(self.preprocessing_folder, 'stopwords_removed_suitable_models_data.csv'),
             os.path.join(self.preprocessing_folder, 'lemmatized_suitable_models_data.csv')
         ]
     
         # Create subfolders for each column (Component, Feature, ConnectionInstance)
         component_folder = os.path.join(self.top25_report_folder, "Component")
         feature_folder = os.path.join(self.top25_report_folder, "Feature")
-        connection_folder = os.path.join(self.top25_report_folder, "ConnectionInstance")
+        #connection_folder = os.path.join(self.top25_report_folder, "ConnectionInstance")
 
         create_directory(component_folder)
         create_directory(feature_folder)
-        create_directory(connection_folder)
+        #create_directory(connection_folder)
 
         # Process each CSV file and create a Top 25 words report for component, feature, and connection instance
         for csv_file in csv_files_data:
@@ -202,8 +202,8 @@ class TextPreprocessing:
                 # Create an empty list to store the results
                 top25_data = []
 
-                # For each relevant column (Component, Feature, ConnectionInstance), create a top 25 words report
-                for column in ['Component', 'Feature', 'ConnectionInstance']:
+                # For each relevant column (Component, Feature), create a top 25 words report
+                for column in ['Component', 'Feature']: #, 'ConnectionInstance'
                     text_data = " ".join(df[column].dropna())  # Get data for the specific column and drop NaN
                     tokens = word_tokenize(text_data)
                     word_counts = Counter(tokens)
@@ -228,8 +228,8 @@ class TextPreprocessing:
                         plot_file = os.path.join(component_folder, f"top25_{column}_{os.path.basename(csv_file).replace('.csv', '.png')}")
                     elif column == 'Feature':
                         plot_file = os.path.join(feature_folder, f"top25_{column}_{os.path.basename(csv_file).replace('.csv', '.png')}")
-                    else:
-                        plot_file = os.path.join(connection_folder, f"top25_{column}_{os.path.basename(csv_file).replace('.csv', '.png')}")
+                    #else:
+                    #    plot_file = os.path.join(connection_folder, f"top25_{column}_{os.path.basename(csv_file).replace('.csv', '.png')}")
 
                     plt.tight_layout()
                     plt.savefig(plot_file)
@@ -285,13 +285,13 @@ class Labeling:
         # Combine Component, Feature, and ConnectionInstance columns into one
         print("Combining Component, Feature, and ConnectionInstance columns for TF-IDF...")
         suitable_models_df['Combined'] = suitable_models_df.apply(
-            lambda row: ' '.join([str(row['Component']), str(row['Feature']), str(row['ConnectionInstance'])]).strip(),
+            lambda row: ' '.join([str(row['Component']), str(row['Feature'])]).strip(), # , str(row['ConnectionInstance'])
             axis=1
         )
         empty_combined_rows = suitable_models_df[suitable_models_df['Combined'].str.strip() == '']
         if not empty_combined_rows.empty:
             print(f"ATTENZIONE: Le seguenti righe hanno la colonna 'Combined' vuota:")
-            print(empty_combined_rows[['Model', 'Component', 'Feature', 'ConnectionInstance']])
+            print(empty_combined_rows[['Model', 'Component', 'Feature']]) # , 'ConnectionInstance'
 
         # Apply TF-IDF on the combined column
         tfidf_by_cluster = self.calculate_tfidf(suitable_models_df['Combined'], suitable_models_df['Cluster'])
@@ -334,17 +334,16 @@ class Labeling:
             tfidf_by_cluster[cluster_id] = top_words
 
         return tfidf_by_cluster
-
+    
     def filter_short_words(self, text):
-        """Remove words with length < 3"""
+        # Remove words shorter than 2 characters
         if isinstance(text, str):
             words = text.split()
-            words = [word for word in words if len(word) >= 4]  # Rimuove le parole brevi che non sono significative
+            words = [word for word in words if len(word) >= 2]  # Rimuove le parole brevi che non sono significative
             return ' '.join(words)
         return text
 
     def compute_tfidf(self, text_data):
-        """Compute TF-IDF matrix for the given text data"""
         vectorizer = TfidfVectorizer()
         tfidf_matrix = vectorizer.fit_transform(text_data)
         feature_names = vectorizer.get_feature_names_out()  # Get the feature names (words)

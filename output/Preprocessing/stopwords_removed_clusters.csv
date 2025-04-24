@@ -44,7 +44,7 @@ car example softwareapps cruisecontrol,5
 designer cruisecontrol cruisecontrollaws model,3
 designer cruisecontrol cruisecontrol generic,5
 designer cruisecontrol hci model,5
-designer demo subsystem subsystem test,29
+designer demo test,29
 examples fc flightcontroller,41
 examples fc flightcontroller,41
 examples gs groundstation,41
@@ -66,8 +66,8 @@ examples mc missioncomputer,41
 examples mc missioncomputer,41
 examples operation operation,43
 examples peripherals sensors actuators,43
-examples security security system cp,44
-examples security security system,44
+examples security security cp,44
+examples security security,44
 examples separation vp sel,17
 examples separation vp xen,27
 examples sw sw,44
@@ -75,14 +75,14 @@ examples uas uas,41
 examples uav uav,41
 gumbo tempcontrolsoftwaresystem tempcontrolsoftwaresystem isocontrol,44
 gumbo tempcontrolsoftwaresystem tempcontrolsoftwaresystem,44
-mdl gears system digital part dp,5
-map apps pca shutoff pca shutoff system imp,42
-map apps pulseox forwarding system pulseox forwarding system imp,42
+mdl gears digital part dp,5
+map apps pca shutoff pca shutoff imp,42
+map apps pulseox forwarding pulseox forwarding imp,42
 mdsd mymodel simplesystem,35
-mdsd sr system srs,35
-models emtest dependable system notional,7
-models emtest subsystem notional,10
-models peterexample main,8
+mdsd sr srs,35
+models emtest dependable notional,7
+models emtest notional,10
+models peterexample,8
 models test foo bar,39
 networking refmodel afdx presynthesis afdx presynthesis,19
 networking refmodel afdx presynthesis hw platform,19
@@ -109,8 +109,8 @@ qa connectiontiming,24
 qa connname pth,26
 qa connname src,2
 qa connname top basic,24
-qa emv issue bus subsystem,20
-qa emv issue main,19
+qa emv issue bus,20
+qa emv issue,19
 qa etef top,38
 qa example root,36
 qa example root,36
@@ -169,18 +169,18 @@ qa positioncontrol foo bar,39
 qa rmaaadl rma,35
 qa sunseeker dist sunseekercontrolsystem type dist,21
 qa sunseeker local sunseekercontrolsystem type local,35
-qa system implementation tc,10
+qa implementation tc,10
 qa test,10
 qa test blackboard root,36
 qa test dest base,43
 qa test init base,43
 qa test lua lua,35
-qa test package refined isolated test system impl,21
-qa test package refined test system impl,21
-qa test package refined test system impl,21
-qa test package refined test system impl,21
-qa test package refined test system impl,21
-qa test package refined test system impl,21
+qa test package refined isolated test impl,21
+qa test package refined test impl,21
+qa test package refined test impl,21
+qa test package refined test impl,21
+qa test package refined test impl,21
+qa test package refined test impl,21
 self driving car integration integration functional,40
 self driving car integration integration functional,40
 self driving car integration integration functional,40
@@ -202,19 +202,19 @@ translator device test abstract device illegal port name device test abstract de
 translator device test abstract device missing data type responder device test abstract device missing data type responder,13
 translator device test abstract device missing device test abstract device missing,13
 translator device test abstract device missing ports device test abstract device missing ports,13
-translator device test system property missing credentials device test system property missing credentials,13
-translator device test system property missing manufacturermodel device test system property missing manufacturermodel,13
-translator device test system property missing manufacturer device test system property missing manufacturer,13
-translator device test system property missing modelnumber device test system property missing modelnumber,13
-translator device test system property missing systype device test system property missing systype,13
+translator device test property missing credentials device test property missing credentials,13
+translator device test property missing manufacturermodel device test property missing manufacturermodel,13
+translator device test property missing manufacturer device test property missing manufacturer,13
+translator device test property missing modelnumber device test property missing modelnumber,13
+translator device test property missing systype device test property missing systype,13
 translator noninpulseox noninpulseox,13
-translator pulseox forwarding bidirectional system pulseox forwarding bidirectional system imp,42
-translator pulseox forwarding devtodev system pulseox forwarding devtodev system imp,42
-translator pulseox forwarding duplicate system duplicate system imp,32
-translator pulseox forwarding duplicate system pulseox forwarding duplicate system imp,42
-translator pulseox forwarding system pulseox forwarding system imp,42
-translator pulseox forwarding system pulseox forwarding system imp,42
-translator pulseox incdataport system pulseox forwarding system imp,42
+translator pulseox forwarding bidirectional pulseox forwarding bidirectional imp,42
+translator pulseox forwarding devtodev pulseox forwarding devtodev imp,42
+translator pulseox forwarding duplicate duplicate imp,32
+translator pulseox forwarding duplicate pulseox forwarding duplicate imp,42
+translator pulseox forwarding pulseox forwarding imp,42
+translator pulseox forwarding pulseox forwarding imp,42
+translator pulseox incdataport pulseox forwarding imp,42
 translator simplecapnograph simplecapnograph,13
 translator simplepca simplepca,13
 tutorial syst securitysystem devices,9
@@ -224,10 +224,10 @@ adiru adiru deos,44
 adiru adiru emv,44
 adiru adiru,44
 adiru adiru vxworks,44
-aocs aocs subsystem,40
+aocs aocs,40
 arincexample arincsystem,19
-arincexample module system,36
-arincexample module system,36
+arincexample module,36
+arincexample module,36
 autopilot subsys mcu,40
 avionicsbusmanagers avionicsbusmgr xps,36
 blocks fpa block without runtime,4
@@ -238,8 +238,8 @@ blocks obc,5
 car car,44
 dms door management imp,6
 emaxxv power distrib emaxxv power,39
-emaxxv system emaxxv,39
-flight control system fcs,41
+emaxxv emaxxv,39
+flight control fcs,41
 flowlatencydata application allperiodicdelayed,42
 flowlatencydata topsystem distributedallperiodicdelayed,42
 flowlatencysampleddata application alldatadriven,42
@@ -253,32 +253,32 @@ flybywire subsys mcu,39
 fms fms,41
 hello world hello,36
 hello world hello,36
-isr ticker system,9
-main ardupilot ardupilot map,38
-main ardupilot ardupilot shield,38
+isr ticker,9
+ardupilot ardupilot map,38
+ardupilot ardupilot shield,38
 mars pathfinder sys mars pathfinder correct,40
 mars pathfinder sys mars pathfinder,40
 minepump ba minepump,44
 minepump minepump,44
-minirocket system minirocket,39
+minirocket minirocket,39
 mixin demo,38
 modevva modevva,36
 pacemaker pkg devicecontrollermonitor others,9
-paparazzi system airborne,39
-paparazzi system paparazzi basic archi,39
-paparazzi system paparazzi pnp tasks interruptions,39
-paparazzi system paparazzi pp tasks ap interruptions,39
-paparazzi system paparazzi pp tasks interruptions,39
+paparazzi airborne,39
+paparazzi paparazzi basic archi,39
+paparazzi paparazzi pnp tasks interruptions,39
+paparazzi paparazzi pp tasks ap interruptions,39
+paparazzi paparazzi pp tasks interruptions,39
 partitionedsystemexample arincsystem,36
 perseus perseus rocket impl,38
 perseus perseus rocket master,38
 ping ping ima,36
 prodcons vxworks,36
-quadrirotorv system arm,39
-quadrirotorv system arm,39
-quadrirotorv system quadrirotorv,39
-quadrirotorv system quadrirotorv,39
-radar system radar simple,40
+quadrirotorv arm,39
+quadrirotorv arm,39
+quadrirotorv quadrirotorv,39
+quadrirotorv quadrirotorv,39
+radar radar simple,40
 rap code rap native,17
 rap rap erc ork,17
 rap rap generic,17
@@ -292,15 +292,15 @@ robot lf line follower robot,38
 robot robot,44
 round robin rr nopreempt,36
 round robin rr preempt,36
-satellite system obmu,41
+satellite obmu,41
 smp smp,36
 stmdiscovery ada blinky,35
-subsystem m1 system,41
-subsystem m2 system,41
-subsystem m3 system,41
-subsystem m4 system,41
+m1,41
+m2,41
+m3,41
+m4,41
 time triggered tt,36
-traxsterv system traxsterv,39
+traxsterv traxsterv,39
 aadlmodel homesecuritysystem hss securitysystem devices,39
 aadlmodel smartthermostat thermostat arch generator,10
 aadlmodel smartthermostat thermostat arch temp sensor,5
@@ -337,58 +337,58 @@ aadlv issue 16 child,43
 aadlv issue 16 parent,43
 aadlvending sterownik vendingmachinesterownik devices,39
 aadlvending sterownik vendingmachinesterownik devices,39
-architecture marspathfinder pt system simple,36
+architecture marspathfinder pt simple,36
 fees board stm stml discovery,19
 fees fees fees,19
 ils project ils ils,43
 model bankomat atmsystem devices,39
 raspberry smacz humanactivitymonitoringsystem,40
-aaspe automotive system car cherokee,19
-aaspe automotive system integration attack,19
-aaspe automotive system integration,19
-aaspe security cwe main correct,10
-aaspe security cwe main incorrect,8
-aaspe security cwe main,8
-aaspe security cwe main failure,22
-aaspe security cwe main,22
-aaspe security cwe main success,22
-aaspe security cwe main success,22
-aaspe security cwe main correct,8
-aaspe security cwe main incorrect,8
-aaspe security cwe main,8
-aaspe security cwe main failure array,22
-aaspe security cwe main failure float,22
-aaspe security cwe main failure int,2
-aaspe security cwe main success array,2
-aaspe security cwe main success float,22
-aaspe security cwe main success int,22
-aaspe security r0 main correct,20
-aaspe security r0 main incorrect,20
-aaspe security r0 main,20
-aaspe security r1 main correct,10
-aaspe security r1 main incorrect,10
-aaspe security r1 main,10
-aaspe security r2 main correct,19
-aaspe security r2 main incorrect,19
-aaspe security r2 main,19
-aaspe security r3 main correct,19
-aaspe security r3 main correct,19
-aaspe security r3 main incorrect,19
-aaspe security r3 main incorrect,19
-aaspe security r3 main,19
-aaspe security r4 main correct,8
-aaspe security r4 main correct,8
-aaspe security r4 main incorrect,8
-aaspe security r4 main,8
-aaspe security r5 main correct,8
-aaspe security r5 main incorrect,8
-aaspe security r5 main incorrect,8
-aaspe security r5 main incorrect,8
-aaspe security r5 main incorrect,8
-aaspe security r5 main,8
-aaspe security r6 main correct,20
-aaspe security r6 main incorrect,20
-aaspe security r6 main,20
+aaspe automotive car cherokee,19
+aaspe automotive integration attack,19
+aaspe automotive integration,19
+aaspe security cwe correct,10
+aaspe security cwe incorrect,8
+aaspe security cwe,8
+aaspe security cwe failure,22
+aaspe security cwe,22
+aaspe security cwe success,22
+aaspe security cwe success,22
+aaspe security cwe correct,8
+aaspe security cwe incorrect,8
+aaspe security cwe,8
+aaspe security cwe failure array,22
+aaspe security cwe failure float,22
+aaspe security cwe failure int,2
+aaspe security cwe success array,2
+aaspe security cwe success float,22
+aaspe security cwe success int,22
+aaspe security r0 correct,20
+aaspe security r0 incorrect,20
+aaspe security r0,20
+aaspe security r1 correct,10
+aaspe security r1 incorrect,10
+aaspe security r1,10
+aaspe security r2 correct,19
+aaspe security r2 incorrect,19
+aaspe security r2,19
+aaspe security r3 correct,19
+aaspe security r3 correct,19
+aaspe security r3 incorrect,19
+aaspe security r3 incorrect,19
+aaspe security r3,19
+aaspe security r4 correct,8
+aaspe security r4 correct,8
+aaspe security r4 incorrect,8
+aaspe security r4,8
+aaspe security r5 correct,8
+aaspe security r5 incorrect,8
+aaspe security r5 incorrect,8
+aaspe security r5 incorrect,8
+aaspe security r5 incorrect,8
+aaspe security r5,8
+aaspe security r6 correct,20
+aaspe security r6 incorrect,20
+aaspe security r6,20
 aaspe security r7 integration fail,22
 aaspe security r7 integration fail,22
 aaspe security r7 integration fail,22
@@ -396,10 +396,10 @@ aaspe security r7 integration,22
 aaspe security r7 integration success,22
 aaspe security r7 integration success,22
 aaspe security r7 integration success,22
-aaspe security timing requirements main correct,8
-aaspe security timing requirements main incorrect,8
-aaspe security timing requirements main,8
-aaspe sel bb serial main beaglebone,40
+aaspe security timing requirements correct,8
+aaspe security timing requirements incorrect,8
+aaspe security timing requirements,8
+aaspe sel bb serial beaglebone,40
 aaspe sel hello world hello,36
 aaspe sel ping pong event ping beaglebone,36
 aaspe sel ping pong event ping,36
@@ -414,9 +414,9 @@ aaspe sel two tasks twotasks,36
 aaspe sel two tasks twotasks kzm,36
 aaspe sel two tasks twotasks x,36
 adiru adiru adiru,7
-adiru system fmc system,3
-adiru subsystem adr system,4
-adiru subsystem ir system,5
+adiru fmc,3
+adiru adr,4
+adiru ir,5
 aircraft aircraft functional aircraft functional model,18
 air ex,9
 air ex,9
@@ -424,16 +424,16 @@ air ex wrapper,9
 air ex,9
 air ex bs,9
 air ex wrapper,9
-alisa response time simple system computation chain,3
-model smart home system clients clients,9
-model smart home system maincontrolrouter maincontrolrouter,9
-model smart home system remoteserver remoteserver,9
-model smart home system smart home system smart home,9
+alisa response time simple computation chain,3
+model smart home clients clients,9
+model smart home maincontrolrouter maincontrolrouter,9
+model smart home remoteserver remoteserver,9
+model smart home smart home smart home,9
 aps communication architecture aidstonavigation aidstonavigation,4
 aps communication architecture aps apscommunication,27
 aps communication architecture aps asc backup,4
 aps communication architecture aps asc,26
-aps communication architecture aps asc main,26
+aps communication architecture aps asc,26
 aps communication architecture aps auxiliarysystem,17
 aps communication architecture aps bms,3
 aps communication architecture aps colavandssitaw backup,4
@@ -441,7 +441,7 @@ aps communication architecture aps colavandssitaw,4
 aps communication architecture aps dockingsystem,17
 aps communication architecture aps emergencybuttontransmitter,9
 aps communication architecture aps gnss imu backup,3
-aps communication architecture aps gnss imu main,3
+aps communication architecture aps gnss imu,3
 aps communication architecture aps ids,27
 aps communication architecture aps isms,26
 aps communication architecture aps logbook,32
@@ -464,7 +464,7 @@ aps communication architecture mobilegnetwork apscommunication,4
 aps communication architecture overall apscommunicationarchitecture,27
 aps communication architecture rcc apscommunication,27
 aps communication architecture rcc controlcomputer backup,27
-aps communication architecture rcc controlcomputer main,27
+aps communication architecture rcc controlcomputer,27
 aps communication architecture rcc ids,27
 aps communication architecture rcc isms,26
 aps communication architecture rcc networkandsystemmanagement,26
@@ -496,7 +496,7 @@ authinaadl resolute check dataflow receiver,3
 authinaadl resolute check dataflow sender,2
 automodelcheckergeneration aviation gcas singleton,3
 automodelcheckergeneration aviation geofence singleton,4
-automodelcheckergeneration aviation supervised system,4
+automodelcheckergeneration aviation supervised,4
 automodelcheckergeneration aviation supervisor,4
 automodelcheckergeneration aviation tcas singleton,5
 automodelcheckergeneration refuel single refuel singleton,4
@@ -524,8 +524,8 @@ aviationrequirementmodeling aviation gcas singleton,3
 aviationrequirementmodeling aviation gcas singleton,3
 aviationrequirementmodeling aviation geofence singleton,4
 aviationrequirementmodeling aviation geofence singleton,4
-aviationrequirementmodeling aviation supervised system,5
-aviationrequirementmodeling aviation supervised system,5
+aviationrequirementmodeling aviation supervised,5
+aviationrequirementmodeling aviation supervised,5
 aviationrequirementmodeling aviation supervisor,5
 aviationrequirementmodeling aviation supervisor,5
 aviationrequirementmodeling aviation tcas singleton,5
@@ -589,29 +589,29 @@ cmpare cmpare cmparesystem,16
 cmpare cmpare monitoringserver,4
 cmpare cmpare webserver,16
 cmpare customer service customerservice,16
-cmpare deliver system deliver,16
-cmpare order system order,16
+cmpare deliver deliver,16
+cmpare order order,16
 cmpare payment payment,16
 coffeemachine coffeemachinesystem coffeemachinesystem,41
 coffeemachine coffeemakersubsystem coffeemakersystem,41
 coffeemachine systemenvironment systemenvironment,41
-collision detection avoidance subsystem avoidance subsystem,17
-collision detection complete car system complete car,39
-collision detection networking subsystem networking subsystem standard,40
-collision detection prediction subsystem prediction subsystem standard,39
-collision detection response subsystem response subsystem standard,17
-collision detection user interaction subsystem user interaction subsystem standard,40
+collision detection avoidance avoidance,17
+collision detection complete car complete car,39
+collision detection networking networking standard,40
+collision detection prediction prediction standard,39
+collision detection response response standard,17
+collision detection user interaction user interaction standard,40
 collision detection vehicle actuation vehicle actuation standard,43
 crazyflie crazyflie final crazyflie final,19
 crazyflie crazyflie functional crazyflie functional chain,13
 crazyflie crazyflie hardware crazyflie,19
-crazyflie crazyflie system crazyflie system,40
+crazyflie crazyflie crazyflie,40
 csci adventium labs gumbo plugin pressure ctrl pressure ctrl,7
 csci adventium labs gumbo plugin pressure ctrl pressure ctrl,7
 csci adventium labs gumbo plugin radiation ctrl radiation ctrl,7
 csci adventium labs gumbo plugin radiation ctrl radiation ctrl,7
-csci adventium labs gumbo plugin sensor system sensorsys,7
-csci adventium labs gumbo plugin sensor system sensorsys,7
+csci adventium labs gumbo plugin sensor sensorsys,7
+csci adventium labs gumbo plugin sensor sensorsys,7
 csci adventium labs gumbo plugin temperature ctrl temperature ctrl,7
 csci adventium labs gumbo plugin temperature ctrl temperature ctrl,7
 dapp integration integration generic,16
@@ -647,23 +647,23 @@ electronictollcollection toll collection toll collection,16
 electronictollcollection toll collection vehicle obe,17
 electronictollcollection toll collection veh toll paymnt,17
 errormodelv allflows fgs,23
-errormodelv common error main commonsource,40
-errormodelv common error main commonevents,40
-errormodelv common error main commoneventssingleport,40
+errormodelv common error commonsource,40
+errormodelv common error commonevents,40
+errormodelv common error commoneventssingleport,40
 errormodelv dualfgs fgs,23
 errormodelv filteredflows fgs,23
-errormodelv ftatest main,8
-errormodelv ftatest main,40
-errormodelv ftatest main,40
-errormodelv issue main,22
-errormodelv nestedcomposite main nestedstate,40
+errormodelv ftatest,8
+errormodelv ftatest,40
+errormodelv ftatest,40
+errormodelv issue,22
+errormodelv nestedcomposite nestedstate,40
 errormodelv optimizetree top,23
-errormodelv propagationpointfeaturetest main commonsource,40
-errormodelv propagationpointstest main commonsource,40
+errormodelv propagationpointfeaturetest commonsource,40
+errormodelv propagationpointstest commonsource,40
 errormodelv redundant main compositesametype,40
 errormodelv redundant main connection,40
 errormodelv redundant main transition,40
-errormodelv redundant main compositestate,40
+errormodelv redundant compositestate,40
 faceaadl connectedclient integration model integrationmodel,37
 faceaadl connectedclient integration model integrationmodel,37
 faceaadl connectedserver integration model integrationmodel,37
@@ -771,7 +771,7 @@ isolette isolette heat source heat source devices,21
 isolette isolette operator interface operator interface,43
 isolette isolette temperature sensor,43
 isolette isolette temperature sensor temperature sensor,43
-itu example itu software itu system,17
+itu example itu software itu,17
 jobfound jobfound jobfoundserver,16
 kaadl cruise control cruisecontrollaws model,23
 kaadl cruise control hci model,44
@@ -796,10 +796,10 @@ master thesis hybridsynchaadl environment environment rendezvous,6
 master thesis hybridsynchaadl environment environment rendezvous,6
 mcs examples ojr steppermotor cs root,35
 mecelearningsystem mece learning app package mece learning app,16
-mecelearningsystem mece learning system package accountdb,7
-mecelearningsystem mece learning system package contentdb,7
-mecelearningsystem mece learning system package mecelearningsystem,16
-mecelearningsystem mece learning system package serverside,16
+mecelearningsystem mece learning package accountdb,7
+mecelearningsystem mece learning package contentdb,7
+mecelearningsystem mece learning package mecelearningsystem,16
+mecelearningsystem mece learning package serverside,16
 mitesaadl mitesio mites imp,38
 modelagemaadl exemplo bus top,7
 modelagemaadl exemplo bus top,7
@@ -860,7 +860,7 @@ ocarina client server pkg client server others,17
 ocarina flightcontrolsystem fcs,41
 ocarina gps interface satellite others,43
 ocarina hardware dual processor powerpc,21
-ocarina model main,40
+ocarina model,40
 ocarina p1 r1,17
 ocarina p1 r2,17
 ocarina pingpong,44
@@ -878,18 +878,18 @@ ocarina rmaaadl rma,35
 ocarina scenario producer consumer,12
 ocarina shared shared,36
 ocarina,5
-ocarina system e,32
-ocarina system,30
-ocarina system e,32
-ocarina system,30
-ocarina system,19
+ocarina e,32
+ocarina,30
+ocarina e,32
+ocarina,30
+ocarina,19
 ocarina integrated,18
-ocarina system 15,26
-ocarina system,30
-ocarina system one,9
-ocarina system three,9
-ocarina system two,9
-ocarina t9 system t9,30
+ocarina 15,26
+ocarina,30
+ocarina one,9
+ocarina three,9
+ocarina two,9
+ocarina t9 t9,30
 ocarina test real rma erc,35
 ocarina test real rma erc,35
 ocarina test real rma erc,35
@@ -899,8 +899,8 @@ ocarina testcomputeentrypoint,36
 ocarina testfeaturegroup top,16
 ocarina test 01 rma erc,35
 ocarina test 01 rma erc,35
-ocarina test xml connections main,17
-ocarina test xml output main,32
+ocarina test xml connections,17
+ocarina test xml output,32
 ocarina test carext,44
 ocarina test carrt,44
 ocarina test cheddar deployment,36
@@ -920,23 +920,23 @@ ocarina vehicle root,43
 ocarina vehicle vehicle standard,43
 oqarina car car,44
 oqarina rmaaadl rma,35
-osate fta tests fault tree main complete,38
-osate fta tests fault tree main complete,38
-osate fta tests fault tree main complete,38
-osate fta tests fault tree main complete,38
-parkingproject parking system parking simple,39
+osate fta tests fault tree complete,38
+osate fta tests fault tree complete,38
+osate fta tests fault tree complete,38
+osate fta tests fault tree complete,38
+parkingproject parking parking simple,39
 polyorb hi ada dextended probe native,27
 polyorb hi ada dclocal delayed connections native,36
 polyorb hi ada flowlatencysampleddata application allperiodicsampled,42
 polyorb hi ada hw leon case study leon,27
 polyorb hi ada hw leon local case study leon local,44
 polyorb hi ada hw native case study native,27
-polyorb hi ada radar system radar simple,40
+polyorb hi ada radar radar simple,40
 polyorb hi ada rmaaadl rma erc,35
 polyorb hi ada sunseeker dist sunseekercontrolsystem type native,21
 polyorb hi ada sunseeker local sunseekercontrolsystem type leon,35
 polyorb hi ada sunseeker local sunseekercontrolsystem type leon gnat,35
-polyorb hi ada system demo demo,21
+polyorb hi ada demo demo,21
 polyorb hi c cpp test cpp test,35
 polyorb hi c cpp test cpp test rtems,35
 polyorb hi c cpp test cpp test xenomai,35
@@ -1024,14 +1024,14 @@ powerplants powerplants,16
 powersupply powersupply item,16
 switching switching item,17
 voter voter item,17
-se tp integration main sys fla,40
-se tp integration main sys,40
-se tp integration main sys rta,40
-se tp integration proxy main sys rta,40
+se tp integration sys fla,40
+se tp integration sys,40
+se tp integration sys rta,40
+se tp integration proxy sys rta,40
 smart home arch clients clients,9
 smart home arch maincontrolrouter maincontrolrouter,9
 smart home arch remoteserver remoteserver,9
-smart home arch smart home system smart home,9
+smart home arch smart home smart home,9
 smarthome smart home arch appliances,38
 smarthome smart home arch client tier,9
 smarthome smart home arch home controller framework,9
@@ -1055,18 +1055,18 @@ tempcontrolaadl scenario controllera imp,17
 tempcontrolaadl scenario controllerb imp,17
 tempcontrolaadl scenario labcontrol imp,39
 ticketmachine aadlproject ticketmachine ticketmachinesystem devices,39
-tpaadl lgs close ev system,5
+tpaadl lgs close ev,5
 tpaadl lgs commutateuranalogique,9
 tpaadl lgs digital part,10
 tpaadl lgs electrovalvessystem,39
-tpaadl lgs extend ev system,5
+tpaadl lgs extend ev,5
 tpaadl lgs lgssystem,39
-tpaadl lgs open ev system,5
-tpaadl lgs retract ev system,5
+tpaadl lgs open ev,5
+tpaadl lgs retract ev,5
 uav project lowlevelsubsystem lowlevelprocessing,41
 using network drones inspect structural deformations basestation basestat,23
-using network drones inspect structural deformations dm main disastermanagementmain,23
-using network drones inspect structural deformations es main eventstreamingmain,23
+using network drones inspect structural deformations dm disastermanagementmain,23
+using network drones inspect structural deformations es eventstreamingmain,23
 using network drones inspect structural deformations uavnetwork v1 uavnetworkc,22
 using network drones inspect structural deformations uavnetwork v2 uavnetworkc,22
 using network drones inspect structural deformations uavnetwork v3 uavnetworkc,22
@@ -1074,6 +1074,6 @@ using network drones inspect structural deformations uavnode uavnodecomponent,13
 using network drones inspect structural deformations uavnode vehicle uavvehicle,41
 using network drones inspect structural deformations uav modelconstruction uav modelconstructionsystem,23
 vending machine automat automatsystem devices,39
-xdl open tool b system b top system imp,16
+xdl open tool b b top imp,16
 xdl open tool fpga library slicel imp,16
 xdl open tool fpga library slicem imp,16
