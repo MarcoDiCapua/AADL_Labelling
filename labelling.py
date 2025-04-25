@@ -85,7 +85,19 @@ class TextPreprocessing:
         #suitable_models_df['ConnectionInstance'] = suitable_models_df['ConnectionInstance'].apply(self.lemmatize)
         self.save_intermediate_csv(suitable_models_df, 'lemmatized_suitable_models_data')
 
-        # Save the final preprocessed DataFrames back to new CSV files for inspection
+        # Remove words of length 1 and remove rows with no valid Model or Component
+        clusters_df['Model'] = clusters_df['Model'].apply(self.remove_short_words)
+        # Remove rows with no valid Model
+        clusters_df = clusters_df[clusters_df['Model'].str.strip().ne('')]
+
+        suitable_models_df['Model'] = suitable_models_df['Model'].apply(self.remove_short_words)
+        suitable_models_df['Component'] = suitable_models_df['Component'].apply(self.remove_short_words)
+        suitable_models_df['Feature'] = suitable_models_df['Feature'].apply(self.remove_short_words)
+        #suitable_models_df['ConnectionInstance'] = suitable_models_df['ConnectionInstance'].apply(self.remove_short_words)
+        suitable_models_df = suitable_models_df[suitable_models_df['Component'].str.strip().ne('') | suitable_models_df['Feature'].str.strip().ne('')]#| suitable_models_df['ConnectionInstance'].str.strip().ne('')
+
+        
+        # Save the final preprocessed DataFrames back to new CSV files
         clusters_df.to_csv(preprocessed_clusters_file, index=False)
         suitable_models_df.to_csv(preprocessed_suitable_models_file, index=False)
 
@@ -117,6 +129,13 @@ class TextPreprocessing:
             tokens = word_tokenize(column_data)  
             return " ".join(tokens)
         return column_data
+
+    def remove_short_words(self, text):
+        if isinstance(text, str):
+            words = text.split()
+            words = [word for word in words if len(word) > 1]
+            return ' '.join(words)
+        return text
 
     def remove_stopwords(self, text):
         if isinstance(text, str) and text.strip():
@@ -282,8 +301,7 @@ class Labeling:
         tfidf_suitable_models = self.calculate_tfidf(suitable_models_df['Model'], suitable_models_df['Cluster'])
         self.save_top_tfidf(tfidf_suitable_models, "Suitable_Models_Top_10_TFIDF.csv")
 
-        # Combine Component, Feature, and ConnectionInstance columns into one
-        print("Combining Component, Feature, and ConnectionInstance columns for TF-IDF...")
+        # Combine Component and Feature columns into one
         suitable_models_df['Combined'] = suitable_models_df.apply(
             lambda row: ' '.join([str(row['Component']), str(row['Feature'])]).strip(), # , str(row['ConnectionInstance'])
             axis=1
@@ -301,21 +319,17 @@ class Labeling:
         """Calculate the TF-IDF for each cluster separately"""
         tfidf_by_cluster = {}
 
-        # Apply TF-IDF within each cluster
+        # Get the unique clusters in the data
+        unique_clusters = clusters.unique()
+
+        # Apply TF-IDF within each cluster if it exists in the data
         for cluster_id in range(1, self.num_clusters + 1):
+            if cluster_id not in unique_clusters:
+                print(f"Cluster {cluster_id} is not present in the data. Skipping TF-IDF calculation.")
+                continue
             # Filter the data for the current cluster
             cluster_data = text_data[clusters == cluster_id]
             print(f"Cluster {cluster_id}: {cluster_data}")  # Debugging line to check data
-
-            # Verifica se tutte le parole di una riga sono corte
-            cluster_data = cluster_data.apply(self.filter_short_words)
-            print(f"Filtered Cluster {cluster_id}: {cluster_data}")  # Debugging line to check data after filtering
-
-            # Escludi righe con solo parole corte
-            cluster_data = cluster_data[cluster_data.str.len() > 0]  # Rimuovi righe vuote
-            if cluster_data.empty:
-                print(f"Warning: Cluster {cluster_id} contains only short words. Skipping TF-IDF calculation for this cluster.")
-                continue  # Salta il calcolo del TF-IDF per il cluster se non ci sono parole valide
 
             tfidf_matrix, feature_names = self.compute_tfidf(cluster_data)
             print(f"TF-IDF Matrix for Cluster {cluster_id}: {tfidf_matrix.shape}")  # Debugging line
@@ -334,14 +348,6 @@ class Labeling:
             tfidf_by_cluster[cluster_id] = top_words
 
         return tfidf_by_cluster
-    
-    def filter_short_words(self, text):
-        # Remove words shorter than 2 characters
-        if isinstance(text, str):
-            words = text.split()
-            words = [word for word in words if len(word) >= 2]  # Rimuove le parole brevi che non sono significative
-            return ' '.join(words)
-        return text
 
     def compute_tfidf(self, text_data):
         vectorizer = TfidfVectorizer()
