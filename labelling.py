@@ -2,16 +2,17 @@ import os
 import pandas as pd
 import re
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 from collections import Counter
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import nltk
+import numpy as np
 from utility import load_config, create_directory, file_exists, delete_file, list_files_in_directory, copy_file
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_selection import SelectKBest, chi2
 from sklearn.decomposition import LatentDirichletAllocation as LDA
-import numpy as np
 from sklearn.preprocessing import LabelEncoder
 
 nltk.download('punkt', download_dir='./nltk_data')
@@ -297,11 +298,11 @@ class Labeling:
         self.save_top_tfidf(tfidf_cluster, "Clusters_Top_10_TFIDF.csv")
 
         # Apply TF-IDF on preprocessed_suitable_models_data.csv (only suitable models names)
-        print("Applying TF-IDF on preprocessed_suitable_models_data.csv...")
-        tfidf_suitable_models = self.calculate_tfidf(suitable_models_df['Model'], suitable_models_df['Cluster'])
-        self.save_top_tfidf(tfidf_suitable_models, "Suitable_Models_Top_10_TFIDF.csv")
+        # print("Applying TF-IDF on preprocessed_suitable_models_data.csv...")
+        # tfidf_suitable_models = self.calculate_tfidf(suitable_models_df['Model'], suitable_models_df['Cluster'])
+        # self.save_top_tfidf(tfidf_suitable_models, "Suitable_Models_Top_10_TFIDF.csv")
 
-        # Combine Component and Feature columns into one
+        # Combine Component and Feature columns
         suitable_models_df['Combined'] = suitable_models_df.apply(
             lambda row: ' '.join([str(row['Component']), str(row['Feature'])]).strip(), # , str(row['ConnectionInstance'])
             axis=1
@@ -315,11 +316,15 @@ class Labeling:
         tfidf_by_cluster = self.calculate_tfidf(suitable_models_df['Combined'], suitable_models_df['Cluster'])
         self.save_top_tfidf(tfidf_by_cluster, "Combined_Top_10_TFIDF.csv")
 
-    def calculate_tfidf(self, text_data, clusters):
-        """Calculate the TF-IDF for each cluster separately"""
-        tfidf_by_cluster = {}
+        print("Generating TF-IDF report and plots...")
+        self.generate_total_tfidf_report()
+        self.plot_label_distribution()
+        self.generate_summary_report()
+        print("TF-IDF report and plots generated successfully.")
 
-        # Get the unique clusters in the data
+    def calculate_tfidf(self, text_data, clusters):
+        #Calculate the TF-IDF for each cluster separately
+        tfidf_by_cluster = {}
         unique_clusters = clusters.unique()
 
         # Apply TF-IDF within each cluster if it exists in the data
@@ -329,10 +334,10 @@ class Labeling:
                 continue
             # Filter the data for the current cluster
             cluster_data = text_data[clusters == cluster_id]
-            print(f"Cluster {cluster_id}: {cluster_data}")  # Debugging line to check data
+            #print(f"Cluster {cluster_id}: {cluster_data}")  # Debugging line to check data
 
             tfidf_matrix, feature_names = self.compute_tfidf(cluster_data)
-            print(f"TF-IDF Matrix for Cluster {cluster_id}: {tfidf_matrix.shape}")  # Debugging line
+            #print(f"TF-IDF Matrix for Cluster {cluster_id}: {tfidf_matrix.shape}")  # Debugging line
 
             # Check if the matrix is empty or all zeros
             if tfidf_matrix.shape[0] == 0 or np.sum(tfidf_matrix.toarray()) == 0:
@@ -343,7 +348,7 @@ class Labeling:
             # Sort words by their TF-IDF scores and get the top 10
             word_scores = [(feature_names[i], tfidf_scores[i]) for i in range(len(feature_names))]
             sorted_word_scores = sorted(word_scores, key=lambda x: x[1], reverse=True)
-            top_words = sorted_word_scores[:10]  # Top 10 words by TF-IDF score
+            top_words = sorted_word_scores[:10]
 
             tfidf_by_cluster[cluster_id] = top_words
 
@@ -356,9 +361,7 @@ class Labeling:
         return tfidf_matrix, feature_names
 
     def save_top_tfidf(self, top_tfidf, file_name):
-        """Save the top 10 TF-IDF words and their scores to a CSV file"""
         output_file = os.path.join(self.TFIDF_folder, file_name)
-        # Create a dataframe for easier saving with pandas
         data = []
         for cluster_id, top_words in top_tfidf.items():
             words = [word for word, _ in top_words]
@@ -370,19 +373,75 @@ class Labeling:
 
         print(f"Top 10 TF-IDF words and scores saved to {output_file}")
 
-    def visualize_top_words(self, top_tfidf, title):
-        """Generate a bar plot for the top TF-IDF words"""
-        for cluster_id in range(1, self.num_clusters + 1):
-            fig, ax = plt.subplots(figsize=(8, 6))
+    def generate_total_tfidf_report(self):
+        clusters_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Clusters_Top_10_TFIDF.csv'))
+        combined_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Combined_Top_10_TFIDF.csv'))
+        # Merge the two dataframes based on the cluster ID
+        total_tfidf_df = pd.merge(clusters_tfidf_df, combined_tfidf_df, on='Cluster', how='left', suffixes=('_Clusters', '_Combined'))
 
-            # Top Words
-            words, scores = zip(*top_tfidf[cluster_id])
+        total_tfidf_df.rename(columns={
+            'Top 10 Words (TF-IDF)_Clusters': 'Clusters Top 10 Words (TF-IDF)',
+            'Scores_Clusters': 'Clusters Scores',
+            'Top 10 Words (TF-IDF)_Combined': 'Combined Top 10 Words (TF-IDF)',
+            'Scores_Combined': 'Combined Scores'
+        }, inplace=True)
 
-            ax.barh(words, scores, color='skyblue')
-            ax.set_xlabel("TF-IDF Score")
-            ax.set_title(f"{title} - Cluster {cluster_id}")
+        total_tfidf_file = os.path.join(self.TFIDF_folder, 'Total_Top_10_TFIDF.csv')
+        total_tfidf_df.to_csv(total_tfidf_file, index=False)
+        print(f"Total_Top_10_TFIDF.csv generated and saved to {total_tfidf_file}")
 
-            plt.tight_layout()
-            plt.savefig(os.path.join(self.TFIDF_folder, f"Cluster_{cluster_id}_{title}_Top_10.png"))
-            plt.close()
-            print(f"Top 10 TF-IDF words plot for Cluster {cluster_id} saved.")
+    def plot_label_distribution(self):
+        total_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Total_Top_10_TFIDF.csv'))
+
+        # Create a new DataFrame with counts for each category (Clusters Top 10 Words and Combined Top 10 Words)
+        total_tfidf_df['Clusters Top 10 Words Count'] = total_tfidf_df['Clusters Top 10 Words (TF-IDF)'].apply(self.safe_split)
+        total_tfidf_df['Combined Top 10 Words Count'] = total_tfidf_df['Combined Top 10 Words (TF-IDF)'].apply(self.safe_split)
+
+        # Plot the stacked bar chart
+        plt.figure(figsize=(10, 6))
+        bars1 = plt.bar(total_tfidf_df['Cluster'], total_tfidf_df['Clusters Top 10 Words Count'], label='Clusters Top 10 Words', color='skyblue')
+        bars2 = plt.bar(total_tfidf_df['Cluster'], total_tfidf_df['Combined Top 10 Words Count'], label='Combined Top 10 Words', color='lightcoral', bottom=total_tfidf_df['Clusters Top 10 Words Count'])
+        # Add the actual values on top of the bars
+        for bar in bars1:
+            yval = bar.get_height()
+            plt.text(bar.get_x() + bar.get_width()/2, yval + 0.05, str(int(yval)), ha='center', va='bottom', fontsize=10)
+        for bar in bars2:
+            yval = bar.get_height() + bar.get_y()
+            if bar.get_height() > 0:  # Only add the label if the height is greater than 0
+                plt.text(bar.get_x() + bar.get_width()/2, yval + 0.05, str(int(bar.get_height())), ha='center', va='bottom', fontsize=10)
+
+        plt.gca().yaxis.set_major_locator(MaxNLocator(integer=True, prune='lower'))
+        plt.xticks(total_tfidf_df['Cluster'], total_tfidf_df['Cluster'], rotation=90)
+        plt.xlabel('Cluster')
+        plt.ylabel('Number of Labels')
+        plt.title('Label Distribution by Clusters')
+        plt.legend()
+        plt.tight_layout()
+        plt.savefig(os.path.join(self.TFIDF_folder, 'label_distribution_stacked.png'))
+        plt.close()
+        print(f"Label distribution stacked bar chart saved to {os.path.join(self.TFIDF_folder, 'label_distribution_stacked.png')}")
+
+    def safe_split(self, x):
+        #Safe split function to handle empty or invalid values
+        if isinstance(x, str) and x.strip():
+            return len(x.split(','))
+        return 0
+
+    def generate_summary_report(self):
+        clusters_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Clusters_Top_10_TFIDF.csv'))
+        combined_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Combined_Top_10_TFIDF.csv'))
+        summary_data = []
+
+        for df, label in [(clusters_tfidf_df, 'Clusters'), (combined_tfidf_df, 'Combined')]:
+            for cluster_id in df['Cluster']:
+                words = df.loc[df['Cluster'] == cluster_id, 'Top 10 Words (TF-IDF)'].values[0].split(',')
+                scores = np.array(list(map(float, df.loc[df['Cluster'] == cluster_id, 'Scores'].values[0].split(','))))
+                avg_score = np.mean(scores)
+                std_score = np.std(scores)
+                summary_data.append([cluster_id, label, len(words), avg_score, std_score])
+
+        # Save summary data to a CSV file
+        summary_df = pd.DataFrame(summary_data, columns=['Cluster', 'Label', 'Words Count', 'Avg TF-IDF', 'Std TF-IDF'])
+        summary_file = os.path.join(self.TFIDF_folder, 'TFIDF_Summary_Report.csv')
+        summary_df.to_csv(summary_file, index=False)
+        print(f"Summary report saved to {summary_file}")
