@@ -13,6 +13,7 @@ from utility import load_config, create_directory, file_exists, delete_file, lis
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_selection import SelectKBest, chi2
 from sklearn.decomposition import LatentDirichletAllocation as LDA
+from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.preprocessing import LabelEncoder
 
 nltk.download('punkt', download_dir='./nltk_data')
@@ -276,6 +277,7 @@ class Labeling:
         self.suitable_models_data_file = os.path.join(self.config.get("output_folder", ""), "AADL/suitable_models_data.csv")
         self.preprocessing = os.path.join(self.config.get("output_folder", ""), "Preprocessing")
         self.num_clusters = 44  # Total number of clusters
+        self.num_topics = 10  # Number of topics for LDA
 
         # Define the Algorithm, TF-IDF, LDA and Chi-Square folder path
         self.algorithm_folder = os.path.join(self.config.get("output_folder", ""), "Algorithm")
@@ -292,16 +294,6 @@ class Labeling:
         clusters_df = pd.read_csv(os.path.join(self.preprocessing, 'preprocessed_clusters.csv'))
         suitable_models_df = pd.read_csv(os.path.join(self.preprocessing, 'preprocessed_suitable_models_data.csv'))
 
-        # Apply TF-IDF on preprocessed_clusters.csv (all models names)
-        print("Applying TF-IDF on preprocessed_clusters.csv...")
-        tfidf_cluster = self.calculate_tfidf(clusters_df['Model'], clusters_df['Cluster'])
-        self.save_top_tfidf(tfidf_cluster, "Clusters_Top_10_TFIDF.csv")
-
-        # Apply TF-IDF on preprocessed_suitable_models_data.csv (only suitable models names)
-        # print("Applying TF-IDF on preprocessed_suitable_models_data.csv...")
-        # tfidf_suitable_models = self.calculate_tfidf(suitable_models_df['Model'], suitable_models_df['Cluster'])
-        # self.save_top_tfidf(tfidf_suitable_models, "Suitable_Models_Top_10_TFIDF.csv")
-
         # Combine Component and Feature columns
         suitable_models_df['Combined'] = suitable_models_df.apply(
             lambda row: ' '.join([str(row['Component']), str(row['Feature'])]).strip(), # , str(row['ConnectionInstance'])
@@ -312,7 +304,18 @@ class Labeling:
             print(f"ATTENZIONE: Le seguenti righe hanno la colonna 'Combined' vuota:")
             print(empty_combined_rows[['Model', 'Component', 'Feature']]) # , 'ConnectionInstance'
 
+        # Apply TF-IDF on preprocessed_clusters.csv (all models names)
+        print("Applying TF-IDF on preprocessed_clusters.csv (Model names)...")
+        tfidf_cluster = self.calculate_tfidf(clusters_df['Model'], clusters_df['Cluster'])
+        self.save_top_tfidf(tfidf_cluster, "Clusters_Top_10_TFIDF.csv")
+
+        # Apply TF-IDF on preprocessed_suitable_models_data.csv (only suitable models names)
+        # print("Applying TF-IDF on preprocessed_suitable_models_data.csv...")
+        # tfidf_suitable_models = self.calculate_tfidf(suitable_models_df['Model'], suitable_models_df['Cluster'])
+        # self.save_top_tfidf(tfidf_suitable_models, "Suitable_Models_Top_10_TFIDF.csv")
+
         # Apply TF-IDF on the combined column
+        print("Applying TF-IDF on preprocessed_suitable_models_data.csv (Component + Feature)...")
         tfidf_by_cluster = self.calculate_tfidf(suitable_models_df['Combined'], suitable_models_df['Cluster'])
         self.save_top_tfidf(tfidf_by_cluster, "Combined_Top_10_TFIDF.csv")
 
@@ -445,3 +448,111 @@ class Labeling:
         summary_file = os.path.join(self.TFIDF_folder, 'TFIDF_Summary_Report.csv')
         summary_df.to_csv(summary_file, index=False)
         print(f"Summary report saved to {summary_file}")
+
+    def apply_lda(self):
+        # Read preprocessed clusters and suitable models data files
+        clusters_df = pd.read_csv(os.path.join(self.preprocessing, 'preprocessed_clusters.csv'))
+        suitable_models_df = pd.read_csv(os.path.join(self.preprocessing, 'preprocessed_suitable_models_data.csv'))
+
+        # Apply LDA on preprocessed_clusters.csv (Model names)
+        print("Applying LDA on preprocessed_clusters.csv (Model names)...")
+        lda_cluster = self.calculate_lda(clusters_df['Model'], clusters_df['Cluster'])
+        self.save_top_lda(lda_cluster, "Clusters_Top_10_LDA.csv")
+
+        # Apply LDA on the combined column (Component + Feature) in preprocessed_suitable_models_data.csv
+        print("Applying LDA on preprocessed_suitable_models_data.csv (Component + Feature)...")
+        suitable_models_df['Combined'] = suitable_models_df.apply(
+            lambda row: ' '.join([str(row['Component']), str(row['Feature'])]).strip(), 
+            axis=1
+        )
+        lda_suitable_models = self.calculate_lda(suitable_models_df['Combined'], suitable_models_df['Cluster'])
+        self.save_top_lda(lda_suitable_models, "Suitable_Models_Top_10_LDA.csv")
+
+        # Apply global LDA on the entire dataset (clusters and suitable models)
+        print("Applying global LDA on the combined dataset (all models, components, and features)...")
+        self.calculate_global_lda(clusters_df, suitable_models_df)
+
+        print("LDA report generated successfully.")
+
+    def calculate_lda(self, text_data, clusters):
+        """Calculate LDA for each cluster separately"""
+        lda_by_cluster = {}
+
+        # Apply LDA within each cluster
+        for cluster_id in range(1, self.num_clusters + 1):
+            # Filter the data for the current cluster
+            cluster_data = text_data[clusters == cluster_id]
+            print(f"Cluster {cluster_id}: {len(cluster_data)} models")  # Debugging line to check data
+
+            if len(cluster_data) > 0:
+                # Vectorize the data
+                vectorizer = CountVectorizer()
+                X = vectorizer.fit_transform(cluster_data)
+
+                # Apply LDA
+                lda = LDA(n_components=self.num_topics, random_state=42)
+                lda.fit(X)
+
+                # Get the top words for each topic
+                top_words = self.get_top_lda_words(lda, vectorizer.get_feature_names_out(), 10)
+
+                lda_by_cluster[cluster_id] = top_words
+
+        return lda_by_cluster
+
+    def calculate_global_lda(self, clusters_df, suitable_models_df):
+        """Apply global LDA on the entire dataset from both clusters and suitable models data"""
+        # Combine both datasets (models from clusters and suitable models)
+        #DA RIVEDERE PERCHE NON FUNZIONA COSI CONCATENANDO I DATAFRAME A CASO. 
+        #O SI UTILIZZANO I DUE DATAFRAME DISTINTI OPPURE SE NE CREA UNO UNICO MA FACENDO ATTENZIONE AL FATTO CHE I MODELLI DEI DUE DATAFRAME NON SI SOVRAPPONGONO ESATTAMENTE MA SONO DIVERSI.
+        combined_df = pd.concat([clusters_df[['Model']], suitable_models_df[['Model', 'Component', 'Feature']]], ignore_index=True)
+
+        # Create a combined text column (Model + Component + Feature) for LDA
+        combined_df['Text'] = combined_df['Model'] + ' ' + combined_df['Component'].fillna('') + ' ' + combined_df['Feature'].fillna('')
+
+        # Apply global LDA
+        print("Applying LDA on combined data (Model + Component + Feature)...")
+        vectorizer = CountVectorizer()
+        X = vectorizer.fit_transform(combined_df['Text'])
+
+        lda = LDA(n_components=self.num_topics, random_state=42)
+        lda.fit(X)
+
+        # Get the top words for each topic
+        top_words = self.get_top_lda_words(lda, vectorizer.get_feature_names_out(), 10)
+
+        # Save global LDA results
+        self.save_top_lda_global(top_words)
+
+    def get_top_lda_words(self, lda, feature_names, n_top_words):
+        """Get top words for each topic in LDA"""
+        top_words = []
+        for topic_idx, topic in enumerate(lda.components_):
+            top_indices = topic.argsort()[-n_top_words:][::-1]
+            top_words.append([feature_names[i] for i in top_indices])
+        return top_words
+
+    def save_top_lda(self, lda_results, file_name):
+        """Save the top 10 LDA words and their topics to a CSV file"""
+        output_file = os.path.join(self.LDA_folder, file_name)
+        data = []
+        for cluster_id, top_words in lda_results.items():
+            words = [" ".join(words) for words in top_words]  # Combine top words for each topic
+            data.append([cluster_id, ", ".join(words)])
+
+        df = pd.DataFrame(data, columns=['Cluster', 'Top 10 Words (LDA)'])
+        df.to_csv(output_file, index=False)
+
+        print(f"Top 10 LDA words and topics saved to {output_file}")
+
+    def save_top_lda_global(self, top_words):
+        """Save the global top 10 LDA words and topics to a CSV file"""
+        output_file = os.path.join(self.LDA_folder, "Global_Top_10_LDA.csv")
+        data = []
+        words = [" ".join(words) for words in top_words]  # Combine top words for each topic
+        data.append(['Global', ", ".join(words)])
+
+        df = pd.DataFrame(data, columns=['Cluster', 'Top 10 Words (LDA)'])
+        df.to_csv(output_file, index=False)
+
+        print(f"Global LDA words and topics saved to {output_file}")

@@ -61,6 +61,7 @@ def main():
         print("Generating labels using TF-IDF...")
         labeling = Labeling(config_path="config.json")
         labeling.apply_tfidf()
+        labeling.apply_lda()
         print("Labels generation completed.")
         
         print("Finished elaboration time: ", get_current_timestamp())
