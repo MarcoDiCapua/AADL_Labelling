@@ -277,7 +277,7 @@ class Labeling:
         self.suitable_models_data_file = os.path.join(self.config.get("output_folder", ""), "AADL/suitable_models_data.csv")
         self.preprocessing = os.path.join(self.config.get("output_folder", ""), "Preprocessing")
         self.num_clusters = 44  # Total number of clusters
-        self.num_topics = 10  # Number of topics for LDA
+        self.num_topics = 5  # Number of topics for LDA
 
         # Define the Algorithm, TF-IDF, LDA and Chi-Square folder path
         self.algorithm_folder = os.path.join(self.config.get("output_folder", ""), "Algorithm")
@@ -466,63 +466,50 @@ class Labeling:
             axis=1
         )
         lda_suitable_models = self.calculate_lda(suitable_models_df['Combined'], suitable_models_df['Cluster'])
-        self.save_top_lda(lda_suitable_models, "Suitable_Models_Top_10_LDA.csv")
-
-        # Apply global LDA on the entire dataset (clusters and suitable models)
-        print("Applying global LDA on the combined dataset (all models, components, and features)...")
-        self.calculate_global_lda(clusters_df, suitable_models_df)
-
-        print("LDA report generated successfully.")
+        self.save_top_lda(lda_suitable_models, "Combined_Top_10_LDA.csv")
 
     def calculate_lda(self, text_data, clusters):
-        """Calculate LDA for each cluster separately"""
         lda_by_cluster = {}
 
-        # Apply LDA within each cluster
-        for cluster_id in range(1, self.num_clusters + 1):
-            # Filter the data for the current cluster
-            cluster_data = text_data[clusters == cluster_id]
-            print(f"Cluster {cluster_id}: {len(cluster_data)} models")  # Debugging line to check data
+        if clusters is not None:
+            # Apply LDA within each cluster
+            unique_clusters = clusters.unique()
 
-            if len(cluster_data) > 0:
-                # Vectorize the data
-                vectorizer = CountVectorizer()
-                X = vectorizer.fit_transform(cluster_data)
+            for cluster_id in range(1, self.num_clusters + 1):
+                if cluster_id not in unique_clusters:
+                    print(f"Cluster {cluster_id} is not present in the data. Skipping LDA calculation.")
+                    continue
+                # Filter the data for the current cluster
+                cluster_data = text_data[clusters == cluster_id]
+                print(f"Cluster {cluster_id}: {len(cluster_data)} models")  # Debugging line to check data
 
-                # Apply LDA
-                lda = LDA(n_components=self.num_topics, random_state=42)
-                lda.fit(X)
+                if len(cluster_data) > 0:
+                    # Vectorize the data
+                    vectorizer = CountVectorizer()
+                    X = vectorizer.fit_transform(cluster_data)
 
-                # Get the top words for each topic
-                top_words = self.get_top_lda_words(lda, vectorizer.get_feature_names_out(), 10)
+                    # Apply LDA
+                    lda = LDA(n_components=self.num_topics, random_state=42)
+                    lda.fit(X)
 
-                lda_by_cluster[cluster_id] = top_words
+                    # Get the top words for each topic
+                    top_words = self.get_top_lda_words(lda, vectorizer.get_feature_names_out(), 10)
+
+                    lda_by_cluster[cluster_id] = top_words
+        else:
+            # Apply LDA on the entire dataset (no clustering, just all the data)
+            vectorizer = CountVectorizer()
+            X = vectorizer.fit_transform(text_data)
+
+            lda = LDA(n_components=self.num_topics, random_state=42)
+            lda.fit(X)
+
+            # Get the top words for each topic
+            top_words = self.get_top_lda_words(lda, vectorizer.get_feature_names_out(), 10)
+            #DA RIVEDERE
+            lda_by_cluster['Global'] = top_words
 
         return lda_by_cluster
-
-    def calculate_global_lda(self, clusters_df, suitable_models_df):
-        """Apply global LDA on the entire dataset from both clusters and suitable models data"""
-        # Combine both datasets (models from clusters and suitable models)
-        #DA RIVEDERE PERCHE NON FUNZIONA COSI CONCATENANDO I DATAFRAME A CASO. 
-        #O SI UTILIZZANO I DUE DATAFRAME DISTINTI OPPURE SE NE CREA UNO UNICO MA FACENDO ATTENZIONE AL FATTO CHE I MODELLI DEI DUE DATAFRAME NON SI SOVRAPPONGONO ESATTAMENTE MA SONO DIVERSI.
-        combined_df = pd.concat([clusters_df[['Model']], suitable_models_df[['Model', 'Component', 'Feature']]], ignore_index=True)
-
-        # Create a combined text column (Model + Component + Feature) for LDA
-        combined_df['Text'] = combined_df['Model'] + ' ' + combined_df['Component'].fillna('') + ' ' + combined_df['Feature'].fillna('')
-
-        # Apply global LDA
-        print("Applying LDA on combined data (Model + Component + Feature)...")
-        vectorizer = CountVectorizer()
-        X = vectorizer.fit_transform(combined_df['Text'])
-
-        lda = LDA(n_components=self.num_topics, random_state=42)
-        lda.fit(X)
-
-        # Get the top words for each topic
-        top_words = self.get_top_lda_words(lda, vectorizer.get_feature_names_out(), 10)
-
-        # Save global LDA results
-        self.save_top_lda_global(top_words)
 
     def get_top_lda_words(self, lda, feature_names, n_top_words):
         """Get top words for each topic in LDA"""
@@ -544,15 +531,3 @@ class Labeling:
         df.to_csv(output_file, index=False)
 
         print(f"Top 10 LDA words and topics saved to {output_file}")
-
-    def save_top_lda_global(self, top_words):
-        """Save the global top 10 LDA words and topics to a CSV file"""
-        output_file = os.path.join(self.LDA_folder, "Global_Top_10_LDA.csv")
-        data = []
-        words = [" ".join(words) for words in top_words]  # Combine top words for each topic
-        data.append(['Global', ", ".join(words)])
-
-        df = pd.DataFrame(data, columns=['Cluster', 'Top 10 Words (LDA)'])
-        df.to_csv(output_file, index=False)
-
-        print(f"Global LDA words and topics saved to {output_file}")
