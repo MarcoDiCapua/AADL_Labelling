@@ -323,7 +323,8 @@ class Labeling:
         self.generate_total_tfidf_report()
         self.plot_label_distribution()
         self.generate_summary_report()
-        print("TF-IDF report and plots generated successfully.")
+        self.generate_tfidf_labels()
+        print("TF-IDF labels, reports and plots generated successfully.")
 
     def calculate_tfidf(self, text_data, clusters):
         #Calculate the TF-IDF for each cluster separately
@@ -448,6 +449,68 @@ class Labeling:
         summary_file = os.path.join(self.TFIDF_folder, 'TFIDF_Summary_Report.csv')
         summary_df.to_csv(summary_file, index=False)
         print(f"Summary report saved to {summary_file}")
+
+    def generate_tfidf_labels(self):
+        total_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Total_Top_10_TFIDF.csv'))
+
+        # Initialize an empty list to store the new rows for TFIDF_Labels.csv
+        tfidf_labels_data = []
+
+        # Iterate over each cluster to process the words and scores
+        for idx, row in total_tfidf_df.iterrows():
+            cluster = row['Cluster']
+            clusters_words = row['Clusters Top 10 Words (TF-IDF)'].split(',')
+            clusters_scores = list(map(float, row['Clusters Scores'].split(',')))
+
+            # Check if 'Combined' columns are empty, if so skip processing for Combined
+            if pd.isna(row['Combined Top 10 Words (TF-IDF)']) or pd.isna(row['Combined Scores']):
+                combined_words = []
+                combined_scores = []
+            else:
+                combined_words = row['Combined Top 10 Words (TF-IDF)'].split(',') 
+                combined_scores = list(map(float, row['Combined Scores'].split(','))) 
+
+            # Process for Clusters Top 5 Words (TF-IDF)
+            clusters_top5 = self.get_top_words_with_filter(clusters_words, clusters_scores)
+
+            # Process for Combined Top 5 Words (TF-IDF)
+            combined_top5 = self.get_top_words_with_filter(combined_words, combined_scores)
+
+            # Append the processed data to the list
+            tfidf_labels_data.append([
+                cluster, 
+                ",".join(clusters_top5[0]), 
+                ", ".join(map(str, clusters_top5[1])),
+                ",".join(combined_top5[0]), 
+                ", ".join(map(str, combined_top5[1]))
+            ])
+
+        # Create DataFrame and save to CSV
+        tfidf_labels_df = pd.DataFrame(tfidf_labels_data, columns=['Cluster', 'Clusters Top 5 Words (TF-IDF)', 'Clusters Scores', 'Combined Top 5 Words (TF-IDF)', 'Combined Scores'])
+        output_file = os.path.join(self.TFIDF_folder, 'TFIDF_Labels.csv')
+        tfidf_labels_df.to_csv(output_file, index=False)
+
+        print(f"TFIDF_Labels.csv generated and saved to {output_file}")
+
+    def get_top_words_with_filter(self, words, scores):
+        #Filters the top words with score > 1, and if none meet the criteria, takes the highest score word
+        filtered_words = []
+        filtered_scores = []
+
+        for word, score in zip(words, scores):
+            if score > 1:
+                filtered_words.append(word)
+                filtered_scores.append(score)
+
+        # If no words have score > 1, take the first word and its score
+        if not filtered_words and len(words) > 0 and len(scores) > 0:
+            filtered_words = [words[0]]
+            filtered_scores = [scores[0]]
+
+        if len(filtered_words) < 5:
+            return filtered_words, filtered_scores
+
+        return filtered_words[:5], filtered_scores[:5]
 
     def apply_lda(self):
         # Read preprocessed clusters and suitable models data files
