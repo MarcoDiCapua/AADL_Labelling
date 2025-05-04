@@ -11,10 +11,8 @@ import nltk
 import numpy as np
 from utility import load_config, create_directory, file_exists, delete_file, list_files_in_directory, copy_file
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.feature_selection import SelectKBest, chi2
 from sklearn.decomposition import LatentDirichletAllocation as LDA
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.preprocessing import LabelEncoder
 
 nltk.download('punkt', download_dir='./nltk_data')
 nltk.download('stopwords', download_dir='./nltk_data')
@@ -277,7 +275,7 @@ class Labeling:
         self.suitable_models_data_file = os.path.join(self.config.get("output_folder", ""), "AADL/suitable_models_data.csv")
         self.preprocessing = os.path.join(self.config.get("output_folder", ""), "Preprocessing")
         self.num_clusters = 44  # Total number of clusters
-        self.num_topics = 5  # Number of topics for LDA
+        #self.num_topics = 5  # Number of topics for LDA
 
         # Define the Algorithm, TF-IDF, LDA and Chi-Square folder path
         self.algorithm_folder = os.path.join(self.config.get("output_folder", ""), "Algorithm")
@@ -531,15 +529,18 @@ class Labeling:
         print("Applying LDA on preprocessed_clusters.csv (Model names)...")
         lda_cluster = self.calculate_lda(clusters_df['Model'], clusters_df['Cluster'])
         self.save_top_lda(lda_cluster, "Clusters_Top_10_LDA.csv")
+        self.export_perplexity_values("Clusters_Perplexity.csv")
 
         # Apply LDA on the combined column (Component + Feature) in preprocessed_suitable_models_data.csv
         print("Applying LDA on preprocessed_suitable_models_data.csv (Component + Feature)...")
         lda_suitable_models = self.calculate_lda(suitable_models_df['Combined'], suitable_models_df['Cluster'])
         self.save_top_lda(lda_suitable_models, "Combined_Top_10_LDA.csv")
+        self.export_perplexity_values("Combined_Perplexity.csv")
 
 
     def calculate_lda(self, text_data, clusters):
         lda_by_cluster = {}
+        perplexity_data = {}
 
         if clusters is not None:
             # Apply LDA within each cluster
@@ -555,19 +556,63 @@ class Labeling:
 
                 if len(cluster_data) > 0:
                     # Vectorize the data
+                    print(f"Applying LDA on Cluster {cluster_id}...")
                     vectorizer = CountVectorizer()
                     X = vectorizer.fit_transform(cluster_data)
+                    print(f"Vectorization complete for Cluster {cluster_id}. Shape: {X.shape}")
+
+                    # Find optimal number of topics using perplexity
+                    best_num_topics = self.find_optimal_num_topics(X, cluster_data)
 
                     # Apply LDA
-                    lda = LDA(n_components=self.num_topics, random_state=42)
+                    lda = LDA(n_components=best_num_topics, random_state=42)
                     lda.fit(X)
 
                     # Get the top words for each topic
                     top_words = self.get_top_lda_words(lda, vectorizer.get_feature_names_out(), 10)
 
                     lda_by_cluster[cluster_id] = top_words
+
+                    # Store perplexity for each cluster and number of topics
+                    perplexity_data[cluster_id] = self.get_perplexity_scores(X)
+
+        self.perplexity_data = perplexity_data  # Store the perplexity data for later export
         return lda_by_cluster
 
+    def find_optimal_num_topics(self, X, cluster_data):
+        perplexity_scores = []
+        num_topics_range = range(2, 11)  # Test from 2 to 10 topics
+
+        # Calculate perplexity for different numbers of topics
+        for num_topics in num_topics_range:
+            lda_model = LDA(n_components=num_topics, random_state=42)
+            lda_model.fit(X)
+            print(f"Fitting LDA model with {num_topics} topics...")
+            # Calculate perplexity score
+            perplexity_score = self.calculate_perplexity_score(lda_model, cluster_data)
+            print(f"Perplexity score for {num_topics} topics: {perplexity_score}")
+            perplexity_scores.append((num_topics, perplexity_score))
+
+        # Choose the number of topics with the lowest perplexity
+        best_num_topics = min(perplexity_scores, key=lambda x: x[1])[0]
+        print(f"Optimal number of topics for this cluster: {best_num_topics}")
+        return best_num_topics
+
+    def calculate_perplexity_score(self, lda_model, text_data):
+        vectorizer = CountVectorizer()
+        X = vectorizer.fit_transform(text_data)
+        perplexity = lda_model.perplexity(X)
+        print(f"Perplexity for the LDA model: {perplexity}")
+        return perplexity
+
+    def get_perplexity_scores(self, X):
+        perplexity_scores = {}
+        for num_topics in range(2, 11):  # Check perplexity for topics from 2 to 10
+            lda_model = LDA(n_components=num_topics, random_state=42)
+            lda_model.fit(X)
+            perplexity = lda_model.perplexity(X)
+            perplexity_scores[num_topics] = perplexity
+        return perplexity_scores
 
     def get_top_lda_words(self, lda, feature_names, n_top_words):
         # Get the top words for each topic in the LDA model
@@ -578,9 +623,8 @@ class Labeling:
             top_words.append([feature_names[i] for i in top_indices])
         return top_words
 
-
     def save_top_lda(self, lda_results, file_name):
-        #Save the top 10 LDA words and their topics to a CSV file
+        # Save the top 10 LDA words and their topics to a CSV file
         output_file = os.path.join(self.LDA_folder, file_name)
         data = []
         for cluster_id, top_words in lda_results.items():
@@ -589,5 +633,33 @@ class Labeling:
 
         df = pd.DataFrame(data, columns=['Cluster', 'Top 10 Words (LDA)'])
         df.to_csv(output_file, index=False)
-
         print(f"Top 10 LDA words and topics saved to {output_file}")
+
+    def export_perplexity_values(self, file_name):
+        # Create a dataframe to store the perplexity values for each cluster and topic number
+        perplexity_list = []
+
+        # Create rows for each cluster
+        for cluster_id in range(1, self.num_clusters + 1):
+            if cluster_id in self.perplexity_data:
+                row = {'Cluster': cluster_id}
+                for num_topics, perplexity in self.perplexity_data[cluster_id].items():
+                    row[f'Topics {num_topics}'] = perplexity
+                perplexity_list.append(row)
+
+        # Convert the list to a DataFrame
+        perplexity_df = pd.DataFrame(perplexity_list)
+
+        # Save the dataframe to a CSV file
+        output_file = os.path.join(self.LDA_folder, file_name)
+        perplexity_df.to_csv(output_file, index=False)
+        print(f"Perplexity values saved to {output_file}")
+
+
+
+
+#Quando salvi i risultati, potresti includere anche l'indice di rilevanza dei topic per cluster, 
+# oltre a solo i top 10 termini, per una comprensione più profonda dei risultati di LDA
+
+# Se desideri esplorare il comportamento dei topic, 
+# potresti implementare una visualizzazione con strumenti come pyLDAvis per una comprensione visiva dei topic.
