@@ -321,8 +321,8 @@ class Labeling:
 
         print("Generating TF-IDF report and plots...")
         self.generate_total_tfidf_report()
-        self.plot_label_distribution()
-        self.generate_summary_report()
+        self.plot_label_distribution_tfidf()
+        self.generate_summary_report_tfidf()
         self.generate_tfidf_labels()
         print("TF-IDF labels, reports and plots generated successfully.")
 
@@ -336,7 +336,7 @@ class Labeling:
             if cluster_id not in unique_clusters:
                 print(f"Cluster {cluster_id} is not present in the data. Skipping TF-IDF calculation.")
                 continue
-            # Filter the data for the current cluster
+            # Filter the models data belonging to the current cluster
             cluster_data = text_data[clusters == cluster_id]
             #print(f"Cluster {cluster_id}: {cluster_data}")  # Debugging line to check data
 
@@ -394,7 +394,7 @@ class Labeling:
         total_tfidf_df.to_csv(total_tfidf_file, index=False)
         print(f"Total_Top_10_TFIDF.csv generated and saved to {total_tfidf_file}")
 
-    def plot_label_distribution(self):
+    def plot_label_distribution_tfidf(self):
         total_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Total_Top_10_TFIDF.csv'))
 
         # Create a new DataFrame with counts for each category (Clusters Top 10 Words and Combined Top 10 Words)
@@ -431,7 +431,7 @@ class Labeling:
             return len(x.split(','))
         return 0
 
-    def generate_summary_report(self):
+    def generate_summary_report_tfidf(self):
         clusters_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Clusters_Top_10_TFIDF.csv'))
         combined_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Combined_Top_10_TFIDF.csv'))
         summary_data = []
@@ -471,10 +471,10 @@ class Labeling:
                 combined_scores = list(map(float, row['Combined Scores'].split(','))) 
 
             # Process for Clusters Top 5 Words (TF-IDF)
-            clusters_top5 = self.get_top_words_with_filter(clusters_words, clusters_scores)
+            clusters_top5 = self.get_top_words_with_filter_tfidf(clusters_words, clusters_scores)
 
             # Process for Combined Top 5 Words (TF-IDF)
-            combined_top5 = self.get_top_words_with_filter(combined_words, combined_scores)
+            combined_top5 = self.get_top_words_with_filter_tfidf(combined_words, combined_scores)
 
             # Append the processed data to the list
             tfidf_labels_data.append([
@@ -492,7 +492,7 @@ class Labeling:
 
         print(f"TFIDF_Labels.csv generated and saved to {output_file}")
 
-    def get_top_words_with_filter(self, words, scores):
+    def get_top_words_with_filter_tfidf(self, words, scores):
         #Filters the top words with score > 1, and if none meet the criteria, takes the highest score word
         filtered_words = []
         filtered_scores = []
@@ -517,19 +517,26 @@ class Labeling:
         clusters_df = pd.read_csv(os.path.join(self.preprocessing, 'preprocessed_clusters.csv'))
         suitable_models_df = pd.read_csv(os.path.join(self.preprocessing, 'preprocessed_suitable_models_data.csv'))
 
-        # Apply LDA on preprocessed_clusters.csv (Model names)
+        # Combine Component and Feature columns
+        suitable_models_df['Combined'] = suitable_models_df.apply(
+            lambda row: ' '.join([str(row['Component']), str(row['Feature'])]).strip(),
+            axis=1
+        )
+        empty_combined_rows = suitable_models_df[suitable_models_df['Combined'].str.strip() == '']
+        if not empty_combined_rows.empty:
+            print(f"ATTENZIONE: Le seguenti righe hanno la colonna 'Combined' vuota:")
+            print(empty_combined_rows[['Model', 'Component', 'Feature']])
+
+        # Apply LDA on column (Model) in preprocessed_clusters.csv
         print("Applying LDA on preprocessed_clusters.csv (Model names)...")
         lda_cluster = self.calculate_lda(clusters_df['Model'], clusters_df['Cluster'])
         self.save_top_lda(lda_cluster, "Clusters_Top_10_LDA.csv")
 
         # Apply LDA on the combined column (Component + Feature) in preprocessed_suitable_models_data.csv
         print("Applying LDA on preprocessed_suitable_models_data.csv (Component + Feature)...")
-        suitable_models_df['Combined'] = suitable_models_df.apply(
-            lambda row: ' '.join([str(row['Component']), str(row['Feature'])]).strip(), 
-            axis=1
-        )
         lda_suitable_models = self.calculate_lda(suitable_models_df['Combined'], suitable_models_df['Cluster'])
         self.save_top_lda(lda_suitable_models, "Combined_Top_10_LDA.csv")
+
 
     def calculate_lda(self, text_data, clusters):
         lda_by_cluster = {}
@@ -542,9 +549,9 @@ class Labeling:
                 if cluster_id not in unique_clusters:
                     print(f"Cluster {cluster_id} is not present in the data. Skipping LDA calculation.")
                     continue
-                # Filter the data for the current cluster
+                # Filter the models data belonging to the current cluster
                 cluster_data = text_data[clusters == cluster_id]
-                print(f"Cluster {cluster_id}: {len(cluster_data)} models")  # Debugging line to check data
+                print(f"Cluster {cluster_id}: {len(cluster_data)} models")
 
                 if len(cluster_data) > 0:
                     # Vectorize the data
@@ -559,31 +566,21 @@ class Labeling:
                     top_words = self.get_top_lda_words(lda, vectorizer.get_feature_names_out(), 10)
 
                     lda_by_cluster[cluster_id] = top_words
-        else:
-            # Apply LDA on the entire dataset (no clustering, just all the data)
-            vectorizer = CountVectorizer()
-            X = vectorizer.fit_transform(text_data)
-
-            lda = LDA(n_components=self.num_topics, random_state=42)
-            lda.fit(X)
-
-            # Get the top words for each topic
-            top_words = self.get_top_lda_words(lda, vectorizer.get_feature_names_out(), 10)
-            #DA RIVEDERE
-            lda_by_cluster['Global'] = top_words
-
         return lda_by_cluster
 
+
     def get_top_lda_words(self, lda, feature_names, n_top_words):
-        """Get top words for each topic in LDA"""
+        # Get the top words for each topic in the LDA model
         top_words = []
+        # Get top words for each LDA component
         for topic_idx, topic in enumerate(lda.components_):
             top_indices = topic.argsort()[-n_top_words:][::-1]
             top_words.append([feature_names[i] for i in top_indices])
         return top_words
 
+
     def save_top_lda(self, lda_results, file_name):
-        """Save the top 10 LDA words and their topics to a CSV file"""
+        #Save the top 10 LDA words and their topics to a CSV file
         output_file = os.path.join(self.LDA_folder, file_name)
         data = []
         for cluster_id, top_words in lda_results.items():

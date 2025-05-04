@@ -42,13 +42,13 @@ def main():
         
         # Generate plots
         print("Generating plots...")
-        aadl_analysis.plot_total_models()
-        aadl_analysis.plot_total_vs_suitable_models_pie()
-        aadl_analysis.plot_cluster_distribution_stacked()
-        aadl_analysis.plot_cluster_distribution()
-        aadl_analysis.plot_suitable_cluster_distribution()
-        aadl_analysis.plot_top_instances(component_counter, feature_counter, connection_instance_counter)
-        aadl_analysis.plot_total_counts(component_counter, feature_counter, connection_instance_counter, mode_instance_counter, flow_specification_counter)
+        # aadl_analysis.plot_total_models()
+        # aadl_analysis.plot_total_vs_suitable_models_pie()
+        # aadl_analysis.plot_cluster_distribution_stacked()
+        # aadl_analysis.plot_cluster_distribution()
+        # aadl_analysis.plot_suitable_cluster_distribution()
+        # aadl_analysis.plot_top_instances(component_counter, feature_counter, connection_instance_counter)
+        # aadl_analysis.plot_total_counts(component_counter, feature_counter, connection_instance_counter, mode_instance_counter, flow_specification_counter)
         print("Plots generated successfully.")
         
         # Preprocess the data
@@ -60,7 +60,7 @@ def main():
         # Apply TF-IDF and generate labels for clusters using the Labeling class
         print("Generating labels using TF-IDF...")
         labeling = Labeling(config_path="config.json")
-        labeling.apply_tfidf()
+        #labeling.apply_tfidf()
         labeling.apply_lda()
         print("Labels generation completed.")
         
