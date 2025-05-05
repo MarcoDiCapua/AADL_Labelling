@@ -275,7 +275,6 @@ class Labeling:
         self.suitable_models_data_file = os.path.join(self.config.get("output_folder", ""), "AADL/suitable_models_data.csv")
         self.preprocessing = os.path.join(self.config.get("output_folder", ""), "Preprocessing")
         self.num_clusters = 44  # Total number of clusters
-        #self.num_topics = 5  # Number of topics for LDA
 
         # Define the Algorithm, TF-IDF, LDA and Chi-Square folder path
         self.algorithm_folder = os.path.join(self.config.get("output_folder", ""), "Algorithm")
@@ -528,13 +527,13 @@ class Labeling:
         # Apply LDA on column (Model) in preprocessed_clusters.csv
         print("Applying LDA on preprocessed_clusters.csv (Model names)...")
         lda_cluster = self.calculate_lda(clusters_df['Model'], clusters_df['Cluster'])
-        self.save_top_lda(lda_cluster, "Clusters_Top_10_LDA.csv")
+        self.save_top_lda(lda_cluster, "Clusters_Top_LDA.csv")
         self.export_perplexity_values("Clusters_Perplexity.csv")
 
         # Apply LDA on the combined column (Component + Feature) in preprocessed_suitable_models_data.csv
         print("Applying LDA on preprocessed_suitable_models_data.csv (Component + Feature)...")
         lda_suitable_models = self.calculate_lda(suitable_models_df['Combined'], suitable_models_df['Cluster'])
-        self.save_top_lda(lda_suitable_models, "Combined_Top_10_LDA.csv")
+        self.save_top_lda(lda_suitable_models, "Combined_Top_LDA.csv")
         self.export_perplexity_values("Combined_Perplexity.csv")
 
 
@@ -569,7 +568,7 @@ class Labeling:
                     lda.fit(X)
 
                     # Get the top words for each topic
-                    top_words = self.get_top_lda_words(lda, vectorizer.get_feature_names_out(), 10)
+                    top_words = self.get_top_lda_words(lda, vectorizer.get_feature_names_out())
 
                     lda_by_cluster[cluster_id] = top_words
 
@@ -614,14 +613,41 @@ class Labeling:
             perplexity_scores[num_topics] = perplexity
         return perplexity_scores
 
-    def get_top_lda_words(self, lda, feature_names, n_top_words):
+    def get_top_lda_words(self, lda, feature_names, min_words=5, threshold=2.0): 
+        #min_words identify the minimum amount of words to be selected for each topic
+        #threshold is the minimum probability for a word to be selected
         # Get the top words for each topic in the LDA model
         top_words = []
+        
         # Get top words for each LDA component
         for topic_idx, topic in enumerate(lda.components_):
-            top_indices = topic.argsort()[-n_top_words:][::-1]
-            top_words.append([feature_names[i] for i in top_indices])
+            # Sort words by their probability (weight)
+            top_indices = topic.argsort()[-min_words:][::-1]
+            print(f"\nTopic {topic_idx}:")
+            print("Top word indices and probabilities:", list(zip(top_indices, topic[top_indices])))
+
+            # Filter words based on the threshold probability
+            topic_words = []
+            for idx in top_indices:
+                if topic[idx] >= threshold:
+                    topic_words.append(feature_names[idx])
+            print(f"Words selected above threshold {threshold}: {topic_words}")
+
+            # If we have fewer words than the min_words, add additional words based on the remaining probabilities
+            if len(topic_words) < min_words:
+                print(f"Not enough words above threshold. Adding words to reach {min_words}.")
+                additional_words = [feature_names[i] for i in topic.argsort()[:-min_words-1:-1] if feature_names[i] not in topic_words]
+                topic_words.extend(additional_words)
+                print(f"Additional words added: {additional_words}")
+            
+            # Ensure we don't exceed the max_words
+            topic_words = topic_words[:min_words]
+            print(f"Final words for topic {topic_idx}: {topic_words}")
+            
+            top_words.append(topic_words)
+        
         return top_words
+
 
     def save_top_lda(self, lda_results, file_name):
         # Save the top 10 LDA words and their topics to a CSV file
