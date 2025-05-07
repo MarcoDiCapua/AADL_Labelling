@@ -536,8 +536,10 @@ class Labeling:
         self.save_top_lda(lda_suitable_models, "Combined_Top_LDA.csv")
         self.export_perplexity_values("Combined_Perplexity.csv")
         
-        # Generate the stacked bar chart
+        # Generate the plots and reports
         self.generate_stacked_bar_chart_lda()
+        self.plot_perplexity("Clusters_Perplexity")
+        self.plot_perplexity("Combined_Perplexity")
 
     def calculate_lda(self, text_data, clusters):
         lda_by_cluster = {}
@@ -650,7 +652,6 @@ class Labeling:
         
         return top_words
 
-
     def save_top_lda(self, lda_results, file_name):
         # Save the top 10 LDA words and their topics to a CSV file
         output_file = os.path.join(self.LDA_folder, file_name)
@@ -728,12 +729,33 @@ class Labeling:
         ax.legend()
 
         # Save the plot as a PNG file in the same folder as other outputs
-        output_file = os.path.join(self.LDA_folder, "topics_distribution_by_cluster.png")
+        output_file = os.path.join(self.LDA_folder, "Topics_Distribution_by_Cluster.png")
         plt.tight_layout()
         plt.savefig(output_file)  # Save the plot
         print(f"Stacked bar chart saved to {output_file}")
 
+    def plot_perplexity(self, file_name):
+        # Read perplexity data for each cluster
+        clusters_perplexity_df = pd.read_csv(os.path.join(self.LDA_folder, file_name + '.csv'))
 
+        # Limit to the first 10 clusters for a clearer example
+        selected_clusters = clusters_perplexity_df['Cluster'].head(10)  # Seleziona solo i primi 10 cluster
+        fig, ax = plt.subplots(figsize=(12, 8))
+
+        for cluster_id in selected_clusters:
+            cluster_data = clusters_perplexity_df[clusters_perplexity_df['Cluster'] == cluster_id]
+            ax.plot(cluster_data.columns[1:], cluster_data.iloc[0, 1:], label=f"Cluster {cluster_id}")
+
+        ax.set_xlabel("Number of Topics")
+        ax.set_ylabel("Perplexity")
+        ax.set_title("Perplexity vs Number of Topics")
+        ax.legend(title="Cluster", loc='upper left', bbox_to_anchor=(1, 1))  # Posizionamento della legenda
+
+        # Adjust the layout and show the plot
+        plt.tight_layout()
+
+        # Save the plot as PNG
+        plt.savefig(os.path.join(self.LDA_folder, file_name + "_10_Clusters.png"))
 
 
 
