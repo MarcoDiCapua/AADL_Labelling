@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import re
 import matplotlib.pyplot as plt
+import matplotlib.cm as cm
 from matplotlib.ticker import MaxNLocator
 from collections import Counter
 from nltk.tokenize import word_tokenize
@@ -306,11 +307,6 @@ class Labeling:
         tfidf_cluster = self.calculate_tfidf(clusters_df['Model'], clusters_df['Cluster'])
         self.save_top_tfidf(tfidf_cluster, "Clusters_Top_10_TFIDF.csv")
 
-        # Apply TF-IDF on preprocessed_suitable_models_data.csv (only suitable models names)
-        # print("Applying TF-IDF on preprocessed_suitable_models_data.csv...")
-        # tfidf_suitable_models = self.calculate_tfidf(suitable_models_df['Model'], suitable_models_df['Cluster'])
-        # self.save_top_tfidf(tfidf_suitable_models, "Suitable_Models_Top_10_TFIDF.csv")
-
         # Apply TF-IDF on the combined column
         print("Applying TF-IDF on preprocessed_suitable_models_data.csv (Component + Feature)...")
         tfidf_by_cluster = self.calculate_tfidf(suitable_models_df['Combined'], suitable_models_df['Cluster'])
@@ -318,9 +314,10 @@ class Labeling:
 
         print("Generating TF-IDF report and plots...")
         self.generate_total_tfidf_report()
-        self.plot_label_distribution_tfidf()
         self.generate_summary_report_tfidf()
         self.generate_tfidf_labels()
+        self.plot_tfidf_scores()
+        self.plot_label_distribution_tfidf()
         print("TF-IDF labels, reports and plots generated successfully.")
 
     def calculate_tfidf(self, text_data, clusters):
@@ -391,43 +388,6 @@ class Labeling:
         total_tfidf_df.to_csv(total_tfidf_file, index=False)
         print(f"Total_Top_10_TFIDF.csv generated and saved to {total_tfidf_file}")
 
-    def plot_label_distribution_tfidf(self):
-        total_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Total_Top_10_TFIDF.csv'))
-
-        # Create a new DataFrame with counts for each category (Clusters Top 10 Words and Combined Top 10 Words)
-        total_tfidf_df['Clusters Top 10 Words Count'] = total_tfidf_df['Clusters Top 10 Words (TF-IDF)'].apply(self.safe_split)
-        total_tfidf_df['Combined Top 10 Words Count'] = total_tfidf_df['Combined Top 10 Words (TF-IDF)'].apply(self.safe_split)
-
-        # Plot the stacked bar chart
-        plt.figure(figsize=(10, 6))
-        bars1 = plt.bar(total_tfidf_df['Cluster'], total_tfidf_df['Clusters Top 10 Words Count'], label='Clusters Top 10 Words', color='skyblue')
-        bars2 = plt.bar(total_tfidf_df['Cluster'], total_tfidf_df['Combined Top 10 Words Count'], label='Combined Top 10 Words', color='lightcoral', bottom=total_tfidf_df['Clusters Top 10 Words Count'])
-        # Add the actual values on top of the bars
-        for bar in bars1:
-            yval = bar.get_height()
-            plt.text(bar.get_x() + bar.get_width()/2, yval + 0.05, str(int(yval)), ha='center', va='bottom', fontsize=10)
-        for bar in bars2:
-            yval = bar.get_height() + bar.get_y()
-            if bar.get_height() > 0:  # Only add the label if the height is greater than 0
-                plt.text(bar.get_x() + bar.get_width()/2, yval + 0.05, str(int(bar.get_height())), ha='center', va='bottom', fontsize=10)
-
-        plt.gca().yaxis.set_major_locator(MaxNLocator(integer=True, prune='lower'))
-        plt.xticks(total_tfidf_df['Cluster'], total_tfidf_df['Cluster'], rotation=90)
-        plt.xlabel('Cluster')
-        plt.ylabel('Number of Labels')
-        plt.title('Label Distribution by Clusters')
-        plt.legend()
-        plt.tight_layout()
-        plt.savefig(os.path.join(self.TFIDF_folder, 'label_distribution_stacked.png'))
-        plt.close()
-        print(f"Label distribution stacked bar chart saved to {os.path.join(self.TFIDF_folder, 'label_distribution_stacked.png')}")
-
-    def safe_split(self, x):
-        #Safe split function to handle empty or invalid values
-        if isinstance(x, str) and x.strip():
-            return len(x.split(','))
-        return 0
-
     def generate_summary_report_tfidf(self):
         clusters_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Clusters_Top_10_TFIDF.csv'))
         combined_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Combined_Top_10_TFIDF.csv'))
@@ -468,10 +428,10 @@ class Labeling:
                 combined_scores = list(map(float, row['Combined Scores'].split(','))) 
 
             # Process for Clusters Top 5 Words (TF-IDF)
-            clusters_top5 = self.get_top_words_with_filter_tfidf(clusters_words, clusters_scores)
+            clusters_top5 = self.get_top_words_tfidf(clusters_words, clusters_scores)
 
             # Process for Combined Top 5 Words (TF-IDF)
-            combined_top5 = self.get_top_words_with_filter_tfidf(combined_words, combined_scores)
+            combined_top5 = self.get_top_words_tfidf(combined_words, combined_scores)
 
             # Append the processed data to the list
             tfidf_labels_data.append([
@@ -489,7 +449,7 @@ class Labeling:
 
         print(f"TFIDF_Labels.csv generated and saved to {output_file}")
 
-    def get_top_words_with_filter_tfidf(self, words, scores):
+    def get_top_words_tfidf(self, words, scores):
         #Filters the top words with score > 1, and if none meet the criteria, takes the highest score word
         filtered_words = []
         filtered_scores = []
@@ -508,6 +468,119 @@ class Labeling:
             return filtered_words, filtered_scores
 
         return filtered_words[:5], filtered_scores[:5]
+    
+    def plot_tfidf_scores(self):
+        # Read the TFIDF Labels data files for Clusters and Combined
+        clusters_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Clusters_Top_10_TFIDF.csv'))
+        combined_tfidf_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'Combined_Top_10_TFIDF.csv'))
+
+        # Select the first 10 clusters for plotting
+        selected_clusters = clusters_tfidf_df['Cluster'].head(10)  # Only use the first 10 clusters
+        
+        # Create a color map for distinguishing clusters
+        colors = cm.get_cmap('tab10', len(selected_clusters))  # Use 'tab10' colormap, which has 10 distinct colors
+        
+        # Create a plot for Clusters_Top_10_TFIDF.csv
+        fig, ax = plt.subplots(figsize=(12, 8))
+        
+        for idx, cluster_id in enumerate(selected_clusters):
+            # Get the relevant rows for the current cluster from Clusters_Top_10_TFIDF.csv
+            cluster_data = clusters_tfidf_df[clusters_tfidf_df['Cluster'] == cluster_id]
+
+            # Process the 'Clusters Top 10 Words' and 'Clusters Scores'
+            cluster_words = cluster_data['Top 10 Words (TF-IDF)'].values[0].split(',')
+            cluster_scores = list(map(float, cluster_data['Scores'].values[0].split(',')))
+
+            # Plot for 'Clusters Top 10 Words'
+            ax.plot(range(1, len(cluster_scores) + 1), cluster_scores, label=f"Cluster {cluster_id} (Clusters)", marker='o', color=colors(idx))
+
+        # Set labels and title for the Clusters plot
+        ax.set_xlabel('Words')
+        ax.set_ylabel('Scores')
+        ax.set_title('TF-IDF Scores for Top 10 Words by Cluster (Clusters_Top_10_TFIDF)')
+        ax.legend(title="Cluster", bbox_to_anchor=(1.05, 1), loc='upper left')
+
+        # Adjust layout to prevent overlap
+        plt.tight_layout()
+
+        # Save the plot as PNG for Clusters
+        output_file_clusters = os.path.join(self.TFIDF_folder, 'TFIDF_Scores_for_Clusters_Top_10_Words.png')
+        plt.savefig(output_file_clusters)
+        plt.close()
+        print(f"TF-IDF scores plot for Clusters saved to {output_file_clusters}")
+
+        # Create a plot for Combined_Top_10_TFIDF.csv
+        fig, ax = plt.subplots(figsize=(12, 8))
+
+        for idx, cluster_id in enumerate(selected_clusters):
+            # Get the relevant rows for the current cluster from Combined_Top_10_TFIDF.csv
+            combined_data = combined_tfidf_df[combined_tfidf_df['Cluster'] == cluster_id]
+
+            # Process the 'Combined Top 10 Words' and 'Combined Scores'
+            if pd.notna(combined_data['Top 10 Words (TF-IDF)'].values[0]):
+                combined_words = combined_data['Top 10 Words (TF-IDF)'].values[0].split(',')
+                combined_scores = list(map(float, combined_data['Scores'].values[0].split(',')))
+
+                # Plot for 'Combined Top 10 Words'
+                ax.plot(range(1, len(combined_scores) + 1), combined_scores, label=f"Cluster {cluster_id} (Combined)", marker='o', color=colors(idx))
+
+        # Set labels and title for the Combined plot
+        ax.set_xlabel('Words')
+        ax.set_ylabel('Scores')
+        ax.set_title('TF-IDF Scores for Top 10 Words by Cluster (Combined_Top_10_TFIDF)')
+        ax.legend(title="Cluster", bbox_to_anchor=(1.05, 1), loc='upper left')
+
+        # Adjust layout to prevent overlap
+        plt.tight_layout()
+
+        # Save the plot as PNG for Combined
+        output_file_combined = os.path.join(self.TFIDF_folder, 'TFIDF_Scores_for_Combined_Top_10_Words.png')
+        plt.savefig(output_file_combined)
+        plt.close()
+        print(f"TF-IDF scores plot for Combined saved to {output_file_combined}")
+        
+    def plot_label_distribution_tfidf(self):
+        # Read the TFIDF Labels data file
+        tfidf_labels_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'TFIDF_Labels.csv'))
+
+        # Count the number of words in 'Clusters Top 5 Words (TF-IDF)' and 'Combined Top 5 Words (TF-IDF)'
+        tfidf_labels_df['Clusters Top 5 Words Count'] = tfidf_labels_df['Clusters Top 5 Words (TF-IDF)'].apply(self.safe_split)
+        tfidf_labels_df['Combined Top 5 Words Count'] = tfidf_labels_df['Combined Top 5 Words (TF-IDF)'].apply(self.safe_split)
+
+        # Create a stacked bar chart
+        plt.figure(figsize=(10, 6))
+        bars1 = plt.bar(tfidf_labels_df['Cluster'], tfidf_labels_df['Clusters Top 5 Words Count'], label='Clusters Top 5 Words', color='skyblue')
+        bars2 = plt.bar(tfidf_labels_df['Cluster'], tfidf_labels_df['Combined Top 5 Words Count'], label='Combined Top 5 Words', color='lightcoral', bottom=tfidf_labels_df['Clusters Top 5 Words Count'])
+
+        # Add the actual values on top of the bars
+        for bar in bars1:
+            yval = bar.get_height()
+            plt.text(bar.get_x() + bar.get_width()/2, yval + 0.05, str(int(yval)), ha='center', va='bottom', fontsize=10)
+
+        for bar in bars2:
+            yval = bar.get_height() + bar.get_y()
+            if bar.get_height() > 0:  # Only add the label if the height is greater than 0
+                plt.text(bar.get_x() + bar.get_width()/2, yval + 0.05, str(int(bar.get_height())), ha='center', va='bottom', fontsize=10)
+
+        plt.gca().yaxis.set_major_locator(MaxNLocator(integer=True, prune='lower'))
+        plt.xticks(tfidf_labels_df['Cluster'], tfidf_labels_df['Cluster'], rotation=90)
+        plt.xlabel('Cluster')
+        plt.ylabel('Number of Labels')
+        plt.title('Label Distribution by Clusters')
+        plt.legend()
+        
+        # Save the stacked bar chart as an image
+        output_file = os.path.join(self.TFIDF_folder, 'Label_Distribution_Stacked_TFIDF.png')
+        plt.tight_layout()
+        plt.savefig(output_file)
+        plt.close()
+        print(f"Label distribution stacked bar chart saved to {output_file}")
+
+    def safe_split(self, x):
+        #Safe split function to handle empty or invalid values
+        if isinstance(x, str) and x.strip():
+            return len(x.split(','))
+        return 0
 
     def apply_lda(self):
         # Read preprocessed clusters and suitable models data files
@@ -683,63 +756,47 @@ class Labeling:
         print(f"Perplexity values saved to {output_file}")
 
     def generate_stacked_bar_chart_lda(self):
-        # Read the CSV files containing the topics for each cluster
         clusters_df = pd.read_csv(os.path.join(self.LDA_folder, 'Clusters_Top_LDA.csv'))
         combined_df = pd.read_csv(os.path.join(self.LDA_folder, 'Combined_Top_LDA.csv'))
 
         # Merge the two dataframes on the 'Cluster' column
-        # Ensure every cluster from clusters_df is included, even if it's missing in combined_df
         merged_df = pd.merge(clusters_df[['Cluster', 'Top Topics (LDA)']], 
                             combined_df[['Cluster', 'Top Topics (LDA)']], 
                             on='Cluster', suffixes=('_Clusters', '_Combined'), how='left')
 
         # Count the number of topics for each cluster in both 'Clusters' and 'Combined'
-        merged_df['Topics_Clusters'] = merged_df['Top Topics (LDA)_Clusters'].apply(lambda x: len(x.split(',')))
-        
+        merged_df['Topics_Clusters'] = merged_df['Top Topics (LDA)_Clusters'].apply(lambda x: len(x.split(',')))       
         # If a cluster doesn't have topics in Combined_Top_LDA, set Topics_Combined to 0
         merged_df['Topics_Combined'] = merged_df['Top Topics (LDA)_Combined'].apply(lambda x: len(x.split(',')) if pd.notnull(x) else 0)
 
         # Create a stacked bar chart
         fig, ax = plt.subplots(figsize=(12, 8))
-        bar_width = 0.35  # Set the width of the bars
-
-        # Position of the bars
+        bar_width = 0.35 
         x_pos = merged_df['Cluster'] 
-
-        # Create the bars for 'Topics_Clusters' and 'Topics_Combined'
         ax.bar(x_pos - bar_width/2, merged_df['Topics_Clusters'], label='Clusters Top Topics', color='skyblue', width=bar_width)
         ax.bar(x_pos + bar_width/2, merged_df['Topics_Combined'], label='Combined Top Topics', color='lightcoral', width=bar_width)
-
-        # Annotate each bar with the number of topics
         for i in range(len(merged_df)):
             ax.text(x_pos[i] - bar_width/2, merged_df['Topics_Clusters'][i] + 0.1, 
                     str(merged_df['Topics_Clusters'][i]), ha='center', va='bottom', fontsize=10)
             ax.text(x_pos[i] + bar_width/2, merged_df['Topics_Combined'][i] + 0.1, 
                     str(merged_df['Topics_Combined'][i]), ha='center', va='bottom', fontsize=10)
-
-        # Add labels and title
         ax.set_xlabel('Cluster')
         ax.set_ylabel('Number of Topics')
         ax.set_title('Topics Distribution by Cluster')
-        
-        # Set the X-axis ticks to range from 1 to 44 (since we have 44 clusters)
-        ax.set_xticks(range(1, 45))  # Cluster numbers from 1 to 44
+        ax.set_xticks(range(1, 45))
         ax.set_xticklabels(range(1, 45))
-
         ax.legend()
 
-        # Save the plot as a PNG file in the same folder as other outputs
         output_file = os.path.join(self.LDA_folder, "Topics_Distribution_by_Cluster.png")
         plt.tight_layout()
-        plt.savefig(output_file)  # Save the plot
+        plt.savefig(output_file)
         print(f"Stacked bar chart saved to {output_file}")
 
     def plot_perplexity(self, file_name):
-        # Read perplexity data for each cluster
         clusters_perplexity_df = pd.read_csv(os.path.join(self.LDA_folder, file_name + '.csv'))
 
         # Limit to the first 10 clusters for a clearer example
-        selected_clusters = clusters_perplexity_df['Cluster'].head(10)  # Seleziona solo i primi 10 cluster
+        selected_clusters = clusters_perplexity_df['Cluster'].head(10)
         fig, ax = plt.subplots(figsize=(12, 8))
 
         for cluster_id in selected_clusters:
@@ -749,18 +806,10 @@ class Labeling:
         ax.set_xlabel("Number of Topics")
         ax.set_ylabel("Perplexity")
         ax.set_title("Perplexity vs Number of Topics")
-        ax.legend(title="Cluster", loc='upper left', bbox_to_anchor=(1, 1))  # Posizionamento della legenda
-
-        # Adjust the layout and show the plot
+        ax.legend(title="Cluster", loc='upper left', bbox_to_anchor=(1, 1))
         plt.tight_layout()
-
-        # Save the plot as PNG
         plt.savefig(os.path.join(self.LDA_folder, file_name + "_10_Clusters.png"))
 
-
-
-#Quando salvi i risultati, potresti includere anche l'indice di rilevanza dei topic per cluster, 
-# oltre a solo i top 10 termini, per una comprensione più profonda dei risultati di LDA
 
 # Se desideri esplorare il comportamento dei topic, 
 # potresti implementare una visualizzazione con strumenti come pyLDAvis per una comprensione visiva dei topic.
