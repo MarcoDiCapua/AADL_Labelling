@@ -773,8 +773,8 @@ class Labeling:
         fig, ax = plt.subplots(figsize=(12, 8))
         bar_width = 0.35 
         x_pos = merged_df['Cluster'] 
-        ax.bar(x_pos - bar_width/2, merged_df['Topics_Clusters'], label='Clusters Top Topics', color='skyblue', width=bar_width)
-        ax.bar(x_pos + bar_width/2, merged_df['Topics_Combined'], label='Combined Top Topics', color='lightcoral', width=bar_width)
+        ax.bar(x_pos - bar_width/2, merged_df['Topics_Clusters'], label='Clusters Topics', color='skyblue', width=bar_width)
+        ax.bar(x_pos + bar_width/2, merged_df['Topics_Combined'], label='Combined Topics', color='lightcoral', width=bar_width)
         for i in range(len(merged_df)):
             ax.text(x_pos[i] - bar_width/2, merged_df['Topics_Clusters'][i] + 0.1, 
                     str(merged_df['Topics_Clusters'][i]), ha='center', va='bottom', fontsize=10)
@@ -793,22 +793,34 @@ class Labeling:
         print(f"Stacked bar chart saved to {output_file}")
 
     def plot_perplexity(self, file_name):
+        # Read the Perplexity data for the given file
         clusters_perplexity_df = pd.read_csv(os.path.join(self.LDA_folder, file_name + '.csv'))
 
         # Limit to the first 10 clusters for a clearer example
         selected_clusters = clusters_perplexity_df['Cluster'].head(10)
         fig, ax = plt.subplots(figsize=(12, 8))
 
+        # Plot data for each cluster
         for cluster_id in selected_clusters:
             cluster_data = clusters_perplexity_df[clusters_perplexity_df['Cluster'] == cluster_id]
-            ax.plot(cluster_data.columns[1:], cluster_data.iloc[0, 1:], label=f"Cluster {cluster_id}")
+            ax.plot(cluster_data.columns[1:], cluster_data.iloc[0, 1:], label=f"Cluster {cluster_id}", marker='o')  # Add markers
 
+        # Add labels and title
         ax.set_xlabel("Number of Topics")
         ax.set_ylabel("Perplexity")
-        ax.set_title("Perplexity vs Number of Topics")
+        ax.set_title(f"Perplexity vs Number of Topics ({file_name})")  # Add the file name in the title
+
+        # Set up legend
         ax.legend(title="Cluster", loc='upper left', bbox_to_anchor=(1, 1))
+
+        # Adjust layout
         plt.tight_layout()
-        plt.savefig(os.path.join(self.LDA_folder, file_name + "_10_Clusters.png"))
+
+        # Save the plot as a PNG file
+        output_file = os.path.join(self.LDA_folder, file_name + "_10_Clusters.png")
+        plt.savefig(output_file)
+        print(f"Perplexity plot saved to {output_file}")
+
 
 
 # Se desideri esplorare il comportamento dei topic, 
