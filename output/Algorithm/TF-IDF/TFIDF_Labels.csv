@@ -1,4 +1,4 @@
-Cluster,Clusters Top 5 Words (TF-IDF),Clusters Scores,Combined Top 5 Words (TF-IDF),Combined Scores
+Cluster,Clusters Top Words (TF-IDF),Clusters Scores,Combined Top Words (TF-IDF),Combined Scores
 1,"isolette, ksu, sensor, single, thermostat","7.2389526767852, 3.330801203797787, 3.330801203797787, 3.330801203797787, 3.305987848576893","temp, heat","1.0973064507769719, 1.0961808346105495"
 2,"isolette, qa, agree, aviationrequirementmodeling, temperature","6.760619291980423, 4.288698194554421, 2.615244869010989, 2.615244869010989, 2.615244869010989","pin, sys, dataport, pout, tin","2.2652818750442565, 1.7456303136765996, 1.6008222358742965, 1.3074516590094056, 1.172133274294442"
 3,"gca, singleton, aps, aviationrequirementmodeling, tank","2.8675688936651564, 2.1366463403674056, 2.0549895484831904, 2.0076792252274296, 1.9455538709004554",temp,1.3914021704740869

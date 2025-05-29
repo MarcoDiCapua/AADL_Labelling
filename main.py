@@ -2,6 +2,7 @@ from AADL_manager import AADLManager, AADLAnalysis
 from collections import Counter
 from utility import get_current_timestamp
 from labelling import TextPreprocessing, Labeling
+from validation import Validation
 import sys
 
 # Redirect standard output to a log file
@@ -41,7 +42,7 @@ def main():
                                       mode_instance_counter, flow_specification_counter)
         
         # Generate plots
-        print("Generating plots...")
+        # print("Generating plots...")
         # aadl_analysis.plot_total_models()
         # aadl_analysis.plot_total_vs_suitable_models_pie()
         # aadl_analysis.plot_cluster_distribution_stacked()
@@ -53,16 +54,24 @@ def main():
         
         # Preprocess the data
         print("Preprocessing data...")
-        text_preprocessor = TextPreprocessing(config_path="config.json")
-        text_preprocessor.preprocess()
+        # text_preprocessor = TextPreprocessing(config_path="config.json")
+        # text_preprocessor.preprocess()
         print("Data preprocessing completed.")
         
         # Apply TF-IDF and generate labels for clusters using the Labeling class
-        print("Generating labels using TF-IDF...")
-        labeling = Labeling(config_path="config.json")
-        #labeling.apply_tfidf()
-        labeling.apply_lda()
-        print("Labels generation completed.")
+        # print("Generating labels using TF-IDF...")
+        # labeling = Labeling(config_path="config.json")
+        # labeling.apply_tfidf()
+        # print("Generating labels using LDA...")
+        # labeling.apply_lda()
+        # print("Labels generation completed.")
+
+        # Validation process
+        print("Running validation...")
+        validation = Validation(config_path="config.json")
+        validation.validate_TFIDF_labels()
+        validation.validate_LDA_labels()
+
         
         print("Finished elaboration time: ", get_current_timestamp())
 

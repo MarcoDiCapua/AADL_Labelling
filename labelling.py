@@ -15,6 +15,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import LatentDirichletAllocation as LDA
 from sklearn.feature_extraction.text import CountVectorizer
 
+
 nltk.download('punkt', download_dir='./nltk_data')
 nltk.download('stopwords', download_dir='./nltk_data')
 nltk.download('wordnet', download_dir='./nltk_data')
@@ -23,6 +24,7 @@ class TextPreprocessing:
     def __init__(self, config_path="config.json"):
         self.config = load_config(config_path)
         self.clusters_file = self.config.get("clusters", "")
+        self.ground_truth = self.config.get("ground_truth", "")
         self.suitable_models_cluster = os.path.join(self.config.get("output_folder", ""), "AADL/suitable_models_cluster.csv")
         self.suitable_models_data_file = os.path.join(self.config.get("output_folder", ""), "AADL/suitable_models_data.csv")
         self.stop_words = set(stopwords.words('english'))
@@ -277,6 +279,7 @@ class Labeling:
         self.preprocessing = os.path.join(self.config.get("output_folder", ""), "Preprocessing")
         self.num_clusters = 44  # Total number of clusters
 
+
         # Define the Algorithm, TF-IDF, LDA and Chi-Square folder path
         self.algorithm_folder = os.path.join(self.config.get("output_folder", ""), "Algorithm")
         create_directory(self.algorithm_folder)
@@ -284,8 +287,6 @@ class Labeling:
         create_directory(self.TFIDF_folder)
         self.LDA_folder = os.path.join(self.algorithm_folder, "LDA")
         create_directory(self.LDA_folder)
-        self.ChiSquare_folder = os.path.join(self.algorithm_folder, "ChiSquare")
-        create_directory(self.ChiSquare_folder)
 
     def apply_tfidf(self):
         # Read preprocessed clusters and suitable models data files
@@ -443,7 +444,7 @@ class Labeling:
             ])
 
         # Create DataFrame and save to CSV
-        tfidf_labels_df = pd.DataFrame(tfidf_labels_data, columns=['Cluster', 'Clusters Top 5 Words (TF-IDF)', 'Clusters Scores', 'Combined Top 5 Words (TF-IDF)', 'Combined Scores'])
+        tfidf_labels_df = pd.DataFrame(tfidf_labels_data, columns=['Cluster', 'Clusters Top Words (TF-IDF)', 'Clusters Scores', 'Combined Top Words (TF-IDF)', 'Combined Scores'])
         output_file = os.path.join(self.TFIDF_folder, 'TFIDF_Labels.csv')
         tfidf_labels_df.to_csv(output_file, index=False)
 
@@ -544,13 +545,13 @@ class Labeling:
         tfidf_labels_df = pd.read_csv(os.path.join(self.TFIDF_folder, 'TFIDF_Labels.csv'))
 
         # Count the number of words in 'Clusters Top 5 Words (TF-IDF)' and 'Combined Top 5 Words (TF-IDF)'
-        tfidf_labels_df['Clusters Top 5 Words Count'] = tfidf_labels_df['Clusters Top 5 Words (TF-IDF)'].apply(self.safe_split)
-        tfidf_labels_df['Combined Top 5 Words Count'] = tfidf_labels_df['Combined Top 5 Words (TF-IDF)'].apply(self.safe_split)
+        tfidf_labels_df['Clusters Top Words Count'] = tfidf_labels_df['Clusters Top Words (TF-IDF)'].apply(self.safe_split)
+        tfidf_labels_df['Combined Top Words Count'] = tfidf_labels_df['Combined Top Words (TF-IDF)'].apply(self.safe_split)
 
         # Create a stacked bar chart
         plt.figure(figsize=(10, 6))
-        bars1 = plt.bar(tfidf_labels_df['Cluster'], tfidf_labels_df['Clusters Top 5 Words Count'], label='Clusters Top 5 Words', color='skyblue')
-        bars2 = plt.bar(tfidf_labels_df['Cluster'], tfidf_labels_df['Combined Top 5 Words Count'], label='Combined Top 5 Words', color='lightcoral', bottom=tfidf_labels_df['Clusters Top 5 Words Count'])
+        bars1 = plt.bar(tfidf_labels_df['Cluster'], tfidf_labels_df['Clusters Top Words Count'], label='Clusters Top Words', color='skyblue')
+        bars2 = plt.bar(tfidf_labels_df['Cluster'], tfidf_labels_df['Combined Top Words Count'], label='Combined Top Words', color='lightcoral', bottom=tfidf_labels_df['Clusters Top Words Count'])
 
         # Add the actual values on top of the bars
         for bar in bars1:
@@ -609,7 +610,12 @@ class Labeling:
         self.save_top_lda(lda_suitable_models, "Combined_Top_LDA.csv")
         self.export_perplexity_values("Combined_Perplexity.csv")
         
+        # Generate the LDA_Labels.csv with combined results from Clusters_Top_LDA and Combined_Top_LDA
+        print("Generating LDA_Labels.csv...")
+        self.generate_lda_labels()
+
         # Generate the plots and reports
+        print("Generating LDA reports and plots...")
         self.generate_stacked_bar_chart_lda()
         self.plot_perplexity("Clusters_Perplexity")
         self.plot_perplexity("Combined_Perplexity")
@@ -755,6 +761,23 @@ class Labeling:
         perplexity_df.to_csv(output_file, index=False)
         print(f"Perplexity values saved to {output_file}")
 
+    def generate_lda_labels(self):
+        clusters_df = pd.read_csv(os.path.join(self.LDA_folder, 'Clusters_Top_LDA.csv'))
+        combined_df = pd.read_csv(os.path.join(self.LDA_folder, 'Combined_Top_LDA.csv'))
+
+        # Merge the two dataframes on the 'Cluster' column
+        merged_df = pd.merge(clusters_df[['Cluster', 'Top Topics (LDA)']], 
+                             combined_df[['Cluster', 'Top Topics (LDA)']], 
+                             on='Cluster', 
+                             suffixes=('_Clusters', '_Combined'), 
+                             how='left')
+
+        # Save the merged dataframe to LDA_Labels.csv
+        lda_labels_file = os.path.join(self.LDA_folder, 'LDA_Labels.csv')
+        merged_df.to_csv(lda_labels_file, index=False)
+
+        print(f"LDA_Labels.csv has been saved to {lda_labels_file}")
+
     def generate_stacked_bar_chart_lda(self):
         clusters_df = pd.read_csv(os.path.join(self.LDA_folder, 'Clusters_Top_LDA.csv'))
         combined_df = pd.read_csv(os.path.join(self.LDA_folder, 'Combined_Top_LDA.csv'))
@@ -820,8 +843,3 @@ class Labeling:
         output_file = os.path.join(self.LDA_folder, file_name + "_10_Clusters.png")
         plt.savefig(output_file)
         print(f"Perplexity plot saved to {output_file}")
-
-
-
-# Se desideri esplorare il comportamento dei topic, 
-# potresti implementare una visualizzazione con strumenti come pyLDAvis per una comprensione visiva dei topic.
