@@ -59,8 +59,12 @@ class Validation:
                 lambda row: row["Combined_Top_Words"] if row["Combined_Top_Words"] != '' else row["Clusters Top Words (TF-IDF)"], axis=1
             )
             print("TF-IDF labels merged successfully.")
-            
+            # Print the resulting dataframe to check its contents
+            # print("Merged TF-IDF labels:")
+            # print(self.tfidf_df["Combined_Top_Words"].head())  # Show the first few rows of the dataframe to inspect the merged result
+
         self.validate_labels(self.tfidf_df, "TFIDF")
+
 
     def validate_LDA_labels(self):
         # Load the LDA labels
@@ -101,20 +105,41 @@ class Validation:
                 gt_labels = self.ground_truth_df.loc[self.ground_truth_df['Cluster'] == cluster_id, 'Label'].values[0]
                 predicted_labels = labels_df.loc[labels_df['Cluster'] == cluster_id, 'Combined_Top_Words'].values[0]
 
+                if method == "TFIDF":
+                    # Join words by space instead of comma
+                    predicted_labels = ' '.join(predicted_labels.split(', ')).strip()  # Join words with spaces
+                
                 # Debugging: Check if labels are NaN or empty
                 if pd.isna(gt_labels) or gt_labels == '':
                     print(f"Warning: Ground truth labels for Cluster {cluster_id} are NaN or empty.")
                 if pd.isna(predicted_labels) or predicted_labels == '':
                     print(f"Warning: Predicted labels for Cluster {cluster_id} are NaN or empty.")
                 
+                # Print the labels before vectorization
+                print(f"\nGround truth labels for Cluster {cluster_id}: {gt_labels}")
+                print(f"Predicted labels for Cluster {cluster_id}: {predicted_labels}")
+                
+                # Convert the ground truth and predicted labels to vectors using Word2Vec and WordNet
+                gt_vector = self.text_to_vector(gt_labels)  # Convert to Word2Vec and WordNet vector
+                pred_vector = self.text_to_vector(predicted_labels)  # Convert to Word2Vec and WordNet vector
+
+                # Print the resulting vectors
+                # print(f"Vector for ground truth labels (Cluster {cluster_id}): {gt_vector}")
+                # print(f"Vector for predicted labels (Cluster {cluster_id}): {pred_vector}")
+                
                 # Calculate cosine similarity between the ground truth and predicted labels
-                cosine_sim = self.calculate_cosine_similarity(gt_labels, predicted_labels, vectorizer)
+                cosine_sim = self.calculate_cosine_similarity(gt_vector, pred_vector)  # Pass the vectors directly
+                cosine_sim = round(cosine_sim, 3)
                 print(f"Cosine Similarity for Cluster {cluster_id}: {cosine_sim}")
 
                 # Implement precision, recall, F1
                 precision = self.calculate_precision(gt_labels, predicted_labels)
                 recall = self.calculate_recall(gt_labels, predicted_labels)
                 f1 = self.calculate_f1(precision, recall)
+
+                precision = round(precision, 3)
+                recall = round(recall, 3)
+                f1 = round(f1, 3)
 
                 # Collect the results for each cluster
                 results.append([cluster_id, cosine_sim, precision, recall, f1])
@@ -131,19 +156,26 @@ class Validation:
         results_df.to_csv(output_file, index=False)
         print(f"Validation results saved to {output_file}")
 
-    def calculate_cosine_similarity(self, gt_labels, predicted_labels, vectorizer):
-        # Convert labels into word vectors using the common vocabulary
-        gt_vector = vectorizer.transform([gt_labels]).toarray()
-        pred_vector = vectorizer.transform([predicted_labels]).toarray()
-        
-        # Compute the cosine similarity
-        return cosine_similarity(gt_vector, pred_vector)[0][0]
-
     def text_to_vector(self, text):
         # Convert text into a vector by counting word occurrences, using Word2Vec and WordNet for normalization
         words = text.split(" ")
+        
+        # Normalize words using WordNet (lemmatization) and Word2Vec (embedding)
         normalized_words = [self.normalize_word(word) for word in words]
-        return np.array([normalized_words.count(word) for word in set(normalized_words)])
+        
+        # Use Word2Vec to get the vector for each word and average them
+        word_vectors = []
+        for word in normalized_words:
+            try:
+                word_vectors.append(self.word2vec_model[word])  # Word2Vec embedding
+            except KeyError:
+                word_vectors.append(np.zeros(self.word2vec_model.vector_size))  # If the word is not in Word2Vec, use a zero vector
+
+        # Average the word vectors to create a single vector representation of the text
+        if len(word_vectors) > 0:
+            return np.mean(word_vectors, axis=0)
+        else:
+            return np.zeros(self.word2vec_model.vector_size)  # Return zero vector if no words found in Word2Vec
 
     def normalize_word(self, word):
         # Normalize the word using WordNet (synonym mapping) and Word2Vec (word vector matching)
@@ -154,9 +186,13 @@ class Validation:
         # Try to get the WordNet lemma for a word
         synsets = wn.synsets(word)
         if synsets:
-            lemma = synsets[0].lemmas()[0].name()
+            lemma = synsets[0].lemmas()[0].name()  # Get the first lemma
             return lemma
-        return None
+        return word  # If no lemma is found, return the original word
+
+    def calculate_cosine_similarity(self, gt_vector, pred_vector):
+        # Compute the cosine similarity
+        return cosine_similarity([gt_vector], [pred_vector])[0][0] 
 
     def calculate_precision(self, gt_labels, predicted_labels):
         # Convert labels to sets
