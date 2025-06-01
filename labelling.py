@@ -548,34 +548,42 @@ class Labeling:
         tfidf_labels_df['Clusters Top Words Count'] = tfidf_labels_df['Clusters Top Words (TF-IDF)'].apply(self.safe_split)
         tfidf_labels_df['Combined Top Words Count'] = tfidf_labels_df['Combined Top Words (TF-IDF)'].apply(self.safe_split)
 
-        # Create a stacked bar chart
-        plt.figure(figsize=(10, 6))
-        bars1 = plt.bar(tfidf_labels_df['Cluster'], tfidf_labels_df['Clusters Top Words Count'], label='Clusters Top Words', color='skyblue')
-        bars2 = plt.bar(tfidf_labels_df['Cluster'], tfidf_labels_df['Combined Top Words Count'], label='Combined Top Words', color='lightcoral', bottom=tfidf_labels_df['Clusters Top Words Count'])
+        # Create a side-by-side bar chart
+        plt.figure(figsize=(12, 6))
+
+        # Set the bar width and the X-axis positions for each group of bars
+        bar_width = 0.35
+        index = np.arange(len(tfidf_labels_df['Cluster']))
+
+        # Plot the 'Clusters Top Words' and 'Combined Top Words' as separate bars
+        plt.bar(index, tfidf_labels_df['Clusters Top Words Count'], bar_width, label='Clusters Top Words', color='skyblue')
+        plt.bar(index + bar_width, tfidf_labels_df['Combined Top Words Count'], bar_width, label='Combined Top Words', color='lightcoral')
 
         # Add the actual values on top of the bars
-        for bar in bars1:
-            yval = bar.get_height()
-            plt.text(bar.get_x() + bar.get_width()/2, yval + 0.05, str(int(yval)), ha='center', va='bottom', fontsize=10)
+        for i, v in enumerate(tfidf_labels_df['Clusters Top Words Count']):
+            plt.text(i, v + 0.05, str(v), ha='center', va='bottom', fontsize=10)
 
-        for bar in bars2:
-            yval = bar.get_height() + bar.get_y()
-            if bar.get_height() > 0:  # Only add the label if the height is greater than 0
-                plt.text(bar.get_x() + bar.get_width()/2, yval + 0.05, str(int(bar.get_height())), ha='center', va='bottom', fontsize=10)
+        for i, v in enumerate(tfidf_labels_df['Combined Top Words Count']):
+            plt.text(i + bar_width, v + 0.05, str(v), ha='center', va='bottom', fontsize=10)
 
-        plt.gca().yaxis.set_major_locator(MaxNLocator(integer=True, prune='lower'))
-        plt.xticks(tfidf_labels_df['Cluster'], tfidf_labels_df['Cluster'], rotation=90)
-        plt.xlabel('Cluster')
-        plt.ylabel('Number of Labels')
-        plt.title('Label Distribution by Clusters')
+        # Set the labels and title
+        plt.xlabel('Cluster', fontsize=12)
+        plt.ylabel('Number of Labels', fontsize=12)
+        plt.title('Label Distribution by Clusters (TF-IDF)', fontsize=14)
+
+        # Set the x-axis ticks to show the cluster numbers (1 to 44)
+        plt.xticks(index + bar_width / 2, tfidf_labels_df['Cluster'], rotation=90)
+
+        # Add a legend
         plt.legend()
-        
-        # Save the stacked bar chart as an image
-        output_file = os.path.join(self.TFIDF_folder, 'Label_Distribution_Stacked_TFIDF.png')
+
+        # Save the plot as an image
+        output_file = os.path.join(self.TFIDF_folder, 'Label_Distribution_TFIDF_Bars_Affiliated.png')
         plt.tight_layout()
         plt.savefig(output_file)
         plt.close()
-        print(f"Label distribution stacked bar chart saved to {output_file}")
+
+        print(f"Label distribution bar chart saved to {output_file}")
 
     def safe_split(self, x):
         #Safe split function to handle empty or invalid values
