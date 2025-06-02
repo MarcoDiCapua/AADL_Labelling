@@ -3,14 +3,13 @@ import pandas as pd
 import re
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
-from matplotlib.ticker import MaxNLocator
 from collections import Counter
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import nltk
 import numpy as np
-from utility import load_config, create_directory, file_exists, delete_file, list_files_in_directory, copy_file
+from utility import load_config, create_directory
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import LatentDirichletAllocation as LDA
 from sklearn.feature_extraction.text import CountVectorizer

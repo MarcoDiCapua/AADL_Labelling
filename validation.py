@@ -1,9 +1,7 @@
 import os
-import shutil
 import pandas as pd
 from utility import load_config, create_directory, copy_file
 from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.metrics import precision_score, recall_score, f1_score
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer  # Importing CountVectorizer
 import nltk
@@ -39,7 +37,7 @@ class Validation:
         # Load the ground truth labels
         self.ground_truth_df = pd.read_excel(self.ground_truth_file) if os.path.exists(self.ground_truth_file) else None
 
-        # Load the pre-trained Word2Vec model (Google News embeddings)
+        # Load the pre-trained Word2Vec model (Google News embeddings) dowbnloadable from https://code.google.com/archive/p/word2vec/
         self.word2vec_model = KeyedVectors.load_word2vec_format('C:/Users/mdica/Desktop/TESI/GoogleNews-vectors-negative300.bin', binary=True)
 
     def validate_TFIDF_labels(self):
@@ -66,7 +64,7 @@ class Validation:
             # print(self.tfidf_df["Combined_Top_Words"].head())  # Show the first few rows of the dataframe to inspect the merged result
 
         self.validate_labels(self.tfidf_df, "TFIDF")
-        # Generate plots for TF-IDF
+
         print("Generating plots for TF-IDF...")
         self.plot_cosine_similarity('TF-IDF')
         self.plot_precision_recall_f1_boxplot('TF-IDF')
@@ -117,8 +115,8 @@ class Validation:
                 predicted_labels = labels_df.loc[labels_df['Cluster'] == cluster_id, 'Combined_Top_Words'].values[0]
 
                 if method == "TFIDF":
-                    # Join words by space instead of comma
-                    predicted_labels = ' '.join(predicted_labels.split(', ')).strip()  # Join words with spaces
+                    # Join words with spaces for TF-IDF
+                    predicted_labels = ' '.join(predicted_labels.split(', ')).strip()
                 
                 # Debugging: Check if labels are NaN or empty
                 if pd.isna(gt_labels) or gt_labels == '':
@@ -227,12 +225,10 @@ class Validation:
             return 0
         return 2 * (precision * recall) / (precision + recall)
 
-    # Plot Cosine Similarity as Bar plot
     def plot_cosine_similarity(self, method):
         file_path = os.path.join(self.validation_folder, f"{method}_Validation_Results.csv")
         df = pd.read_csv(file_path)
 
-    # Plot the cosine similarity
         plt.figure(figsize=(10, 6))
         sns.barplot(x="Cluster", y="Cosine Similarity", data=df, color='skyblue')
         
@@ -244,17 +240,12 @@ class Validation:
         plt.xlabel('Cluster', fontsize=12)
         plt.ylabel('Cosine Similarity', fontsize=12)
         plt.title(f'Cosine Similarity for Clusters ({method})', fontsize=14)
-        
-        # Adjust the x-axis to show cluster numbers (1 to 44)
         plt.xticks(ticks=range(44), labels=range(1, 45), rotation=90)
-        
-        # Display the plot
         plt.tight_layout()
         plt.savefig(os.path.join(self.validation_folder, f"{method}_Cosine_Similarity_Plot.png"))
         print(f"Cosine Similarity plot saved to {os.path.join(self.validation_folder, f'{method}_Cosine_Similarity_Plot.png')}")
         plt.close()
 
-    # Plot Precision, Recall, F1 as Boxplot
     def plot_precision_recall_f1_boxplot(self, method):
         file_path = os.path.join(self.validation_folder, f"{method}_Validation_Results.csv")
         df = pd.read_csv(file_path)
@@ -264,30 +255,23 @@ class Validation:
         plt.title(f"{method} - Boxplot of Precision, Recall, F1")
         plt.ylabel("Value")
         plt.tight_layout()
-        plt.savefig(os.path.join(self.validation_folder, f'{method}_Precision_Recall_F1_Boxplot.png'))  # Save to file
+        # Save the plot as PNG
+        plt.savefig(os.path.join(self.validation_folder, f'{method}_Precision_Recall_F1_Boxplot.png'))
         plt.close()
 
     def plot_precision_recall_bar(self, method):
-
-        # Load the results from the corresponding CSV file (TFIDF or LDA)
         file_path = os.path.join(self.validation_folder, f"{method}_Validation_Results.csv")
         df = pd.read_csv(file_path)
-
-        # Prepare the data for the side-by-side bar chart
         clusters = df["Cluster"]
         precision = df["Precision"]
         recall = df["Recall"]
 
         # Create a side-by-side bar chart
         fig, ax = plt.subplots(figsize=(10, 6))
-
-        # Set the bar width
         bar_width = 0.35
-
-        # Define the positions of the bars on the X-axis
         index = np.arange(len(clusters))
 
-        # Plot Precision and Recall bars side by side with specified colors
+        # Plot Precision and Recall bars side by side
         ax.bar(index, precision, bar_width, label='Precision', color='skyblue')
         ax.bar(index + bar_width, recall, bar_width, label='Recall', color='lightcoral')
 
@@ -295,15 +279,9 @@ class Validation:
         ax.set_xlabel('Cluster', fontsize=12)
         ax.set_ylabel('Value', fontsize=12)
         ax.set_title(f'{method} - Precision and Recall for each Cluster', fontsize=14)
-        
-        # Adjust the x-axis to show cluster numbers (1 to 44)
         ax.set_xticks(index + bar_width / 2)
         ax.set_xticklabels(clusters, rotation=90)
-
-        # Display a legend
         ax.legend()
-
-        # Adjust layout for better presentation
         plt.tight_layout()
         
         # Save the plot as PNG
