@@ -173,7 +173,6 @@ class TextPreprocessing:
             os.path.join(self.preprocessing_folder, 'stopwords_removed_clusters.csv'),
             os.path.join(self.preprocessing_folder, 'lemmatized_clusters.csv'),
             os.path.join(self.preprocessing_folder, 'preprocessed_clusters.csv'),
-            os.path.join(self.preprocessing_folder, 'preprocessed_suitable_models_data.csv')
         ]
         
         # Process each CSV file and create a Top 25 words report for model names
@@ -205,7 +204,8 @@ class TextPreprocessing:
             os.path.join(self.preprocessing_folder, 'tokenized_suitable_models_data.csv'),
             os.path.join(self.preprocessing_folder, 'non_alphanumeric_removed_suitable_models_data.csv'),
             os.path.join(self.preprocessing_folder, 'stopwords_removed_suitable_models_data.csv'),
-            os.path.join(self.preprocessing_folder, 'lemmatized_suitable_models_data.csv')
+            os.path.join(self.preprocessing_folder, 'lemmatized_suitable_models_data.csv'),
+            os.path.join(self.preprocessing_folder, 'preprocessed_suitable_models_data.csv')
         ]
     
         # Create subfolders for each column (Component, Feature, ConnectionInstance)
