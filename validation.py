@@ -186,6 +186,7 @@ class Validation:
         else:
             return np.zeros(self.word2vec_model.vector_size)  # Return zero vector if no words found in Word2Vec
 
+    ##VERIFICARE COME WORD2VEC UTILIZZA I SYNSET PER LA RAPPRESENTAZIONE VETTORIALE
     def normalize_word(self, word):
         # Normalize the word using WordNet (synonym mapping) and Word2Vec (word vector matching)
         lemma = self.get_wordnet_lemma(word)

@@ -1,5 +1,4 @@
 Column,Word,Count
-Component,",",6517
 Component,bus,189
 Component,cpu,172
 Component,data,172
@@ -24,7 +23,7 @@ Component,proc,64
 Component,manage,62
 Component,p,62
 Component,mem,60
-Feature,",",20591
+Component,c,58
 Feature,data,890
 Feature,in,654
 Feature,output,517
@@ -49,3 +48,4 @@ Feature,access,181
 Feature,altitude,178
 Feature,current,170
 Feature,position,169
+Feature,control,167

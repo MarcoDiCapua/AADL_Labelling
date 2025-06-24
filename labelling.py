@@ -115,7 +115,7 @@ class TextPreprocessing:
         if isinstance(model_name, str) and model_name.strip():
             model_name = model_name.replace('.aaxl2', '')       
             model_name = model_name.lower()
-            model_name = re.sub(r'[_-]', ' ', model_name)
+            model_name = re.sub(r'[,_-]', ' ', model_name)
             for word in self.words_to_remove:
                 model_name = re.sub(r'\b' + re.escape(word) + r'\b', '', model_name)
             tokens = word_tokenize(model_name)       
@@ -125,7 +125,7 @@ class TextPreprocessing:
     def preprocess_column(self, column_data):
         if isinstance(column_data, str) and column_data.strip():
             column_data = column_data.lower()
-            column_data = re.sub(r'[_-]', ' ', column_data)
+            column_data = re.sub(r'[,_-]', ' ', column_data)
             for word in self.words_to_remove:
                 column_data = re.sub(r'\b' + re.escape(word) + r'\b', '', column_data)
             tokens = word_tokenize(column_data)  
@@ -172,6 +172,8 @@ class TextPreprocessing:
             os.path.join(self.preprocessing_folder, 'non_alphanumeric_removed_clusters.csv'),
             os.path.join(self.preprocessing_folder, 'stopwords_removed_clusters.csv'),
             os.path.join(self.preprocessing_folder, 'lemmatized_clusters.csv'),
+            os.path.join(self.preprocessing_folder, 'preprocessed_clusters.csv'),
+            os.path.join(self.preprocessing_folder, 'preprocessed_suitable_models_data.csv')
         ]
         
         # Process each CSV file and create a Top 25 words report for model names
@@ -270,7 +272,7 @@ class TextPreprocessing:
                 print(f"Top 25 words report saved to {top25_report_file}")
 
 
-class Labeling:
+class Labelling:
     def __init__(self, config_path="config.json"):
         self.config = load_config(config_path)
         self.clusters_file = self.config.get("clusters", "")
