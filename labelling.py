@@ -365,7 +365,7 @@ class Labelling:
         data = []
         for cluster_id, top_words in top_tfidf.items():
             words = [word for word, _ in top_words]
-            scores = [score for _, score in top_words]
+            scores = [round(score, 3) for _, score in top_words]
             data.append([cluster_id, ", ".join(words), ", ".join(map(str, scores))])
         
         df = pd.DataFrame(data, columns=['Cluster', 'Top 10 Words (TF-IDF)', 'Scores'])
