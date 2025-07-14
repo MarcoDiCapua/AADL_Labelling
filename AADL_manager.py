@@ -302,9 +302,9 @@ class AADLAnalysis:
         total_suitable_models = len(self.suitable_files)
         
         plt.figure(figsize=(8, 6))
-        bars = plt.bar(['Total AADL Models', 'Suitable AADL Models'], [total_aadl_models, total_suitable_models], color='skyblue')
-        plt.title('Total vs Suitable AADL Models')
-        plt.ylabel('Count')
+        bars = plt.bar(['Totale modelli AADL', 'Modelli AADL idonei'], [total_aadl_models, total_suitable_models], color='skyblue')
+        plt.title('Totale vs Modelli AADL idonei')
+        plt.ylabel('Conteggio')
         for bar in bars:
             plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), str(int(bar.get_height())), 
                      ha='center', va='bottom', fontsize=12)
@@ -322,8 +322,8 @@ class AADLAnalysis:
 
         plt.figure(figsize=(8, 6))
         bars = plt.bar(counts.keys(), counts.values(), color='skyblue')
-        plt.title('Total Count of Components, Features, Connections, Modes and Flow Specifications')
-        plt.ylabel('Count')
+        plt.title('Connteggio totale di Components, Features, Connections, Modes e Flow Specifications')
+        plt.ylabel('Conteggio')
         for bar in bars:
             plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), str(int(bar.get_height())), 
                      ha='center', va='bottom', fontsize=12)
@@ -336,9 +336,9 @@ class AADLAnalysis:
 
         plt.figure(figsize=(10, 6))
         bars = sns.barplot(x=cluster_counts.index, y=cluster_counts.values, color='skyblue')
-        plt.title('Cluster Distribution of AADL Models')
+        plt.title('Distribuzione dei Modelli AADL nei Cluster')
         plt.xlabel('Cluster')
-        plt.ylabel('Number of Models')
+        plt.ylabel('Numero di Modelli')
         for bar in bars.patches:
             plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), str(int(bar.get_height())), 
                      ha='center', va='bottom', fontsize=12)
@@ -368,9 +368,9 @@ class AADLAnalysis:
             plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), str(int(bar.get_height())), 
                     ha='center', va='bottom', fontsize=12)
         plt.xticks(list(suitable_cluster_counts.index), rotation=90)
-        plt.title('Cluster Distribution of Suitable AADL Models')
+        plt.title('Distribuzione dei Modelli AADL Idonei per Cluster')
         plt.xlabel('Cluster')
-        plt.ylabel('Number of Suitable Models')
+        plt.ylabel('Numero di Modelli Idonei')
         plt.tight_layout()
         plt.savefig(os.path.join(self.output_folder, 'suitable_cluster_distribution.png'))
         plt.close()
@@ -411,13 +411,13 @@ class AADLAnalysis:
     def plot_total_vs_suitable_models_pie(self):
         total_aadl_models = len(self.aadl_files)
         total_suitable_models = len(self.suitable_files)
-        labels = ['Suitable\nModels', 'Not suitable\nMoldels']
+        labels = ['Modelli\nIdonei', 'Modelli\nNon Idonei']
         sizes = [total_suitable_models, total_aadl_models - total_suitable_models]
         colors = ['skyblue', 'lightcoral']
 
         plt.figure(figsize=(6, 6))
         plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=colors)
-        plt.title(f'Total vs Suitable AADL Models \nTotal Models: {total_aadl_models} \nSuitable Models: {total_suitable_models} ')
+        plt.title(f'Totale vs Modelli AADL Idonei \nModelli Totali: {total_aadl_models} \nModelli Idonei: {total_suitable_models} ')
         plt.axis('equal')
         plt.savefig(os.path.join(self.output_folder, 'total_vs_suitable_models_pie.png'))
         plt.close()
@@ -443,11 +443,11 @@ class AADLAnalysis:
         non_suitable_cluster_counts = total_cluster_counts - suitable_cluster_counts
 
         plt.figure(figsize=(10, 6))
-        plt.bar(total_cluster_counts.index, non_suitable_cluster_counts, label='Non-Suitable', color='lightcoral')
-        plt.bar(total_cluster_counts.index, suitable_cluster_counts, bottom=non_suitable_cluster_counts, label='Suitable', color='skyblue')
-        plt.title('Cluster Distribution of AADL Models (Stacked)')
+        plt.bar(total_cluster_counts.index, non_suitable_cluster_counts, label='Non idonei', color='lightcoral')
+        plt.bar(total_cluster_counts.index, suitable_cluster_counts, bottom=non_suitable_cluster_counts, label='Idonei', color='skyblue')
+        plt.title('Distribuzione dei Modelli AADL nei Cluster (Stacked)')
         plt.xlabel('Cluster')
-        plt.ylabel('Number of Models')
+        plt.ylabel('Numero di Modelli')
         plt.legend()
         plt.xticks(range(1, 45), rotation=90)
         plt.tight_layout()

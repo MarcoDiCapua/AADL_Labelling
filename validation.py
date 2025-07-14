@@ -96,6 +96,7 @@ class Validation:
         self.plot_cosine_similarity('LDA')
         self.plot_precision_recall_f1_boxplot('LDA')
         self.plot_precision_recall_bar('LDA')
+        self.plot_precision_recall_f1_boxplot_combined()
 
     def validate_labels(self, labels_df, method):
         # Initialize a list to collect results for each cluster
@@ -133,6 +134,7 @@ class Validation:
                 pred_vector = self.text_to_vector(predicted_labels)  # Convert to Word2Vec and WordNet vector
 
                 # Print the resulting vectors
+                # QUI BISOGNEREBBE VERIFICARE LE PAROLE CONTENUTE NEI VETTORI PER CAPIRE SE WORDNET E WORD2VEC FUNZIONANO COME PREVISTO
                 # print(f"Vector for ground truth labels (Cluster {cluster_id}): {gt_vector}")
                 # print(f"Vector for predicted labels (Cluster {cluster_id}): {pred_vector}")
                 
@@ -171,7 +173,7 @@ class Validation:
         
         # Normalize words using WordNet (lemmatization) and Word2Vec (embedding)
         normalized_words = [self.normalize_word(word) for word in words]
-        
+        print(f"Normalized words: {normalized_words}")  # Debugging: print normalized words
         # Use Word2Vec to get the vector for each word and average them
         word_vectors = []
         for word in normalized_words:
@@ -186,7 +188,6 @@ class Validation:
         else:
             return np.zeros(self.word2vec_model.vector_size)  # Return zero vector if no words found in Word2Vec
 
-    ##VERIFICARE COME WORD2VEC UTILIZZA I SYNSET PER LA RAPPRESENTAZIONE VETTORIALE
     def normalize_word(self, word):
         # Normalize the word using WordNet (synonym mapping) and Word2Vec (word vector matching)
         lemma = self.get_wordnet_lemma(word)
@@ -240,7 +241,7 @@ class Validation:
         # Setting labels and title
         plt.xlabel('Cluster', fontsize=12)
         plt.ylabel('Cosine Similarity', fontsize=12)
-        plt.title(f'Cosine Similarity for Clusters ({method})', fontsize=14)
+        plt.title(f'Cosine Similarity dei Clusters ({method})', fontsize=14)
         plt.xticks(ticks=range(44), labels=range(1, 45), rotation=90)
         plt.tight_layout()
         plt.savefig(os.path.join(self.validation_folder, f"{method}_Cosine_Similarity_Plot.png"))
@@ -253,12 +254,38 @@ class Validation:
 
         plt.figure(figsize=(10, 6))
         sns.boxplot(data=df[['Precision', 'Recall', 'F1']])
-        plt.title(f"{method} - Boxplot of Precision, Recall, F1")
-        plt.ylabel("Value")
+        plt.title(f"{method} - Boxplot di Precision, Recall, F1")
+        plt.ylabel("Valore")
         plt.tight_layout()
         # Save the plot as PNG
         plt.savefig(os.path.join(self.validation_folder, f'{method}_Precision_Recall_F1_Boxplot.png'))
         plt.close()
+
+    def plot_precision_recall_f1_boxplot_combined(self):
+        tfidf_file = os.path.join(self.validation_folder, "TF-IDF_Validation_Results.csv")
+        lda_file = os.path.join(self.validation_folder, "LDA_Validation_Results.csv")
+        tfidf_df = pd.read_csv(tfidf_file)
+        lda_df = pd.read_csv(lda_file)
+        
+        tfidf_df['Metriche'] = 'TF-IDF'
+        lda_df['Metriche'] = 'LDA'
+        combined_df = pd.concat([tfidf_df[['Precision', 'Recall', 'F1', 'Metriche']], lda_df[['Precision', 'Recall', 'F1', 'Metriche']]])
+        plt.figure(figsize=(12, 6))
+        sns.boxplot(x="Metriche", y="value", hue="variable", 
+                    data=pd.melt(combined_df, id_vars=["Metriche"], value_vars=["Precision", "Recall", "F1"]),
+                    palette="Set2")
+        plt.title("Punteggi di Precision, Recall, e F1 - TF-IDF vs LDA", fontsize=16)
+        plt.xlabel(" ", fontsize=12)
+        plt.ylabel("Punteggio", fontsize=12)
+        
+        # Aggiungi questa riga per cambiare il nome della legenda
+        plt.legend(title='Metriche', loc='upper right')
+        
+        plt.tight_layout()
+        plt.savefig(os.path.join(self.validation_folder, 'Precision_Recall_F1_Boxplot_Combined.png'))
+        print(f"Boxplot for Precision, Recall, and F1 (TF-IDF vs LDA) saved to {os.path.join(self.validation_folder, 'Precision_Recall_F1_Boxplot_Combined.png')}")
+        plt.close()
+
 
     def plot_precision_recall_bar(self, method):
         file_path = os.path.join(self.validation_folder, f"{method}_Validation_Results.csv")
@@ -278,8 +305,8 @@ class Validation:
 
         # Set labels and title
         ax.set_xlabel('Cluster', fontsize=12)
-        ax.set_ylabel('Value', fontsize=12)
-        ax.set_title(f'{method} - Precision and Recall for each Cluster', fontsize=14)
+        ax.set_ylabel('Valore', fontsize=12)
+        ax.set_title(f'{method} - Precision e Recall per ogni Cluster', fontsize=14)
         ax.set_xticks(index + bar_width / 2)
         ax.set_xticklabels(clusters, rotation=90)
         ax.legend()

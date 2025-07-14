@@ -190,9 +190,9 @@ class TextPreprocessing:
                 words, counts = zip(*top25)
                 plt.figure(figsize=(10, 6))
                 plt.barh(words, counts, color='skyblue')
-                plt.xlabel('Frequency')
-                plt.title(f"Top 25 Words in {os.path.basename(csv_file)}")
-                
+                plt.xlabel('Frequenza')
+                plt.title(f"Top 25 Parole in {os.path.basename(csv_file)}")
+
                 # Save the plot to the Top25Report folder
                 plot_file = os.path.join(self.top25_report_folder, f"top25_{os.path.basename(csv_file).replace('.csv', '.png')}")
                 plt.tight_layout()
@@ -243,9 +243,9 @@ class TextPreprocessing:
                     words, counts = zip(*top25)
                     plt.figure(figsize=(10, 6))
                     plt.barh(words, counts, color='skyblue')
-                    plt.xlabel('Frequency')
-                    plt.title(f"Top 25 Words in {column} - {os.path.basename(csv_file)}")
-                    
+                    plt.xlabel('Frequenza')
+                    plt.title(f"Top 25 Parole in {column} - {os.path.basename(csv_file)}")
+
                     # Save the plot to the appropriate subfolder
                     if column == 'Component':
                         plot_file = os.path.join(component_folder, f"top25_{column}_{os.path.basename(csv_file).replace('.csv', '.png')}")
@@ -497,9 +497,9 @@ class Labelling:
             ax.plot(range(1, len(cluster_scores) + 1), cluster_scores, label=f"Cluster {cluster_id} (Clusters)", marker='o', color=colors(idx))
 
         # Set labels and title for the Clusters plot
-        ax.set_xlabel('Words')
-        ax.set_ylabel('Scores')
-        ax.set_title('TF-IDF Scores for Top 10 Words by Cluster (Clusters_Top_10_TFIDF)')
+        ax.set_xlabel('Parole')
+        ax.set_ylabel('Punteggi')
+        ax.set_title('Punteggi TF-IDF per le Top 10 Parole per Cluster (Clusters_Top_10_TFIDF)')
         ax.legend(title="Cluster", bbox_to_anchor=(1.05, 1), loc='upper left')
 
         # Adjust layout to prevent overlap
@@ -527,9 +527,9 @@ class Labelling:
                 ax.plot(range(1, len(combined_scores) + 1), combined_scores, label=f"Cluster {cluster_id} (Combined)", marker='o', color=colors(idx))
 
         # Set labels and title for the Combined plot
-        ax.set_xlabel('Words')
-        ax.set_ylabel('Scores')
-        ax.set_title('TF-IDF Scores for Top 10 Words by Cluster (Combined_Top_10_TFIDF)')
+        ax.set_xlabel('Parole')
+        ax.set_ylabel('Punteggi')
+        ax.set_title('Punteggi TF-IDF per le Top 10 Parole per Cluster (Combined_Top_10_TFIDF)')
         ax.legend(title="Cluster", bbox_to_anchor=(1.05, 1), loc='upper left')
 
         # Adjust layout to prevent overlap
@@ -569,8 +569,8 @@ class Labelling:
 
         # Set the labels and title
         plt.xlabel('Cluster', fontsize=12)
-        plt.ylabel('Number of Labels', fontsize=12)
-        plt.title('Label Distribution by Clusters (TF-IDF)', fontsize=14)
+        plt.ylabel('Numero di etichette', fontsize=12)
+        plt.title('Distribuzione delle Etichette per Cluster (TF-IDF)', fontsize=14)
 
         # Set the x-axis ticks to show the cluster numbers (1 to 44)
         plt.xticks(index + bar_width / 2, tfidf_labels_df['Cluster'], rotation=90)
@@ -813,8 +813,8 @@ class Labelling:
             ax.text(x_pos[i] + bar_width/2, merged_df['Topics_Combined'][i] + 0.1, 
                     str(merged_df['Topics_Combined'][i]), ha='center', va='bottom', fontsize=10)
         ax.set_xlabel('Cluster')
-        ax.set_ylabel('Number of Topics')
-        ax.set_title('Topics Distribution by Cluster')
+        ax.set_ylabel('Numero di Topics')
+        ax.set_title('Distribuzione dei Topics per Cluster')
         ax.set_xticks(range(1, 45))
         ax.set_xticklabels(range(1, 45))
         ax.legend()
@@ -838,9 +838,9 @@ class Labelling:
             ax.plot(cluster_data.columns[1:], cluster_data.iloc[0, 1:], label=f"Cluster {cluster_id}", marker='o')  # Add markers
 
         # Add labels and title
-        ax.set_xlabel("Number of Topics")
+        ax.set_xlabel("Numero di Topics")
         ax.set_ylabel("Perplexity")
-        ax.set_title(f"Perplexity vs Number of Topics ({file_name})")  # Add the file name in the title
+        ax.set_title(f"Perplexity vs Numero di Topics ({file_name})")  # Add the file name in the title
 
         # Set up legend
         ax.legend(title="Cluster", loc='upper left', bbox_to_anchor=(1, 1))
