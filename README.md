@@ -57,7 +57,7 @@ Run the `main.py` script to start the scanning and analysis process:
 python main.py
 ```
 
-After the script completes, the results will be saved in the specified `output_folder` as a `.txt` file containing the analysis.
+After the script completes, the results will be saved in the specified `output_folder`.
 
 ## Example Output
 After the main.py execution there will be some output files generated for each step done as such:
